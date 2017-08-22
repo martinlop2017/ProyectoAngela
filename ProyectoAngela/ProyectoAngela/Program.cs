@@ -19,6 +19,7 @@ namespace ProyectoAngela
             Application.Run(new ControlUsusarios());
 
             var t1 = 1;
+            var t2 = 2;
         }
     }
 }

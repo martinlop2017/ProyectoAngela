@@ -17,6 +17,8 @@ namespace ProyectoAngela
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ControlUsusarios());
+
+            var t1 = 1;
         }
     }
 }

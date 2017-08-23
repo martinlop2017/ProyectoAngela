@@ -5,10 +5,10 @@ namespace AdministracionAngela.CapaDePersistencia
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class AdministracionAngela : DbContext
+    public partial class DBAdministracionAngela : DbContext
     {
-        public AdministracionAngela()
-            : base("name=AdministracionAngela")
+        public DBAdministracionAngela()
+            : base("name=DBAdministracionAngela")
         {
         }
 

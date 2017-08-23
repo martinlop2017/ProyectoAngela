@@ -16,5 +16,11 @@ namespace ProyectoAngela
         {
             InitializeComponent();
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Clientes myForm = new ProyectoAngela.Clientes();
+            myForm.ShowDialog();
+        }
     }
 }

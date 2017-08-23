@@ -34,7 +34,6 @@ namespace ProyectoAngela
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = "pepe";
 
             Menu myForm = new ProyectoAngela.Menu();
             myForm.ShowDialog();

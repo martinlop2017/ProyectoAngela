@@ -17,8 +17,8 @@ namespace ProyectoAngela
         static void Main()
         {
             ClienteProvider clienteProvider = new ClienteProvider(new RepositorioCliente());
-            var dni = clienteProvider.GetClientePorNombre("Alvaro");
-            Console.WriteLine(string.Format("Nombre: Alvaro,  DNI: {0}", dni));
+            //var dni = clienteProvider.GetClientePorNombre("Alvaro");
+            //Console.WriteLine(string.Format("Nombre: Alvaro,  DNI: {0}", dni));
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

@@ -7,8 +7,8 @@
     <ProjectGuid>{61B5FC9C-BF53-4DAC-BB94-DEAA924D4F52}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdministracionAngela.Servicios.ServicioFactura</RootNamespace>
-    <AssemblyName>AdministracionAngela.Servicios.ServicioFactura</AssemblyName>
+    <RootNamespace>AdministracionAngela.Servicios.ServicioDatos</RootNamespace>
+    <AssemblyName>AdministracionAngela.Servicios.ServicioDatos</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

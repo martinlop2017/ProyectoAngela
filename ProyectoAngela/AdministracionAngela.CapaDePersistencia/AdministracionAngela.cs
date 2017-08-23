@@ -5,7 +5,7 @@ namespace AdministracionAngela.CapaDePersistencia
     public partial class DBAdministracionAngela : DbContext
     {
         public DBAdministracionAngela()
-            : base("name=DBAdministracionAngela")
+            : base("name=AdministracionAngela")
         {
         }
 

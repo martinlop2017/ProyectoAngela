@@ -13,7 +13,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         DBAdministracionAngela db;
         public RepositorioCliente()
         {
-            db = new DBAdministracionAngela("DBAdministracionAngela");
+            db = new DBAdministracionAngela();
         }
         public Cliente GetClientePorNombre(string nombreCliente)
         {

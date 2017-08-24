@@ -108,6 +108,7 @@
             this.factruasToolStripMenuItem.Name = "factruasToolStripMenuItem";
             this.factruasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.factruasToolStripMenuItem.Text = "Factruas";
+            this.factruasToolStripMenuItem.Click += new System.EventHandler(this.factruasToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 

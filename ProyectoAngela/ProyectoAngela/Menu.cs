@@ -22,5 +22,11 @@ namespace ProyectoAngela
             Clientes myForm = new ProyectoAngela.Clientes();
             myForm.ShowDialog();
         }
+
+        private void factruasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Facturacion myForm = new ProyectoAngela.Facturacion();
+            myForm.ShowDialog();
+        }
     }
 }

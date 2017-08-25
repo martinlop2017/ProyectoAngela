@@ -4,16 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.CapaDePersistencia;
-using System.Linq;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public class RepositorioCliente : IRepositorioCliente
     {
-        DBAdministracionAngela db;
+        AdministracionAngelaContext db;
         public RepositorioCliente()
         {
-            db = new DBAdministracionAngela();
+            db = new AdministracionAngelaContext();
         }
         public Cliente GetClientePorNombre(string nombreCliente)
         {

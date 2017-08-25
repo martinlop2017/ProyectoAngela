@@ -2,24 +2,24 @@ namespace AdministracionAngela.CapaDePersistencia
 {
     using System.Data.Entity;
 
-    public partial class DBAdministracionAngela : DbContext
+    public partial class AdministracionAngelaContext : DbContext, IAdministracionAngelaContext
     {
-        public DBAdministracionAngela()
+        public AdministracionAngelaContext()
             : base("name=AdministracionAngela")
         {
         }
 
-        public DBAdministracionAngela(string connectionString)
+        public AdministracionAngelaContext(string connectionString)
             :base(string.Format("name={0}",connectionString))
         {
 
         }
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
-        public virtual DbSet<Factura> Factura { get; set; }
-        public virtual DbSet<IVA> IVA { get; set; }
-        public virtual DbSet<LineaFactura> LineaFactura { get; set; }
-        public virtual DbSet<Producto> Producto { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Factura> Factura { get; set; }
+        public DbSet<IVA> IVA { get; set; }
+        public DbSet<LineaFactura> LineaFactura { get; set; }
+        public DbSet<Producto> Producto { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

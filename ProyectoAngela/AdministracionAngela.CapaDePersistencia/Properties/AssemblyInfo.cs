@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("DBAdministracionAngela.CapaDePersistencia")]
+[assembly: AssemblyTitle("AdministracionAngelaContext.CapaDePersistencia")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DBAdministracionAngela.CapaDePersistencia")]
+[assembly: AssemblyProduct("AdministracionAngelaContext.CapaDePersistencia")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

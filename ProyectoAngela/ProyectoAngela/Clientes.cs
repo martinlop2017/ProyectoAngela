@@ -81,5 +81,11 @@ namespace ProyectoAngela
         {
             label5.Visible = false;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AltaClientes myForm = new ProyectoAngela.AltaClientes();
+            myForm.ShowDialog();
+        }
     }
 }

@@ -17,5 +17,11 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
         {
 
         }
+
+        [Fact]
+        public void TestDePrueba()
+        {
+            Assert.True(true);
+        }
     }
 }

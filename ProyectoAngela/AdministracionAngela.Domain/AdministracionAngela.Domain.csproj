@@ -40,6 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facturacion\Factura.cs" />
+    <Compile Include="Facturacion\LineaFactura.cs" />
+    <Compile Include="MetaDatos\Cliente.cs" />
+    <Compile Include="MetaDatos\IVA.cs" />
+    <Compile Include="MetaDatos\Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

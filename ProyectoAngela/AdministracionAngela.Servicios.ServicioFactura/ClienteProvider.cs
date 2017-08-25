@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
+using AdministracionAngela.Domain.Interfaces;
+using AdministracionAngela.CapaDePersistencia;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
-    public class ClienteProvider
+    public class ClienteProvider : IClienteProvider
     {
         IRepositorioCliente repositorioCliente;
 
@@ -16,12 +18,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioCliente = repositorioCliente;
         }
 
-        //necesito crear el modelo de dominio para que aqui se devuelva el cliente del dominio y para que se haga un mapeo si es necesario
-        public long GetClientePorNombre(string nombreCliente)
+        public List<Cliente> GetAllClients()
         {
-            var cliente = this.repositorioCliente.GetClientePorNombre(nombreCliente);
-
-            return cliente.NIF.Value;
+           return this.repositorioCliente.GetAllClients();
         }
     }
 }

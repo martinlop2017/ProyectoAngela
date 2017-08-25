@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.CapaDePersistencia;
-using System.Linq;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public class RepositorioCliente : IRepositorioCliente
     {
-        DBAdministracionAngela db;
-        public RepositorioCliente()
+        IAdministracionAngelaContext dbContext;
+
+        public RepositorioCliente(IAdministracionAngelaContext dbContext)
         {
-            db = new DBAdministracionAngela();
+            this.dbContext = dbContext;
         }
-        public Cliente GetClientePorNombre(string nombreCliente)
+
+        public List<Cliente> GetAllClients()
         {
-            return db.Cliente.SingleOrDefault(c => c.Nombre.Equals(nombreCliente));
+            return this.dbContext.Clientes.ToList<Cliente>();
         }
     }
 }

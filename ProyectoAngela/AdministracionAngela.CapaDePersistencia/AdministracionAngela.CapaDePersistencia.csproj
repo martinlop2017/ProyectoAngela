@@ -51,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdministracionAngela.cs" />
+    <Compile Include="AdministracionAngelaContext.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="Factura.cs" />
+    <Compile Include="IAdministracionAngelaContext.cs" />
     <Compile Include="IVA.cs" />
     <Compile Include="LineaFactura.cs" />
     <Compile Include="Producto.cs" />

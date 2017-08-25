@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AdministracionAngelaContext.CapaDePersistencia")]
+[assembly: AssemblyTitle("AdministracionAngela.Servicios.ServicioDatosTests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AdministracionAngelaContext.CapaDePersistencia")]
+[assembly: AssemblyProduct("AdministracionAngela.Servicios.ServicioDatosTests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e3209153-c400-460c-81fc-bbc8072c4386")]
+[assembly: Guid("d191e13f-993d-49c5-a312-e8b79b0eee2a")]
 
 // Version information for an assembly consists of the following four values:
 //

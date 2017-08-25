@@ -9,6 +9,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public interface IRepositorioCliente
     {
-        Cliente GetClientePorNombre(string nombreCliente);
+        List<Cliente> GetAllClients();
     }
 }

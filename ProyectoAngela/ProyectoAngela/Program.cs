@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
+using AdministracionAngela.CapaDePersistencia;
 
 namespace ProyectoAngela
 {
@@ -16,7 +17,8 @@ namespace ProyectoAngela
         [STAThread]
         static void Main()
         {
-            ClienteProvider clienteProvider = new ClienteProvider(new RepositorioCliente());
+            var repositorioCliente = new RepositorioCliente(new AdministracionAngelaContext());
+            ClienteProvider clienteProvider = new ClienteProvider(repositorioCliente);
             //var dni = clienteProvider.GetClientePorNombre("Alvaro");
             //Console.WriteLine(string.Format("Nombre: Alvaro,  DNI: {0}", dni));
 

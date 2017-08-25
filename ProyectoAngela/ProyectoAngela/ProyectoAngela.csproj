@@ -59,10 +59,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaClientes.cs">
+    <Compile Include="Vistas\AltaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaClientes.Designer.cs">
+    <Compile Include="Vistas\AltaClientes.Designer.cs">
       <DependentUpon>AltaClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
@@ -85,10 +85,10 @@
     <Compile Include="Vistas\Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="GestionFacturas.cs">
+    <Compile Include="Vistas\GestionFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GestionFacturas.Designer.cs">
+    <Compile Include="Vistas\GestionFacturas.Designer.cs">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Menu.cs">
@@ -99,7 +99,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AltaClientes.resx">
+    <EmbeddedResource Include="Vistas\AltaClientes.resx">
       <DependentUpon>AltaClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Clientes.resx">
@@ -111,7 +111,7 @@
     <EmbeddedResource Include="Vistas\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GestionFacturas.resx">
+    <EmbeddedResource Include="Vistas\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Menu.resx">

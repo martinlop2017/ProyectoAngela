@@ -9,14 +9,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public class RepositorioCliente : IRepositorioCliente
     {
-        AdministracionAngelaContext db;
-        public RepositorioCliente()
+        IAdministracionAngelaContext dbContext;
+
+        public RepositorioCliente(IAdministracionAngelaContext dbContext)
         {
-            db = new AdministracionAngelaContext();
+            this.dbContext = dbContext;
         }
         public Cliente GetClientePorNombre(string nombreCliente)
         {
-            return db.Cliente.SingleOrDefault(c => c.Nombre.Equals(nombreCliente));
+            return dbContext.Cliente.SingleOrDefault(c => c.Nombre.Equals(nombreCliente));
         }
     }
 }

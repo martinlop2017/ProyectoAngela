@@ -117,6 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
+      <Project>{e3209153-c400-460c-81fc-bbc8072c4386}</Project>
+      <Name>AdministracionAngela.CapaDePersistencia</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Servicios.ServicioFactura\AdministracionAngela.Servicios.ServicioDatos.csproj">
       <Project>{61b5fc9c-bf53-4dac-bb94-deaa924d4f52}</Project>
       <Name>AdministracionAngela.Servicios.ServicioDatos</Name>

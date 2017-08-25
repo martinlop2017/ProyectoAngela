@@ -18,7 +18,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public List<Cliente> GetAllClients()
         {
-            return this.dbContext.Cliente.ToList<Cliente>();
+            return this.dbContext.Clientes.ToList<Cliente>();
         }
     }
 }

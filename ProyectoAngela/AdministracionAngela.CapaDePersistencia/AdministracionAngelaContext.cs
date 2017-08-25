@@ -15,11 +15,11 @@ namespace AdministracionAngela.CapaDePersistencia
 
         }
 
-        public DbSet<Cliente> Cliente { get; set; }
-        public DbSet<Factura> Factura { get; set; }
-        public DbSet<IVA> IVA { get; set; }
-        public DbSet<LineaFactura> LineaFactura { get; set; }
-        public DbSet<Producto> Producto { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Factura> Facturas { get; set; }
+        public DbSet<IVA> IVAs { get; set; }
+        public DbSet<LineaFactura> LineasFactura { get; set; }
+        public DbSet<Producto> Productos { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

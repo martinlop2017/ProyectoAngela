@@ -9,10 +9,10 @@ namespace AdministracionAngela.CapaDePersistencia
 {
     public interface IAdministracionAngelaContext : IDisposable
     {
-        DbSet<Cliente> Cliente { get; set; }
-        DbSet<Factura> Factura { get; set; }
-        DbSet<IVA> IVA { get; set; }
-        DbSet<LineaFactura> LineaFactura { get; set; }
-        DbSet<Producto> Producto { get; set; }
+        DbSet<Cliente> Clientes { get; set; }
+        DbSet<Factura> Facturas { get; set; }
+        DbSet<IVA> IVAs { get; set; }
+        DbSet<LineaFactura> LineasFactura { get; set; }
+        DbSet<Producto> Productos { get; set; }
     }
 }

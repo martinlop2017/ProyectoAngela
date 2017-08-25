@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicios", "Servicios", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministracionAngela.Servicios.ServicioDatos", "AdministracionAngela.Servicios.ServicioFactura\AdministracionAngela.Servicios.ServicioDatos.csproj", "{61B5FC9C-BF53-4DAC-BB94-DEAA924D4F52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministracionAngela.Domain", "AdministracionAngela.Domain\AdministracionAngela.Domain.csproj", "{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{61B5FC9C-BF53-4DAC-BB94-DEAA924D4F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61B5FC9C-BF53-4DAC-BB94-DEAA924D4F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61B5FC9C-BF53-4DAC-BB94-DEAA924D4F52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -40,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facturacion\Factura.cs" />
-    <Compile Include="Facturacion\LineaFactura.cs" />
-    <Compile Include="MetaDatos\Cliente.cs" />
-    <Compile Include="MetaDatos\IVA.cs" />
-    <Compile Include="MetaDatos\Producto.cs" />
+    <Compile Include="Interfaces\IClienteProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
+      <Project>{E3209153-C400-460C-81FC-BBC8072C4386}</Project>
+      <Name>AdministracionAngela.CapaDePersistencia</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

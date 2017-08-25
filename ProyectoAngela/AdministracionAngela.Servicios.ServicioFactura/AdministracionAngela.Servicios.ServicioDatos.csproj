@@ -52,6 +52,10 @@
       <Project>{e3209153-c400-460c-81fc-bbc8072c4386}</Project>
       <Name>AdministracionAngela.CapaDePersistencia</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AdministracionAngela.Domain\AdministracionAngela.Domain.csproj">
+      <Project>{3fd71f7d-0c4f-41c9-beb5-f95b39d93843}</Project>
+      <Name>AdministracionAngela.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

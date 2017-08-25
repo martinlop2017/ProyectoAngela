@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Servicios.ServicioDatos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,17 +8,14 @@ using Xunit;
 
 namespace AdministracionAngela.Servicios.ServicioDatosTests
 {
-    public class Tests
+    public class ClienteProviderTests
     {
-        public Tests()
+
+        ClienteProvider clienteProvider;
+
+        public ClienteProviderTests()
         {
 
-        }
-
-        [Fact]
-        public void TEstDeprueba()
-        {
-            Assert.True(true);
         }
     }
 }

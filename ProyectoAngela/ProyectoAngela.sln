@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministracionAngela.Servic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdministracionAngela.Domain", "AdministracionAngela.Domain\AdministracionAngela.Domain.csproj", "{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{E566E448-8AF5-41FB-84BE-C47C9EE3CCBB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Tests", "_Tests", "{E566E448-8AF5-41FB-84BE-C47C9EE3CCBB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servicios", "Servicios", "{D1F8CD17-DF08-4EE8-A10C-F1F7B4DD8CA7}"
 EndProject

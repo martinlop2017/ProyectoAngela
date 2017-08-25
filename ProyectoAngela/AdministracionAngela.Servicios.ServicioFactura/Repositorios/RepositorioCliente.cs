@@ -15,9 +15,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             this.dbContext = dbContext;
         }
-        public Cliente GetClientePorNombre(string nombreCliente)
+
+        public List<Cliente> GetAllClients()
         {
-            return dbContext.Cliente.SingleOrDefault(c => c.Nombre.Equals(nombreCliente));
+            return this.dbContext.Cliente.ToList<Cliente>();
         }
     }
 }

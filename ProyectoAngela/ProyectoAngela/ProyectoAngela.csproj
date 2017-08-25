@@ -59,62 +59,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Vistas\AltaClientes.cs">
+    <Compile Include="Formularios\AltaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\AltaClientes.Designer.cs">
+    <Compile Include="Formularios\AltaClientes.Designer.cs">
       <DependentUpon>AltaClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
     <Compile Include="Utils\FormOpener.cs" />
-    <Compile Include="Vistas\Clientes.cs">
+    <Compile Include="Formularios\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Clientes.Designer.cs">
+    <Compile Include="Formularios\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\ControlUsusarios.cs">
+    <Compile Include="Formularios\ControlUsusarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\ControlUsusarios.Designer.cs">
+    <Compile Include="Formularios\ControlUsusarios.Designer.cs">
       <DependentUpon>ControlUsusarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Facturacion.cs">
+    <Compile Include="Formularios\Facturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Facturacion.Designer.cs">
+    <Compile Include="Formularios\Facturacion.Designer.cs">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\GestionFacturas.cs">
+    <Compile Include="Formularios\GestionFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\GestionFacturas.Designer.cs">
+    <Compile Include="Formularios\GestionFacturas.Designer.cs">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Menu.cs">
+    <Compile Include="Formularios\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vistas\Menu.Designer.cs">
+    <Compile Include="Formularios\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Vistas\AltaClientes.resx">
+    <EmbeddedResource Include="Formularios\AltaClientes.resx">
       <DependentUpon>AltaClientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Clientes.resx">
+    <EmbeddedResource Include="Formularios\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\ControlUsusarios.resx">
+    <EmbeddedResource Include="Formularios\ControlUsusarios.resx">
       <DependentUpon>ControlUsusarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Facturacion.resx">
+    <EmbeddedResource Include="Formularios\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\GestionFacturas.resx">
+    <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vistas\Menu.resx">
+    <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

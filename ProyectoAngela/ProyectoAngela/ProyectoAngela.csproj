@@ -61,7 +61,6 @@
   <ItemGroup>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
     <Compile Include="Utils\FormOpener.cs" />
-    <Compile Include="Utils\IFormOpener.cs" />
     <Compile Include="Vistas\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>

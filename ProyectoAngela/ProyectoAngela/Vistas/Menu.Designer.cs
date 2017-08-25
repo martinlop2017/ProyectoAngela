@@ -107,7 +107,7 @@
             // 
             this.factruasToolStripMenuItem.Name = "factruasToolStripMenuItem";
             this.factruasToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.factruasToolStripMenuItem.Text = "Factruas";
+            this.factruasToolStripMenuItem.Text = "Facturas";
             this.factruasToolStripMenuItem.Click += new System.EventHandler(this.factruasToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
@@ -125,6 +125,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

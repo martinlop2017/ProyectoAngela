@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace ProyectoAngela
 {
     public partial class Menu : Form
     {
-        public Menu()
+        IClienteProvider clienteProvider;
+
+        public Menu(IClienteProvider clienteProvider)
         {
+            this.clienteProvider = clienteProvider;
             InitializeComponent();
         }
 

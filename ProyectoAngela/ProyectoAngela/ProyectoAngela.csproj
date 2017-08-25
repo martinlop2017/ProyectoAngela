@@ -41,6 +41,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="StructureMap, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StructureMap.4.5.2\lib\net45\StructureMap.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -55,6 +59,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
+    <Compile Include="Utils\FormOpener.cs" />
+    <Compile Include="Utils\IFormOpener.cs" />
     <Compile Include="Vistas\Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +127,10 @@
     <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
       <Project>{e3209153-c400-460c-81fc-bbc8072c4386}</Project>
       <Name>AdministracionAngela.CapaDePersistencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdministracionAngela.Domain\AdministracionAngela.Domain.csproj">
+      <Project>{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}</Project>
+      <Name>AdministracionAngela.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Servicios.ServicioFactura\AdministracionAngela.Servicios.ServicioDatos.csproj">
       <Project>{61b5fc9c-bf53-4dac-bb94-deaa924d4f52}</Project>

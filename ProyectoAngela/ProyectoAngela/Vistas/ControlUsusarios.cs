@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdministracionAngela.Domain.Interfaces;
+using ProyectoAngela.Infraestructura;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,13 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StructureMap;
+using ProyectoAngela.Utils;
 
 namespace ProyectoAngela
 {
     public partial class ControlUsusarios : Form
     {
-        public ControlUsusarios()
+        IClienteProvider clienteProvider;
+        IFormOpener formOpener;
+
+        public ControlUsusarios(IClienteProvider clienteProvider, IFormOpener formOpener)
         {
+            this.clienteProvider = clienteProvider;
+            this.formOpener = formOpener;
             InitializeComponent();
         }
 
@@ -34,9 +43,7 @@ namespace ProyectoAngela
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            Menu myForm = new ProyectoAngela.Menu();
-            myForm.ShowDialog();
+            this.formOpener.ShowModalForm<Menu>();
         }
     }
 }

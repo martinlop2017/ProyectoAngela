@@ -1,4 +1,4 @@
-﻿namespace AdministracionAngela.ProyectoAngela
+﻿namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     partial class Menu
     {

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdministracionAngela.ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class AltaClientes : Form
     {

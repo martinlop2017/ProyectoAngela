@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using StructureMap;
 using AdministracionAngela.ProyectoAngela.Utils;
 
-namespace AdministracionAngela.ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class ControlUsusarios : Form
     {

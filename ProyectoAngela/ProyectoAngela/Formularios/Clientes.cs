@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdministracionAngela.ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class Clientes : Form
     {
@@ -84,7 +84,7 @@ namespace AdministracionAngela.ProyectoAngela
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AltaClientes myForm = new ProyectoAngela.AltaClientes();
+            AltaClientes myForm = new ProyectoAngela.Formularios.AltaClientes();
             myForm.ShowDialog();
         }
     }

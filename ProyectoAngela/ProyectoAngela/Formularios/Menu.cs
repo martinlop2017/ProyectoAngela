@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdministracionAngela.ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class Menu : Form
     {
@@ -23,13 +23,13 @@ namespace AdministracionAngela.ProyectoAngela
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clientes myForm = new ProyectoAngela.Clientes();
+            Clientes myForm = new ProyectoAngela.Formularios.Clientes();
             myForm.ShowDialog();
         }
 
         private void factruasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionFacturas myForm = new ProyectoAngela.GestionFacturas();
+            GestionFacturas myForm = new ProyectoAngela.Formularios.GestionFacturas();
             myForm.ShowDialog();
         }
     }

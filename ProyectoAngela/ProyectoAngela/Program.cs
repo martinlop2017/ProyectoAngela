@@ -9,6 +9,7 @@ using AdministracionAngela.CapaDePersistencia;
 using StructureMap;
 using AdministracionAngela.ProyectoAngela.Infraestructura;
 using AdministracionAngela.ProyectoAngela.Utils;
+using AdministracionAngela.ProyectoAngela.Formularios;
 
 namespace AdministracionAngela.ProyectoAngela
 {

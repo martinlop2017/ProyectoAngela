@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoAngela.Utils
+namespace AdministracionAngela.ProyectoAngela.Utils
 {
     public class FormOpener : IFormOpener
     {

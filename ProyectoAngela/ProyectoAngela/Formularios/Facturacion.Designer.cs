@@ -1,4 +1,4 @@
-﻿namespace ProyectoAngela
+﻿namespace AdministracionAngela.ProyectoAngela
 {
     partial class Facturacion
     {

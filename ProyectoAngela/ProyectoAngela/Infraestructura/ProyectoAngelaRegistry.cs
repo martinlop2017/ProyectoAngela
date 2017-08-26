@@ -8,9 +8,9 @@ using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Domain.Interfaces;
 using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.CapaDePersistencia;
-using ProyectoAngela.Utils;
+using AdministracionAngela.ProyectoAngela.Utils;
 
-namespace ProyectoAngela.Infraestructura
+namespace AdministracionAngela.ProyectoAngela.Infraestructura
 {
     public class ProyectoAngelaRegistry : Registry
     {

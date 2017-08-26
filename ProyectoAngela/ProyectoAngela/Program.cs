@@ -7,10 +7,10 @@ using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.CapaDePersistencia;
 using StructureMap;
-using ProyectoAngela.Infraestructura;
-using ProyectoAngela.Utils;
+using AdministracionAngela.ProyectoAngela.Infraestructura;
+using AdministracionAngela.ProyectoAngela.Utils;
 
-namespace ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela
 {
     static class Program
     {

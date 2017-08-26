@@ -1,5 +1,5 @@
 ﻿using AdministracionAngela.Domain.Interfaces;
-using ProyectoAngela.Infraestructura;
+using AdministracionAngela.ProyectoAngela.Infraestructura;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,9 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StructureMap;
-using ProyectoAngela.Utils;
+using AdministracionAngela.ProyectoAngela.Utils;
 
-namespace ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela
 {
     public partial class ControlUsusarios : Form
     {

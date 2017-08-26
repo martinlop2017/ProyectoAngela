@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela
 {
     public partial class Menu : Form
     {

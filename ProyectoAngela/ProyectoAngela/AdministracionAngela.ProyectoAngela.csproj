@@ -146,6 +146,10 @@
       <Project>{e3209153-c400-460c-81fc-bbc8072c4386}</Project>
       <Name>AdministracionAngela.CapaDePersistencia</Name>
     </ProjectReference>
+    <ProjectReference Include="..\AdministracionAngela.CustomControls\AdministracionAngela.CustomControls.csproj">
+      <Project>{FDF80714-B63C-42CC-9A5E-A40CF9F565D4}</Project>
+      <Name>AdministracionAngela.CustomControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Domain\AdministracionAngela.Domain.csproj">
       <Project>{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}</Project>
       <Name>AdministracionAngela.Domain</Name>

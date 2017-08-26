@@ -7,8 +7,8 @@
     <ProjectGuid>{FCAFC4DE-C40B-461D-B570-3A95FAFE183A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProyectoAngela</RootNamespace>
-    <AssemblyName>ProyectoAngela</AssemblyName>
+    <RootNamespace>AdministracionAngela.ProyectoAngela</RootNamespace>
+    <AssemblyName>AdministracionAngela.ProyectoAngela</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

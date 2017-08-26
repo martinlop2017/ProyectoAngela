@@ -382,7 +382,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::ProyectoAngela.Properties.Resources.Rectangulo_7_Azulina;
+            this.panel1.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Rectangulo_7_Azulina;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label1);

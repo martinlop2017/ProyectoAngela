@@ -11,13 +11,14 @@ namespace AdministracionAngela.Utils
 {
     public static class MapToDomain
     {
+        #region Mapeo de Cliente
         public static ClienteDomain MapClient(Cliente clienteFromRepository)
         {
             return new ClienteDomain()
             {
                 Codigo = clienteFromRepository.Id,
                 Nombre = clienteFromRepository.Nombre,
-                NIF = clienteFromRepository.NIF.HasValue ? clienteFromRepository.NIF.Value : clienteFromRepository.CIF.Value 
+                NIF = clienteFromRepository.NIF.HasValue ? clienteFromRepository.NIF.Value : clienteFromRepository.CIF.Value
             };
         }
         public static List<ClienteDomain> MapClientList(List<Cliente> clienteFromRepositoryList)
@@ -34,5 +35,6 @@ namespace AdministracionAngela.Utils
                 Clientes = new BindingList<ClienteDomain>(clientesDomain)
             };
         }
+        #endregion
     }
 }

@@ -17,7 +17,7 @@ namespace AdministracionAngela.UtilsTest
         }
 
         [Fact]
-        public void ShouldMapClientFromRepository()
+        public void Should_Map_Client_From_Repository()
         {
             Cliente repositoryClient = new Cliente();
             repositoryClient.Id = 1;
@@ -33,18 +33,29 @@ namespace AdministracionAngela.UtilsTest
         }
 
         [Fact]
-        public void ShouldMapListOfClientFromRepository()
+        public void Should_Map_List_Of_Client_From_Repository()
         {
             var repositoryClients = this.GenerateTestClientList(3);
 
             var listClientDomain = MapToDomain.MapClientList(repositoryClients);
 
             Assert.Equal(3, listClientDomain.Count);
-            Assert.Equal(listClientDomain[0].Codigo, 0);
-            Assert.Equal(listClientDomain[1].Codigo, 1);
-            Assert.Equal(listClientDomain[2].Codigo, 2);
-            Assert.Equal(listClientDomain[0].Nombre, "TestClient0");
-            Assert.Equal(listClientDomain[1].Nombre, "TestClient1");
+            Assert.Equal(0, listClientDomain[0].Codigo);
+            Assert.Equal("TestClient1", listClientDomain[1].Nombre);
+            Assert.Equal(2, listClientDomain[2].NIF);
+        }
+
+        [Fact]
+        public void Should_Map_To_GestionCliente()
+        {
+            var repositoryClients = this.GenerateTestClientList(3);
+
+            var gestionCliente = MapToDomain.MapToGestionCliente(repositoryClients);
+
+            Assert.Equal(3, gestionCliente.Clientes.Count);
+            Assert.Equal(0, gestionCliente.Clientes[0].Codigo);
+            Assert.Equal("TestClient1", gestionCliente.Clientes[1].Nombre);
+            Assert.Equal(2, gestionCliente.Clientes[2].NIF);
         }
 
         /// <summary>

@@ -9,11 +9,11 @@ namespace AdministracionAngela.Domain
 {
     public class GestionCliente
     {
-        public BindingList<ClienteDomain> clientes { get; set; }
+        public BindingList<ClienteDomain> Clientes { get; set; }
 
         public GestionCliente()
         {
-            clientes = new BindingList<ClienteDomain>();
+            Clientes = new BindingList<ClienteDomain>();
         }
     }
 }

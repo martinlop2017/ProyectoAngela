@@ -2,6 +2,7 @@
 using AdministracionAngela.Domain;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,16 @@ namespace AdministracionAngela.Utils
         public static List<ClienteDomain> MapClientList(List<Cliente> clienteFromRepositoryList)
         {
             return clienteFromRepositoryList.Select(cliente => MapClient(cliente)).ToList<ClienteDomain>();
+        }
+
+        public static GestionCliente MapToGestionCliente(List<Cliente> repositoryClients)
+        {
+            var clientesDomain = MapClientList(repositoryClients);
+
+            return new GestionCliente()
+            {
+                Clientes = new BindingList<ClienteDomain>(clientesDomain)
+            };
         }
     }
 }

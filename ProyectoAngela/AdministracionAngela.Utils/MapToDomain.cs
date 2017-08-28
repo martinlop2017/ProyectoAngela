@@ -1,0 +1,27 @@
+﻿using AdministracionAngela.CapaDePersistencia;
+using AdministracionAngela.Domain;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AdministracionAngela.Utils
+{
+    public static class MapToDomain
+    {
+        public static ClienteDomain MapClient(Cliente clienteFromRepository)
+        {
+            return new ClienteDomain()
+            {
+                Codigo = clienteFromRepository.Id,
+                Nombre = clienteFromRepository.Nombre,
+                NIF = clienteFromRepository.NIF.HasValue ? clienteFromRepository.NIF.Value : clienteFromRepository.CIF.Value 
+            };
+        }
+        public static List<ClienteDomain> MapClientList(List<Cliente> clienteFromRepositoryList)
+        {
+            return clienteFromRepositoryList.Select(cliente => MapClient(cliente)).ToList<ClienteDomain>();
+        }
+    }
+}

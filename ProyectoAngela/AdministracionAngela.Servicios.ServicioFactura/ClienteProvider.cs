@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Domain.Interfaces;
-using AdministracionAngela.CapaDePersistencia;
+using AdministracionAngela.Domain;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -18,9 +18,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioCliente = repositorioCliente;
         }
 
-        public List<Cliente> GetAllClients()
+        public GestionCliente GetGestionCliente()
         {
-           return this.repositorioCliente.GetAllClients();
+            this.repositorioCliente.GetAllClients();
+
+            return new GestionCliente();
         }
     }
 }

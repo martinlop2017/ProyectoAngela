@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}</ProjectGuid>
+    <ProjectGuid>{4D087507-0804-4219-9BE5-4223BBCAE750}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdministracionAngela.Domain</RootNamespace>
-    <AssemblyName>AdministracionAngela.Domain</AssemblyName>
+    <RootNamespace>AdministracionAngela.Utils</RootNamespace>
+    <AssemblyName>AdministracionAngela.Utils</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,7 +32,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,16 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente\ClienteDomain.cs" />
-    <Compile Include="Cliente\GestionCliente.cs" />
-    <Compile Include="Interfaces\IClienteProvider.cs" />
-    <Compile Include="Interfaces\IFormOpener.cs" />
+    <Compile Include="MapToDomain.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
       <Project>{E3209153-C400-460C-81FC-BBC8072C4386}</Project>
       <Name>AdministracionAngela.CapaDePersistencia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdministracionAngela.Domain\AdministracionAngela.Domain.csproj">
+      <Project>{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}</Project>
+      <Name>AdministracionAngela.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Domain.Interfaces;
 using AdministracionAngela.Domain;
+using AdministracionAngela.Utils;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -20,9 +21,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public GestionCliente GetGestionCliente()
         {
-            this.repositorioCliente.GetAllClients();
-
-            return new GestionCliente();
+            var clientsFromRepository = this.repositorioCliente.GetAllClients();
+            return MapToDomain.MapToGestionCliente(clientsFromRepository);
         }
     }
 }

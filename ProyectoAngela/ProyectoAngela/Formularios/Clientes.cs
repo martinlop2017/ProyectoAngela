@@ -7,14 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Cliente;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class Clientes : Form
     {
-        public Clientes()
+        private IFormOpener formOpener;
+        private IClienteProvider clienteProvider;
+        private GestionClienteViewModel viewModel;
+
+        public Clientes(IFormOpener formOpener, IClienteProvider clienteProvider)
         {
+            this.formOpener = formOpener;
+            this.clienteProvider = clienteProvider;
+
+            //FillControls();
             InitializeComponent();
+        }
+
+        private void FillControls()
+        {
+            viewModel = clienteProvider.GetGestionCliente();
+
+            this.dataGridViewClientes.DataSource = viewModel.Clientes;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,8 +101,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AltaClientes myForm = new ProyectoAngela.Formularios.AltaClientes();
-            myForm.ShowDialog();
+            this.formOpener.ShowModalForm<AltaClientes>();
         }
     }
 }

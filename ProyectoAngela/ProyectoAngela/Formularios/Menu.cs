@@ -14,23 +14,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class Menu : Form
     {
         IClienteProvider clienteProvider;
+        private IFormOpener formOpener;
 
-        public Menu(IClienteProvider clienteProvider)
+        public Menu(IClienteProvider clienteProvider, IFormOpener formOpener)
         {
             this.clienteProvider = clienteProvider;
+            this.formOpener = formOpener;
             InitializeComponent();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clientes myForm = new ProyectoAngela.Formularios.Clientes();
-            myForm.ShowDialog();
+            this.formOpener.ShowModalForm<Clientes>();
         }
 
         private void factruasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GestionFacturas myForm = new ProyectoAngela.Formularios.GestionFacturas();
-            myForm.ShowDialog();
+            this.formOpener.ShowModalForm<GestionFacturas>();
         }
     }
 }

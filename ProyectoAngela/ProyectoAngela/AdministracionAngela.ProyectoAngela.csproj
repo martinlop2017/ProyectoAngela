@@ -151,13 +151,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
-      <Project>{e3209153-c400-460c-81fc-bbc8072c4386}</Project>
-      <Name>AdministracionAngela.CapaDePersistencia</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.CustomControls\AdministracionAngela.CustomControls.csproj">
       <Project>{FDF80714-B63C-42CC-9A5E-A40CF9F565D4}</Project>
       <Name>AdministracionAngela.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdministracionAngela.EFRepository\AdministracionAngela.EFRepository.csproj">
+      <Project>{F0FB3C29-77A5-4997-9CBA-CBA150BB96AB}</Project>
+      <Name>AdministracionAngela.EFRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Servicios.ServicioFactura\AdministracionAngela.Servicios.ServicioDatos.csproj">
       <Project>{61b5fc9c-bf53-4dac-bb94-deaa924d4f52}</Project>

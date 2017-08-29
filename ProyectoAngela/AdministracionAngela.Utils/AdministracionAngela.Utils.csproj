@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AdministracionAngela.Servicios.ServicioFactura\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms" />
@@ -49,9 +53,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
-      <Project>{E3209153-C400-460C-81FC-BBC8072C4386}</Project>
-      <Name>AdministracionAngela.CapaDePersistencia</Name>
+    <ProjectReference Include="..\AdministracionAngela.EFRepository\AdministracionAngela.EFRepository.csproj">
+      <Project>{F0FB3C29-77A5-4997-9CBA-CBA150BB96AB}</Project>
+      <Name>AdministracionAngela.EFRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

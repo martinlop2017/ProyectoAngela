@@ -66,9 +66,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
-      <Project>{E3209153-C400-460C-81FC-BBC8072C4386}</Project>
-      <Name>AdministracionAngela.CapaDePersistencia</Name>
+    <ProjectReference Include="..\AdministracionAngela.EFRepository\AdministracionAngela.EFRepository.csproj">
+      <Project>{f0fb3c29-77a5-4997-9cba-cba150bb96ab}</Project>
+      <Name>AdministracionAngela.EFRepository</Name>
     </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Utils\AdministracionAngela.Utils.csproj">
       <Project>{4D087507-0804-4219-9BE5-4223BBCAE750}</Project>

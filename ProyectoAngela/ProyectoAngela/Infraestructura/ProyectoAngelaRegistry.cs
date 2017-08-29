@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using StructureMap;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Servicios.ServicioDatos;
-using AdministracionAngela.CapaDePersistencia;
 using AdministracionAngela.ProyectoAngela.Utils;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.EFRepository;
 
 namespace AdministracionAngela.ProyectoAngela.Infraestructura
 {

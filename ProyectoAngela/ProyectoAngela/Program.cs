@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
-using AdministracionAngela.CapaDePersistencia;
 using StructureMap;
 using AdministracionAngela.ProyectoAngela.Infraestructura;
 using AdministracionAngela.ProyectoAngela.Utils;

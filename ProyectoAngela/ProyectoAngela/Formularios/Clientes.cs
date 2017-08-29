@@ -23,7 +23,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.formOpener = formOpener;
             this.clienteProvider = clienteProvider;
 
-            //FillControls();
             InitializeComponent();
         }
 
@@ -102,6 +101,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             this.formOpener.ShowModalForm<AltaClientes>();
+        }
+
+        private void Clientes_Load(object sender, EventArgs e)
+        {
+            FillControls();
         }
     }
 }

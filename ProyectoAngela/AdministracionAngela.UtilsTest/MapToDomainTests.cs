@@ -26,7 +26,7 @@ namespace AdministracionAngela.UtilsTest
             repositoryClient.Nombre = "TestClient1";
             repositoryClient.Direccion = "TestDireccion1";
 
-            var clienteViewModel = MapToDomain.MapClient(repositoryClient);
+            var clienteViewModel = MapToViewModel.MapClient(repositoryClient);
 
             Assert.Equal(1, clienteViewModel.Codigo);
             Assert.Equal("TestClient1", clienteViewModel.Nombre);
@@ -38,7 +38,7 @@ namespace AdministracionAngela.UtilsTest
         {
             var repositoryClients = this.GenerateTestClientList(3);
 
-            var listClientDomain = MapToDomain.MapClientList(repositoryClients);
+            var listClientDomain = MapToViewModel.MapClientList(repositoryClients);
 
             Assert.Equal(3, listClientDomain.Count);
             Assert.Equal(0, listClientDomain[0].Codigo);
@@ -51,7 +51,7 @@ namespace AdministracionAngela.UtilsTest
         {
             var repositoryClients = this.GenerateTestClientList(3);
 
-            var gestionCliente = MapToDomain.MapToGestionCliente(repositoryClients);
+            var gestionCliente = MapToViewModel.MapToGestionCliente(repositoryClients);
 
             Assert.Equal(3, gestionCliente.Clientes.Count);
             Assert.Equal(0, gestionCliente.Clientes[0].Codigo);

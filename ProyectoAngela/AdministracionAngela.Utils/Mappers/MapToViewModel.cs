@@ -9,7 +9,7 @@ using AdministracionAngela.Utils.Models.Cliente;
 
 namespace AdministracionAngela.Utils.Mappers
 {
-    public static class MapToDomain
+    public static class MapToViewModel
     {
         #region Mapeo de Cliente
         public static ClienteViewModel MapClient(Cliente clienteFromRepository)

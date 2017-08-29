@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="Interfaces\IClienteProvider.cs" />
     <Compile Include="Interfaces\IFormOpener.cs" />
-    <Compile Include="Mappers\MapToDomain.cs" />
+    <Compile Include="Mappers\MapToViewModel.cs" />
     <Compile Include="Models\Cliente\ClienteViewModel.cs" />
     <Compile Include="Models\Cliente\GestionClienteViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -72,6 +72,8 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
+    <Compile Include="Models\Cliente\ClienteViewModel.cs" />
+    <Compile Include="Models\Cliente\GestionClienteViewModel.cs" />
     <Compile Include="Utils\FormOpener.cs" />
     <Compile Include="Formularios\Clientes.cs">
       <SubType>Form</SubType>

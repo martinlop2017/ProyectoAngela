@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdministracionAngela.Utils
+namespace AdministracionAngela.Utils.Mappers
 {
     public static class MapToDomain
     {

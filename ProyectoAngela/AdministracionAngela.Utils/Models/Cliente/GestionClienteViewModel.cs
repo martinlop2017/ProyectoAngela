@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdministracionAngela.ProyectoAngela.Models.Cliente
+namespace AdministracionAngela.Utils.Models.Cliente
 {
     public class GestionClienteViewModel
     {

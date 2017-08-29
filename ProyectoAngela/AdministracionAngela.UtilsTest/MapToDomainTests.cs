@@ -1,5 +1,6 @@
 ﻿using AdministracionAngela.CapaDePersistencia;
 using AdministracionAngela.Utils;
+using AdministracionAngela.Utils.Mappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,11 +26,11 @@ namespace AdministracionAngela.UtilsTest
             repositoryClient.Nombre = "TestClient1";
             repositoryClient.Direccion = "TestDireccion1";
 
-            var clienteDomain = MapToDomain.MapClient(repositoryClient);
+            var clienteViewModel = MapToDomain.MapClient(repositoryClient);
 
-            Assert.Equal(1, clienteDomain.Codigo);
-            Assert.Equal("TestClient1", clienteDomain.Nombre);
-            Assert.Equal(1, clienteDomain.NIF);
+            Assert.Equal(1, clienteViewModel.Codigo);
+            Assert.Equal("TestClient1", clienteViewModel.Nombre);
+            Assert.Equal(1, clienteViewModel.NIF);
         }
 
         [Fact]

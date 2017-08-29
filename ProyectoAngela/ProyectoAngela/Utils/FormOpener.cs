@@ -1,4 +1,4 @@
-﻿using AdministracionAngela.Domain.Interfaces;
+﻿using AdministracionAngela.Utils.Interfaces;
 using StructureMap;
 using System;
 using System.Collections.Generic;

@@ -72,8 +72,6 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
-    <Compile Include="Models\Cliente\ClienteViewModel.cs" />
-    <Compile Include="Models\Cliente\GestionClienteViewModel.cs" />
     <Compile Include="Utils\FormOpener.cs" />
     <Compile Include="Formularios\Clientes.cs">
       <SubType>Form</SubType>
@@ -161,13 +159,13 @@
       <Project>{FDF80714-B63C-42CC-9A5E-A40CF9F565D4}</Project>
       <Name>AdministracionAngela.CustomControls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AdministracionAngela.Domain\AdministracionAngela.Domain.csproj">
-      <Project>{3FD71F7D-0C4F-41C9-BEB5-F95B39D93843}</Project>
-      <Name>AdministracionAngela.Domain</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Servicios.ServicioFactura\AdministracionAngela.Servicios.ServicioDatos.csproj">
       <Project>{61b5fc9c-bf53-4dac-bb94-deaa924d4f52}</Project>
       <Name>AdministracionAngela.Servicios.ServicioDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AdministracionAngela.Utils\AdministracionAngela.Utils.csproj">
+      <Project>{4D087507-0804-4219-9BE5-4223BBCAE750}</Project>
+      <Name>AdministracionAngela.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

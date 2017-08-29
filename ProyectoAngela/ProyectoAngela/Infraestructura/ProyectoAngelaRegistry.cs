@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using StructureMap;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
-using AdministracionAngela.Domain.Interfaces;
 using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.CapaDePersistencia;
 using AdministracionAngela.ProyectoAngela.Utils;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Infraestructura
 {

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AdministracionAngela.Domain.Interfaces
+namespace AdministracionAngela.Utils.Interfaces
 {
     public interface IFormOpener
     {

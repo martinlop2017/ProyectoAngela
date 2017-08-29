@@ -1,5 +1,4 @@
-﻿using AdministracionAngela.Domain.Interfaces;
-using AdministracionAngela.ProyectoAngela.Infraestructura;
+﻿using AdministracionAngela.ProyectoAngela.Infraestructura;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StructureMap;
 using AdministracionAngela.ProyectoAngela.Utils;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {

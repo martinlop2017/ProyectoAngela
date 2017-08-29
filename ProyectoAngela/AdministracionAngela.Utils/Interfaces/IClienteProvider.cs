@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdministracionAngela.Domain;
+using AdministracionAngela.Utils.Models.Cliente;
 
 
-namespace AdministracionAngela.Domain.Interfaces
+namespace AdministracionAngela.Utils.Interfaces
 {
     public interface IClienteProvider
     {
-        GestionCliente GetGestionCliente();
+        GestionClienteViewModel GetGestionCliente();
     }
 }

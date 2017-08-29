@@ -1,38 +1,38 @@
 ﻿using AdministracionAngela.CapaDePersistencia;
-using AdministracionAngela.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdministracionAngela.Utils.Models.Cliente;
 
 namespace AdministracionAngela.Utils.Mappers
 {
     public static class MapToDomain
     {
         #region Mapeo de Cliente
-        public static ClienteDomain MapClient(Cliente clienteFromRepository)
+        public static ClienteViewModel MapClient(Cliente clienteFromRepository)
         {
-            return new ClienteDomain()
+            return new ClienteViewModel()
             {
                 Codigo = clienteFromRepository.Id,
                 Nombre = clienteFromRepository.Nombre,
                 NIF = clienteFromRepository.NIF.HasValue ? clienteFromRepository.NIF.Value : clienteFromRepository.CIF.Value
             };
         }
-        public static List<ClienteDomain> MapClientList(List<Cliente> clienteFromRepositoryList)
+        public static List<ClienteViewModel> MapClientList(List<Cliente> clienteFromRepositoryList)
         {
-            return clienteFromRepositoryList.Select(cliente => MapClient(cliente)).ToList<ClienteDomain>();
+            return clienteFromRepositoryList.Select(cliente => MapClient(cliente)).ToList<ClienteViewModel>();
         }
 
-        public static GestionCliente MapToGestionCliente(List<Cliente> repositoryClients)
+        public static GestionClienteViewModel MapToGestionCliente(List<Cliente> repositoryClients)
         {
-            var clientesDomain = MapClientList(repositoryClients);
+            var clientesViewModel = MapClientList(repositoryClients);
 
-            return new GestionCliente()
+            return new GestionClienteViewModel()
             {
-                Clientes = new BindingList<ClienteDomain>(clientesDomain)
+                Clientes = new BindingList<ClienteViewModel>(clientesViewModel)
             };
         }
         #endregion

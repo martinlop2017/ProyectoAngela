@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
-using AdministracionAngela.Domain.Interfaces;
-using AdministracionAngela.Domain;
-using AdministracionAngela.Utils;
+using AdministracionAngela.Utils.Mappers;
+using AdministracionAngela.Utils.Models.Cliente;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -19,7 +19,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioCliente = repositorioCliente;
         }
 
-        public GestionCliente GetGestionCliente()
+        public GestionClienteViewModel GetGestionCliente()
         {
             var clientsFromRepository = this.repositorioCliente.GetAllClients();
             return MapToDomain.MapToGestionCliente(clientsFromRepository);

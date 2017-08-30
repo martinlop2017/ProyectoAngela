@@ -28,6 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule3 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente2));
             this.customGroupBox4 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -57,6 +62,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.customGroupBox3 = new AdministracionAngela.CustomControls.CustomGroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBoxCodigoPostal = new System.Windows.Forms.TextBox();
             this.textBoxProvincia = new System.Windows.Forms.TextBox();
             this.textBoxPoblacion = new System.Windows.Forms.TextBox();
@@ -67,6 +73,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
             this.customGroupBox4.SuspendLayout();
             this.customGroupBox6.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
@@ -174,6 +181,10 @@
             this.textBoxFormaPago.Name = "textBoxFormaPago";
             this.textBoxFormaPago.Size = new System.Drawing.Size(94, 20);
             this.textBoxFormaPago.TabIndex = 11;
+            validationRule1.DataType = AdministracionAngela.CustomControls.ValidationProvider.ValidationDataType.Integer;
+            validationRule1.ErrorMessage = "Forma de pago no puede estar vacio.";
+            validationRule1.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxFormaPago, validationRule1);
             // 
             // textBoxRiesgoMaximo
             // 
@@ -370,6 +381,8 @@
             this.textBoxTelefono1.Name = "textBoxTelefono1";
             this.textBoxTelefono1.Size = new System.Drawing.Size(92, 20);
             this.textBoxTelefono1.TabIndex = 5;
+            validationRule2.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxTelefono1, validationRule2);
             // 
             // label5
             // 
@@ -414,6 +427,7 @@
             this.customGroupBox3.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox3.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox3.BorderThickness = 1F;
+            this.customGroupBox3.Controls.Add(this.maskedTextBox1);
             this.customGroupBox3.Controls.Add(this.textBoxCodigoPostal);
             this.customGroupBox3.Controls.Add(this.textBoxProvincia);
             this.customGroupBox3.Controls.Add(this.textBoxPoblacion);
@@ -436,6 +450,15 @@
             this.customGroupBox3.TabIndex = 10;
             this.customGroupBox3.TabStop = false;
             this.customGroupBox3.Text = "Direccion:";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(267, 51);
+            this.maskedTextBox1.Mask = "99999";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.maskedTextBox1.TabIndex = 9;
+            this.maskedTextBox1.ValidatingType = typeof(int);
             // 
             // textBoxCodigoPostal
             // 
@@ -464,6 +487,8 @@
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(228, 20);
             this.textBoxDireccion.TabIndex = 5;
+            validationRule3.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule3);
             // 
             // label4
             // 
@@ -521,6 +546,10 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
+            // 
+            // validationProvider1
+            // 
+            this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
             // AltaCliente2
             // 
@@ -590,5 +619,7 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
     }
 }

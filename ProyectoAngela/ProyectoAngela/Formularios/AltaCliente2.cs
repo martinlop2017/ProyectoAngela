@@ -27,15 +27,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.ReadNewClientFromForm();
+            this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate());
         }
 
-        private AltaClienteViewModel ReadNewClientFromForm()
-        {
-            return new AltaClienteViewModel()
-            {
-                
-            }
-        }
+        //private AltaClienteViewModel ReadNewClientFromForm()
+        //{
+        //    return new AltaClienteViewModel()
+        //    {
+        //        CodigoCliente = labelCodigoCliente.Text,
+        //        NombreComercial = textBoxNombreComercial.Text,
+        //        NIF = textBoxNIF.Text,
+        //        Direccion = textBoxDireccion.Text,
+        //        Poblacion = textBoxPoblacion.Text,
+        //        Provincia = textBoxProvincia.Text,
+        //        CodigoPostal = textBoxCodigoPostal.Text,
+        //        Telefono1 = textBoxTelefono1.Text,
+        //        Telefono2 = textBoxTelefono2.Text,
+        //        Fax = textBoxFax.Text,
+        //        Email = textBoxEmail.Text,
+        //        PersonaDeContacto = textBoxPersonaContacto.Text,
+        //        RiesgoMaximo = textBoxRiesgoMaximo.Text,
+        //        FormaDePago = textBoxFormaPago.Text
+        //    };
+        //}
     }
 }

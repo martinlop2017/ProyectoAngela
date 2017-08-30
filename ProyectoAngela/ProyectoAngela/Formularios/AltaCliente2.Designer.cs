@@ -34,33 +34,33 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBoxFormaPago = new System.Windows.Forms.TextBox();
+            this.textBoxRiesgoMaximo = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.customGroupBox5 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.labelCodigoCliente = new System.Windows.Forms.Label();
+            this.textBoxNIF = new System.Windows.Forms.TextBox();
+            this.textBoxNombreComercial = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.customGroupBox2 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBoxTelefono2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBoxPersonaContacto = new System.Windows.Forms.TextBox();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxFax = new System.Windows.Forms.TextBox();
+            this.textBoxTelefono1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.customGroupBox3 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCodigoPostal = new System.Windows.Forms.TextBox();
+            this.textBoxProvincia = new System.Windows.Forms.TextBox();
+            this.textBoxPoblacion = new System.Windows.Forms.TextBox();
+            this.textBoxDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -83,8 +83,8 @@
             this.customGroupBox4.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox4.BorderThickness = 1F;
             this.customGroupBox4.Controls.Add(this.customGroupBox6);
-            this.customGroupBox4.Controls.Add(this.textBox13);
-            this.customGroupBox4.Controls.Add(this.textBox12);
+            this.customGroupBox4.Controls.Add(this.textBoxFormaPago);
+            this.customGroupBox4.Controls.Add(this.textBoxRiesgoMaximo);
             this.customGroupBox4.Controls.Add(this.label14);
             this.customGroupBox4.Controls.Add(this.label13);
             this.customGroupBox4.CustomGroupBoxColor = System.Drawing.Color.White;
@@ -168,19 +168,19 @@
             this.checkBox1.Text = "General";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // textBox13
+            // textBoxFormaPago
             // 
-            this.textBox13.Location = new System.Drawing.Point(142, 63);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(94, 20);
-            this.textBox13.TabIndex = 11;
+            this.textBoxFormaPago.Location = new System.Drawing.Point(142, 63);
+            this.textBoxFormaPago.Name = "textBoxFormaPago";
+            this.textBoxFormaPago.Size = new System.Drawing.Size(94, 20);
+            this.textBoxFormaPago.TabIndex = 11;
             // 
-            // textBox12
+            // textBoxRiesgoMaximo
             // 
-            this.textBox12.Location = new System.Drawing.Point(27, 63);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(94, 20);
-            this.textBox12.TabIndex = 9;
+            this.textBoxRiesgoMaximo.Location = new System.Drawing.Point(27, 63);
+            this.textBoxRiesgoMaximo.Name = "textBoxRiesgoMaximo";
+            this.textBoxRiesgoMaximo.Size = new System.Drawing.Size(94, 20);
+            this.textBoxRiesgoMaximo.TabIndex = 9;
             // 
             // label14
             // 
@@ -208,8 +208,8 @@
             this.customGroupBox1.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox1.BorderThickness = 1F;
             this.customGroupBox1.Controls.Add(this.customGroupBox5);
-            this.customGroupBox1.Controls.Add(this.textBox11);
-            this.customGroupBox1.Controls.Add(this.textBox10);
+            this.customGroupBox1.Controls.Add(this.textBoxNIF);
+            this.customGroupBox1.Controls.Add(this.textBoxNombreComercial);
             this.customGroupBox1.Controls.Add(this.label11);
             this.customGroupBox1.Controls.Add(this.label10);
             this.customGroupBox1.Controls.Add(this.customGroupBox2);
@@ -237,7 +237,7 @@
             this.customGroupBox5.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox5.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox5.BorderThickness = 1F;
-            this.customGroupBox5.Controls.Add(this.label12);
+            this.customGroupBox5.Controls.Add(this.labelCodigoCliente);
             this.customGroupBox5.CustomGroupBoxColor = System.Drawing.Color.White;
             this.customGroupBox5.GroupImage = null;
             this.customGroupBox5.GroupTitle = "Codigo Cliente";
@@ -253,29 +253,29 @@
             this.customGroupBox5.TabStop = false;
             this.customGroupBox5.Text = "customGroupBox5";
             // 
-            // label12
+            // labelCodigoCliente
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(32, 33);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(60, 25);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "9999";
+            this.labelCodigoCliente.AutoSize = true;
+            this.labelCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCodigoCliente.Location = new System.Drawing.Point(32, 33);
+            this.labelCodigoCliente.Name = "labelCodigoCliente";
+            this.labelCodigoCliente.Size = new System.Drawing.Size(60, 25);
+            this.labelCodigoCliente.TabIndex = 0;
+            this.labelCodigoCliente.Text = "9999";
             // 
-            // textBox11
+            // textBoxNIF
             // 
-            this.textBox11.Location = new System.Drawing.Point(445, 64);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(173, 20);
-            this.textBox11.TabIndex = 15;
+            this.textBoxNIF.Location = new System.Drawing.Point(445, 64);
+            this.textBoxNIF.Name = "textBoxNIF";
+            this.textBoxNIF.Size = new System.Drawing.Size(173, 20);
+            this.textBoxNIF.TabIndex = 15;
             // 
-            // textBox10
+            // textBoxNombreComercial
             // 
-            this.textBox10.Location = new System.Drawing.Point(177, 64);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(241, 20);
-            this.textBox10.TabIndex = 14;
+            this.textBoxNombreComercial.Location = new System.Drawing.Point(177, 64);
+            this.textBoxNombreComercial.Name = "textBoxNombreComercial";
+            this.textBoxNombreComercial.Size = new System.Drawing.Size(241, 20);
+            this.textBoxNombreComercial.TabIndex = 14;
             // 
             // label11
             // 
@@ -302,12 +302,12 @@
             this.customGroupBox2.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox2.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox2.BorderThickness = 1F;
-            this.customGroupBox2.Controls.Add(this.textBox9);
+            this.customGroupBox2.Controls.Add(this.textBoxTelefono2);
             this.customGroupBox2.Controls.Add(this.label9);
-            this.customGroupBox2.Controls.Add(this.textBox5);
-            this.customGroupBox2.Controls.Add(this.textBox6);
-            this.customGroupBox2.Controls.Add(this.textBox7);
-            this.customGroupBox2.Controls.Add(this.textBox8);
+            this.customGroupBox2.Controls.Add(this.textBoxPersonaContacto);
+            this.customGroupBox2.Controls.Add(this.textBoxEmail);
+            this.customGroupBox2.Controls.Add(this.textBoxFax);
+            this.customGroupBox2.Controls.Add(this.textBoxTelefono1);
             this.customGroupBox2.Controls.Add(this.label5);
             this.customGroupBox2.Controls.Add(this.label6);
             this.customGroupBox2.Controls.Add(this.label7);
@@ -327,12 +327,12 @@
             this.customGroupBox2.TabStop = false;
             this.customGroupBox2.Text = "Direccion:";
             // 
-            // textBox9
+            // textBoxTelefono2
             // 
-            this.textBox9.Location = new System.Drawing.Point(136, 51);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(92, 20);
-            this.textBox9.TabIndex = 10;
+            this.textBoxTelefono2.Location = new System.Drawing.Point(136, 51);
+            this.textBoxTelefono2.Name = "textBoxTelefono2";
+            this.textBoxTelefono2.Size = new System.Drawing.Size(92, 20);
+            this.textBoxTelefono2.TabIndex = 10;
             // 
             // label9
             // 
@@ -343,33 +343,33 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Telefono 2:";
             // 
-            // textBox5
+            // textBoxPersonaContacto
             // 
-            this.textBox5.Location = new System.Drawing.Point(246, 101);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(94, 20);
-            this.textBox5.TabIndex = 8;
+            this.textBoxPersonaContacto.Location = new System.Drawing.Point(246, 101);
+            this.textBoxPersonaContacto.Name = "textBoxPersonaContacto";
+            this.textBoxPersonaContacto.Size = new System.Drawing.Size(94, 20);
+            this.textBoxPersonaContacto.TabIndex = 8;
             // 
-            // textBox6
+            // textBoxEmail
             // 
-            this.textBox6.Location = new System.Drawing.Point(136, 101);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 20);
-            this.textBox6.TabIndex = 7;
+            this.textBoxEmail.Location = new System.Drawing.Point(136, 101);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(94, 20);
+            this.textBoxEmail.TabIndex = 7;
             // 
-            // textBox7
+            // textBoxFax
             // 
-            this.textBox7.Location = new System.Drawing.Point(21, 101);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(94, 20);
-            this.textBox7.TabIndex = 6;
+            this.textBoxFax.Location = new System.Drawing.Point(21, 101);
+            this.textBoxFax.Name = "textBoxFax";
+            this.textBoxFax.Size = new System.Drawing.Size(94, 20);
+            this.textBoxFax.TabIndex = 6;
             // 
-            // textBox8
+            // textBoxTelefono1
             // 
-            this.textBox8.Location = new System.Drawing.Point(23, 51);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(92, 20);
-            this.textBox8.TabIndex = 5;
+            this.textBoxTelefono1.Location = new System.Drawing.Point(23, 51);
+            this.textBoxTelefono1.Name = "textBoxTelefono1";
+            this.textBoxTelefono1.Size = new System.Drawing.Size(92, 20);
+            this.textBoxTelefono1.TabIndex = 5;
             // 
             // label5
             // 
@@ -414,10 +414,10 @@
             this.customGroupBox3.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox3.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox3.BorderThickness = 1F;
-            this.customGroupBox3.Controls.Add(this.textBox4);
-            this.customGroupBox3.Controls.Add(this.textBox3);
-            this.customGroupBox3.Controls.Add(this.textBox2);
-            this.customGroupBox3.Controls.Add(this.textBox1);
+            this.customGroupBox3.Controls.Add(this.textBoxCodigoPostal);
+            this.customGroupBox3.Controls.Add(this.textBoxProvincia);
+            this.customGroupBox3.Controls.Add(this.textBoxPoblacion);
+            this.customGroupBox3.Controls.Add(this.textBoxDireccion);
             this.customGroupBox3.Controls.Add(this.label4);
             this.customGroupBox3.Controls.Add(this.label3);
             this.customGroupBox3.Controls.Add(this.label2);
@@ -437,33 +437,33 @@
             this.customGroupBox3.TabStop = false;
             this.customGroupBox3.Text = "Direccion:";
             // 
-            // textBox4
+            // textBoxCodigoPostal
             // 
-            this.textBox4.Location = new System.Drawing.Point(246, 101);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(94, 20);
-            this.textBox4.TabIndex = 8;
+            this.textBoxCodigoPostal.Location = new System.Drawing.Point(246, 101);
+            this.textBoxCodigoPostal.Name = "textBoxCodigoPostal";
+            this.textBoxCodigoPostal.Size = new System.Drawing.Size(94, 20);
+            this.textBoxCodigoPostal.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxProvincia
             // 
-            this.textBox3.Location = new System.Drawing.Point(136, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 20);
-            this.textBox3.TabIndex = 7;
+            this.textBoxProvincia.Location = new System.Drawing.Point(136, 101);
+            this.textBoxProvincia.Name = "textBoxProvincia";
+            this.textBoxProvincia.Size = new System.Drawing.Size(94, 20);
+            this.textBoxProvincia.TabIndex = 7;
             // 
-            // textBox2
+            // textBoxPoblacion
             // 
-            this.textBox2.Location = new System.Drawing.Point(21, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 20);
-            this.textBox2.TabIndex = 6;
+            this.textBoxPoblacion.Location = new System.Drawing.Point(21, 101);
+            this.textBoxPoblacion.Name = "textBoxPoblacion";
+            this.textBoxPoblacion.Size = new System.Drawing.Size(94, 20);
+            this.textBoxPoblacion.TabIndex = 6;
             // 
-            // textBox1
+            // textBoxDireccion
             // 
-            this.textBox1.Location = new System.Drawing.Point(23, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 5;
+            this.textBoxDireccion.Location = new System.Drawing.Point(23, 51);
+            this.textBoxDireccion.Name = "textBoxDireccion";
+            this.textBoxDireccion.Size = new System.Drawing.Size(228, 20);
+            this.textBoxDireccion.TabIndex = 5;
             // 
             // label4
             // 
@@ -510,6 +510,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Aceptar";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -521,7 +522,7 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // Form2
+            // AltaCliente2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -530,7 +531,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.customGroupBox4);
             this.Controls.Add(this.customGroupBox1);
-            this.Name = "Form2";
+            this.Name = "AltaCliente2";
             this.Text = "Form2";
             this.customGroupBox4.ResumeLayout(false);
             this.customGroupBox4.PerformLayout();
@@ -553,35 +554,35 @@
         private CustomControls.CustomGroupBox customGroupBox4;
         private CustomControls.CustomGroupBox customGroupBox1;
         private CustomControls.CustomGroupBox customGroupBox2;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBoxTelefono2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBoxPersonaContacto;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxFax;
+        private System.Windows.Forms.TextBox textBoxTelefono1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private CustomControls.CustomGroupBox customGroupBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCodigoPostal;
+        private System.Windows.Forms.TextBox textBoxProvincia;
+        private System.Windows.Forms.TextBox textBoxPoblacion;
+        private System.Windows.Forms.TextBox textBoxDireccion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBoxNIF;
+        private System.Windows.Forms.TextBox textBoxNombreComercial;
         private CustomControls.CustomGroupBox customGroupBox5;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelCodigoCliente;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBoxFormaPago;
+        private System.Windows.Forms.TextBox textBoxRiesgoMaximo;
         private CustomControls.CustomGroupBox customGroupBox6;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox4;

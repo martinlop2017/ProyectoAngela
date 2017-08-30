@@ -31,5 +31,10 @@ namespace AdministracionAngela.Utils.Models.Cliente
         public string FormaDePago { get; set; }
         //Falta por meter el IVA
         #endregion
+
+        public AltaClienteViewModel()
+        {
+
+        }
     }
 }

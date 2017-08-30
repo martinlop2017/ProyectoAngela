@@ -131,7 +131,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(257, 44);
+            this.checkBox4.Location = new System.Drawing.Point(240, 44);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(65, 17);
             this.checkBox4.TabIndex = 3;
@@ -141,7 +141,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(195, 44);
+            this.checkBox3.Location = new System.Drawing.Point(172, 44);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(44, 17);
             this.checkBox3.TabIndex = 2;
@@ -241,7 +241,7 @@
             this.customGroupBox5.CustomGroupBoxColor = System.Drawing.Color.White;
             this.customGroupBox5.GroupImage = null;
             this.customGroupBox5.GroupTitle = "Codigo Cliente";
-            this.customGroupBox5.Location = new System.Drawing.Point(14, 40);
+            this.customGroupBox5.Location = new System.Drawing.Point(18, 36);
             this.customGroupBox5.Name = "customGroupBox5";
             this.customGroupBox5.PaintGroupBox = false;
             this.customGroupBox5.RoundCorners = 10;
@@ -280,7 +280,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(442, 36);
+            this.label11.Location = new System.Drawing.Point(442, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 13);
             this.label11.TabIndex = 13;
@@ -289,7 +289,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(174, 36);
+            this.label10.Location = new System.Drawing.Point(174, 48);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 12;

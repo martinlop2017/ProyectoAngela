@@ -65,11 +65,11 @@
     <Compile Include="Formularios\AltaClientes.Designer.cs">
       <DependentUpon>AltaClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form2.cs">
+    <Compile Include="Formularios\AltaCliente2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="Formularios\AltaCliente2.Designer.cs">
+      <DependentUpon>AltaCliente2.cs</DependentUpon>
     </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
     <Compile Include="Utils\FormOpener.cs" />
@@ -117,8 +117,8 @@
     <EmbeddedResource Include="Formularios\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\AltaCliente2.resx">
+      <DependentUpon>AltaCliente2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>

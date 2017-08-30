@@ -1,6 +1,6 @@
 ﻿namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    partial class Form2
+    partial class AltaCliente2
     {
         /// <summary>
         /// Required designer variable.

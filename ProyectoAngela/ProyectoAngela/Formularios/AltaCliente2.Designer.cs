@@ -29,9 +29,19 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule3 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule13 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule14 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule15 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule16 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule21 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule22 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule23 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule24 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule25 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule17 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule18 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule19 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule20 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente2));
             this.customGroupBox4 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
@@ -62,7 +72,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.customGroupBox3 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBoxCodigoPostal = new System.Windows.Forms.TextBox();
             this.textBoxProvincia = new System.Windows.Forms.TextBox();
             this.textBoxPoblacion = new System.Windows.Forms.TextBox();
@@ -181,10 +190,9 @@
             this.textBoxFormaPago.Name = "textBoxFormaPago";
             this.textBoxFormaPago.Size = new System.Drawing.Size(94, 20);
             this.textBoxFormaPago.TabIndex = 11;
-            validationRule1.DataType = AdministracionAngela.CustomControls.ValidationProvider.ValidationDataType.Integer;
-            validationRule1.ErrorMessage = "Forma de pago no puede estar vacio.";
-            validationRule1.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxFormaPago, validationRule1);
+            validationRule13.ErrorMessage = "Debe introducir una forma de pago";
+            validationRule13.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxFormaPago, validationRule13);
             // 
             // textBoxRiesgoMaximo
             // 
@@ -192,6 +200,9 @@
             this.textBoxRiesgoMaximo.Name = "textBoxRiesgoMaximo";
             this.textBoxRiesgoMaximo.Size = new System.Drawing.Size(94, 20);
             this.textBoxRiesgoMaximo.TabIndex = 9;
+            validationRule14.ErrorMessage = "Debe introducir un riesgo maximo";
+            validationRule14.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxRiesgoMaximo, validationRule14);
             // 
             // label14
             // 
@@ -280,6 +291,9 @@
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(173, 20);
             this.textBoxNIF.TabIndex = 15;
+            validationRule15.ErrorMessage = "El DNI introducido no es valido.";
+            validationRule15.RegExPattern = "^[0-9]{8}[A-Z]$";
+            this.validationProvider1.SetValidationRule(this.textBoxNIF, validationRule15);
             // 
             // textBoxNombreComercial
             // 
@@ -287,6 +301,9 @@
             this.textBoxNombreComercial.Name = "textBoxNombreComercial";
             this.textBoxNombreComercial.Size = new System.Drawing.Size(241, 20);
             this.textBoxNombreComercial.TabIndex = 14;
+            validationRule16.ErrorMessage = "Nombre comercial no puede estar vacio.";
+            validationRule16.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxNombreComercial, validationRule16);
             // 
             // label11
             // 
@@ -344,6 +361,9 @@
             this.textBoxTelefono2.Name = "textBoxTelefono2";
             this.textBoxTelefono2.Size = new System.Drawing.Size(92, 20);
             this.textBoxTelefono2.TabIndex = 10;
+            validationRule21.ErrorMessage = "Debe contener digitos";
+            validationRule21.RegExPattern = "(^[0-9]+$)";
+            this.validationProvider1.SetValidationRule(this.textBoxTelefono2, validationRule21);
             // 
             // label9
             // 
@@ -358,8 +378,11 @@
             // 
             this.textBoxPersonaContacto.Location = new System.Drawing.Point(246, 101);
             this.textBoxPersonaContacto.Name = "textBoxPersonaContacto";
-            this.textBoxPersonaContacto.Size = new System.Drawing.Size(94, 20);
+            this.textBoxPersonaContacto.Size = new System.Drawing.Size(106, 20);
             this.textBoxPersonaContacto.TabIndex = 8;
+            validationRule22.ErrorMessage = "Debe introducir una persona de contacto.";
+            validationRule22.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxPersonaContacto, validationRule22);
             // 
             // textBoxEmail
             // 
@@ -367,6 +390,9 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(94, 20);
             this.textBoxEmail.TabIndex = 7;
+            validationRule23.ErrorMessage = "El email introducido es incorrecto";
+            validationRule23.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            this.validationProvider1.SetValidationRule(this.textBoxEmail, validationRule23);
             // 
             // textBoxFax
             // 
@@ -374,6 +400,9 @@
             this.textBoxFax.Name = "textBoxFax";
             this.textBoxFax.Size = new System.Drawing.Size(94, 20);
             this.textBoxFax.TabIndex = 6;
+            validationRule24.ErrorMessage = "Debe contener digitos";
+            validationRule24.RegExPattern = "(^[0-9]+$)";
+            this.validationProvider1.SetValidationRule(this.textBoxFax, validationRule24);
             // 
             // textBoxTelefono1
             // 
@@ -381,8 +410,9 @@
             this.textBoxTelefono1.Name = "textBoxTelefono1";
             this.textBoxTelefono1.Size = new System.Drawing.Size(92, 20);
             this.textBoxTelefono1.TabIndex = 5;
-            validationRule2.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxTelefono1, validationRule2);
+            validationRule25.ErrorMessage = "Debe contener digitos";
+            validationRule25.RegExPattern = "(^[0-9]+$)";
+            this.validationProvider1.SetValidationRule(this.textBoxTelefono1, validationRule25);
             // 
             // label5
             // 
@@ -427,7 +457,6 @@
             this.customGroupBox3.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox3.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox3.BorderThickness = 1F;
-            this.customGroupBox3.Controls.Add(this.maskedTextBox1);
             this.customGroupBox3.Controls.Add(this.textBoxCodigoPostal);
             this.customGroupBox3.Controls.Add(this.textBoxProvincia);
             this.customGroupBox3.Controls.Add(this.textBoxPoblacion);
@@ -451,21 +480,16 @@
             this.customGroupBox3.TabStop = false;
             this.customGroupBox3.Text = "Direccion:";
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(267, 51);
-            this.maskedTextBox1.Mask = "99999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 9;
-            this.maskedTextBox1.ValidatingType = typeof(int);
-            // 
             // textBoxCodigoPostal
             // 
             this.textBoxCodigoPostal.Location = new System.Drawing.Point(246, 101);
             this.textBoxCodigoPostal.Name = "textBoxCodigoPostal";
             this.textBoxCodigoPostal.Size = new System.Drawing.Size(94, 20);
             this.textBoxCodigoPostal.TabIndex = 8;
+            validationRule17.ErrorMessage = "El Codigo Postal introducido no es valido";
+            validationRule17.IsRequired = true;
+            validationRule17.RegExPattern = "^(5[0-2]|[0-4][0-9])[0-9]{3}$";
+            this.validationProvider1.SetValidationRule(this.textBoxCodigoPostal, validationRule17);
             // 
             // textBoxProvincia
             // 
@@ -473,6 +497,9 @@
             this.textBoxProvincia.Name = "textBoxProvincia";
             this.textBoxProvincia.Size = new System.Drawing.Size(94, 20);
             this.textBoxProvincia.TabIndex = 7;
+            validationRule18.ErrorMessage = "La provincia no puede estar vacia.";
+            validationRule18.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxProvincia, validationRule18);
             // 
             // textBoxPoblacion
             // 
@@ -480,15 +507,19 @@
             this.textBoxPoblacion.Name = "textBoxPoblacion";
             this.textBoxPoblacion.Size = new System.Drawing.Size(94, 20);
             this.textBoxPoblacion.TabIndex = 6;
+            validationRule19.ErrorMessage = "Debe introducir una poblacion";
+            validationRule19.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxPoblacion, validationRule19);
             // 
             // textBoxDireccion
             // 
             this.textBoxDireccion.Location = new System.Drawing.Point(23, 51);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(228, 20);
+            this.textBoxDireccion.Size = new System.Drawing.Size(317, 20);
             this.textBoxDireccion.TabIndex = 5;
-            validationRule3.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule3);
+            validationRule20.ErrorMessage = "La direccion no puede estar vacia.";
+            validationRule20.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule20);
             // 
             // label4
             // 
@@ -549,6 +580,7 @@
             // 
             // validationProvider1
             // 
+            this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
             // AltaCliente2
@@ -619,7 +651,6 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
     }
 }

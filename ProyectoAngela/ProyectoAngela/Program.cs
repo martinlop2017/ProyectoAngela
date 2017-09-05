@@ -9,6 +9,7 @@ using StructureMap;
 using AdministracionAngela.ProyectoAngela.Infraestructura;
 using AdministracionAngela.ProyectoAngela.Utils;
 using AdministracionAngela.ProyectoAngela.Formularios;
+using ProyectoAngela;
 
 namespace AdministracionAngela.ProyectoAngela
 {

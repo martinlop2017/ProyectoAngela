@@ -32,5 +32,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.formOpener.ShowModalForm<GestionFacturas>();
         }
+
+        private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<MisDatos>();
+        }
+
+        private void tiposDeIvaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<TipoIVA>();
+        }
+
+        private void articulosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<GestionArticulos>();
+        }
     }
 }

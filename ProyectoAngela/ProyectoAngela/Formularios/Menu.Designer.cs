@@ -71,12 +71,14 @@
             this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
             this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.misDatosToolStripMenuItem.Text = "Mis Datos";
+            this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
             // 
             // tiposDeIvaToolStripMenuItem
             // 
             this.tiposDeIvaToolStripMenuItem.Name = "tiposDeIvaToolStripMenuItem";
             this.tiposDeIvaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.tiposDeIvaToolStripMenuItem.Text = "Tipos de Iva";
+            this.tiposDeIvaToolStripMenuItem.Click += new System.EventHandler(this.tiposDeIvaToolStripMenuItem_Click);
             // 
             // copiasDeSeguridadToolStripMenuItem
             // 
@@ -96,6 +98,7 @@
             this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
             this.articulosToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.articulosToolStripMenuItem.Text = "Articulos";
+            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
             // 
             // albaranesToolStripMenuItem
             // 

@@ -77,7 +77,25 @@
     <Compile Include="Formularios\AltaCliente2.Designer.cs">
       <DependentUpon>AltaCliente2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\GestionArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionArticulos.Designer.cs">
+      <DependentUpon>GestionArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TipoIVA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoIVA.Designer.cs">
+      <DependentUpon>TipoIVA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
+    <Compile Include="MisDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MisDatos.Designer.cs">
+      <DependentUpon>MisDatos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utils\FormOpener.cs" />
     <Compile Include="Formularios\Clientes.cs">
       <SubType>Form</SubType>
@@ -129,11 +147,20 @@
     <EmbeddedResource Include="Formularios\AltaCliente2.resx">
       <DependentUpon>AltaCliente2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionArticulos.resx">
+      <DependentUpon>GestionArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoIVA.resx">
+      <DependentUpon>TipoIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MisDatos.resx">
+      <DependentUpon>MisDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -179,6 +206,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rectangulo 7 Azulina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rectangulo 10.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

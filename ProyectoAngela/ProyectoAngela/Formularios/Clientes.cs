@@ -107,5 +107,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             //FillControls();
         }
+
+        private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -5,9 +5,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
-using AdministracionAngela.CapaDePersistencia;
+using StructureMap;
+using AdministracionAngela.ProyectoAngela.Infraestructura;
+using AdministracionAngela.ProyectoAngela.Utils;
+using AdministracionAngela.ProyectoAngela.Formularios;
 
-namespace ProyectoAngela
+namespace AdministracionAngela.ProyectoAngela
 {
     static class Program
     {
@@ -17,16 +20,15 @@ namespace ProyectoAngela
         [STAThread]
         static void Main()
         {
-            var repositorioCliente = new RepositorioCliente(new AdministracionAngelaContext());
-            ClienteProvider clienteProvider = new ClienteProvider(repositorioCliente);
-            //var dni = clienteProvider.GetClientePorNombre("Alvaro");
-            //Console.WriteLine(string.Format("Nombre: Alvaro,  DNI: {0}", dni));
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AltaClientes3());
 
-            
+            //Prepara el contenedor para las dependencias
+            var container = Container.For<ProyectoAngelaRegistry>();
+            //Resuelve las dependencias para ControlUsuarios
+            var form = container.GetInstance<ControlUsusarios>();
+
+            Application.Run(form);
         }
     }
 }

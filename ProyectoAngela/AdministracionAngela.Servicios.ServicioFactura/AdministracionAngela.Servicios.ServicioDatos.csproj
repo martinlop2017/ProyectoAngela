@@ -48,13 +48,13 @@
     <Compile Include="Repositorios\RepositorioCliente.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdministracionAngela.CapaDePersistencia\AdministracionAngela.CapaDePersistencia.csproj">
-      <Project>{e3209153-c400-460c-81fc-bbc8072c4386}</Project>
-      <Name>AdministracionAngela.CapaDePersistencia</Name>
+    <ProjectReference Include="..\AdministracionAngela.EFRepository\AdministracionAngela.EFRepository.csproj">
+      <Project>{f0fb3c29-77a5-4997-9cba-cba150bb96ab}</Project>
+      <Name>AdministracionAngela.EFRepository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\AdministracionAngela.Domain\AdministracionAngela.Domain.csproj">
-      <Project>{3fd71f7d-0c4f-41c9-beb5-f95b39d93843}</Project>
-      <Name>AdministracionAngela.Domain</Name>
+    <ProjectReference Include="..\AdministracionAngela.Utils\AdministracionAngela.Utils.csproj">
+      <Project>{4D087507-0804-4219-9BE5-4223BBCAE750}</Project>
+      <Name>AdministracionAngela.Utils</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

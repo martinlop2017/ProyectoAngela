@@ -11,7 +11,7 @@ namespace AdministracionAngela.Utils.Models.Cliente
         #region Datos Generales
         public long CodigoCliente { get; set; }
         public string NombreComercial { get; set; }
-        public long NIF { get; set; }
+        public string NIF { get; set; }
         #region Direccion
         public string Direccion { get; set; }
         public string Poblacion { get; set; }

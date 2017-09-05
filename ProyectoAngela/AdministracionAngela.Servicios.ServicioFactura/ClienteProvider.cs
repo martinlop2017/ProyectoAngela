@@ -24,5 +24,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var clientsFromRepository = this.repositorioCliente.GetAllClients();
             return MapToViewModel.MapToGestionCliente(clientsFromRepository);
         }
+
+        public void SaveClient(AltaClienteViewModel newClient)
+        {
+            var clientRepository = MapToRepository.MapNewClient(newClient);
+            this.repositorioCliente.SaveClient(clientRepository);
+        }
     }
 }

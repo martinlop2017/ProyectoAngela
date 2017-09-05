@@ -18,7 +18,7 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 Codigo = clienteFromRepository.Id,
                 Nombre = clienteFromRepository.Nombre,
-                NIF = clienteFromRepository.NIF.HasValue ? clienteFromRepository.NIF.Value : clienteFromRepository.CIF.Value
+                NIF = !string.IsNullOrEmpty(clienteFromRepository.NIF) ? clienteFromRepository.NIF : clienteFromRepository.CIF
             };
         }
         public static List<ClienteViewModel> MapClientList(List<Cliente> clienteFromRepositoryList)

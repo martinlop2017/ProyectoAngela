@@ -21,8 +21,8 @@ namespace AdministracionAngela.EFRepository
         }
     
         public long Id { get; set; }
-        public Nullable<long> CIF { get; set; }
-        public Nullable<long> NIF { get; set; }
+        public string CIF { get; set; }
+        public string NIF { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
     

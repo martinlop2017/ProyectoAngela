@@ -22,7 +22,7 @@ namespace AdministracionAngela.UtilsTest
         {
             Cliente repositoryClient = new Cliente();
             repositoryClient.Id = 1;
-            repositoryClient.NIF = 1;
+            repositoryClient.NIF = "1";
             repositoryClient.Nombre = "TestClient1";
             repositoryClient.Direccion = "TestDireccion1";
 
@@ -30,7 +30,7 @@ namespace AdministracionAngela.UtilsTest
 
             Assert.Equal(1, clienteViewModel.Codigo);
             Assert.Equal("TestClient1", clienteViewModel.Nombre);
-            //Assert.Equal(1, clienteViewModel.NIF);
+            Assert.Equal("1", clienteViewModel.NIF);
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace AdministracionAngela.UtilsTest
             Assert.Equal(3, listClientDomain.Count);
             Assert.Equal(0, listClientDomain[0].Codigo);
             Assert.Equal("TestClient1", listClientDomain[1].Nombre);
-            //Assert.Equal(2, listClientDomain[2].NIF);
+            Assert.Equal("2", listClientDomain[2].NIF);
         }
 
         [Fact]
@@ -72,7 +72,7 @@ namespace AdministracionAngela.UtilsTest
                 testList.Add(new Cliente()
                 {
                     Id = i,
-                    NIF = i,
+                    NIF = i.ToString(),
                     Nombre = string.Format("TestClient{0}", i),
                     Direccion = string.Format("TestDireccion{0}", i)
                 });

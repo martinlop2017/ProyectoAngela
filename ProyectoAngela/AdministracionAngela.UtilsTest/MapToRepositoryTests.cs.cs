@@ -38,6 +38,12 @@ namespace AdministracionAngela.UtilsTest
             };
 
             var newClientRepository = MapToRepository.MapNewClient(clienteViewModel);
+
+            Assert.Equal(1, newClientRepository.Id);
+            Assert.Equal(string.Empty, newClientRepository.CIF);
+            Assert.Equal("49083366L", newClientRepository.NIF);
+            Assert.Equal("TestNombreComercial", newClientRepository.Nombre);
+            Assert.Equal("TestAddress", newClientRepository.Direccion);
         }
     }
 }

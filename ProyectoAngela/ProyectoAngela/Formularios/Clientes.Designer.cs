@@ -184,7 +184,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(173, 45);
+            this.label7.Location = new System.Drawing.Point(168, 49);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(358, 42);
             this.label7.TabIndex = 14;

@@ -15,7 +15,10 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Cliente()
             {
-
+                Id = nuevoClienteViewModel.CodigoCliente,
+                NIF = nuevoClienteViewModel.NIF,
+                Direccion = nuevoClienteViewModel.Direccion,
+                Nombre = nuevoClienteViewModel.NombreComercial
             };
         }
         #endregion

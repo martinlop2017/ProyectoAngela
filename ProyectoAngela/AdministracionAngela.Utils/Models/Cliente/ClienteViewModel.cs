@@ -10,7 +10,7 @@ namespace AdministracionAngela.Utils.Models.Cliente
     {
         public long Codigo { get; set; }
         public string Nombre { get; set; }
-        public long NIF { get; set; }
+        public string NIF { get; set; }
 
         public ClienteViewModel()
         {

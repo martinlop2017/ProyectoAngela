@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IClienteProvider
     {
         GestionClienteViewModel GetGestionCliente();
+        void SaveClient(AltaClienteViewModel newClient);
     }
 }

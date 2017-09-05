@@ -100,7 +100,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<AltaClientes>();
+            this.formOpener.ShowModalForm<AltaCliente2>();
         }
 
         private void Clientes_Load(object sender, EventArgs e)

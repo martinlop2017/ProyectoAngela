@@ -56,7 +56,7 @@ namespace AdministracionAngela.UtilsTest
             Assert.Equal(3, gestionCliente.Clientes.Count);
             Assert.Equal(0, gestionCliente.Clientes[0].Codigo);
             Assert.Equal("TestClient1", gestionCliente.Clientes[1].Nombre);
-            //Assert.Equal(2, gestionCliente.Clientes[2].NIF);
+            Assert.Equal("2", gestionCliente.Clientes[2].NIF);
         }
 
         /// <summary>

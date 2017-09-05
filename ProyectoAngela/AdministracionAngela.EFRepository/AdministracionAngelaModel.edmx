@@ -4,14 +4,14 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AdministracionAngelaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AdministracionAngelaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CIF" Type="bigint" />
-          <Property Name="NIF" Type="bigint" />
+          <Property Name="CIF" Type="nvarchar(max)" />
+          <Property Name="NIF" Type="nvarchar(max)" />
           <Property Name="Nombre" Type="nvarchar(max)" />
           <Property Name="Direccion" Type="nvarchar(max)" />
         </EntityType>
@@ -24,6 +24,7 @@
           <Property Name="Fecha" Type="datetime" />
           <Property Name="RecargoEquivalencia" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Base" Type="bigint" />
+          <Property Name="TotalBase" Type="decimal" Precision="18" Scale="4" />
           <Property Name="Total" Type="bigint" />
         </EntityType>
         <EntityType Name="IVA">
@@ -135,8 +136,7 @@
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AdministracionAngelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -145,8 +145,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CIF" Type="Int64" />
-          <Property Name="NIF" Type="Int64" />
+          <Property Name="CIF" Type="String" />
+          <Property Name="NIF" Type="String" />
           <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
@@ -163,6 +163,7 @@
           <Property Name="Total" Type="Int64" />
           <NavigationProperty Name="Cliente" Relationship="Self.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
           <NavigationProperty Name="LineaFactura" Relationship="Self.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
+          <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="4" />
         </EntityType>
         <EntityType Name="IVA">
           <Key>
@@ -298,6 +299,7 @@
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="TotalBase" ColumnName="TotalBase" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />

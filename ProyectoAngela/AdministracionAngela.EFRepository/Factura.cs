@@ -26,6 +26,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> RecargoEquivalencia { get; set; }
         public Nullable<long> Base { get; set; }
         public Nullable<long> Total { get; set; }
+        public Nullable<decimal> TotalBase { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

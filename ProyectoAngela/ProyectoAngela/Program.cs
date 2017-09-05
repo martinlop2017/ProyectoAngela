@@ -24,7 +24,7 @@ namespace ProyectoAngela
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ControlUsusarios());
+            Application.Run(new AltaClientes3());
 
             
         }

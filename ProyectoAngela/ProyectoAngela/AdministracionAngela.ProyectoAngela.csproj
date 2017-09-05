@@ -71,7 +71,6 @@
     <Compile Include="AltaClientes3.Designer.cs">
       <DependentUpon>AltaClientes3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clientes.cs">
     <Compile Include="Formularios\AltaCliente2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,7 +117,6 @@
     <EmbeddedResource Include="AltaClientes3.resx">
       <DependentUpon>AltaClientes3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clientes.resx">
     <EmbeddedResource Include="Formularios\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>

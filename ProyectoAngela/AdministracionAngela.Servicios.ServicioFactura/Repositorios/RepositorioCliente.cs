@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Models.Cliente;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
@@ -19,6 +20,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         public List<Cliente> GetAllClients()
         {
             return this.dbContext.Clientes.ToList<Cliente>();
+        }
+
+        public void SaveClient(Cliente newClient)
+        {
+            this.dbContext.Clientes.Add(newClient);
         }
     }
 }

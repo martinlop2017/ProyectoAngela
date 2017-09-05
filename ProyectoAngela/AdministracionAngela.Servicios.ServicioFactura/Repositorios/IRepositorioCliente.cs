@@ -10,5 +10,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
     public interface IRepositorioCliente
     {
         List<Cliente> GetAllClients();
+        void SaveClient(Cliente newClient);
     }
 }

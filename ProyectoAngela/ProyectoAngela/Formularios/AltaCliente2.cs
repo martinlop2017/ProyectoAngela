@@ -33,6 +33,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate());
 
             var newClient = this.ReadNewClientFromForm();
+
+            this.clienteProvider.SaveClient(newClient);
         }
 
         private AltaClienteViewModel ReadNewClientFromForm()

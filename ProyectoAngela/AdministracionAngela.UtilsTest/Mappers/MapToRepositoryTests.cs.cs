@@ -45,5 +45,60 @@ namespace AdministracionAngela.UtilsTest.Mappers
             Assert.Equal("TestNombreComercial", newClientRepository.Nombre);
             Assert.Equal("TestAddress", newClientRepository.Direccion);
         }
+
+        [Fact]
+        public void Should_Map_ClienteViewModel()
+        {
+            var clienteViewModel = new ClienteViewModel()
+            {
+                Nombre = "TestName",
+                NIF = "TestNIF",
+                Codigo = 1
+            };
+
+            var clientRepository = MapToRepository.MapClienteViewModel(clienteViewModel);
+
+            Assert.Equal(1, clientRepository.Id);
+            Assert.Equal("TestNIF", clientRepository.NIF);
+            Assert.Equal("TestName", clientRepository.Nombre);
+        }
+
+        [Fact]
+        public void Should_Map_List_Of_ClienteViewModel()
+        {
+            var listOfClienteViewModel = this.GenerateTestList(3);
+
+            var clientesRepository = MapToRepository.MapListOfClienteViewModel(listOfClienteViewModel);
+
+            Assert.Equal(3, clientesRepository.Count);
+
+            Assert.Equal(0, clientesRepository[0].Id);
+            Assert.Equal("TestNIF0", clientesRepository[0].NIF);
+            Assert.Equal("TestName0", clientesRepository[0].Nombre);
+
+            Assert.Equal(1, clientesRepository[1].Id);
+            Assert.Equal("TestNIF1", clientesRepository[1].NIF);
+            Assert.Equal("TestName1", clientesRepository[1].Nombre);
+
+            Assert.Equal(2, clientesRepository[2].Id);
+            Assert.Equal("TestNIF2", clientesRepository[2].NIF);
+            Assert.Equal("TestName2", clientesRepository[2].Nombre);
+        }
+
+        private List<ClienteViewModel> GenerateTestList(int length)
+        {
+            List<ClienteViewModel> testList = new List<ClienteViewModel>();
+            for (int i = 0; i < length; i++)
+            {
+                testList.Add(new ClienteViewModel()
+                {
+                    Nombre = string.Format("TestName{0}", i),
+                    NIF = string.Format("TestNIF{0}", i),
+                    Codigo = i
+                });
+            }
+
+            return testList;
+        }
     }
 }

@@ -12,8 +12,22 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CIF" Type="nvarchar(max)" />
           <Property Name="NIF" Type="nvarchar(max)" />
-          <Property Name="Nombre" Type="nvarchar(max)" />
-          <Property Name="Direccion" Type="nvarchar(max)" />
+          <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Poblacion" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Provincia" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CodigoPostal" Type="int" Nullable="false" />
+          <Property Name="Telefono1" Type="int" Nullable="false" />
+          <Property Name="Telefono2" Type="int" />
+          <Property Name="Fax" Type="int" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PersonaDeContacto" Type="nvarchar(max)" />
+          <Property Name="RiesgoMaximo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="FormaDePago" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IsGeneral" Type="bit" Nullable="false" />
+          <Property Name="RecargoEquivalencia" Type="bit" Nullable="false" />
+          <Property Name="UnionEuropea" Type="bit" Nullable="false" />
+          <Property Name="Excento" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -145,11 +159,25 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CIF" Type="String" />
-          <Property Name="NIF" Type="String" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CIF" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="NIF" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Factura" Relationship="Self.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
+          <Property Name="Poblacion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="Int32" Nullable="false" />
+          <Property Name="Telefono1" Type="Int32" Nullable="false" />
+          <Property Name="Telefono2" Type="Int32" />
+          <Property Name="Fax" Type="Int32" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonaDeContacto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RiesgoMaximo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="FormaDePago" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsGeneral" Type="Boolean" Nullable="false" />
+          <Property Name="RecargoEquivalencia" Type="Boolean" Nullable="false" />
+          <Property Name="UnionEuropea" Type="Boolean" Nullable="false" />
+          <Property Name="Excento" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -288,6 +316,20 @@
           <EntitySetMapping Name="Cliente">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Cliente">
               <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Excento" ColumnName="Excento" />
+                <ScalarProperty Name="UnionEuropea" ColumnName="UnionEuropea" />
+                <ScalarProperty Name="RecargoEquivalencia" ColumnName="RecargoEquivalencia" />
+                <ScalarProperty Name="IsGeneral" ColumnName="IsGeneral" />
+                <ScalarProperty Name="FormaDePago" ColumnName="FormaDePago" />
+                <ScalarProperty Name="RiesgoMaximo" ColumnName="RiesgoMaximo" />
+                <ScalarProperty Name="PersonaDeContacto" ColumnName="PersonaDeContacto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CIF" ColumnName="CIF" />
                 <ScalarProperty Name="NIF" ColumnName="NIF" />

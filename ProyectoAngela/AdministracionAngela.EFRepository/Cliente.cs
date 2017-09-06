@@ -25,6 +25,20 @@ namespace AdministracionAngela.EFRepository
         public string NIF { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
+        public string Poblacion { get; set; }
+        public string Provincia { get; set; }
+        public int CodigoPostal { get; set; }
+        public int Telefono1 { get; set; }
+        public Nullable<int> Telefono2 { get; set; }
+        public Nullable<int> Fax { get; set; }
+        public string Email { get; set; }
+        public string PersonaDeContacto { get; set; }
+        public decimal RiesgoMaximo { get; set; }
+        public string FormaDePago { get; set; }
+        public bool IsGeneral { get; set; }
+        public bool RecargoEquivalencia { get; set; }
+        public bool UnionEuropea { get; set; }
+        public bool Excento { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }

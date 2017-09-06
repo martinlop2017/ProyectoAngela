@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +30,12 @@ namespace AdministracionAngela.Utils.Models.Cliente
         #region Datos Comerciales
         public Decimal RiesgoMaximo { get; set; }
         public string FormaDePago { get; set; }
-        //Falta por meter el IVA
+        #endregion
+        #region IVA
+        public bool isGeneral { get; set; }
+        public bool RecargoEquivalencia { get; set; }
+        public bool UnionEuropea { get; set; }
+        public bool Excento { get; set; }
         #endregion
 
         public AltaClienteViewModel()

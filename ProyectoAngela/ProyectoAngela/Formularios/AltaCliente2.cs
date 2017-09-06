@@ -20,6 +20,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         public AltaCliente2(IClienteProvider clienteProvider)
         {
             this.clienteProvider = clienteProvider;
+
             InitializeComponent();
         }
 
@@ -98,6 +99,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 checkBoxRE.Checked = false;
                 checkBoxUE.Checked = false;
             }
+        }
+
+        private void AltaCliente2_Load(object sender, EventArgs e)
+        {
+            this.labelCodigoCliente.Text = this.clienteProvider.GetNextCodigoCliente().ToString();
         }
     }
 }

@@ -22,6 +22,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Clientes.ToList<Cliente>();
         }
 
+        public Cliente GetLastClient()
+        {
+            return this.dbContext.Clientes.OrderByDescending(c => c.Id).FirstOrDefault();
+        }
+
         public void SaveClient(Cliente newClient)
         {
             this.dbContext.Clientes.Add(newClient);

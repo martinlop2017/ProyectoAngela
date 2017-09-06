@@ -25,6 +25,18 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionCliente(clientsFromRepository);
         }
 
+        /// <summary>
+        /// Devuelve el Proximo codigo de cliente: comprueba cual es el ultimmo id de cliente y le suma 1. En caso de noexistir clientes, devuelve 1.
+        /// </summary>
+        /// <returns></returns>
+        public int GetNextCodigoCliente()
+        {
+            var lastClient = this.repositorioCliente.GetLastClient();
+            var lastClientId = lastClient != null ? (int)lastClient.Id + 1 : 1;
+
+            return lastClientId;
+        }
+
         public void SaveClient(AltaClienteViewModel newClient)
         {
             var clientRepository = MapToRepository.MapNewClient(newClient);

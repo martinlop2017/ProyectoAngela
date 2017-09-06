@@ -286,9 +286,8 @@
             this.labelCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCodigoCliente.Location = new System.Drawing.Point(32, 33);
             this.labelCodigoCliente.Name = "labelCodigoCliente";
-            this.labelCodigoCliente.Size = new System.Drawing.Size(60, 25);
+            this.labelCodigoCliente.Size = new System.Drawing.Size(0, 25);
             this.labelCodigoCliente.TabIndex = 0;
-            this.labelCodigoCliente.Text = "9999";
             // 
             // textBoxNIF
             // 
@@ -599,6 +598,7 @@
             this.Controls.Add(this.customGroupBox1);
             this.Name = "AltaCliente2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.AltaCliente2_Load);
             this.customGroupBox4.ResumeLayout(false);
             this.customGroupBox4.PerformLayout();
             this.customGroupBox6.ResumeLayout(false);

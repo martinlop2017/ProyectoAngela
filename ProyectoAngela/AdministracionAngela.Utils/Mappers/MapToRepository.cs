@@ -22,6 +22,21 @@ namespace AdministracionAngela.Utils.Mappers
                 Nombre = nuevoClienteViewModel.NombreComercial
             };
         }
+
+        public static Cliente MapClienteViewModel(ClienteViewModel cliente)
+        {
+            return new Cliente()
+            {
+                Id = cliente.Codigo,
+                Nombre = cliente.Nombre,
+                NIF = cliente.NIF
+            };
+        }
+
+        public static List<Cliente> MapListOfClienteViewModel(List<ClienteViewModel> clientes)
+        {
+            return clientes.Select(cliente => MapClienteViewModel(cliente)).ToList<Cliente>();
+        }
         #endregion
     }
 }

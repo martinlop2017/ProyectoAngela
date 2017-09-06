@@ -26,7 +26,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
                 CodigoPostal = 21045,
                 Direccion = "TestAddress",
                 Email = "TestEmail@gmail.com",
-                Fax = "TestFax",
+                Fax = 11,
                 FormaDePago = "TestFormaDePago",
                 NombreComercial = "TestNombreComercial",
                 PersonaDeContacto = "TestPersonaDeContacto",

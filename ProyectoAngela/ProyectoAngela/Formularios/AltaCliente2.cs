@@ -49,7 +49,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             return new AltaClienteViewModel()
             {
-                //CodigoCliente = labelCodigoCliente.Text,
                 NombreComercial = textBoxNombreComercial.Text,
                 NIF = textBoxNIF.Text,
                 Direccion = textBoxDireccion.Text,
@@ -58,11 +57,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 CodigoPostal = Convert.ToInt32(textBoxCodigoPostal.Text),
                 Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
                 Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
-                Fax = textBoxFax.Text,
+                Fax = Convert.ToInt32(textBoxFax.Text),
                 Email = textBoxEmail.Text,
                 PersonaDeContacto = textBoxPersonaContacto.Text,
                 RiesgoMaximo = Convert.ToInt32(textBoxRiesgoMaximo.Text),
-                FormaDePago = textBoxFormaPago.Text
+                FormaDePago = textBoxFormaPago.Text,
+                isGeneral = checkBoxIVAGeneral.Checked,
+                RecargoEquivalencia = checkBoxRE.Checked,
+                UnionEuropea = checkBoxUE.Checked,
+                Excento = checkBoxExcento.Checked
             };
         }
 

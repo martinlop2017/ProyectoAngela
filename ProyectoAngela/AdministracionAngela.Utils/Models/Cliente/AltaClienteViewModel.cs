@@ -28,7 +28,7 @@ namespace AdministracionAngela.Utils.Models.Cliente
 
         public int Telefono1 { get; set; }
         public int Telefono2 { get; set; }
-        public string Fax { get; set; }
+        public int Fax { get; set; }
         public string Email { get; set; }
         public string PersonaDeContacto { get; set; }
 

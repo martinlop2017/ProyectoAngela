@@ -19,7 +19,21 @@ namespace AdministracionAngela.Utils.Mappers
                 NIF = nuevoClienteViewModel.NIF,
                 CIF = string.Empty,
                 Direccion = nuevoClienteViewModel.Direccion,
-                Nombre = nuevoClienteViewModel.NombreComercial
+                Nombre = nuevoClienteViewModel.NombreComercial,
+                Poblacion = nuevoClienteViewModel.Poblacion,
+                Provincia = nuevoClienteViewModel.Provincia,
+                CodigoPostal = nuevoClienteViewModel.CodigoPostal,
+                Telefono1 = nuevoClienteViewModel.Telefono1,
+                Telefono2 = nuevoClienteViewModel.Telefono2,
+                Fax=nuevoClienteViewModel.Fax,
+                Email=nuevoClienteViewModel.Email,
+                PersonaDeContacto=nuevoClienteViewModel.PersonaDeContacto,
+                RiesgoMaximo=nuevoClienteViewModel.RiesgoMaximo,
+                FormaDePago = nuevoClienteViewModel.FormaDePago,
+                IsGeneral = nuevoClienteViewModel.isGeneral,
+                RecargoEquivalencia = nuevoClienteViewModel.RecargoEquivalencia,
+                UnionEuropea = nuevoClienteViewModel.UnionEuropea,
+                Excento=nuevoClienteViewModel.Excento
             };
         }
 

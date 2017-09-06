@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Cliente;
 
@@ -35,7 +36,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button2_Click(object sender, EventArgs e)
         {
+            var selectedRows = this.dataGridViewClientes.SelectedRows;
 
+            var mappedSelectedRows = selectedRows.ToList<ClienteViewModel>();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -105,7 +108,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            //FillControls();
+            FillControls();
         }
 
         private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

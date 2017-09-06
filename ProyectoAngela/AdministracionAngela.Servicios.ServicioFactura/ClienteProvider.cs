@@ -22,6 +22,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public bool DeleteClients(List<ClienteViewModel> clientsToDelete)
         {
             var repositoryClientstoDelete = MapToRepository.MapListOfClienteViewModel(clientsToDelete);
+
+            return this.repositorioCliente.DeleteClients(repositoryClientstoDelete);
         }
 
         public GestionClienteViewModel GetGestionCliente()

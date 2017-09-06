@@ -85,6 +85,30 @@ namespace AdministracionAngela.UtilsTest.Mappers
             Assert.Equal("TestName2", clientesRepository[2].Nombre);
         }
 
+        [Fact]
+        public void Should_Map_List_Of_ClienteViewModel_With_A_Null_Element()
+        {
+            var listOfClienteViewModel = this.GenerateTestList(3);
+
+            listOfClienteViewModel.Insert(0, null);
+
+            var clientesRepository = MapToRepository.MapListOfClienteViewModel(listOfClienteViewModel);
+
+            Assert.Equal(3, clientesRepository.Count);
+
+            Assert.Equal(0, clientesRepository[0].Id);
+            Assert.Equal("TestNIF0", clientesRepository[0].NIF);
+            Assert.Equal("TestName0", clientesRepository[0].Nombre);
+
+            Assert.Equal(1, clientesRepository[1].Id);
+            Assert.Equal("TestNIF1", clientesRepository[1].NIF);
+            Assert.Equal("TestName1", clientesRepository[1].Nombre);
+
+            Assert.Equal(2, clientesRepository[2].Id);
+            Assert.Equal("TestNIF2", clientesRepository[2].NIF);
+            Assert.Equal("TestName2", clientesRepository[2].Nombre);
+        }
+
         private List<ClienteViewModel> GenerateTestList(int length)
         {
             List<ClienteViewModel> testList = new List<ClienteViewModel>();

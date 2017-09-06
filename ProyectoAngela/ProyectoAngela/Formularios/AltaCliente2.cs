@@ -65,9 +65,39 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             };
         }
 
-        private void checkBoxIVAGeneral_CheckedChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Importante usar evento Click y no CheckChanged, porque sino, cuando cambias el valor checked, vuelve a dispararse el evento
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void checkBoxIVA_Click(object sender, EventArgs e)
         {
+            this.AdjustIVAcheckBoxes(sender);
+        }
 
+        /// <summary>
+        /// Uncheck los otros checkBoxes en funcion del que se haya clickado
+        /// </summary>
+        /// <param name="checkBoxChecked"></param>
+        private void AdjustIVAcheckBoxes(object checkBoxChecked)
+        {
+            if (checkBoxChecked == this.checkBoxIVAGeneral || checkBoxChecked == this.checkBoxRE)
+            {
+                checkBoxUE.Checked = false;
+                checkBoxExcento.Checked = false;
+            }
+            else if (checkBoxChecked == this.checkBoxUE)
+            {
+                checkBoxIVAGeneral.Checked = false;
+                checkBoxRE.Checked = false;
+                checkBoxExcento.Checked = false;
+            }
+            else
+            {
+                checkBoxIVAGeneral.Checked = false;
+                checkBoxRE.Checked = false;
+                checkBoxUE.Checked = false;
+            }
         }
     }
 }

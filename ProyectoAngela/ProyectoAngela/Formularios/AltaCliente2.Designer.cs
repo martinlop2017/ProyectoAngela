@@ -153,6 +153,7 @@
             this.checkBoxExcento.TabIndex = 3;
             this.checkBoxExcento.Text = "Excento";
             this.checkBoxExcento.UseVisualStyleBackColor = true;
+            this.checkBoxExcento.Click += new System.EventHandler(this.checkBoxIVA_Click);
             // 
             // checkBoxUE
             // 
@@ -163,6 +164,7 @@
             this.checkBoxUE.TabIndex = 2;
             this.checkBoxUE.Text = "U.E";
             this.checkBoxUE.UseVisualStyleBackColor = true;
+            this.checkBoxUE.Click += new System.EventHandler(this.checkBoxIVA_Click);
             // 
             // checkBoxRE
             // 
@@ -173,6 +175,7 @@
             this.checkBoxRE.TabIndex = 1;
             this.checkBoxRE.Text = "R.E";
             this.checkBoxRE.UseVisualStyleBackColor = true;
+            this.checkBoxRE.Click += new System.EventHandler(this.checkBoxIVA_Click);
             // 
             // checkBoxIVAGeneral
             // 
@@ -183,7 +186,7 @@
             this.checkBoxIVAGeneral.TabIndex = 0;
             this.checkBoxIVAGeneral.Text = "General";
             this.checkBoxIVAGeneral.UseVisualStyleBackColor = true;
-            this.checkBoxIVAGeneral.CheckedChanged += new System.EventHandler(this.checkBoxIVAGeneral_CheckedChanged);
+            this.checkBoxIVAGeneral.Click += new System.EventHandler(this.checkBoxIVA_Click);
             // 
             // textBoxFormaPago
             // 

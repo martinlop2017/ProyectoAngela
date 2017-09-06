@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AdministracionAngela.UtilsTest
+namespace AdministracionAngela.UtilsTest.Mappers
 {
     public class MapToDomainTests
     {

@@ -59,8 +59,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapToDomainTests.cs" />
-    <Compile Include="MapToRepositoryTests.cs.cs" />
+    <Compile Include="Mappers\MapToDomainTests.cs" />
+    <Compile Include="Mappers\MapToRepositoryTests.cs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace AdministracionAngela.UtilsTest
+namespace AdministracionAngela.UtilsTest.Mappers
 {
     public class MapToRepositoryTests
     {
@@ -17,7 +17,7 @@ namespace AdministracionAngela.UtilsTest
         }
 
         [Fact]
-        public void Should_Map_Client_From_ViewModel()
+        public void Should_Map_AltaClienteViewModel()
         {
             var clienteViewModel = new AltaClienteViewModel()
             {
@@ -37,7 +37,7 @@ namespace AdministracionAngela.UtilsTest
                 Telefono2 = 67654321
             };
 
-            var newClientRepository = MapToRepository.MapNewClient(clienteViewModel);
+            var newClientRepository = MapToRepository.MapAltaClienteViewModel(clienteViewModel);
 
             Assert.Equal(1, newClientRepository.Id);
             Assert.Equal(string.Empty, newClientRepository.CIF);

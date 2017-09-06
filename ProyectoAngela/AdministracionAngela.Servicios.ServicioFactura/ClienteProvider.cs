@@ -46,7 +46,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveClient(AltaClienteViewModel newClient)
         {
-            var clientRepository = MapToRepository.MapNewClient(newClient);
+            var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient);
             this.repositorioCliente.SaveClient(clientRepository);
         }
     }

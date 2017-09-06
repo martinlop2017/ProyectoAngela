@@ -11,7 +11,7 @@ namespace AdministracionAngela.Utils.Mappers
     public static class MapToRepository
     {
         #region Mapeo de Cliente
-        public static Cliente MapNewClient(AltaClienteViewModel nuevoClienteViewModel)
+        public static Cliente MapAltaClienteViewModel(AltaClienteViewModel nuevoClienteViewModel)
         {
             return new Cliente()
             {

@@ -35,8 +35,9 @@ namespace AdministracionAngela.Utils.Mappers
 
         public static List<Cliente> MapListOfClienteViewModel(List<ClienteViewModel> clientes)
         {
-            return clientes.Select(cliente => MapClienteViewModel(cliente)).ToList<Cliente>();
+            return clientes.Where(c => c != null).Select(cliente => MapClienteViewModel(cliente)).ToList<Cliente>();
         }
+
         #endregion
     }
 }

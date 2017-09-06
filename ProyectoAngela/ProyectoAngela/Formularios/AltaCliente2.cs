@@ -30,11 +30,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate());
+            if (this.Validate())
+            {
+                var newClient = this.ReadNewClientFromForm();
 
-            var newClient = this.ReadNewClientFromForm();
+                this.clienteProvider.SaveClient(newClient);
+            }
+        }
 
-            this.clienteProvider.SaveClient(newClient);
+        private bool Validate()
+        {
+            return
+                string.IsNullOrEmpty(this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate()));
         }
 
         private AltaClienteViewModel ReadNewClientFromForm()

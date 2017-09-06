@@ -204,8 +204,9 @@
             this.textBoxRiesgoMaximo.Name = "textBoxRiesgoMaximo";
             this.textBoxRiesgoMaximo.Size = new System.Drawing.Size(94, 20);
             this.textBoxRiesgoMaximo.TabIndex = 9;
-            validationRule2.ErrorMessage = "Debe introducir un riesgo maximo";
+            validationRule2.ErrorMessage = "Debe introducir un riesgo maximo en digitos";
             validationRule2.IsRequired = true;
+            validationRule2.RegExPattern = "(^[0-9]+$)";
             this.validationProvider1.SetValidationRule(this.textBoxRiesgoMaximo, validationRule2);
             // 
             // label14

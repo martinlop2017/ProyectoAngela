@@ -64,5 +64,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 FormaDePago = textBoxFormaPago.Text
             };
         }
+
+        private void checkBoxIVAGeneral_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

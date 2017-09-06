@@ -41,6 +41,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var mappedSelectedRows = selectedRows.ToList<ClienteViewModel>();
 
             this.clienteProvider.DeleteClients(mappedSelectedRows);
+
+            this.FillControls();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

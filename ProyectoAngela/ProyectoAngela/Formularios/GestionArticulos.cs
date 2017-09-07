@@ -44,6 +44,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void FillControls()
         {
             viewModel = articuloProvider.GetGestionArticulo();
+            this.dataGridViewArticulos.DataSource = viewModel.Articulos;
         }
     }
 }

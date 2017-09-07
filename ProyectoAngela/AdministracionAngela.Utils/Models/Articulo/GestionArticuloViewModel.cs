@@ -9,7 +9,7 @@ namespace AdministracionAngela.Utils.Models.Articulo
 {
     public class GestionArticuloViewModel
     {
-        public BindingList<ArticuloViewModel> Clientes { get; set; }
+        public BindingList<ArticuloViewModel> Articulos { get; set; }
 
         public GestionArticuloViewModel()
         {

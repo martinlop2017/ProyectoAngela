@@ -59,7 +59,7 @@ namespace AdministracionAngela.Utils.Mappers
 
             return new GestionArticuloViewModel()
             {
-                Clientes = new BindingList<ArticuloViewModel>(articulosViewModel)
+                Articulos = new BindingList<ArticuloViewModel>(articulosViewModel)
             };
         }
 

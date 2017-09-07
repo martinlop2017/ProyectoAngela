@@ -32,10 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionArticulos));
             this.label7 = new System.Windows.Forms.Label();
-            this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewArticulos = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +43,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).BeginInit();
             this.SuspendLayout();
             // 
             // label7
@@ -60,15 +57,15 @@
             this.label7.TabIndex = 26;
             this.label7.Text = "Gestión de Articulo";
             // 
-            // dataGridViewClientes
+            // dataGridViewArticulos
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewClientes.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridViewClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridViewArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewArticulos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridViewArticulos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -76,34 +73,14 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.dataGridViewClientes.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewClientes.Location = new System.Drawing.Point(33, 216);
-            this.dataGridViewClientes.Name = "dataGridViewClientes";
-            this.dataGridViewClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(643, 354);
-            this.dataGridViewClientes.TabIndex = 25;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Cod.";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Nombre";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 400;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "C.F.I./N.I.F.";
-            this.Column3.Name = "Column3";
+            this.dataGridViewArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewArticulos.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewArticulos.Location = new System.Drawing.Point(33, 216);
+            this.dataGridViewArticulos.Name = "dataGridViewArticulos";
+            this.dataGridViewArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewArticulos.Size = new System.Drawing.Size(643, 354);
+            this.dataGridViewArticulos.TabIndex = 25;
             // 
             // label5
             // 
@@ -211,7 +188,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(708, 642);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dataGridViewClientes);
+            this.Controls.Add(this.dataGridViewArticulos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -226,7 +203,7 @@
             this.Name = "GestionArticulos";
             this.Text = "GestionArticulos";
             this.Load += new System.EventHandler(this.GestionArticulos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,10 +212,7 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridViewClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridView dataGridViewArticulos;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

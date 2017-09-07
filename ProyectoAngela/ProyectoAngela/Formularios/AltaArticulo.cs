@@ -20,5 +20,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.articuloProvider = articuloProvider;
             InitializeComponent();
         }
+
+        private bool Validate()
+        {
+            return
+                string.IsNullOrEmpty(this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate()));
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+        }
     }
 }

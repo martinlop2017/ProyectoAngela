@@ -28,5 +28,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<AltaArticulo>();
+        }
     }
 }

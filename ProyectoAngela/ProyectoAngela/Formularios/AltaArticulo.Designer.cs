@@ -52,7 +52,7 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(100, 20);
             this.textBoxDescripcion.TabIndex = 1;
-            validationRule1.InitialValue = "Required";
+            validationRule1.ErrorMessage = "Required";
             validationRule1.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxDescripcion, validationRule1);
             // 
@@ -64,9 +64,11 @@
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Ok";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // validationProvider1
             // 
+            this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
             // AltaArticulo

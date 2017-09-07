@@ -36,5 +36,27 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.formOpener.ShowModalForm<AltaArticulo>();
         }
+
+        private void GestionArticulos_Load(object sender, EventArgs e)
+        {
+            FillControls();
+        }
+
+        private void FillControls()
+        {
+            viewModel = articuloProvider.GetGestionArticulo();
+            this.dataGridViewArticulos.DataSource = viewModel.Articulos;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var selectedRows = this.dataGridViewArticulos.SelectedRows;
+
+            var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
+
+            this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+
+            this.FillControls();
+        }
     }
 }

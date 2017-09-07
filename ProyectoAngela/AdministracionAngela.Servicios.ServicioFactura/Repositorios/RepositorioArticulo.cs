@@ -18,7 +18,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public void SaveArticulo(Producto articuloRepositorio)
         {
-            throw new NotImplementedException();
+            this.dbContext.Productos.Add(articuloRepositorio);
+            this.dbContext.SaveChanges();
         }
     }
 }

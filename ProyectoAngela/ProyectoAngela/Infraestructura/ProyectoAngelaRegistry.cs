@@ -29,6 +29,8 @@ namespace AdministracionAngela.ProyectoAngela.Infraestructura
         {
             For<IRepositorioCliente>().Use<RepositorioCliente>();
             For<IClienteProvider>().Use<ClienteProvider>();
+            For<IRepositorioArticulo>().Use<RepositorioArticulo>();
+            For<IArticuloProvider>().Use<ArticuloProvider>();
             For<IAdministracionAngelaContext>().Use<AdministracionAngelaContext>();
             For<IFormOpener>().Use<FormOpener>();
         }

@@ -52,6 +52,8 @@
     <Compile Include="Mappers\MapToRepository.cs" />
     <Compile Include="Mappers\MapToViewModel.cs" />
     <Compile Include="Models\Articulo\AltaArticuloViewModel.cs" />
+    <Compile Include="Models\Articulo\ArticuloViewModel.cs" />
+    <Compile Include="Models\Articulo\GestionArticuloViewModel.cs" />
     <Compile Include="Models\Cliente\AltaClienteViewModel.cs" />
     <Compile Include="Models\Cliente\ClienteViewModel.cs" />
     <Compile Include="Models\Cliente\GestionClienteViewModel.cs" />

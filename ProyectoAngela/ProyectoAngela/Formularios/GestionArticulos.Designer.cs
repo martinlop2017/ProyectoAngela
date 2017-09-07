@@ -225,6 +225,7 @@
             this.DoubleBuffered = true;
             this.Name = "GestionArticulos";
             this.Text = "GestionArticulos";
+            this.Load += new System.EventHandler(this.GestionArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

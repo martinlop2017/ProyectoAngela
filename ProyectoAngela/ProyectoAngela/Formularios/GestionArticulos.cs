@@ -33,5 +33,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.formOpener.ShowModalForm<AltaArticulo>();
         }
+
+        private void GestionArticulos_Load(object sender, EventArgs e)
+        {
+            FillControls();
+        }
+
+        private void FillControls()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

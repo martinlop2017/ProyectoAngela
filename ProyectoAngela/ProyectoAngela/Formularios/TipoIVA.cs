@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class TipoIVA : Form
     {
-        public TipoIVA()
+        private IIVAProvider ivaProvider;
+
+        public TipoIVA(IIVAProvider ivaProvider)
         {
+            this.ivaProvider = ivaProvider;
             InitializeComponent();
         }
 

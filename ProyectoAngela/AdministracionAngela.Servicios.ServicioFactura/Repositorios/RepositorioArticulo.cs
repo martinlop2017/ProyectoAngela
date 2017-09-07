@@ -16,6 +16,23 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             this.dbContext = dbContext;
         }
 
+        public bool DeleteArticulos(List<Producto> repositoryArticulosToDelete)
+        {
+            try
+            {
+                var idsToDelete = repositoryArticulosToDelete.Select(a => a.Codigo);
+                var articulostoDelete = this.dbContext.Productos.Where(a => idsToDelete.Contains(a.Codigo));
+
+                this.dbContext.Productos.RemoveRange(articulostoDelete);
+                this.dbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception exp)
+            {
+                return false;
+            }
+        }
+
         public List<Producto> GetAllArticulos()
         {
             return this.dbContext.Productos.ToList<Producto>();

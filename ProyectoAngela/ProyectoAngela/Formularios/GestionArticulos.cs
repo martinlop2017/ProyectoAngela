@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Articulo;
+using AdministracionAngela.Utils.Extensions;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -45,6 +46,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             viewModel = articuloProvider.GetGestionArticulo();
             this.dataGridViewArticulos.DataSource = viewModel.Articulos;
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var selectedRows = this.dataGridViewArticulos.SelectedRows;
+
+            var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
+
+            this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+
+            this.FillControls();
         }
     }
 }

@@ -11,5 +11,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
     {
         void SaveArticulo(Producto articuloRepositorio);
         List<Producto> GetAllArticulos();
+        bool DeleteArticulos(List<Producto> repositoryArticulosToDelete);
     }
 }

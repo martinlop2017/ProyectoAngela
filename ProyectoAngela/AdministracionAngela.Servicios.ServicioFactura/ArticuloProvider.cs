@@ -19,6 +19,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositoryArticulo = repositoryArticulo;
         }
 
+        public bool DeleteArticulos(List<ArticuloViewModel> articulosToDelete)
+        {
+            var repositoryArticulosToDelete = MapToRepository.MapListOfArticuloViewModel(articulosToDelete);
+
+            return this.repositoryArticulo.DeleteArticulos(repositoryArticulosToDelete);
+        }
+
         public GestionArticuloViewModel GetGestionArticulo()
         {
             var articulosFromRepository = this.repositoryArticulo.GetAllArticulos();

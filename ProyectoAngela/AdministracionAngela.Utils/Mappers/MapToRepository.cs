@@ -65,6 +65,20 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        public static Producto MapArticuloViewModel(ArticuloViewModel articulo)
+        {
+            return new Producto()
+            {
+                Codigo = articulo.Codigo,
+                Descripcion = articulo.Descripcion
+            };
+        }
+
+        public static List<Producto> MapListOfArticuloViewModel(List<ArticuloViewModel> articulos)
+        {
+            return articulos.Where(c => c != null).Select(articulo => MapArticuloViewModel(articulo)).ToList<Producto>();
+        }
+
         #endregion
     }
 }

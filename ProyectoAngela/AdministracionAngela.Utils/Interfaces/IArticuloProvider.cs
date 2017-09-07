@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         void SaveArticulo(AltaArticuloViewModel nuevoArticulo);
         GestionArticuloViewModel GetGestionArticulo();
+        bool DeleteArticulos(List<ArticuloViewModel> articulosToDelete);
     }
 }

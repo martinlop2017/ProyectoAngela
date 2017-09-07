@@ -48,6 +48,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\IRepositorioArticulo.cs" />
     <Compile Include="Repositorios\IRepositorioCliente.cs" />
+    <Compile Include="Repositorios\IRepositoryIVA.cs" />
+    <Compile Include="Repositorios\IVARepository.cs" />
     <Compile Include="Repositorios\RepositorioArticulo.cs" />
     <Compile Include="Repositorios\RepositorioCliente.cs" />
   </ItemGroup>

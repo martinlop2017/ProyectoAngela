@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class AltaArticulo : Form
     {
-        public AltaArticulo()
+        private IArticuloProvider articuloProvider;
+
+        public AltaArticulo(IArticuloProvider articuloProvider)
         {
+            this.articuloProvider = articuloProvider;
             InitializeComponent();
         }
     }

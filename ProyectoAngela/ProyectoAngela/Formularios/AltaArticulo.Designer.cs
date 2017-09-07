@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaArticulo));
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -48,6 +52,9 @@
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(100, 20);
             this.textBoxDescripcion.TabIndex = 1;
+            validationRule1.InitialValue = "Required";
+            validationRule1.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxDescripcion, validationRule1);
             // 
             // buttonSave
             // 
@@ -57,6 +64,10 @@
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Ok";
             this.buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // validationProvider1
+            // 
+            this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
             // AltaArticulo
             // 
@@ -78,5 +89,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxDescripcion;
         private System.Windows.Forms.Button buttonSave;
+        private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
     }
 }

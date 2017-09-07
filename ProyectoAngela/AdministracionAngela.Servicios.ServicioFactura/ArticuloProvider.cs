@@ -22,6 +22,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void SaveArticulo(AltaArticuloViewModel nuevoArticulo)
         {
             var articuloRepositorio = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo);
+
+            this.repositoryArticulo.SaveArticulo(articuloRepositorio);
         }
     }
 }

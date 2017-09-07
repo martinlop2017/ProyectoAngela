@@ -7,13 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionArticulos : Form
     {
-        public GestionArticulos()
+        private IFormOpener formOpener;
+        private IArticuloProvider articuloProvider;
+
+        public GestionArticulos(IFormOpener formOpener, IArticuloProvider articuloProvider)
         {
+            this.formOpener = formOpener;
+            this.articuloProvider = articuloProvider;
+
             InitializeComponent();
         }
 

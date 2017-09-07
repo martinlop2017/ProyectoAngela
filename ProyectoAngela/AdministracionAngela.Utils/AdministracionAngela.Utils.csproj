@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\IArticuloProvider.cs" />
     <Compile Include="Interfaces\IClienteProvider.cs" />
     <Compile Include="Interfaces\IFormOpener.cs" />
+    <Compile Include="Interfaces\IIVAProvider.cs" />
     <Compile Include="Mappers\MapToRepository.cs" />
     <Compile Include="Mappers\MapToViewModel.cs" />
     <Compile Include="Models\Articulo\AltaArticuloViewModel.cs" />

@@ -17,7 +17,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         public Facturacion()
         {
             InitializeComponent();
-            
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -174,7 +174,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button11_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -184,7 +184,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button9_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button10_Click_1(object sender, EventArgs e)

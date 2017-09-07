@@ -13,7 +13,7 @@ namespace AdministracionAngela.Utils.Models.Articulo
 
         public ArticuloViewModel()
         {
-            
+
         }
     }
 }

@@ -13,15 +13,20 @@ namespace AdministracionAngela.Utils.Mappers
     public static class MapToViewModel
     {
         #region Mapeo de Cliente
+
         public static ClienteViewModel MapClient(Cliente clienteFromRepository)
         {
             return new ClienteViewModel()
             {
                 Codigo = clienteFromRepository.Id,
                 Nombre = clienteFromRepository.Nombre,
-                NIF = !string.IsNullOrEmpty(clienteFromRepository.NIF) ? clienteFromRepository.NIF : clienteFromRepository.CIF
+                NIF =
+                    !string.IsNullOrEmpty(clienteFromRepository.NIF)
+                        ? clienteFromRepository.NIF
+                        : clienteFromRepository.CIF
             };
         }
+
         public static List<ClienteViewModel> MapClientList(List<Cliente> clienteFromRepositoryList)
         {
             return clienteFromRepositoryList.Select(cliente => MapClient(cliente)).ToList<ClienteViewModel>();
@@ -36,6 +41,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Clientes = new BindingList<ClienteViewModel>(clientesViewModel)
             };
         }
+
         #endregion
 
         #region Mapeo de articulos

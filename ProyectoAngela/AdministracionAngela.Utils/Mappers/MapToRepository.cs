@@ -12,6 +12,7 @@ namespace AdministracionAngela.Utils.Mappers
     public static class MapToRepository
     {
         #region Mapeo de Cliente
+
         public static Cliente MapAltaClienteViewModel(AltaClienteViewModel nuevoClienteViewModel)
         {
             return new Cliente()
@@ -26,15 +27,15 @@ namespace AdministracionAngela.Utils.Mappers
                 CodigoPostal = nuevoClienteViewModel.CodigoPostal,
                 Telefono1 = nuevoClienteViewModel.Telefono1,
                 Telefono2 = nuevoClienteViewModel.Telefono2,
-                Fax=nuevoClienteViewModel.Fax,
-                Email=nuevoClienteViewModel.Email,
-                PersonaDeContacto=nuevoClienteViewModel.PersonaDeContacto,
-                RiesgoMaximo=nuevoClienteViewModel.RiesgoMaximo,
+                Fax = nuevoClienteViewModel.Fax,
+                Email = nuevoClienteViewModel.Email,
+                PersonaDeContacto = nuevoClienteViewModel.PersonaDeContacto,
+                RiesgoMaximo = nuevoClienteViewModel.RiesgoMaximo,
                 FormaDePago = nuevoClienteViewModel.FormaDePago,
                 IsGeneral = nuevoClienteViewModel.isGeneral,
                 RecargoEquivalencia = nuevoClienteViewModel.RecargoEquivalencia,
                 UnionEuropea = nuevoClienteViewModel.UnionEuropea,
-                Excento=nuevoClienteViewModel.Excento
+                Excento = nuevoClienteViewModel.Excento
             };
         }
 

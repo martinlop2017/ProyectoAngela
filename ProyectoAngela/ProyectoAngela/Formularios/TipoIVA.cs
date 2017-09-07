@@ -38,7 +38,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void TipoIVA_Load(object sender, EventArgs e)
         {
-            FillControls();
+            //FillControls();
         }
 
         private void FillControls()

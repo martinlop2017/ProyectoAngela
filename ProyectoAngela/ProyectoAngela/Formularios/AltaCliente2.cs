@@ -35,7 +35,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 var newClient = this.ReadNewClientFromForm();
 
-                this.clienteProvider.SaveClient(newClient);
+                //this.clienteProvider.SaveClient(newClient);
             }
         }
 
@@ -106,7 +106,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void AltaCliente2_Load(object sender, EventArgs e)
         {
-            this.labelCodigoCliente.Text = this.clienteProvider.GetNextCodigoCliente().ToString();
+            //this.labelCodigoCliente.Text = this.clienteProvider.GetNextCodigoCliente().ToString();
         }
     }
 }

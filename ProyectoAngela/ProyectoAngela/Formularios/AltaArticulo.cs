@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Articulo;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -29,7 +30,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            this.Validate();
+            if (this.Validate())
+            {
+                var nuevoArticulo = this.ReadNewArticuloFromForm();
+                this.articuloProvider.SaveArticulo(nuevoArticulo);
+            }
+        }
+
+        private AltaArticuloViewModel ReadNewArticuloFromForm()
+        {
+            return new AltaArticuloViewModel()
+            {
+                Descripcion = this.textBoxDescripcion.Text
+            };
         }
     }
 }

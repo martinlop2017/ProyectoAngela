@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.IVA;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -15,6 +16,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public IVAProvider(IRepositoryIVA repositoryIva)
         {
             this.repositoryIVA = repositoryIva;
+        }
+
+        public GestionIVAViewModel GetGestionIVA()
+        {
+            return new GestionIVAViewModel();
         }
     }
 }

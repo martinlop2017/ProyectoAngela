@@ -58,6 +58,8 @@
     <Compile Include="Models\Cliente\AltaClienteViewModel.cs" />
     <Compile Include="Models\Cliente\ClienteViewModel.cs" />
     <Compile Include="Models\Cliente\GestionClienteViewModel.cs" />
+    <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
+    <Compile Include="Models\IVA\IVAViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

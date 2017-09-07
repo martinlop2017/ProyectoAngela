@@ -35,5 +35,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             Close();
         }
+
+        private void TipoIVA_Load(object sender, EventArgs e)
+        {
+            FillControls();
+        }
+
+        private void FillControls()
+        {
+            var viewModel = ivaProvider.GetGestionIVA();
+            this.dataGridViewIVAs.DataSource = viewModel.IVAs;
+            //this.dataGridViewArticulos.DataSource = viewModel.Articulos;
+        }
     }
 }

@@ -19,7 +19,7 @@ namespace AdministracionAngela.Utils.Extensions
         {
             var list = new List<T>();
             for (int i = 0; i < rows.Count; i++)
-                list.Add((T)rows[i].DataBoundItem);
+                list.Add((T) rows[i].DataBoundItem);
             return list;
         }
     }

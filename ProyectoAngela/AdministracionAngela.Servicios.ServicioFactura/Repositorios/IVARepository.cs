@@ -7,10 +7,13 @@ using AdministracionAngela.EFRepository;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
-    public interface IRepositorioArticulo
+    public class IVARepository : IRepositoryIVA
     {
-        void SaveArticulo(Producto articuloRepositorio);
-        List<Producto> GetAllArticulos();
-        bool DeleteArticulos(List<Producto> repositoryArticulosToDelete);
+        private IAdministracionAngelaContext dbContext;
+
+        public IVARepository(IAdministracionAngelaContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
     }
 }

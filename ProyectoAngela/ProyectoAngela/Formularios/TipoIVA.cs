@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class TipoIVA : Form
     {
-        public TipoIVA()
+        private IIVAProvider ivaProvider;
+
+        public TipoIVA(IIVAProvider ivaProvider)
         {
+            this.ivaProvider = ivaProvider;
             InitializeComponent();
         }
 
@@ -30,6 +34,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button7_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void TipoIVA_Load(object sender, EventArgs e)
+        {
+            FillControls();
+        }
+
+        private void FillControls()
+        {
+            var viewModel = ivaProvider.GetGestionIVA();
+            this.dataGridViewIVAs.DataSource = viewModel.IVAs;
+            //this.dataGridViewArticulos.DataSource = viewModel.Articulos;
         }
     }
 }

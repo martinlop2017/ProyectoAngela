@@ -39,7 +39,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public int GetNextCodigoCliente()
         {
             var lastClient = this.repositorioCliente.GetLastClient();
-            var lastClientId = lastClient != null ? (int)lastClient.Id + 1 : 1;
+            var lastClientId = lastClient != null ? (int) lastClient.Id + 1 : 1;
 
             return lastClientId;
         }

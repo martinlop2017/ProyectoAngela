@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Articulo;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -15,6 +16,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     {
         private IFormOpener formOpener;
         private IArticuloProvider articuloProvider;
+        private GestionArticuloViewModel viewModel;
 
         public GestionArticulos(IFormOpener formOpener, IArticuloProvider articuloProvider)
         {
@@ -41,7 +43,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillControls()
         {
-            throw new NotImplementedException();
+            viewModel = articuloProvider.GetGestionArticulo();
         }
     }
 }

@@ -19,6 +19,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositoryArticulo = repositoryArticulo;
         }
 
+        public GestionArticuloViewModel GetGestionArticulo()
+        {
+            var articulosFromRepository = this.repositoryArticulo.GetAllArticulos();
+            return MapToViewModel.MapToGestionArticulo(articulosFromRepository);
+        }
+
         public void SaveArticulo(AltaArticuloViewModel nuevoArticulo)
         {
             var articuloRepositorio = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo);

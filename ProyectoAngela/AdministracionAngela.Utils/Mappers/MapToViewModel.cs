@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Cliente;
 using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Models.Articulo;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -35,6 +36,33 @@ namespace AdministracionAngela.Utils.Mappers
                 Clientes = new BindingList<ClienteViewModel>(clientesViewModel)
             };
         }
+        #endregion
+
+        #region Mapeo de articulos
+
+        public static ArticuloViewModel MapArticulo(Producto articuloFromRepository)
+        {
+            return new ArticuloViewModel()
+            {
+               Descripcion = articuloFromRepository.Descripcion
+            };
+        }
+
+        public static List<ArticuloViewModel> MapArticuloList(List<Producto> articuloFromRepositoryList)
+        {
+            return articuloFromRepositoryList.Select(articulo => MapArticulo(articulo)).ToList<ArticuloViewModel>();
+        }
+
+        public static GestionArticuloViewModel MapToGestionArticulo(List<Producto> repositoryArticulos)
+        {
+            var articulosViewModel = MapArticuloList(repositoryArticulos);
+
+            return new GestionArticuloViewModel()
+            {
+                Clientes = new BindingList<ArticuloViewModel>(articulosViewModel)
+            };
+        }
+
         #endregion
     }
 }

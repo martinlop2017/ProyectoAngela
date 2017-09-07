@@ -10,5 +10,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
     public interface IRepositorioArticulo
     {
         void SaveArticulo(Producto articuloRepositorio);
+        List<Producto> GetAllArticulos();
     }
 }

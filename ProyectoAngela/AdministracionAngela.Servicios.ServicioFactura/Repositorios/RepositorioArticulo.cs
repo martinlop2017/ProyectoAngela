@@ -16,6 +16,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             this.dbContext = dbContext;
         }
 
+        public List<Producto> GetAllArticulos()
+        {
+            return this.dbContext.Productos.ToList<Producto>();
+        }
+
         public void SaveArticulo(Producto articuloRepositorio)
         {
             this.dbContext.Productos.Add(articuloRepositorio);

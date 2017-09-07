@@ -10,5 +10,6 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IArticuloProvider
     {
         void SaveArticulo(AltaArticuloViewModel nuevoArticulo);
+        GestionArticuloViewModel GetGestionArticulo();
     }
 }

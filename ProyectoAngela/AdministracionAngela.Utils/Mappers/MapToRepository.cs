@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Models.Articulo;
 using AdministracionAngela.Utils.Models.Cliente;
 
 namespace AdministracionAngela.Utils.Mappers
@@ -50,6 +51,18 @@ namespace AdministracionAngela.Utils.Mappers
         public static List<Cliente> MapListOfClienteViewModel(List<ClienteViewModel> clientes)
         {
             return clientes.Where(c => c != null).Select(cliente => MapClienteViewModel(cliente)).ToList<Cliente>();
+        }
+
+        #endregion
+
+        #region Mapeo de Articulo
+
+        public static Producto MapAltaArticuloViewModel(AltaArticuloViewModel nuevoArticuloViewModel)
+        {
+            return new Producto()
+            {
+                Descripcion = nuevoArticuloViewModel.Descripcion
+            };
         }
 
         #endregion

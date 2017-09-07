@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Articulo;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
@@ -17,7 +18,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveArticulo(AltaArticuloViewModel nuevoArticulo)
         {
-            throw new NotImplementedException();
+            var articuloRepositorio = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo);
         }
     }
 }

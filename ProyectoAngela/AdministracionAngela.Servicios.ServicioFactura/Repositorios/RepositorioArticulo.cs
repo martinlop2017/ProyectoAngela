@@ -9,9 +9,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public class RepositorioArticulo : IRepositorioArticulo
     {
-        public RepositorioArticulo()
+        IAdministracionAngelaContext dbContext;
+
+        public RepositorioArticulo(IAdministracionAngelaContext dbContext)
         {
-            
+            this.dbContext = dbContext;
         }
 
         public void SaveArticulo(Producto articuloRepositorio)

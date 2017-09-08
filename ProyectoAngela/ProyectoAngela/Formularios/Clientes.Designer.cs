@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -70,16 +70,17 @@
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
-            // button3
+            // buttonModify
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(147, 130);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(52, 56);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            this.buttonModify.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonModify.BackgroundImage")));
+            this.buttonModify.Location = new System.Drawing.Point(147, 130);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(52, 56);
+            this.buttonModify.TabIndex = 2;
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
+            this.buttonModify.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.buttonModify.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // button4
             // 
@@ -156,21 +157,21 @@
             // 
             // dataGridViewClientes
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewClientes.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClientes.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewClientes.Location = new System.Drawing.Point(31, 192);
@@ -209,7 +210,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
@@ -227,7 +228,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;

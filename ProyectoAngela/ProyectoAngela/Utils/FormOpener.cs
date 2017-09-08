@@ -18,6 +18,14 @@ namespace AdministracionAngela.ProyectoAngela.Utils
             this.container = container;
         }
 
+        public DialogResult ShowModalFormWithParameter<TForm>(int Id) where TForm : Form
+        {
+            using (var form = this.GetForm<TForm>())
+            {
+                return form.ShowDialog();
+            }
+        }
+
         public DialogResult ShowModalForm<TForm>() where TForm : Form
         {
             using (var form = this.GetForm<TForm>())
@@ -26,9 +34,10 @@ namespace AdministracionAngela.ProyectoAngela.Utils
             }
         }
 
-        private Form GetForm<TForm>() where TForm : Form
+        public Form GetForm<TForm>() where TForm : Form
         {
             return this.container.GetInstance<TForm>();
         }
+
     }
 }

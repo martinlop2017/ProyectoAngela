@@ -10,5 +10,6 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IFormOpener
     {
         DialogResult ShowModalForm<TForm>() where TForm : Form;
+        Form GetForm<TForm>() where TForm : Form;
     }
 }

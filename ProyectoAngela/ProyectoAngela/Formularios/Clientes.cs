@@ -112,12 +112,34 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            //FillControls();
+            FillControls();
         }
 
         private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            var selectedRows = this.dataGridViewClientes.SelectedRows;
+
+            if (selectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente para modificarlo");
+            }
+            else if (selectedRows.Count > 1)
+            {
+                MessageBox.Show("Solo se puede modificar un cliente al mismo tiempo");
+            }
+            else
+            {
+                var selectedClient = (ClienteViewModel)selectedRows[0].DataBoundItem;
+
+                var formAltaCliente = this.formOpener.GetForm<AltaCliente2>() as AltaCliente2;
+                formAltaCliente.IsUpdate(selectedClient.Id);
+                formAltaCliente.ShowDialog();
+            }
         }
     }
 }

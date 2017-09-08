@@ -14,14 +14,22 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class AltaCliente2 : Form
     {
-        AltaClienteViewModel viewModel = new AltaClienteViewModel();
-        IClienteProvider clienteProvider;
+        private AltaClienteViewModel viewModel = new AltaClienteViewModel();
+        private IClienteProvider clienteProvider;
+        private bool isUpdate = false;
+        private long clienteId;
 
         public AltaCliente2(IClienteProvider clienteProvider)
         {
             this.clienteProvider = clienteProvider;
 
             InitializeComponent();
+        }
+
+        public void IsUpdate(long clienteId)
+        {
+            this.isUpdate = true;
+            this.clienteId = clienteId;
         }
 
         private void customGroupBox1_Enter(object sender, EventArgs e)

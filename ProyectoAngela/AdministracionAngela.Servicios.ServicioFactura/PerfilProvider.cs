@@ -1,4 +1,5 @@
-﻿using AdministracionAngela.Utils.Interfaces;
+﻿using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
+using AdministracionAngela.Utils.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 {
     public class PerfilProvider : IPerfilProvider
     {
+        private IRepositorioPerfil repositorioPerfil;
+
+        public PerfilProvider(IRepositorioPerfil repositorioPerfil)
+        {
+            this.repositorioPerfil = repositorioPerfil;
+        }
     }
 }

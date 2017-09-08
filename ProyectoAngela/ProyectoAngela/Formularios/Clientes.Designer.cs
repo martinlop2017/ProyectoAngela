@@ -176,6 +176,7 @@
             this.dataGridViewClientes.Location = new System.Drawing.Point(31, 192);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
             this.dataGridViewClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewClientes.Size = new System.Drawing.Size(643, 354);
             this.dataGridViewClientes.TabIndex = 12;
             this.dataGridViewClientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellContentClick);

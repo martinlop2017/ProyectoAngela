@@ -39,7 +39,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionArticulos_Load(object sender, EventArgs e)
         {
-            FillControls();
+            //FillControls();
         }
 
         private void FillControls()
@@ -54,9 +54,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
 
-            this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+            //this.articuloProvider.DeleteArticulos(mappedSelectedRows);
 
-            this.FillControls();
+            //this.FillControls();
         }
     }
 }

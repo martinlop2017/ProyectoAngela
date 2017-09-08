@@ -18,6 +18,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new ClienteViewModel()
             {
+                Id = clienteFromRepository.Id,
                 Codigo = clienteFromRepository.CodigoCliente,
                 Nombre = clienteFromRepository.Nombre,
                 NIF =

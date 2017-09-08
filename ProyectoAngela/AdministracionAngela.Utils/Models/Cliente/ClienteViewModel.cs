@@ -8,6 +8,7 @@ namespace AdministracionAngela.Utils.Models.Cliente
 {
     public class ClienteViewModel
     {
+        public long Id;
         public int Codigo { get; set; }
         public string Nombre { get; set; }
         public string NIF { get; set; }

@@ -43,7 +43,8 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Cliente()
             {
-                Id = cliente.Codigo,
+                Id = cliente.Id,
+                CodigoCliente = cliente.Codigo,
                 Nombre = cliente.Nombre,
                 NIF = cliente.NIF
             };

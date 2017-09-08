@@ -39,7 +39,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionArticulos_Load(object sender, EventArgs e)
         {
-            FillControls();
+            //FillControls();
         }
 
         private void FillControls()

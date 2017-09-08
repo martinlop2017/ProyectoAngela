@@ -112,7 +112,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            FillControls();
+            //FillControls();
         }
 
         private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -48,7 +48,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 }
                 else
                 {
-                    //this.articuloProvider.UpdateArticulo(nuevoArticulo);
+                    this.articuloProvider.UpdateArticulo(nuevoArticulo);
                 }
             }
         }
@@ -57,6 +57,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             return new AltaArticuloViewModel()
             {
+                Id = this.isUpdate ? this.articuloId : 0,
                 CodigoArticulo = Convert.ToInt32(this.textBoxCodigoArticulo.Text),
                 Descripcion = this.textBoxDescripcion.Text
             };

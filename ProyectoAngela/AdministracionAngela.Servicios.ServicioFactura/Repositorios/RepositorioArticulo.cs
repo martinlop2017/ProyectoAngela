@@ -55,5 +55,25 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
             }
         }
+
+        public void UpdateArticulo(Producto articuloRepository)
+        {
+            try
+            {
+                var articuloToupdate = this.dbContext.Productos.Find(articuloRepository.Id);
+
+                if (articuloToupdate != null)
+                {
+                    articuloToupdate.CodigoProducto = articuloRepository.CodigoProducto;
+                    articuloToupdate.Descripcion = articuloRepository.Descripcion;
+
+                    this.dbContext.SaveChanges();
+                }
+            }
+            catch(Exception exp)
+            {
+
+            }
+        }
     }
 }

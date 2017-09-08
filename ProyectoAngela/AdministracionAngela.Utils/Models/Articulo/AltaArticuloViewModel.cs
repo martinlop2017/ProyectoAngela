@@ -8,6 +8,7 @@ namespace AdministracionAngela.Utils.Models.Articulo
 {
     public class AltaArticuloViewModel
     {
+        public long Id { get; set; }
         public int CodigoArticulo { get; set; }
         public string Descripcion { get; set; }
     }

@@ -45,5 +45,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             this.repositoryArticulo.SaveArticulo(articuloRepositorio);
         }
+
+        public void UpdateArticulo(AltaArticuloViewModel nuevoArticulo)
+        {
+            var articuloRepository = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo);
+            this.repositoryArticulo.UpdateArticulo(articuloRepository);
+        }
     }
 }

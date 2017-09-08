@@ -13,5 +13,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         List<Producto> GetAllArticulos();
         bool DeleteArticulos(List<Producto> repositoryArticulosToDelete);
         Producto GetArticuloById(long articuloId);
+        void UpdateArticulo(Producto articuloRepository);
     }
 }

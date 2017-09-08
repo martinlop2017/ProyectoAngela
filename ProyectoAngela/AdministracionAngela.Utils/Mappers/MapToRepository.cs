@@ -64,6 +64,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Producto()
             {
+                Id = nuevoArticuloViewModel.Id,
                 CodigoProducto = nuevoArticuloViewModel.CodigoArticulo,
                 Descripcion = nuevoArticuloViewModel.Descripcion
             };

@@ -60,7 +60,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Fax = clienteFromRepository.Fax.Value,
                 Email = clienteFromRepository.Email,
                 PersonaDeContacto = clienteFromRepository.PersonaDeContacto,
-                RiesgoMaximo = clienteFromRepository.RiesgoMaximo,
+                RiesgoMaximo = Convert.ToInt32(clienteFromRepository.RiesgoMaximo),
                 FormaDePago = clienteFromRepository.FormaDePago,
                 isGeneral = clienteFromRepository.IsGeneral,
                 RecargoEquivalencia = clienteFromRepository.RecargoEquivalencia,

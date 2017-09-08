@@ -39,7 +39,7 @@ namespace AdministracionAngela.Utils.Models.Cliente
 
         #region Datos Comerciales
 
-        public Decimal RiesgoMaximo { get; set; }
+        public int RiesgoMaximo { get; set; }
         public string FormaDePago { get; set; }
 
         #endregion

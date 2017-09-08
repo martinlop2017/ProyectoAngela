@@ -56,7 +56,43 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 this.dbContext.Clientes.Add(newClient);
                 this.dbContext.SaveChanges();
             }
-            catch(Exception exp)
+            catch (Exception exp)
+            {
+
+            }
+        }
+
+        public void UpdateClient(Cliente newClient)
+        {
+            try
+            {
+                var clientToUpdate = this.dbContext.Clientes.Find(newClient.Id);
+                if (clientToUpdate != null)
+                {
+                    clientToUpdate.CodigoCliente = newClient.CodigoCliente;
+                    clientToUpdate.NIF = newClient.NIF;
+                    clientToUpdate.CIF = string.Empty;
+                    clientToUpdate.Direccion = newClient.Direccion;
+                    clientToUpdate.Nombre = newClient.Nombre;
+                    clientToUpdate.Poblacion = newClient.Poblacion;
+                    clientToUpdate.Provincia = newClient.Provincia;
+                    clientToUpdate.CodigoPostal = newClient.CodigoPostal;
+                    clientToUpdate.Telefono1 = newClient.Telefono1;
+                    clientToUpdate.Telefono2 = newClient.Telefono2;
+                    clientToUpdate.Fax = newClient.Fax;
+                    clientToUpdate.Email = newClient.Email;
+                    clientToUpdate.PersonaDeContacto = newClient.PersonaDeContacto;
+                    clientToUpdate.RiesgoMaximo = newClient.RiesgoMaximo;
+                    clientToUpdate.FormaDePago = newClient.FormaDePago;
+                    clientToUpdate.IsGeneral = newClient.IsGeneral;
+                    clientToUpdate.RecargoEquivalencia = newClient.RecargoEquivalencia;
+                    clientToUpdate.UnionEuropea = newClient.UnionEuropea;
+                    clientToUpdate.Excento = newClient.Excento;
+
+                    dbContext.SaveChanges();
+                }
+            }
+            catch (Exception exp)
             {
 
             }

@@ -17,6 +17,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Cliente()
             {
+                Id = nuevoClienteViewModel.Id,
                 CodigoCliente = nuevoClienteViewModel.CodigoCliente,
                 NIF = nuevoClienteViewModel.NIF,
                 CIF = string.Empty,

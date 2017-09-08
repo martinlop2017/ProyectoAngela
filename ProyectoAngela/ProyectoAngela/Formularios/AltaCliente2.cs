@@ -43,7 +43,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 var newClient = this.ReadNewClientFromForm();
 
-                this.clienteProvider.SaveClient(newClient);
+                if(!isUpdate)
+                {
+                    this.clienteProvider.SaveClient(newClient);
+                }
+                else
+                {
+                    this.clienteProvider.UpdateClient(newClient);
+                }
             }
         }
 
@@ -57,6 +64,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             return new AltaClienteViewModel()
             {
+                Id = isUpdate ? clienteId : 0,
                 CodigoCliente = Convert.ToInt32(textBoxCodigoCliente.Text),
                 NombreComercial = textBoxNombreComercial.Text,
                 NIF = textBoxNIF.Text,

@@ -14,7 +14,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class AltaCliente2 : Form
     {
-        private AltaClienteViewModel viewModel = new AltaClienteViewModel();
         private IClienteProvider clienteProvider;
         private bool isUpdate = false;
         private long clienteId;

@@ -136,10 +136,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 var selectedClient = (ClienteViewModel)selectedRows[0].DataBoundItem;
 
-                var formAltaCliente = this.formOpener.GetForm<AltaCliente2>() as AltaCliente2;
-                formAltaCliente.IsUpdate(selectedClient.Id);
-                formAltaCliente.ShowDialog();
+                this.OpenFormToModify(selectedClient);
             }
+        }
+
+        private void OpenFormToModify(ClienteViewModel selectedClient)
+        {
+            var formAltaCliente = this.formOpener.GetForm<AltaCliente2>() as AltaCliente2;
+            formAltaCliente.IsUpdate(selectedClient.Id);
+            formAltaCliente.ShowDialog();
         }
     }
 }

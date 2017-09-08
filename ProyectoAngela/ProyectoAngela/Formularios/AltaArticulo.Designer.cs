@@ -101,6 +101,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AltaArticulo";
             this.Text = "AltaArticulo";
+            this.Load += new System.EventHandler(this.AltaArticulo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

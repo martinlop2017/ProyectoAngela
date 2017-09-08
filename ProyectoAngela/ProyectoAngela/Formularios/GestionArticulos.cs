@@ -39,7 +39,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionArticulos_Load(object sender, EventArgs e)
         {
-            //FillControls();
+            FillControls();
         }
 
         private void FillControls()
@@ -57,6 +57,34 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             //this.articuloProvider.DeleteArticulos(mappedSelectedRows);
 
             //this.FillControls();
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            var selectedRows = this.dataGridViewArticulos.SelectedRows;
+
+            if (selectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un articulo para modificarlo");
+            }
+            else if (selectedRows.Count > 1)
+            {
+                MessageBox.Show("Solo se puede modificar un articulo al mismo tiempo");
+            }
+            else
+            {
+                var selectedArticulo = (ArticuloViewModel)selectedRows[0].DataBoundItem;
+
+                this.OpenFormToModify(selectedArticulo);
+
+            }
+        }
+
+        private void OpenFormToModify(ArticuloViewModel selectedArticulo)
+        {
+            var formAltaCliente = this.formOpener.GetForm<AltaArticulo>() as AltaArticulo;
+            formAltaCliente.IsUpdate(selectedArticulo.Id);
+            formAltaCliente.ShowDialog();
         }
     }
 }

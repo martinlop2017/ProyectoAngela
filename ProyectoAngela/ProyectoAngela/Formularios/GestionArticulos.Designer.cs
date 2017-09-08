@@ -40,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonModify = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).BeginInit();
@@ -152,14 +152,15 @@
             this.button4.TabIndex = 18;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonModify
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(149, 154);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(52, 56);
-            this.button3.TabIndex = 17;
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonModify.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonModify.BackgroundImage")));
+            this.buttonModify.Location = new System.Drawing.Point(149, 154);
+            this.buttonModify.Name = "buttonModify";
+            this.buttonModify.Size = new System.Drawing.Size(52, 56);
+            this.buttonModify.TabIndex = 17;
+            this.buttonModify.UseVisualStyleBackColor = true;
+            this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonDelete
             // 
@@ -197,7 +198,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
@@ -221,7 +222,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button button1;
     }

@@ -41,7 +41,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public Cliente GetClientById(long clienteId)
         {
-            return this.dbContext.Clientes.SingleOrDefault(c => c.Id == clienteId);
+            return this.dbContext.Clientes.Find(clienteId);
         }
 
         public Cliente GetLastClient()

@@ -97,6 +97,15 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        public static AltaArticuloViewModel MapAltaArticulo(Producto articuloFromRepository)
+        {
+            return new AltaArticuloViewModel()
+            {
+                CodigoArticulo = articuloFromRepository.CodigoProducto,
+                Descripcion = articuloFromRepository.Descripcion
+            };
+        }
+
         #endregion
     }
 }

@@ -38,6 +38,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Productos.ToList<Producto>();
         }
 
+        public Producto GetArticuloById(long articuloId)
+        {
+            return this.dbContext.Productos.Find(articuloId);
+        }
+
         public void SaveArticulo(Producto articuloRepositorio)
         {
             try

@@ -51,11 +51,119 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void Menu_Load(object sender, EventArgs e)
         {
             //inicia la fecha al cargar la forma
+       
           FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToShortTimeString() + "  "; 
 
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void seguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = true;
+            buttonUsusarios.Visible = true;
+            buttonIva.Visible = true;
+        }
+
+        private void buttonSistema_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonSistema_MouseLeave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonCliente_Click(object sender, EventArgs e)
+        {
+            
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+            this.formOpener.ShowModalForm<Clientes>();
+        }
+
+        private void buttonArticulos_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+            this.formOpener.ShowModalForm<GestionArticulos>();
+        }
+
+        private void buttonAlbaranes_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+        }
+
+        private void buttonFactura_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+            this.formOpener.ShowModalForm<GestionFacturas>();
+        }
+
+        private void buttonListados_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+        }
+
+        private void buttonSeguridad_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+        }
+
+        private void buttonAvisos_Click(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMisdatos_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<MisDatos>();
+        }
+
+        private void buttonIva_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<TipoIVA>();
+        }
+
+        private void buttonAlbaranes_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToString("H:mm:ss") + "  ";
+
+
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
 
         }

@@ -24,6 +24,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var repositoryClientstoDelete = MapToRepository.MapListOfClienteViewModel(clientsToDelete);
 
             this.repositorioCliente.DeleteAddressByClientIds(repositoryClientstoDelete);
+            this.repositorioCliente.DeleteContactsByClientIds(repositoryClientstoDelete);
             return this.repositorioCliente.DeleteClients(repositoryClientstoDelete);
         }
 

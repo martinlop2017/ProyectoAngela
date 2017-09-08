@@ -29,11 +29,14 @@ namespace AdministracionAngela.Utils.Mappers
                     CodigoPostal = nuevoClienteViewModel.CodigoPostal
                 },
                 Nombre = nuevoClienteViewModel.NombreComercial,
-                Telefono1 = nuevoClienteViewModel.Telefono1,
-                Telefono2 = nuevoClienteViewModel.Telefono2,
-                Fax = nuevoClienteViewModel.Fax,
-                Email = nuevoClienteViewModel.Email,
-                PersonaDeContacto = nuevoClienteViewModel.PersonaDeContacto,
+                Contacto = new Contacto()
+                {
+                    Telefono1 = nuevoClienteViewModel.Telefono1,
+                    Telefono2 = nuevoClienteViewModel.Telefono2,
+                    Fax = nuevoClienteViewModel.Fax,
+                    Email = nuevoClienteViewModel.Email,
+                    PersonaContacto = nuevoClienteViewModel.PersonaDeContacto
+                },
                 RiesgoMaximo = nuevoClienteViewModel.RiesgoMaximo,
                 FormaDePago = nuevoClienteViewModel.FormaDePago,
                 IsGeneral = nuevoClienteViewModel.isGeneral,

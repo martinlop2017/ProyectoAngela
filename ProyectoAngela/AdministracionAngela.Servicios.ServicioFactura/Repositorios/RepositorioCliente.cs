@@ -50,6 +50,22 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
+        public void DeleteContactsByClientIds(List<Cliente> repositoryClientstoDelete)
+        {
+            try
+            {
+                var clientIds = repositoryClientstoDelete.Select(c => c.Id);
+                var contactsToDelete = this.dbContext.Clientes.Where(c => clientIds.Contains(c.Id)).Select(c => c.Contacto).ToList();
+
+                this.dbContext.Contactos.RemoveRange(contactsToDelete);
+                this.dbContext.SaveChanges();
+            }
+            catch (Exception exp)
+            {
+
+            }
+        }
+
         public List<Cliente> GetAllClients()
         {
             return this.dbContext.Clientes.ToList<Cliente>();
@@ -93,11 +109,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     clientToUpdate.Direccion.Provincia = newClient.Direccion.Provincia;
                     clientToUpdate.Direccion.CodigoPostal = newClient.Direccion.CodigoPostal;
                     clientToUpdate.Nombre = newClient.Nombre;
-                    clientToUpdate.Telefono1 = newClient.Telefono1;
-                    clientToUpdate.Telefono2 = newClient.Telefono2;
-                    clientToUpdate.Fax = newClient.Fax;
-                    clientToUpdate.Email = newClient.Email;
-                    clientToUpdate.PersonaDeContacto = newClient.PersonaDeContacto;
+                    clientToUpdate.Contacto.Telefono1 = newClient.Contacto.Telefono1;
+                    clientToUpdate.Contacto.Telefono2 = newClient.Contacto.Telefono2;
+                    clientToUpdate.Contacto.Fax = newClient.Contacto.Fax;
+                    clientToUpdate.Contacto.Email = newClient.Contacto.Email;
+                    clientToUpdate.Contacto.PersonaContacto = newClient.Contacto.PersonaContacto;
                     clientToUpdate.RiesgoMaximo = newClient.RiesgoMaximo;
                     clientToUpdate.FormaDePago = newClient.FormaDePago;
                     clientToUpdate.IsGeneral = newClient.IsGeneral;

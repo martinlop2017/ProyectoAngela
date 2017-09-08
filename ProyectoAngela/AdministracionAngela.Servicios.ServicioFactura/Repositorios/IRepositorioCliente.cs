@@ -16,5 +16,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         Cliente GetClientById(long clienteId);
         void UpdateClient(Cliente newClient);
         void DeleteAddressByClientIds(List<Cliente> repositoryClientstoDelete);
+        void DeleteContactsByClientIds(List<Cliente> repositoryClientstoDelete);
     }
 }

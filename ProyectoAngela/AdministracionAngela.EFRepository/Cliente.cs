@@ -23,14 +23,10 @@ namespace AdministracionAngela.EFRepository
         public long Id { get; set; }
         public int CodigoCliente { get; set; }
         public Nullable<int> DireccionId { get; set; }
+        public Nullable<int> ContactoId { get; set; }
         public string CIF { get; set; }
         public string NIF { get; set; }
         public string Nombre { get; set; }
-        public int Telefono1 { get; set; }
-        public Nullable<int> Telefono2 { get; set; }
-        public Nullable<int> Fax { get; set; }
-        public string Email { get; set; }
-        public string PersonaDeContacto { get; set; }
         public decimal RiesgoMaximo { get; set; }
         public string FormaDePago { get; set; }
         public bool IsGeneral { get; set; }
@@ -41,5 +37,6 @@ namespace AdministracionAngela.EFRepository
         public virtual Direccion Direccion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
+        public virtual Contacto Contacto { get; set; }
     }
 }

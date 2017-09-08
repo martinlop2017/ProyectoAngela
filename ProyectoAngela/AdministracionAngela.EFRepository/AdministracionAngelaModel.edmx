@@ -12,14 +12,10 @@
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CodigoCliente" Type="int" Nullable="false" />
           <Property Name="DireccionId" Type="int" />
+          <Property Name="ContactoId" Type="int" />
           <Property Name="CIF" Type="nvarchar(max)" />
           <Property Name="NIF" Type="nvarchar(max)" />
           <Property Name="Nombre" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Telefono1" Type="int" Nullable="false" />
-          <Property Name="Telefono2" Type="int" />
-          <Property Name="Fax" Type="int" />
-          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="PersonaDeContacto" Type="nvarchar(max)" />
           <Property Name="RiesgoMaximo" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="FormaDePago" Type="nvarchar(max)" Nullable="false" />
           <Property Name="IsGeneral" Type="bit" Nullable="false" />
@@ -31,7 +27,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Telefono1" Type="int" />
           <Property Name="Telefono2" Type="int" />
           <Property Name="Fax" Type="int" />
@@ -98,6 +94,18 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
+        <Association Name="FK_Cliente_Contacto">
+          <End Role="Contacto" Type="Self.Contacto" Multiplicity="0..1" />
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="ContactoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Cliente_Direccion">
           <End Role="Direccion" Type="Self.Direccion" Multiplicity="0..1" />
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
@@ -167,6 +175,10 @@
           <EntitySet Name="LineaFactura" EntityType="Self.LineaFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Cliente_Contacto" Association="Self.FK_Cliente_Contacto">
+            <End Role="Contacto" EntitySet="Contacto" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
           <AssociationSet Name="FK_Cliente_Direccion" Association="Self.FK_Cliente_Direccion">
             <End Role="Direccion" EntitySet="Direccion" />
             <End Role="Cliente" EntitySet="Cliente" />
@@ -231,6 +243,10 @@
             <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
           <EntitySet Name="Contacto" EntityType="AdministracionAngelaModel.Contacto" />
+          <AssociationSet Name="FK_Cliente_Contacto" Association="AdministracionAngelaModel.FK_Cliente_Contacto">
+            <End Role="Contacto" EntitySet="Contacto" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -333,14 +349,10 @@
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CodigoCliente" Type="Int32" Nullable="false" />
           <Property Name="DireccionId" Type="Int32" />
+          <Property Name="ContactoId" Type="Int32" />
           <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Nombre" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Telefono1" Type="Int32" Nullable="false" />
-          <Property Name="Telefono2" Type="Int32" />
-          <Property Name="Fax" Type="Int32" />
-          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PersonaDeContacto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="RiesgoMaximo" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="FormaDePago" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="IsGeneral" Type="Boolean" Nullable="false" />
@@ -349,6 +361,7 @@
           <Property Name="Excento" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Cliente" ToRole="Direccion" />
           <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
+          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Cliente_Contacto" FromRole="Cliente" ToRole="Contacto" />
         </EntityType>
         <Association Name="FK_Cliente_Direccion">
           <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="0..1" />
@@ -378,13 +391,26 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Telefono1" Type="Int32" />
           <Property Name="Telefono2" Type="Int32" />
           <Property Name="Fax" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="PersonaContacto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Contacto" FromRole="Contacto" ToRole="Cliente" />
         </EntityType>
+        <Association Name="FK_Cliente_Contacto">
+          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
+          <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="ContactoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -466,14 +492,10 @@
                 <ScalarProperty Name="IsGeneral" ColumnName="IsGeneral" />
                 <ScalarProperty Name="FormaDePago" ColumnName="FormaDePago" />
                 <ScalarProperty Name="RiesgoMaximo" ColumnName="RiesgoMaximo" />
-                <ScalarProperty Name="PersonaDeContacto" ColumnName="PersonaDeContacto" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Fax" ColumnName="Fax" />
-                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
-                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="NIF" ColumnName="NIF" />
                 <ScalarProperty Name="CIF" ColumnName="CIF" />
+                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
                 <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
                 <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
                 <ScalarProperty Name="Id" ColumnName="Id" />

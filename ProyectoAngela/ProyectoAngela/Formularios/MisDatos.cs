@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class MisDatos : Form
     {
-        public MisDatos()
+        IPerfilProvider perfilProvider;
+
+        public MisDatos(IPerfilProvider perfilProvider)
         {
+            this.perfilProvider = perfilProvider;
+
             InitializeComponent();
         }
 

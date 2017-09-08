@@ -26,6 +26,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return this.repositorioCliente.DeleteClients(repositoryClientstoDelete);
         }
 
+        public AltaClienteViewModel GetAltaClienteById(long clienteId)
+        {
+            var clientFromRepository = this.repositorioCliente.GetClientById(clienteId);
+
+            return MapToViewModel.MapAltaClient(clientFromRepository);
+        }
+
         public GestionClienteViewModel GetGestionCliente()
         {
             var clientsFromRepository = this.repositorioCliente.GetAllClients();

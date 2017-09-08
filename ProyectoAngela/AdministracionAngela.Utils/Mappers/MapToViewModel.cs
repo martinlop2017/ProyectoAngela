@@ -43,6 +43,31 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        public static AltaClienteViewModel MapAltaClient(Cliente clienteFromRepository)
+        {
+            return new AltaClienteViewModel()
+            {
+                Id = clienteFromRepository.Id,
+                CodigoCliente = clienteFromRepository.CodigoCliente,
+                NombreComercial = clienteFromRepository.Nombre,
+                NIF = clienteFromRepository.NIF,
+                Direccion = clienteFromRepository.Direccion,
+                Provincia = clienteFromRepository.Provincia,
+                Poblacion = clienteFromRepository.Poblacion,
+                CodigoPostal = clienteFromRepository.CodigoPostal,
+                Telefono1 = clienteFromRepository.Telefono1,
+                Telefono2 = clienteFromRepository.Telefono2.Value,
+                Fax = clienteFromRepository.Fax.Value,
+                Email = clienteFromRepository.Email,
+                PersonaDeContacto = clienteFromRepository.PersonaDeContacto,
+                RiesgoMaximo = clienteFromRepository.RiesgoMaximo,
+                FormaDePago = clienteFromRepository.FormaDePago,
+                isGeneral = clienteFromRepository.IsGeneral,
+                RecargoEquivalencia = clienteFromRepository.RecargoEquivalencia,
+                UnionEuropea = clienteFromRepository.UnionEuropea,
+                Excento = clienteFromRepository.Excento
+            };
+        }
         #endregion
 
         #region Mapeo de articulos

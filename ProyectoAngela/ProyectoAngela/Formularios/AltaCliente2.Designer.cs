@@ -55,6 +55,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.customGroupBox5 = new AdministracionAngela.CustomControls.CustomGroupBox();
+            this.textBoxCodigoCliente = new System.Windows.Forms.TextBox();
             this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.textBoxNombreComercial = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -82,7 +83,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
-            this.textBoxCodigoCliente = new System.Windows.Forms.TextBox();
             this.customGroupBox4.SuspendLayout();
             this.customGroupBox6.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
@@ -279,6 +279,13 @@
             this.customGroupBox5.TabIndex = 16;
             this.customGroupBox5.TabStop = false;
             this.customGroupBox5.Text = "customGroupBox5";
+            // 
+            // textBoxCodigoCliente
+            // 
+            this.textBoxCodigoCliente.Location = new System.Drawing.Point(22, 27);
+            this.textBoxCodigoCliente.Name = "textBoxCodigoCliente";
+            this.textBoxCodigoCliente.Size = new System.Drawing.Size(66, 20);
+            this.textBoxCodigoCliente.TabIndex = 0;
             // 
             // textBoxNIF
             // 
@@ -578,13 +585,6 @@
             this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
-            // textBoxCodigoCliente
-            // 
-            this.textBoxCodigoCliente.Location = new System.Drawing.Point(22, 27);
-            this.textBoxCodigoCliente.Name = "textBoxCodigoCliente";
-            this.textBoxCodigoCliente.Size = new System.Drawing.Size(66, 20);
-            this.textBoxCodigoCliente.TabIndex = 0;
-            // 
             // AltaCliente2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -596,6 +596,7 @@
             this.Controls.Add(this.customGroupBox1);
             this.Name = "AltaCliente2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.AltaCliente2_Load);
             this.customGroupBox4.ResumeLayout(false);
             this.customGroupBox4.PerformLayout();
             this.customGroupBox6.ResumeLayout(false);

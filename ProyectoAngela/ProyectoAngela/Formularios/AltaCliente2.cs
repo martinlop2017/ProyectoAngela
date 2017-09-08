@@ -78,6 +78,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             };
         }
 
+        private void FillFormWithClient(AltaClienteViewModel cliente)
+        {
+            this.textBoxCodigoCliente.Text = cliente.CodigoCliente.ToString();
+            this.textBoxNombreComercial.Text = cliente.NombreComercial;
+            this.textBoxNIF.Text = cliente.NIF.ToString();
+            this.textBoxDireccion.Text = cliente.Direccion;
+            this.textBoxPoblacion.Text = cliente.Poblacion;
+            this.textBoxProvincia.Text = cliente.Provincia;
+            this.textBoxCodigoPostal.Text = cliente.CodigoPostal.ToString();
+            this.textBoxTelefono1.Text = cliente.Telefono1.ToString();
+            this.textBoxTelefono2.Text = cliente.Telefono2.ToString();
+            this.textBoxFax.Text = cliente.Fax.ToString();
+            this.textBoxEmail.Text = cliente.Email;
+            this.textBoxPersonaContacto.Text = cliente.PersonaDeContacto;
+            this.textBoxRiesgoMaximo.Text = cliente.RiesgoMaximo.ToString();
+            this.textBoxFormaPago.Text = cliente.FormaDePago;
+            this.checkBoxIVAGeneral.Checked = cliente.isGeneral;
+            this.checkBoxRE.Checked = cliente.RecargoEquivalencia;
+            this.checkBoxUE.Checked = cliente.UnionEuropea;
+            this.checkBoxExcento.Checked = cliente.Excento;
+        }
+
         /// <summary>
         /// Importante usar evento Click y no CheckChanged, porque sino, cuando cambias el valor checked, vuelve a dispararse el evento
         /// </summary>
@@ -110,6 +132,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 checkBoxIVAGeneral.Checked = false;
                 checkBoxRE.Checked = false;
                 checkBoxUE.Checked = false;
+            }
+        }
+
+        private void AltaCliente2_Load(object sender, EventArgs e)
+        {
+            if(this.isUpdate)
+            {
+                var client = this.clienteProvider.GetAltaClienteById(clienteId);
+                this.FillFormWithClient(client);
             }
         }
     }

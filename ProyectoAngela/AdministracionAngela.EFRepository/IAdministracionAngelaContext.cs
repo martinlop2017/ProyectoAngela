@@ -15,6 +15,7 @@ namespace AdministracionAngela.EFRepository
         DbSet<LineaFactura> LineasFactura { get; set; }
         DbSet<Producto> Productos { get; set; }
         DbSet<Direccion> Direcciones { get; set; }
+        DbSet<Contacto> Contactos { get; set; }
 
         int SaveChanges();
     }

@@ -27,6 +27,17 @@
           <Property Name="UnionEuropea" Type="bit" Nullable="false" />
           <Property Name="Excento" Type="bit" Nullable="false" />
         </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Telefono1" Type="int" />
+          <Property Name="Telefono2" Type="int" />
+          <Property Name="Fax" Type="int" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="PersonaContacto" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Direccion">
           <Key>
             <PropertyRef Name="Id" />
@@ -149,6 +160,7 @@
         </Association>
         <EntityContainer Name="AdministracionAngelaModelStoreContainer">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IVA" EntityType="Self.IVA" Schema="dbo" store:Type="Tables" />
@@ -218,6 +230,7 @@
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
+          <EntitySet Name="Contacto" EntityType="AdministracionAngelaModel.Contacto" />
         </EntityContainer>
         <EntityType Name="Producto">
           <Key>
@@ -361,6 +374,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Telefono1" Type="Int32" />
+          <Property Name="Telefono2" Type="Int32" />
+          <Property Name="Fax" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonaContacto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -452,6 +476,18 @@
                 <ScalarProperty Name="CIF" ColumnName="CIF" />
                 <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
                 <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacto">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Contacto">
+              <MappingFragment StoreEntitySet="Contacto">
+                <ScalarProperty Name="PersonaContacto" ColumnName="PersonaContacto" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
+                <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

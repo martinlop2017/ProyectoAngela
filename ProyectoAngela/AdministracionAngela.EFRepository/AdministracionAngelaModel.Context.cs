@@ -31,6 +31,7 @@ namespace AdministracionAngela.EFRepository
         public virtual DbSet<LineaFactura> LineasFactura { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Direccion> Direcciones { get; set; }
+        public virtual DbSet<Contacto> Contactos { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         public override int SaveChanges()

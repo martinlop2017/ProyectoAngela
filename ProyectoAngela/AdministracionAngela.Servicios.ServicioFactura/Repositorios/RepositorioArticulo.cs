@@ -20,8 +20,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var idsToDelete = repositoryArticulosToDelete.Select(a => a.CodigoProducto);
-                var articulostoDelete = this.dbContext.Productos.Where(a => idsToDelete.Contains(a.CodigoProducto));
+                var idsToDelete = repositoryArticulosToDelete.Select(a => a.Id);
+                var articulostoDelete = this.dbContext.Productos.Where(a => idsToDelete.Contains(a.Id));
 
                 this.dbContext.Productos.RemoveRange(articulostoDelete);
                 this.dbContext.SaveChanges();
@@ -40,8 +40,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public void SaveArticulo(Producto articuloRepositorio)
         {
-            this.dbContext.Productos.Add(articuloRepositorio);
-            this.dbContext.SaveChanges();
+            try
+            {
+                this.dbContext.Productos.Add(articuloRepositorio);
+                this.dbContext.SaveChanges();
+            }
+            catch(Exception exp)
+            {
+
+            }
         }
     }
 }

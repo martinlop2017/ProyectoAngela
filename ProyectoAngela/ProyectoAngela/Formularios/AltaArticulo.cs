@@ -41,6 +41,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             return new AltaArticuloViewModel()
             {
+                CodigoArticulo = Convert.ToInt32(this.textBoxCodigoArticulo.Text),
                 Descripcion = this.textBoxDescripcion.Text
             };
         }

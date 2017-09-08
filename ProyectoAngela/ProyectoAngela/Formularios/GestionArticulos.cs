@@ -39,7 +39,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionArticulos_Load(object sender, EventArgs e)
         {
-            //FillControls();
+            FillControls();
         }
 
         private void FillControls()
@@ -50,13 +50,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            //var selectedRows = this.dataGridViewArticulos.SelectedRows;
+            var selectedRows = this.dataGridViewArticulos.SelectedRows;
 
-            //var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
+            var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
 
-            //this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+            this.articuloProvider.DeleteArticulos(mappedSelectedRows);
 
-            //this.FillControls();
+            this.FillControls();
         }
     }
 }

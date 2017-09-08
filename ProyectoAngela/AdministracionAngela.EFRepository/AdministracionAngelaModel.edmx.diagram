@@ -19,6 +19,9 @@
         <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Contacto" Width="1.5" PointX="3.375" PointY="4.625" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_Contacto" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Perfil" Width="1.5" PointX="3" PointY="7.625" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Contacto" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Direccion" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

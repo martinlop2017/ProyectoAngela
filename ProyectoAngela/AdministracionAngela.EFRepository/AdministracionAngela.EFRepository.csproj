@@ -91,6 +91,9 @@
     <Compile Include="LineaFactura.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Perfil.cs">
+      <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>

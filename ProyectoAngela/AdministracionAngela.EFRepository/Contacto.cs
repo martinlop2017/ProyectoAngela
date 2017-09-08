@@ -18,6 +18,7 @@ namespace AdministracionAngela.EFRepository
         public Contacto()
         {
             this.Cliente = new HashSet<Cliente>();
+            this.Perfil = new HashSet<Perfil>();
         }
     
         public int Id { get; set; }
@@ -29,5 +30,7 @@ namespace AdministracionAngela.EFRepository
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente> Cliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Perfil> Perfil { get; set; }
     }
 }

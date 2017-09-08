@@ -28,5 +28,6 @@ namespace AdministracionAngela.EFRepository
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente> Cliente { get; set; }
+        public virtual Perfil Perfil { get; set; }
     }
 }

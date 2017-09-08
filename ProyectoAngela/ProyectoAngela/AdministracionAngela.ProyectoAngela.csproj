@@ -96,10 +96,10 @@
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
-    <Compile Include="MisDatos.cs">
+    <Compile Include="Formularios\MisDatos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MisDatos.Designer.cs">
+    <Compile Include="Formularios\MisDatos.Designer.cs">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\FormOpener.cs" />
@@ -168,7 +168,7 @@
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MisDatos.resx">
+    <EmbeddedResource Include="Formularios\MisDatos.resx">
       <DependentUpon>MisDatos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

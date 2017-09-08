@@ -45,6 +45,7 @@
     <Compile Include="ArticuloProvider.cs" />
     <Compile Include="ClienteProvider.cs" />
     <Compile Include="IVAProvider.cs" />
+    <Compile Include="PerfilProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\IRepositorioArticulo.cs" />
     <Compile Include="Repositorios\IRepositorioCliente.cs" />

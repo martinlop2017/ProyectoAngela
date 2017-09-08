@@ -22,13 +22,10 @@ namespace AdministracionAngela.EFRepository
     
         public long Id { get; set; }
         public int CodigoCliente { get; set; }
+        public Nullable<int> DireccionId { get; set; }
         public string CIF { get; set; }
         public string NIF { get; set; }
         public string Nombre { get; set; }
-        public string Direccion { get; set; }
-        public string Poblacion { get; set; }
-        public string Provincia { get; set; }
-        public int CodigoPostal { get; set; }
         public int Telefono1 { get; set; }
         public Nullable<int> Telefono2 { get; set; }
         public Nullable<int> Fax { get; set; }
@@ -41,6 +38,7 @@ namespace AdministracionAngela.EFRepository
         public bool UnionEuropea { get; set; }
         public bool Excento { get; set; }
     
+        public virtual Direccion Direccion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
     }

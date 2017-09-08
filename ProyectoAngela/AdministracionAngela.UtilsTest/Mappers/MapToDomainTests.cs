@@ -24,7 +24,6 @@ namespace AdministracionAngela.UtilsTest.Mappers
             repositoryClient.Id = 1;
             repositoryClient.NIF = "1";
             repositoryClient.Nombre = "TestClient1";
-            repositoryClient.Direccion = "TestDireccion1";
 
             var clienteViewModel = MapToViewModel.MapClient(repositoryClient);
 
@@ -74,7 +73,6 @@ namespace AdministracionAngela.UtilsTest.Mappers
                     Id = i,
                     NIF = i.ToString(),
                     Nombre = string.Format("TestClient{0}", i),
-                    Direccion = string.Format("TestDireccion{0}", i)
                 });
             }
 

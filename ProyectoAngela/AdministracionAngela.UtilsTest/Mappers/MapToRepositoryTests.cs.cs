@@ -43,7 +43,6 @@ namespace AdministracionAngela.UtilsTest.Mappers
             Assert.Equal(string.Empty, newClientRepository.CIF);
             Assert.Equal("49083366L", newClientRepository.NIF);
             Assert.Equal("TestNombreComercial", newClientRepository.Nombre);
-            Assert.Equal("TestAddress", newClientRepository.Direccion);
         }
 
         [Fact]

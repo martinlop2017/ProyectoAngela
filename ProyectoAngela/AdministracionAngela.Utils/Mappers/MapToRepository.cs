@@ -21,11 +21,14 @@ namespace AdministracionAngela.Utils.Mappers
                 CodigoCliente = nuevoClienteViewModel.CodigoCliente,
                 NIF = nuevoClienteViewModel.NIF,
                 CIF = string.Empty,
-                Direccion = nuevoClienteViewModel.Direccion,
+                Direccion = new Direccion()
+                {
+                    Direccion1 = nuevoClienteViewModel.Direccion,
+                    Poblacion = nuevoClienteViewModel.Poblacion,
+                    Provincia = nuevoClienteViewModel.Provincia,
+                    CodigoPostal = nuevoClienteViewModel.CodigoPostal
+                },
                 Nombre = nuevoClienteViewModel.NombreComercial,
-                Poblacion = nuevoClienteViewModel.Poblacion,
-                Provincia = nuevoClienteViewModel.Provincia,
-                CodigoPostal = nuevoClienteViewModel.CodigoPostal,
                 Telefono1 = nuevoClienteViewModel.Telefono1,
                 Telefono2 = nuevoClienteViewModel.Telefono2,
                 Fax = nuevoClienteViewModel.Fax,

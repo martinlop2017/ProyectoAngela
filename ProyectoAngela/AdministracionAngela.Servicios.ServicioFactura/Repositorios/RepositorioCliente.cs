@@ -17,6 +17,22 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             this.dbContext = dbContext;
         }
 
+        public void DeleteAddressByClientIds(List<Cliente> repositoryClientstoDelete)
+        {
+            try
+            {
+                var clientIds = repositoryClientstoDelete.Select(c => c.Id);
+                var addressesToDelete = this.dbContext.Clientes.Where(c => clientIds.Contains(c.Id)).Select(c => c.Direccion).ToList();
+
+                this.dbContext.Direcciones.RemoveRange(addressesToDelete);
+                this.dbContext.SaveChanges();
+            }
+            catch (Exception exp)
+            {
+
+            }
+        }
+
         public bool DeleteClients(List<Cliente> repositoryClientstoDelete)
         {
             try
@@ -72,11 +88,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     clientToUpdate.CodigoCliente = newClient.CodigoCliente;
                     clientToUpdate.NIF = newClient.NIF;
                     clientToUpdate.CIF = string.Empty;
-                    clientToUpdate.Direccion = newClient.Direccion;
+                    clientToUpdate.Direccion.Direccion1 = newClient.Direccion.Direccion1;
+                    clientToUpdate.Direccion.Poblacion = newClient.Direccion.Poblacion;
+                    clientToUpdate.Direccion.Provincia = newClient.Direccion.Provincia;
+                    clientToUpdate.Direccion.CodigoPostal = newClient.Direccion.CodigoPostal;
                     clientToUpdate.Nombre = newClient.Nombre;
-                    clientToUpdate.Poblacion = newClient.Poblacion;
-                    clientToUpdate.Provincia = newClient.Provincia;
-                    clientToUpdate.CodigoPostal = newClient.CodigoPostal;
                     clientToUpdate.Telefono1 = newClient.Telefono1;
                     clientToUpdate.Telefono2 = newClient.Telefono2;
                     clientToUpdate.Fax = newClient.Fax;

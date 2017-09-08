@@ -75,6 +75,9 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Direccion.cs">
+      <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Factura.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>

@@ -12,24 +12,21 @@ namespace AdministracionAngela.EFRepository
     using System;
     using System.Collections.Generic;
     
-    public partial class Factura
+    public partial class Direccion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Factura()
+        public Direccion()
         {
-            this.LineaFactura = new HashSet<LineaFactura>();
+            this.Cliente = new HashSet<Cliente>();
         }
     
-        public long NumeroFactura { get; set; }
-        public long ClienteId { get; set; }
-        public Nullable<System.DateTime> Fecha { get; set; }
-        public Nullable<decimal> RecargoEquivalencia { get; set; }
-        public Nullable<long> Base { get; set; }
-        public Nullable<decimal> TotalBase { get; set; }
-        public Nullable<long> Total { get; set; }
+        public int Id { get; set; }
+        public string Direccion1 { get; set; }
+        public string Poblacion { get; set; }
+        public string Provincia { get; set; }
+        public Nullable<int> CodigoPostal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LineaFactura> LineaFactura { get; set; }
-        public virtual Cliente Cliente { get; set; }
+        public virtual ICollection<Cliente> Cliente { get; set; }
     }
 }

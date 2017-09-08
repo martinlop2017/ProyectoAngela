@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="ed14bd6bbb12450888f24b20e320d14a" Name="Diagram1">
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Cliente" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Producto" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+      <Diagram DiagramId="ed14bd6bbb12450888f24b20e320d14a" Name="Diagram1" ZoomLevel="98">
         <EntityTypeShape EntityType="AdministracionAngelaModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" ManuallyRouted="false" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" ManuallyRouted="false" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_IVA" ManuallyRouted="false" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Producto" Width="1.5" PointX="7.375" PointY="0.875" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="5.125" PointY="1" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Cliente" Width="1.5" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="2.75" PointY="1.375" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="3" PointY="5" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_IVA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

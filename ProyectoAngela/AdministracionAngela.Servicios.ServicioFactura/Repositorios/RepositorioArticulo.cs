@@ -20,8 +20,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var idsToDelete = repositoryArticulosToDelete.Select(a => a.Codigo);
-                var articulostoDelete = this.dbContext.Productos.Where(a => idsToDelete.Contains(a.Codigo));
+                var idsToDelete = repositoryArticulosToDelete.Select(a => a.CodigoProducto);
+                var articulostoDelete = this.dbContext.Productos.Where(a => idsToDelete.Contains(a.CodigoProducto));
 
                 this.dbContext.Productos.RemoveRange(articulostoDelete);
                 this.dbContext.SaveChanges();

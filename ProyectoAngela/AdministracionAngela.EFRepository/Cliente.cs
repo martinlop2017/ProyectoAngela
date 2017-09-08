@@ -21,6 +21,7 @@ namespace AdministracionAngela.EFRepository
         }
     
         public long Id { get; set; }
+        public int CodigoCliente { get; set; }
         public string CIF { get; set; }
         public string NIF { get; set; }
         public string Nombre { get; set; }

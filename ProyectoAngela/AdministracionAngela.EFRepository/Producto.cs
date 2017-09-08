@@ -20,7 +20,8 @@ namespace AdministracionAngela.EFRepository
             this.LineaFactura = new HashSet<LineaFactura>();
         }
     
-        public long Codigo { get; set; }
+        public long Id { get; set; }
+        public int CodigoProducto { get; set; }
         public string Descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

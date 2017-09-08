@@ -50,7 +50,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new ArticuloViewModel()
             {
-                Codigo = articuloFromRepository.Codigo,
+                Codigo = articuloFromRepository.CodigoProducto,
                 Descripcion = articuloFromRepository.Descripcion
             };
         }

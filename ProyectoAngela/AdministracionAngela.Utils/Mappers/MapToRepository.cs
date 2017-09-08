@@ -70,7 +70,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Producto()
             {
-                Codigo = articulo.Codigo,
+                CodigoProducto = articulo.Codigo,
                 Descripcion = articulo.Descripcion
             };
         }

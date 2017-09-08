@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdministracionAngela.Utils.Models.Perfil;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -15,6 +16,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public PerfilProvider(IRepositorioPerfil repositorioPerfil)
         {
             this.repositorioPerfil = repositorioPerfil;
+        }
+
+        public PerfilViewModel GetPerfil()
+        {
+            return new PerfilViewModel();
         }
     }
 }

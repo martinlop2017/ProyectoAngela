@@ -35,7 +35,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 var newClient = this.ReadNewClientFromForm();
 
-                //this.clienteProvider.SaveClient(newClient);
+                this.clienteProvider.SaveClient(newClient);
             }
         }
 
@@ -49,6 +49,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             return new AltaClienteViewModel()
             {
+                CodigoCliente = Convert.ToInt32(textBoxCodigoCliente.Text),
                 NombreComercial = textBoxNombreComercial.Text,
                 NIF = textBoxNIF.Text,
                 Direccion = textBoxDireccion.Text,
@@ -102,11 +103,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 checkBoxRE.Checked = false;
                 checkBoxUE.Checked = false;
             }
-        }
-
-        private void AltaCliente2_Load(object sender, EventArgs e)
-        {
-            //this.labelCodigoCliente.Text = this.clienteProvider.GetNextCodigoCliente().ToString();
         }
     }
 }

@@ -13,7 +13,6 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         GestionClienteViewModel GetGestionCliente();
         void SaveClient(AltaClienteViewModel newClient);
-        int GetNextCodigoCliente();
         bool DeleteClients(List<ClienteViewModel> clientsToDelete);
     }
 }

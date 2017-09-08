@@ -55,7 +55,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.customGroupBox5 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.labelCodigoCliente = new System.Windows.Forms.Label();
             this.textBoxNIF = new System.Windows.Forms.TextBox();
             this.textBoxNombreComercial = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -83,6 +82,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
+            this.textBoxCodigoCliente = new System.Windows.Forms.TextBox();
             this.customGroupBox4.SuspendLayout();
             this.customGroupBox6.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
@@ -264,7 +264,7 @@
             this.customGroupBox5.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox5.BorderColor = System.Drawing.Color.Black;
             this.customGroupBox5.BorderThickness = 1F;
-            this.customGroupBox5.Controls.Add(this.labelCodigoCliente);
+            this.customGroupBox5.Controls.Add(this.textBoxCodigoCliente);
             this.customGroupBox5.CustomGroupBoxColor = System.Drawing.Color.White;
             this.customGroupBox5.GroupImage = null;
             this.customGroupBox5.GroupTitle = "Codigo Cliente";
@@ -279,15 +279,6 @@
             this.customGroupBox5.TabIndex = 16;
             this.customGroupBox5.TabStop = false;
             this.customGroupBox5.Text = "customGroupBox5";
-            // 
-            // labelCodigoCliente
-            // 
-            this.labelCodigoCliente.AutoSize = true;
-            this.labelCodigoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCodigoCliente.Location = new System.Drawing.Point(32, 33);
-            this.labelCodigoCliente.Name = "labelCodigoCliente";
-            this.labelCodigoCliente.Size = new System.Drawing.Size(0, 25);
-            this.labelCodigoCliente.TabIndex = 0;
             // 
             // textBoxNIF
             // 
@@ -587,6 +578,13 @@
             this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
+            // textBoxCodigoCliente
+            // 
+            this.textBoxCodigoCliente.Location = new System.Drawing.Point(22, 27);
+            this.textBoxCodigoCliente.Name = "textBoxCodigoCliente";
+            this.textBoxCodigoCliente.Size = new System.Drawing.Size(66, 20);
+            this.textBoxCodigoCliente.TabIndex = 0;
+            // 
             // AltaCliente2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,7 +596,6 @@
             this.Controls.Add(this.customGroupBox1);
             this.Name = "AltaCliente2";
             this.Text = "Form2";
-            this.Load += new System.EventHandler(this.AltaCliente2_Load);
             this.customGroupBox4.ResumeLayout(false);
             this.customGroupBox4.PerformLayout();
             this.customGroupBox6.ResumeLayout(false);
@@ -644,7 +641,6 @@
         private System.Windows.Forms.TextBox textBoxNIF;
         private System.Windows.Forms.TextBox textBoxNombreComercial;
         private CustomControls.CustomGroupBox customGroupBox5;
-        private System.Windows.Forms.Label labelCodigoCliente;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBoxFormaPago;
@@ -657,5 +653,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
+        private System.Windows.Forms.TextBox textBoxCodigoCliente;
     }
 }

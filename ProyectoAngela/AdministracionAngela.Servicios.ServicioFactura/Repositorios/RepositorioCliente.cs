@@ -46,8 +46,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public void SaveClient(Cliente newClient)
         {
-            this.dbContext.Clientes.Add(newClient);
-            this.dbContext.SaveChanges();
+            try
+            {
+                this.dbContext.Clientes.Add(newClient);
+                this.dbContext.SaveChanges();
+            }
+            catch(Exception exp)
+            {
+
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,24 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public GestionIVAViewModel GetGestionIVA()
         {
-            return new GestionIVAViewModel();
+            return new GestionIVAViewModel()
+            {
+                IVAs = new BindingList<IVAViewModel>()
+                {
+                    new IVAViewModel()
+                    {
+                        Descripcion = "General",
+                        Porcentaje = 21,
+                        RecargoEquivalencia = 10
+                    },
+                    new IVAViewModel()
+                    {
+                        Descripcion = "Repercutido",
+                        Porcentaje = 11,
+                        RecargoEquivalencia = 10
+                    }
+                }
+            };
         }
     }
 }

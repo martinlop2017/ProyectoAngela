@@ -14,7 +14,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class MisDatos : Form
     {
-        IPerfilProvider perfilProvider;
+        private IPerfilProvider perfilProvider;
+        private bool isUpdate = false;
+        private int perfilId;
 
         public MisDatos(IPerfilProvider perfilProvider)
         {
@@ -35,7 +37,32 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button7_Click(object sender, EventArgs e)
         {
-            Close();
+            var nuevoPerfil = this.ReadForm();
+            if (isUpdate)
+            {
+                this.perfilProvider.UpdatePerfil(nuevoPerfil);
+            }
+            else
+            {
+                this.perfilProvider.SavePerfil(nuevoPerfil);
+            }
+        }
+
+        private PerfilViewModel ReadForm()
+        {
+            return new PerfilViewModel()
+            {
+                Nombre = textBoxNombre.Text,
+                NIF = textBoxNIF.Text,
+                Direccion = textBoxDireccion.Text,
+                Provincia = textBoxProvincia.Text,
+                Poblacion = textBoxPoblacion.Text,
+                Fax = Convert.ToInt32(textBoxFax.Text),
+                Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
+                Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
+                CodigoPostal = Convert.ToInt32(textBoxCodigoPostal.Text),
+                Email = textBoxEmail.Text
+            };
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -46,6 +73,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void MisDatos_Load(object sender, EventArgs e)
         {
             var viewModel = this.perfilProvider.GetPerfil();
+
+            //Si tenemos un perfil relleno en base de datos significa que se va a actualizar
+            if (viewModel != null)
+            {
+                this.isUpdate = true;
+                this.perfilId = viewModel.Id;
+            }
+
             this.FillControls(viewModel);
         }
 

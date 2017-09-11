@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.IVA;
+using AdministracionAngela.Utils.Extensions;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -33,19 +35,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button7_Click(object sender, EventArgs e)
         {
+            var rows = this.dataGridViewIVAs.Rows;
+
+            var mappedRows = rows.ToList<IVAViewModel>();
+
             Close();
         }
 
         private void TipoIVA_Load(object sender, EventArgs e)
         {
-            //FillControls();
+            var viewModel = ivaProvider.GetGestionIVA();
+
+            FillControls(viewModel);
         }
 
-        private void FillControls()
+        private void FillControls(GestionIVAViewModel viewModel)
         {
-            var viewModel = ivaProvider.GetGestionIVA();
             this.dataGridViewIVAs.DataSource = viewModel.IVAs;
-            //this.dataGridViewArticulos.DataSource = viewModel.Articulos;
         }
     }
 }

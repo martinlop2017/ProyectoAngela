@@ -10,5 +10,7 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IPerfilProvider
     {
         PerfilViewModel GetPerfil();
+        void UpdatePerfil(PerfilViewModel nuevoPerfil);
+        void SavePerfil(PerfilViewModel nuevoPerfil);
     }
 }

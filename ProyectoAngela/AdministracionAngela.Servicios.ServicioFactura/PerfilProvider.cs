@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Perfil;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
@@ -20,7 +21,20 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public PerfilViewModel GetPerfil()
         {
-            return new PerfilViewModel();
+            var perfilFromRepository = this.repositorioPerfil.GetPerfil();
+            return MapToViewModel.MapToPerfilViewModel(perfilFromRepository);
+        }
+
+        public void SavePerfil(PerfilViewModel nuevoPerfil)
+        {
+            var perfilToSave = MapToRepository.mapPerfilViewModel(nuevoPerfil);
+            this.repositorioPerfil.SavePerfil(perfilToSave);
+        }
+
+        public void UpdatePerfil(PerfilViewModel nuevoPerfil)
+        {
+            var perfilToUpdate = MapToRepository.mapPerfilViewModel(nuevoPerfil);
+            this.repositorioPerfil.UpdatePerfil(perfilToUpdate);
         }
     }
 }

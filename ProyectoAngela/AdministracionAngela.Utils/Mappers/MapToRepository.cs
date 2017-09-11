@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Articulo;
 using AdministracionAngela.Utils.Models.Cliente;
+using AdministracionAngela.Utils.Models.Perfil;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -91,6 +92,34 @@ namespace AdministracionAngela.Utils.Mappers
             return articulos.Where(c => c != null).Select(articulo => MapArticuloViewModel(articulo)).ToList<Producto>();
         }
 
+        #endregion
+
+        #region Mapeo de Perfil
+
+        public static Perfil mapPerfilViewModel(PerfilViewModel perfil)
+        {
+            return new Perfil()
+            {
+                Id = perfil.Id,
+                NIF = perfil.NIF,
+                Nombre = perfil.Nombre,
+                Contacto = new Contacto()
+                {
+                    Email = perfil.Email,
+                    Fax = perfil.Fax,
+                    Telefono1 = perfil.Telefono1,
+                    Telefono2 = perfil.Telefono2
+                },
+                Direccion = new Direccion()
+                {
+                    CodigoPostal = perfil.CodigoPostal,
+                    Direccion1 = perfil.Direccion,
+                    Poblacion = perfil.Poblacion,
+                    Provincia = perfil.Provincia
+                },
+                Iban = perfil.Iban
+            };
+        }
         #endregion
     }
 }

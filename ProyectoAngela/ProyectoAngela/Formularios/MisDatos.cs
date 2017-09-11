@@ -51,16 +51,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillControls(PerfilViewModel perfil)
         {
-            this.textBoxNombre.Text = perfil.Nombre;
-            this.textBoxNIF.Text = perfil.NIF;
-            this.textBoxDireccion.Text = perfil.Direccion;
-            this.textBoxCodigoPostal.Text = perfil.CodigoPostal.ToString();
-            this.textBoxProvincia.Text = perfil.Provincia;
-            this.textBoxPoblacion.Text = perfil.Poblacion;
-            this.textBoxTelefono1.Text = perfil.Telefono1.ToString();
-            this.textBoxTelefono2.Text = perfil.Telefono2.ToString();
-            this.textBoxFax.Text = perfil.Fax.ToString();
-            this.textBoxEmail.Text = perfil.Email;
+            this.textBoxMiNombre.Text = perfil.Nombre;
+            this.textBoxMiCif.Text = perfil.NIF;
+            this.textBoxMiDiereccion.Text = perfil.Direccion;
+            this.textBoxMiCP.Text = perfil.CodigoPostal.ToString();
+            this.textBoxMiProvincia.Text = perfil.Provincia;
+            this.textBoxMiPoblacion.Text = perfil.Poblacion;
+            this.textBoxMiTLF1.Text = perfil.Telefono1.ToString();
+            this.textBoxMiTLF2.Text = perfil.Telefono2.ToString();
+            this.textBoxMiFax.Text = perfil.Fax.ToString();
+            this.textBoxMiMail.Text = perfil.Email;
         }
     }
 }

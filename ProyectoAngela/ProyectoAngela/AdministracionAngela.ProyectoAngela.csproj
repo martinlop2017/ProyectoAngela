@@ -83,11 +83,23 @@
     <Compile Include="Formularios\AltaCliente2.Designer.cs">
       <DependentUpon>AltaCliente2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\AltaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaUsuario.Designer.cs">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\GestionArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formularios\GestionArticulos.Designer.cs">
       <DependentUpon>GestionArticulos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\GestionUsusarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionUsusarios.Designer.cs">
+      <DependentUpon>GestionUsusarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\TipoIVA.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,9 @@
     <EmbeddedResource Include="AltaClientes3.resx">
       <DependentUpon>AltaClientes3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaUsuario.resx">
+      <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionUsusarios.resx">
+      <DependentUpon>GestionUsusarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>

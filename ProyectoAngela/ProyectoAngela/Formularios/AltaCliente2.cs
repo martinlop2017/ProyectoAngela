@@ -36,23 +36,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (this.Validate())
-            {
-                var newClient = this.ReadNewClientFromForm();
-
-                if(!isUpdate)
-                {
-                    this.clienteProvider.SaveClient(newClient);
-                }
-                else
-                {
-                    this.clienteProvider.UpdateClient(newClient);
-                }
-            }
-        }
-
         private bool Validate()
         {
             return
@@ -77,7 +60,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Email = textBoxEmail.Text,
                 PersonaDeContacto = textBoxPersonaContacto.Text,
                 RiesgoMaximo = Convert.ToInt32(textBoxRiesgoMaximo.Text),
-                FormaDePago = textBoxFormaPago.Text,
+                FormaDePago = comboBoxFormaPago.Text,
                 isGeneral = checkBoxIVAGeneral.Checked,
                 RecargoEquivalencia = checkBoxRE.Checked,
                 UnionEuropea = checkBoxUE.Checked,
@@ -100,7 +83,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxEmail.Text = cliente.Email;
             this.textBoxPersonaContacto.Text = cliente.PersonaDeContacto;
             this.textBoxRiesgoMaximo.Text = cliente.RiesgoMaximo.ToString();
-            this.textBoxFormaPago.Text = cliente.FormaDePago;
+            this.comboBoxFormaPago.Text = cliente.FormaDePago;
             this.checkBoxIVAGeneral.Checked = cliente.isGeneral;
             this.checkBoxRE.Checked = cliente.RecargoEquivalencia;
             this.checkBoxUE.Checked = cliente.UnionEuropea;
@@ -142,6 +125,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
         }
 
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (this.Validate())
+            {
+                var newClient = this.ReadNewClientFromForm();
+
+                if (!isUpdate)
+                {
+                    this.clienteProvider.SaveClient(newClient);
+                }
+                else
+                {
+                    this.clienteProvider.UpdateClient(newClient);
+                }
+            }
+        }
         private void AltaCliente2_Load(object sender, EventArgs e)
         {
             if(this.isUpdate)

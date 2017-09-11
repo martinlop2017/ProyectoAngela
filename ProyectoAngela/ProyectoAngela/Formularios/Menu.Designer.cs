@@ -47,21 +47,21 @@
             this.FechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buttonSistema = new System.Windows.Forms.Button();
-            this.buttonFactura = new System.Windows.Forms.Button();
-            this.buttonIva = new System.Windows.Forms.Button();
-            this.buttonAlbaranes = new System.Windows.Forms.Button();
-            this.buttonArticulos = new System.Windows.Forms.Button();
-            this.buttonCliente = new System.Windows.Forms.Button();
-            this.buttonUsusarios = new System.Windows.Forms.Button();
-            this.buttonListados = new System.Windows.Forms.Button();
-            this.buttonSeguridad = new System.Windows.Forms.Button();
-            this.buttonAvisos = new System.Windows.Forms.Button();
-            this.buttonMisdatos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonMisdatos = new System.Windows.Forms.Button();
+            this.buttonAvisos = new System.Windows.Forms.Button();
+            this.buttonSeguridad = new System.Windows.Forms.Button();
+            this.buttonListados = new System.Windows.Forms.Button();
+            this.buttonUsusarios = new System.Windows.Forms.Button();
+            this.buttonAlbaranes = new System.Windows.Forms.Button();
+            this.buttonArticulos = new System.Windows.Forms.Button();
+            this.buttonCliente = new System.Windows.Forms.Button();
+            this.buttonIva = new System.Windows.Forms.Button();
+            this.buttonFactura = new System.Windows.Forms.Button();
+            this.buttonSistema = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -103,8 +103,9 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // tiposDeIvaToolStripMenuItem
             // 
@@ -172,9 +173,9 @@
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top)));
-            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripStatusLabel3.Font = new System.Drawing.Font("Palatino Linotype", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(175, 40);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(132, 40);
             this.toolStripStatusLabel3.Text = "   Version:   1.0.0   ";
             // 
             // toolStripStatusLabel2
@@ -184,7 +185,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right)));
             this.toolStripStatusLabel2.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(816, 40);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(884, 40);
             this.toolStripStatusLabel2.Spring = true;
             this.toolStripStatusLabel2.Text = "                                   F   A   C   T   U   F   I   S   H             " +
     "                ";
@@ -193,9 +194,9 @@
             // FechaInicio
             // 
             this.FechaInicio.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Top;
-            this.FechaInicio.Font = new System.Drawing.Font("Palatino Linotype", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaInicio.Font = new System.Drawing.Font("Palatino Linotype", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.Size = new System.Drawing.Size(256, 40);
+            this.FechaInicio.Size = new System.Drawing.Size(231, 40);
             this.FechaInicio.Text = "  Fecha : 16/09/17 - Hora: 19:20:25  ";
             // 
             // toolStripStatusLabel1
@@ -209,155 +210,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // buttonSistema
-            // 
-            this.buttonSistema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSistema.BackgroundImage")));
-            this.buttonSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonSistema.ImageKey = "(ninguno)";
-            this.buttonSistema.Location = new System.Drawing.Point(12, 43);
-            this.buttonSistema.Name = "buttonSistema";
-            this.buttonSistema.Size = new System.Drawing.Size(150, 150);
-            this.buttonSistema.TabIndex = 2;
-            this.buttonSistema.UseVisualStyleBackColor = true;
-            this.buttonSistema.Click += new System.EventHandler(this.button1_Click);
-            this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
-            this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
-            // 
-            // buttonFactura
-            // 
-            this.buttonFactura.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFactura.BackgroundImage")));
-            this.buttonFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonFactura.ImageKey = "(ninguno)";
-            this.buttonFactura.Location = new System.Drawing.Point(636, 43);
-            this.buttonFactura.Name = "buttonFactura";
-            this.buttonFactura.Size = new System.Drawing.Size(150, 150);
-            this.buttonFactura.TabIndex = 3;
-            this.buttonFactura.UseVisualStyleBackColor = true;
-            this.buttonFactura.Click += new System.EventHandler(this.buttonFactura_Click);
-            // 
-            // buttonIva
-            // 
-            this.buttonIva.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonIva.BackgroundImage")));
-            this.buttonIva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonIva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonIva.ImageKey = "(ninguno)";
-            this.buttonIva.Location = new System.Drawing.Point(12, 551);
-            this.buttonIva.Name = "buttonIva";
-            this.buttonIva.Size = new System.Drawing.Size(150, 150);
-            this.buttonIva.TabIndex = 4;
-            this.buttonIva.UseVisualStyleBackColor = true;
-            this.buttonIva.Visible = false;
-            this.buttonIva.Click += new System.EventHandler(this.buttonIva_Click);
-            // 
-            // buttonAlbaranes
-            // 
-            this.buttonAlbaranes.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.buttonAlbaranes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAlbaranes.BackgroundImage")));
-            this.buttonAlbaranes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAlbaranes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonAlbaranes.ImageKey = "(ninguno)";
-            this.buttonAlbaranes.Location = new System.Drawing.Point(480, 43);
-            this.buttonAlbaranes.Name = "buttonAlbaranes";
-            this.buttonAlbaranes.Size = new System.Drawing.Size(150, 150);
-            this.buttonAlbaranes.TabIndex = 7;
-            this.buttonAlbaranes.UseVisualStyleBackColor = false;
-            this.buttonAlbaranes.Click += new System.EventHandler(this.buttonAlbaranes_Click);
-            this.buttonAlbaranes.MouseEnter += new System.EventHandler(this.buttonAlbaranes_MouseEnter);
-            // 
-            // buttonArticulos
-            // 
-            this.buttonArticulos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonArticulos.BackgroundImage")));
-            this.buttonArticulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonArticulos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonArticulos.ImageKey = "(ninguno)";
-            this.buttonArticulos.Location = new System.Drawing.Point(324, 43);
-            this.buttonArticulos.Name = "buttonArticulos";
-            this.buttonArticulos.Size = new System.Drawing.Size(150, 150);
-            this.buttonArticulos.TabIndex = 6;
-            this.buttonArticulos.UseVisualStyleBackColor = true;
-            this.buttonArticulos.Click += new System.EventHandler(this.buttonArticulos_Click);
-            // 
-            // buttonCliente
-            // 
-            this.buttonCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCliente.BackgroundImage")));
-            this.buttonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonCliente.ImageKey = "(ninguno)";
-            this.buttonCliente.Location = new System.Drawing.Point(168, 43);
-            this.buttonCliente.Name = "buttonCliente";
-            this.buttonCliente.Size = new System.Drawing.Size(150, 150);
-            this.buttonCliente.TabIndex = 5;
-            this.buttonCliente.UseVisualStyleBackColor = true;
-            this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
-            // 
-            // buttonUsusarios
-            // 
-            this.buttonUsusarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUsusarios.BackgroundImage")));
-            this.buttonUsusarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonUsusarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonUsusarios.ImageKey = "(ninguno)";
-            this.buttonUsusarios.Location = new System.Drawing.Point(12, 375);
-            this.buttonUsusarios.Name = "buttonUsusarios";
-            this.buttonUsusarios.Size = new System.Drawing.Size(150, 150);
-            this.buttonUsusarios.TabIndex = 8;
-            this.buttonUsusarios.UseVisualStyleBackColor = true;
-            this.buttonUsusarios.Visible = false;
-            // 
-            // buttonListados
-            // 
-            this.buttonListados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonListados.BackgroundImage")));
-            this.buttonListados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonListados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonListados.ImageKey = "(ninguno)";
-            this.buttonListados.Location = new System.Drawing.Point(792, 43);
-            this.buttonListados.Name = "buttonListados";
-            this.buttonListados.Size = new System.Drawing.Size(150, 150);
-            this.buttonListados.TabIndex = 10;
-            this.buttonListados.UseVisualStyleBackColor = true;
-            this.buttonListados.Click += new System.EventHandler(this.buttonListados_Click);
-            // 
-            // buttonSeguridad
-            // 
-            this.buttonSeguridad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSeguridad.BackgroundImage")));
-            this.buttonSeguridad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonSeguridad.ImageKey = "(ninguno)";
-            this.buttonSeguridad.Location = new System.Drawing.Point(948, 43);
-            this.buttonSeguridad.Name = "buttonSeguridad";
-            this.buttonSeguridad.Size = new System.Drawing.Size(150, 150);
-            this.buttonSeguridad.TabIndex = 11;
-            this.buttonSeguridad.UseVisualStyleBackColor = true;
-            this.buttonSeguridad.Click += new System.EventHandler(this.buttonSeguridad_Click);
-            // 
-            // buttonAvisos
-            // 
-            this.buttonAvisos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAvisos.BackgroundImage")));
-            this.buttonAvisos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAvisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonAvisos.ImageKey = "(ninguno)";
-            this.buttonAvisos.Location = new System.Drawing.Point(1104, 43);
-            this.buttonAvisos.Name = "buttonAvisos";
-            this.buttonAvisos.Size = new System.Drawing.Size(150, 150);
-            this.buttonAvisos.TabIndex = 12;
-            this.buttonAvisos.UseVisualStyleBackColor = true;
-            this.buttonAvisos.Click += new System.EventHandler(this.buttonAvisos_Click);
-            // 
-            // buttonMisdatos
-            // 
-            this.buttonMisdatos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMisdatos.BackgroundImage")));
-            this.buttonMisdatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonMisdatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.buttonMisdatos.ImageKey = "(ninguno)";
-            this.buttonMisdatos.Location = new System.Drawing.Point(12, 210);
-            this.buttonMisdatos.Name = "buttonMisdatos";
-            this.buttonMisdatos.Size = new System.Drawing.Size(150, 150);
-            this.buttonMisdatos.TabIndex = 13;
-            this.buttonMisdatos.UseVisualStyleBackColor = true;
-            this.buttonMisdatos.Visible = false;
-            this.buttonMisdatos.Click += new System.EventHandler(this.buttonMisdatos_Click);
             // 
             // label1
             // 
@@ -398,6 +250,156 @@
             this.label4.Size = new System.Drawing.Size(239, 26);
             this.label4.TabIndex = 17;
             this.label4.Text = "D. Fulanito Garcia Garcia";
+            // 
+            // buttonMisdatos
+            // 
+            this.buttonMisdatos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMisdatos.BackgroundImage")));
+            this.buttonMisdatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonMisdatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonMisdatos.ImageKey = "(ninguno)";
+            this.buttonMisdatos.Location = new System.Drawing.Point(12, 209);
+            this.buttonMisdatos.Name = "buttonMisdatos";
+            this.buttonMisdatos.Size = new System.Drawing.Size(150, 150);
+            this.buttonMisdatos.TabIndex = 13;
+            this.buttonMisdatos.UseVisualStyleBackColor = true;
+            this.buttonMisdatos.Visible = false;
+            this.buttonMisdatos.Click += new System.EventHandler(this.buttonMisdatos_Click);
+            // 
+            // buttonAvisos
+            // 
+            this.buttonAvisos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAvisos.BackgroundImage")));
+            this.buttonAvisos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAvisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonAvisos.ImageKey = "(ninguno)";
+            this.buttonAvisos.Location = new System.Drawing.Point(1104, 43);
+            this.buttonAvisos.Name = "buttonAvisos";
+            this.buttonAvisos.Size = new System.Drawing.Size(150, 150);
+            this.buttonAvisos.TabIndex = 12;
+            this.buttonAvisos.UseVisualStyleBackColor = true;
+            this.buttonAvisos.Click += new System.EventHandler(this.buttonAvisos_Click);
+            // 
+            // buttonSeguridad
+            // 
+            this.buttonSeguridad.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSeguridad.BackgroundImage")));
+            this.buttonSeguridad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonSeguridad.ImageKey = "(ninguno)";
+            this.buttonSeguridad.Location = new System.Drawing.Point(948, 43);
+            this.buttonSeguridad.Name = "buttonSeguridad";
+            this.buttonSeguridad.Size = new System.Drawing.Size(150, 150);
+            this.buttonSeguridad.TabIndex = 11;
+            this.buttonSeguridad.UseVisualStyleBackColor = true;
+            this.buttonSeguridad.Click += new System.EventHandler(this.buttonSeguridad_Click);
+            // 
+            // buttonListados
+            // 
+            this.buttonListados.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonListados.BackgroundImage")));
+            this.buttonListados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonListados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonListados.ImageKey = "(ninguno)";
+            this.buttonListados.Location = new System.Drawing.Point(792, 43);
+            this.buttonListados.Name = "buttonListados";
+            this.buttonListados.Size = new System.Drawing.Size(150, 150);
+            this.buttonListados.TabIndex = 10;
+            this.buttonListados.UseVisualStyleBackColor = true;
+            this.buttonListados.Click += new System.EventHandler(this.buttonListados_Click);
+            // 
+            // buttonUsusarios
+            // 
+            this.buttonUsusarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUsusarios.BackgroundImage")));
+            this.buttonUsusarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUsusarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonUsusarios.ImageKey = "(ninguno)";
+            this.buttonUsusarios.Location = new System.Drawing.Point(12, 375);
+            this.buttonUsusarios.Name = "buttonUsusarios";
+            this.buttonUsusarios.Size = new System.Drawing.Size(150, 150);
+            this.buttonUsusarios.TabIndex = 8;
+            this.buttonUsusarios.UseVisualStyleBackColor = true;
+            this.buttonUsusarios.Visible = false;
+            this.buttonUsusarios.Click += new System.EventHandler(this.buttonUsusarios_Click);
+            // 
+            // buttonAlbaranes
+            // 
+            this.buttonAlbaranes.BackColor = System.Drawing.Color.Blue;
+            this.buttonAlbaranes.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAlbaranes.BackgroundImage")));
+            this.buttonAlbaranes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAlbaranes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonAlbaranes.ImageKey = "(ninguno)";
+            this.buttonAlbaranes.Location = new System.Drawing.Point(480, 43);
+            this.buttonAlbaranes.Name = "buttonAlbaranes";
+            this.buttonAlbaranes.Size = new System.Drawing.Size(150, 150);
+            this.buttonAlbaranes.TabIndex = 7;
+            this.buttonAlbaranes.UseVisualStyleBackColor = false;
+            this.buttonAlbaranes.Click += new System.EventHandler(this.buttonAlbaranes_Click);
+            this.buttonAlbaranes.MouseEnter += new System.EventHandler(this.buttonAlbaranes_MouseEnter);
+            // 
+            // buttonArticulos
+            // 
+            this.buttonArticulos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonArticulos.BackgroundImage")));
+            this.buttonArticulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonArticulos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonArticulos.ImageKey = "(ninguno)";
+            this.buttonArticulos.Location = new System.Drawing.Point(324, 43);
+            this.buttonArticulos.Name = "buttonArticulos";
+            this.buttonArticulos.Size = new System.Drawing.Size(150, 150);
+            this.buttonArticulos.TabIndex = 6;
+            this.buttonArticulos.UseVisualStyleBackColor = true;
+            this.buttonArticulos.Click += new System.EventHandler(this.buttonArticulos_Click);
+            // 
+            // buttonCliente
+            // 
+            this.buttonCliente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonCliente.BackgroundImage")));
+            this.buttonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonCliente.ImageKey = "(ninguno)";
+            this.buttonCliente.Location = new System.Drawing.Point(168, 43);
+            this.buttonCliente.Name = "buttonCliente";
+            this.buttonCliente.Size = new System.Drawing.Size(150, 150);
+            this.buttonCliente.TabIndex = 5;
+            this.buttonCliente.UseVisualStyleBackColor = true;
+            this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
+            // 
+            // buttonIva
+            // 
+            this.buttonIva.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonIva.BackgroundImage")));
+            this.buttonIva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonIva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonIva.ImageKey = "(ninguno)";
+            this.buttonIva.Location = new System.Drawing.Point(12, 551);
+            this.buttonIva.Name = "buttonIva";
+            this.buttonIva.Size = new System.Drawing.Size(150, 150);
+            this.buttonIva.TabIndex = 4;
+            this.buttonIva.UseVisualStyleBackColor = true;
+            this.buttonIva.Visible = false;
+            this.buttonIva.Click += new System.EventHandler(this.buttonIva_Click);
+            // 
+            // buttonFactura
+            // 
+            this.buttonFactura.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFactura.BackgroundImage")));
+            this.buttonFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonFactura.ImageKey = "(ninguno)";
+            this.buttonFactura.Location = new System.Drawing.Point(636, 43);
+            this.buttonFactura.Name = "buttonFactura";
+            this.buttonFactura.Size = new System.Drawing.Size(150, 150);
+            this.buttonFactura.TabIndex = 3;
+            this.buttonFactura.UseVisualStyleBackColor = true;
+            this.buttonFactura.Click += new System.EventHandler(this.buttonFactura_Click);
+            // 
+            // buttonSistema
+            // 
+            this.buttonSistema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSistema.BackgroundImage")));
+            this.buttonSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonSistema.ImageKey = "(ninguno)";
+            this.buttonSistema.Location = new System.Drawing.Point(12, 43);
+            this.buttonSistema.Name = "buttonSistema";
+            this.buttonSistema.Size = new System.Drawing.Size(150, 150);
+            this.buttonSistema.TabIndex = 2;
+            this.buttonSistema.UseVisualStyleBackColor = true;
+            this.buttonSistema.Click += new System.EventHandler(this.button1_Click);
+            this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
+            this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
             // Menu
             // 

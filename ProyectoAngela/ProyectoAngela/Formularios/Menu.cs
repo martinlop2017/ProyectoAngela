@@ -167,5 +167,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
 
         }
+
+        private void buttonUsusarios_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<GestionUsusarios>();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<GestionUsusarios>();
+        }
     }
 }

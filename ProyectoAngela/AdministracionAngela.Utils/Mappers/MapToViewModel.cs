@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Cliente;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Articulo;
+using AdministracionAngela.Utils.Models.Perfil;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -106,6 +107,27 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        #endregion
+
+        #region Mapeo Perfil
+
+        public static PerfilViewModel MapToPerfilViewModel(Perfil perfilFromRepository)
+        {
+            return new PerfilViewModel()
+            {
+                NIF = perfilFromRepository.NIF,
+                Nombre = perfilFromRepository.Nombre,
+                CodigoPostal = perfilFromRepository.Direccion.CodigoPostal.Value,
+                Direccion = perfilFromRepository.Direccion.Direccion1,
+                Poblacion = perfilFromRepository.Direccion.Poblacion,
+                Provincia = perfilFromRepository.Direccion.Provincia,
+                Email = perfilFromRepository.Contacto.Email,
+                Fax = perfilFromRepository.Contacto.Fax.Value,
+                Telefono1 = perfilFromRepository.Contacto.Telefono1.Value,
+                Telefono2 = perfilFromRepository.Contacto.Telefono2.Value,
+                Iban = perfilFromRepository.Iban,
+            };
+        }
         #endregion
     }
 }

@@ -115,6 +115,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new PerfilViewModel()
             {
+                Id = perfilFromRepository.Id,
                 NIF = perfilFromRepository.NIF,
                 Nombre = perfilFromRepository.Nombre,
                 CodigoPostal = perfilFromRepository.Direccion.CodigoPostal.Value,

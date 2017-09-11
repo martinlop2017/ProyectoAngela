@@ -24,5 +24,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var perfilFromRepository = this.repositorioPerfil.GetPerfil();
             return MapToViewModel.MapToPerfilViewModel(perfilFromRepository);
         }
+
+        public void SavePerfil(PerfilViewModel nuevoPerfil)
+        {
+            var perfilToSave = MapToRepository.mapPerfilViewModel(nuevoPerfil);
+            this.repositorioPerfil.SavePerfil(perfilToSave);
+        }
+
+        public void UpdatePerfil(PerfilViewModel nuevoPerfil)
+        {
+            var perfilToUpdate = MapToRepository.mapPerfilViewModel(nuevoPerfil);
+            this.repositorioPerfil.UpdatePerfil(perfilToUpdate);
+        }
     }
 }

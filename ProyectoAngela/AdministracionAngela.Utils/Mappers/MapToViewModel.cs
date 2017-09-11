@@ -113,22 +113,29 @@ namespace AdministracionAngela.Utils.Mappers
 
         public static PerfilViewModel MapToPerfilViewModel(Perfil perfilFromRepository)
         {
-            return new PerfilViewModel()
+            PerfilViewModel perfil = new PerfilViewModel();
+            if(perfilFromRepository != null)
             {
-                Id = perfilFromRepository.Id,
-                NIF = perfilFromRepository.NIF,
-                Nombre = perfilFromRepository.Nombre,
-                CodigoPostal = perfilFromRepository.Direccion.CodigoPostal.Value,
-                Direccion = perfilFromRepository.Direccion.Direccion1,
-                Poblacion = perfilFromRepository.Direccion.Poblacion,
-                Provincia = perfilFromRepository.Direccion.Provincia,
-                Email = perfilFromRepository.Contacto.Email,
-                Fax = perfilFromRepository.Contacto.Fax.Value,
-                Telefono1 = perfilFromRepository.Contacto.Telefono1.Value,
-                Telefono2 = perfilFromRepository.Contacto.Telefono2.Value,
-                Iban = perfilFromRepository.Iban,
-            };
+                perfil = new PerfilViewModel()
+                {
+                    Id = perfilFromRepository.Id,
+                    NIF = perfilFromRepository.NIF,
+                    Nombre = perfilFromRepository.Nombre,
+                    CodigoPostal = perfilFromRepository.Direccion.CodigoPostal.Value,
+                    Direccion = perfilFromRepository.Direccion.Direccion1,
+                    Poblacion = perfilFromRepository.Direccion.Poblacion,
+                    Provincia = perfilFromRepository.Direccion.Provincia,
+                    Email = perfilFromRepository.Contacto.Email,
+                    Fax = perfilFromRepository.Contacto.Fax.Value,
+                    Telefono1 = perfilFromRepository.Contacto.Telefono1.Value,
+                    Telefono2 = perfilFromRepository.Contacto.Telefono2.Value,
+                    Iban = perfilFromRepository.Iban,
+                };
+            }
+
+            return perfil;
         }
+
         #endregion
     }
 }

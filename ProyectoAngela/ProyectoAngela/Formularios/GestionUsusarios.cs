@@ -1,5 +1,5 @@
-﻿using Administra
-using System;cionAngela.Utils.Interfaces;
+﻿using AdministracionAngela.Utils.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +13,13 @@ using System.Windows.Forms;
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionUsusarios : Form
-       {
-        
-        
-        public GestionUsusarios()
+    {
+
+        private IFormOpener formOpener;
+
+        public GestionUsusarios(IFormOpener formOpener)
         {
-            private IFormOpener formOpener;
+            this.formOpener = formOpener;
             InitializeComponent();
         }
 
@@ -64,7 +65,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button5_Click(object sender, EventArgs e)
         {
-             Close();
+            Close();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -89,7 +90,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            label1.Visible=true;
+            label1.Visible = true;
 
         }
 

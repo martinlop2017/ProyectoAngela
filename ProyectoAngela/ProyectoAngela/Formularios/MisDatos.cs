@@ -52,16 +52,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             return new PerfilViewModel()
             {
-                Nombre = textBoxNombre.Text,
-                NIF = textBoxNIF.Text,
-                Direccion = textBoxDireccion.Text,
-                Provincia = textBoxProvincia.Text,
-                Poblacion = textBoxPoblacion.Text,
-                Fax = Convert.ToInt32(textBoxFax.Text),
-                Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
-                Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
-                CodigoPostal = Convert.ToInt32(textBoxCodigoPostal.Text),
-                Email = textBoxEmail.Text
+                //Nombre = textBoxNombre.Text,
+                //NIF = textBoxNIF.Text,
+                //Direccion = textBoxDireccion.Text,
+                //Provincia = textBoxProvincia.Text,
+                //Poblacion = textBoxPoblacion.Text,
+                //Fax = Convert.ToInt32(textBoxFax.Text),
+                //Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
+                //Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
+                //CodigoPostal = Convert.ToInt32(textBoxCodigoPostal.Text),
+                //Email = textBoxEmail.Text
             };
         }
 

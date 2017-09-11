@@ -32,7 +32,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonAceptar = new System.Windows.Forms.Button();
             this.dataGridViewIVAs = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).BeginInit();
             this.SuspendLayout();
@@ -66,21 +66,23 @@
             this.panel1.Size = new System.Drawing.Size(307, 6);
             this.panel1.TabIndex = 110;
             // 
-            // button7
+            // buttonAceptar
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.Location = new System.Drawing.Point(59, 443);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(208, 60);
-            this.button7.TabIndex = 112;
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.buttonAceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAceptar.BackgroundImage")));
+            this.buttonAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAceptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAceptar.FlatAppearance.BorderSize = 0;
+            this.buttonAceptar.Location = new System.Drawing.Point(59, 443);
+            this.buttonAceptar.Name = "buttonAceptar";
+            this.buttonAceptar.Size = new System.Drawing.Size(208, 60);
+            this.buttonAceptar.TabIndex = 112;
+            this.buttonAceptar.UseVisualStyleBackColor = true;
+            this.buttonAceptar.Click += new System.EventHandler(this.button7_Click);
             // 
             // dataGridViewIVAs
             // 
+            this.dataGridViewIVAs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewIVAs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewIVAs.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewIVAs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewIVAs.Location = new System.Drawing.Point(12, 108);
@@ -97,7 +99,7 @@
             this.ClientSize = new System.Drawing.Size(332, 530);
             this.Controls.Add(this.dataGridViewIVAs);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.panel1);
             this.Name = "TipoIVA";
@@ -113,7 +115,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonAceptar;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridViewIVAs;

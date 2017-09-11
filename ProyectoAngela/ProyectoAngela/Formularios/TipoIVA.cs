@@ -44,12 +44,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void TipoIVA_Load(object sender, EventArgs e)
         {
-            FillControls();
+            var viewModel = ivaProvider.GetGestionIVA();
+
+            FillControls(viewModel);
         }
 
-        private void FillControls()
+        private void FillControls(GestionIVAViewModel viewModel)
         {
-            var viewModel = ivaProvider.GetGestionIVA();
             this.dataGridViewIVAs.DataSource = viewModel.IVAs;
         }
     }

@@ -13,8 +13,14 @@ namespace AdministracionAngela.Utils.Models.Factura
         public int ClienteId { get; set; }
         public string NombreCliente { get; set; }
         public DateTime Fecha { get; set; }
+        public List<LineaFacturaViewModel> LineasFactura { get; set; }
         public decimal TotalBase { get; set; }
         public decimal TotalIVA { get; set; }
         public decimal TotalRecargoEquivalencia { get; set; }
+
+        public FacturaViewModel()
+        {
+            
+        }
     }
 }

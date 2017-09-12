@@ -10,5 +10,6 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IIVAProvider
     {
         GestionIVAViewModel GetGestionIVA();
+        void SaveIVA(List<IVAViewModel> mappedRows);
     }
 }

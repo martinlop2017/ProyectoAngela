@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.IVA;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
@@ -21,24 +22,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public GestionIVAViewModel GetGestionIVA()
         {
-            return new GestionIVAViewModel()
-            {
-                IVAs = new BindingList<IVAViewModel>()
-                {
-                    new IVAViewModel()
-                    {
-                        Descripcion = "General",
-                        Porcentaje = 21,
-                        RecargoEquivalencia = 10
-                    },
-                    new IVAViewModel()
-                    {
-                        Descripcion = "Repercutido",
-                        Porcentaje = 11,
-                        RecargoEquivalencia = 10
-                    }
-                }
-            };
+            var ivasFromRepository = this.repositoryIVA.GetAllIVAs();
+            return MapToViewModel.MapListToGestionIVA(ivasFromRepository);
+        }
+
+        public void SaveIVA(List<IVAViewModel> mappedRows)
+        {
+            var ivastoSave = MapToRepository.MapListOfIVAViewModel(mappedRows);
+            this.repositoryIVA.DeleteIVAs(ivastoSave);
+            this.repositoryIVA.SaveListOfIVA(ivastoSave);
         }
     }
 }

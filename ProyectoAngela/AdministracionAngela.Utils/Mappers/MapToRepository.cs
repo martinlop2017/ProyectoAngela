@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Articulo;
 using AdministracionAngela.Utils.Models.Cliente;
+using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 
 namespace AdministracionAngela.Utils.Mappers
@@ -120,6 +121,25 @@ namespace AdministracionAngela.Utils.Mappers
                 Iban = perfil.Iban
             };
         }
+        #endregion
+
+        #region Mapeo de IVA
+
+        public static IVA MapIVAViewModel(IVAViewModel iva)
+        {
+            return new IVA()
+            {
+                Id = iva.Id,
+                Descripcion = iva.Descripcion,
+                Porcentaje = iva.Porcentaje,
+            };
+        }
+
+        public static List<IVA> MapListOfIVAViewModel(List<IVAViewModel> ivas)
+        {
+            return ivas.Select(iva => MapIVAViewModel(iva)).ToList<IVA>();
+        }
+
         #endregion
     }
 }

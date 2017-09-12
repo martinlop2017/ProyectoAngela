@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Cliente;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Articulo;
+using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 
 namespace AdministracionAngela.Utils.Mappers
@@ -134,6 +136,35 @@ namespace AdministracionAngela.Utils.Mappers
             }
 
             return perfil;
+        }
+
+        #endregion
+
+        #region Mapeo IVA
+
+        public static IVAViewModel MapIVA(IVA iva)
+        {
+            return new IVAViewModel()
+            {
+                Id = iva.Id,
+                Descripcion = iva.Descripcion,
+                Porcentaje = iva.Porcentaje.Value
+            };
+        }
+
+        public static List<IVAViewModel> MapIVAList(List<IVA> ivaListFromRepository)
+        {
+            return ivaListFromRepository.Select(iva => MapIVA(iva)).ToList<IVAViewModel>();
+        }
+
+        public static GestionIVAViewModel MapListToGestionIVA(List<IVA> ivas)
+        {
+            var ivasViewModel = MapIVAList(ivas);
+
+            return new GestionIVAViewModel()
+            {
+                IVAs = new BindingList<IVAViewModel>(ivasViewModel)
+            };
         }
 
         #endregion

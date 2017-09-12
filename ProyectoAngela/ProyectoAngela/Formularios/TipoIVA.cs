@@ -16,6 +16,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class TipoIVA : Form
     {
         private IIVAProvider ivaProvider;
+        private bool IsUpdate = false;
 
         public TipoIVA(IIVAProvider ivaProvider)
         {
@@ -38,6 +39,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var rows = this.dataGridViewIVAs.Rows;
 
             var mappedRows = rows.ToList<IVAViewModel>();
+
+            this.ivaProvider.SaveIVA(mappedRows);
 
             Close();
         }

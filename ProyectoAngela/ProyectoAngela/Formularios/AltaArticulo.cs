@@ -38,19 +38,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (this.Validate())
-            {
-                var nuevoArticulo = this.ReadNewArticuloFromForm();
-
-                if (!isUpdate)
-                {
-                    this.articuloProvider.SaveArticulo(nuevoArticulo);
-                }
-                else
-                {
-                    this.articuloProvider.UpdateArticulo(nuevoArticulo);
-                }
-            }
+          
         }
 
         private AltaArticuloViewModel ReadNewArticuloFromForm()
@@ -77,5 +65,34 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.FillFormWithArticulo(articulo);
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (this.Validate())
+            {
+                var nuevoArticulo = this.ReadNewArticuloFromForm();
+
+                if (!isUpdate)
+                {
+                    this.articuloProvider.SaveArticulo(nuevoArticulo);
+                }
+                else
+                {
+                    this.articuloProvider.UpdateArticulo(nuevoArticulo);
+                }
+            }
+        }
+
+        private void textBoxCodigoArticulo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+
     }
 }

@@ -203,6 +203,7 @@
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
             this.Name = "GestionArticulos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionArticulos";
             this.Load += new System.EventHandler(this.GestionArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).EndInit();

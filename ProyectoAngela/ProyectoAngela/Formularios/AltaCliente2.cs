@@ -150,5 +150,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.FillFormWithClient(client);
             }
         }
+
+        private void textBoxTelefono1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxTelefono1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

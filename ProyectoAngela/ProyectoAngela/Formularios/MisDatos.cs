@@ -97,5 +97,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxMiFax.Text = perfil.Fax.ToString();
             this.textBoxMiMail.Text = perfil.Email;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

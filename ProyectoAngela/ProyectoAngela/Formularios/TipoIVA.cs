@@ -56,5 +56,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.dataGridViewIVAs.DataSource = viewModel.IVAs;
         }
+
+        private void dataGridViewIVAs_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

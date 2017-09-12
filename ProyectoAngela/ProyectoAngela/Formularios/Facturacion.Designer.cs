@@ -1155,7 +1155,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Facturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Factruacion";
+            this.Text = "Facturacion";
             this.Load += new System.EventHandler(this.Facturacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);

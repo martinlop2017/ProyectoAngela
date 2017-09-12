@@ -136,6 +136,7 @@
             this.button2.Size = new System.Drawing.Size(208, 60);
             this.button2.TabIndex = 1;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // formadepago
             // 
@@ -630,6 +631,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(847, 651);
+            this.ControlBox = false;
             this.Controls.Add(this.formadepago);
             this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.label15);

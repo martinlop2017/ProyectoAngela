@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("Mis Datos");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("Gestion Usuarios");
+            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("Ususarios", new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("Impuestos");
+            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("Sistema", new System.Windows.Forms.TreeNode[] {
+            treeNode1,
+            treeNode3,
+            treeNode4});
+            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("Gestion Clientes");
+            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("Clientes", new System.Windows.Forms.TreeNode[] {
+            treeNode6});
+            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("Gestion Articulos");
+            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("Articulos", new System.Windows.Forms.TreeNode[] {
+            treeNode8});
+            System.Windows.Forms.TreeNode treeNode10 = new System.Windows.Forms.TreeNode("Gestion Albaranes");
+            System.Windows.Forms.TreeNode treeNode11 = new System.Windows.Forms.TreeNode("Albaranes", new System.Windows.Forms.TreeNode[] {
+            treeNode10});
+            System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("Gestion Facturas");
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("Facturas", new System.Windows.Forms.TreeNode[] {
+            treeNode12});
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("Listados");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("Copias Seguridad");
+            System.Windows.Forms.TreeNode treeNode16 = new System.Windows.Forms.TreeNode("Gestion Avisos");
+            System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("Avisos", new System.Windows.Forms.TreeNode[] {
+            treeNode16});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaUsuario));
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("Mis Datos");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("Gestion Usuarios");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("Ususarios", new System.Windows.Forms.TreeNode[] {
-            treeNode19});
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("Impuestos");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("Sistema", new System.Windows.Forms.TreeNode[] {
-            treeNode18,
-            treeNode20,
-            treeNode21});
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("Gestion Clientes");
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("Clientes", new System.Windows.Forms.TreeNode[] {
-            treeNode23});
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("Gestion Articulos");
-            System.Windows.Forms.TreeNode treeNode26 = new System.Windows.Forms.TreeNode("Articulos", new System.Windows.Forms.TreeNode[] {
-            treeNode25});
-            System.Windows.Forms.TreeNode treeNode27 = new System.Windows.Forms.TreeNode("Gestion Albaranes");
-            System.Windows.Forms.TreeNode treeNode28 = new System.Windows.Forms.TreeNode("Albaranes", new System.Windows.Forms.TreeNode[] {
-            treeNode27});
-            System.Windows.Forms.TreeNode treeNode29 = new System.Windows.Forms.TreeNode("Gestion Facturas");
-            System.Windows.Forms.TreeNode treeNode30 = new System.Windows.Forms.TreeNode("Facturas", new System.Windows.Forms.TreeNode[] {
-            treeNode29});
-            System.Windows.Forms.TreeNode treeNode31 = new System.Windows.Forms.TreeNode("Listados");
-            System.Windows.Forms.TreeNode treeNode32 = new System.Windows.Forms.TreeNode("Copias Seguridad");
-            System.Windows.Forms.TreeNode treeNode33 = new System.Windows.Forms.TreeNode("Gestion Avisos");
-            System.Windows.Forms.TreeNode treeNode34 = new System.Windows.Forms.TreeNode("Avisos", new System.Windows.Forms.TreeNode[] {
-            treeNode33});
             this.label7 = new System.Windows.Forms.Label();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
+            this.customGroupBox2 = new AdministracionAngela.CustomControls.CustomGroupBox();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.customGroupBox3 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.customGroupBox2 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.customGroupBox7 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.customGroupBox1.SuspendLayout();
-            this.customGroupBox3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.customGroupBox2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.customGroupBox3.SuspendLayout();
             this.customGroupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,6 +132,184 @@
             this.customGroupBox1.TabStop = false;
             this.customGroupBox1.Text = "customGroupBox1";
             // 
+            // customGroupBox2
+            // 
+            this.customGroupBox2.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.customGroupBox2.BackgroundGradientColor = System.Drawing.Color.White;
+            this.customGroupBox2.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
+            this.customGroupBox2.BorderColor = System.Drawing.Color.SteelBlue;
+            this.customGroupBox2.BorderThickness = 1F;
+            this.customGroupBox2.Controls.Add(this.treeView1);
+            this.customGroupBox2.CustomGroupBoxColor = System.Drawing.Color.White;
+            this.customGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.customGroupBox2.GroupImage = null;
+            this.customGroupBox2.GroupTitle = "Control Accesos";
+            this.customGroupBox2.Location = new System.Drawing.Point(421, 22);
+            this.customGroupBox2.Name = "customGroupBox2";
+            this.customGroupBox2.PaintGroupBox = false;
+            this.customGroupBox2.RoundCorners = 10;
+            this.customGroupBox2.ShadowColor = System.Drawing.Color.DarkGray;
+            this.customGroupBox2.ShadowControl = false;
+            this.customGroupBox2.ShadowThickness = 3;
+            this.customGroupBox2.Size = new System.Drawing.Size(323, 255);
+            this.customGroupBox2.TabIndex = 28;
+            this.customGroupBox2.TabStop = false;
+            this.customGroupBox2.Text = "Group1";
+            // 
+            // treeView1
+            // 
+            this.treeView1.CheckBoxes = true;
+            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.treeView1.Location = new System.Drawing.Point(6, 42);
+            this.treeView1.Name = "treeView1";
+            treeNode1.Name = "MisDAtos";
+            treeNode1.Text = "Mis Datos";
+            treeNode2.Name = "Gestion Usuarios";
+            treeNode2.Text = "Gestion Usuarios";
+            treeNode3.Name = "Ususarios";
+            treeNode3.Text = "Ususarios";
+            treeNode4.Name = "Impuestos";
+            treeNode4.Text = "Impuestos";
+            treeNode5.Checked = true;
+            treeNode5.Name = "Sistema";
+            treeNode5.Text = "Sistema";
+            treeNode6.Name = "GestionClientes";
+            treeNode6.Text = "Gestion Clientes";
+            treeNode7.Name = "Clientes";
+            treeNode7.Text = "Clientes";
+            treeNode8.Name = "GestionArticulos";
+            treeNode8.Text = "Gestion Articulos";
+            treeNode9.Checked = true;
+            treeNode9.Name = "Articulos";
+            treeNode9.Text = "Articulos";
+            treeNode10.Name = "GestionAlbaranes";
+            treeNode10.Text = "Gestion Albaranes";
+            treeNode11.Name = "Albaranes";
+            treeNode11.Text = "Albaranes";
+            treeNode12.Name = "GestionFaturas";
+            treeNode12.Text = "Gestion Facturas";
+            treeNode13.Name = "Facturas";
+            treeNode13.Text = "Facturas";
+            treeNode14.Name = "Listados";
+            treeNode14.Text = "Listados";
+            treeNode15.Name = "CopiaSeguridad";
+            treeNode15.Text = "Copias Seguridad";
+            treeNode16.Name = "GestionAvisos";
+            treeNode16.Text = "Gestion Avisos";
+            treeNode17.Name = "Avisos";
+            treeNode17.Text = "Avisos";
+            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode5,
+            treeNode7,
+            treeNode9,
+            treeNode11,
+            treeNode13,
+            treeNode14,
+            treeNode15,
+            treeNode17});
+            this.treeView1.Size = new System.Drawing.Size(310, 205);
+            this.treeView1.TabIndex = 28;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.Location = new System.Drawing.Point(185, 176);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.PasswordChar = '#';
+            this.maskedTextBox2.Size = new System.Drawing.Size(155, 23);
+            this.maskedTextBox2.TabIndex = 25;
+            this.maskedTextBox2.Text = "hiola";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(21, 176);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.PasswordChar = '#';
+            this.maskedTextBox1.Size = new System.Drawing.Size(155, 23);
+            this.maskedTextBox1.TabIndex = 24;
+            this.maskedTextBox1.Text = "hiola";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label8.Location = new System.Drawing.Point(18, 215);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 17);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Nivel:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario"});
+            this.comboBox1.Location = new System.Drawing.Point(21, 235);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(174, 24);
+            this.comboBox1.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(346, 149);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(58, 50);
+            this.panel2.TabIndex = 21;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label6.Location = new System.Drawing.Point(185, 156);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(148, 17);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Repita Contraseña:";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(27, 64);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(73, 70);
+            this.panel1.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 54);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "99";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label5.Location = new System.Drawing.Point(18, 44);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 17);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Cod. Usuario";
+            // 
+            // textBox1
+            // 
+            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(116, 111);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(288, 23);
+            this.textBox1.TabIndex = 14;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -177,106 +355,6 @@
             this.customGroupBox3.TabStop = false;
             this.customGroupBox3.Text = "Group1";
             // 
-            // textBox1
-            // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(116, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 23);
-            this.textBox1.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label5.Location = new System.Drawing.Point(18, 44);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 17);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Cod. Usuario";
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(27, 64);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(73, 70);
-            this.panel1.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 54);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "99";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(185, 156);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(148, 17);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Repita Contraseña:";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(346, 149);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(58, 50);
-            this.panel2.TabIndex = 21;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuario"});
-            this.comboBox1.Location = new System.Drawing.Point(21, 235);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 24);
-            this.comboBox1.TabIndex = 22;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label8.Location = new System.Drawing.Point(18, 215);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 17);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Nivel:";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox1.Location = new System.Drawing.Point(21, 176);
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.PasswordChar = '#';
-            this.maskedTextBox1.Size = new System.Drawing.Size(155, 23);
-            this.maskedTextBox1.TabIndex = 24;
-            this.maskedTextBox1.Text = "hiola";
-            // 
-            // maskedTextBox2
-            // 
-            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maskedTextBox2.Location = new System.Drawing.Point(185, 176);
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.PasswordChar = '#';
-            this.maskedTextBox2.Size = new System.Drawing.Size(155, 23);
-            this.maskedTextBox2.TabIndex = 25;
-            this.maskedTextBox2.Text = "hiola";
-            // 
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
@@ -298,84 +376,6 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Baja";
             this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // customGroupBox2
-            // 
-            this.customGroupBox2.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.customGroupBox2.BackgroundGradientColor = System.Drawing.Color.White;
-            this.customGroupBox2.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
-            this.customGroupBox2.BorderColor = System.Drawing.Color.SteelBlue;
-            this.customGroupBox2.BorderThickness = 1F;
-            this.customGroupBox2.Controls.Add(this.treeView1);
-            this.customGroupBox2.CustomGroupBoxColor = System.Drawing.Color.White;
-            this.customGroupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.customGroupBox2.GroupImage = null;
-            this.customGroupBox2.GroupTitle = "Control Accesos";
-            this.customGroupBox2.Location = new System.Drawing.Point(421, 22);
-            this.customGroupBox2.Name = "customGroupBox2";
-            this.customGroupBox2.PaintGroupBox = false;
-            this.customGroupBox2.RoundCorners = 10;
-            this.customGroupBox2.ShadowColor = System.Drawing.Color.DarkGray;
-            this.customGroupBox2.ShadowControl = false;
-            this.customGroupBox2.ShadowThickness = 3;
-            this.customGroupBox2.Size = new System.Drawing.Size(323, 255);
-            this.customGroupBox2.TabIndex = 28;
-            this.customGroupBox2.TabStop = false;
-            this.customGroupBox2.Text = "Group1";
-            // 
-            // treeView1
-            // 
-            this.treeView1.CheckBoxes = true;
-            this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.treeView1.Location = new System.Drawing.Point(6, 42);
-            this.treeView1.Name = "treeView1";
-            treeNode18.Name = "MisDAtos";
-            treeNode18.Text = "Mis Datos";
-            treeNode19.Name = "Gestion Usuarios";
-            treeNode19.Text = "Gestion Usuarios";
-            treeNode20.Name = "Ususarios";
-            treeNode20.Text = "Ususarios";
-            treeNode21.Name = "Impuestos";
-            treeNode21.Text = "Impuestos";
-            treeNode22.Checked = true;
-            treeNode22.Name = "Sistema";
-            treeNode22.Text = "Sistema";
-            treeNode23.Name = "GestionClientes";
-            treeNode23.Text = "Gestion Clientes";
-            treeNode24.Name = "Clientes";
-            treeNode24.Text = "Clientes";
-            treeNode25.Name = "GestionArticulos";
-            treeNode25.Text = "Gestion Articulos";
-            treeNode26.Checked = true;
-            treeNode26.Name = "Articulos";
-            treeNode26.Text = "Articulos";
-            treeNode27.Name = "GestionAlbaranes";
-            treeNode27.Text = "Gestion Albaranes";
-            treeNode28.Name = "Albaranes";
-            treeNode28.Text = "Albaranes";
-            treeNode29.Name = "GestionFaturas";
-            treeNode29.Text = "Gestion Facturas";
-            treeNode30.Name = "Facturas";
-            treeNode30.Text = "Facturas";
-            treeNode31.Name = "Listados";
-            treeNode31.Text = "Listados";
-            treeNode32.Name = "CopiaSeguridad";
-            treeNode32.Text = "Copias Seguridad";
-            treeNode33.Name = "GestionAvisos";
-            treeNode33.Text = "Gestion Avisos";
-            treeNode34.Name = "Avisos";
-            treeNode34.Text = "Avisos";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode22,
-            treeNode24,
-            treeNode26,
-            treeNode28,
-            treeNode30,
-            treeNode31,
-            treeNode32,
-            treeNode34});
-            this.treeView1.Size = new System.Drawing.Size(310, 205);
-            this.treeView1.TabIndex = 28;
             // 
             // customGroupBox7
             // 
@@ -431,7 +431,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(780, 507);
+            this.ClientSize = new System.Drawing.Size(780, 509);
             this.ControlBox = false;
             this.Controls.Add(this.customGroupBox7);
             this.Controls.Add(this.customGroupBox1);
@@ -443,11 +443,11 @@
             this.Text = "AltaUsuario";
             this.customGroupBox1.ResumeLayout(false);
             this.customGroupBox1.PerformLayout();
-            this.customGroupBox3.ResumeLayout(false);
-            this.customGroupBox3.PerformLayout();
+            this.customGroupBox2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.customGroupBox2.ResumeLayout(false);
+            this.customGroupBox3.ResumeLayout(false);
+            this.customGroupBox3.PerformLayout();
             this.customGroupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

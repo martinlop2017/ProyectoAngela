@@ -44,16 +44,19 @@
   <ItemGroup>
     <Compile Include="ArticuloProvider.cs" />
     <Compile Include="ClienteProvider.cs" />
+    <Compile Include="FacturaProvider.cs" />
     <Compile Include="IVAProvider.cs" />
     <Compile Include="PerfilProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\IRepositorioArticulo.cs" />
     <Compile Include="Repositorios\IRepositorioCliente.cs" />
+    <Compile Include="Repositorios\IRepositorioFactura.cs" />
     <Compile Include="Repositorios\IRepositorioPerfil.cs" />
     <Compile Include="Repositorios\IRepositoryIVA.cs" />
     <Compile Include="Repositorios\IVARepository.cs" />
     <Compile Include="Repositorios\RepositorioArticulo.cs" />
     <Compile Include="Repositorios\RepositorioCliente.cs" />
+    <Compile Include="Repositorios\RepositorioFactura.cs" />
     <Compile Include="Repositorios\RepositorioPerfil.cs" />
   </ItemGroup>
   <ItemGroup>

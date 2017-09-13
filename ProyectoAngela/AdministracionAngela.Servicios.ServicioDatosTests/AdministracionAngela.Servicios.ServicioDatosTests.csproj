@@ -88,6 +88,10 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AdministracionAngela.EFRepository\AdministracionAngela.EFRepository.csproj">
+      <Project>{F0FB3C29-77A5-4997-9CBA-CBA150BB96AB}</Project>
+      <Name>AdministracionAngela.EFRepository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AdministracionAngela.Servicios.ServicioFactura\AdministracionAngela.Servicios.ServicioDatos.csproj">
       <Project>{61b5fc9c-bf53-4dac-bb94-deaa924d4f52}</Project>
       <Name>AdministracionAngela.Servicios.ServicioDatos</Name>

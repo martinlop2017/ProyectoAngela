@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Cliente;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Articulo;
+using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 
@@ -167,6 +168,18 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        #endregion
+
+        #region Mapeo Facturas
+
+        public static FacturaViewModel MapToFacturaViewModel(List<Cliente> clientes)
+        {
+            return new FacturaViewModel()
+            {
+                ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id)
+            };
+        }
+        
         #endregion
     }
 }

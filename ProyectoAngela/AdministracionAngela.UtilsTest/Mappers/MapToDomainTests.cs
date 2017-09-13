@@ -27,7 +27,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
 
             var clienteViewModel = MapToViewModel.MapClient(repositoryClient);
 
-            Assert.Equal(1, clienteViewModel.Codigo);
+            Assert.Equal(1, clienteViewModel.Id);
             Assert.Equal("TestClient1", clienteViewModel.Nombre);
             Assert.Equal("1", clienteViewModel.NIF);
         }

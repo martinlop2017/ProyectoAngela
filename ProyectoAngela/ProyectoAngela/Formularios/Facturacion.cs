@@ -82,7 +82,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LineaFacturacion.Visible = true;
         }
 
         private void label16_Click(object sender, EventArgs e)
@@ -148,18 +147,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button7_Click(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = false;
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = false;
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = true;
         }
 
         private void label46_Click(object sender, EventArgs e)
@@ -189,18 +185,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button10_Click_1(object sender, EventArgs e)
         {
-            LineaFacturacion.Visible = false;
         }
 
         private void button9_Click_1(object sender, EventArgs e)
         {
-            LineaFacturacion.Visible = false;
         }
 
         private void button11_Click_1(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = true;
-            LineaFacturacion.Visible = false;
         }
 
         private void Facturacion_Load(object sender, EventArgs e)
@@ -210,49 +202,31 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button16_Click(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = false;
-            LineaFacturacion.Visible = true;
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = false;
-            LineaFacturacion.Visible = true;
         }
 
         private void button11_Click_2(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = true;
-            LineaFacturacion.Visible = false;
             linea = 1;
         }
 
         private void button10_Click_2(object sender, EventArgs e)
         {
-            LineaFacturacion.Visible = false;
         }
 
         private void button9_Click_2(object sender, EventArgs e)
         {
-            LineaFacturacion.Visible = false;
         }
 
         private void button7_Click_1(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = false;
-            if (linea == 1)
-            {
-                LineaFacturacion.Visible = true;
-            }
         }
 
         private void button8_Click_1(object sender, EventArgs e)
         {
-            BusquedaClientes.Visible = false;
-            if (linea == 1)
-            {
-                LineaFacturacion.Visible = true;
-            }
         }
     }
 }

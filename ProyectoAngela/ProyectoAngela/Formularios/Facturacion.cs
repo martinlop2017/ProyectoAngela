@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
@@ -15,6 +16,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     {
         int linea = 0;
         private IFacturaProvider facturaProvider;
+        /// <summary>
+        /// Lo usamos para poder aplicar el filtro inteligente
+        /// </summary>
+        private List<string> originalClientValues;
 
         public Facturacion(IFacturaProvider facturaProvider)
         {
@@ -76,13 +81,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void Facturacion_Load(object sender, EventArgs e)
         {
             var viewModel = this.facturaProvider.GetFacturaViewModel();
-
-            this.comboBoxClientes.DataSource = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
+            this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
+            this.comboBoxClientes.DataSource = originalClientValues;
         }
 
         private void button11_Click_2(object sender, EventArgs e)
         {
             linea = 1;
+        }
+
+        private void comboBoxClientes_TextUpdate(object sender, EventArgs e)
+        {
+            comboBoxClientes.FilterByTextIntroduced(originalClientValues);
         }
     }
 }

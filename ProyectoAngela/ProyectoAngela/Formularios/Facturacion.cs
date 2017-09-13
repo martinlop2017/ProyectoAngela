@@ -75,7 +75,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            
+            var viewModel = this.facturaProvider.GetFacturaViewModel();
+
+            this.comboBoxClientes.DataSource = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
         }
 
         private void button11_Click_2(object sender, EventArgs e)

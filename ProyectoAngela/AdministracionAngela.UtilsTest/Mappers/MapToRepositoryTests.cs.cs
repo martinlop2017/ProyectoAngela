@@ -21,7 +21,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
         {
             var clienteViewModel = new AltaClienteViewModel()
             {
-                CodigoCliente = 1,
+                Id = 1,
                 NIF = "49083366L",
                 CodigoPostal = 21045,
                 Direccion = "TestAddress",
@@ -52,7 +52,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
             {
                 Nombre = "TestName",
                 NIF = "TestNIF",
-                Codigo = 1
+                Id = 1
             };
 
             var clientRepository = MapToRepository.MapClienteViewModel(clienteViewModel);
@@ -117,7 +117,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
                 {
                     Nombre = string.Format("TestName{0}", i),
                     NIF = string.Format("TestNIF{0}", i),
-                    Codigo = i
+                    Id = i
                 });
             }
 

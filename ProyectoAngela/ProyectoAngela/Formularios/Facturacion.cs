@@ -25,78 +25,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label36_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label33_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)
@@ -140,93 +71,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void label46_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label49_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button10_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void button9_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void button11_Click_1(object sender, EventArgs e)
-        {
-        }
-
         private void Facturacion_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void button16_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-        }
-
         private void button11_Click_2(object sender, EventArgs e)
         {
             linea = 1;
-        }
-
-        private void button10_Click_2(object sender, EventArgs e)
-        {
-        }
-
-        private void button9_Click_2(object sender, EventArgs e)
-        {
-        }
-
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-        }
-
-        private void button8_Click_1(object sender, EventArgs e)
-        {
         }
     }
 }

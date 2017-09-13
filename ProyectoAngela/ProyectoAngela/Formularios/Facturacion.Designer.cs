@@ -132,7 +132,6 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "&Salir";
             this.label5.Visible = false;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -144,7 +143,6 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "&Modificar";
             this.label6.Visible = false;
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -156,7 +154,6 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "&Eliminar";
             this.label7.Visible = false;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -168,7 +165,6 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "&Añadir";
             this.label8.Visible = false;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // button5
             // 
@@ -199,7 +195,6 @@
             this.button3.Size = new System.Drawing.Size(52, 50);
             this.button3.TabIndex = 14;
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
             this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
@@ -211,7 +206,6 @@
             this.button2.Size = new System.Drawing.Size(52, 50);
             this.button2.TabIndex = 13;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
@@ -223,7 +217,6 @@
             this.button1.Size = new System.Drawing.Size(52, 50);
             this.button1.TabIndex = 12;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
@@ -295,7 +288,6 @@
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Nº Factura.";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -321,7 +313,6 @@
             this.button6.Size = new System.Drawing.Size(26, 27);
             this.button6.TabIndex = 48;
             this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // label11
             // 
@@ -333,7 +324,6 @@
             this.label11.Size = new System.Drawing.Size(373, 18);
             this.label11.TabIndex = 5;
             this.label11.Text = "PESCADOS Y MARISCOS JUAN CALOS GARCIA S.L.";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // textBox1
             // 
@@ -364,7 +354,6 @@
             this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 6;
             this.label10.Text = "Fecha.";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBox2
             // 
@@ -374,7 +363,6 @@
             this.textBox2.Size = new System.Drawing.Size(93, 24);
             this.textBox2.TabIndex = 5;
             this.textBox2.Text = "12-12-17";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label12
             // 
@@ -426,7 +414,6 @@
             this.label16.Size = new System.Drawing.Size(44, 18);
             this.label16.TabIndex = 30;
             this.label16.Text = "00,00";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // label17
             // 
@@ -691,7 +678,6 @@
             this.label36.Size = new System.Drawing.Size(115, 24);
             this.label36.TabIndex = 10;
             this.label36.Text = "1.999.999,99";
-            this.label36.Click += new System.EventHandler(this.label36_Click);
             // 
             // label35
             // 
@@ -725,7 +711,6 @@
             this.label33.Size = new System.Drawing.Size(101, 24);
             this.label33.TabIndex = 7;
             this.label33.Text = "Total I.V.A.";
-            this.label33.Click += new System.EventHandler(this.label33_Click);
             // 
             // label32
             // 

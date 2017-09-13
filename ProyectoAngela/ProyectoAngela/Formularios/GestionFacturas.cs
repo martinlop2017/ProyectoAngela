@@ -7,13 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionFacturas : Form
     {
-        public GestionFacturas()
+        private IFormOpener formOpener;
+
+        public GestionFacturas(IFormOpener formOpener)
         {
+            this.formOpener = formOpener;
             InitializeComponent();
         }
 
@@ -24,8 +28,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Facturacion myForm = new ProyectoAngela.Formularios.Facturacion();
-            myForm.ShowDialog();
+            this.formOpener.ShowModalForm<Facturacion>();
         }
 
         private void button6_MouseEnter(object sender, EventArgs e)

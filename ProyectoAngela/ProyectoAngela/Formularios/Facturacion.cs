@@ -7,17 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Interfaces;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class Facturacion : Form
     {
         int linea = 0;
+        private IFacturaProvider facturaProvider;
 
-        public Facturacion()
+        public Facturacion(IFacturaProvider facturaProvider)
         {
+            this.facturaProvider = facturaProvider;
             InitializeComponent();
-
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -73,7 +75,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button11_Click_2(object sender, EventArgs e)

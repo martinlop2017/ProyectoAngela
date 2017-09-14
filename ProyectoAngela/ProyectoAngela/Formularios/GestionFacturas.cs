@@ -46,11 +46,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             label1.Visible = true;
         }
 
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            label1.Visible = false;
-        }
-
         private void button2_MouseEnter(object sender, EventArgs e)
         {
             label2.Visible = true;

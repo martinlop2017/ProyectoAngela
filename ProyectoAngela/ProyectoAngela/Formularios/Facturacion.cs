@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Factura;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -37,52 +38,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             Close();
         }
 
-        private void button1_MouseEnter(object sender, EventArgs e)
-        {
-            label8.Visible = true;
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-            label8.Visible = false;
-        }
-
-        private void button2_MouseEnter(object sender, EventArgs e)
-        {
-            label7.Visible = true;
-        }
-
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            label7.Visible = false;
-        }
-
-        private void button3_MouseEnter(object sender, EventArgs e)
-        {
-            label6.Visible = true;
-        }
-
-        private void button3_MouseLeave(object sender, EventArgs e)
-        {
-            label6.Visible = false;
-        }
-
-        private void button5_MouseEnter(object sender, EventArgs e)
-        {
-            label5.Visible = true;
-        }
-
-        private void button5_MouseLeave(object sender, EventArgs e)
-        {
-            label5.Visible = false;
-
-        }
-
         private void Facturacion_Load(object sender, EventArgs e)
         {
             var viewModel = this.facturaProvider.GetFacturaViewModel();
-            this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
-            this.comboBoxClientes.DataSource = originalClientValues;
+            this.FillControls(viewModel);
         }
 
         private void button11_Click_2(object sender, EventArgs e)
@@ -93,6 +52,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void comboBoxClientes_TextUpdate(object sender, EventArgs e)
         {
             comboBoxClientes.FilterByTextIntroduced(originalClientValues);
+        }
+
+        private void FillControls(FacturaViewModel viewModel)
+        {
+            this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
+            this.comboBoxClientes.DataSource = originalClientValues;
+            this.labelNumeroFactura.Text = viewModel.Id.ToString();
         }
     }
 }

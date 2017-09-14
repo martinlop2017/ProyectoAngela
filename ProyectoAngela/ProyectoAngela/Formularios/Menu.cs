@@ -156,13 +156,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToString("H:mm:ss") + "  ";
-
-
-        }
-
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
 

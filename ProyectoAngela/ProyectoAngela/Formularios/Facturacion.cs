@@ -59,6 +59,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
             this.comboBoxClientes.DataSource = originalClientValues;
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
+            this.labelFecha.Text = viewModel.Fecha;
         }
     }
 }

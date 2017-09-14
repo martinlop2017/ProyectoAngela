@@ -58,7 +58,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -92,6 +91,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.labelFecha = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -352,8 +352,8 @@
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Controls.Add(this.labelFecha);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.textBox2);
             this.panel3.Location = new System.Drawing.Point(681, 39);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(133, 83);
@@ -369,15 +369,6 @@
             this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 6;
             this.label10.Text = "Fecha.";
-            // 
-            // textBox2
-            // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox2.Location = new System.Drawing.Point(25, 41);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(93, 24);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "12-12-17";
             // 
             // label12
             // 
@@ -738,6 +729,14 @@
             this.label32.TabIndex = 6;
             this.label32.Text = "Total Base.";
             // 
+            // labelFecha
+            // 
+            this.labelFecha.AutoSize = true;
+            this.labelFecha.Location = new System.Drawing.Point(38, 46);
+            this.labelFecha.Name = "labelFecha";
+            this.labelFecha.Size = new System.Drawing.Size(0, 18);
+            this.labelFecha.TabIndex = 7;
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -822,7 +821,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
@@ -864,5 +862,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.ComboBox comboBoxClientes;
+        private System.Windows.Forms.Label labelFecha;
     }
 }

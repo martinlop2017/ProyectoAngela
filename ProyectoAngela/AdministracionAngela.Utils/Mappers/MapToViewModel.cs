@@ -177,7 +177,8 @@ namespace AdministracionAngela.Utils.Mappers
             return new FacturaViewModel()
             {
                 Id = numeroFactura,
-                ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id)
+                ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
+                Fecha = DateTime.Today.ToString("yyyy MM dd")
             };
         }
         

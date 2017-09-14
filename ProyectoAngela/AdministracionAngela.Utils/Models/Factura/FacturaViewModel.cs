@@ -12,7 +12,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         public int Id { get; set; }
         public int ClienteId { get; set; }
         public Dictionary<string, long> ClienteIdsAndDescripciones { get; set; }
-        public DateTime Fecha { get; set; }
+        public string Fecha { get; set; }
         public List<LineaFacturaViewModel> LineasFactura { get; set; }
         public decimal TotalBase { get; set; }
         public decimal TotalIVA { get; set; }

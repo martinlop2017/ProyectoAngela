@@ -24,6 +24,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public FacturaViewModel GetFacturaViewModel()
         {
             var clientes = this.repositorioCliente.GetAllClients();
+            var facturaId = this.repositorioFactura.GetLastFactura();
             return MapToViewModel.MapToFacturaViewModel(clientes);
         }
     }

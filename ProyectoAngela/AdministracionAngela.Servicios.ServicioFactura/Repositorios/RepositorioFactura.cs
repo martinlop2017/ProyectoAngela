@@ -15,5 +15,18 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             this.dbContext = dbContext;
         }
+
+        public Factura GetLastFactura()
+        {
+            try
+            {
+                return this.dbContext.Facturas.OrderByDescending(factura => factura.NumeroFactura).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

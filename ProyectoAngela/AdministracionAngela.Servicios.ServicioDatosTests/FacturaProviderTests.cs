@@ -76,5 +76,25 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             Assert.Equal(5, facturaViewModel.Id);
         }
+
+        [Fact]
+        public void Should_Get_As_Many_Lines_Of_IVA_As_IVAs_Present()
+        {
+            var mockRepositorioFactura = new Mock<IRepositorioFactura>();
+            var mockRepositorioCliente = new Mock<IRepositorioCliente>();
+
+            var facturaReturned = new Factura()
+            {
+                NumeroFactura = 4
+            };
+            mockRepositorioCliente.Setup(mock => mock.GetAllClients()).Returns(new List<Cliente>());
+            mockRepositorioFactura.Setup(mock => mock.GetLastFactura()).Returns(facturaReturned);
+
+            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object);
+
+            var facturaViewModel = this.facturaProvider.GetFacturaViewModel();
+
+            Assert.Equal(2, facturaViewModel.LineasIVA.Count);
+        }
     }
 }

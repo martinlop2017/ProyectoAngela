@@ -14,19 +14,25 @@ namespace AdministracionAngela.Servicios.ServicioDatos
     {
         private IRepositorioFactura repositorioFactura;
         private IRepositorioCliente repositorioCliente;
+        private IRepositoryIVA repositorioIVA;
 
-        public FacturaProvider(IRepositorioFactura repositorioFactura, IRepositorioCliente repositorioCliente)
+        public FacturaProvider(IRepositorioFactura repositorioFactura, IRepositorioCliente repositorioCliente, IRepositoryIVA repositorioIVA)
         {
             this.repositorioFactura = repositorioFactura;
             this.repositorioCliente = repositorioCliente;
+            this.repositorioIVA = repositorioIVA;
         }
 
         public FacturaViewModel GetFacturaViewModel()
         {
             var clientes = this.repositorioCliente.GetAllClients();
+
             var lastFactura = this.repositorioFactura.GetLastFactura();
             var numeroFactura = lastFactura != null ? lastFactura.NumeroFactura + 1 : 1;
-            return MapToViewModel.MapToFacturaViewModel(clientes, Convert.ToInt32(numeroFactura));
+
+            var ivas = this.repositorioIVA.GetAllIVAs();
+
+            return MapToViewModel.MapToFacturaViewModel(clientes, Convert.ToInt32(numeroFactura), ivas);
         }
     }
 }

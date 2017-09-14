@@ -172,14 +172,24 @@ namespace AdministracionAngela.Utils.Mappers
 
         #region Mapeo Facturas
 
-        public static FacturaViewModel MapToFacturaViewModel(List<Cliente> clientes, int numeroFactura)
+        public static FacturaViewModel MapToFacturaViewModel(List<Cliente> clientes, int numeroFactura, List<IVA> ivas )
         {
             return new FacturaViewModel()
             {
                 Id = numeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
-                Fecha = DateTime.Today.ToString("yyyy MM dd")
+                Fecha = DateTime.Today.ToString("yyyy MM dd"),
+                LineasIVA = MapListToLineaIVAViewModel(ivas)
             };
+        }
+
+        public static List<LineaIVAViewModel> MapListToLineaIVAViewModel(List<IVA> ivas)
+        {
+            return ivas.Select(iva => new LineaIVAViewModel()
+            {
+                PorcentajeIVA = iva.Porcentaje.Value
+            })
+            .ToList();
         }
         
         #endregion

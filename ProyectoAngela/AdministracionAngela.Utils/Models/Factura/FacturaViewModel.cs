@@ -14,6 +14,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         public Dictionary<string, long> ClienteIdsAndDescripciones { get; set; }
         public string Fecha { get; set; }
         public List<LineaFacturaViewModel> LineasFactura { get; set; }
+        public List<LineaIVAViewModel> LineasIVA { get; set; }
         public decimal TotalBase { get; set; }
         public decimal TotalIVA { get; set; }
         public decimal TotalRecargoEquivalencia { get; set; }

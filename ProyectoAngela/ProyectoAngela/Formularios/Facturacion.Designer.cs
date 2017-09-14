@@ -33,7 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,7 +54,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBoxClientes = new System.Windows.Forms.ComboBox();
-            this.button6 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -91,7 +89,7 @@
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.labelFecha = new System.Windows.Forms.Label();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,17 +107,6 @@
             this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Cliente.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(547, 75);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fecha.";
             // 
             // label5
             // 
@@ -320,43 +307,30 @@
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel2.Controls.Add(this.comboBoxClientes);
-            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(166, 39);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(509, 83);
+            this.panel2.Size = new System.Drawing.Size(401, 83);
             this.panel2.TabIndex = 24;
             // 
             // comboBoxClientes
             // 
             this.comboBoxClientes.FormattingEnabled = true;
-            this.comboBoxClientes.Location = new System.Drawing.Point(137, 34);
+            this.comboBoxClientes.Location = new System.Drawing.Point(79, 34);
             this.comboBoxClientes.Name = "comboBoxClientes";
-            this.comboBoxClientes.Size = new System.Drawing.Size(171, 26);
+            this.comboBoxClientes.Size = new System.Drawing.Size(304, 26);
             this.comboBoxClientes.TabIndex = 49;
             this.comboBoxClientes.TextUpdate += new System.EventHandler(this.comboBoxClientes_TextUpdate);
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.Window;
-            this.button6.Location = new System.Drawing.Point(79, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(26, 27);
-            this.button6.TabIndex = 48;
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Controls.Add(this.labelFecha);
+            this.panel3.Controls.Add(this.dateTimePickerFecha);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Location = new System.Drawing.Point(681, 39);
+            this.panel3.Location = new System.Drawing.Point(573, 39);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(133, 83);
+            this.panel3.Size = new System.Drawing.Size(241, 83);
             this.panel3.TabIndex = 25;
             // 
             // label10
@@ -729,13 +703,12 @@
             this.label32.TabIndex = 6;
             this.label32.Text = "Total Base.";
             // 
-            // labelFecha
+            // dateTimePickerFecha
             // 
-            this.labelFecha.AutoSize = true;
-            this.labelFecha.Location = new System.Drawing.Point(38, 46);
-            this.labelFecha.Name = "labelFecha";
-            this.labelFecha.Size = new System.Drawing.Size(0, 18);
-            this.labelFecha.TabIndex = 7;
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(19, 36);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePickerFecha.TabIndex = 7;
             // 
             // Facturacion
             // 
@@ -779,7 +752,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -804,7 +776,6 @@
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -854,7 +825,6 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cajas;
@@ -862,6 +832,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.ComboBox comboBoxClientes;
-        private System.Windows.Forms.Label labelFecha;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
     }
 }

@@ -46,6 +46,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             };
 
             mockRepositorioCliente.Setup(mock => mock.GetAllClients()).Returns(clientList);
+            mockRepositorioFactura.Setup(mock => mock.GetLastFactura()).Returns(new Factura());
 
             this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object);
 
@@ -63,7 +64,12 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             var mockRepositorioFactura = new Mock<IRepositorioFactura>();
             var mockRepositorioCliente = new Mock<IRepositorioCliente>();
 
+            var facturaReturned = new Factura()
+            {
+                NumeroFactura = 4
+            };
             mockRepositorioCliente.Setup(mock => mock.GetAllClients()).Returns(new List<Cliente>());
+            mockRepositorioFactura.Setup(mock => mock.GetLastFactura()).Returns(facturaReturned);
 
             this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object);
             var facturaViewModel = this.facturaProvider.GetFacturaViewModel();

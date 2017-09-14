@@ -172,10 +172,11 @@ namespace AdministracionAngela.Utils.Mappers
 
         #region Mapeo Facturas
 
-        public static FacturaViewModel MapToFacturaViewModel(List<Cliente> clientes)
+        public static FacturaViewModel MapToFacturaViewModel(List<Cliente> clientes, int numeroFactura)
         {
             return new FacturaViewModel()
             {
+                Id = numeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id)
             };
         }

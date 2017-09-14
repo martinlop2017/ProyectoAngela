@@ -56,5 +56,19 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             Assert.Equal("2 - Test2", facturaViewModel.ClienteIdsAndDescripciones.Keys.ElementAt(1));
             Assert.Equal("3 - Test3", facturaViewModel.ClienteIdsAndDescripciones.Keys.ElementAt(2));
         }
+
+        [Fact]
+        public void Should_Return_Correct_IdFactura()
+        {
+            var mockRepositorioFactura = new Mock<IRepositorioFactura>();
+            var mockRepositorioCliente = new Mock<IRepositorioCliente>();
+
+            mockRepositorioCliente.Setup(mock => mock.GetAllClients()).Returns(new List<Cliente>());
+
+            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object);
+            var facturaViewModel = this.facturaProvider.GetFacturaViewModel();
+
+            Assert.Equal(5, facturaViewModel.Id);
+        }
     }
 }

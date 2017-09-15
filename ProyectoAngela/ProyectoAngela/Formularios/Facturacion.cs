@@ -150,18 +150,47 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var columnName =this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
 
-            if(columnName.Equals("ColumnKgs") || columnName.Equals("ColumnPrecio"))
+            var columnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
+
+            if (columnName.Equals("ColumnKgs") || columnName.Equals("ColumnPrecio"))
             {
-                var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
-                var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
-
-                if(cellKgs.Value != null && cellPrecio.Value != null)
+                if (this.ValidateCells())
                 {
-                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
+                    var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
+                    var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
+
+                    if (cellKgs.Value != null && cellPrecio.Value != null)
+                    {
+                        this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
+                    }
+                }
+                else
+                {
+                    this.dataGridViewLineasFactura.CurrentCell.Value = null;
+                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = null;
                 }
             }
         }
+
+        private bool ValidateCells()
+        {
+            bool Ok = false;
+
+            var currentCell = this.dataGridViewLineasFactura.CurrentCell;
+            if (currentCell.Value != null && this.IsNumeric(currentCell.Value.ToString()))
+            {
+                Ok = true;
+            }
+
+            return Ok;
+        }
+
+        private bool IsNumeric(string value)
+        {
+            int number;
+            return int.TryParse(value, out number);
+        }
+
     }
 }

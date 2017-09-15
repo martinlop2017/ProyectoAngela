@@ -150,26 +150,30 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-
             var columnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
 
             if (columnName.Equals("ColumnKgs") || columnName.Equals("ColumnPrecio"))
             {
-                if (this.ValidateCells())
-                {
-                    var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
-                    var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
+                this.RecalcularImporteDeLinea();
+            }
+        }
 
-                    if (cellKgs.Value != null && cellPrecio.Value != null)
-                    {
-                        this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
-                    }
-                }
-                else
+        private void RecalcularImporteDeLinea()
+        {
+            if (this.ValidateCells())
+            {
+                var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
+                var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
+
+                if (cellKgs.Value != null && cellPrecio.Value != null)
                 {
-                    this.dataGridViewLineasFactura.CurrentCell.Value = null;
-                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = null;
+                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
                 }
+            }
+            else
+            {
+                this.dataGridViewLineasFactura.CurrentCell.Value = null;
+                this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = null;
             }
         }
 

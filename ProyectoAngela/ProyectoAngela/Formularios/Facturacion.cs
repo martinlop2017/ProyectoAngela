@@ -147,5 +147,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
             cell.DataSource = originalClientValues;
         }
+
+        private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            var columnName =this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
+
+            if(columnName.Equals("ColumnKgs") || columnName.Equals("ColumnPrecio"))
+            {
+                var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
+                var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
+
+                if(cellKgs.Value != null && cellPrecio.Value != null)
+                {
+                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
+                }
+            }
+        }
     }
 }

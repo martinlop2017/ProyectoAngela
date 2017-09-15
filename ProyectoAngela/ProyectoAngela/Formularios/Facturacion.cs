@@ -62,8 +62,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
             this.FillIVAs(viewModel.LineasIVA);
 
-            var cell = this.dataGridViewLineasFactura.Rows[0].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
-            cell.DataSource = originalClientValues;
+            
         }
 
         public void FillIVAs(List<LineaIVAViewModel> lineasIVA)
@@ -138,6 +137,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void dataGridViewLineasFactura_CurrentCellChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewLineasFactura.Rows.Add();
+            var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
+
+            var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
+            cell.DataSource = originalClientValues;
         }
     }
 }

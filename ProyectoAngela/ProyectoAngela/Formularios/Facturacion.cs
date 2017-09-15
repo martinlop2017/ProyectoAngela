@@ -200,7 +200,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                             if(currentCell.Value.ToString().IsDecimal())
                             {
                                 Ok = true;
-                                var decimalValue = Convert.ToDecimal(currentCell.Value.ToString());
+                                var valueFormatted = currentCell.Value.ToString().Replace('.', ',');
+                                var decimalValue = Convert.ToDecimal(valueFormatted);
 
                                 currentCell.Value = Decimal.Round(decimalValue, 2);
                             }

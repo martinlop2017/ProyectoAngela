@@ -13,5 +13,11 @@ namespace AdministracionAngela.Utils.Extensions
             int number;
             return int.TryParse(value, out number);
         }
+
+        public static bool IsDecimal(this string value)
+        {
+            decimal number;
+            return decimal.TryParse(value, out number);
+        }
     }
 }

@@ -172,7 +172,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (cellKgs.Value != null && cellPrecio.Value != null)
             {
-                this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
+                var kgs = Convert.ToDecimal(cellKgs.Value);
+                var precio = Convert.ToDecimal(cellPrecio.Value);
+                var importe = kgs * precio;
+
+                this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Decimal.Round(importe, 2);
             }
         }
 
@@ -193,9 +197,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     case "ColumnKgs":
                     case "ColumnPrecio":
                         {
-                            if(currentCell.Value.ToString().IsInt())
+                            if(currentCell.Value.ToString().IsDecimal())
                             {
                                 Ok = true;
+                                var decimalValue = Convert.ToDecimal(currentCell.Value.ToString());
+
+                                currentCell.Value = Decimal.Round(decimalValue, 2);
                             }
                             break;
                         }

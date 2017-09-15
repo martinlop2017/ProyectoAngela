@@ -59,16 +59,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
             this.comboBoxClientes.DataSource = originalClientValues;
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
+            this.FillIVAs(viewModel.LineasIVA);
+            
+        }
 
+        public void FillIVAs(List<LineaIVAViewModel> lineasIVA)
+        {
             tableLayoutPanel1.Controls.Add(new Label() { Text = "Bases IVA" }, 0, 0);
             tableLayoutPanel1.Controls.Add(new Label() { Text = "% IVA" }, 1, 0);
             tableLayoutPanel1.Controls.Add(new Label() { Text = "IVA" }, 2, 0);
             tableLayoutPanel1.Controls.Add(new Label() { Text = "% RE" }, 3, 0);
             tableLayoutPanel1.Controls.Add(new Label() { Text = "RE" }, 4, 0);
 
-            for (int i = 1; i < viewModel.LineasIVA.Count + 1; i++)
+            for (int i = 1; i < lineasIVA.Count + 1; i++)
             {
-                var lineaIVA = viewModel.LineasIVA[i - 1];
+                var lineaIVA = lineasIVA[i - 1];
                 tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 0, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.PorcentajeIVA.ToString() }, 1, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 2, i);

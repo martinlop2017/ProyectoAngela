@@ -21,6 +21,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// Lo usamos para poder aplicar el filtro inteligente
         /// </summary>
         private List<string> originalClientValues;
+        int counting = 0;
 
         public Facturacion(IFacturaProvider facturaProvider)
         {
@@ -60,7 +61,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.DataSource = originalClientValues;
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
             this.FillIVAs(viewModel.LineasIVA);
-            
+
+            var cell = this.dataGridViewLineasFactura.Rows[0].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
+            cell.DataSource = originalClientValues;
         }
 
         public void FillIVAs(List<LineaIVAViewModel> lineasIVA)
@@ -83,6 +86,56 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewLineasFactura_CurrentCellDirtyStateChanged(object sender, EventArgs e)
+        {
+        //    DataGridView dataGridView = sender as DataGridView;
+        //    if (dataGridView == null || dataGridView.CurrentCell.ColumnIndex != 0) return;
+        //    var dataGridViewComboBoxCell = dataGridView.CurrentCell as DataGridViewComboBoxCell;
+        //    if (dataGridViewComboBoxCell != null)
+        //    {
+        //            //Here we move focus to second cell of current row
+        //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
+        //            //Return focus to Combobox cell
+        //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0];
+        //            //Initiate Edit mode
+        //            dataGridView.BeginEdit(true);
+        //            return;
+        //    }
+        //    dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
+        //    dataGridView.BeginEdit(true);
+        }
+
+        private void dataGridViewLineasFactura_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control.GetType() == typeof(DataGridViewComboBoxEditingControl))
+            {
+                if (((ComboBox)e.Control).SelectedIndex == 0)
+                {
+                    ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
+                }
+
+                var combo = e.Control as ComboBox;
+                if(combo != null)
+                {
+                    combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
+                }
+            }
+        }
+
+        private void ComboInGrid_TextChanged(object sender, EventArgs e)
+        {
+            var combo = sender as ComboBox;
+            combo.TextChanged -= new EventHandler(ComboInGrid_TextChanged);
+
+            (sender as ComboBox).FilterByTextIntroduced(originalClientValues);
+            combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
+        }
+
+        private void dataGridViewLineasFactura_CurrentCellChanged(object sender, EventArgs e)
         {
 
         }

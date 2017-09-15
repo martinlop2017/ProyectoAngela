@@ -182,19 +182,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             bool Ok = false;
 
             var currentCell = this.dataGridViewLineasFactura.CurrentCell;
-            if (currentCell.Value != null && this.IsNumeric(currentCell.Value.ToString()))
+            if (currentCell.Value != null && currentCell.Value.ToString().IsInt())
             {
                 Ok = true;
             }
 
             return Ok;
         }
-
-        private bool IsNumeric(string value)
-        {
-            int number;
-            return int.TryParse(value, out number);
-        }
-
     }
 }

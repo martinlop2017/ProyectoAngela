@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="Extensions\ComboBoxExtensions.cs" />
     <Compile Include="Extensions\DataGridViewExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Interfaces\IArticuloProvider.cs" />
     <Compile Include="Interfaces\IClienteProvider.cs" />
     <Compile Include="Interfaces\IFacturaProvider.cs" />

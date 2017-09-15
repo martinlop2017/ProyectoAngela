@@ -200,6 +200,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                             if(currentCell.Value.ToString().IsDecimal())
                             {
                                 Ok = true;
+                                //reemplaza puntos por comas para que el convert to decimal funcione y no tengamos que obligar al usuario a usar comas
                                 var valueFormatted = currentCell.Value.ToString().Replace('.', ',');
                                 var decimalValue = Convert.ToDecimal(valueFormatted);
 

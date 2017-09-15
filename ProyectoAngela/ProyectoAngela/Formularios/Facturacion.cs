@@ -150,41 +150,56 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var columnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
+            var currentColumnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
 
-            if (columnName.Equals("ColumnKgs") || columnName.Equals("ColumnPrecio"))
+            if(this.ValidateCell(currentColumnName) && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
             {
                 this.RecalcularImporteDeLinea();
-            }
-        }
-
-        private void RecalcularImporteDeLinea()
-        {
-            if (this.ValidateCells())
-            {
-                var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
-                var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
-
-                if (cellKgs.Value != null && cellPrecio.Value != null)
-                {
-                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
-                }
             }
             else
             {
                 this.dataGridViewLineasFactura.CurrentCell.Value = null;
-                this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = null;
             }
         }
 
-        private bool ValidateCells()
+        /// <summary>
+        /// Recalcula el importe de la linea (Importe = Kgs * Precio)
+        /// </summary>
+        private void RecalcularImporteDeLinea()
+        {
+            var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
+            var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
+
+            if (cellKgs.Value != null && cellPrecio.Value != null)
+            {
+                this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Convert.ToInt32(cellKgs.Value) * Convert.ToInt32(cellPrecio.Value);
+            }
+        }
+
+        /// <summary>
+        /// Valida la celda que se acaba de terminar de editar
+        /// </summary>
+        /// <param name="currentColumnName"></param>
+        /// <returns></returns>
+        private bool ValidateCell(string currentColumnName)
         {
             bool Ok = false;
-
             var currentCell = this.dataGridViewLineasFactura.CurrentCell;
-            if (currentCell.Value != null && currentCell.Value.ToString().IsInt())
+
+            if (currentCell.Value != null)
             {
-                Ok = true;
+                switch (currentColumnName)
+                {
+                    case "ColumnKgs":
+                    case "ColumnPrecio":
+                        {
+                            if(currentCell.Value.ToString().IsInt())
+                            {
+                                Ok = true;
+                            }
+                            break;
+                        }
+                }
             }
 
             return Ok;

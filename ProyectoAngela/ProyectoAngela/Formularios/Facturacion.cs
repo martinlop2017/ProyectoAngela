@@ -21,6 +21,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// Lo usamos para poder aplicar el filtro inteligente
         /// </summary>
         private List<string> originalClientValues;
+        private List<string> originalProductValues;
         int counting = 0;
 
         public Facturacion(IFacturaProvider facturaProvider)
@@ -58,11 +59,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void FillControls(FacturaViewModel viewModel)
         {
             this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
+            this.originalProductValues = viewModel.ArticuloIdsAndDescripciones.Keys.ToList<string>();
             this.comboBoxClientes.DataSource = originalClientValues;
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
             this.FillIVAs(viewModel.LineasIVA);
 
-            
+
         }
 
         public void FillIVAs(List<LineaIVAViewModel> lineasIVA)
@@ -91,21 +93,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void dataGridViewLineasFactura_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-        //    DataGridView dataGridView = sender as DataGridView;
-        //    if (dataGridView == null || dataGridView.CurrentCell.ColumnIndex != 0) return;
-        //    var dataGridViewComboBoxCell = dataGridView.CurrentCell as DataGridViewComboBoxCell;
-        //    if (dataGridViewComboBoxCell != null)
-        //    {
-        //            //Here we move focus to second cell of current row
-        //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
-        //            //Return focus to Combobox cell
-        //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0];
-        //            //Initiate Edit mode
-        //            dataGridView.BeginEdit(true);
-        //            return;
-        //    }
-        //    dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
-        //    dataGridView.BeginEdit(true);
+            //    DataGridView dataGridView = sender as DataGridView;
+            //    if (dataGridView == null || dataGridView.CurrentCell.ColumnIndex != 0) return;
+            //    var dataGridViewComboBoxCell = dataGridView.CurrentCell as DataGridViewComboBoxCell;
+            //    if (dataGridViewComboBoxCell != null)
+            //    {
+            //            //Here we move focus to second cell of current row
+            //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
+            //            //Return focus to Combobox cell
+            //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0];
+            //            //Initiate Edit mode
+            //            dataGridView.BeginEdit(true);
+            //            return;
+            //    }
+            //    dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
+            //    dataGridView.BeginEdit(true);
         }
 
         private void dataGridViewLineasFactura_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -118,7 +120,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 }
 
                 var combo = e.Control as ComboBox;
-                if(combo != null)
+                if (combo != null)
                 {
                     combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
                 }
@@ -130,7 +132,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var combo = sender as ComboBox;
             combo.TextChanged -= new EventHandler(ComboInGrid_TextChanged);
 
-            (sender as ComboBox).FilterByTextIntroduced(originalClientValues);
+            (sender as ComboBox).FilterByTextIntroduced(originalProductValues);
             combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
         }
 
@@ -145,18 +147,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
 
             var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
-            cell.DataSource = originalClientValues;
+            cell.DataSource = originalProductValues;
         }
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             var currentColumnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
+            var Ok = this.ValidateCell(currentColumnName);
 
-            if(this.ValidateCell(currentColumnName) && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
+            if (Ok && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
             {
                 this.RecalcularImporteDeLinea();
             }
-            else
+            else if(!Ok)
             {
                 this.dataGridViewLineasFactura.CurrentCell.Value = null;
             }
@@ -197,7 +200,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     case "ColumnKgs":
                     case "ColumnPrecio":
                         {
-                            if(currentCell.Value.ToString().IsDecimal())
+                            if (currentCell.Value.ToString().IsDecimal())
                             {
                                 Ok = true;
                                 //reemplaza puntos por comas para que el convert to decimal funcione y no tengamos que obligar al usuario a usar comas
@@ -206,6 +209,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                                 currentCell.Value = Decimal.Round(decimalValue, 2);
                             }
+                            break;
+                        }
+
+                    case "ColumnProducto":
+                        {
+                            Ok = true;
                             break;
                         }
                 }

@@ -13,5 +13,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void DeleteIVAs(List<IVA> ivastoSave);
         List<IVA> GetAllIVAs();
         IVA GetIVAByDescription(string selectedIVA);
+        bool IVAExists(IVA iva);
+        void UpdateIVA(IVA iva);
+        void SaveIVA(IVA iva);
     }
 }

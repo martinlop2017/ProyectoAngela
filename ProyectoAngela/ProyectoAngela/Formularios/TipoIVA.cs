@@ -64,6 +64,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonAceptar_Click(object sender, EventArgs e)
         {
+            var rows = this.dataGridViewIVAs.Rows;
+
+            var mappedRows = rows.ToList<IVAViewModel>();
+
+            this.ivaProvider.SaveIVA(mappedRows);
+
             Close();
         }
     }

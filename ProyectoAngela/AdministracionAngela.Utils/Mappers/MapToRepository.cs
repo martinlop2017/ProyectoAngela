@@ -133,6 +133,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Id = iva.Id,
                 Descripcion = iva.Descripcion,
                 Porcentaje = iva.Porcentaje,
+                PorcentanjeRE = iva.RecargoEquivalencia
             };
         }
 

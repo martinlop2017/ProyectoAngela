@@ -8,7 +8,7 @@ namespace AdministracionAngela.Utils.Models.IVA
 {
     public class IVAViewModel
     {
-        public int Id;
+        public int Id { get; set; }
         public int Porcentaje { get; set; }
         public decimal RecargoEquivalencia { get; set; }
         public string Descripcion { get; set; }

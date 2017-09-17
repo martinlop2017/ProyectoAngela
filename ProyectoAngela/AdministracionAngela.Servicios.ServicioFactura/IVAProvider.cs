@@ -29,8 +29,20 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void SaveIVA(List<IVAViewModel> mappedRows)
         {
             var ivastoSave = MapToRepository.MapListOfIVAViewModel(mappedRows);
-            this.repositoryIVA.DeleteIVAs(ivastoSave);
-            this.repositoryIVA.SaveListOfIVA(ivastoSave);
+            //this.repositoryIVA.DeleteIVAs(ivastoSave);
+            foreach(var iva in ivastoSave)
+            {
+                var isUpdate = iva.Id != 0;
+                if(isUpdate)
+                {
+                    this.repositoryIVA.UpdateIVA(iva);
+                }
+                else
+                {
+                    this.repositoryIVA.SaveIVA(iva);
+                }
+            }
+            //this.repositoryIVA.SaveListOfIVA(ivastoSave);
         }
     }
 }

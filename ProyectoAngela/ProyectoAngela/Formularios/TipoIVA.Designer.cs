@@ -34,10 +34,6 @@
             this.dataGridViewIVAs = new System.Windows.Forms.DataGridView();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.buttonAceptar = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customGroupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewIVAs)).BeginInit();
             this.customGroupBox1.SuspendLayout();
@@ -83,11 +79,6 @@
             this.dataGridViewIVAs.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridViewIVAs.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewIVAs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewIVAs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
             this.dataGridViewIVAs.Location = new System.Drawing.Point(16, 30);
             this.dataGridViewIVAs.Name = "dataGridViewIVAs";
             this.dataGridViewIVAs.RowHeadersWidth = 15;
@@ -131,30 +122,6 @@
             this.buttonAceptar.UseVisualStyleBackColor = true;
             this.buttonAceptar.Click += new System.EventHandler(this.buttonAceptar_Click);
             // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 61.09217F;
-            this.Column1.HeaderText = "Ref.";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 210.2055F;
-            this.Column2.HeaderText = "Descripcion";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 63.72773F;
-            this.Column3.HeaderText = "  I.V.A.";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 64.97462F;
-            this.Column4.HeaderText = "R.E.";
-            this.Column4.Name = "Column4";
-            // 
             // TipoIVA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,9 +150,5 @@
         private System.Windows.Forms.DataGridView dataGridViewIVAs;
         private CustomControls.CustomGroupBox customGroupBox1;
         private System.Windows.Forms.Button buttonAceptar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

@@ -62,6 +62,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
+        public bool IVAExists(IVA iva)
+        {
+            return this.dbContext.IVAs.Any(i => i.Id == iva.Id);
+        }
+
+        public void SaveIVA(IVA iva)
+        {
+            this.dbContext.IVAs.Add(iva);
+            this.dbContext.SaveChanges();
+        }
+
         public void SaveListOfIVA(List<IVA> ivastoSave)
         {
             try
@@ -73,6 +84,19 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             {
                 Console.WriteLine(e);
                 throw;
+            }
+        }
+
+        public void UpdateIVA(IVA iva)
+        {
+            var ivaToUpdate = this.dbContext.IVAs.Find(iva.Id);
+
+            if(ivaToUpdate != null)
+            {
+                ivaToUpdate.Descripcion = iva.Descripcion;
+                ivaToUpdate.Porcentaje = iva.Porcentaje;
+                ivaToUpdate.PorcentanjeRE = iva.PorcentanjeRE;
+                this.dbContext.SaveChanges();
             }
         }
     }

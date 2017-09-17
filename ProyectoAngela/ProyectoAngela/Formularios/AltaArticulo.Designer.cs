@@ -30,19 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaArticulo));
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule3 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBoxCodigoArticulo = new System.Windows.Forms.TextBox();
             this.customGroupBox7 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxDescripcion = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxIVA = new System.Windows.Forms.ComboBox();
             this.customGroupBox7.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +53,19 @@
             // 
             this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuario"});
+            this.comboBox1.Location = new System.Drawing.Point(606, 64);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(174, 24);
+            this.comboBox1.TabIndex = 22;
+            this.validationProvider1.SetValidationRule(this.comboBox1, validationRule1);
             // 
             // textBoxCodigoArticulo
             // 
@@ -81,7 +96,7 @@
             this.customGroupBox7.ShadowColor = System.Drawing.Color.DarkGray;
             this.customGroupBox7.ShadowControl = false;
             this.customGroupBox7.ShadowThickness = 3;
-            this.customGroupBox7.Size = new System.Drawing.Size(638, 111);
+            this.customGroupBox7.Size = new System.Drawing.Size(796, 111);
             this.customGroupBox7.TabIndex = 32;
             this.customGroupBox7.TabStop = false;
             this.customGroupBox7.Text = "customGroupBox7";
@@ -119,6 +134,8 @@
             this.customGroupBox1.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox1.BorderColor = System.Drawing.Color.SteelBlue;
             this.customGroupBox1.BorderThickness = 3F;
+            this.customGroupBox1.Controls.Add(this.comboBoxIVA);
+            this.customGroupBox1.Controls.Add(this.label1);
             this.customGroupBox1.Controls.Add(this.textBoxCodigoArticulo);
             this.customGroupBox1.Controls.Add(this.comboBox1);
             this.customGroupBox1.Controls.Add(this.label5);
@@ -137,23 +154,10 @@
             this.customGroupBox1.ShadowColor = System.Drawing.Color.DarkGray;
             this.customGroupBox1.ShadowControl = false;
             this.customGroupBox1.ShadowThickness = 3;
-            this.customGroupBox1.Size = new System.Drawing.Size(638, 111);
+            this.customGroupBox1.Size = new System.Drawing.Size(796, 111);
             this.customGroupBox1.TabIndex = 31;
             this.customGroupBox1.TabStop = false;
             this.customGroupBox1.Text = "customGroupBox1";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuario"});
-            this.comboBox1.Location = new System.Drawing.Point(443, 64);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(174, 24);
-            this.comboBox1.TabIndex = 22;
-            this.validationProvider1.SetValidationRule(this.comboBox1, validationRule3);
             // 
             // label5
             // 
@@ -171,14 +175,14 @@
             this.textBoxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxDescripcion.Location = new System.Drawing.Point(143, 64);
             this.textBoxDescripcion.Name = "textBoxDescripcion";
-            this.textBoxDescripcion.Size = new System.Drawing.Size(288, 23);
+            this.textBoxDescripcion.Size = new System.Drawing.Size(196, 23);
             this.textBoxDescripcion.TabIndex = 14;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label11.Location = new System.Drawing.Point(440, 44);
+            this.label11.Location = new System.Drawing.Point(603, 44);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(96, 17);
             this.label11.TabIndex = 13;
@@ -205,6 +209,23 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Gestión de Articulos";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(360, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 17);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "IVA";
+            // 
+            // comboBoxIVA
+            // 
+            this.comboBoxIVA.FormattingEnabled = true;
+            this.comboBoxIVA.Location = new System.Drawing.Point(363, 63);
+            this.comboBoxIVA.Name = "comboBoxIVA";
+            this.comboBoxIVA.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxIVA.TabIndex = 24;
+            // 
             // AltaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,7 +233,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Rectangulo_10;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(685, 344);
+            this.ClientSize = new System.Drawing.Size(832, 344);
             this.ControlBox = false;
             this.Controls.Add(this.customGroupBox7);
             this.Controls.Add(this.customGroupBox1);
@@ -243,5 +264,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox comboBoxIVA;
+        private System.Windows.Forms.Label label1;
     }
 }

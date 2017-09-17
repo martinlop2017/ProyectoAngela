@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Models.Articulo
         public long Id { get; set; }
         public int CodigoArticulo { get; set; }
         public string Descripcion { get; set; }
+        public List<string> IVAs { get; set; }
     }
 }

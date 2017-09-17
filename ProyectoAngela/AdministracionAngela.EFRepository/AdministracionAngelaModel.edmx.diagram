@@ -6,9 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="ed14bd6bbb12450888f24b20e320d14a" Name="Diagram1" ZoomLevel="63">
         <EntityTypeShape EntityType="AdministracionAngelaModel.sysdiagrams" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Producto" Width="1.5" PointX="7.375" PointY="0.875" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="5.125" PointY="1" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="2.75" PointY="1.375" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Direccion" Width="1.5" PointX="0.625" PointY="6.125" />
@@ -20,8 +18,11 @@
         <EntityTypeShape EntityType="AdministracionAngelaModel.Perfil" Width="1.5" PointX="3" PointY="7.625" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Contacto" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Direccion" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="9" PointY="3.125" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="7.375" PointY="0.875" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Producto" Width="1.5" PointX="9.625" PointY="0.875" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_IVA" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Producto_IVA" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

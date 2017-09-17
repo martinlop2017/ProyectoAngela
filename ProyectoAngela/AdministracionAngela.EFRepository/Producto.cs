@@ -22,8 +22,10 @@ namespace AdministracionAngela.EFRepository
     
         public long Id { get; set; }
         public int CodigoProducto { get; set; }
+        public int IVAId { get; set; }
         public string Descripcion { get; set; }
     
+        public virtual IVA IVA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaFactura> LineaFactura { get; set; }
     }

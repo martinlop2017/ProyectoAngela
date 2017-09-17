@@ -18,6 +18,7 @@ namespace AdministracionAngela.EFRepository
         public IVA()
         {
             this.LineaFactura = new HashSet<LineaFactura>();
+            this.Producto = new HashSet<Producto>();
         }
     
         public int Id { get; set; }
@@ -27,5 +28,7 @@ namespace AdministracionAngela.EFRepository
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaFactura> LineaFactura { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Producto> Producto { get; set; }
     }
 }

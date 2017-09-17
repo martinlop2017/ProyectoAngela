@@ -22,8 +22,8 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> Precio { get; set; }
         public string Descripcion { get; set; }
     
-        public virtual Producto Producto { get; set; }
         public virtual Factura Factura { get; set; }
         public virtual IVA IVA { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

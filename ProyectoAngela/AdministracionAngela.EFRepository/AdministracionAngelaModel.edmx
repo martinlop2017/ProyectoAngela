@@ -63,6 +63,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar(max)" />
           <Property Name="Porcentaje" Type="int" />
+          <Property Name="PorcentanjeRE" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="LineaFactura">
           <Key>
@@ -268,13 +269,8 @@
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
           <EntitySet Name="Factura" EntityType="AdministracionAngelaModel.Factura" />
-          <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
           <AssociationSet Name="FK_LineaFactura_Factura" Association="AdministracionAngelaModel.FK_LineaFactura_Factura">
             <End Role="Factura" EntitySet="Factura" />
-            <End Role="LineaFactura" EntitySet="LineaFactura" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LineaFactura_IVA" Association="AdministracionAngelaModel.FK_LineaFactura_IVA">
-            <End Role="IVA" EntitySet="IVA" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
           <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
@@ -300,6 +296,11 @@
           <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
             <End Role="Direccion" EntitySet="Direccion" />
             <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
+          <AssociationSet Name="FK_LineaFactura_IVA" Association="AdministracionAngelaModel.FK_LineaFactura_IVA">
+            <End Role="IVA" EntitySet="IVA" />
+            <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Producto">
@@ -352,15 +353,6 @@
           <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
         </EntityType>
-        <EntityType Name="IVA">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Porcentaje" Type="Int32" />
-          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_IVA" FromRole="IVA" ToRole="LineaFactura" />
-        </EntityType>
         <Association Name="FK_LineaFactura_Factura">
           <End Type="AdministracionAngelaModel.Factura" Role="Factura" Multiplicity="1" />
           <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
@@ -370,18 +362,6 @@
             </Principal>
             <Dependent Role="LineaFactura">
               <PropertyRef Name="NumeroFactura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LineaFactura_IVA">
-          <End Type="AdministracionAngelaModel.IVA" Role="IVA" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IVA">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="LineaFactura">
-              <PropertyRef Name="IVAId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -505,6 +485,28 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="IVA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Porcentaje" Type="Int32" />
+          <Property Name="PorcentanjeRE" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_IVA" FromRole="IVA" ToRole="LineaFactura" />
+        </EntityType>
+        <Association Name="FK_LineaFactura_IVA">
+          <End Type="AdministracionAngelaModel.IVA" Role="IVA" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IVA">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LineaFactura">
+              <PropertyRef Name="IVAId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -554,15 +556,6 @@
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="IVA">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.IVA">
-              <MappingFragment StoreEntitySet="IVA">
-                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -617,6 +610,16 @@
                 <ScalarProperty Name="CIF" ColumnName="CIF" />
                 <ScalarProperty Name="NIF" ColumnName="NIF" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IVA">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.IVA">
+              <MappingFragment StoreEntitySet="IVA">
+                <ScalarProperty Name="PorcentanjeRE" ColumnName="PorcentanjeRE" />
+                <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

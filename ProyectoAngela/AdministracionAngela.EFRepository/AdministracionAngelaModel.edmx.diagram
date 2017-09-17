@@ -10,9 +10,7 @@
         <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="5.125" PointY="1" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="2.75" PointY="1.375" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="8.875" PointY="3" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_IVA" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Direccion" Width="1.5" PointX="0.625" PointY="6.125" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Cliente" Width="1.5" PointX="0.5" PointY="1" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_Direccion" />
@@ -22,6 +20,8 @@
         <EntityTypeShape EntityType="AdministracionAngelaModel.Perfil" Width="1.5" PointX="3" PointY="7.625" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Contacto" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Direccion" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="9" PointY="3.125" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_IVA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

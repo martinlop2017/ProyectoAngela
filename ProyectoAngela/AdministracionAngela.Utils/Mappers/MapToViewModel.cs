@@ -101,12 +101,13 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static AltaArticuloViewModel MapAltaArticulo(Producto articuloFromRepository)
+        public static AltaArticuloViewModel MapAltaArticulo(Producto articuloFromRepository, List<IVA> ivas)
         {
             return new AltaArticuloViewModel()
             {
                 CodigoArticulo = articuloFromRepository.CodigoProducto,
-                Descripcion = articuloFromRepository.Descripcion
+                Descripcion = articuloFromRepository.Descripcion,
+                IVAs = ivas.Select(iva => iva.Descripcion).ToList()
             };
         }
 

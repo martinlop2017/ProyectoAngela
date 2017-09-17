@@ -13,10 +13,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
     public class ArticuloProvider : IArticuloProvider
     {
         private IRepositorioArticulo repositoryArticulo;
+        private IRepositoryIVA repositorioIVA;
 
-        public ArticuloProvider(IRepositorioArticulo repositoryArticulo)
+        public ArticuloProvider(IRepositorioArticulo repositoryArticulo, IRepositoryIVA repositorioIVA)
         {
             this.repositoryArticulo = repositoryArticulo;
+            this.repositorioIVA = repositorioIVA;
         }
 
         public bool DeleteArticulos(List<ArticuloViewModel> articulosToDelete)
@@ -28,9 +30,19 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public AltaArticuloViewModel GetAltaArticuloById(long articuloId)
         {
+            var ivas = this.repositorioIVA.GetAllIVAs();
             var articuloFromRepository = this.repositoryArticulo.GetArticuloById(articuloId);
 
-            return MapToViewModel.MapAltaArticulo(articuloFromRepository);
+            return MapToViewModel.MapAltaArticulo(articuloFromRepository, ivas);
+        }
+
+        public AltaArticuloViewModel GetAltaArticulo()
+        {
+            var ivas = this.repositorioIVA.GetAllIVAs();
+            return new AltaArticuloViewModel()
+            {
+                IVAs = ivas.Select(iva => iva.Descripcion).ToList()
+            };
         }
 
         public GestionArticuloViewModel GetGestionArticulo()
@@ -41,14 +53,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveArticulo(AltaArticuloViewModel nuevoArticulo)
         {
-            var articuloRepositorio = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo);
+            var iva = this.repositorioIVA.GetIVAByDescription(nuevoArticulo.SelectedIVA);
+            var articuloRepositorio = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo, iva);
 
             this.repositoryArticulo.SaveArticulo(articuloRepositorio);
         }
 
         public void UpdateArticulo(AltaArticuloViewModel nuevoArticulo)
         {
-            var articuloRepository = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo);
+            var iva = this.repositorioIVA.GetIVAByDescription(nuevoArticulo.SelectedIVA);
+            var articuloRepository = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo, iva);
             this.repositoryArticulo.UpdateArticulo(articuloRepository);
         }
     }

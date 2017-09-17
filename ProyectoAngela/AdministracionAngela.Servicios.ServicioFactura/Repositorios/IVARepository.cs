@@ -50,6 +50,18 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
+        public IVA GetIVAByDescription(string selectedIVA)
+        {
+            try
+            {
+                return this.dbContext.IVAs.SingleOrDefault(iva => iva.Descripcion.Equals(selectedIVA));
+            }
+            catch(Exception exp)
+            {
+                throw;
+            }
+        }
+
         public void SaveListOfIVA(List<IVA> ivastoSave)
         {
             try

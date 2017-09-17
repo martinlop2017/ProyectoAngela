@@ -47,7 +47,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 Id = this.isUpdate ? this.articuloId : 0,
                 CodigoArticulo = Convert.ToInt32(this.textBoxCodigoArticulo.Text),
-                Descripcion = this.textBoxDescripcion.Text
+                Descripcion = this.textBoxDescripcion.Text,
+                SelectedIVA = this.comboBoxIVA.SelectedValue.ToString()
             };
         }
 
@@ -55,15 +56,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.textBoxCodigoArticulo.Text = articulo.CodigoArticulo.ToString();
             this.textBoxDescripcion.Text = articulo.Descripcion;
+            this.comboBoxIVA.DataSource = articulo.IVAs;
         }
 
         private void AltaArticulo_Load(object sender, EventArgs e)
         {
+            AltaArticuloViewModel viewModel = new AltaArticuloViewModel();
             if (this.isUpdate)
             {
-                var articulo = this.articuloProvider.GetAltaArticuloById(articuloId);
-                this.FillFormWithArticulo(articulo);
+                viewModel = this.articuloProvider.GetAltaArticuloById(articuloId);
             }
+            else
+            {
+                viewModel = this.articuloProvider.GetAltaArticulo();
+            }
+
+            this.FillFormWithArticulo(viewModel);
+
         }
 
         private void button7_Click(object sender, EventArgs e)

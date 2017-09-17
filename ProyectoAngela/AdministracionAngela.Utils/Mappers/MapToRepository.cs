@@ -68,13 +68,14 @@ namespace AdministracionAngela.Utils.Mappers
 
         #region Mapeo de Articulo
 
-        public static Producto MapAltaArticuloViewModel(AltaArticuloViewModel nuevoArticuloViewModel)
+        public static Producto MapAltaArticuloViewModel(AltaArticuloViewModel nuevoArticuloViewModel, IVA iva)
         {
             return new Producto()
             {
                 Id = nuevoArticuloViewModel.Id,
                 CodigoProducto = nuevoArticuloViewModel.CodigoArticulo,
-                Descripcion = nuevoArticuloViewModel.Descripcion
+                Descripcion = nuevoArticuloViewModel.Descripcion,
+                IVAId = iva.Id
             };
         }
 

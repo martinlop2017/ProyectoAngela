@@ -188,7 +188,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
 
-            var result = this.facturaProvider.CalculateIVAs(facturaViewModel.LineasIVA);
+            var result = this.facturaProvider.CalculateIVAs(facturaViewModel.LineasFactura);
 
             //P1 and P2 has the same IVA, P3 has a different IVA
             Assert.Equal(2, result.Count);

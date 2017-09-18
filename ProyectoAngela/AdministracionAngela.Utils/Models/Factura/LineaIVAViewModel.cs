@@ -10,13 +10,27 @@ namespace AdministracionAngela.Utils.Models.Factura
     {
         public decimal BaseIVA { get; set; }
         public decimal PorcentajeIVA { get; set; }
-        public decimal ImporteIVA { get; set; }
+        public decimal ImporteIVA
+        {
+            get
+            {
+                return BaseIVA * (PorcentajeIVA / 100);
+            }
+            set { }
+        }
         public decimal PorcentajeRecargoEquivalencia { get; set; }
-        public decimal ImporteRecargoEquivalencia { get; set; }
+        public decimal ImporteRecargoEquivalencia
+        {
+            get
+            {
+                return BaseIVA * (PorcentajeRecargoEquivalencia / 100);
+            }
+            set { }
+        }
 
         public LineaIVAViewModel()
         {
-            
+
         }
     }
 }

@@ -141,6 +141,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             Producto p1 = new Producto()
             {
+                Id = 1,
                 CodigoProducto = 1,
                 IVAId = 1,
                 IVA = iva1
@@ -148,6 +149,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             Producto p2 = new Producto()
             {
+                Id = 2,
                 CodigoProducto = 2,
                 IVAId = 1,
                 IVA = iva1
@@ -155,6 +157,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             Producto p3 = new Producto()
             {
+                Id = 3,
                 CodigoProducto = 3,
                 IVAId = 2,
                 IVA = iva2
@@ -179,6 +182,17 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
                         Importe= 7,
                         ProductoId = Convert.ToInt32(p3.Id)
                     }
+                },
+                LineasIVA = new List<LineaIVAViewModel>()
+                {
+                    new LineaIVAViewModel()
+                    {
+                        PorcentajeIVA = 21
+                    },
+                    new LineaIVAViewModel()
+                    {
+                        PorcentajeIVA = 10
+                    }
                 }
             };
 
@@ -188,7 +202,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
 
-            var result = this.facturaProvider.CalculateIVAs(facturaViewModel.LineasFactura);
+            var result = this.facturaProvider.CalculateIVAs(facturaViewModel);
 
             //P1 and P2 has the same IVA, P3 has a different IVA
             Assert.Equal(2, result.Count);

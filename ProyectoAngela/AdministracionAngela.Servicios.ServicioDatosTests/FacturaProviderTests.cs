@@ -16,19 +16,22 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
     public class FacturaProviderTests
     {
         private IFacturaProvider facturaProvider;
+        Mock<IRepositorioFactura> mockRepositorioFactura;
+        Mock<IRepositorioCliente> mockRepositorioCliente;
+        Mock<IRepositoryIVA> mockRepositorioIVA;
+        Mock<IRepositorioArticulo> mockRepositorioArticulo;
 
         public FacturaProviderTests()
         {
+            mockRepositorioFactura = new Mock<IRepositorioFactura>();
+            mockRepositorioCliente = new Mock<IRepositorioCliente>();
+            mockRepositorioIVA = new Mock<IRepositoryIVA>();
+            mockRepositorioArticulo = new Mock<IRepositorioArticulo>();
         }
 
         [Fact]
         public void ShouldReturnClientsInComboFormat()
         {
-            var mockRepositorioFactura = new Mock<IRepositorioFactura>();
-            var mockRepositorioCliente = new Mock<IRepositorioCliente>();
-            var mockRepositorioIVA = new Mock<IRepositoryIVA>();
-            var mockRepositorioArticulo = new Mock<IRepositorioArticulo>();
-
             var clientList = new List<Cliente>()
             {
                 new Cliente()
@@ -66,11 +69,6 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
         [Fact]
         public void Should_Return_Correct_IdFactura()
         {
-            var mockRepositorioFactura = new Mock<IRepositorioFactura>();
-            var mockRepositorioCliente = new Mock<IRepositorioCliente>();
-            var mockRepositorioIVA = new Mock<IRepositoryIVA>();
-            var mockRepositorioArticulo = new Mock<IRepositorioArticulo>();
-
             var facturaReturned = new Factura()
             {
                 NumeroFactura = 4
@@ -91,11 +89,6 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
         [Fact]
         public void Should_Get_As_Many_Lines_Of_IVA_As_IVAs_Present()
         {
-            var mockRepositorioFactura = new Mock<IRepositorioFactura>();
-            var mockRepositorioCliente = new Mock<IRepositorioCliente>();
-            var mockRepositorioIVA = new Mock<IRepositoryIVA>();
-            var mockRepositorioArticulo = new Mock<IRepositorioArticulo>();
-
             var facturaReturned = new Factura()
             {
                 NumeroFactura = 4
@@ -122,11 +115,6 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
         [Fact]
         public void Should_Calculate_IVAs_With_Two_Different_IVAs()
         {
-            var mockRepositorioFactura = new Mock<IRepositorioFactura>();
-            var mockRepositorioCliente = new Mock<IRepositorioCliente>();
-            var mockRepositorioIVA = new Mock<IRepositoryIVA>();
-            var mockRepositorioArticulo = new Mock<IRepositorioArticulo>();
-
             IVA iva1 = new IVA()
             {
                 Id = 1,

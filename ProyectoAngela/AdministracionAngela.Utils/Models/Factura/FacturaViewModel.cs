@@ -16,9 +16,30 @@ namespace AdministracionAngela.Utils.Models.Factura
         public string Fecha { get; set; }
         public List<LineaFacturaViewModel> LineasFactura { get; set; }
         public List<LineaIVAViewModel> LineasIVA { get; set; }
-        public decimal TotalBase { get; set; }
-        public decimal TotalIVA { get; set; }
-        public decimal TotalRecargoEquivalencia { get; set; }
+        public decimal TotalBase
+        {
+            get
+            {
+                return LineasIVA.Sum(i => i.BaseIVA);
+            }
+            set { }
+        }
+        public decimal TotalIVA
+        {
+            get
+            {
+                return LineasIVA.Sum(i => i.ImporteIVA);
+            }
+            set { }
+        }
+        public decimal TotalRecargoEquivalencia
+        {
+            get
+            {
+                return LineasIVA.Sum(i => i.ImporteRecargoEquivalencia);
+            }
+            set { }
+        }
 
         public FacturaViewModel()
         {

@@ -37,5 +37,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return MapToViewModel.MapToFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
         }
+
+        public List<LineaIVAViewModel> CalculateIVAs(List<LineaIVAViewModel> lineasIVA)
+        {
+            List<LineaIVAViewModel> listReturned = new List<LineaIVAViewModel>(lineasIVA.Count);
+            foreach(var iva in lineasIVA)
+            {
+
+            }
+
+            return listReturned;
+        }
     }
 }

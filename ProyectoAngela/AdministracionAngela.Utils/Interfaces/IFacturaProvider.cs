@@ -10,5 +10,6 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IFacturaProvider
     {
         FacturaViewModel GetFacturaViewModel();
+        List<LineaIVAViewModel> CalculateIVAs(List<LineaIVAViewModel> lineasIVA);
     }
 }

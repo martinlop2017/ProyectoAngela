@@ -9,8 +9,9 @@ namespace AdministracionAngela.Utils.Interfaces
 {
     public interface IFacturaProvider
     {
-        FacturaViewModel GetFacturaViewModel();
-        List<LineaIVAViewModel> CalculateIVAs(FacturaViewModel facturaViewModel);
-        void SaveFactura(FacturaViewModel viewModel);
+        AltaFacturaViewModel GetFacturaViewModel();
+        List<LineaIVAViewModel> CalculateIVAs(AltaFacturaViewModel altaFacturaViewModel);
+        void SaveFactura(AltaFacturaViewModel viewModel);
+        GestionFacturaViewModel GetGestionFactura();
     }
 }

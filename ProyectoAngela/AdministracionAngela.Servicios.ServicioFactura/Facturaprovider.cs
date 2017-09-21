@@ -25,7 +25,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioArticulo = repositorioArticulo;
         }
 
-        public FacturaViewModel GetFacturaViewModel()
+        public AltaFacturaViewModel GetFacturaViewModel()
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
@@ -35,29 +35,35 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             var ivas = this.repositorioIVA.GetAllIVAs();
 
-            return MapToViewModel.MapToFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
+            return MapToViewModel.MapToAltaFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
         }
 
-        public List<LineaIVAViewModel> CalculateIVAs(FacturaViewModel facturaViewModel)
+        public List<LineaIVAViewModel> CalculateIVAs(AltaFacturaViewModel altaFacturaViewModel)
         {
             //reset baseIva, ya que va a ser recalculado
-            facturaViewModel.LineasIVA.ForEach(l => l.BaseIVA = 0);
-            foreach(var lineaFactura in facturaViewModel.LineasFactura)
+            altaFacturaViewModel.LineasIVA.ForEach(l => l.BaseIVA = 0);
+            foreach(var lineaFactura in altaFacturaViewModel.LineasFactura)
             {
                 var iva = repositorioArticulo.GetArticuloById(lineaFactura.ProductoId).IVA;
-                //Guarda Id de IVA para el mapeo a la hora de guardar la factura
+                //Guarda Id de IVA para el mapeo a la hora de guardar la altaFactura
                 lineaFactura.IVAId = iva.Id;
-                var lineaIva = facturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == iva.Porcentaje.Value);
+                var lineaIva = altaFacturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == iva.Porcentaje.Value);
                 lineaIva.BaseIVA += lineaFactura.Importe;
             }
 
-            return facturaViewModel.LineasIVA;
+            return altaFacturaViewModel.LineasIVA;
         }
 
-        public void SaveFactura(FacturaViewModel viewModel)
+        public void SaveFactura(AltaFacturaViewModel viewModel)
         {
             var facturaToRepository = MapToRepository.MapFacturaViewModel(viewModel);
             this.repositorioFactura.SaveFactura(facturaToRepository);
+        }
+
+        public GestionFacturaViewModel GetGestionFactura()
+        {
+            var facturas = this.repositorioFactura.GetAllFacturas();
+            return MapToViewModel.MapToGestionFactura(facturas);
         }
     }
 }

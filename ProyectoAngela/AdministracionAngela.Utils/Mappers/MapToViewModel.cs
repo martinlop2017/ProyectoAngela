@@ -176,9 +176,9 @@ namespace AdministracionAngela.Utils.Mappers
 
         #region Mapeo Facturas
 
-        public static FacturaViewModel MapToFacturaViewModel(List<Cliente> clientes, List<Producto> articulos, int numeroFactura, List<IVA> ivas )
+        public static AltaFacturaViewModel MapToAltaFacturaViewModel(List<Cliente> clientes, List<Producto> articulos, int numeroFactura, List<IVA> ivas )
         {
-            return new FacturaViewModel()
+            return new AltaFacturaViewModel()
             {
                 Id = numeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
@@ -216,6 +216,25 @@ namespace AdministracionAngela.Utils.Mappers
             }
 
             return lineasFactura;
+        }
+
+        public static GestionFacturaViewModel MapToGestionFactura(List<Factura> facturas)
+        {
+            var facturasViewModel = MapToFacturaList(facturas);
+
+            return new GestionFacturaViewModel()
+            {
+                Facturas = new BindingList<FacturaViewModel>(facturasViewModel)
+            };
+        }
+
+        public static List<FacturaViewModel> MapToFacturaList(List<Factura> facturas)
+        {
+            return facturas.Select(f => new FacturaViewModel()
+            {
+                Cliente = f.Cliente.Nombre,
+                CodigoFactura = f.NumeroFactura
+            }).ToList();
         }
         
         #endregion

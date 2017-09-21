@@ -24,7 +24,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private List<string> originalClientValues;
         private List<string> originalProductValues;
         int counting = 0;
-        private FacturaViewModel viewModel;
+        private AltaFacturaViewModel viewModel;
 
         public Facturacion(IFacturaProvider facturaProvider)
         {
@@ -58,7 +58,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             comboBoxClientes.FilterByTextIntroduced(originalClientValues);
         }
 
-        private void FillControls(FacturaViewModel viewModel)
+        private void FillControls(AltaFacturaViewModel viewModel)
         {
             this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
             this.originalProductValues = viewModel.ArticuloIdsAndDescripciones.Keys.ToList<string>();

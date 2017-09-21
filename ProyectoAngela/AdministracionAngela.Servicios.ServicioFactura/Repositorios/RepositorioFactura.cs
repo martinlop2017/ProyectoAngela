@@ -16,6 +16,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             this.dbContext = dbContext;
         }
 
+        public List<Factura> GetAllFacturas()
+        {
+            return this.dbContext.Facturas.ToList();
+        }
+
         public Factura GetLastFactura()
         {
             try

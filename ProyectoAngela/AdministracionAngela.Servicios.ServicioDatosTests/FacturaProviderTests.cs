@@ -151,7 +151,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
                 IVA = iva2
             };
 
-            FacturaViewModel facturaViewModel = new FacturaViewModel()
+            AltaFacturaViewModel altaFacturaViewModel = new AltaFacturaViewModel()
             {
                 LineasFactura = new List<LineaFacturaViewModel>()
                 {
@@ -190,7 +190,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
 
-            var result = this.facturaProvider.CalculateIVAs(facturaViewModel);
+            var result = this.facturaProvider.CalculateIVAs(altaFacturaViewModel);
 
             //P1 and P2 has the same IVA, P3 has a different IVA
             Assert.Equal(2, result.Count);

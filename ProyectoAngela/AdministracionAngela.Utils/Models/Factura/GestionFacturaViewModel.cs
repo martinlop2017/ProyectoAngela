@@ -9,11 +9,11 @@ namespace AdministracionAngela.Utils.Models.Factura
 {
     public class GestionFacturaViewModel
     {
-        public BindingList<FacturaDataGridViewModel> Facturas { get; set; }
+        public BindingList<FacturaViewModel> Facturas { get; set; }
 
         public GestionFacturaViewModel()
         {
-            this.Facturas = new BindingList<FacturaDataGridViewModel>();
+            this.Facturas = new BindingList<FacturaViewModel>();
         }
     }
 }

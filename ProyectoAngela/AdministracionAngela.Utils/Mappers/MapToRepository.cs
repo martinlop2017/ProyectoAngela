@@ -147,16 +147,16 @@ namespace AdministracionAngela.Utils.Mappers
 
         #region Mapeo de Factura
 
-        public static Factura MapFacturaViewModel(FacturaViewModel factura)
+        public static Factura MapFacturaViewModel(AltaFacturaViewModel altaFactura)
         {
             return new Factura()
             {
-                NumeroFactura = factura.Id,
-                ClienteId = factura.ClienteIdsAndDescripciones[factura.SelectedClient],
-                Fecha = Convert.ToDateTime(factura.Fecha),
-                LineaFactura = MapLineasFacturaViewModel(factura.LineasFactura, factura.Id),
-                TotalBase = factura.TotalBase,
-                RecargoEquivalencia = factura.TotalRecargoEquivalencia
+                NumeroFactura = altaFactura.Id,
+                ClienteId = altaFactura.ClienteIdsAndDescripciones[altaFactura.SelectedClient],
+                Fecha = Convert.ToDateTime(altaFactura.Fecha),
+                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura, altaFactura.Id),
+                TotalBase = altaFactura.TotalBase,
+                RecargoEquivalencia = altaFactura.TotalRecargoEquivalencia
             };
         }
 

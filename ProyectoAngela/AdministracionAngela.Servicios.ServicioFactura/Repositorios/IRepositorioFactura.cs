@@ -11,5 +11,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
     {
         Factura GetLastFactura();
         void SaveFactura(Factura factura);
+        List<Factura> GetAllFacturas();
     }
 }

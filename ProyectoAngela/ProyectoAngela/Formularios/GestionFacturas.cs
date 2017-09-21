@@ -14,10 +14,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class GestionFacturas : Form
     {
         private IFormOpener formOpener;
+        private IFacturaProvider facturaProvider;
 
-        public GestionFacturas(IFormOpener formOpener)
+        public GestionFacturas(IFormOpener formOpener, IFacturaProvider facturaProvider)
         {
             this.formOpener = formOpener;
+            this.facturaProvider = facturaProvider;
             InitializeComponent();
         }
 
@@ -89,6 +91,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void GestionFacturas_Load(object sender, EventArgs e)
+        {
+            var viewModel = this.facturaProvider.GetGestionFactura();
+            this.dataGridViewFacturas.DataSource = viewModel.Facturas;
         }
     }
 }

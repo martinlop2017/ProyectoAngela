@@ -44,8 +44,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             facturaViewModel.LineasIVA.ForEach(l => l.BaseIVA = 0);
             foreach(var lineaFactura in facturaViewModel.LineasFactura)
             {
-                var porcentajeIva = repositorioArticulo.GetArticuloById(lineaFactura.ProductoId).IVA.Porcentaje;
-                var lineaIva = facturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == porcentajeIva);
+                var iva = repositorioArticulo.GetArticuloById(lineaFactura.ProductoId).IVA;
+                //Guarda Id de IVA para el mapeo a la hora de guardar la factura
+                lineaFactura.IVAId = iva.Id;
+                var lineaIva = facturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == iva.Porcentaje.Value);
                 lineaIva.BaseIVA += lineaFactura.Importe;
             }
 
@@ -54,7 +56,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveFactura(FacturaViewModel viewModel)
         {
-            
+            MapToRepository
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Articulo;
 using AdministracionAngela.Utils.Models.Cliente;
+using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 
@@ -142,6 +143,32 @@ namespace AdministracionAngela.Utils.Mappers
             return ivas.Select(iva => MapIVAViewModel(iva)).ToList<IVA>();
         }
 
+        #endregion
+
+        #region Mapeo de Factura
+
+        public static Factura MapFacturaViewModel(FacturaViewModel factura)
+        {
+            return new Factura()
+            {
+                NumeroFactura = factura.Id,
+                ClienteId = factura.ClienteIdsAndDescripciones[factura.SelectedClient],
+                Fecha = Convert.ToDateTime(factura.Fecha),
+                
+            };
+        }
+
+        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura, long numeroFactura)
+        {
+            return lineasFactura.Select(linea => new LineaFactura()
+            {
+                NumeroFactura = numeroFactura,
+                ProductoId = linea.ProductoId,
+                IVAId = linea.IVAId,
+                Precio = linea.Precio,
+                Unidades = Convert.ToInt32(linea.Kgs)
+            }).ToList();
+        }
         #endregion
     }
 }

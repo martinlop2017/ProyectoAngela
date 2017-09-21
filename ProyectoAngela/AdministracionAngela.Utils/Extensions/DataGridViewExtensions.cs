@@ -59,6 +59,7 @@ namespace AdministracionAngela.Utils.Extensions
         {
             bool hasNullValues = false;
 
+            return dataGrid.Rows.Cast<DataGridViewRow>().Any(r => r.Cells.Cast<DataGridViewCell>().Any(c => c.Value == null));
             foreach (var dataGridRow in dataGrid.Rows)
             {
                 hasNullValues = (dataGridRow as DataGridViewRow).Cells.Cast<DataGridViewCell>().Any(c => c.Value == null);

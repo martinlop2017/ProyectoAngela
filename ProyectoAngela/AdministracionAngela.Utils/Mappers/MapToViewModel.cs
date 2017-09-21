@@ -5,8 +5,10 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using AdministracionAngela.Utils.Models.Cliente;
 using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Models.Articulo;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
@@ -193,6 +195,25 @@ namespace AdministracionAngela.Utils.Mappers
                 PorcentajeIVA = iva.Porcentaje.Value
             })
             .ToList();
+        }
+
+        public static List<LineaFacturaViewModel> MapDataGridViewRowsToLineasFacturaViewModel(DataGridViewRowCollection rows)
+        {
+            List<LineaFacturaViewModel> lineasFactura = new List<LineaFacturaViewModel>(rows.Count);
+            foreach (DataGridViewRow row in rows)
+            {
+                if (!row.HasNullValues())
+                {
+                    lineasFactura.Add(new LineaFacturaViewModel()
+                    {
+                        Kgs = Convert.ToDecimal(row.Cells["ColumnKgs"].Value),
+                        Precio = Convert.ToDecimal(row.Cells["ColumnPrecio"].Value),
+                        Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value)
+                    });
+                }
+            }
+
+            return lineasFactura;
         }
         
         #endregion

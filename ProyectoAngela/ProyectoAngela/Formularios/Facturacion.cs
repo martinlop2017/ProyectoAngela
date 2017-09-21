@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Factura;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
@@ -23,6 +24,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private List<string> originalClientValues;
         private List<string> originalProductValues;
         int counting = 0;
+        private FacturaViewModel viewModel;
 
         public Facturacion(IFacturaProvider facturaProvider)
         {
@@ -42,7 +44,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            var viewModel = this.facturaProvider.GetFacturaViewModel();
+            viewModel = this.facturaProvider.GetFacturaViewModel();
             this.FillControls(viewModel);
         }
 
@@ -63,8 +65,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.DataSource = originalClientValues;
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
             this.FillIVAs(viewModel.LineasIVA);
-
-
         }
 
         public void FillIVAs(List<LineaIVAViewModel> lineasIVA)
@@ -84,30 +84,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 3, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 4, i);
             }
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridViewLineasFactura_CurrentCellDirtyStateChanged(object sender, EventArgs e)
-        {
-            //    DataGridView dataGridView = sender as DataGridView;
-            //    if (dataGridView == null || dataGridView.CurrentCell.ColumnIndex != 0) return;
-            //    var dataGridViewComboBoxCell = dataGridView.CurrentCell as DataGridViewComboBoxCell;
-            //    if (dataGridViewComboBoxCell != null)
-            //    {
-            //            //Here we move focus to second cell of current row
-            //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
-            //            //Return focus to Combobox cell
-            //            dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0];
-            //            //Initiate Edit mode
-            //            dataGridView.BeginEdit(true);
-            //            return;
-            //    }
-            //    dataGridView.CurrentCell = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[1];
-            //    dataGridView.BeginEdit(true);
         }
 
         private void dataGridViewLineasFactura_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -153,16 +129,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if (Ok && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
             {
                 this.RecalcularImporteDeLinea();
-
-                if (this.dataGridViewLineasFactura.HasNullValues())
-                {
-                    
-                }
             }
             else if(!Ok)
             {
                 this.dataGridViewLineasFactura.CurrentCell.Value = null;
             }
+
+            this.Recalculate();
+        }
+
+        private void Recalculate()
+        {
+            var lineas = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows);
         }
 
         /// <summary>

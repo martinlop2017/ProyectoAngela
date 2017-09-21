@@ -215,7 +215,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.TabIndex = 22;
             this.dataGridViewLineasFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
-            this.dataGridViewLineasFactura.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridViewLineasFactura_CurrentCellDirtyStateChanged);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
             // 
             // panel1
@@ -497,6 +496,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // 
             this.ColumnImporte.HeaderText = "Importe";
             this.ColumnImporte.Name = "ColumnImporte";
+            this.ColumnImporte.ReadOnly = true;
             // 
             // Facturacion
             // 

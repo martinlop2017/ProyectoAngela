@@ -136,11 +136,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
         }
 
-        private void dataGridViewLineasFactura_CurrentCellChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.dataGridViewLineasFactura.Rows.Add();
@@ -158,6 +153,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if (Ok && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
             {
                 this.RecalcularImporteDeLinea();
+
+                if (this.dataGridViewLineasFactura.HasNullValues())
+                {
+                    
+                }
             }
             else if(!Ok)
             {

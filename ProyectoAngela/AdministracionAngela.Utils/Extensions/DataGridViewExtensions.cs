@@ -49,5 +49,22 @@ namespace AdministracionAngela.Utils.Extensions
             }
             return list;
         }
+
+        /// <summary>
+        /// Returns true if the given DataGridView has any null value 
+        /// </summary>
+        /// <param name="dataGrid"></param>
+        /// <returns></returns>
+        public static bool HasNullValues(this DataGridView dataGrid)
+        {
+            bool hasNullValues = false;
+
+            foreach (var dataGridRow in dataGrid.Rows)
+            {
+                hasNullValues = (dataGridRow as DataGridViewRow).Cells.Cast<DataGridViewCell>().Any(c => c.Value == null);
+            }
+
+            return hasNullValues;
+        }
     }
 }

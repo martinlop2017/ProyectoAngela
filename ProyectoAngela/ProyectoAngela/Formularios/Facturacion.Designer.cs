@@ -68,7 +68,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label32 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Cajas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -203,7 +202,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
-            this.Cajas,
             this.ColumnKgs,
             this.ColumnPrecio,
             this.ColumnImporte});
@@ -217,7 +215,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.TabIndex = 22;
             this.dataGridViewLineasFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
-            this.dataGridViewLineasFactura.CurrentCellChanged += new System.EventHandler(this.dataGridViewLineasFactura_CurrentCellChanged);
             this.dataGridViewLineasFactura.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridViewLineasFactura_CurrentCellDirtyStateChanged);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
             // 
@@ -486,11 +483,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnProducto.Width = 80;
             // 
-            // Cajas
-            // 
-            this.Cajas.HeaderText = "Cajas";
-            this.Cajas.Name = "Cajas";
-            // 
             // ColumnKgs
             // 
             this.ColumnKgs.HeaderText = "Kgs";
@@ -587,7 +579,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridViewComboBoxColumn ColumnProducto;
-        private DataGridViewTextBoxColumn Cajas;
         private DataGridViewTextBoxColumn ColumnKgs;
         private DataGridViewTextBoxColumn ColumnPrecio;
         private DataGridViewTextBoxColumn ColumnImporte;

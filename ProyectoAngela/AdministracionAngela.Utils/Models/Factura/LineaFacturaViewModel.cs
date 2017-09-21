@@ -10,7 +10,6 @@ namespace AdministracionAngela.Utils.Models.Factura
     {
         public int ProductoId;
         public Dictionary<string, long> ProductoIdAndName { get; set; }
-        public int Cajas { get; set; }
         public decimal Kgs { get; set; }
         public decimal Precio { get; set; }
         public decimal Importe { get; set; }

@@ -46,7 +46,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             {
                 var iva = repositorioArticulo.GetArticuloById(lineaFactura.ProductoId).IVA;
                 //Guarda Id de IVA para el mapeo a la hora de guardar la altaFactura
-                lineaFactura.IVAId = iva.Id;
+                lineaFactura.PorcentajeIVA = iva.Porcentaje.Value;
+                lineaFactura.PorcentajeRE = iva.PorcentanjeRE.Value;
                 var lineaIva = altaFacturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == iva.Porcentaje.Value);
                 lineaIva.BaseIVA += lineaFactura.Importe;
             }

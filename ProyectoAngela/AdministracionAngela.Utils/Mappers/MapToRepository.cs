@@ -166,9 +166,10 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 NumeroFactura = numeroFactura,
                 ProductoId = linea.ProductoId,
-                IVAId = linea.IVAId,
+                PorcentajeIVA = linea.PorcentajeIVA,
+                PorcentajeRE = linea.PorcentajeRE,
                 Precio = linea.Precio,
-                Unidades = Convert.ToInt32(linea.Kgs)
+                Kgs = linea.Kgs
             }).ToList();
         }
         #endregion

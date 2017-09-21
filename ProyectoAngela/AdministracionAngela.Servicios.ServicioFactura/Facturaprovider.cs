@@ -38,16 +38,18 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
         }
 
-        public List<LineaIVAViewModel> CalculateIVAs(FacturaViewModel factura)
+        public List<LineaIVAViewModel> CalculateIVAs(FacturaViewModel facturaViewModel)
         {
-            foreach(var lineaFactura in factura.LineasFactura)
+            //reset baseIva, ya que va a ser recalculado
+            facturaViewModel.LineasIVA.ForEach(l => l.BaseIVA = 0);
+            foreach(var lineaFactura in facturaViewModel.LineasFactura)
             {
                 var porcentajeIva = repositorioArticulo.GetArticuloById(lineaFactura.ProductoId).IVA.Porcentaje;
-                var lineaIva = factura.LineasIVA.Single(i => i.PorcentajeIVA == porcentajeIva);
+                var lineaIva = facturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == porcentajeIva);
                 lineaIva.BaseIVA += lineaFactura.Importe;
             }
 
-            return factura.LineasIVA;
+            return facturaViewModel.LineasIVA;
         }
     }
 }

@@ -192,12 +192,13 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return ivas.Select(iva => new LineaIVAViewModel()
             {
-                PorcentajeIVA = iva.Porcentaje.Value
+                PorcentajeIVA = iva.Porcentaje.Value,
+                PorcentajeRecargoEquivalencia = iva.PorcentanjeRE.Value
             })
             .ToList();
         }
 
-        public static List<LineaFacturaViewModel> MapDataGridViewRowsToLineasFacturaViewModel(DataGridViewRowCollection rows)
+        public static List<LineaFacturaViewModel> MapDataGridViewRowsToLineasFacturaViewModel(DataGridViewRowCollection rows, Dictionary<string, long> ArticuloIdsAndDescripciones)
         {
             List<LineaFacturaViewModel> lineasFactura = new List<LineaFacturaViewModel>(rows.Count);
             foreach (DataGridViewRow row in rows)
@@ -206,6 +207,7 @@ namespace AdministracionAngela.Utils.Mappers
                 {
                     lineasFactura.Add(new LineaFacturaViewModel()
                     {
+                        ProductoId = ArticuloIdsAndDescripciones[row.Cells["ColumnProducto"].Value.ToString()],
                         Kgs = Convert.ToDecimal(row.Cells["ColumnKgs"].Value),
                         Precio = Convert.ToDecimal(row.Cells["ColumnPrecio"].Value),
                         Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value)

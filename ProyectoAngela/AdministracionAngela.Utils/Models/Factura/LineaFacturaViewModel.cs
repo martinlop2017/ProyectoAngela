@@ -8,7 +8,7 @@ namespace AdministracionAngela.Utils.Models.Factura
 {
     public class LineaFacturaViewModel
     {
-        public int ProductoId;
+        public long ProductoId;
         public Dictionary<string, long> ProductoIdAndName { get; set; }
         public decimal Kgs { get; set; }
         public decimal Precio { get; set; }

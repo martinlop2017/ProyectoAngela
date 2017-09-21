@@ -69,6 +69,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         public void FillIVAs(List<LineaIVAViewModel> lineasIVA)
         {
+            this.tableLayoutPanel1.Controls.Clear();
             tableLayoutPanel1.Controls.Add(new Label() { Text = "Bases IVA" }, 0, 0);
             tableLayoutPanel1.Controls.Add(new Label() { Text = "% IVA" }, 1, 0);
             tableLayoutPanel1.Controls.Add(new Label() { Text = "IVA" }, 2, 0);
@@ -78,11 +79,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             for (int i = 1; i < lineasIVA.Count + 1; i++)
             {
                 var lineaIVA = lineasIVA[i - 1];
-                tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 0, i);
+                tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.BaseIVA.ToString() }, 0, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.PorcentajeIVA.ToString() }, 1, i);
-                tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 2, i);
-                tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 3, i);
-                tableLayoutPanel1.Controls.Add(new Label() { Text = "99" }, 4, i);
+                tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.ImporteIVA.ToString() }, 2, i);
+                tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.PorcentajeRecargoEquivalencia.ToString() }, 3, i);
+                tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.ImporteRecargoEquivalencia.ToString() }, 4, i);
             }
         }
 
@@ -140,7 +141,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Recalculate()
         {
-            var lineas = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows);
+            this.viewModel.LineasFactura = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows, this.viewModel.ArticuloIdsAndDescripciones);
+            this.facturaProvider.CalculateIVAs(viewModel);
+            this.FillIVAs(this.viewModel.LineasIVA);
         }
 
         /// <summary>

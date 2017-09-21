@@ -28,5 +28,19 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 throw;
             }
         }
+
+        public void SaveFactura(Factura factura)
+        {
+            try
+            {
+                this.dbContext.Facturas.Add(factura);
+                this.dbContext.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

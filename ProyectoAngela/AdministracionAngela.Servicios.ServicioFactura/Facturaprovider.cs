@@ -56,7 +56,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveFactura(FacturaViewModel viewModel)
         {
-            MapToRepository
+            var facturaToRepository = MapToRepository.MapFacturaViewModel(viewModel);
+            this.repositorioFactura.SaveFactura(facturaToRepository);
         }
     }
 }

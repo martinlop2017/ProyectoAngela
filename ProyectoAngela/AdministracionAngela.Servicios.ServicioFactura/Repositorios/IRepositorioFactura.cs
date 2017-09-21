@@ -10,5 +10,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
     public interface IRepositorioFactura
     {
         Factura GetLastFactura();
+        void SaveFactura(Factura factura);
     }
 }

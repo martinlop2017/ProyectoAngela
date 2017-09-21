@@ -154,7 +154,9 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroFactura = factura.Id,
                 ClienteId = factura.ClienteIdsAndDescripciones[factura.SelectedClient],
                 Fecha = Convert.ToDateTime(factura.Fecha),
-                
+                LineaFactura = MapLineasFacturaViewModel(factura.LineasFactura, factura.Id),
+                TotalBase = factura.TotalBase,
+                RecargoEquivalencia = factura.TotalRecargoEquivalencia
             };
         }
 

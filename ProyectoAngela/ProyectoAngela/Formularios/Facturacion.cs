@@ -212,5 +212,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             return Ok;
         }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            ReadGenericDataFromForm();
+            this.facturaProvider.SaveFactura(this.viewModel);
+        }
+
+        /// <summary>
+        /// Reads numeroFactura, Cliente and Fecha (LineasFactura, LineasIVA y Totales son calculados conforme se rellenan las lineas de factura)
+        /// </summary>
+        private void ReadGenericDataFromForm()
+        {
+            this.viewModel.Id = Convert.ToInt32(this.labelNumeroFactura.Text);
+            this.viewModel.SelectedClient = this.comboBoxClientes.Text;
+            this.viewModel.Fecha = this.dateTimePickerFecha.Value.ToString();
+        }
     }
 }

@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         FacturaViewModel GetFacturaViewModel();
         List<LineaIVAViewModel> CalculateIVAs(FacturaViewModel facturaViewModel);
+        void SaveFactura(FacturaViewModel viewModel);
     }
 }

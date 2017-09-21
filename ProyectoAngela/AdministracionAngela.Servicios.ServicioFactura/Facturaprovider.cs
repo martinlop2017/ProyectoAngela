@@ -51,5 +51,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return facturaViewModel.LineasIVA;
         }
+
+        public void SaveFactura(FacturaViewModel viewModel)
+        {
+            
+        }
     }
 }

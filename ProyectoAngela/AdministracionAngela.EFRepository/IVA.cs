@@ -17,7 +17,6 @@ namespace AdministracionAngela.EFRepository
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public IVA()
         {
-            this.LineaFactura = new HashSet<LineaFactura>();
             this.Producto = new HashSet<Producto>();
         }
     
@@ -26,8 +25,6 @@ namespace AdministracionAngela.EFRepository
         public Nullable<int> Porcentaje { get; set; }
         public Nullable<decimal> PorcentanjeRE { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LineaFactura> LineaFactura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Producto> Producto { get; set; }
     }

@@ -17,13 +17,12 @@ namespace AdministracionAngela.EFRepository
         public long Id { get; set; }
         public long NumeroFactura { get; set; }
         public long ProductoId { get; set; }
-        public int IVAId { get; set; }
-        public Nullable<int> Unidades { get; set; }
+        public decimal PorcentajeIVA { get; set; }
+        public Nullable<decimal> PorcentajeRE { get; set; }
+        public Nullable<decimal> Kgs { get; set; }
         public Nullable<decimal> Precio { get; set; }
-        public string Descripcion { get; set; }
     
         public virtual Factura Factura { get; set; }
-        public virtual IVA IVA { get; set; }
         public virtual Producto Producto { get; set; }
     }
 }

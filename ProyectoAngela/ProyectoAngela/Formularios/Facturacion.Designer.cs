@@ -31,9 +31,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,6 +45,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewLineasFactura = new System.Windows.Forms.DataGridView();
+            this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,22 +59,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label10 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
+            this.labelTotal = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
+            this.labelTotalRE = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
+            this.labelTotalIVA = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.labelTotalBase = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -183,22 +183,22 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // dataGridViewLineasFactura
             // 
             this.dataGridViewLineasFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
@@ -216,6 +216,34 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
+            // 
+            // ColumnProducto
+            // 
+            this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.ColumnProducto.HeaderText = "Producto";
+            this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnProducto.Width = 80;
+            // 
+            // ColumnKgs
+            // 
+            this.ColumnKgs.HeaderText = "Kgs";
+            this.ColumnKgs.Name = "ColumnKgs";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnImporte
+            // 
+            this.ColumnImporte.HeaderText = "Importe";
+            this.ColumnImporte.Name = "ColumnImporte";
+            this.ColumnImporte.ReadOnly = true;
             // 
             // panel1
             // 
@@ -304,13 +332,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.Controls.Add(this.label42);
-            this.panel4.Controls.Add(this.label43);
+            this.panel4.Controls.Add(this.labelTotal);
             this.panel4.Controls.Add(this.label40);
-            this.panel4.Controls.Add(this.label41);
+            this.panel4.Controls.Add(this.labelTotalRE);
             this.panel4.Controls.Add(this.label38);
-            this.panel4.Controls.Add(this.label39);
+            this.panel4.Controls.Add(this.labelTotalIVA);
             this.panel4.Controls.Add(this.label37);
-            this.panel4.Controls.Add(this.label36);
+            this.panel4.Controls.Add(this.labelTotalBase);
             this.panel4.Controls.Add(this.label35);
             this.panel4.Controls.Add(this.label34);
             this.panel4.Controls.Add(this.label33);
@@ -332,16 +360,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label42.TabIndex = 17;
             this.label42.Text = "€";
             // 
-            // label43
+            // labelTotal
             // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(105, 108);
-            this.label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(150, 25);
-            this.label43.TabIndex = 16;
-            this.label43.Text = "1.999.999,99";
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(105, 108);
+            this.labelTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(150, 25);
+            this.labelTotal.TabIndex = 16;
+            this.labelTotal.Text = "1.999.999,99";
             // 
             // label40
             // 
@@ -354,16 +382,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label40.TabIndex = 15;
             this.label40.Text = "€";
             // 
-            // label41
+            // labelTotalRE
             // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(140, 66);
-            this.label41.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(115, 24);
-            this.label41.TabIndex = 14;
-            this.label41.Text = "1.999.999,99";
+            this.labelTotalRE.AutoSize = true;
+            this.labelTotalRE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalRE.Location = new System.Drawing.Point(140, 66);
+            this.labelTotalRE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalRE.Name = "labelTotalRE";
+            this.labelTotalRE.Size = new System.Drawing.Size(115, 24);
+            this.labelTotalRE.TabIndex = 14;
+            this.labelTotalRE.Text = "1.999.999,99";
             // 
             // label38
             // 
@@ -376,16 +404,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label38.TabIndex = 13;
             this.label38.Text = "€";
             // 
-            // label39
+            // labelTotalIVA
             // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(140, 42);
-            this.label39.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(115, 24);
-            this.label39.TabIndex = 12;
-            this.label39.Text = "1.999.999,99";
+            this.labelTotalIVA.AutoSize = true;
+            this.labelTotalIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalIVA.Location = new System.Drawing.Point(140, 42);
+            this.labelTotalIVA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalIVA.Name = "labelTotalIVA";
+            this.labelTotalIVA.Size = new System.Drawing.Size(115, 24);
+            this.labelTotalIVA.TabIndex = 12;
+            this.labelTotalIVA.Text = "1.999.999,99";
             // 
             // label37
             // 
@@ -398,16 +426,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label37.TabIndex = 11;
             this.label37.Text = "€";
             // 
-            // label36
+            // labelTotalBase
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(140, 18);
-            this.label36.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(115, 24);
-            this.label36.TabIndex = 10;
-            this.label36.Text = "1.999.999,99";
+            this.labelTotalBase.AutoSize = true;
+            this.labelTotalBase.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalBase.Location = new System.Drawing.Point(140, 18);
+            this.labelTotalBase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalBase.Name = "labelTotalBase";
+            this.labelTotalBase.Size = new System.Drawing.Size(115, 24);
+            this.labelTotalBase.TabIndex = 10;
+            this.labelTotalBase.Text = "1.999.999,99";
             // 
             // label35
             // 
@@ -469,34 +497,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.Size = new System.Drawing.Size(368, 135);
             this.tableLayoutPanel1.TabIndex = 48;
-            // 
-            // ColumnProducto
-            // 
-            this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.ColumnProducto.HeaderText = "Producto";
-            this.ColumnProducto.Name = "ColumnProducto";
-            this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnProducto.Width = 80;
-            // 
-            // ColumnKgs
-            // 
-            this.ColumnKgs.HeaderText = "Kgs";
-            this.ColumnKgs.Name = "ColumnKgs";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnImporte
-            // 
-            this.ColumnImporte.HeaderText = "Importe";
-            this.ColumnImporte.Name = "ColumnImporte";
-            this.ColumnImporte.ReadOnly = true;
             // 
             // Facturacion
             // 
@@ -564,17 +564,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label labelTotalBase;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label labelTotalRE;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label labelTotalIVA;
         private System.Windows.Forms.ComboBox comboBoxClientes;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
         private TableLayoutPanel tableLayoutPanel1;

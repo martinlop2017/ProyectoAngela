@@ -41,6 +41,12 @@ namespace AdministracionAngela.Utils.Models.Factura
             set { }
         }
 
+        public decimal Total
+        {
+            get { return TotalBase + TotalIVA + TotalRecargoEquivalencia; }
+            set { }
+        }
+
         public FacturaViewModel()
         {
             

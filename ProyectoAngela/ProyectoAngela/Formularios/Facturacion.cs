@@ -144,6 +144,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.viewModel.LineasFactura = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows, this.viewModel.ArticuloIdsAndDescripciones);
             this.facturaProvider.CalculateIVAs(viewModel);
             this.FillIVAs(this.viewModel.LineasIVA);
+            this.UpdateTotals();
+        }
+
+        private void UpdateTotals()
+        {
+            this.labelTotalBase.Text = this.viewModel.TotalBase.ToString();
+            this.labelTotalIVA.Text = this.viewModel.TotalIVA.ToString();
+            this.labelTotalRE.Text = this.viewModel.TotalRecargoEquivalencia.ToString();
+            this.labelTotal.Text = this.viewModel.Total.ToString();
         }
 
         /// <summary>

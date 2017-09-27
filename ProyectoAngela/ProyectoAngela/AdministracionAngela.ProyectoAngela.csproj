@@ -237,6 +237,87 @@
   <ItemGroup>
     <None Include="Resources\Rectangulo 10.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Llave azul.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Llave.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sistema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sistema Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Albaranes Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Albaranes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Articulos Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Articulos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avisos Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Avisos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copias Seguridad Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copias Seguridad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturas Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturass Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impuestos Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Impuestos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listados - copia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listados Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mis Datos Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mis Datos.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

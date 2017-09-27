@@ -45,5 +45,30 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.formOpener.ShowModalForm<Menu>();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Llave_azul;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Llave;
+        }
+
+        private void button1_Enter(object sender, EventArgs e)
+        {
+         
+        }
+
+        private void button1_Leave(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

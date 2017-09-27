@@ -103,7 +103,7 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
@@ -252,7 +252,7 @@
             // 
             // buttonMisdatos
             // 
-            this.buttonMisdatos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonMisdatos.BackgroundImage")));
+            this.buttonMisdatos.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Mis_Datos;
             this.buttonMisdatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonMisdatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonMisdatos.ImageKey = "(ninguno)";
@@ -263,6 +263,8 @@
             this.buttonMisdatos.UseVisualStyleBackColor = true;
             this.buttonMisdatos.Visible = false;
             this.buttonMisdatos.Click += new System.EventHandler(this.buttonMisdatos_Click);
+            this.buttonMisdatos.MouseEnter += new System.EventHandler(this.buttonMisdatos_MouseEnter);
+            this.buttonMisdatos.MouseLeave += new System.EventHandler(this.buttonMisdatos_MouseLeave);
             // 
             // buttonAvisos
             // 
@@ -276,6 +278,8 @@
             this.buttonAvisos.TabIndex = 12;
             this.buttonAvisos.UseVisualStyleBackColor = true;
             this.buttonAvisos.Click += new System.EventHandler(this.buttonAvisos_Click);
+            this.buttonAvisos.MouseEnter += new System.EventHandler(this.buttonAvisos_MouseEnter);
+            this.buttonAvisos.MouseLeave += new System.EventHandler(this.buttonAvisos_MouseLeave);
             // 
             // buttonSeguridad
             // 
@@ -289,6 +293,8 @@
             this.buttonSeguridad.TabIndex = 11;
             this.buttonSeguridad.UseVisualStyleBackColor = true;
             this.buttonSeguridad.Click += new System.EventHandler(this.buttonSeguridad_Click);
+            this.buttonSeguridad.MouseEnter += new System.EventHandler(this.buttonSeguridad_MouseEnter);
+            this.buttonSeguridad.MouseLeave += new System.EventHandler(this.buttonSeguridad_MouseLeave);
             // 
             // buttonListados
             // 
@@ -302,10 +308,12 @@
             this.buttonListados.TabIndex = 10;
             this.buttonListados.UseVisualStyleBackColor = true;
             this.buttonListados.Click += new System.EventHandler(this.buttonListados_Click);
+            this.buttonListados.MouseEnter += new System.EventHandler(this.buttonListados_MouseEnter);
+            this.buttonListados.MouseLeave += new System.EventHandler(this.buttonListados_MouseLeave);
             // 
             // buttonUsusarios
             // 
-            this.buttonUsusarios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonUsusarios.BackgroundImage")));
+            this.buttonUsusarios.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Usuarios;
             this.buttonUsusarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonUsusarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonUsusarios.ImageKey = "(ninguno)";
@@ -316,6 +324,8 @@
             this.buttonUsusarios.UseVisualStyleBackColor = true;
             this.buttonUsusarios.Visible = false;
             this.buttonUsusarios.Click += new System.EventHandler(this.buttonUsusarios_Click);
+            this.buttonUsusarios.MouseEnter += new System.EventHandler(this.buttonUsusarios_MouseEnter);
+            this.buttonUsusarios.MouseLeave += new System.EventHandler(this.buttonUsusarios_MouseLeave);
             // 
             // buttonAlbaranes
             // 
@@ -331,6 +341,7 @@
             this.buttonAlbaranes.UseVisualStyleBackColor = false;
             this.buttonAlbaranes.Click += new System.EventHandler(this.buttonAlbaranes_Click);
             this.buttonAlbaranes.MouseEnter += new System.EventHandler(this.buttonAlbaranes_MouseEnter);
+            this.buttonAlbaranes.MouseLeave += new System.EventHandler(this.buttonAlbaranes_MouseLeave);
             // 
             // buttonArticulos
             // 
@@ -344,6 +355,8 @@
             this.buttonArticulos.TabIndex = 6;
             this.buttonArticulos.UseVisualStyleBackColor = true;
             this.buttonArticulos.Click += new System.EventHandler(this.buttonArticulos_Click);
+            this.buttonArticulos.MouseEnter += new System.EventHandler(this.buttonArticulos_MouseEnter);
+            this.buttonArticulos.MouseLeave += new System.EventHandler(this.buttonArticulos_MouseLeave);
             // 
             // buttonCliente
             // 
@@ -357,6 +370,8 @@
             this.buttonCliente.TabIndex = 5;
             this.buttonCliente.UseVisualStyleBackColor = true;
             this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
+            this.buttonCliente.MouseEnter += new System.EventHandler(this.buttonCliente_MouseEnter);
+            this.buttonCliente.MouseLeave += new System.EventHandler(this.buttonCliente_MouseLeave);
             // 
             // buttonIva
             // 
@@ -371,6 +386,8 @@
             this.buttonIva.UseVisualStyleBackColor = true;
             this.buttonIva.Visible = false;
             this.buttonIva.Click += new System.EventHandler(this.buttonIva_Click);
+            this.buttonIva.MouseEnter += new System.EventHandler(this.buttonIva_MouseEnter);
+            this.buttonIva.MouseLeave += new System.EventHandler(this.buttonIva_MouseLeave);
             // 
             // buttonFactura
             // 
@@ -384,10 +401,12 @@
             this.buttonFactura.TabIndex = 3;
             this.buttonFactura.UseVisualStyleBackColor = true;
             this.buttonFactura.Click += new System.EventHandler(this.buttonFactura_Click);
+            this.buttonFactura.MouseEnter += new System.EventHandler(this.buttonFactura_MouseEnter);
+            this.buttonFactura.MouseLeave += new System.EventHandler(this.buttonFactura_MouseLeave);
             // 
             // buttonSistema
             // 
-            this.buttonSistema.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSistema.BackgroundImage")));
+            this.buttonSistema.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Sistema;
             this.buttonSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonSistema.ImageKey = "(ninguno)";

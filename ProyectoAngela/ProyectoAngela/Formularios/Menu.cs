@@ -75,12 +75,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonSistema_MouseEnter(object sender, EventArgs e)
         {
-            
+            buttonSistema.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Sistema_Azul;
         }
 
         private void buttonSistema_MouseLeave(object sender, EventArgs e)
         {
-            
+            buttonSistema.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Sistema;
         }
 
         private void buttonCliente_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonAlbaranes_MouseEnter(object sender, EventArgs e)
         {
-
+            buttonAlbaranes.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Albaranes_Azul;
         }
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
@@ -169,6 +169,101 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.formOpener.ShowModalForm<GestionUsusarios>();
+        }
+
+        private void buttonCliente_MouseEnter(object sender, EventArgs e)
+        {
+            buttonCliente.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Clientes_Azul;
+        }
+
+        private void buttonCliente_MouseLeave(object sender, EventArgs e)
+        {
+            buttonCliente.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Clientes;
+        }
+
+        private void buttonArticulos_MouseEnter(object sender, EventArgs e)
+        {
+            buttonArticulos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Articulos_Azul;
+        }
+
+        private void buttonArticulos_MouseLeave(object sender, EventArgs e)
+        {
+            buttonArticulos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Articulos;
+        }
+
+        private void buttonAlbaranes_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAlbaranes.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Albaranes;
+        }
+
+        private void buttonFactura_MouseEnter(object sender, EventArgs e)
+        {
+            buttonFactura.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Facturass_Azul;
+        }
+
+        private void buttonFactura_MouseLeave(object sender, EventArgs e)
+        {
+            buttonFactura.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Facturass;
+        }
+
+        private void buttonListados_MouseEnter(object sender, EventArgs e)
+        {
+            buttonListados.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Listados_Azul;
+        }
+
+        private void buttonListados_MouseLeave(object sender, EventArgs e)
+        {
+            buttonListados.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Listados;
+        }
+
+        private void buttonSeguridad_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSeguridad.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Copias_Seguridad_Azul;
+        }
+
+        private void buttonSeguridad_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSeguridad.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Copias_Seguridad;
+        }
+
+        private void buttonAvisos_MouseEnter(object sender, EventArgs e)
+        {
+            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Azul;
+        }
+
+        private void buttonAvisos_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos;
+        }
+
+        private void buttonMisdatos_MouseEnter(object sender, EventArgs e)
+        {
+            buttonMisdatos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Mis_Datos_Azul;
+        }
+
+        private void buttonMisdatos_MouseLeave(object sender, EventArgs e)
+        {
+            buttonMisdatos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Mis_Datos;
+        }
+
+        private void buttonUsusarios_MouseEnter(object sender, EventArgs e)
+        {
+            buttonUsusarios.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Usuarios_Azul;
+        }
+
+        private void buttonUsusarios_MouseLeave(object sender, EventArgs e)
+        {
+            buttonUsusarios.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Usuarios;
+        }
+
+        private void buttonIva_MouseEnter(object sender, EventArgs e)
+        {
+            buttonIva.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Impuestos_Azul;
+        }
+
+        private void buttonIva_MouseLeave(object sender, EventArgs e)
+        {
+            buttonIva.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Impuestos;
         }
     }
 }

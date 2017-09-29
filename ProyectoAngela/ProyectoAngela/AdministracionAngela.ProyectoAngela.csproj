@@ -65,23 +65,17 @@
     <Compile Include="Formularios\AltaArticulo.Designer.cs">
       <DependentUpon>AltaArticulo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\AltaClientes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\AltaClientes.Designer.cs">
-      <DependentUpon>AltaClientes.cs</DependentUpon>
-    </Compile>
     <Compile Include="AltaClientes3.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AltaClientes3.Designer.cs">
       <DependentUpon>AltaClientes3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\AltaCliente2.cs">
+    <Compile Include="Formularios\AltaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\AltaCliente2.Designer.cs">
-      <DependentUpon>AltaCliente2.cs</DependentUpon>
+    <Compile Include="Formularios\AltaCliente.Designer.cs">
+      <DependentUpon>AltaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\AltaUsuario.cs">
       <SubType>Form</SubType>
@@ -150,9 +144,6 @@
     <EmbeddedResource Include="Formularios\AltaArticulo.resx">
       <DependentUpon>AltaArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\AltaClientes.resx">
-      <DependentUpon>AltaClientes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AltaClientes3.resx">
       <DependentUpon>AltaClientes3.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,8 +159,8 @@
     <EmbeddedResource Include="Formularios\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\AltaCliente2.resx">
-      <DependentUpon>AltaCliente2.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\AltaCliente.resx">
+      <DependentUpon>AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionArticulos.resx">
       <DependentUpon>GestionArticulos.cs</DependentUpon>

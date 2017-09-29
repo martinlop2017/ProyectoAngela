@@ -107,7 +107,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<AltaCliente2>();
+            this.formOpener.ShowModalForm<AltaCliente>();
         }
 
         private void Clientes_Load(object sender, EventArgs e)
@@ -142,7 +142,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void OpenFormToModify(ClienteViewModel selectedClient)
         {
-            var formAltaCliente = this.formOpener.GetForm<AltaCliente2>() as AltaCliente2;
+            var formAltaCliente = this.formOpener.GetForm<AltaCliente>() as AltaCliente;
             formAltaCliente.IsUpdate(selectedClient.Id);
             formAltaCliente.ShowDialog();
         }

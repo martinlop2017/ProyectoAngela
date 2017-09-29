@@ -1,6 +1,6 @@
 ﻿namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    partial class AltaCliente2
+    partial class AltaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule11 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule12 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule13 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
             this.formadepago = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.comboBoxFormaPago = new System.Windows.Forms.ComboBox();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();

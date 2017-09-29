@@ -13,9 +13,9 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IClienteProvider
     {
         GestionClienteViewModel GetGestionCliente();
-        void SaveClient(AltaClienteViewModel newClient);
+        bool SaveClient(AltaClienteViewModel newClient);
         bool DeleteClients(List<ClienteViewModel> clientsToDelete);
         AltaClienteViewModel GetAltaClienteById(long clienteId);
-        void UpdateClient(AltaClienteViewModel newClient);
+        bool UpdateClient(AltaClienteViewModel newClient);
     }
 }

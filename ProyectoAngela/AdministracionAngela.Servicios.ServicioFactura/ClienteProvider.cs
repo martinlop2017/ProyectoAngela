@@ -41,16 +41,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionCliente(clientsFromRepository);
         }
 
-        public void SaveClient(AltaClienteViewModel newClient)
+        public bool SaveClient(AltaClienteViewModel newClient)
         {
             var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient);
-            this.repositorioCliente.SaveClient(clientRepository);
+            return this.repositorioCliente.SaveClient(clientRepository);
         }
 
-        public void UpdateClient(AltaClienteViewModel newClient)
+        public bool UpdateClient(AltaClienteViewModel newClient)
         {
             var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient);
-            this.repositorioCliente.UpdateClient(clientRepository);
+            return this.repositorioCliente.UpdateClient(clientRepository);
         }
     }
 }

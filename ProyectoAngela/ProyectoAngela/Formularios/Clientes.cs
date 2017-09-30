@@ -145,6 +145,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var formAltaCliente = this.formOpener.GetForm<AltaCliente>() as AltaCliente;
             formAltaCliente.IsUpdate(selectedClient.Id);
             formAltaCliente.ShowDialog();
+            FillControls();
+
         }
     }
 }

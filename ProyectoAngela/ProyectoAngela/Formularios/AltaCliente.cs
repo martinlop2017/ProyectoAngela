@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    public partial class AltaCliente2 : Form
+    public partial class AltaCliente : Form
     {
         private IClienteProvider clienteProvider;
         private bool isUpdate = false;
         private long clienteId;
 
-        public AltaCliente2(IClienteProvider clienteProvider)
+        public AltaCliente(IClienteProvider clienteProvider)
         {
             this.clienteProvider = clienteProvider;
 
@@ -130,15 +130,25 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             if (this.Validate())
             {
+                var ok = false;
                 var newClient = this.ReadNewClientFromForm();
 
                 if (!isUpdate)
                 {
-                    this.clienteProvider.SaveClient(newClient);
+                    ok = this.clienteProvider.SaveClient(newClient);
                 }
                 else
                 {
-                    this.clienteProvider.UpdateClient(newClient);
+                    ok = this.clienteProvider.UpdateClient(newClient);
+                }
+
+                if(!ok)
+                {
+                    MessageBox.Show("El cliente no se ha podido guardar correctamente");
+                }
+                else
+                {
+                    this.Close();
                 }
             }
         }

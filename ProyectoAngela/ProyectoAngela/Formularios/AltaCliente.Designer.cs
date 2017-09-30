@@ -1,6 +1,6 @@
 ﻿namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    partial class AltaCliente2
+    partial class AltaCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule11 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule12 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule13 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
             this.formadepago = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.comboBoxFormaPago = new System.Windows.Forms.ComboBox();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
@@ -223,7 +223,6 @@
             this.textBoxRiesgoMaximo.Name = "textBoxRiesgoMaximo";
             this.textBoxRiesgoMaximo.Size = new System.Drawing.Size(112, 23);
             this.textBoxRiesgoMaximo.TabIndex = 0;
-            this.textBoxRiesgoMaximo.Text = "99.999.999,99";
             this.textBoxRiesgoMaximo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             validationRule1.ErrorMessage = "Debe introducir un riesgo maximo en digitos";
             validationRule1.IsRequired = true;
@@ -324,7 +323,6 @@
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(163, 23);
             this.textBoxNIF.TabIndex = 1;
-            this.textBoxNIF.Text = "B-21.144.896";
             validationRule3.ErrorMessage = "El DNI introducido no es valido.";
             validationRule3.RegExPattern = "^[0-9]{8}[A-Z]$";
             this.validationProvider1.SetValidationRule(this.textBoxNIF, validationRule3);
@@ -337,7 +335,6 @@
             this.textBoxNombreComercial.Name = "textBoxNombreComercial";
             this.textBoxNombreComercial.Size = new System.Drawing.Size(462, 23);
             this.textBoxNombreComercial.TabIndex = 0;
-            this.textBoxNombreComercial.Text = "PESCADOS REBOLLO DE PAN DURO S.L.";
             validationRule4.ErrorMessage = "Nombre comercial no puede estar vacio.";
             validationRule4.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxNombreComercial, validationRule4);
@@ -403,7 +400,6 @@
             this.textBoxTelefono2.Name = "textBoxTelefono2";
             this.textBoxTelefono2.Size = new System.Drawing.Size(117, 23);
             this.textBoxTelefono2.TabIndex = 1;
-            this.textBoxTelefono2.Text = "959-311 12 12 12 ";
             validationRule5.ErrorMessage = "Debe contener digitos";
             validationRule5.RegExPattern = "(^[0-9]+$)";
             this.validationProvider1.SetValidationRule(this.textBoxTelefono2, validationRule5);
@@ -425,20 +421,17 @@
             this.textBoxPersonaContacto.Name = "textBoxPersonaContacto";
             this.textBoxPersonaContacto.Size = new System.Drawing.Size(144, 23);
             this.textBoxPersonaContacto.TabIndex = 3;
-            this.textBoxPersonaContacto.Text = "ANTONIO";
             validationRule6.ErrorMessage = "Debe introducir una persona de contacto.";
             validationRule6.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxPersonaContacto, validationRule6);
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail.Location = new System.Drawing.Point(160, 100);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(222, 23);
             this.textBoxEmail.TabIndex = 4;
-            this.textBoxEmail.Text = "PESCADOREBOLLO@GMAIL.COM";
             validationRule7.ErrorMessage = "El email introducido es incorrecto";
             validationRule7.IsCaseSensitive = false;
             validationRule7.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
@@ -452,7 +445,6 @@
             this.textBoxFax.Name = "textBoxFax";
             this.textBoxFax.Size = new System.Drawing.Size(117, 23);
             this.textBoxFax.TabIndex = 2;
-            this.textBoxFax.Text = "959-311 12 12 12 ";
             validationRule8.ErrorMessage = "Debe contener digitos";
             validationRule8.RegExPattern = "(^[0-9]+$)";
             this.validationProvider1.SetValidationRule(this.textBoxFax, validationRule8);
@@ -465,7 +457,6 @@
             this.textBoxTelefono1.Name = "textBoxTelefono1";
             this.textBoxTelefono1.Size = new System.Drawing.Size(117, 23);
             this.textBoxTelefono1.TabIndex = 0;
-            this.textBoxTelefono1.Text = "959-311 12 12 12 ";
             validationRule9.ErrorMessage = "Debe contener digitos";
             validationRule9.RegExPattern = "(^[0-9]+$)";
             this.validationProvider1.SetValidationRule(this.textBoxTelefono1, validationRule9);
@@ -547,7 +538,6 @@
             this.textBoxCodigoPostal.Name = "textBoxCodigoPostal";
             this.textBoxCodigoPostal.Size = new System.Drawing.Size(81, 23);
             this.textBoxCodigoPostal.TabIndex = 3;
-            this.textBoxCodigoPostal.Text = "211560";
             validationRule10.ErrorMessage = "El Codigo Postal introducido no es valido";
             validationRule10.IsRequired = true;
             validationRule10.RegExPattern = "^(5[0-2]|[0-4][0-9])[0-9]{3}$";
@@ -561,7 +551,6 @@
             this.textBoxProvincia.Name = "textBoxProvincia";
             this.textBoxProvincia.Size = new System.Drawing.Size(140, 23);
             this.textBoxProvincia.TabIndex = 2;
-            this.textBoxProvincia.Text = "LA ALCARRIA ";
             validationRule11.ErrorMessage = "La provincia no puede estar vacia.";
             validationRule11.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxProvincia, validationRule11);
@@ -574,7 +563,6 @@
             this.textBoxPoblacion.Name = "textBoxPoblacion";
             this.textBoxPoblacion.Size = new System.Drawing.Size(145, 23);
             this.textBoxPoblacion.TabIndex = 1;
-            this.textBoxPoblacion.Text = "PUNTA UMBRIA";
             validationRule12.ErrorMessage = "Debe introducir una poblacion";
             validationRule12.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxPoblacion, validationRule12);
@@ -587,7 +575,6 @@
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(378, 23);
             this.textBoxDireccion.TabIndex = 0;
-            this.textBoxDireccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
             validationRule13.ErrorMessage = "La direccion no puede estar vacia.";
             validationRule13.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule13);
@@ -699,7 +686,7 @@
             this.customGroupBox7.TabStop = false;
             this.customGroupBox7.Text = "customGroupBox7";
             // 
-            // AltaCliente2
+            // AltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -709,7 +696,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.formadepago);
             this.Controls.Add(this.customGroupBox1);
-            this.Name = "AltaCliente2";
+            this.Name = "AltaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.AltaCliente2_Load);

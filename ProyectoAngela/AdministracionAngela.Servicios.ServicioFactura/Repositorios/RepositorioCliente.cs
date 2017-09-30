@@ -81,21 +81,27 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Clientes.OrderByDescending(c => c.Id).FirstOrDefault();
         }
 
-        public void SaveClient(Cliente newClient)
+        public bool SaveClient(Cliente newClient)
         {
+            var returned = false;
             try
             {
                 this.dbContext.Clientes.Add(newClient);
                 this.dbContext.SaveChanges();
+                returned = true;
             }
             catch (Exception exp)
             {
-
+                returned = false;
             }
+
+            return returned;
         }
 
-        public void UpdateClient(Cliente newClient)
+        public bool UpdateClient(Cliente newClient)
         {
+            var Ok = false;
+
             try
             {
                 var clientToUpdate = this.dbContext.Clientes.Find(newClient.Id);
@@ -122,12 +128,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     clientToUpdate.Excento = newClient.Excento;
 
                     dbContext.SaveChanges();
+
+                    Ok = true;
                 }
             }
             catch (Exception exp)
             {
-
+                Ok = false;
             }
+
+            return Ok;
         }
     }
 }

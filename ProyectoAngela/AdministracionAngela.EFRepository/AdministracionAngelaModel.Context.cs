@@ -39,5 +39,25 @@ namespace AdministracionAngela.EFRepository
         {
             return base.SaveChanges();
         }
+
+        /// <summary>
+        /// Reloads all elements for the given Entity
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        public void ReloadEntities<T>() where T : class
+        {
+            var properties = this.GetType().GetProperties();
+            foreach(var property in properties)
+            {
+                var value = property.GetValue(this);
+                if (value.GetType() == typeof(DbSet<T>))
+                {
+                    foreach(var element in value as DbSet<T>)
+                    {
+                        base.Entry<T>(element).Reload();
+                    }
+                }
+            }
+        }
     }
 }

@@ -34,7 +34,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<AltaArticulo>();
+            var result = this.formOpener.ShowModalForm<AltaArticulo>();
+            this.FillControls();
         }
 
         private void GestionArticulos_Load(object sender, EventArgs e)
@@ -54,9 +55,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
 
-            //this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+            this.articuloProvider.DeleteArticulos(mappedSelectedRows);
 
-            //this.FillControls();
+            this.FillControls();
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -76,15 +77,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var selectedArticulo = (ArticuloViewModel)selectedRows[0].DataBoundItem;
 
                 this.OpenFormToModify(selectedArticulo);
-
             }
         }
 
         private void OpenFormToModify(ArticuloViewModel selectedArticulo)
         {
-            var formAltaCliente = this.formOpener.GetForm<AltaArticulo>() as AltaArticulo;
-            formAltaCliente.IsUpdate(selectedArticulo.Id);
-            formAltaCliente.ShowDialog();
+            using (var formAltaCliente = this.formOpener.GetForm<AltaArticulo>() as AltaArticulo)
+            {
+                formAltaCliente.IsUpdate(selectedArticulo.Id);
+                formAltaCliente.ShowDialog();
+            }
+            
+            this.FillControls();
         }
     }
 }

@@ -19,5 +19,6 @@ namespace AdministracionAngela.EFRepository
         DbSet<Perfil> Perfiles { get; set; }
 
         int SaveChanges();
+        void ReloadEntities<T>() where T : class;
     }
 }

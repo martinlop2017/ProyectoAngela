@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Factura;
+using AdministracionAngela.Utils.Extensions;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -94,6 +96,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         }
 
         private void GestionFacturas_Load(object sender, EventArgs e)
+        {
+            this.FillControls();
+        }
+
+        private void buttonBorrar_Click(object sender, EventArgs e)
+        {
+            var selectedRow = this.dataGridViewFacturas.SelectedRows;
+            var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
+
+            this.facturaProvider.DeleteFacturas(mappedSelectedRows);
+            this.FillControls();
+        }
+
+        private void FillControls()
         {
             var viewModel = this.facturaProvider.GetGestionFactura();
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;

@@ -147,7 +147,7 @@ namespace AdministracionAngela.Utils.Mappers
 
         #region Mapeo de Factura
 
-        public static Factura MapFacturaViewModel(AltaFacturaViewModel altaFactura)
+        public static Factura MapAltaFacturaViewModel(AltaFacturaViewModel altaFactura)
         {
             return new Factura()
             {
@@ -171,6 +171,19 @@ namespace AdministracionAngela.Utils.Mappers
                 Precio = linea.Precio,
                 Kgs = linea.Kgs
             }).ToList();
+        }
+
+        public static List<Factura> MapListOfFacturaViewModel(List<FacturaViewModel> facturas)
+        {
+            return facturas.Where(f => f != null).Select(factura => MapFacturaViewModel(factura)).ToList<Factura>();
+        }
+
+        public static Factura MapFacturaViewModel(FacturaViewModel factura)
+        {
+            return new Factura()
+            {
+                NumeroFactura = factura.CodigoFactura,
+            };
         }
         #endregion
     }

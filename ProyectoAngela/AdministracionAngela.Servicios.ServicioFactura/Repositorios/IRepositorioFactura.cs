@@ -12,5 +12,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         Factura GetLastFactura();
         void SaveFactura(Factura factura);
         List<Factura> GetAllFacturas();
+        void DeleteLineasFacturaByNumeroFactura(List<Factura> repositoryFacturasToDelete);
+        void DeleteFacturas(List<Factura> repositoryFacturasToDelete);
     }
 }

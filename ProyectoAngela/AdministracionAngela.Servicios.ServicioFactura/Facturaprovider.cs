@@ -57,7 +57,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveFactura(AltaFacturaViewModel viewModel)
         {
-            var facturaToRepository = MapToRepository.MapFacturaViewModel(viewModel);
+            var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
             this.repositorioFactura.SaveFactura(facturaToRepository);
         }
 
@@ -65,6 +65,14 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         {
             var facturas = this.repositorioFactura.GetAllFacturas();
             return MapToViewModel.MapToGestionFactura(facturas);
+        }
+
+        public void DeleteFacturas(List<FacturaViewModel> facturasToDelete)
+        {
+            var repositoryFacturasToDelete = MapToRepository.MapListOfFacturaViewModel(facturasToDelete);
+
+            this.repositorioFactura.DeleteLineasFacturaByNumeroFactura(repositoryFacturasToDelete);
+            this.repositorioFactura.DeleteFacturas(repositoryFacturasToDelete);
         }
     }
 }

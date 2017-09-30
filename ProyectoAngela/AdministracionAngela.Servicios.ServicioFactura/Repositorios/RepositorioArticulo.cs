@@ -43,8 +43,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Productos.Find(articuloId);
         }
 
-        public void SaveArticulo(Producto articuloRepositorio)
+        public bool SaveArticulo(Producto articuloRepositorio)
         {
+            var Ok = true;
             try
             {
                 this.dbContext.Productos.Add(articuloRepositorio);
@@ -52,12 +53,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
             catch(Exception exp)
             {
-
+                Ok = false;
             }
+
+            return Ok;
         }
 
-        public void UpdateArticulo(Producto articuloRepository)
+        public bool UpdateArticulo(Producto articuloRepository)
         {
+            var Ok = true;
+
             try
             {
                 var articuloToupdate = this.dbContext.Productos.Find(articuloRepository.Id);
@@ -72,8 +77,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
             catch(Exception exp)
             {
-
+                Ok = false;
             }
+
+            return Ok;
         }
     }
 }

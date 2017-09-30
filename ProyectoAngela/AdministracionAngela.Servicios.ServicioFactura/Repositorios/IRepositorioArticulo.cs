@@ -9,10 +9,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public interface IRepositorioArticulo
     {
-        void SaveArticulo(Producto articuloRepositorio);
+        bool SaveArticulo(Producto articuloRepositorio);
         List<Producto> GetAllArticulos();
         bool DeleteArticulos(List<Producto> repositoryArticulosToDelete);
         Producto GetArticuloById(long articuloId);
-        void UpdateArticulo(Producto articuloRepository);
+        bool UpdateArticulo(Producto articuloRepository);
     }
 }

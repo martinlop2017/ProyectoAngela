@@ -9,11 +9,11 @@ namespace AdministracionAngela.Utils.Interfaces
 {
     public interface IArticuloProvider
     {
-        void SaveArticulo(AltaArticuloViewModel nuevoArticulo);
+        bool SaveArticulo(AltaArticuloViewModel nuevoArticulo);
         GestionArticuloViewModel GetGestionArticulo();
         bool DeleteArticulos(List<ArticuloViewModel> articulosToDelete);
         AltaArticuloViewModel GetAltaArticuloById(long articuloId);
-        void UpdateArticulo(AltaArticuloViewModel nuevoArticulo);
+        bool UpdateArticulo(AltaArticuloViewModel nuevoArticulo);
         AltaArticuloViewModel GetAltaArticulo();
     }
 }

@@ -51,19 +51,19 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionArticulo(articulosFromRepository);
         }
 
-        public void SaveArticulo(AltaArticuloViewModel nuevoArticulo)
+        public bool SaveArticulo(AltaArticuloViewModel nuevoArticulo)
         {
             var iva = this.repositorioIVA.GetIVAByDescription(nuevoArticulo.SelectedIVA);
             var articuloRepositorio = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo, iva);
 
-            this.repositoryArticulo.SaveArticulo(articuloRepositorio);
+            return this.repositoryArticulo.SaveArticulo(articuloRepositorio);
         }
 
-        public void UpdateArticulo(AltaArticuloViewModel nuevoArticulo)
+        public bool UpdateArticulo(AltaArticuloViewModel nuevoArticulo)
         {
             var iva = this.repositorioIVA.GetIVAByDescription(nuevoArticulo.SelectedIVA);
             var articuloRepository = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo, iva);
-            this.repositoryArticulo.UpdateArticulo(articuloRepository);
+            return this.repositoryArticulo.UpdateArticulo(articuloRepository);
         }
     }
 }

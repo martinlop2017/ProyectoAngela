@@ -80,14 +80,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if (this.Validate())
             {
                 var nuevoArticulo = this.ReadNewArticuloFromForm();
+                var Ok = false;
 
                 if (!isUpdate)
                 {
-                    this.articuloProvider.SaveArticulo(nuevoArticulo);
+                    Ok = this.articuloProvider.SaveArticulo(nuevoArticulo);
                 }
                 else
                 {
-                    this.articuloProvider.UpdateArticulo(nuevoArticulo);
+                    Ok = this.articuloProvider.UpdateArticulo(nuevoArticulo);
+                }
+
+                if(!Ok)
+                {
+                    MessageBox.Show("El Articulo no se ha guardado correctamente");
+                }
+                else
+                {
+                    this.Close();
                 }
             }
         }

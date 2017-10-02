@@ -400,7 +400,7 @@
         s/3Ls/3Ls/3Ls/3Ls/3Ls/3Ls/3Ls/3Ls/3Ls/3byv///////////wAA
 </value>
   </data>
-  <data name="button3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonModificar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2uHwAAAAAAADYAAAAoAAAAMgAAADUAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAA/////v7+
         /////////////////////////////////////////////////////////////v7+/////////////v7+
@@ -979,7 +979,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABBAAAAJ9CAYAAACM34FOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAFmVJREFUeF7t2DGOI0cUREHdSofVpXSjFdoYYIwCmnyktBxlBPDd7nLz/fELAAAA
+        vwAADr8BOAVTJAAAFmVJREFUeF7t2DGOI0cUREHdSofVpXSjFdoYYIwCmnyktBxlBPDd7nLz/fELAAAA
         4IaAAAAAANwSEAAAAIBbAgIAAABwS0AAAAAAbgkIAAAAwC0BAQAAALglIAAAAAC3BAQAAADgloAAAAAA
         3BIQAAAAgFsCAgAAAHBLQAAAAABu/SsB4c+//nbOOeecc84559xvvHd7a0A4Pdg555xzzjnnnHO/797l
         LQHh9EDnnHPOOeecc859zr3q5YBwepRzzjnnnHPOOec+717xUkA4PcY555xzzjnnnHOfe1UOCKdHOOec

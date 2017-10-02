@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionFacturas));
             this.dataGridViewFacturas = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,21 +50,21 @@
             // 
             // dataGridViewFacturas
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewFacturas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewFacturas.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewFacturas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewFacturas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFacturas.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewFacturas.Location = new System.Drawing.Point(20, 192);
@@ -147,16 +147,17 @@
             this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
             // 
-            // button3
+            // buttonModificar
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(136, 130);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(52, 56);
-            this.button3.TabIndex = 17;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            this.buttonModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonModificar.BackgroundImage")));
+            this.buttonModificar.Location = new System.Drawing.Point(136, 130);
+            this.buttonModificar.Name = "buttonModificar";
+            this.buttonModificar.Size = new System.Drawing.Size(52, 56);
+            this.buttonModificar.TabIndex = 17;
+            this.buttonModificar.UseVisualStyleBackColor = true;
+            this.buttonModificar.Click += new System.EventHandler(this.buttonModificar_Click);
+            this.buttonModificar.MouseEnter += new System.EventHandler(this.button3_MouseEnter);
+            this.buttonModificar.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
             // 
             // buttonBorrar
             // 
@@ -233,7 +234,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonBorrar);
             this.Controls.Add(this.button1);
             this.DoubleBuffered = true;
@@ -256,7 +257,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;

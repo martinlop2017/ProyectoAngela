@@ -114,5 +114,30 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var viewModel = this.facturaProvider.GetGestionFactura();
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
         }
+
+        private void buttonModificar_Click(object sender, EventArgs e)
+        {
+            var selectedRows = this.dataGridViewFacturas.SelectedRows;
+            if (selectedRows.Count > 1)
+                MessageBox.Show("Debe seleccionar una única factura");
+            else if (selectedRows.Count < 1)
+                MessageBox.Show("Debe seleccionar una factura");
+            else
+            {
+                var selectedFactura = (FacturaViewModel)selectedRows[0].DataBoundItem;
+                this.OpenFormToModify(selectedFactura);
+            }
+        }
+
+        private void OpenFormToModify(FacturaViewModel selectedFactura)
+        {
+            using (var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion)
+            {
+                formAltaCliente.IsUpdate(selectedFactura.CodigoFactura);
+                formAltaCliente.ShowDialog();
+            }
+
+            this.FillControls();
+        }
     }
 }

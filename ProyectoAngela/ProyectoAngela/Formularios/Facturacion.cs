@@ -23,8 +23,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// </summary>
         private List<string> originalClientValues;
         private List<string> originalProductValues;
-        int counting = 0;
         private AltaFacturaViewModel viewModel;
+        private bool isUpdate = false;
+        private long facturaId;
 
         public Facturacion(IFacturaProvider facturaProvider)
         {
@@ -32,9 +33,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void IsUpdate(long facturaId)
         {
-
+            this.isUpdate = true;
+            this.facturaId = facturaId;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -44,7 +46,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Facturacion_Load(object sender, EventArgs e)
         {
-            viewModel = this.facturaProvider.GetFacturaViewModel();
+            if(!this.isUpdate)
+            {
+                viewModel = this.facturaProvider.GetFacturaViewModel();
+            }
+            else
+            {
+                viewModel = this.facturaProvider.GetFacturaViewModelById(this.facturaId);
+            }
             this.FillControls(viewModel);
         }
 
@@ -65,6 +74,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.DataSource = originalClientValues;
             this.labelNumeroFactura.Text = viewModel.Id.ToString();
             this.FillIVAs(viewModel.LineasIVA);
+
+            if(this.isUpdate)
+            {
+                this.comboBoxClientes.Text = viewModel.SelectedClient;
+                foreach(var lineaFactura in viewModel.LineasFactura)
+                {
+                    this.dataGridViewLineasFactura.Rows.Add();
+                    var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
+
+                    (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
+                    (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
+                    this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
+                    this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
+                    this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaFactura.Importe;
+                }
+
+                this.Recalculate();
+            }
         }
 
         public void FillIVAs(List<LineaIVAViewModel> lineasIVA)

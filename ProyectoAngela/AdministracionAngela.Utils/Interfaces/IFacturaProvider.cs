@@ -14,5 +14,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void SaveFactura(AltaFacturaViewModel viewModel);
         GestionFacturaViewModel GetGestionFactura();
         void DeleteFacturas(List<FacturaViewModel> mappedSelectedRows);
+        AltaFacturaViewModel GetFacturaViewModelById(long facturaId);
     }
 }

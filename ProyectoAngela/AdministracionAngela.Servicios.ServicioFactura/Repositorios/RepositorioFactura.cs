@@ -53,6 +53,18 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Facturas.ToList();
         }
 
+        public Factura GetFacturaById(long facturaId)
+        {
+            try
+            {
+                return this.dbContext.Facturas.Find(facturaId);
+            }
+            catch(Exception exp)
+            {
+                return null;
+            }
+        }
+
         public Factura GetLastFactura()
         {
             try

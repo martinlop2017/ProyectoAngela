@@ -193,7 +193,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.Size = new System.Drawing.Size(785, 260);
             this.dataGridViewLineasFactura.StandardTab = true;
             this.dataGridViewLineasFactura.TabIndex = 6;
-            this.dataGridViewLineasFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
             // 

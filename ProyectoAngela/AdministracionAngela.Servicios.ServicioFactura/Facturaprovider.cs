@@ -74,5 +74,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.DeleteLineasFacturaByNumeroFactura(repositoryFacturasToDelete);
             this.repositorioFactura.DeleteFacturas(repositoryFacturasToDelete);
         }
+
+        public AltaFacturaViewModel GetFacturaViewModelById(long facturaId)
+        {
+            var clientes = this.repositorioCliente.GetAllClients();
+            var articulos = this.repositorioArticulo.GetAllArticulos();
+
+            var facturaFromRepository = this.repositorioFactura.GetFacturaById(facturaId);
+
+            var ivas = this.repositorioIVA.GetAllIVAs();
+
+            return MapToViewModel.MapToUpdateAltaFacturaViewModel(clientes, articulos, facturaFromRepository, ivas);
+        }
     }
 }

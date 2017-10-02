@@ -188,6 +188,39 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        public static AltaFacturaViewModel MapToUpdateAltaFacturaViewModel(List<Cliente> clientes, List<Producto> articulos, Factura factura, List<IVA> ivas)
+        {
+            return new AltaFacturaViewModel()
+            {
+                Id = (int)factura.NumeroFactura,
+                ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
+                ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
+                SelectedClient = factura.Cliente.Nombre,
+                Fecha = factura.Fecha.ToString(),
+                LineasFactura = MapListToLineaFacturaViewModel(factura.LineaFactura.ToList()),
+                LineasIVA = MapListToLineaIVAViewModel(ivas)
+            };
+        }
+
+        public static List<LineaFacturaViewModel> MapListToLineaFacturaViewModel(List<LineaFactura> lineasFactura)
+        {
+            return lineasFactura.Select(lf => MapToLineaFacturaViewModel(lf)).ToList();
+        }
+
+        public static LineaFacturaViewModel MapToLineaFacturaViewModel(LineaFactura lineaFactura)
+        {
+            return new LineaFacturaViewModel()
+            {
+                SelectedProduct = string.Format("{0} - {1}", lineaFactura.Producto.CodigoProducto, lineaFactura.Producto.Descripcion),
+                ProductoId = lineaFactura.ProductoId,
+                PorcentajeIVA = lineaFactura.PorcentajeIVA,
+                PorcentajeRE = lineaFactura.PorcentajeRE.Value,
+                Kgs = lineaFactura.Kgs.Value,
+                Precio = lineaFactura.Precio.Value,
+                Importe = lineaFactura.Kgs.Value * lineaFactura.Precio.Value
+            };
+        }
+
         public static List<LineaIVAViewModel> MapListToLineaIVAViewModel(List<IVA> ivas)
         {
             return ivas.Select(iva => new LineaIVAViewModel()

@@ -31,9 +31,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -156,10 +156,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // button3
             // 
             this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.Location = new System.Drawing.Point(145, 154);
+            this.button3.Location = new System.Drawing.Point(150, 155);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(52, 50);
-            this.button3.TabIndex = 14;
+            this.button3.TabIndex = 5;
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button2
@@ -168,7 +168,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button2.Location = new System.Drawing.Point(87, 154);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(52, 50);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 4;
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -177,29 +177,29 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button1.Location = new System.Drawing.Point(29, 154);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(52, 50);
-            this.button1.TabIndex = 12;
+            this.button1.TabIndex = 3;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridViewLineasFactura
             // 
             this.dataGridViewLineasFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
@@ -213,7 +213,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewLineasFactura.Size = new System.Drawing.Size(785, 260);
             this.dataGridViewLineasFactura.StandardTab = true;
-            this.dataGridViewLineasFactura.TabIndex = 22;
+            this.dataGridViewLineasFactura.TabIndex = 6;
             this.dataGridViewLineasFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
@@ -221,8 +221,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // ColumnProducto
             // 
             this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
@@ -296,7 +296,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.Location = new System.Drawing.Point(79, 34);
             this.comboBoxClientes.Name = "comboBoxClientes";
             this.comboBoxClientes.Size = new System.Drawing.Size(304, 26);
-            this.comboBoxClientes.TabIndex = 49;
+            this.comboBoxClientes.TabIndex = 1;
             this.comboBoxClientes.TextUpdate += new System.EventHandler(this.comboBoxClientes_TextUpdate);
             // 
             // panel3
@@ -315,7 +315,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dateTimePickerFecha.Location = new System.Drawing.Point(19, 36);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePickerFecha.TabIndex = 7;
+            this.dateTimePickerFecha.TabIndex = 2;
             // 
             // label10
             // 
@@ -517,7 +517,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(835, 769);
+            this.ClientSize = new System.Drawing.Size(835, 750);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel4);

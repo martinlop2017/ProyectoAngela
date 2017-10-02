@@ -109,7 +109,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var combo = sender as ComboBox;
             combo.TextChanged -= new EventHandler(ComboInGrid_TextChanged);
 
-            (sender as ComboBox).FilterByTextIntroduced(originalProductValues);
+            //Este if evita que, cuando se selecciona un producto, vuelva a mostrarse las opciones del combo
+            if(!originalProductValues.Contains(combo.Text))
+            {
+                (sender as ComboBox).FilterByTextIntroduced(originalProductValues);
+            }
+
             combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
         }
 

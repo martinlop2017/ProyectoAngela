@@ -15,5 +15,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void DeleteLineasFacturaByNumeroFactura(List<Factura> repositoryFacturasToDelete);
         void DeleteFacturas(List<Factura> repositoryFacturasToDelete);
         Factura GetFacturaById(long facturaId);
+        void UpdateFactura(Factura facturaToRepository);
     }
 }

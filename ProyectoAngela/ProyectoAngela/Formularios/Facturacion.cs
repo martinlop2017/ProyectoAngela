@@ -252,7 +252,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonSave_Click(object sender, EventArgs e)
         {
             ReadGenericDataFromForm();
-            this.facturaProvider.SaveFactura(this.viewModel);
+            if(this.isUpdate)
+            {
+                this.facturaProvider.UpdateFactura(this.viewModel);
+            }
+            else
+            {
+                this.facturaProvider.SaveFactura(this.viewModel);
+            }
         }
 
         /// <summary>

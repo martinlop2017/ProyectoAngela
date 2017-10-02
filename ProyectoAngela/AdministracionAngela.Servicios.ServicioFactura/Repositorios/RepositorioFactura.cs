@@ -91,5 +91,25 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 throw;
             }
         }
+
+        public void UpdateFactura(Factura facturaToRepository)
+        {
+            try
+            {
+                var facturaToupdate = this.dbContext.Facturas.Find(facturaToRepository.NumeroFactura);
+
+                facturaToupdate.Cliente = facturaToRepository.Cliente;
+                facturaToupdate.Fecha = facturaToRepository.Fecha;
+                facturaToupdate.LineaFactura = facturaToRepository.LineaFactura;
+                facturaToupdate.Total = facturaToRepository.Total;
+                facturaToupdate.TotalBase = facturaToRepository.TotalBase;
+
+                dbContext.SaveChanges();
+            }
+            catch(Exception exp)
+            {
+
+            }
+        }
     }
 }

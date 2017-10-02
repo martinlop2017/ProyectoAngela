@@ -86,5 +86,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return MapToViewModel.MapToUpdateAltaFacturaViewModel(clientes, articulos, facturaFromRepository, ivas);
         }
+
+        public void UpdateFactura(AltaFacturaViewModel viewModel)
+        {
+            var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
+            this.repositorioFactura.UpdateFactura(facturaToRepository);
+        }
     }
 }

@@ -195,7 +195,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Id = (int)factura.NumeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
-                SelectedClient = factura.Cliente.Nombre,
+                SelectedClient = string.Format("{0} - {1}", factura.Cliente.Id, factura.Cliente.Nombre),
                 Fecha = factura.Fecha.ToString(),
                 LineasFactura = MapListToLineaFacturaViewModel(factura.LineaFactura.ToList()),
                 LineasIVA = MapListToLineaIVAViewModel(ivas)

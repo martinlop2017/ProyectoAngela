@@ -237,5 +237,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.viewModel.SelectedClient = this.comboBoxClientes.Text;
             this.viewModel.Fecha = this.dateTimePickerFecha.Value.ToString();
         }
+
+        private void buttonEliminarLinea_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewLineasFactura.SelectedRows)
+            {
+                if (!row.IsNewRow)
+                {
+                    this.dataGridViewLineasFactura.Rows.Remove(row);
+                }
+            }
+
+            this.Recalculate();
+        }
     }
 }

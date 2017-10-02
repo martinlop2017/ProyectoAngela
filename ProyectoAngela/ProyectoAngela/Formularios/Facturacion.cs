@@ -125,6 +125,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
             cell.DataSource = originalProductValues;
+
+            //Set focus on column product
+            this.dataGridViewLineasFactura.Focus();
+            this.dataGridViewLineasFactura.CurrentCell = cell;
         }
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)

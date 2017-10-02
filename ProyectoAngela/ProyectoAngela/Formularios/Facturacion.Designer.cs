@@ -45,10 +45,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewLineasFactura = new System.Windows.Forms.DataGridView();
-            this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -72,6 +68,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label32 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -189,6 +189,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewLineasFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
@@ -217,34 +218,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
-            // 
-            // ColumnProducto
-            // 
-            this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.ColumnProducto.HeaderText = "Producto";
-            this.ColumnProducto.Name = "ColumnProducto";
-            this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColumnProducto.Width = 80;
-            // 
-            // ColumnKgs
-            // 
-            this.ColumnKgs.HeaderText = "Kgs";
-            this.ColumnKgs.Name = "ColumnKgs";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnImporte
-            // 
-            this.ColumnImporte.HeaderText = "Importe";
-            this.ColumnImporte.Name = "ColumnImporte";
-            this.ColumnImporte.ReadOnly = true;
             // 
             // panel1
             // 
@@ -509,6 +482,33 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // ColumnProducto
+            // 
+            this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.ColumnProducto.HeaderText = "Producto";
+            this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnKgs
+            // 
+            this.ColumnKgs.HeaderText = "Kgs";
+            this.ColumnKgs.Name = "ColumnKgs";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnImporte
+            // 
+            this.ColumnImporte.HeaderText = "Importe";
+            this.ColumnImporte.Name = "ColumnImporte";
+            this.ColumnImporte.ReadOnly = true;
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -590,10 +590,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private System.Windows.Forms.ComboBox comboBoxClientes;
         private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
         private TableLayoutPanel tableLayoutPanel1;
+        private Button buttonSave;
         private DataGridViewComboBoxColumn ColumnProducto;
         private DataGridViewTextBoxColumn ColumnKgs;
         private DataGridViewTextBoxColumn ColumnPrecio;
         private DataGridViewTextBoxColumn ColumnImporte;
-        private Button buttonSave;
     }
 }

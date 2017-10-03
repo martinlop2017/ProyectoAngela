@@ -21,7 +21,7 @@ namespace AdministracionAngela.EFRepository
         }
     
         public int Id { get; set; }
-        public string Direccion1 { get; set; }
+        public string LineaDireccion { get; set; }
         public string Poblacion { get; set; }
         public string Provincia { get; set; }
         public Nullable<int> CodigoPostal { get; set; }

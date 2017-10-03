@@ -111,7 +111,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     clientToUpdate.CodigoCliente = newClient.CodigoCliente;
                     clientToUpdate.NIF = newClient.NIF;
                     clientToUpdate.CIF = string.Empty;
-                    clientToUpdate.Direccion.Direccion1 = newClient.Direccion.Direccion1;
+                    clientToUpdate.Direccion.LineaDireccion = newClient.Direccion.LineaDireccion;
                     clientToUpdate.Direccion.Poblacion = newClient.Direccion.Poblacion;
                     clientToUpdate.Direccion.Provincia = newClient.Direccion.Provincia;
                     clientToUpdate.Direccion.CodigoPostal = newClient.Direccion.CodigoPostal;

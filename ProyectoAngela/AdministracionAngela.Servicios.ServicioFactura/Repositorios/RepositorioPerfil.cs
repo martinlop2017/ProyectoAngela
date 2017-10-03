@@ -55,7 +55,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 {
                     perfilToUpdate.Nombre = nuevoPerfil.Nombre;
                     perfilToUpdate.NIF = nuevoPerfil.NIF;
-                    perfilToUpdate.Direccion.Direccion1 = nuevoPerfil.Direccion.Direccion1;
+                    perfilToUpdate.Direccion.LineaDireccion = nuevoPerfil.Direccion.LineaDireccion;
                     perfilToUpdate.Direccion.Poblacion = nuevoPerfil.Direccion.Poblacion;
                     perfilToUpdate.Direccion.Provincia = nuevoPerfil.Direccion.Provincia;
                     perfilToUpdate.Direccion.CodigoPostal = nuevoPerfil.Direccion.CodigoPostal;

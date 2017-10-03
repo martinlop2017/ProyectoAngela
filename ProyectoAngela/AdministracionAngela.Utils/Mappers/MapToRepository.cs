@@ -26,7 +26,7 @@ namespace AdministracionAngela.Utils.Mappers
                 CIF = string.Empty,
                 Direccion = new Direccion()
                 {
-                    Direccion1 = nuevoClienteViewModel.Direccion,
+                    LineaDireccion = nuevoClienteViewModel.Direccion,
                     Poblacion = nuevoClienteViewModel.Poblacion,
                     Provincia = nuevoClienteViewModel.Provincia,
                     CodigoPostal = nuevoClienteViewModel.CodigoPostal
@@ -116,7 +116,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Direccion = new Direccion()
                 {
                     CodigoPostal = perfil.CodigoPostal,
-                    Direccion1 = perfil.Direccion,
+                    LineaDireccion = perfil.Direccion,
                     Poblacion = perfil.Poblacion,
                     Provincia = perfil.Provincia
                 },

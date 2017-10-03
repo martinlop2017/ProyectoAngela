@@ -35,8 +35,8 @@ namespace AdministracionAngela.EFRepository
         public bool Excento { get; set; }
     
         public virtual Contacto Contacto { get; set; }
-        public virtual Direccion Direccion { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
+        public virtual Direccion Direccion { get; set; }
     }
 }

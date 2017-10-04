@@ -112,6 +112,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             Close();
         }
 
+        private void comboBoxIVA_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

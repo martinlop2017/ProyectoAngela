@@ -284,5 +284,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             this.Recalculate();
         }
+
+        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

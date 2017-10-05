@@ -41,6 +41,8 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="StructureMap, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\StructureMap.4.5.2\lib\net45\StructureMap.dll</HintPath>
       <Private>True</Private>
@@ -48,6 +50,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +85,17 @@
     </Compile>
     <Compile Include="Formularios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\DataSetnUEVO.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Form20.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Form20.Designer.cs">
+      <DependentUpon>Form20.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\GestionArticulos.cs">
       <SubType>Form</SubType>
@@ -162,6 +176,9 @@
     <EmbeddedResource Include="Formularios\AltaCliente.resx">
       <DependentUpon>AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Form20.resx">
+      <DependentUpon>Form20.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionArticulos.resx">
       <DependentUpon>GestionArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +191,7 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Report2.rdlc" />
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +208,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Formularios\DataSetnUEVO.xsc">
+      <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
+    </None>
+    <None Include="Formularios\DataSetnUEVO.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetnUEVO.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Formularios\DataSetnUEVO.xss">
+      <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

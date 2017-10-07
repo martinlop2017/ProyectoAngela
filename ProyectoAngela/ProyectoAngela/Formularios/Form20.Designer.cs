@@ -30,25 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.LineaFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetnUEVO = new AdministracionAngela.ProyectoAngela.Formularios.DataSetnUEVO();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.LineaFacturaTableAdapter = new AdministracionAngela.ProyectoAngela.Formularios.DataSetnUEVOTableAdapters.LineaFacturaTableAdapter();
             this.ImpresionFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.LineaFacturaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetnUEVO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImpresionFacturaBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LineaFacturaBindingSource
-            // 
-            this.LineaFacturaBindingSource.DataMember = "LineaFactura";
-            this.LineaFacturaBindingSource.DataSource = this.DataSetnUEVO;
-            // 
-            // DataSetnUEVO
-            // 
-            this.DataSetnUEVO.DataSetName = "DataSetnUEVO";
-            this.DataSetnUEVO.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -61,10 +46,6 @@
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(726, 339);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // LineaFacturaTableAdapter
-            // 
-            this.LineaFacturaTableAdapter.ClearBeforeFill = true;
             // 
             // ImpresionFacturaBindingSource
             // 
@@ -79,8 +60,6 @@
             this.Name = "Form20";
             this.Text = "Form20";
             this.Load += new System.EventHandler(this.Form20_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.LineaFacturaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataSetnUEVO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImpresionFacturaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -89,9 +68,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource LineaFacturaBindingSource;
-        private DataSetnUEVO DataSetnUEVO;
-        private DataSetnUEVOTableAdapters.LineaFacturaTableAdapter LineaFacturaTableAdapter;
         private System.Windows.Forms.BindingSource ImpresionFacturaBindingSource;
     }
 }

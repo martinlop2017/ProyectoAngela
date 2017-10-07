@@ -86,11 +86,6 @@
     <Compile Include="Formularios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\DataSetnUEVO.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Form20.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,7 +186,6 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Report2.rdlc" />
     <EmbeddedResource Include="Formularios\ReportTestEntity.rdlc" />
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>
@@ -209,20 +203,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="AdministracionAngela.Utils.Models.Factura.AltaFacturaViewModel.datasource" />
     <None Include="AdministracionAngela.Utils.Models.Factura.ImpresionFactura.datasource" />
-    <None Include="AdministracionAngela.Utils.Models.Factura.LineaFacturaViewModel.datasource" />
-    <None Include="Formularios\DataSetnUEVO.xsc">
-      <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
-    </None>
-    <None Include="Formularios\DataSetnUEVO.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetnUEVO.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Formularios\DataSetnUEVO.xss">
-      <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

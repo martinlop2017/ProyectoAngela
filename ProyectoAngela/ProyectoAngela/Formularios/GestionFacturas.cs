@@ -139,5 +139,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             this.FillControls();
         }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            var selectedRow = this.dataGridViewFacturas.SelectedRows;
+            var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
+            var selectedFacturaIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
+
+            List<ImpresionFactura> facturasParaImprimir = this.facturaProvider.GetImpresionFactura(selectedFacturaIds);
+
+            using (var formImpresion = this.formOpener.GetForm<Form20>() as Form20)
+            {
+                formImpresion.SetFacturas(facturasParaImprimir);
+                formImpresion.ShowDialog();
+            }
+        }
     }
 }

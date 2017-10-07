@@ -11,7 +11,12 @@ namespace AdministracionAngela.Utils.Models.Factura
         public int NumeroFactura { get; set; }
         public string NombreCliente { get; set; }
         public string DescripcionProducto { get; set; }
-        public int precio { get; set; }
+        public decimal Precio { get; set; }
+
+        //fecha, realizador: dni, nombre, direccion, 
+        //receptor: dni, nombre, direccion
+        //nombreProducto, unidades, precio, total
+        //base, iva, RE, total
 
         public ImpresionFactura()
         {

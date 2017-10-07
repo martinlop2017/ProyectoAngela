@@ -92,5 +92,28 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
             this.repositorioFactura.UpdateFactura(facturaToRepository);
         }
+
+        public List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds)
+        {
+            List<ImpresionFactura> impresionFacturas = new List<ImpresionFactura>();
+            var facturas = selectedFacturaIds.Select(f => this.repositorioFactura.GetFacturaById(f)).ToList();
+
+            foreach (var factura in facturas)
+            {
+                foreach (var lineaFactura in factura.LineaFactura)
+                {
+
+                    impresionFacturas.Add(new ImpresionFactura()
+                    {
+                        NumeroFactura = (int)factura.NumeroFactura,
+                        NombreCliente = factura.Cliente.Nombre,
+                        DescripcionProducto = lineaFactura.Producto.Descripcion,
+                        Precio = lineaFactura.Precio.Value
+                    });
+                }
+            }
+
+            return impresionFacturas;
+        }
     }
 }

@@ -34,8 +34,10 @@
             this.DataSetnUEVO = new AdministracionAngela.ProyectoAngela.Formularios.DataSetnUEVO();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.LineaFacturaTableAdapter = new AdministracionAngela.ProyectoAngela.Formularios.DataSetnUEVOTableAdapters.LineaFacturaTableAdapter();
+            this.ImpresionFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LineaFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetnUEVO)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImpresionFacturaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // LineaFacturaBindingSource
@@ -51,10 +53,10 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.LineaFacturaBindingSource;
+            reportDataSource1.Name = "DataSetImpresion";
+            reportDataSource1.Value = this.ImpresionFacturaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.Report2.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ReportTestEntity.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(726, 339);
@@ -63,6 +65,10 @@
             // LineaFacturaTableAdapter
             // 
             this.LineaFacturaTableAdapter.ClearBeforeFill = true;
+            // 
+            // ImpresionFacturaBindingSource
+            // 
+            this.ImpresionFacturaBindingSource.DataSource = typeof(AdministracionAngela.Utils.Models.Factura.ImpresionFactura);
             // 
             // Form20
             // 
@@ -75,6 +81,7 @@
             this.Load += new System.EventHandler(this.Form20_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LineaFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetnUEVO)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImpresionFacturaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -85,5 +92,6 @@
         private System.Windows.Forms.BindingSource LineaFacturaBindingSource;
         private DataSetnUEVO DataSetnUEVO;
         private DataSetnUEVOTableAdapters.LineaFacturaTableAdapter LineaFacturaTableAdapter;
+        private System.Windows.Forms.BindingSource ImpresionFacturaBindingSource;
     }
 }

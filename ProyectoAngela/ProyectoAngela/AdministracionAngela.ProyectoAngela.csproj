@@ -192,6 +192,7 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Report2.rdlc" />
+    <EmbeddedResource Include="Formularios\ReportTestEntity.rdlc" />
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,6 +209,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="AdministracionAngela.Utils.Models.Factura.AltaFacturaViewModel.datasource" />
+    <None Include="AdministracionAngela.Utils.Models.Factura.ImpresionFactura.datasource" />
+    <None Include="AdministracionAngela.Utils.Models.Factura.LineaFacturaViewModel.datasource" />
     <None Include="Formularios\DataSetnUEVO.xsc">
       <DependentUpon>DataSetnUEVO.xsd</DependentUpon>
     </None>

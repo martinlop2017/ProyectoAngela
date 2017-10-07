@@ -66,6 +66,7 @@
     <Compile Include="Models\Factura\FacturaViewModel.cs" />
     <Compile Include="Models\Factura\AltaFacturaViewModel.cs" />
     <Compile Include="Models\Factura\GestionFacturaViewModel.cs" />
+    <Compile Include="Models\Factura\ImpresionFactura.cs" />
     <Compile Include="Models\Factura\LineaFacturaViewModel.cs" />
     <Compile Include="Models\Factura\LineaIVAViewModel.cs" />
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />

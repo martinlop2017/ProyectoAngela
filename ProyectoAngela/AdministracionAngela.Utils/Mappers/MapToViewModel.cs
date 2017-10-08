@@ -119,7 +119,7 @@ namespace AdministracionAngela.Utils.Mappers
 
         public static PerfilViewModel MapToPerfilViewModel(Perfil perfilFromRepository)
         {
-            PerfilViewModel perfil = new PerfilViewModel();
+            PerfilViewModel perfil = null;
             if(perfilFromRepository != null)
             {
                 perfil = new PerfilViewModel()

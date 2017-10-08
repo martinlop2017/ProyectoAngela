@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MisDatos));
             this.label15 = new System.Windows.Forms.Label();
             this.customGroupBox7 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.formadepago = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -65,7 +65,7 @@
             this.textBoxMiCP = new System.Windows.Forms.TextBox();
             this.textBoxMiProvincia = new System.Windows.Forms.TextBox();
             this.textBoxMiPoblacion = new System.Windows.Forms.TextBox();
-            this.textBoxMiDiereccion = new System.Windows.Forms.TextBox();
+            this.textBoxMiDireccion = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -96,7 +96,7 @@
             this.customGroupBox7.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox7.BorderColor = System.Drawing.Color.SteelBlue;
             this.customGroupBox7.BorderThickness = 3F;
-            this.customGroupBox7.Controls.Add(this.button1);
+            this.customGroupBox7.Controls.Add(this.buttonGuardar);
             this.customGroupBox7.Controls.Add(this.button2);
             this.customGroupBox7.CustomGroupBoxColor = System.Drawing.Color.White;
             this.customGroupBox7.GroupImage = null;
@@ -113,17 +113,18 @@
             this.customGroupBox7.TabStop = false;
             this.customGroupBox7.Text = "customGroupBox7";
             // 
-            // button1
+            // buttonGuardar
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(169, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 60);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.BackgroundImage")));
+            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonGuardar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonGuardar.FlatAppearance.BorderSize = 0;
+            this.buttonGuardar.Location = new System.Drawing.Point(169, 29);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
+            this.buttonGuardar.TabIndex = 0;
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // button2
             // 
@@ -426,7 +427,7 @@
             this.textBoxMiTLF2.Name = "textBoxMiTLF2";
             this.textBoxMiTLF2.Size = new System.Drawing.Size(117, 23);
             this.textBoxMiTLF2.TabIndex = 1;
-            this.textBoxMiTLF2.Text = "959-311 12 12 12 ";
+            this.textBoxMiTLF2.Text = "95912 ";
             // 
             // label19
             // 
@@ -465,7 +466,7 @@
             this.textBoxMiFax.Name = "textBoxMiFax";
             this.textBoxMiFax.Size = new System.Drawing.Size(117, 23);
             this.textBoxMiFax.TabIndex = 2;
-            this.textBoxMiFax.Text = "959-311 12 12 12 ";
+            this.textBoxMiFax.Text = "95931112 ";
             // 
             // textBoxMiTLF1
             // 
@@ -475,7 +476,7 @@
             this.textBoxMiTLF1.Name = "textBoxMiTLF1";
             this.textBoxMiTLF1.Size = new System.Drawing.Size(117, 23);
             this.textBoxMiTLF1.TabIndex = 0;
-            this.textBoxMiTLF1.Text = "959-311 12 12 12 ";
+            this.textBoxMiTLF1.Text = "959311";
             // 
             // label20
             // 
@@ -523,7 +524,7 @@
             this.customGroupBox3.Controls.Add(this.textBoxMiCP);
             this.customGroupBox3.Controls.Add(this.textBoxMiProvincia);
             this.customGroupBox3.Controls.Add(this.textBoxMiPoblacion);
-            this.customGroupBox3.Controls.Add(this.textBoxMiDiereccion);
+            this.customGroupBox3.Controls.Add(this.textBoxMiDireccion);
             this.customGroupBox3.Controls.Add(this.label24);
             this.customGroupBox3.Controls.Add(this.label25);
             this.customGroupBox3.Controls.Add(this.label26);
@@ -574,15 +575,15 @@
             this.textBoxMiPoblacion.TabIndex = 1;
             this.textBoxMiPoblacion.Text = "PUNTA UMBRIA";
             // 
-            // textBoxMiDiereccion
+            // textBoxMiDireccion
             // 
-            this.textBoxMiDiereccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxMiDiereccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMiDiereccion.Location = new System.Drawing.Point(15, 51);
-            this.textBoxMiDiereccion.Name = "textBoxMiDiereccion";
-            this.textBoxMiDiereccion.Size = new System.Drawing.Size(378, 23);
-            this.textBoxMiDiereccion.TabIndex = 0;
-            this.textBoxMiDiereccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
+            this.textBoxMiDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxMiDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMiDireccion.Location = new System.Drawing.Point(15, 51);
+            this.textBoxMiDireccion.Name = "textBoxMiDireccion";
+            this.textBoxMiDireccion.Size = new System.Drawing.Size(378, 23);
+            this.textBoxMiDireccion.TabIndex = 0;
+            this.textBoxMiDireccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
             // 
             // label24
             // 
@@ -659,7 +660,7 @@
         #endregion
         private System.Windows.Forms.Label label15;
         private CustomControls.CustomGroupBox customGroupBox7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button button2;
         private CustomControls.CustomGroupBox formadepago;
         private System.Windows.Forms.Panel panel1;
@@ -693,7 +694,7 @@
         private System.Windows.Forms.TextBox textBoxMiCP;
         private System.Windows.Forms.TextBox textBoxMiProvincia;
         private System.Windows.Forms.TextBox textBoxMiPoblacion;
-        private System.Windows.Forms.TextBox textBoxMiDiereccion;
+        private System.Windows.Forms.TextBox textBoxMiDireccion;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;

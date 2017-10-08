@@ -16,13 +16,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         private IRepositorioCliente repositorioCliente;
         private IRepositoryIVA repositorioIVA;
         private IRepositorioArticulo repositorioArticulo;
+        private IRepositorioPerfil repositorioPerfil;
 
-        public FacturaProvider(IRepositorioFactura repositorioFactura, IRepositorioCliente repositorioCliente, IRepositoryIVA repositorioIVA, IRepositorioArticulo repositorioArticulo)
+        public FacturaProvider(IRepositorioFactura repositorioFactura, IRepositorioCliente repositorioCliente, IRepositoryIVA repositorioIVA, IRepositorioArticulo repositorioArticulo, IRepositorioPerfil repositorioPerfil)
         {
             this.repositorioFactura = repositorioFactura;
             this.repositorioCliente = repositorioCliente;
             this.repositorioIVA = repositorioIVA;
             this.repositorioArticulo = repositorioArticulo;
+            this.repositorioPerfil = repositorioPerfil;
         }
 
         public AltaFacturaViewModel GetFacturaViewModel()
@@ -97,6 +99,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         {
             List<ImpresionFactura> impresionFacturas = new List<ImpresionFactura>();
             var facturas = selectedFacturaIds.Select(f => this.repositorioFactura.GetFacturaById(f)).ToList();
+            var perfil = this.repositorioPerfil.GetPerfil();
 
             foreach (var factura in facturas)
             {
@@ -108,7 +111,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                         NumeroFactura = (int)factura.NumeroFactura,
                         NombreCliente = factura.Cliente.Nombre,
                         DescripcionProducto = lineaFactura.Producto.Descripcion,
-                        Precio = lineaFactura.Precio.Value
+                        Precio = lineaFactura.Precio.Value,
+                        NombreEmisor = perfil.Nombre,
+                        DNIEmisor = perfil.NIF,
+                        DireccionEmisor = perfil.Direccion.LineaDireccion,
+                        TelefonoEmisor = perfil.Contacto.Telefono1.ToString()
                     });
                 }
             }

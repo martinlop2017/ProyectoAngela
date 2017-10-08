@@ -20,6 +20,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
         Mock<IRepositorioCliente> mockRepositorioCliente;
         Mock<IRepositoryIVA> mockRepositorioIVA;
         Mock<IRepositorioArticulo> mockRepositorioArticulo;
+        Mock<IRepositorioPerfil> mockRepositorioPerfil;
 
         public FacturaProviderTests()
         {
@@ -27,6 +28,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             mockRepositorioCliente = new Mock<IRepositorioCliente>();
             mockRepositorioIVA = new Mock<IRepositoryIVA>();
             mockRepositorioArticulo = new Mock<IRepositorioArticulo>();
+            mockRepositorioPerfil = new Mock<IRepositorioPerfil>();
         }
 
         [Fact]
@@ -56,7 +58,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             mockRepositorioIVA.Setup(mock => mock.GetAllIVAs()).Returns(new List<IVA>());
             mockRepositorioArticulo.Setup(mock => mock.GetAllArticulos()).Returns(new List<Producto>());
 
-            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
+            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object, mockRepositorioPerfil.Object);
 
             var facturaViewModel = this.facturaProvider.GetFacturaViewModel();
 
@@ -79,7 +81,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             mockRepositorioIVA.Setup(mock => mock.GetAllIVAs()).Returns(new List<IVA>());
             mockRepositorioArticulo.Setup(mock => mock.GetAllArticulos()).Returns(new List<Producto>());
 
-            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
+            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object, mockRepositorioPerfil.Object);
 
             var facturaViewModel = this.facturaProvider.GetFacturaViewModel();
 
@@ -105,7 +107,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             mockRepositorioIVA.Setup(mock => mock.GetAllIVAs()).Returns(ivasReturned);
             mockRepositorioArticulo.Setup(mock => mock.GetAllArticulos()).Returns(new List<Producto>());
 
-            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
+            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object, mockRepositorioPerfil.Object);
 
             var facturaViewModel = this.facturaProvider.GetFacturaViewModel();
 
@@ -188,7 +190,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
             mockRepositorioArticulo.Setup(m => m.GetArticuloById(2)).Returns(p2);
             mockRepositorioArticulo.Setup(m => m.GetArticuloById(3)).Returns(p3);
 
-            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object);
+            this.facturaProvider = new FacturaProvider(mockRepositorioFactura.Object, mockRepositorioCliente.Object, mockRepositorioIVA.Object, mockRepositorioArticulo.Object, mockRepositorioPerfil.Object);
 
             var result = this.facturaProvider.CalculateIVAs(altaFacturaViewModel);
 

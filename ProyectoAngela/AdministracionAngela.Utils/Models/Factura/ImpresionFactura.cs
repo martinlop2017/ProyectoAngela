@@ -8,6 +8,10 @@ namespace AdministracionAngela.Utils.Models.Factura
 {
     public class ImpresionFactura
     {
+        public string NombreEmisor { get; set; }
+        public string DNIEmisor { get; set; }
+        public string DireccionEmisor { get; set; }
+        public string TelefonoEmisor { get; set; }
         public int NumeroFactura { get; set; }
         public string NombreCliente { get; set; }
         public string DescripcionProducto { get; set; }

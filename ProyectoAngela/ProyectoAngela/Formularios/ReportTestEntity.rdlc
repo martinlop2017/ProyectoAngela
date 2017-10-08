@@ -6,12 +6,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>13.00333cm</Width>
+              <Width>11.56104cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.79292cm</Height>
+              <Height>4.93917cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -32,7 +32,7 @@
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>NumeroFactura</rd:DefaultName>
-                          <Top>0.84667cm</Top>
+                          <Top>1.91382cm</Top>
                           <Left>1.24354cm</Left>
                           <Height>0.6cm</Height>
                           <Width>2.5cm</Width>
@@ -309,7 +309,6 @@
                                           <PaddingBottom>2pt</PaddingBottom>
                                         </Style>
                                       </Textbox>
-                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                 </TablixCells>
@@ -335,7 +334,7 @@
                             </TablixMembers>
                           </TablixRowHierarchy>
                           <DataSetName>DataSetImpresion</DataSetName>
-                          <Top>2.06375cm</Top>
+                          <Top>3.1309cm</Top>
                           <Left>1.56104cm</Left>
                           <Height>1.2cm</Height>
                           <Width>10cm</Width>
@@ -380,10 +379,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetImpresion</DataSetName>
-        <Top>0.63182cm</Top>
-        <Left>1.87537cm</Left>
-        <Height>3.79292cm</Height>
-        <Width>13.00333cm</Width>
+        <Top>1.58778cm</Top>
+        <Left>2.22438cm</Left>
+        <Height>4.93917cm</Height>
+        <Width>11.56104cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -391,11 +390,142 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>2.80914in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>7.20175in</Width>
   <Page>
+    <PageHeader>
+      <Height>4.43328cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="NombreEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!NombreEmisor.Value, "DataSetImpresion")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>NombreEmisor</rd:DefaultName>
+          <Top>0.47307cm</Top>
+          <Left>0.92792cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="DNIEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DNIEmisor.Value, "DataSetImpresion")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>DNIEmisor</rd:DefaultName>
+          <Top>1.58432cm</Top>
+          <Left>0.92792cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="DireccionEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DireccionEmisor.Value, "DataSetImpresion")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>DireccionEmisor</rd:DefaultName>
+          <Top>0.47307cm</Top>
+          <Left>6.28542cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="TelefonoEmisor">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!TelefonoEmisor.Value, "DataSetImpresion")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>TelefonoEmisor</rd:DefaultName>
+          <Top>2.96016cm</Top>
+          <Left>0.92792cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
     <LeftMargin>2cm</LeftMargin>
@@ -426,8 +556,20 @@
           <DataField>DescripcionProducto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DireccionEmisor">
+          <DataField>DireccionEmisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DNIEmisor">
+          <DataField>DNIEmisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="NombreCliente">
           <DataField>NombreCliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="NombreEmisor">
+          <DataField>NombreEmisor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NumeroFactura">
@@ -437,6 +579,10 @@
         <Field Name="Precio">
           <DataField>Precio</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TelefonoEmisor">
+          <DataField>TelefonoEmisor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

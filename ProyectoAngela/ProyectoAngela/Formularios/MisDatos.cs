@@ -35,33 +35,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            var nuevoPerfil = this.ReadForm();
-            if (isUpdate)
-            {
-                this.perfilProvider.UpdatePerfil(nuevoPerfil);
-            }
-            else
-            {
-                this.perfilProvider.SavePerfil(nuevoPerfil);
-            }
-        }
-
         private PerfilViewModel ReadForm()
         {
             return new PerfilViewModel()
             {
-                //Nombre = textBoxNombre.Text,
-                //NIF = textBoxNIF.Text,
-                //Direccion = textBoxDireccion.Text,
-                //Provincia = textBoxProvincia.Text,
-                //Poblacion = textBoxPoblacion.Text,
-                //Fax = Convert.ToInt32(textBoxFax.Text),
-                //Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
-                //Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
-                //CodigoPostal = Convert.ToInt32(textBoxCodigoPostal.Text),
-                //Email = textBoxEmail.Text
+                Nombre = textBoxMiNombre.Text,
+                NIF = textBoxMiCif.Text,
+                Direccion = textBoxMiDireccion.Text,
+                Provincia = textBoxMiProvincia.Text,
+                Poblacion = textBoxMiPoblacion.Text,
+                Fax = Convert.ToInt32(textBoxMiFax.Text),
+                Telefono1 = Convert.ToInt32(textBoxMiTLF1.Text),
+                Telefono2 = Convert.ToInt32(textBoxMiTLF2.Text),
+                CodigoPostal = Convert.ToInt32(textBoxMiCP.Text),
+                Email = textBoxMiMail.Text
             };
         }
 
@@ -79,16 +66,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 this.isUpdate = true;
                 this.perfilId = viewModel.Id;
+                this.FillControls(viewModel);
             }
-
-            this.FillControls(viewModel);
         }
 
         private void FillControls(PerfilViewModel perfil)
         {
             this.textBoxMiNombre.Text = perfil.Nombre;
             this.textBoxMiCif.Text = perfil.NIF;
-            this.textBoxMiDiereccion.Text = perfil.Direccion;
+            this.textBoxMiDireccion.Text = perfil.Direccion;
             this.textBoxMiCP.Text = perfil.CodigoPostal.ToString();
             this.textBoxMiProvincia.Text = perfil.Provincia;
             this.textBoxMiPoblacion.Text = perfil.Poblacion;
@@ -101,6 +87,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            var nuevoPerfil = this.ReadForm();
+            if (isUpdate)
+            {
+                this.perfilProvider.UpdatePerfil(nuevoPerfil);
+            }
+            else
+            {
+                this.perfilProvider.SavePerfil(nuevoPerfil);
+            }
         }
     }
 }

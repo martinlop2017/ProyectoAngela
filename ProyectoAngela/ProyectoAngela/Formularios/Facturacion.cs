@@ -129,6 +129,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
                 }
             }
+            else
+            {
+                var textBox = e.Control as TextBox;
+                if(textBox != null)
+                {
+                    textBox.TextChanged += new EventHandler(TextboxInGrid_TextChanged);
+                }
+            }
         }
 
         private void ComboInGrid_TextChanged(object sender, EventArgs e)
@@ -143,6 +151,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
 
             combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
+        }
+
+        private void TextboxInGrid_TextChanged(object sender, EventArgs e)
+        {
+            if (this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name.Equals("ColumnPrecio"))
+            {
+                var textbox = (sender as TextBox);
+                if(!string.IsNullOrEmpty(textbox.Text) && textbox.Text.Last().ToString().Equals("+"))
+                {
+                    this.AddNewLineaFactura();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -275,11 +295,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
 
             this.Recalculate();
-        }
-
-        private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void dataGridViewLineasFactura_KeyPress(object sender, KeyPressEventArgs e)

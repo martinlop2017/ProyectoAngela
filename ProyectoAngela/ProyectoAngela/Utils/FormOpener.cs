@@ -28,9 +28,16 @@ namespace AdministracionAngela.ProyectoAngela.Utils
 
         public DialogResult ShowModalForm<TForm>() where TForm : Form
         {
-            using (var form = this.GetForm<TForm>())
+            try
             {
-                return form.ShowDialog();
+                using (var form = this.GetForm<TForm>())
+                {
+                    return form.ShowDialog();
+                }
+            }
+            catch(Exception exp)
+            {
+                return DialogResult.Abort;
             }
         }
 

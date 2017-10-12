@@ -148,7 +148,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             List<ImpresionFactura> facturasParaImprimir = this.facturaProvider.GetImpresionFactura(selectedFacturaIds);
 
-            using (var formImpresion = this.formOpener.GetForm<Form20>() as Form20)
+            using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
             {
                 formImpresion.SetFacturas(facturasParaImprimir);
                 formImpresion.ShowDialog();

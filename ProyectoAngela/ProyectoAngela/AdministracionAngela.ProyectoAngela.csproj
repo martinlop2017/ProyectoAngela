@@ -86,11 +86,11 @@
     <Compile Include="Formularios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Form20.cs">
+    <Compile Include="Formularios\FormImpresion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\Form20.Designer.cs">
-      <DependentUpon>Form20.cs</DependentUpon>
+    <Compile Include="Formularios\FormImpresion.Designer.cs">
+      <DependentUpon>FormImpresion.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\GestionArticulos.cs">
       <SubType>Form</SubType>
@@ -171,8 +171,8 @@
     <EmbeddedResource Include="Formularios\AltaCliente.resx">
       <DependentUpon>AltaCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Form20.resx">
-      <DependentUpon>Form20.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\FormImpresion.resx">
+      <DependentUpon>FormImpresion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionArticulos.resx">
       <DependentUpon>GestionArticulos.cs</DependentUpon>
@@ -186,7 +186,7 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\ReportTestEntity.rdlc" />
+    <EmbeddedResource Include="Formularios\ReportImpresionFactura.rdlc" />
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </EmbeddedResource>

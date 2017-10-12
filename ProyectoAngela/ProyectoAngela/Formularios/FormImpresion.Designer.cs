@@ -1,6 +1,6 @@
 ﻿namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    partial class Form20
+    partial class FormImpresion
     {
         /// <summary>
         /// Required designer variable.
@@ -30,10 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ImpresionFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.ImpresionFacturaBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ImpresionFacturaBindingSource
+            // 
+            this.ImpresionFacturaBindingSource.DataSource = typeof(AdministracionAngela.Utils.Models.Factura.ImpresionFactura);
             // 
             // reportViewer1
             // 
@@ -41,23 +45,19 @@
             reportDataSource1.Name = "DataSetImpresion";
             reportDataSource1.Value = this.ImpresionFacturaBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ReportTestEntity.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ReportImpresionFactura.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(726, 339);
             this.reportViewer1.TabIndex = 0;
             // 
-            // ImpresionFacturaBindingSource
-            // 
-            this.ImpresionFacturaBindingSource.DataSource = typeof(AdministracionAngela.Utils.Models.Factura.ImpresionFactura);
-            // 
-            // Form20
+            // FormImpresion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 339);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "Form20";
+            this.Name = "FormImpresion";
             this.Text = "Form20";
             this.Load += new System.EventHandler(this.Form20_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ImpresionFacturaBindingSource)).EndInit();

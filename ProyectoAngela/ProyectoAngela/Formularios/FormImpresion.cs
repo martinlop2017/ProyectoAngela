@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    public partial class Form20 : Form
+    public partial class FormImpresion : Form
     {
         List<ImpresionFactura> facturas;
 
-        public Form20()
+        public FormImpresion()
         {
             InitializeComponent();
             facturas = new List<ImpresionFactura>();

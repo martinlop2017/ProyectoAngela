@@ -147,15 +147,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.dataGridViewLineasFactura.Rows.Add();
-            var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
-
-            var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
-            cell.DataSource = originalProductValues;
-
-            //Set focus on column product
-            this.dataGridViewLineasFactura.Focus();
-            this.dataGridViewLineasFactura.CurrentCell = cell;
+            this.AddNewLineaFactura();
         }
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -288,6 +280,27 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void dateTimePickerFecha_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridViewLineasFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(this.dataGridViewLineasFactura.CurrentCell.ColumnIndex == this.dataGridViewLineasFactura.Columns.Count - 1 && e.KeyChar.ToString().Equals("+"))
+            {
+                this.AddNewLineaFactura();
+            }
+        }
+
+        private void AddNewLineaFactura()
+        {
+            this.dataGridViewLineasFactura.Rows.Add();
+            var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
+
+            var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
+            cell.DataSource = originalProductValues;
+
+            //Set focus on column product
+            this.dataGridViewLineasFactura.Focus();
+            this.dataGridViewLineasFactura.CurrentCell = cell;
         }
     }
 }

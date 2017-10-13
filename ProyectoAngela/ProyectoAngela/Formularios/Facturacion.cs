@@ -111,9 +111,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.ImporteIVA.ToString() }, 2, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.PorcentajeRecargoEquivalencia.ToString() }, 3, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.ImporteRecargoEquivalencia.ToString() }, 4, i);
-
-                //(tableLayoutPanel1.GetControlFromPosition(0, i) as Label).Text = "test";
-                (tableLayoutPanel1.GetControlFromPosition(1, 1) as Label).Text = "test";
             }
         }
 

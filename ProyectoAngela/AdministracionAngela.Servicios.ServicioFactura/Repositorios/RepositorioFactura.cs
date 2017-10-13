@@ -92,6 +92,20 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
+        public void SetFacturaImpresa(List<long> selectedFacturaIds)
+        {
+            try
+            {
+                var facturas = dbContext.Facturas.Where(f => selectedFacturaIds.Contains(f.NumeroFactura)).ToList();
+                facturas.ForEach(f => f.Impreso = true);
+                this.dbContext.SaveChanges();
+            }
+            catch(Exception exp)
+            {
+
+            }
+        }
+
         public void UpdateFactura(Factura facturaToRepository)
         {
             try

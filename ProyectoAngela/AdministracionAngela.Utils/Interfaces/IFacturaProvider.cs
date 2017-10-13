@@ -17,5 +17,6 @@ namespace AdministracionAngela.Utils.Interfaces
         AltaFacturaViewModel GetFacturaViewModelById(long facturaId);
         void UpdateFactura(AltaFacturaViewModel viewModel);
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
+        void SetFacturaImpresa(List<long> selectedFacturaIds);
     }
 }

@@ -122,5 +122,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return impresionFacturas;
         }
+
+        public void SetFacturaImpresa(List<long> selectedFacturaIds)
+        {
+            this.repositorioFactura.SetFacturaImpresa(selectedFacturaIds);
+        }
     }
 }

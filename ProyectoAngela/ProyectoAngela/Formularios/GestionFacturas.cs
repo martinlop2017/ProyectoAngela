@@ -152,6 +152,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 formImpresion.SetFacturas(facturasParaImprimir);
                 formImpresion.ShowDialog();
+
+                this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
+                this.FillControls();
             }
         }
     }

@@ -268,6 +268,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Cliente = f.Cliente.Nombre,
                 CodigoFactura = f.NumeroFactura,
                 Base = Decimal.Round(f.TotalBase.Value, 2),
+                Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
             }).ToList();
         }
         

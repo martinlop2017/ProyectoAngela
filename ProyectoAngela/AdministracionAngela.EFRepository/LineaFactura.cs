@@ -22,7 +22,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> Kgs { get; set; }
         public Nullable<decimal> Precio { get; set; }
     
-        public virtual Factura Factura { get; set; }
         public virtual Producto Producto { get; set; }
+        public virtual Factura Factura { get; set; }
     }
 }

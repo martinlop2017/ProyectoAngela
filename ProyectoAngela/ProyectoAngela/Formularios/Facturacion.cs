@@ -111,6 +111,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.ImporteIVA.ToString() }, 2, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.PorcentajeRecargoEquivalencia.ToString() }, 3, i);
                 tableLayoutPanel1.Controls.Add(new Label() { Text = lineaIVA.ImporteRecargoEquivalencia.ToString() }, 4, i);
+
+                //(tableLayoutPanel1.GetControlFromPosition(0, i) as Label).Text = "test";
+                (tableLayoutPanel1.GetControlFromPosition(1, 1) as Label).Text = "test";
+            }
+        }
+
+        private void UpdateIVAs(List<LineaIVAViewModel> lineasIVA)
+        {
+            for (int i = 0; i < lineasIVA.Count; i++)
+            {
+                var lineaIVA = lineasIVA[i];
+
+                (tableLayoutPanel1.GetControlFromPosition(0, i + 1) as Label).Text = lineaIVA.BaseIVA.ToString();
+                (tableLayoutPanel1.GetControlFromPosition(1, i + 1) as Label).Text = lineaIVA.PorcentajeIVA.ToString();
+                (tableLayoutPanel1.GetControlFromPosition(2, i + 1) as Label).Text = lineaIVA.ImporteIVA.ToString();
+                (tableLayoutPanel1.GetControlFromPosition(3, i + 1) as Label).Text = lineaIVA.PorcentajeRecargoEquivalencia.ToString();
+                (tableLayoutPanel1.GetControlFromPosition(4, i + 1) as Label).Text = lineaIVA.ImporteRecargoEquivalencia.ToString();
             }
         }
 
@@ -191,7 +208,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.viewModel.LineasFactura = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows, this.viewModel.ArticuloIdsAndDescripciones);
             this.facturaProvider.CalculateIVAs(viewModel);
-            this.FillIVAs(this.viewModel.LineasIVA);
+            //this.FillIVAs(this.viewModel.LineasIVA);
+            this.UpdateIVAs(this.viewModel.LineasIVA);
             this.UpdateTotals();
         }
 

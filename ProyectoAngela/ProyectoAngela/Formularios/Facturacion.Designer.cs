@@ -194,12 +194,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.StandardTab = true;
             this.dataGridViewLineasFactura.TabIndex = 6;
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
-            this.dataGridViewLineasFactura.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellValueChanged);
-            this.dataGridViewLineasFactura.CurrentCellDirtyStateChanged += new System.EventHandler(this.dataGridViewLineasFactura_CurrentCellDirtyStateChanged);
             this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
-            this.dataGridViewLineasFactura.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridViewLineasFactura_KeyDown);
             this.dataGridViewLineasFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewLineasFactura_KeyPress);
-            this.dataGridViewLineasFactura.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.dataGridViewLineasFactura_PreviewKeyDown);
             // 
             // ColumnProducto
             // 
@@ -301,7 +297,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dateTimePickerFecha.RightToLeftLayout = true;
             this.dateTimePickerFecha.Size = new System.Drawing.Size(138, 24);
             this.dateTimePickerFecha.TabIndex = 2;
-            this.dateTimePickerFecha.ValueChanged += new System.EventHandler(this.dateTimePickerFecha_ValueChanged);
             // 
             // label10
             // 

@@ -266,7 +266,8 @@ namespace AdministracionAngela.Utils.Mappers
             return facturas.Select(f => new FacturaViewModel()
             {
                 Cliente = f.Cliente.Nombre,
-                CodigoFactura = f.NumeroFactura
+                CodigoFactura = f.NumeroFactura,
+                Base = Decimal.Round(f.TotalBase.Value, 2),
             }).ToList();
         }
         

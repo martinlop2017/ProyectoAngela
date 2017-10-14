@@ -31,9 +31,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -163,23 +163,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // dataGridViewLineasFactura
             // 
             this.dataGridViewLineasFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewLineasFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
@@ -200,8 +200,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // ColumnProducto
             // 
             this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
@@ -242,9 +242,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelNumeroFactura.Location = new System.Drawing.Point(17, 36);
             this.labelNumeroFactura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNumeroFactura.Name = "labelNumeroFactura";
-            this.labelNumeroFactura.Size = new System.Drawing.Size(89, 31);
+            this.labelNumeroFactura.Size = new System.Drawing.Size(0, 31);
             this.labelNumeroFactura.TabIndex = 2;
-            this.labelNumeroFactura.Text = "99999";
             // 
             // label1
             // 
@@ -349,9 +348,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotal.Location = new System.Drawing.Point(105, 108);
             this.labelTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(150, 25);
+            this.labelTotal.Size = new System.Drawing.Size(58, 25);
             this.labelTotal.TabIndex = 16;
-            this.labelTotal.Text = "1.999.999,99";
+            this.labelTotal.Text = "0.00";
             // 
             // label40
             // 
@@ -371,9 +370,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotalRE.Location = new System.Drawing.Point(140, 66);
             this.labelTotalRE.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalRE.Name = "labelTotalRE";
-            this.labelTotalRE.Size = new System.Drawing.Size(115, 24);
+            this.labelTotalRE.Size = new System.Drawing.Size(45, 24);
             this.labelTotalRE.TabIndex = 14;
-            this.labelTotalRE.Text = "1.999.999,99";
+            this.labelTotalRE.Text = "0.00";
             // 
             // label38
             // 
@@ -393,9 +392,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotalIVA.Location = new System.Drawing.Point(140, 42);
             this.labelTotalIVA.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalIVA.Name = "labelTotalIVA";
-            this.labelTotalIVA.Size = new System.Drawing.Size(115, 24);
+            this.labelTotalIVA.Size = new System.Drawing.Size(45, 24);
             this.labelTotalIVA.TabIndex = 12;
-            this.labelTotalIVA.Text = "1.999.999,99";
+            this.labelTotalIVA.Text = "0.00";
             // 
             // label37
             // 
@@ -415,9 +414,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotalBase.Location = new System.Drawing.Point(140, 18);
             this.labelTotalBase.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTotalBase.Name = "labelTotalBase";
-            this.labelTotalBase.Size = new System.Drawing.Size(115, 24);
+            this.labelTotalBase.Size = new System.Drawing.Size(45, 24);
             this.labelTotalBase.TabIndex = 10;
-            this.labelTotalBase.Text = "1.999.999,99";
+            this.labelTotalBase.Text = "0.00";
             // 
             // label35
             // 

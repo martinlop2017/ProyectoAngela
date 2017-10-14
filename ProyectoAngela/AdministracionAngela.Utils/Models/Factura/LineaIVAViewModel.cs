@@ -14,7 +14,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         {
             get
             {
-                return BaseIVA * (PorcentajeIVA / 100);
+                return Decimal.Round(BaseIVA * (PorcentajeIVA / 100), 2);
             }
             set { }
         }
@@ -23,7 +23,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         {
             get
             {
-                return BaseIVA * (PorcentajeRecargoEquivalencia / 100);
+                return Decimal.Round(BaseIVA * (PorcentajeRecargoEquivalencia / 100), 2);
             }
             set { }
         }

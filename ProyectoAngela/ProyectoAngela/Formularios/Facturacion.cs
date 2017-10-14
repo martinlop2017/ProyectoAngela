@@ -69,28 +69,35 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillControls(AltaFacturaViewModel viewModel)
         {
-            this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
-            this.originalProductValues = viewModel.ArticuloIdsAndDescripciones.Keys.ToList<string>();
-            this.comboBoxClientes.DataSource = originalClientValues;
-            this.labelNumeroFactura.Text = viewModel.Id.ToString();
-            this.FillIVAs(viewModel.LineasIVA);
-
-            if(this.isUpdate)
+            try
             {
-                this.comboBoxClientes.Text = viewModel.SelectedClient;
-                foreach(var lineaFactura in viewModel.LineasFactura)
+                this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
+                this.originalProductValues = viewModel.ArticuloIdsAndDescripciones.Keys.ToList<string>();
+                this.comboBoxClientes.DataSource = originalClientValues;
+                this.labelNumeroFactura.Text = viewModel.Id.ToString();
+                this.FillIVAs(viewModel.LineasIVA);
+
+                if (this.isUpdate)
                 {
-                    this.dataGridViewLineasFactura.Rows.Add();
-                    var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
+                    this.comboBoxClientes.Text = viewModel.SelectedClient;
+                    foreach (var lineaFactura in viewModel.LineasFactura)
+                    {
+                        this.dataGridViewLineasFactura.Rows.Add();
+                        var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
 
-                    (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
-                    (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
-                    this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
-                    this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
-                    this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaFactura.Importe;
+                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
+                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaFactura.Importe;
+                    }
+
+                    this.Recalculate();
                 }
+            }
+            catch(Exception exp)
+            {
 
-                this.Recalculate();
             }
         }
 
@@ -287,6 +294,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 this.facturaProvider.SaveFactura(this.viewModel);
             }
+
+            this.Close();
         }
 
         /// <summary>

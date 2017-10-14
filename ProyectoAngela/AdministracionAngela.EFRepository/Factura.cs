@@ -23,9 +23,9 @@ namespace AdministracionAngela.EFRepository
         public long NumeroFactura { get; set; }
         public long ClienteId { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
-        public Nullable<decimal> RecargoEquivalencia { get; set; }
+        public Nullable<decimal> TotalRecargoEquivalencia { get; set; }
         public Nullable<decimal> TotalBase { get; set; }
-        public Nullable<long> Total { get; set; }
+        public Nullable<decimal> Total { get; set; }
         public Nullable<decimal> TotalIVA { get; set; }
         public Nullable<bool> Impreso { get; set; }
     

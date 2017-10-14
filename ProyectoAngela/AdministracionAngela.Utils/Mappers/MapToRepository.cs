@@ -156,7 +156,10 @@ namespace AdministracionAngela.Utils.Mappers
                 Fecha = Convert.ToDateTime(altaFactura.Fecha),
                 LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura, altaFactura.Id),
                 TotalBase = altaFactura.TotalBase,
-                RecargoEquivalencia = altaFactura.TotalRecargoEquivalencia
+                TotalRecargoEquivalencia = altaFactura.TotalRecargoEquivalencia,
+                TotalIVA = altaFactura.TotalIVA,
+                Total = altaFactura.Total,
+                Impreso = false
             };
         }
 

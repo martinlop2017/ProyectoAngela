@@ -51,9 +51,9 @@
           <Property Name="NumeroFactura" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClienteId" Type="bigint" Nullable="false" />
           <Property Name="Fecha" Type="datetime" />
-          <Property Name="RecargoEquivalencia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalRecargoEquivalencia" Type="decimal" Precision="18" Scale="2" />
           <Property Name="TotalBase" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="Total" Type="bigint" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
           <Property Name="TotalIVA" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Impreso" Type="bit" />
         </EntityType>
@@ -479,9 +479,9 @@
           <Property Name="NumeroFactura" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClienteId" Type="Int64" Nullable="false" />
           <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="RecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalRecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Total" Type="Int64" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Impreso" Type="Boolean" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
@@ -623,7 +623,7 @@
                 <ScalarProperty Name="TotalIVA" ColumnName="TotalIVA" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
                 <ScalarProperty Name="TotalBase" ColumnName="TotalBase" />
-                <ScalarProperty Name="RecargoEquivalencia" ColumnName="RecargoEquivalencia" />
+                <ScalarProperty Name="TotalRecargoEquivalencia" ColumnName="TotalRecargoEquivalencia" />
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />

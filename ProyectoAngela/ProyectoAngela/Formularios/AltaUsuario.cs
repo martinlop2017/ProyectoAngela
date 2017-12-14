@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Usuario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class AltaUsuario : Form
     {
-        public AltaUsuario()
+        ISeguridadProvider seguridadProvider;
+
+        public AltaUsuario(ISeguridadProvider seguridadProvider)
         {
+            this.seguridadProvider = seguridadProvider;
+
             InitializeComponent();
         }
 
@@ -25,6 +31,22 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button8_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonAceptar_Click(object sender, EventArgs e)
+        {
+            var newUser = this.ReadNewUserFromForm();
+
+            this.seguridadProvider.SaveUser(newUser);
+        }
+
+        private AltaUsuarioViewModel ReadNewUserFromForm()
+        {
+            return new AltaUsuarioViewModel()
+            {
+                UserName = this.textBoxUserName.Text,
+                Password = this.maskedTextBoxPassword.Text
+            };
         }
     }
 }

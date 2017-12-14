@@ -73,6 +73,8 @@
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
     <Compile Include="Models\IVA\IVAViewModel.cs" />
     <Compile Include="Models\Perfil\PerfilViewModel.cs" />
+    <Compile Include="Models\Usuario\AltaUsuarioViewModel.cs" />
+    <Compile Include="Models\Usuario\GestionUsuarioViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

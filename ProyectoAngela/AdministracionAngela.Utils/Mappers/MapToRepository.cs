@@ -9,6 +9,7 @@ using AdministracionAngela.Utils.Models.Cliente;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
+using AdministracionAngela.Utils.Models.Usuario;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -186,6 +187,17 @@ namespace AdministracionAngela.Utils.Mappers
             return new Factura()
             {
                 NumeroFactura = factura.CodigoFactura,
+            };
+        }
+        #endregion
+
+        #region Mapeo de Usuario
+        public static User MapAltaUsuarioViewModel(AltaUsuarioViewModel altaUsuario)
+        {
+            return new User()
+            {
+                UserName = altaUsuario.UserName,
+                Password = altaUsuario.Password
             };
         }
         #endregion

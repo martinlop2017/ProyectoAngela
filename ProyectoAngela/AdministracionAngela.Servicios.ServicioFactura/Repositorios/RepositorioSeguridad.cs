@@ -20,5 +20,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             return dbContext.Users.SingleOrDefault(u => u.UserName.Equals(userName));
         }
+
+        public void SaveUser(User newUser)
+        {
+            this.dbContext.Users.Add(newUser);
+            this.dbContext.SaveChanges();
+        }
     }
 }

@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdministracionAngela.Utils.Models.Usuario;
+using AdministracionAngela.Utils.Mappers;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -15,6 +17,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public SeguridadProvider(IRepositorioSeguridad repositorioSeguridad)
         {
             this.repositorioSeguridad = repositorioSeguridad;
+        }
+
+        public void SaveUser(AltaUsuarioViewModel newUser)
+        {
+            var userRepositorio = MapToRepository.MapAltaUsuarioViewModel(newUser);
+            this.repositorioSeguridad.SaveUser(userRepositorio);
         }
 
         public bool UsuarioEsValido(string userName, string pass)

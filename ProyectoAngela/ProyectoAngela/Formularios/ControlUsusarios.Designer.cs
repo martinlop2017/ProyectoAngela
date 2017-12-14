@@ -107,6 +107,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(156, 30);
             this.textBoxPassword.TabIndex = 2;
+            this.textBoxPassword.Text = "admin";
             // 
             // panel1
             // 
@@ -138,6 +139,7 @@
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(156, 30);
             this.textBoxUser.TabIndex = 1;
+            this.textBoxUser.Text = "admin";
             // 
             // ControlUsusarios
             // 

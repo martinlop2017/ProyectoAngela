@@ -16,12 +16,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class ControlUsusarios : Form
     {
-        IClienteProvider clienteProvider;
+        ISeguridadProvider seguridadProvider;
         IFormOpener formOpener;
 
-        public ControlUsusarios(IClienteProvider clienteProvider, IFormOpener formOpener)
+        public ControlUsusarios(IClienteProvider clienteProvider, ISeguridadProvider seguridadProvider, IFormOpener formOpener)
         {
-            this.clienteProvider = clienteProvider;
+            this.seguridadProvider = seguridadProvider;
             this.formOpener = formOpener;
             InitializeComponent();
         }
@@ -43,7 +43,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<Menu>();
+            var userValido = this.seguridadProvider.UsuarioEsValido(this.textBoxUser.Text, this.textBoxPassword.Text);
+            if(userValido)
+            {
+                this.formOpener.ShowModalForm<Menu>();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

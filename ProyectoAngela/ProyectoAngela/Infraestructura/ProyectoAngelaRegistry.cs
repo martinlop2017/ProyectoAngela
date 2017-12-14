@@ -37,6 +37,8 @@ namespace AdministracionAngela.ProyectoAngela.Infraestructura
             For<IRepositorioPerfil>().Use<RepositorioPerfil>();
             For<IFacturaProvider>().Use<FacturaProvider>();
             For<IRepositorioFactura>().Use<RepositorioFactura>();
+            For<ISeguridadProvider>().Use<SeguridadProvider>();
+            For<IRepositorioSeguridad>().Use<RepositorioSeguridad>();
             For<IAdministracionAngelaContext>().Use<AdministracionAngelaContext>();
             For<IFormOpener>().Use<FormOpener>();
         }

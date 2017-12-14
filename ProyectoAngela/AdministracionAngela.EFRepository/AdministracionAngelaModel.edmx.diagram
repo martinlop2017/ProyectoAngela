@@ -22,6 +22,7 @@
         <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="8.25" PointY="4.625" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.User" Width="1.5" PointX="0.75" PointY="8.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

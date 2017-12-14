@@ -33,6 +33,7 @@ namespace AdministracionAngela.EFRepository
         public virtual DbSet<Direccion> Direcciones { get; set; }
         public virtual DbSet<Contacto> Contactos { get; set; }
         public virtual DbSet<Perfil> Perfiles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
 
         public override int SaveChanges()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.EFRepository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public interface IRepositorioSeguridad
     {
+        User GetUser(string userName);
     }
 }

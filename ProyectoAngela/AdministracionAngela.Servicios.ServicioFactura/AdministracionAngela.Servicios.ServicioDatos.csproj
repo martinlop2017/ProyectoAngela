@@ -59,6 +59,7 @@
     <Compile Include="Repositorios\RepositorioCliente.cs" />
     <Compile Include="Repositorios\RepositorioFactura.cs" />
     <Compile Include="Repositorios\RepositorioPerfil.cs" />
+    <Compile Include="Repositorios\RepositorioSeguridad.cs" />
     <Compile Include="SeguridadProvider.cs" />
   </ItemGroup>
   <ItemGroup>

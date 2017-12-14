@@ -16,17 +16,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         {
             this.repositorioSeguridad = repositorioSeguridad;
         }
+
         public bool UsuarioEsValido(string userName, string pass)
         {
-            return true;
-            /*var userValido = false;
+            var userValido = false;
             var user = this.repositorioSeguridad.GetUser(userName);
-            if(user != null && user.Password.equals(pass))
+            if (user != null && user.Password.Equals(pass))
             {
                 userValido = true;
             }
 
-            return userValido;*/
+            return userValido;
         }
     }
 }

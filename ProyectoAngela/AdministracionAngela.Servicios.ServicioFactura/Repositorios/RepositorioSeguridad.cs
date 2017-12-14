@@ -16,6 +16,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             this.dbContext = dbContext;
         }
 
+        public List<User> GetAllUsers()
+        {
+            return this.dbContext.Users.ToList();
+        }
+
         public User GetUser(string userName)
         {
             return dbContext.Users.SingleOrDefault(u => u.UserName.Equals(userName));

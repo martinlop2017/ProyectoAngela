@@ -75,6 +75,7 @@
     <Compile Include="Models\Perfil\PerfilViewModel.cs" />
     <Compile Include="Models\Usuario\AltaUsuarioViewModel.cs" />
     <Compile Include="Models\Usuario\GestionUsuarioViewModel.cs" />
+    <Compile Include="Models\Usuario\UsuarioViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

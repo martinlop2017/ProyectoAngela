@@ -13,6 +13,7 @@ using AdministracionAngela.Utils.Models.Articulo;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
+using AdministracionAngela.Utils.Models.Usuario;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -33,6 +34,8 @@ namespace AdministracionAngela.Utils.Mappers
                         : clienteFromRepository.CIF
             };
         }
+
+        
 
         public static List<ClienteViewModel> MapClientList(List<Cliente> clienteFromRepositoryList)
         {
@@ -274,7 +277,33 @@ namespace AdministracionAngela.Utils.Mappers
                 Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
             }).ToList();
         }
-        
+
+        #endregion
+
+        #region Mapeo Usuarios
+        public static GestionUsuarioViewModel MapToGestionUsuario(List<User> usersFromRepository)
+        {
+            var usuariosViewModel = MapUserList(usersFromRepository);
+
+            return new GestionUsuarioViewModel()
+            {
+                Usuarios = new BindingList<UsuarioViewModel>(usuariosViewModel)
+            };
+        }
+
+        public static List<UsuarioViewModel> MapUserList(List<User> usuariosFromRepositoryList)
+        {
+            return usuariosFromRepositoryList.Select(user => MapUser(user)).ToList<UsuarioViewModel>();
+        }
+
+        public static UsuarioViewModel MapUser(User usuario)
+        {
+            return new UsuarioViewModel()
+            {
+                Usuario = usuario.UserName,
+                Password = usuario.Password
+            };
+        }
         #endregion
     }
 }

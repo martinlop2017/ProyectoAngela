@@ -38,6 +38,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var newUser = this.ReadNewUserFromForm();
 
             this.seguridadProvider.SaveUser(newUser);
+
+            this.Close();
         }
 
         private AltaUsuarioViewModel ReadNewUserFromForm()

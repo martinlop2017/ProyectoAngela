@@ -1,4 +1,5 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Usuario;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,18 +15,26 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionUsusarios : Form
     {
-
+        private ISeguridadProvider seguridadProvider;
         private IFormOpener formOpener;
+        private GestionUsuarioViewModel viewModel;
 
-        public GestionUsusarios(IFormOpener formOpener)
+        public GestionUsusarios(IFormOpener formOpener, ISeguridadProvider seguridadProvider)
         {
             this.formOpener = formOpener;
+            this.seguridadProvider = seguridadProvider;
             InitializeComponent();
         }
 
         private void GestionUsusarios_Load(object sender, EventArgs e)
         {
+            FillControls();
+        }
 
+        private void FillControls()
+        {
+            viewModel = seguridadProvider.GetGestionUsuario();
+            this.dataGridViewUsuarios.DataSource = viewModel.Usuarios;
         }
 
         private void label7_Click(object sender, EventArgs e)

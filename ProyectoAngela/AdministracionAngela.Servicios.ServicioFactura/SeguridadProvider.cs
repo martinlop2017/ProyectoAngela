@@ -19,6 +19,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioSeguridad = repositorioSeguridad;
         }
 
+        public GestionUsuarioViewModel GetGestionUsuario()
+        {
+            var usersFromRepository = this.repositorioSeguridad.GetAllUsers();
+            return MapToViewModel.MapToGestionUsuario(usersFromRepository);
+
+        }
+
         public void SaveUser(AltaUsuarioViewModel newUser)
         {
             var userRepositorio = MapToRepository.MapAltaUsuarioViewModel(newUser);

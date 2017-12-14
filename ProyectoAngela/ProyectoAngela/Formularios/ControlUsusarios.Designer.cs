@@ -106,7 +106,7 @@
             this.textBoxPassword.Location = new System.Drawing.Point(178, 99);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(156, 30);
-            this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.TabIndex = 2;
             // 
             // panel1
             // 
@@ -137,7 +137,7 @@
             this.textBoxUser.Location = new System.Drawing.Point(178, 42);
             this.textBoxUser.Name = "textBoxUser";
             this.textBoxUser.Size = new System.Drawing.Size(156, 30);
-            this.textBoxUser.TabIndex = 4;
+            this.textBoxUser.TabIndex = 1;
             // 
             // ControlUsusarios
             // 

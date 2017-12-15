@@ -86,6 +86,12 @@
     <Compile Include="Formularios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Forma Pago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Forma Pago.Designer.cs">
+      <DependentUpon>Forma Pago.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormImpresion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AltaCliente.resx">
       <DependentUpon>AltaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Forma Pago.resx">
+      <DependentUpon>Forma Pago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormImpresion.resx">
       <DependentUpon>FormImpresion.cs</DependentUpon>

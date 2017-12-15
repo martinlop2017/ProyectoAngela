@@ -62,6 +62,7 @@
             this.buttonIva = new System.Windows.Forms.Button();
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -164,7 +165,7 @@
             this.toolStripStatusLabel2,
             this.FechaInicio,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 730);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 857);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1284, 45);
             this.statusStrip1.TabIndex = 1;
@@ -419,12 +420,26 @@
             this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
             this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.ImageKey = "(ninguno)";
+            this.button1.Location = new System.Drawing.Point(12, 722);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(150, 150);
+            this.button1.TabIndex = 18;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1284, 775);
+            this.ClientSize = new System.Drawing.Size(1284, 902);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -491,5 +506,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

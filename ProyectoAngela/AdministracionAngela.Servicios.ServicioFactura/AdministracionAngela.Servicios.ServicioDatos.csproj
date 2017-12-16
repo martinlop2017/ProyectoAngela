@@ -53,6 +53,7 @@
     <Compile Include="Repositorios\IRepositorioFactura.cs" />
     <Compile Include="Repositorios\IRepositorioPerfil.cs" />
     <Compile Include="Repositorios\IRepositorioSeguridad.cs" />
+    <Compile Include="Repositorios\IRepositorioSistema.cs" />
     <Compile Include="Repositorios\IRepositoryIVA.cs" />
     <Compile Include="Repositorios\IVARepository.cs" />
     <Compile Include="Repositorios\RepositorioArticulo.cs" />
@@ -60,7 +61,9 @@
     <Compile Include="Repositorios\RepositorioFactura.cs" />
     <Compile Include="Repositorios\RepositorioPerfil.cs" />
     <Compile Include="Repositorios\RepositorioSeguridad.cs" />
+    <Compile Include="Repositorios\RepositorioSistema.cs" />
     <Compile Include="SeguridadProvider.cs" />
+    <Compile Include="SistemaProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdministracionAngela.EFRepository\AdministracionAngela.EFRepository.csproj">

@@ -56,6 +56,7 @@
     <Compile Include="Interfaces\IIVAProvider.cs" />
     <Compile Include="Interfaces\IPerfilProvider.cs" />
     <Compile Include="Interfaces\ISeguridadProvider.cs" />
+    <Compile Include="Interfaces\ISistemaProvider.cs" />
     <Compile Include="Mappers\MapToRepository.cs" />
     <Compile Include="Mappers\MapToViewModel.cs" />
     <Compile Include="Models\Articulo\AltaArticuloViewModel.cs" />

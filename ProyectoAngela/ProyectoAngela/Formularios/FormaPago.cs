@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    public partial class Forma_Pago : Form
+    public partial class FormaPago : Form
     {
-        public Forma_Pago()
+        public FormaPago()
         {
             InitializeComponent();
         }

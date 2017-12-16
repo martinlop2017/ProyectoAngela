@@ -265,5 +265,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             buttonIva.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Impuestos;
         }
+
+        private void formasDePagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<FormaPago>();
+        }
     }
 }

@@ -49,6 +49,7 @@
     <Compile Include="Extensions\DataGridViewExtensions.cs" />
     <Compile Include="Extensions\DataGridViewRowExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Models\FormaDePago\FormaDePagoViewModel.cs" />
     <Compile Include="Interfaces\IArticuloProvider.cs" />
     <Compile Include="Interfaces\IClienteProvider.cs" />
     <Compile Include="Interfaces\IFacturaProvider.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Models\Factura\ImpresionFactura.cs" />
     <Compile Include="Models\Factura\LineaFacturaViewModel.cs" />
     <Compile Include="Models\Factura\LineaIVAViewModel.cs" />
+    <Compile Include="Models\FormaDePago\GestionFormaDePagoViewModel.cs" />
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
     <Compile Include="Models\IVA\IVAViewModel.cs" />
     <Compile Include="Models\Perfil\PerfilViewModel.cs" />

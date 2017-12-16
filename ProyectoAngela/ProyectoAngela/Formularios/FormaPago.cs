@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Extensions;
+using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.FormaDePago;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +15,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class FormaPago : Form
     {
-        public FormaPago()
+        private ISistemaProvider sistemaProvider;
+        private bool IsUpdate = false;
+
+        public FormaPago(ISistemaProvider sistemaProvider)
         {
+            this.sistemaProvider = sistemaProvider;
             InitializeComponent();
         }
 
@@ -25,6 +32,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            var rows = this.dataGridViewFormasDePago.Rows;
+
+            var mappedRows = rows.ToList<FormaDePagoViewModel>();
+
+            this.sistemaProvider.SaveFormaDePago(mappedRows);
+
+            Close();
+        }
+
+        private void FormaPago_Load(object sender, EventArgs e)
+        {
+            var viewModel = this.sistemaProvider.GetGestionFormasDePago();
+            FillControls(viewModel);
+        }
+
+        private void FillControls(GestionFormaDePagoViewModel viewModel)
+        {
+            this.dataGridViewFormasDePago.DataSource = viewModel.FormasDePago;
         }
     }
 }

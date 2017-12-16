@@ -14,6 +14,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 using AdministracionAngela.Utils.Models.Usuario;
+using AdministracionAngela.Utils.Models.FormaDePago;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -302,6 +303,31 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 Usuario = usuario.UserName,
                 Password = usuario.Password
+            };
+        }
+        #endregion
+
+        #region Mapeo Formas de pago
+        public static FormaDePagoViewModel MapFormaDePAgo(FormaPago formaDePago)
+        {
+            return new FormaDePagoViewModel()
+            {
+                Codigo = formaDePago.Id,
+                Concepto = formaDePago.Concepto,
+                Dias = formaDePago.Dias.Value
+            };
+        }
+        public static List<FormaDePagoViewModel> MapFormaPagoList(List<FormaPago> formasDePagoFromRepository)
+        {
+            return formasDePagoFromRepository.Select(formaDePago => MapFormaDePAgo(formaDePago)).ToList<FormaDePagoViewModel>();
+        }
+        public static GestionFormaDePagoViewModel MapListToGestionFormaDePago(List<FormaPago> formasDePago)
+        {
+            var formasDePagosViewModel = MapFormaPagoList(formasDePago);
+
+            return new GestionFormaDePagoViewModel()
+            {
+                FormasDePago = new BindingList<FormaDePagoViewModel>(formasDePagosViewModel)
             };
         }
         #endregion

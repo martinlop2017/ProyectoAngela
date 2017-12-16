@@ -63,6 +63,7 @@
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,7 +89,8 @@
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.misDatosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
-            this.tiposDeIvaToolStripMenuItem});
+            this.tiposDeIvaToolStripMenuItem,
+            this.formasDePagoToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 20);
             this.toolStripMenuItem1.Text = "Sistema";
@@ -97,21 +99,21 @@
             // misDatosToolStripMenuItem
             // 
             this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
-            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.misDatosToolStripMenuItem.Text = "Mis Datos";
             this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // tiposDeIvaToolStripMenuItem
             // 
             this.tiposDeIvaToolStripMenuItem.Name = "tiposDeIvaToolStripMenuItem";
-            this.tiposDeIvaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.tiposDeIvaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.tiposDeIvaToolStripMenuItem.Text = "Tipos de Iva";
             this.tiposDeIvaToolStripMenuItem.Click += new System.EventHandler(this.tiposDeIvaToolStripMenuItem_Click);
             // 
@@ -165,7 +167,7 @@
             this.toolStripStatusLabel2,
             this.FechaInicio,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 857);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 736);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1284, 45);
             this.statusStrip1.TabIndex = 1;
@@ -433,12 +435,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             // 
+            // formasDePagoToolStripMenuItem
+            // 
+            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
+            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
+            this.formasDePagoToolStripMenuItem.Click += new System.EventHandler(this.formasDePagoToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1284, 902);
+            this.ClientSize = new System.Drawing.Size(1284, 781);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -507,5 +516,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
     }
 }

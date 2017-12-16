@@ -10,6 +10,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 using AdministracionAngela.Utils.Models.Usuario;
+using AdministracionAngela.Utils.Models.FormaDePago;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -198,6 +199,23 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 UserName = altaUsuario.UserName,
                 Password = altaUsuario.Password
+            };
+        }
+        #endregion
+
+        #region Mapeo Formas de Pago
+        public static List<FormaPago> MapListOfFormaDePagoViewModel(List<FormaDePagoViewModel> formasDePago)
+        {
+            return formasDePago.Select(formaDePAgo => MapFormaDePagoViewModel(formaDePAgo)).ToList<FormaPago>();
+        }
+
+        public static FormaPago MapFormaDePagoViewModel(FormaDePagoViewModel viewModel)
+        {
+            return new FormaPago()
+            {
+                Id = viewModel.Codigo,
+                Concepto = viewModel.Concepto,
+                Dias = viewModel.Dias
             };
         }
         #endregion

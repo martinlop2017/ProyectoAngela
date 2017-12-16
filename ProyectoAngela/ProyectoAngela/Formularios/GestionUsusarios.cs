@@ -37,59 +37,40 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewUsuarios.DataSource = viewModel.Usuarios;
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewClientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonModify_Click(object sender, EventArgs e)
         {
+            var selectedRows = this.dataGridViewUsuarios.SelectedRows;
 
+            if (selectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un usuario para modificarlo");
+            }
+            else if (selectedRows.Count > 1)
+            {
+                MessageBox.Show("Solo se puede modificar un usuario al mismo tiempo");
+            }
+            else
+            {
+                var selectedUser = (UsuarioViewModel)selectedRows[0].DataBoundItem;
+
+                this.OpenFormToModify(selectedUser);
+            }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void OpenFormToModify(UsuarioViewModel selectedUser)
         {
+            using (var formAltaUsuario = this.formOpener.GetForm<AltaUsuario>() as AltaUsuario)
+            {
+                formAltaUsuario.IsUpdate(selectedUser.Usuario);
+                formAltaUsuario.ShowDialog();
+            }
 
+            this.FillControls();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,7 +81,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button1_MouseEnter(object sender, EventArgs e)
         {
             label1.Visible = true;
-
         }
 
         private void button1_MouseLeave(object sender, EventArgs e)

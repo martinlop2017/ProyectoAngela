@@ -56,7 +56,6 @@
             this.label7.Size = new System.Drawing.Size(387, 42);
             this.label7.TabIndex = 26;
             this.label7.Text = "Gestión de Ususarios";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // dataGridViewUsuarios
             // 
@@ -83,7 +82,6 @@
             this.dataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(643, 377);
             this.dataGridViewUsuarios.TabIndex = 25;
-            this.dataGridViewUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellContentClick);
             // 
             // label5
             // 
@@ -94,7 +92,6 @@
             this.label5.TabIndex = 24;
             this.label5.Text = "&Salir";
             this.label5.Visible = false;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -105,7 +102,6 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "&Buscar";
             this.label4.Visible = false;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
@@ -116,7 +112,6 @@
             this.label3.TabIndex = 22;
             this.label3.Text = "&Modificar";
             this.label3.Visible = false;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -127,7 +122,6 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "&Eliminar";
             this.label2.Visible = false;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -138,7 +132,6 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "&Añadir";
             this.label1.Visible = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button5
             // 
@@ -160,7 +153,6 @@
             this.button4.Size = new System.Drawing.Size(52, 56);
             this.button4.TabIndex = 18;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             this.button4.MouseEnter += new System.EventHandler(this.button4_MouseEnter);
             this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
             // 
@@ -184,7 +176,6 @@
             this.button2.Size = new System.Drawing.Size(52, 56);
             this.button2.TabIndex = 16;
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 

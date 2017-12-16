@@ -18,6 +18,7 @@ namespace AdministracionAngela.EFRepository
         DbSet<Contacto> Contactos { get; set; }
         DbSet<Perfil> Perfiles { get; set; }
         DbSet<User> Users { get; set; }
+        DbSet<FormaPago> FormasPago { get; set; }
 
         int SaveChanges();
         void ReloadEntities<T>() where T : class;

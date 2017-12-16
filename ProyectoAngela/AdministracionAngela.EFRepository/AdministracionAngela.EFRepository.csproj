@@ -84,6 +84,9 @@
     <Compile Include="Factura.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormaPago.cs">
+      <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="IAdministracionAngelaContext.cs" />
     <Compile Include="IVA.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
@@ -112,6 +115,7 @@
     </EntityDeploy>
     <None Include="AdministracionAngelaModel.edmx.diagram">
       <DependentUpon>AdministracionAngelaModel.edmx</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />

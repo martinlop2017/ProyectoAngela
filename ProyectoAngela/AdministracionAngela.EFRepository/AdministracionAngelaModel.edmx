@@ -57,6 +57,14 @@
           <Property Name="TotalIVA" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Impreso" Type="bit" />
         </EntityType>
+        <EntityType Name="FormaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Concepto" Type="nvarchar(max)" />
+          <Property Name="Dias" Type="int" />
+        </EntityType>
         <EntityType Name="IVA">
           <Key>
             <PropertyRef Name="Id" />
@@ -217,6 +225,7 @@
           <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FormaPago" EntityType="Self.FormaPago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IVA" EntityType="Self.IVA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LineaFactura" EntityType="Self.LineaFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
@@ -303,6 +312,7 @@
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
           <EntitySet Name="User" EntityType="AdministracionAngelaModel.User" />
+          <EntitySet Name="FormaPago" EntityType="AdministracionAngelaModel.FormaPago" />
         </EntityContainer>
         <EntityType Name="Cliente">
           <Key>
@@ -527,6 +537,14 @@
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="FormaPago">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Concepto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Dias" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -651,6 +669,15 @@
               <MappingFragment StoreEntitySet="User">
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FormaPago">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.FormaPago">
+              <MappingFragment StoreEntitySet="FormaPago">
+                <ScalarProperty Name="Dias" ColumnName="Dias" />
+                <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

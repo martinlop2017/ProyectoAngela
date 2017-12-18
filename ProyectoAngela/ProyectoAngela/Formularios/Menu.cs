@@ -316,5 +316,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.formOpener.ShowModalForm<Rutas>();
         }
+
+        private void rutasExportaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<Rutas>();
+        }
     }
 }

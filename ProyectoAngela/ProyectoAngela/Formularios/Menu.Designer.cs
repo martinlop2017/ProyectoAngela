@@ -65,6 +65,7 @@
             this.buttonIva = new System.Windows.Forms.Button();
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
+            this.rutasExportaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +92,8 @@
             this.misDatosToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.tiposDeIvaToolStripMenuItem,
-            this.formasDePagoToolStripMenuItem});
+            this.formasDePagoToolStripMenuItem,
+            this.rutasExportaciónToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(60, 20);
             this.toolStripMenuItem1.Text = "Sistema";
@@ -462,6 +464,13 @@
             this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
             this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
+            // rutasExportaciónToolStripMenuItem
+            // 
+            this.rutasExportaciónToolStripMenuItem.Name = "rutasExportaciónToolStripMenuItem";
+            this.rutasExportaciónToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.rutasExportaciónToolStripMenuItem.Text = "Rutas Exportación";
+            this.rutasExportaciónToolStripMenuItem.Click += new System.EventHandler(this.rutasExportaciónToolStripMenuItem_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,5 +548,6 @@
         private System.Windows.Forms.Button buttonCobro;
         private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
         private System.Windows.Forms.Button buttonRutas;
+        private System.Windows.Forms.ToolStripMenuItem rutasExportaciónToolStripMenuItem;
     }
 }

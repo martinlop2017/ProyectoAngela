@@ -202,6 +202,9 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ReportImpresionFactura.rdlc" />
+    <EmbeddedResource Include="Formularios\Rutas.resx">
+      <DependentUpon>Rutas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </EmbeddedResource>

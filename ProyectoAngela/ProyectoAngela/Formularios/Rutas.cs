@@ -8,23 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.RutasSalida;
+
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class Rutas : Form
     {
-        public Rutas()
+        private ISistemaProvider sistemaProvider;
+
+        public Rutas(ISistemaProvider sistemaProvider)
         {
+            this.sistemaProvider = sistemaProvider;
             InitializeComponent();
-        }
-
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textsubcuenta_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -33,7 +29,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textfactura.Text = buscar.SelectedPath;
+                textFactura.Text = buscar.SelectedPath;
             }
         }
 
@@ -43,7 +39,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textalb.Text = buscar.SelectedPath;
+                textAlbaranes.Text = buscar.SelectedPath;
             }
         }
 
@@ -53,7 +49,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textlist.Text = buscar.SelectedPath;
+                textListados.Text = buscar.SelectedPath;
             }
         }
 
@@ -63,7 +59,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textliq.Text = buscar.SelectedPath;
+                textLiquidaciones.Text = buscar.SelectedPath;
             }
         }
 
@@ -73,18 +69,31 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textsegu.Text = buscar.SelectedPath;
+                textSguridad.Text = buscar.SelectedPath;
             }
         }
-
-        private void textlist_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            var viewModel = ReadFromForm();
+
+            this.sistemaProvider.SaveRutasSalida(viewModel);
+        }
+
+        private RutasSalidaViewModel ReadFromForm()
+        {
+            return new RutasSalidaViewModel()
+            {
+                PathFacturas = textFactura.Text,
+                PathAlbaranes = textAlbaranes.Text,
+                PathListados = textListados.Text,
+                PathLiquidaciones= textLiquidaciones.Text,
+                Pathseguridad = textSguridad.Text
+            };
         }
     }
 }

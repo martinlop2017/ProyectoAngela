@@ -27,8 +27,7 @@ namespace AdministracionAngela.ProyectoAngela
             //Prepara el contenedor para las dependencias
             var container = Container.For<ProyectoAngelaRegistry>();
             //Resuelve las dependencias para ControlUsuarios
-            //var form = container.GetInstance<ControlUsusarios>();
-            var form = container.GetInstance<RutasSalida>();
+            var form = container.GetInstance<ControlUsusarios>();
 
             Application.Run(form);
         }

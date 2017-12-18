@@ -143,6 +143,26 @@ namespace AdministracionAngela.ProyectoAngela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Cobros {
+            get {
+                object obj = ResourceManager.GetObject("Cobros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cobros_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Cobros Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Copias_Seguridad {
             get {
                 object obj = ResourceManager.GetObject("Copias Seguridad", resourceCulture);
@@ -306,6 +326,26 @@ namespace AdministracionAngela.ProyectoAngela.Properties {
         internal static System.Drawing.Bitmap Rectangulo_7_Azulina {
             get {
                 object obj = ResourceManager.GetObject("Rectangulo 7 Azulina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rutas {
+            get {
+                object obj = ResourceManager.GetObject("Rutas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Rutas_Azul {
+            get {
+                object obj = ResourceManager.GetObject("Rutas Azul", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

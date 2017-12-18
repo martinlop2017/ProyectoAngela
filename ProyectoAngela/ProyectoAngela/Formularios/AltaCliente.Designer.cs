@@ -33,16 +33,19 @@
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule3 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule4 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule5 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule6 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule7 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule8 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule9 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule10 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule11 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule12 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule13 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule14 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule15 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule16 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule7 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule6 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule5 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             this.formadepago = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.comboBoxFormaPago = new System.Windows.Forms.ComboBox();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
@@ -85,6 +88,12 @@
             this.button7 = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.customGroupBox7 = new AdministracionAngela.CustomControls.CustomGroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.formadepago.SuspendLayout();
             this.customGroupBox6.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
@@ -111,14 +120,14 @@
             this.formadepago.ForeColor = System.Drawing.Color.SteelBlue;
             this.formadepago.GroupImage = null;
             this.formadepago.GroupTitle = "Datos Comerciales";
-            this.formadepago.Location = new System.Drawing.Point(8, 364);
+            this.formadepago.Location = new System.Drawing.Point(6, 277);
             this.formadepago.Name = "formadepago";
             this.formadepago.PaintGroupBox = false;
             this.formadepago.RoundCorners = 10;
             this.formadepago.ShadowColor = System.Drawing.Color.DarkGray;
             this.formadepago.ShadowControl = false;
             this.formadepago.ShadowThickness = 3;
-            this.formadepago.Size = new System.Drawing.Size(822, 115);
+            this.formadepago.Size = new System.Drawing.Size(406, 178);
             this.formadepago.TabIndex = 4;
             this.formadepago.TabStop = false;
             this.formadepago.Text = "customGroupBox4";
@@ -131,7 +140,7 @@
             "PAGO A QUINCE DIAS",
             "PAGO MENSUAL ",
             "PAGO A DOS MESES"});
-            this.comboBoxFormaPago.Location = new System.Drawing.Point(171, 68);
+            this.comboBoxFormaPago.Location = new System.Drawing.Point(204, 53);
             this.comboBoxFormaPago.Name = "comboBoxFormaPago";
             this.comboBoxFormaPago.Size = new System.Drawing.Size(160, 24);
             this.comboBoxFormaPago.TabIndex = 1;
@@ -151,14 +160,14 @@
             this.customGroupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customGroupBox6.GroupImage = null;
             this.customGroupBox6.GroupTitle = "I.V.A";
-            this.customGroupBox6.Location = new System.Drawing.Point(389, 22);
+            this.customGroupBox6.Location = new System.Drawing.Point(6, 86);
             this.customGroupBox6.Name = "customGroupBox6";
             this.customGroupBox6.PaintGroupBox = false;
             this.customGroupBox6.RoundCorners = 10;
             this.customGroupBox6.ShadowColor = System.Drawing.Color.DarkGray;
             this.customGroupBox6.ShadowControl = false;
             this.customGroupBox6.ShadowThickness = 3;
-            this.customGroupBox6.Size = new System.Drawing.Size(426, 80);
+            this.customGroupBox6.Size = new System.Drawing.Size(394, 80);
             this.customGroupBox6.TabIndex = 5;
             this.customGroupBox6.TabStop = false;
             this.customGroupBox6.Text = "customGroupBox6";
@@ -168,7 +177,7 @@
             this.checkBoxExcento.AutoSize = true;
             this.checkBoxExcento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxExcento.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxExcento.Location = new System.Drawing.Point(327, 38);
+            this.checkBoxExcento.Location = new System.Drawing.Point(290, 38);
             this.checkBoxExcento.Name = "checkBoxExcento";
             this.checkBoxExcento.Size = new System.Drawing.Size(75, 20);
             this.checkBoxExcento.TabIndex = 3;
@@ -181,7 +190,7 @@
             this.checkBoxUE.AutoSize = true;
             this.checkBoxUE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxUE.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxUE.Location = new System.Drawing.Point(233, 38);
+            this.checkBoxUE.Location = new System.Drawing.Point(201, 38);
             this.checkBoxUE.Name = "checkBoxUE";
             this.checkBoxUE.Size = new System.Drawing.Size(49, 20);
             this.checkBoxUE.TabIndex = 2;
@@ -194,7 +203,7 @@
             this.checkBoxRE.AutoSize = true;
             this.checkBoxRE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxRE.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxRE.Location = new System.Drawing.Point(140, 38);
+            this.checkBoxRE.Location = new System.Drawing.Point(121, 38);
             this.checkBoxRE.Name = "checkBoxRE";
             this.checkBoxRE.Size = new System.Drawing.Size(49, 20);
             this.checkBoxRE.TabIndex = 1;
@@ -219,7 +228,7 @@
             // 
             this.textBoxRiesgoMaximo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxRiesgoMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRiesgoMaximo.Location = new System.Drawing.Point(21, 68);
+            this.textBoxRiesgoMaximo.Location = new System.Drawing.Point(54, 53);
             this.textBoxRiesgoMaximo.Name = "textBoxRiesgoMaximo";
             this.textBoxRiesgoMaximo.Size = new System.Drawing.Size(112, 23);
             this.textBoxRiesgoMaximo.TabIndex = 0;
@@ -233,7 +242,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(171, 48);
+            this.label14.Location = new System.Drawing.Point(204, 33);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(122, 17);
             this.label14.TabIndex = 10;
@@ -243,7 +252,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(21, 48);
+            this.label13.Location = new System.Drawing.Point(54, 33);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(121, 17);
             this.label13.TabIndex = 9;
@@ -258,6 +267,7 @@
             this.customGroupBox1.BorderThickness = 3F;
             this.customGroupBox1.Controls.Add(this.customGroupBox5);
             this.customGroupBox1.Controls.Add(this.textBoxNIF);
+            this.customGroupBox1.Controls.Add(this.formadepago);
             this.customGroupBox1.Controls.Add(this.textBoxNombreComercial);
             this.customGroupBox1.Controls.Add(this.label11);
             this.customGroupBox1.Controls.Add(this.label10);
@@ -275,7 +285,7 @@
             this.customGroupBox1.ShadowColor = System.Drawing.Color.DarkGray;
             this.customGroupBox1.ShadowControl = false;
             this.customGroupBox1.ShadowThickness = 3;
-            this.customGroupBox1.Size = new System.Drawing.Size(822, 278);
+            this.customGroupBox1.Size = new System.Drawing.Size(822, 474);
             this.customGroupBox1.TabIndex = 1;
             this.customGroupBox1.TabStop = false;
             this.customGroupBox1.Text = "customGroupBox1";
@@ -366,6 +376,12 @@
             this.customGroupBox2.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox2.BorderColor = System.Drawing.Color.SteelBlue;
             this.customGroupBox2.BorderThickness = 1F;
+            this.customGroupBox2.Controls.Add(this.textBox3);
+            this.customGroupBox2.Controls.Add(this.label17);
+            this.customGroupBox2.Controls.Add(this.textBox2);
+            this.customGroupBox2.Controls.Add(this.label16);
+            this.customGroupBox2.Controls.Add(this.textBox1);
+            this.customGroupBox2.Controls.Add(this.label12);
             this.customGroupBox2.Controls.Add(this.textBoxTelefono2);
             this.customGroupBox2.Controls.Add(this.label9);
             this.customGroupBox2.Controls.Add(this.textBoxPersonaContacto);
@@ -387,7 +403,7 @@
             this.customGroupBox2.ShadowColor = System.Drawing.Color.DarkGray;
             this.customGroupBox2.ShadowControl = false;
             this.customGroupBox2.ShadowThickness = 3;
-            this.customGroupBox2.Size = new System.Drawing.Size(397, 147);
+            this.customGroupBox2.Size = new System.Drawing.Size(397, 336);
             this.customGroupBox2.TabIndex = 3;
             this.customGroupBox2.TabStop = false;
             this.customGroupBox2.Text = "Direccion:";
@@ -400,9 +416,9 @@
             this.textBoxTelefono2.Name = "textBoxTelefono2";
             this.textBoxTelefono2.Size = new System.Drawing.Size(117, 23);
             this.textBoxTelefono2.TabIndex = 1;
-            validationRule5.ErrorMessage = "Debe contener digitos";
-            validationRule5.RegExPattern = "(^[0-9]+$)";
-            this.validationProvider1.SetValidationRule(this.textBoxTelefono2, validationRule5);
+            validationRule8.ErrorMessage = "Debe contener digitos";
+            validationRule8.RegExPattern = "(^[0-9]+$)";
+            this.validationProvider1.SetValidationRule(this.textBoxTelefono2, validationRule8);
             // 
             // label9
             // 
@@ -417,25 +433,25 @@
             // 
             this.textBoxPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPersonaContacto.Location = new System.Drawing.Point(10, 100);
+            this.textBoxPersonaContacto.Location = new System.Drawing.Point(10, 101);
             this.textBoxPersonaContacto.Name = "textBoxPersonaContacto";
-            this.textBoxPersonaContacto.Size = new System.Drawing.Size(144, 23);
+            this.textBoxPersonaContacto.Size = new System.Drawing.Size(372, 23);
             this.textBoxPersonaContacto.TabIndex = 3;
-            validationRule6.ErrorMessage = "Debe introducir una persona de contacto.";
-            validationRule6.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxPersonaContacto, validationRule6);
+            validationRule9.ErrorMessage = "Debe introducir una persona de contacto.";
+            validationRule9.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxPersonaContacto, validationRule9);
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(160, 100);
+            this.textBoxEmail.Location = new System.Drawing.Point(10, 301);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(222, 23);
+            this.textBoxEmail.Size = new System.Drawing.Size(372, 23);
             this.textBoxEmail.TabIndex = 4;
-            validationRule7.ErrorMessage = "El email introducido es incorrecto";
-            validationRule7.IsCaseSensitive = false;
-            validationRule7.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
-            this.validationProvider1.SetValidationRule(this.textBoxEmail, validationRule7);
+            validationRule10.ErrorMessage = "El email introducido es incorrecto";
+            validationRule10.IsCaseSensitive = false;
+            validationRule10.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            this.validationProvider1.SetValidationRule(this.textBoxEmail, validationRule10);
             // 
             // textBoxFax
             // 
@@ -445,9 +461,9 @@
             this.textBoxFax.Name = "textBoxFax";
             this.textBoxFax.Size = new System.Drawing.Size(117, 23);
             this.textBoxFax.TabIndex = 2;
-            validationRule8.ErrorMessage = "Debe contener digitos";
-            validationRule8.RegExPattern = "(^[0-9]+$)";
-            this.validationProvider1.SetValidationRule(this.textBoxFax, validationRule8);
+            validationRule11.ErrorMessage = "Debe contener digitos";
+            validationRule11.RegExPattern = "(^[0-9]+$)";
+            this.validationProvider1.SetValidationRule(this.textBoxFax, validationRule11);
             // 
             // textBoxTelefono1
             // 
@@ -457,9 +473,9 @@
             this.textBoxTelefono1.Name = "textBoxTelefono1";
             this.textBoxTelefono1.Size = new System.Drawing.Size(117, 23);
             this.textBoxTelefono1.TabIndex = 0;
-            validationRule9.ErrorMessage = "Debe contener digitos";
-            validationRule9.RegExPattern = "(^[0-9]+$)";
-            this.validationProvider1.SetValidationRule(this.textBoxTelefono1, validationRule9);
+            validationRule12.ErrorMessage = "Debe contener digitos";
+            validationRule12.RegExPattern = "(^[0-9]+$)";
+            this.validationProvider1.SetValidationRule(this.textBoxTelefono1, validationRule12);
             this.textBoxTelefono1.TextChanged += new System.EventHandler(this.textBoxTelefono1_TextChanged);
             this.textBoxTelefono1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelefono1_KeyPress);
             // 
@@ -475,11 +491,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(159, 81);
+            this.label6.Location = new System.Drawing.Point(10, 281);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(66, 17);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Email:";
+            this.label6.Text = "Email 4:";
             // 
             // label7
             // 
@@ -538,10 +554,10 @@
             this.textBoxCodigoPostal.Name = "textBoxCodigoPostal";
             this.textBoxCodigoPostal.Size = new System.Drawing.Size(81, 23);
             this.textBoxCodigoPostal.TabIndex = 3;
-            validationRule10.ErrorMessage = "El Codigo Postal introducido no es valido";
-            validationRule10.IsRequired = true;
-            validationRule10.RegExPattern = "^(5[0-2]|[0-4][0-9])[0-9]{3}$";
-            this.validationProvider1.SetValidationRule(this.textBoxCodigoPostal, validationRule10);
+            validationRule13.ErrorMessage = "El Codigo Postal introducido no es valido";
+            validationRule13.IsRequired = true;
+            validationRule13.RegExPattern = "^(5[0-2]|[0-4][0-9])[0-9]{3}$";
+            this.validationProvider1.SetValidationRule(this.textBoxCodigoPostal, validationRule13);
             // 
             // textBoxProvincia
             // 
@@ -551,9 +567,9 @@
             this.textBoxProvincia.Name = "textBoxProvincia";
             this.textBoxProvincia.Size = new System.Drawing.Size(140, 23);
             this.textBoxProvincia.TabIndex = 2;
-            validationRule11.ErrorMessage = "La provincia no puede estar vacia.";
-            validationRule11.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxProvincia, validationRule11);
+            validationRule14.ErrorMessage = "La provincia no puede estar vacia.";
+            validationRule14.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxProvincia, validationRule14);
             // 
             // textBoxPoblacion
             // 
@@ -563,9 +579,9 @@
             this.textBoxPoblacion.Name = "textBoxPoblacion";
             this.textBoxPoblacion.Size = new System.Drawing.Size(145, 23);
             this.textBoxPoblacion.TabIndex = 1;
-            validationRule12.ErrorMessage = "Debe introducir una poblacion";
-            validationRule12.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxPoblacion, validationRule12);
+            validationRule15.ErrorMessage = "Debe introducir una poblacion";
+            validationRule15.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxPoblacion, validationRule15);
             // 
             // textBoxDireccion
             // 
@@ -575,9 +591,9 @@
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(378, 23);
             this.textBoxDireccion.TabIndex = 0;
-            validationRule13.ErrorMessage = "La direccion no puede estar vacia.";
-            validationRule13.IsRequired = true;
-            this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule13);
+            validationRule16.ErrorMessage = "La direccion no puede estar vacia.";
+            validationRule16.IsRequired = true;
+            this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule16);
             // 
             // label4
             // 
@@ -656,7 +672,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label15.Location = new System.Drawing.Point(228, 21);
+            this.label15.Location = new System.Drawing.Point(279, 24);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(358, 42);
             this.label15.TabIndex = 100;
@@ -674,7 +690,7 @@
             this.customGroupBox7.CustomGroupBoxColor = System.Drawing.Color.White;
             this.customGroupBox7.GroupImage = null;
             this.customGroupBox7.GroupTitle = "";
-            this.customGroupBox7.Location = new System.Drawing.Point(8, 485);
+            this.customGroupBox7.Location = new System.Drawing.Point(8, 560);
             this.customGroupBox7.Name = "customGroupBox7";
             this.customGroupBox7.PaintGroupBox = false;
             this.customGroupBox7.RoundCorners = 10;
@@ -686,15 +702,77 @@
             this.customGroupBox7.TabStop = false;
             this.customGroupBox7.Text = "customGroupBox7";
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(10, 151);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(372, 23);
+            this.textBox1.TabIndex = 11;
+            validationRule7.ErrorMessage = "El email introducido es incorrecto";
+            validationRule7.IsCaseSensitive = false;
+            validationRule7.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            this.validationProvider1.SetValidationRule(this.textBox1, validationRule7);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 131);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 17);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Email 1:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(10, 201);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(372, 23);
+            this.textBox2.TabIndex = 13;
+            validationRule6.ErrorMessage = "El email introducido es incorrecto";
+            validationRule6.IsCaseSensitive = false;
+            validationRule6.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            this.validationProvider1.SetValidationRule(this.textBox2, validationRule6);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(10, 181);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 17);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "Email 2:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(10, 251);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(372, 23);
+            this.textBox3.TabIndex = 15;
+            validationRule5.ErrorMessage = "El email introducido es incorrecto";
+            validationRule5.IsCaseSensitive = false;
+            validationRule5.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            this.validationProvider1.SetValidationRule(this.textBox3, validationRule5);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(10, 231);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(66, 17);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "Email 3:";
+            // 
             // AltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(838, 610);
+            this.ClientSize = new System.Drawing.Size(838, 685);
             this.Controls.Add(this.customGroupBox7);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.formadepago);
             this.Controls.Add(this.customGroupBox1);
             this.Name = "AltaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -762,5 +840,11 @@
         private System.Windows.Forms.TextBox textBoxPersonaContacto;
         private System.Windows.Forms.Label label5;
         private CustomControls.CustomGroupBox customGroupBox7;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
     }
 }

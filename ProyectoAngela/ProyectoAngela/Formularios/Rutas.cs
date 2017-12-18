@@ -33,7 +33,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textlist.Text = buscar.SelectedPath;
+                textfactura.Text = buscar.SelectedPath;
             }
         }
 
@@ -43,7 +43,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textlist.Text = buscar.SelectedPath;
+                textalb.Text = buscar.SelectedPath;
             }
         }
 
@@ -63,7 +63,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textlist.Text = buscar.SelectedPath;
+                textliq.Text = buscar.SelectedPath;
             }
         }
 
@@ -73,13 +73,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textlist.Text = buscar.SelectedPath;
+                textsegu.Text = buscar.SelectedPath;
             }
         }
 
         private void textlist_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

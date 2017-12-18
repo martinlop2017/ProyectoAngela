@@ -106,6 +106,7 @@
             this.button2.Size = new System.Drawing.Size(208, 60);
             this.button2.TabIndex = 143;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textalb
             // 
@@ -264,6 +265,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(620, 522);
+            this.ControlBox = false;
             this.Controls.Add(this.button7);
             this.Controls.Add(this.textsegu);
             this.Controls.Add(this.label3);
@@ -282,6 +284,8 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textfactura);
             this.Controls.Add(this.label13);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Rutas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rutas";

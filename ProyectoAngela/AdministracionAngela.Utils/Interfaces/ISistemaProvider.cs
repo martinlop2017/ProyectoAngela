@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdministracionAngela.Utils.Models.RutasSalida;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -11,5 +12,6 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         void SaveFormaDePago(List<FormaDePagoViewModel> mappedRows);
         GestionFormaDePagoViewModel GetGestionFormasDePago();
+        void SaveRutasSalida(RutasSalidaViewModel viewModel);
     }
 }

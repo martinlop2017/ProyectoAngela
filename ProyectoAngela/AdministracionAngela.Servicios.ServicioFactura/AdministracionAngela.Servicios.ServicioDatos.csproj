@@ -48,6 +48,8 @@
     <Compile Include="IVAProvider.cs" />
     <Compile Include="PerfilProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\AppConfigRepositorio.cs" />
+    <Compile Include="Repositorios\IAppConfigRepositorio.cs" />
     <Compile Include="Repositorios\IRepositorioArticulo.cs" />
     <Compile Include="Repositorios\IRepositorioCliente.cs" />
     <Compile Include="Repositorios\IRepositorioFactura.cs" />

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AdministracionAngela.Utils.Models.RutasSalida;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
@@ -25,6 +26,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             this.dbContext.FormasPago.Add(formaDePago);
             this.dbContext.SaveChanges();
+        }
+
+        public void SaveRutasSalida(RutasSalidaViewModel viewModel)
+        {
+            throw new NotImplementedException();
         }
 
         public void UpdateFormaDePago(FormaPago formaDePago)

@@ -7,16 +7,19 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.FormaDePago;
+using AdministracionAngela.Utils.Models.RutasSalida;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
     public class SistemaProvider : ISistemaProvider
     {
         private IRepositorioSistema repositorioSistema;
+        private IAppConfigRepositorio appConfigRepositorio;
 
-        public SistemaProvider(IRepositorioSistema reposirotioSistema)
+        public SistemaProvider(IRepositorioSistema reposirotioSistema, IAppConfigRepositorio appConfigRepositorio)
         {
             this.repositorioSistema = reposirotioSistema;
+            this.appConfigRepositorio = appConfigRepositorio;
         }
 
         public GestionFormaDePagoViewModel GetGestionFormasDePago()
@@ -40,6 +43,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     this.repositorioSistema.SaveFormaDePago(formaDePago);
                 }
             }
+        }
+
+        public void SaveRutasSalida(RutasSalidaViewModel viewModel)
+        {
+            this.repositorioSistema.SaveRutasSalida(viewModel);
         }
     }
 }

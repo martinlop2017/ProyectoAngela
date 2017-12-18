@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Models.RutasSalida;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
@@ -12,5 +13,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void UpdateFormaDePago(FormaPago formaDePago);
         void SaveFormaDePago(FormaPago formaDePago);
         List<FormaPago> GetAllFormasDePago();
+        void SaveRutasSalida(RutasSalidaViewModel viewModel);
     }
 }

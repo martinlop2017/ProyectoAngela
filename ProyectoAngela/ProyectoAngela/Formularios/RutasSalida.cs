@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.RutasSalida;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class RutasSalida : Form
     {
-        public RutasSalida()
+        private ISistemaProvider sistemaProvider;
+
+        public RutasSalida(ISistemaProvider sistemaProvider)
         {
+            this.sistemaProvider = sistemaProvider;
             InitializeComponent();
         }
 
@@ -43,7 +48,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            var viewModel = ReadFromForm();
 
+            this.sistemaProvider.SaveRutasSalida(viewModel);
+        }
+
+        private RutasSalidaViewModel ReadFromForm()
+        {
+            return new RutasSalidaViewModel()
+            {
+                PathFacturas = textBoxFacturas.Text,
+                PathAlbaranes = textBoxAlbaranes.Text,
+                PathListados = textBoxListados.Text
+            };
         }
     }
 }

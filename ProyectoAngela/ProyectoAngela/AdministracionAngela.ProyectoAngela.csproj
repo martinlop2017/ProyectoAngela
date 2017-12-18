@@ -110,6 +110,12 @@
     <Compile Include="Formularios\GestionUsusarios.Designer.cs">
       <DependentUpon>GestionUsusarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\RutasSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\RutasSalida.Designer.cs">
+      <DependentUpon>RutasSalida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     <EmbeddedResource Include="Formularios\ReportImpresionFactura.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\RutasSalida.resx">
+      <DependentUpon>RutasSalida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\TipoIVA.resx">
       <DependentUpon>TipoIVA.cs</DependentUpon>

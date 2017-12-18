@@ -71,6 +71,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = true;
             buttonUsusarios.Visible = true;
             buttonIva.Visible = true;
+            buttonCobro.Visible = true;
         }
 
         private void buttonSistema_MouseEnter(object sender, EventArgs e)
@@ -89,6 +90,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
             this.formOpener.ShowModalForm<Clientes>();
         }
 
@@ -97,6 +99,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
             this.formOpener.ShowModalForm<GestionArticulos>();
         }
 
@@ -105,6 +108,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
         }
 
         private void buttonFactura_Click(object sender, EventArgs e)
@@ -112,6 +116,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
             this.formOpener.ShowModalForm<GestionFacturas>();
         }
 
@@ -120,6 +125,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
         }
 
         private void buttonSeguridad_Click(object sender, EventArgs e)
@@ -127,6 +133,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
         }
 
         private void buttonAvisos_Click(object sender, EventArgs e)
@@ -134,6 +141,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonMisdatos.Visible = false;
             buttonUsusarios.Visible = false;
             buttonIva.Visible = false;
+            buttonCobro.Visible = false;
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
@@ -269,6 +277,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void formasDePagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.formOpener.ShowModalForm<FormaPago>();
+        }
+
+        private void buttonCobro_MouseEnter(object sender, EventArgs e)
+        {
+            buttonCobro.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Cobros_Azul;
+        }
+
+        private void buttonCobro_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<FormaPago>();
+        }
+
+        private void buttonCobro_MouseLeave(object sender, EventArgs e)
+        {
+            buttonCobro.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Cobros;
         }
     }
 }

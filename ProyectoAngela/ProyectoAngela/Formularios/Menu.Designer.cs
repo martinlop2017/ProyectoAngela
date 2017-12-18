@@ -35,6 +35,7 @@
             this.misDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeIvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.albaranesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonCobro = new System.Windows.Forms.Button();
             this.buttonMisdatos = new System.Windows.Forms.Button();
             this.buttonAvisos = new System.Windows.Forms.Button();
             this.buttonSeguridad = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@
             this.buttonIva = new System.Windows.Forms.Button();
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -116,6 +116,13 @@
             this.tiposDeIvaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
             this.tiposDeIvaToolStripMenuItem.Text = "Tipos de Iva";
             this.tiposDeIvaToolStripMenuItem.Click += new System.EventHandler(this.tiposDeIvaToolStripMenuItem_Click);
+            // 
+            // formasDePagoToolStripMenuItem
+            // 
+            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
+            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
+            this.formasDePagoToolStripMenuItem.Click += new System.EventHandler(this.formasDePagoToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -252,6 +259,22 @@
             this.label4.Size = new System.Drawing.Size(239, 26);
             this.label4.TabIndex = 17;
             this.label4.Text = "D. Fulanito Garcia Garcia";
+            // 
+            // buttonCobro
+            // 
+            this.buttonCobro.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Cobros;
+            this.buttonCobro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonCobro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonCobro.ImageKey = "(ninguno)";
+            this.buttonCobro.Location = new System.Drawing.Point(12, 722);
+            this.buttonCobro.Name = "buttonCobro";
+            this.buttonCobro.Size = new System.Drawing.Size(150, 150);
+            this.buttonCobro.TabIndex = 18;
+            this.buttonCobro.UseVisualStyleBackColor = true;
+            this.buttonCobro.Visible = false;
+            this.buttonCobro.Click += new System.EventHandler(this.buttonCobro_Click);
+            this.buttonCobro.MouseEnter += new System.EventHandler(this.buttonCobro_MouseEnter);
+            this.buttonCobro.MouseLeave += new System.EventHandler(this.buttonCobro_MouseLeave);
             // 
             // buttonMisdatos
             // 
@@ -422,33 +445,13 @@
             this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
             this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.ImageKey = "(ninguno)";
-            this.button1.Location = new System.Drawing.Point(12, 722);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 150);
-            this.button1.TabIndex = 18;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Visible = false;
-            // 
-            // formasDePagoToolStripMenuItem
-            // 
-            this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
-            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
-            this.formasDePagoToolStripMenuItem.Click += new System.EventHandler(this.formasDePagoToolStripMenuItem_Click);
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1284, 781);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCobro);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -515,7 +518,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonCobro;
         private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
     }
 }

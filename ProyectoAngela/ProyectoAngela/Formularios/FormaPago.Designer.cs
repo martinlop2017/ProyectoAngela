@@ -82,6 +82,7 @@
             this.Controls.Add(this.dataGridViewFormasDePago);
             this.Controls.Add(this.label7);
             this.Name = "FormaPago";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forma_Pago";
             this.Load += new System.EventHandler(this.FormaPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFormasDePago)).EndInit();

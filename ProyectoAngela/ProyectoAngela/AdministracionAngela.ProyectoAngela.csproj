@@ -110,6 +110,12 @@
     <Compile Include="Formularios\GestionUsusarios.Designer.cs">
       <DependentUpon>GestionUsusarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Rutas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Rutas.Designer.cs">
+      <DependentUpon>Rutas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\TipoIVA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -337,6 +343,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cobros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rutas Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rutas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonRutas = new System.Windows.Forms.Button();
             this.buttonCobro = new System.Windows.Forms.Button();
             this.buttonMisdatos = new System.Windows.Forms.Button();
             this.buttonAvisos = new System.Windows.Forms.Button();
@@ -260,13 +261,29 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "D. Fulanito Garcia Garcia";
             // 
+            // buttonRutas
+            // 
+            this.buttonRutas.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Rutas;
+            this.buttonRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonRutas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonRutas.ImageKey = "(ninguno)";
+            this.buttonRutas.Location = new System.Drawing.Point(168, 209);
+            this.buttonRutas.Name = "buttonRutas";
+            this.buttonRutas.Size = new System.Drawing.Size(150, 150);
+            this.buttonRutas.TabIndex = 19;
+            this.buttonRutas.UseVisualStyleBackColor = true;
+            this.buttonRutas.Visible = false;
+            this.buttonRutas.Click += new System.EventHandler(this.buttonRutas_Click);
+            this.buttonRutas.MouseEnter += new System.EventHandler(this.buttonRutas_MouseEnter);
+            this.buttonRutas.MouseLeave += new System.EventHandler(this.buttonRutas_MouseLeave);
+            // 
             // buttonCobro
             // 
             this.buttonCobro.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Cobros;
             this.buttonCobro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCobro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonCobro.ImageKey = "(ninguno)";
-            this.buttonCobro.Location = new System.Drawing.Point(12, 722);
+            this.buttonCobro.Location = new System.Drawing.Point(168, 375);
             this.buttonCobro.Name = "buttonCobro";
             this.buttonCobro.Size = new System.Drawing.Size(150, 150);
             this.buttonCobro.TabIndex = 18;
@@ -451,6 +468,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1284, 781);
+            this.Controls.Add(this.buttonRutas);
             this.Controls.Add(this.buttonCobro);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -520,5 +538,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonCobro;
         private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
+        private System.Windows.Forms.Button buttonRutas;
     }
 }

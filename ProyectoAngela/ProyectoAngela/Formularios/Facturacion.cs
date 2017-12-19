@@ -341,5 +341,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.Focus();
             this.dataGridViewLineasFactura.CurrentCell = cell;
         }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

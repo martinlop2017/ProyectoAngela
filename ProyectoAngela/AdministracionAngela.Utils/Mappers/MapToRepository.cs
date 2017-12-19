@@ -39,7 +39,10 @@ namespace AdministracionAngela.Utils.Mappers
                     Telefono1 = nuevoClienteViewModel.Telefono1,
                     Telefono2 = nuevoClienteViewModel.Telefono2,
                     Fax = nuevoClienteViewModel.Fax,
-                    Email = nuevoClienteViewModel.Email,
+                    Email = nuevoClienteViewModel.Email1,
+                    Email2 = nuevoClienteViewModel.Email2,
+                    Email3 = nuevoClienteViewModel.Email3,
+                    Email4 = nuevoClienteViewModel.Email4,
                     PersonaContacto = nuevoClienteViewModel.PersonaDeContacto
                 },
                 RiesgoMaximo = nuevoClienteViewModel.RiesgoMaximo,

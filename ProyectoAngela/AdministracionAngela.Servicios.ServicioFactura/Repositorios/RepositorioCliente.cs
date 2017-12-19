@@ -120,6 +120,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     clientToUpdate.Contacto.Telefono2 = newClient.Contacto.Telefono2;
                     clientToUpdate.Contacto.Fax = newClient.Contacto.Fax;
                     clientToUpdate.Contacto.Email = newClient.Contacto.Email;
+                    clientToUpdate.Contacto.Email2 = newClient.Contacto.Email2;
+                    clientToUpdate.Contacto.Email3 = newClient.Contacto.Email3;
+                    clientToUpdate.Contacto.Email4 = newClient.Contacto.Email4;
                     clientToUpdate.Contacto.PersonaContacto = newClient.Contacto.PersonaContacto;
                     clientToUpdate.RiesgoMaximo = newClient.RiesgoMaximo;
                     clientToUpdate.FormaDePagoId = newClient.FormaDePagoId;

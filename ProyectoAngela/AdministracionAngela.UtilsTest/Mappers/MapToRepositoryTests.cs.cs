@@ -26,7 +26,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
                 NIF = "49083366L",
                 CodigoPostal = 21045,
                 Direccion = "TestAddress",
-                Email = "TestEmail@gmail.com",
+                Email1 = "TestEmail@gmail.com",
                 Fax = 11,
                 FormaDePagoSelected = "TestFormaDePago",
                 NombreComercial = "TestNombreComercial",

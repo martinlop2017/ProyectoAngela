@@ -64,16 +64,16 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.customGroupBox2 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail3 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail2 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxEmail1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxTelefono2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxPersonaContacto = new System.Windows.Forms.TextBox();
-            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.textBoxEmail4 = new System.Windows.Forms.TextBox();
             this.textBoxFax = new System.Windows.Forms.TextBox();
             this.textBoxTelefono1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -372,16 +372,16 @@
             this.customGroupBox2.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox2.BorderColor = System.Drawing.Color.SteelBlue;
             this.customGroupBox2.BorderThickness = 1F;
-            this.customGroupBox2.Controls.Add(this.textBox3);
+            this.customGroupBox2.Controls.Add(this.textBoxEmail3);
             this.customGroupBox2.Controls.Add(this.label17);
-            this.customGroupBox2.Controls.Add(this.textBox2);
+            this.customGroupBox2.Controls.Add(this.textBoxEmail2);
             this.customGroupBox2.Controls.Add(this.label16);
-            this.customGroupBox2.Controls.Add(this.textBox1);
+            this.customGroupBox2.Controls.Add(this.textBoxEmail1);
             this.customGroupBox2.Controls.Add(this.label12);
             this.customGroupBox2.Controls.Add(this.textBoxTelefono2);
             this.customGroupBox2.Controls.Add(this.label9);
             this.customGroupBox2.Controls.Add(this.textBoxPersonaContacto);
-            this.customGroupBox2.Controls.Add(this.textBoxEmail);
+            this.customGroupBox2.Controls.Add(this.textBoxEmail4);
             this.customGroupBox2.Controls.Add(this.textBoxFax);
             this.customGroupBox2.Controls.Add(this.textBoxTelefono1);
             this.customGroupBox2.Controls.Add(this.label5);
@@ -404,17 +404,17 @@
             this.customGroupBox2.TabStop = false;
             this.customGroupBox2.Text = "Direccion:";
             // 
-            // textBox3
+            // textBoxEmail3
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(10, 251);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(372, 23);
-            this.textBox3.TabIndex = 15;
+            this.textBoxEmail3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail3.Location = new System.Drawing.Point(10, 251);
+            this.textBoxEmail3.Name = "textBoxEmail3";
+            this.textBoxEmail3.Size = new System.Drawing.Size(372, 23);
+            this.textBoxEmail3.TabIndex = 15;
             validationRule5.ErrorMessage = "El email introducido es incorrecto";
             validationRule5.IsCaseSensitive = false;
             validationRule5.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
-            this.validationProvider1.SetValidationRule(this.textBox3, validationRule5);
+            this.validationProvider1.SetValidationRule(this.textBoxEmail3, validationRule5);
             // 
             // label17
             // 
@@ -425,17 +425,17 @@
             this.label17.TabIndex = 14;
             this.label17.Text = "Email 3:";
             // 
-            // textBox2
+            // textBoxEmail2
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(10, 201);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(372, 23);
-            this.textBox2.TabIndex = 13;
+            this.textBoxEmail2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail2.Location = new System.Drawing.Point(10, 201);
+            this.textBoxEmail2.Name = "textBoxEmail2";
+            this.textBoxEmail2.Size = new System.Drawing.Size(372, 23);
+            this.textBoxEmail2.TabIndex = 13;
             validationRule6.ErrorMessage = "El email introducido es incorrecto";
             validationRule6.IsCaseSensitive = false;
             validationRule6.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
-            this.validationProvider1.SetValidationRule(this.textBox2, validationRule6);
+            this.validationProvider1.SetValidationRule(this.textBoxEmail2, validationRule6);
             // 
             // label16
             // 
@@ -446,17 +446,17 @@
             this.label16.TabIndex = 12;
             this.label16.Text = "Email 2:";
             // 
-            // textBox1
+            // textBoxEmail1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(372, 23);
-            this.textBox1.TabIndex = 11;
+            this.textBoxEmail1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail1.Location = new System.Drawing.Point(10, 151);
+            this.textBoxEmail1.Name = "textBoxEmail1";
+            this.textBoxEmail1.Size = new System.Drawing.Size(372, 23);
+            this.textBoxEmail1.TabIndex = 11;
             validationRule7.ErrorMessage = "El email introducido es incorrecto";
             validationRule7.IsCaseSensitive = false;
             validationRule7.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
-            this.validationProvider1.SetValidationRule(this.textBox1, validationRule7);
+            this.validationProvider1.SetValidationRule(this.textBoxEmail1, validationRule7);
             // 
             // label12
             // 
@@ -500,17 +500,17 @@
             validationRule9.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxPersonaContacto, validationRule9);
             // 
-            // textBoxEmail
+            // textBoxEmail4
             // 
-            this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(10, 301);
-            this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(372, 23);
-            this.textBoxEmail.TabIndex = 4;
+            this.textBoxEmail4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmail4.Location = new System.Drawing.Point(10, 301);
+            this.textBoxEmail4.Name = "textBoxEmail4";
+            this.textBoxEmail4.Size = new System.Drawing.Size(372, 23);
+            this.textBoxEmail4.TabIndex = 4;
             validationRule10.ErrorMessage = "El email introducido es incorrecto";
             validationRule10.IsCaseSensitive = false;
             validationRule10.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
-            this.validationProvider1.SetValidationRule(this.textBoxEmail, validationRule10);
+            this.validationProvider1.SetValidationRule(this.textBoxEmail4, validationRule10);
             // 
             // textBoxFax
             // 
@@ -799,7 +799,7 @@
         private CustomControls.CustomGroupBox customGroupBox2;
         private System.Windows.Forms.TextBox textBoxTelefono2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.TextBox textBoxEmail4;
         private System.Windows.Forms.TextBox textBoxFax;
         private System.Windows.Forms.TextBox textBoxTelefono1;
         private System.Windows.Forms.Label label6;
@@ -836,11 +836,11 @@
         private System.Windows.Forms.TextBox textBoxPersonaContacto;
         private System.Windows.Forms.Label label5;
         private CustomControls.CustomGroupBox customGroupBox7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxEmail3;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxEmail2;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxEmail1;
         private System.Windows.Forms.Label label12;
     }
 }

@@ -57,7 +57,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
                 Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
                 Fax = Convert.ToInt32(textBoxFax.Text),
-                Email = textBoxEmail.Text,
+                Email1 = textBoxEmail1.Text,
+                Email2 = textBoxEmail2.Text,
+                Email3 = textBoxEmail3.Text,
+                Email4 = textBoxEmail4.Text,
                 PersonaDeContacto = textBoxPersonaContacto.Text,
                 RiesgoMaximo = Convert.ToInt32(textBoxRiesgoMaximo.Text),
                 FormaDePagoSelected = comboBoxFormaPago.Text,
@@ -80,7 +83,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxTelefono1.Text = cliente.Telefono1.ToString();
             this.textBoxTelefono2.Text = cliente.Telefono2.ToString();
             this.textBoxFax.Text = cliente.Fax.ToString();
-            this.textBoxEmail.Text = cliente.Email;
+            this.textBoxEmail1.Text = cliente.Email1;
+            this.textBoxEmail2.Text = cliente.Email2;
+            this.textBoxEmail3.Text = cliente.Email3;
+            this.textBoxEmail4.Text = cliente.Email4;
             this.textBoxPersonaContacto.Text = cliente.PersonaDeContacto;
             this.textBoxRiesgoMaximo.Text = cliente.RiesgoMaximo.ToString();
             this.comboBoxFormaPago.DataSource = cliente.FormasDePago;

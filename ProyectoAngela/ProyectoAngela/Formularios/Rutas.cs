@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.RutasSalida;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -92,8 +93,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 PathAlbaranes = textAlbaranes.Text,
                 PathListados = textListados.Text,
                 PathLiquidaciones= textLiquidaciones.Text,
-                Pathseguridad = textSguridad.Text
+                PathSeguridad = textSguridad.Text
             };
+        }
+
+        private void Rutas_Load(object sender, EventArgs e)
+        {
+            this.textFactura.Text = RutasSalida.RutaFacturacion;
+            this.textAlbaranes.Text = RutasSalida.RutaAlbaranes;
+            this.textLiquidaciones.Text = RutasSalida.RutaLiquidaciones;
+            this.textListados.Text = RutasSalida.RutaLiquidaciones;
+            this.textSguridad.Text = RutasSalida.RutaSeguridad;
         }
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using StructureMap;
 using AdministracionAngela.ProyectoAngela.Utils;
 using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -73,6 +74,26 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button1_Leave(object sender, EventArgs e)
         {
             
+        }
+
+        private void ControlUsusarios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.RutaFacturacion = RutasSalida.RutaFacturacion;
+            Properties.Settings.Default.RutaAlbaranes = RutasSalida.RutaAlbaranes;
+            Properties.Settings.Default.RutaLiquidaciones = RutasSalida.RutaLiquidaciones;
+            Properties.Settings.Default.RutaListados = RutasSalida.RutaListados;
+            Properties.Settings.Default.RutaSeguridad = RutasSalida.RutaSeguridad;
+
+            Properties.Settings.Default.Save();
+        }
+
+        private void ControlUsusarios_Load(object sender, EventArgs e)
+        {
+            RutasSalida.RutaFacturacion = Properties.Settings.Default.RutaFacturacion;
+            RutasSalida.RutaAlbaranes = Properties.Settings.Default.RutaAlbaranes;
+            RutasSalida.RutaLiquidaciones = Properties.Settings.Default.RutaLiquidaciones;
+            RutasSalida.RutaListados = Properties.Settings.Default.RutaListados;
+            RutasSalida.RutaSeguridad = Properties.Settings.Default.RutaSeguridad;
         }
     }
 }

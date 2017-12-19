@@ -47,7 +47,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveRutasSalida(RutasSalidaViewModel viewModel)
         {
-            this.repositorioSistema.SaveRutasSalida(viewModel);
+            this.appConfigRepositorio.SaveRutasSalida(viewModel);
         }
     }
 }

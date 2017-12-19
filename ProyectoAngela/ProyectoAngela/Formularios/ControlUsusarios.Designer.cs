@@ -32,12 +32,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +82,14 @@
             this.panel2.Size = new System.Drawing.Size(372, 199);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // textBoxUser
+            // 
+            this.textBoxUser.Location = new System.Drawing.Point(178, 42);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(156, 30);
+            this.textBoxUser.TabIndex = 1;
+            this.textBoxUser.Text = "admin";
             // 
             // label3
             // 
@@ -133,14 +141,6 @@
             this.label1.Text = "Identificación de Ususarios";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBoxUser
-            // 
-            this.textBoxUser.Location = new System.Drawing.Point(178, 42);
-            this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(156, 30);
-            this.textBoxUser.TabIndex = 1;
-            this.textBoxUser.Text = "admin";
-            // 
             // ControlUsusarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +153,8 @@
             this.Controls.Add(this.panel1);
             this.Name = "ControlUsusarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlUsusarios_FormClosing);
+            this.Load += new System.EventHandler(this.ControlUsusarios_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

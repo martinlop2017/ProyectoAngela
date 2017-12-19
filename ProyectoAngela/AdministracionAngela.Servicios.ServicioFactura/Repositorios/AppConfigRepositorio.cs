@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.RutasSalida;
 using System.Configuration;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
@@ -18,6 +19,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public void SaveRutasSalida(RutasSalidaViewModel viewModel)
         {
+            RutasSalida.RutaFacturacion = viewModel.PathFacturas;
+            RutasSalida.RutaAlbaranes = viewModel.PathAlbaranes;
+            RutasSalida.RutaLiquidaciones = viewModel.PathLiquidaciones;
+            RutasSalida.RutaListados = viewModel.PathListados;
+            RutasSalida.RutaSeguridad = viewModel.PathSeguridad;
         }
     }
 }

@@ -287,6 +287,7 @@
             this.Name = "Rutas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rutas";
+            this.Load += new System.EventHandler(this.Rutas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

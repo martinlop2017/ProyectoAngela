@@ -32,5 +32,65 @@ namespace AdministracionAngela.ProyectoAngela.Properties {
                 return ((string)(this["AdministracionAngelaConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaFacturacion {
+            get {
+                return ((string)(this["RutaFacturacion"]));
+            }
+            set {
+                this["RutaFacturacion"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaAlbaranes {
+            get {
+                return ((string)(this["RutaAlbaranes"]));
+            }
+            set {
+                this["RutaAlbaranes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaListados {
+            get {
+                return ((string)(this["RutaListados"]));
+            }
+            set {
+                this["RutaListados"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaLiquidaciones {
+            get {
+                return ((string)(this["RutaLiquidaciones"]));
+            }
+            set {
+                this["RutaLiquidaciones"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaSeguridad {
+            get {
+                return ((string)(this["RutaSeguridad"]));
+            }
+            set {
+                this["RutaSeguridad"] = value;
+            }
+        }
     }
 }

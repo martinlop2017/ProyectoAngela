@@ -13,10 +13,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
     public class ClienteProvider : IClienteProvider
     {
         IRepositorioCliente repositorioCliente;
+        IRepositorioSistema repositorioSistema;
 
-        public ClienteProvider(IRepositorioCliente repositorioCliente)
+        public ClienteProvider(IRepositorioCliente repositorioCliente, IRepositorioSistema repositorioSistema)
         {
             this.repositorioCliente = repositorioCliente;
+            this.repositorioSistema = repositorioSistema;
         }
 
         public bool DeleteClients(List<ClienteViewModel> clientsToDelete)
@@ -31,6 +33,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public AltaClienteViewModel GetAltaClienteById(long clienteId)
         {
             var clientFromRepository = this.repositorioCliente.GetClientById(clienteId);
+            var formasDePago = this.repositorioSistema.GetAllFormasDePago();
 
             return MapToViewModel.MapAltaClient(clientFromRepository);
         }

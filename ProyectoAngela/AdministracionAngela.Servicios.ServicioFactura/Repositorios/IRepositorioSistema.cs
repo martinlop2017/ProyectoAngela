@@ -14,5 +14,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void SaveFormaDePago(FormaPago formaDePago);
         List<FormaPago> GetAllFormasDePago();
         void SaveRutasSalida(RutasSalidaViewModel viewModel);
+        FormaPago GetAllFormasDePagoByDescription(string formaDePago);
     }
 }

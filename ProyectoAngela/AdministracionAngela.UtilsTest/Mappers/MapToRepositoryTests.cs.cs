@@ -1,4 +1,5 @@
-﻿using AdministracionAngela.Utils.Mappers;
+﻿using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Cliente;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
                 Direccion = "TestAddress",
                 Email = "TestEmail@gmail.com",
                 Fax = 11,
-                FormaDePago = "TestFormaDePago",
+                FormaDePagoSelected = "TestFormaDePago",
                 NombreComercial = "TestNombreComercial",
                 PersonaDeContacto = "TestPersonaDeContacto",
                 Poblacion = "TestPoblacion",
@@ -37,7 +38,13 @@ namespace AdministracionAngela.UtilsTest.Mappers
                 Telefono2 = 67654321
             };
 
-            var newClientRepository = MapToRepository.MapAltaClienteViewModel(clienteViewModel);
+            var formaDePago = new FormaPago()
+            {
+                Concepto = "Quincenal",
+                Dias = 15
+            };
+
+            var newClientRepository = MapToRepository.MapAltaClienteViewModel(clienteViewModel, formaDePago);
 
             Assert.Equal(1, newClientRepository.Id);
             Assert.Equal(string.Empty, newClientRepository.CIF);

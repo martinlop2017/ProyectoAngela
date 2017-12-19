@@ -18,7 +18,7 @@ namespace AdministracionAngela.Utils.Mappers
     {
         #region Mapeo de Cliente
 
-        public static Cliente MapAltaClienteViewModel(AltaClienteViewModel nuevoClienteViewModel)
+        public static Cliente MapAltaClienteViewModel(AltaClienteViewModel nuevoClienteViewModel, FormaPago formaDePago)
         {
             return new Cliente()
             {
@@ -43,7 +43,8 @@ namespace AdministracionAngela.Utils.Mappers
                     PersonaContacto = nuevoClienteViewModel.PersonaDeContacto
                 },
                 RiesgoMaximo = nuevoClienteViewModel.RiesgoMaximo,
-                FormaDePago = nuevoClienteViewModel.FormaDePago,
+                FormaDePagoId = formaDePago.Id,
+                FormaPago = formaDePago,
                 IsGeneral = nuevoClienteViewModel.isGeneral,
                 RecargoEquivalencia = nuevoClienteViewModel.RecargoEquivalencia,
                 UnionEuropea = nuevoClienteViewModel.UnionEuropea,

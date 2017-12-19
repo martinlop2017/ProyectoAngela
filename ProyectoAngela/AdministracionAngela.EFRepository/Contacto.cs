@@ -26,6 +26,9 @@ namespace AdministracionAngela.EFRepository
         public Nullable<int> Telefono2 { get; set; }
         public Nullable<int> Fax { get; set; }
         public string Email { get; set; }
+        public string Email2 { get; set; }
+        public string Email3 { get; set; }
+        public string Email4 { get; set; }
         public string PersonaContacto { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

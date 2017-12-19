@@ -14,8 +14,17 @@ namespace AdministracionAngela.EFRepository
     
     public partial class FormaPago
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public FormaPago()
+        {
+            this.Cliente = new HashSet<Cliente>();
+        }
+    
         public int Id { get; set; }
         public string Concepto { get; set; }
         public Nullable<int> Dias { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Cliente> Cliente { get; set; }
     }
 }

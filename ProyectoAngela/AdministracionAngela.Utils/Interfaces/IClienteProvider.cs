@@ -16,6 +16,7 @@ namespace AdministracionAngela.Utils.Interfaces
         bool SaveClient(AltaClienteViewModel newClient);
         bool DeleteClients(List<ClienteViewModel> clientsToDelete);
         AltaClienteViewModel GetAltaClienteById(long clienteId);
+        AltaClienteViewModel GetAltaCliente();
         bool UpdateClient(AltaClienteViewModel newClient);
     }
 }

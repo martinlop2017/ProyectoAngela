@@ -60,7 +60,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Email = textBoxEmail.Text,
                 PersonaDeContacto = textBoxPersonaContacto.Text,
                 RiesgoMaximo = Convert.ToInt32(textBoxRiesgoMaximo.Text),
-                FormaDePago = comboBoxFormaPago.Text,
+                FormaDePagoSelected = comboBoxFormaPago.Text,
                 isGeneral = checkBoxIVAGeneral.Checked,
                 RecargoEquivalencia = checkBoxRE.Checked,
                 UnionEuropea = checkBoxUE.Checked,
@@ -72,7 +72,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.textBoxCodigoCliente.Text = cliente.CodigoCliente.ToString();
             this.textBoxNombreComercial.Text = cliente.NombreComercial;
-            this.textBoxNIF.Text = cliente.NIF.ToString();
+            this.textBoxNIF.Text = cliente.NIF;
             this.textBoxDireccion.Text = cliente.Direccion;
             this.textBoxPoblacion.Text = cliente.Poblacion;
             this.textBoxProvincia.Text = cliente.Provincia;
@@ -83,7 +83,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxEmail.Text = cliente.Email;
             this.textBoxPersonaContacto.Text = cliente.PersonaDeContacto;
             this.textBoxRiesgoMaximo.Text = cliente.RiesgoMaximo.ToString();
-            this.comboBoxFormaPago.Text = cliente.FormaDePago;
+            this.comboBoxFormaPago.DataSource = cliente.FormasDePago;
+            this.comboBoxFormaPago.Text = cliente.FormaDePagoSelected;
             this.checkBoxIVAGeneral.Checked = cliente.isGeneral;
             this.checkBoxRE.Checked = cliente.RecargoEquivalencia;
             this.checkBoxUE.Checked = cliente.UnionEuropea;
@@ -154,11 +155,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         }
         private void AltaCliente2_Load(object sender, EventArgs e)
         {
-            if(this.isUpdate)
-            {
-                var client = this.clienteProvider.GetAltaClienteById(clienteId);
-                this.FillFormWithClient(client);
-            }
+            AltaClienteViewModel viewModel = this.isUpdate ? this.clienteProvider.GetAltaClienteById(clienteId) : this.clienteProvider.GetAltaCliente();
+            
+            this.FillFormWithClient(viewModel);
+
         }
 
         private void textBoxTelefono1_TextChanged(object sender, EventArgs e)

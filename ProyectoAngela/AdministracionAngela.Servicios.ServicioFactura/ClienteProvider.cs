@@ -35,7 +35,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var clientFromRepository = this.repositorioCliente.GetClientById(clienteId);
             var formasDePago = this.repositorioSistema.GetAllFormasDePago();
 
-            return MapToViewModel.MapAltaClient(clientFromRepository);
+            return MapToViewModel.MapAltaClient(clientFromRepository, formasDePago);
+        }
+
+        public AltaClienteViewModel GetAltaCliente()
+        {
+            var formasDePago = this.repositorioSistema.GetAllFormasDePago();
+            return new AltaClienteViewModel()
+            {
+                FormasDePago = formasDePago.Select(fp => fp.Concepto).ToList()
+            };
         }
 
         public GestionClienteViewModel GetGestionCliente()
@@ -46,13 +55,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public bool SaveClient(AltaClienteViewModel newClient)
         {
-            var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient);
+            var formaDePago = this.repositorioSistema.GetAllFormasDePagoByDescription(newClient.FormaDePagoSelected);
+            var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient, formaDePago);
             return this.repositorioCliente.SaveClient(clientRepository);
         }
 
         public bool UpdateClient(AltaClienteViewModel newClient)
         {
-            var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient);
+            var formaDePago = this.repositorioSistema.GetAllFormasDePagoByDescription(newClient.FormaDePagoSelected);
+            var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient, formaDePago);
             return this.repositorioCliente.UpdateClient(clientRepository);
         }
     }

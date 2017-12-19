@@ -53,7 +53,7 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static AltaClienteViewModel MapAltaClient(Cliente clienteFromRepository)
+        public static AltaClienteViewModel MapAltaClient(Cliente clienteFromRepository, List<FormaPago> formasDePago)
         {
             return new AltaClienteViewModel()
             {
@@ -71,7 +71,8 @@ namespace AdministracionAngela.Utils.Mappers
                 Email = clienteFromRepository.Contacto.Email,
                 PersonaDeContacto = clienteFromRepository.Contacto.PersonaContacto,
                 RiesgoMaximo = Convert.ToInt32(clienteFromRepository.RiesgoMaximo),
-                FormaDePago = clienteFromRepository.FormaDePago,
+                FormasDePago = formasDePago.Select(fp => fp.Concepto).ToList(),
+                FormaDePagoSelected = clienteFromRepository.FormaPago.Concepto,
                 isGeneral = clienteFromRepository.IsGeneral,
                 RecargoEquivalencia = clienteFromRepository.RecargoEquivalencia,
                 UnionEuropea = clienteFromRepository.UnionEuropea,

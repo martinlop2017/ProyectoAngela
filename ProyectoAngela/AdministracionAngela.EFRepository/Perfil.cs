@@ -22,7 +22,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<int> ContactoId { get; set; }
         public string Iban { get; set; }
     
-        public virtual Contacto Contacto { get; set; }
         public virtual Direccion Direccion { get; set; }
+        public virtual Contacto Contacto { get; set; }
     }
 }

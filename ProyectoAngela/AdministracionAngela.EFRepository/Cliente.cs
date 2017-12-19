@@ -28,14 +28,15 @@ namespace AdministracionAngela.EFRepository
         public string NIF { get; set; }
         public string Nombre { get; set; }
         public decimal RiesgoMaximo { get; set; }
-        public string FormaDePago { get; set; }
         public bool IsGeneral { get; set; }
         public bool RecargoEquivalencia { get; set; }
         public bool UnionEuropea { get; set; }
         public bool Excento { get; set; }
+        public int FormaDePagoId { get; set; }
     
         public virtual Contacto Contacto { get; set; }
         public virtual Direccion Direccion { get; set; }
+        public virtual FormaPago FormaPago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
     }

@@ -135,11 +135,6 @@
             // comboBoxFormaPago
             // 
             this.comboBoxFormaPago.FormattingEnabled = true;
-            this.comboBoxFormaPago.Items.AddRange(new object[] {
-            "AL COTADO",
-            "PAGO A QUINCE DIAS",
-            "PAGO MENSUAL ",
-            "PAGO A DOS MESES"});
             this.comboBoxFormaPago.Location = new System.Drawing.Point(204, 53);
             this.comboBoxFormaPago.Name = "comboBoxFormaPago";
             this.comboBoxFormaPago.Size = new System.Drawing.Size(160, 24);

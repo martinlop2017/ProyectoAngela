@@ -22,6 +22,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.FormasPago.ToList();
         }
 
+        public FormaPago GetAllFormasDePagoByDescription(string formaDePago)
+        {
+            return this.dbContext.FormasPago.SingleOrDefault(fp => fp.Concepto.Equals(formaDePago));
+        }
+
         public void SaveFormaDePago(FormaPago formaDePago)
         {
             this.dbContext.FormasPago.Add(formaDePago);

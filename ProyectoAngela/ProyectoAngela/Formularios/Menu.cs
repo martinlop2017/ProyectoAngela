@@ -284,7 +284,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void formasDePagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<FormaPago>();
+            this.formOpener.ShowModalForm<Rutas>();
         }
 
         private void buttonCobro_MouseEnter(object sender, EventArgs e)
@@ -319,7 +319,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void rutasExportaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<Rutas>();
+            
+            this.formOpener.ShowModalForm<FormaPago>();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            buttonMisdatos.Visible = false;
+            buttonUsusarios.Visible = false;
+            buttonIva.Visible = false;
+            buttonCobro.Visible = false;
+            buttonRutas.Visible = false;
+            this.formOpener.ShowModalForm<Liquidaciones>();
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLiq.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Liquidaciones_Azul;
+        }
+
+        private void buttonLiq_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLiq.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Liquidaciones;
         }
     }
 }

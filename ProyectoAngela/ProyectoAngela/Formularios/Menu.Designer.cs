@@ -36,6 +36,7 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tiposDeIvaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.formasDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rutasExportaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.articulosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.albaranesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +53,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.buttonLiq = new System.Windows.Forms.Button();
             this.buttonRutas = new System.Windows.Forms.Button();
             this.buttonCobro = new System.Windows.Forms.Button();
             this.buttonMisdatos = new System.Windows.Forms.Button();
@@ -65,7 +67,8 @@
             this.buttonIva = new System.Windows.Forms.Button();
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
-            this.rutasExportaciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.avisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +82,9 @@
             this.albaranesToolStripMenuItem,
             this.factruasToolStripMenuItem,
             this.listadosToolStripMenuItem,
-            this.seguridadToolStripMenuItem});
+            this.seguridadToolStripMenuItem,
+            this.seguridadToolStripMenuItem1,
+            this.avisosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1284, 24);
@@ -102,30 +107,37 @@
             // misDatosToolStripMenuItem
             // 
             this.misDatosToolStripMenuItem.Name = "misDatosToolStripMenuItem";
-            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.misDatosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.misDatosToolStripMenuItem.Text = "Mis Datos";
             this.misDatosToolStripMenuItem.Click += new System.EventHandler(this.misDatosToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // tiposDeIvaToolStripMenuItem
             // 
             this.tiposDeIvaToolStripMenuItem.Name = "tiposDeIvaToolStripMenuItem";
-            this.tiposDeIvaToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.tiposDeIvaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.tiposDeIvaToolStripMenuItem.Text = "Tipos de Iva";
             this.tiposDeIvaToolStripMenuItem.Click += new System.EventHandler(this.tiposDeIvaToolStripMenuItem_Click);
             // 
             // formasDePagoToolStripMenuItem
             // 
             this.formasDePagoToolStripMenuItem.Name = "formasDePagoToolStripMenuItem";
-            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
-            this.formasDePagoToolStripMenuItem.Text = "Formas de pago";
+            this.formasDePagoToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.formasDePagoToolStripMenuItem.Text = "Rutas Exportación";
             this.formasDePagoToolStripMenuItem.Click += new System.EventHandler(this.formasDePagoToolStripMenuItem_Click);
+            // 
+            // rutasExportaciónToolStripMenuItem
+            // 
+            this.rutasExportaciónToolStripMenuItem.Name = "rutasExportaciónToolStripMenuItem";
+            this.rutasExportaciónToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.rutasExportaciónToolStripMenuItem.Text = "Gestión Cobros";
+            this.rutasExportaciónToolStripMenuItem.Click += new System.EventHandler(this.rutasExportaciónToolStripMenuItem_Click);
             // 
             // clientesToolStripMenuItem
             // 
@@ -163,8 +175,8 @@
             // seguridadToolStripMenuItem
             // 
             this.seguridadToolStripMenuItem.Name = "seguridadToolStripMenuItem";
-            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.seguridadToolStripMenuItem.Text = "Seguridad";
+            this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
+            this.seguridadToolStripMenuItem.Text = "Liquidaciones";
             this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
             // 
             // statusStrip1
@@ -177,7 +189,7 @@
             this.toolStripStatusLabel2,
             this.FechaInicio,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 736);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 767);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1284, 45);
             this.statusStrip1.TabIndex = 1;
@@ -263,15 +275,30 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "D. Fulanito Garcia Garcia";
             // 
+            // buttonLiq
+            // 
+            this.buttonLiq.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Liquidaciones;
+            this.buttonLiq.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLiq.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.buttonLiq.ImageKey = "(ninguno)";
+            this.buttonLiq.Location = new System.Drawing.Point(990, 43);
+            this.buttonLiq.Name = "buttonLiq";
+            this.buttonLiq.Size = new System.Drawing.Size(130, 130);
+            this.buttonLiq.TabIndex = 20;
+            this.buttonLiq.UseVisualStyleBackColor = true;
+            this.buttonLiq.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonLiq.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.buttonLiq.MouseLeave += new System.EventHandler(this.buttonLiq_MouseLeave);
+            // 
             // buttonRutas
             // 
             this.buttonRutas.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Rutas;
             this.buttonRutas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonRutas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonRutas.ImageKey = "(ninguno)";
-            this.buttonRutas.Location = new System.Drawing.Point(168, 209);
+            this.buttonRutas.Location = new System.Drawing.Point(26, 584);
             this.buttonRutas.Name = "buttonRutas";
-            this.buttonRutas.Size = new System.Drawing.Size(150, 150);
+            this.buttonRutas.Size = new System.Drawing.Size(130, 130);
             this.buttonRutas.TabIndex = 19;
             this.buttonRutas.UseVisualStyleBackColor = true;
             this.buttonRutas.Visible = false;
@@ -285,9 +312,9 @@
             this.buttonCobro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCobro.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonCobro.ImageKey = "(ninguno)";
-            this.buttonCobro.Location = new System.Drawing.Point(168, 375);
+            this.buttonCobro.Location = new System.Drawing.Point(26, 719);
             this.buttonCobro.Name = "buttonCobro";
-            this.buttonCobro.Size = new System.Drawing.Size(150, 150);
+            this.buttonCobro.Size = new System.Drawing.Size(130, 130);
             this.buttonCobro.TabIndex = 18;
             this.buttonCobro.UseVisualStyleBackColor = true;
             this.buttonCobro.Visible = false;
@@ -301,9 +328,9 @@
             this.buttonMisdatos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonMisdatos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonMisdatos.ImageKey = "(ninguno)";
-            this.buttonMisdatos.Location = new System.Drawing.Point(12, 209);
+            this.buttonMisdatos.Location = new System.Drawing.Point(26, 179);
             this.buttonMisdatos.Name = "buttonMisdatos";
-            this.buttonMisdatos.Size = new System.Drawing.Size(150, 150);
+            this.buttonMisdatos.Size = new System.Drawing.Size(130, 130);
             this.buttonMisdatos.TabIndex = 13;
             this.buttonMisdatos.UseVisualStyleBackColor = true;
             this.buttonMisdatos.Visible = false;
@@ -317,9 +344,9 @@
             this.buttonAvisos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAvisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonAvisos.ImageKey = "(ninguno)";
-            this.buttonAvisos.Location = new System.Drawing.Point(1104, 43);
+            this.buttonAvisos.Location = new System.Drawing.Point(1128, 43);
             this.buttonAvisos.Name = "buttonAvisos";
-            this.buttonAvisos.Size = new System.Drawing.Size(150, 150);
+            this.buttonAvisos.Size = new System.Drawing.Size(130, 130);
             this.buttonAvisos.TabIndex = 12;
             this.buttonAvisos.UseVisualStyleBackColor = true;
             this.buttonAvisos.Click += new System.EventHandler(this.buttonAvisos_Click);
@@ -332,9 +359,9 @@
             this.buttonSeguridad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonSeguridad.ImageKey = "(ninguno)";
-            this.buttonSeguridad.Location = new System.Drawing.Point(948, 43);
+            this.buttonSeguridad.Location = new System.Drawing.Point(852, 43);
             this.buttonSeguridad.Name = "buttonSeguridad";
-            this.buttonSeguridad.Size = new System.Drawing.Size(150, 150);
+            this.buttonSeguridad.Size = new System.Drawing.Size(130, 130);
             this.buttonSeguridad.TabIndex = 11;
             this.buttonSeguridad.UseVisualStyleBackColor = true;
             this.buttonSeguridad.Click += new System.EventHandler(this.buttonSeguridad_Click);
@@ -347,9 +374,9 @@
             this.buttonListados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonListados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonListados.ImageKey = "(ninguno)";
-            this.buttonListados.Location = new System.Drawing.Point(792, 43);
+            this.buttonListados.Location = new System.Drawing.Point(714, 43);
             this.buttonListados.Name = "buttonListados";
-            this.buttonListados.Size = new System.Drawing.Size(150, 150);
+            this.buttonListados.Size = new System.Drawing.Size(130, 130);
             this.buttonListados.TabIndex = 10;
             this.buttonListados.UseVisualStyleBackColor = true;
             this.buttonListados.Click += new System.EventHandler(this.buttonListados_Click);
@@ -362,9 +389,9 @@
             this.buttonUsusarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonUsusarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonUsusarios.ImageKey = "(ninguno)";
-            this.buttonUsusarios.Location = new System.Drawing.Point(12, 375);
+            this.buttonUsusarios.Location = new System.Drawing.Point(26, 314);
             this.buttonUsusarios.Name = "buttonUsusarios";
-            this.buttonUsusarios.Size = new System.Drawing.Size(150, 150);
+            this.buttonUsusarios.Size = new System.Drawing.Size(130, 130);
             this.buttonUsusarios.TabIndex = 8;
             this.buttonUsusarios.UseVisualStyleBackColor = true;
             this.buttonUsusarios.Visible = false;
@@ -379,9 +406,9 @@
             this.buttonAlbaranes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonAlbaranes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonAlbaranes.ImageKey = "(ninguno)";
-            this.buttonAlbaranes.Location = new System.Drawing.Point(480, 43);
+            this.buttonAlbaranes.Location = new System.Drawing.Point(438, 43);
             this.buttonAlbaranes.Name = "buttonAlbaranes";
-            this.buttonAlbaranes.Size = new System.Drawing.Size(150, 150);
+            this.buttonAlbaranes.Size = new System.Drawing.Size(130, 130);
             this.buttonAlbaranes.TabIndex = 7;
             this.buttonAlbaranes.UseVisualStyleBackColor = false;
             this.buttonAlbaranes.Click += new System.EventHandler(this.buttonAlbaranes_Click);
@@ -394,9 +421,9 @@
             this.buttonArticulos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonArticulos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonArticulos.ImageKey = "(ninguno)";
-            this.buttonArticulos.Location = new System.Drawing.Point(324, 43);
+            this.buttonArticulos.Location = new System.Drawing.Point(300, 43);
             this.buttonArticulos.Name = "buttonArticulos";
-            this.buttonArticulos.Size = new System.Drawing.Size(150, 150);
+            this.buttonArticulos.Size = new System.Drawing.Size(130, 130);
             this.buttonArticulos.TabIndex = 6;
             this.buttonArticulos.UseVisualStyleBackColor = true;
             this.buttonArticulos.Click += new System.EventHandler(this.buttonArticulos_Click);
@@ -409,9 +436,9 @@
             this.buttonCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonCliente.ImageKey = "(ninguno)";
-            this.buttonCliente.Location = new System.Drawing.Point(168, 43);
+            this.buttonCliente.Location = new System.Drawing.Point(162, 43);
             this.buttonCliente.Name = "buttonCliente";
-            this.buttonCliente.Size = new System.Drawing.Size(150, 150);
+            this.buttonCliente.Size = new System.Drawing.Size(130, 130);
             this.buttonCliente.TabIndex = 5;
             this.buttonCliente.UseVisualStyleBackColor = true;
             this.buttonCliente.Click += new System.EventHandler(this.buttonCliente_Click);
@@ -424,9 +451,9 @@
             this.buttonIva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonIva.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonIva.ImageKey = "(ninguno)";
-            this.buttonIva.Location = new System.Drawing.Point(12, 551);
+            this.buttonIva.Location = new System.Drawing.Point(26, 449);
             this.buttonIva.Name = "buttonIva";
-            this.buttonIva.Size = new System.Drawing.Size(150, 150);
+            this.buttonIva.Size = new System.Drawing.Size(130, 130);
             this.buttonIva.TabIndex = 4;
             this.buttonIva.UseVisualStyleBackColor = true;
             this.buttonIva.Visible = false;
@@ -440,9 +467,9 @@
             this.buttonFactura.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonFactura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonFactura.ImageKey = "(ninguno)";
-            this.buttonFactura.Location = new System.Drawing.Point(636, 43);
+            this.buttonFactura.Location = new System.Drawing.Point(576, 43);
             this.buttonFactura.Name = "buttonFactura";
-            this.buttonFactura.Size = new System.Drawing.Size(150, 150);
+            this.buttonFactura.Size = new System.Drawing.Size(130, 130);
             this.buttonFactura.TabIndex = 3;
             this.buttonFactura.UseVisualStyleBackColor = true;
             this.buttonFactura.Click += new System.EventHandler(this.buttonFactura_Click);
@@ -455,28 +482,34 @@
             this.buttonSistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonSistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonSistema.ImageKey = "(ninguno)";
-            this.buttonSistema.Location = new System.Drawing.Point(12, 43);
+            this.buttonSistema.Location = new System.Drawing.Point(26, 43);
             this.buttonSistema.Name = "buttonSistema";
-            this.buttonSistema.Size = new System.Drawing.Size(150, 150);
+            this.buttonSistema.Size = new System.Drawing.Size(130, 130);
             this.buttonSistema.TabIndex = 2;
             this.buttonSistema.UseVisualStyleBackColor = true;
             this.buttonSistema.Click += new System.EventHandler(this.button1_Click);
             this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
             this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
-            // rutasExportaciónToolStripMenuItem
+            // seguridadToolStripMenuItem1
             // 
-            this.rutasExportaciónToolStripMenuItem.Name = "rutasExportaciónToolStripMenuItem";
-            this.rutasExportaciónToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.rutasExportaciónToolStripMenuItem.Text = "Rutas Exportación";
-            this.rutasExportaciónToolStripMenuItem.Click += new System.EventHandler(this.rutasExportaciónToolStripMenuItem_Click);
+            this.seguridadToolStripMenuItem1.Name = "seguridadToolStripMenuItem1";
+            this.seguridadToolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
+            this.seguridadToolStripMenuItem1.Text = "Seguridad";
+            // 
+            // avisosToolStripMenuItem
+            // 
+            this.avisosToolStripMenuItem.Name = "avisosToolStripMenuItem";
+            this.avisosToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.avisosToolStripMenuItem.Text = "Avisos";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1284, 781);
+            this.ClientSize = new System.Drawing.Size(1284, 812);
+            this.Controls.Add(this.buttonLiq);
             this.Controls.Add(this.buttonRutas);
             this.Controls.Add(this.buttonCobro);
             this.Controls.Add(this.label4);
@@ -549,5 +582,8 @@
         private System.Windows.Forms.ToolStripMenuItem formasDePagoToolStripMenuItem;
         private System.Windows.Forms.Button buttonRutas;
         private System.Windows.Forms.ToolStripMenuItem rutasExportaciónToolStripMenuItem;
+        private System.Windows.Forms.Button buttonLiq;
+        private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem avisosToolStripMenuItem;
     }
 }

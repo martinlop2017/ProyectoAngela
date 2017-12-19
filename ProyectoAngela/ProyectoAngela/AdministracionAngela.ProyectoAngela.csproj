@@ -110,6 +110,12 @@
     <Compile Include="Formularios\GestionUsusarios.Designer.cs">
       <DependentUpon>GestionUsusarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Liquidaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Liquidaciones.Designer.cs">
+      <DependentUpon>Liquidaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionUsusarios.resx">
       <DependentUpon>GestionUsusarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Liquidaciones.resx">
+      <DependentUpon>Liquidaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -352,6 +361,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Rutas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Liquidaciones Azul.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Liquidaciones.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

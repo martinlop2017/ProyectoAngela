@@ -72,6 +72,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 {
                     articuloToupdate.CodigoProducto = articuloRepository.CodigoProducto;
                     articuloToupdate.Descripcion = articuloRepository.Descripcion;
+                    articuloToupdate.ZonaCaptura = articuloRepository.ZonaCaptura;
+                    articuloToupdate.ArtePesca = articuloRepository.ArtePesca;
+                    articuloToupdate.FAO = articuloRepository.FAO;
+                    articuloToupdate.NombreCientifico = articuloRepository.NombreCientifico;
 
                     this.dbContext.SaveChanges();
                 }

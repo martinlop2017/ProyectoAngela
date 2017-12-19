@@ -36,11 +36,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 string.IsNullOrEmpty(this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate()));
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         private AltaArticuloViewModel ReadNewArticuloFromForm()
         {
             return new AltaArticuloViewModel()
@@ -48,7 +43,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Id = this.isUpdate ? this.articuloId : 0,
                 CodigoArticulo = Convert.ToInt32(this.textBoxCodigoArticulo.Text),
                 Descripcion = this.textBoxDescripcion.Text,
-                SelectedIVA = this.comboBoxIVA.SelectedValue.ToString()
+                SelectedIVA = this.comboBoxIVA.SelectedValue.ToString(),
+                ArtePesca = this.textBoxArtePesca.Text,
+                CodigoFAO = textBoxFAO.Text,
+                NombreCientifico = textBoxNombreCientifico.Text,
+                ZonaCaptura = textBoxZonaCaptura.Text
             };
         }
 
@@ -57,6 +56,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxCodigoArticulo.Text = articulo.CodigoArticulo.ToString();
             this.textBoxDescripcion.Text = articulo.Descripcion;
             this.comboBoxIVA.DataSource = articulo.IVAs;
+            this.textBoxZonaCaptura.Text = articulo.ZonaCaptura;
+            this.textBoxFAO.Text = articulo.CodigoFAO;
+            this.textBoxArtePesca.Text = articulo.ArtePesca;
+            this.textBoxFAO.Text = articulo.CodigoFAO;
         }
 
         private void AltaArticulo_Load(object sender, EventArgs e)
@@ -75,7 +78,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)
         {
             if (this.Validate())
             {
@@ -91,7 +94,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     Ok = this.articuloProvider.UpdateArticulo(nuevoArticulo);
                 }
 
-                if(!Ok)
+                if (!Ok)
                 {
                     MessageBox.Show("El Articulo no se ha guardado correctamente");
                 }
@@ -102,39 +105,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
         }
 
-        private void textBoxCodigoArticulo_KeyPress(object sender, KeyPressEventArgs e)
+        private void button8_Click_1(object sender, EventArgs e)
         {
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        private void comboBoxIVA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void customGroupBox7_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
+            this.Close();
         }
     }
 }

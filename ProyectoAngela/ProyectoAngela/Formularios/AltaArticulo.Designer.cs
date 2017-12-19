@@ -34,13 +34,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBoxZonaCaptura = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBoxArtePesca = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxFAO = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxNombreCientifico = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxIVA = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -89,14 +89,14 @@
             this.label8.TabIndex = 49;
             this.label8.Text = "Lote.";
             // 
-            // textBox4
+            // textBoxZonaCaptura
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(43, 259);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(352, 23);
-            this.textBox4.TabIndex = 48;
-            this.textBox4.Text = "fdfdf";
+            this.textBoxZonaCaptura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxZonaCaptura.Location = new System.Drawing.Point(43, 259);
+            this.textBoxZonaCaptura.Name = "textBoxZonaCaptura";
+            this.textBoxZonaCaptura.Size = new System.Drawing.Size(352, 23);
+            this.textBoxZonaCaptura.TabIndex = 48;
+            this.textBoxZonaCaptura.Text = "fdfdf";
             // 
             // label6
             // 
@@ -110,14 +110,14 @@
             this.label6.TabIndex = 47;
             this.label6.Text = "Zona Captura.";
             // 
-            // textBox3
+            // textBoxArtePesca
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(414, 209);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 23);
-            this.textBox3.TabIndex = 46;
-            this.textBox3.Text = "fdfdf";
+            this.textBoxArtePesca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxArtePesca.Location = new System.Drawing.Point(414, 209);
+            this.textBoxArtePesca.Name = "textBoxArtePesca";
+            this.textBoxArtePesca.Size = new System.Drawing.Size(176, 23);
+            this.textBoxArtePesca.TabIndex = 46;
+            this.textBoxArtePesca.Text = "fdfdf";
             // 
             // label4
             // 
@@ -131,14 +131,14 @@
             this.label4.TabIndex = 45;
             this.label4.Text = "Arte Pesca.";
             // 
-            // textBox2
+            // textBoxFAO
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(506, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(84, 23);
-            this.textBox2.TabIndex = 44;
-            this.textBox2.Text = "fdfdf";
+            this.textBoxFAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxFAO.Location = new System.Drawing.Point(506, 159);
+            this.textBoxFAO.Name = "textBoxFAO";
+            this.textBoxFAO.Size = new System.Drawing.Size(84, 23);
+            this.textBoxFAO.TabIndex = 44;
+            this.textBoxFAO.Text = "fdfdf";
             // 
             // label3
             // 
@@ -152,14 +152,14 @@
             this.label3.TabIndex = 43;
             this.label3.Text = "Cod. FAO.";
             // 
-            // textBox1
+            // textBoxNombreCientifico
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(43, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(365, 23);
-            this.textBox1.TabIndex = 42;
+            this.textBoxNombreCientifico.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxNombreCientifico.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNombreCientifico.Location = new System.Drawing.Point(43, 209);
+            this.textBoxNombreCientifico.Name = "textBoxNombreCientifico";
+            this.textBoxNombreCientifico.Size = new System.Drawing.Size(365, 23);
+            this.textBoxNombreCientifico.TabIndex = 42;
             // 
             // label2
             // 
@@ -246,6 +246,7 @@
             this.button7.Size = new System.Drawing.Size(208, 60);
             this.button7.TabIndex = 51;
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
             // button8
             // 
@@ -258,6 +259,7 @@
             this.button8.Size = new System.Drawing.Size(208, 60);
             this.button8.TabIndex = 52;
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 
             // AltaArticulo
             // 
@@ -272,13 +274,13 @@
             this.Controls.Add(this.button8);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBoxZonaCaptura);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBoxArtePesca);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBoxFAO);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxNombreCientifico);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxIVA);
             this.Controls.Add(this.label1);
@@ -302,13 +304,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBoxZonaCaptura;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxArtePesca;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxFAO;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNombreCientifico;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxIVA;
         private System.Windows.Forms.Label label1;

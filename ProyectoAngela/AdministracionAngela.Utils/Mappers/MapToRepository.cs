@@ -82,6 +82,10 @@ namespace AdministracionAngela.Utils.Mappers
                 Id = nuevoArticuloViewModel.Id,
                 CodigoProducto = nuevoArticuloViewModel.CodigoArticulo,
                 Descripcion = nuevoArticuloViewModel.Descripcion,
+                ArtePesca = nuevoArticuloViewModel.ArtePesca,
+                ZonaCaptura = nuevoArticuloViewModel.ZonaCaptura,
+                FAO = nuevoArticuloViewModel.CodigoFAO,
+                NombreCientifico = nuevoArticuloViewModel.NombreCientifico,
                 IVAId = iva.Id
             };
         }

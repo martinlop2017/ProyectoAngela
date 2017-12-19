@@ -13,5 +13,10 @@ namespace AdministracionAngela.Utils.Models.Articulo
         public string Descripcion { get; set; }
         public List<string> IVAs { get; set; }
         public string SelectedIVA { get; set; }
+        public string CodigoFAO { get; set; }
+        public string NombreCientifico { get; set; }
+        public string ArtePesca { get; set; }
+        public string ZonaCaptura { get; set; }
+        public string Abreviacion { get; set; }
     }
 }

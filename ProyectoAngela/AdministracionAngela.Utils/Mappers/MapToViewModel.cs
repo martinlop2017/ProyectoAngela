@@ -117,6 +117,10 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 CodigoArticulo = articuloFromRepository.CodigoProducto,
                 Descripcion = articuloFromRepository.Descripcion,
+                ArtePesca = articuloFromRepository.ArtePesca,
+                CodigoFAO = articuloFromRepository.FAO,
+                ZonaCaptura = articuloFromRepository.ZonaCaptura,
+                NombreCientifico = articuloFromRepository.NombreCientifico,
                 IVAs = ivas.Select(iva => iva.Descripcion).ToList()
             };
         }

@@ -24,6 +24,11 @@ namespace AdministracionAngela.EFRepository
         public int CodigoProducto { get; set; }
         public int IVAId { get; set; }
         public string Descripcion { get; set; }
+        public string NombreCientifico { get; set; }
+        public string FAO { get; set; }
+        public string ArtePesca { get; set; }
+        public string ZonaCaptura { get; set; }
+        public string Abreviacion { get; set; }
     
         public virtual IVA IVA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

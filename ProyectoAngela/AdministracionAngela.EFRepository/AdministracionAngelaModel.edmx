@@ -109,6 +109,11 @@
           <Property Name="CodigoProducto" Type="int" Nullable="false" />
           <Property Name="IVAId" Type="int" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar(max)" />
+          <Property Name="NombreCientifico" Type="nvarchar(max)" />
+          <Property Name="FAO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ArtePesca" Type="nvarchar(max)" />
+          <Property Name="ZonaCaptura" Type="nvarchar(max)" />
+          <Property Name="Abreviacion" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -292,16 +297,7 @@
           <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
           <EntitySet Name="LineaFactura" EntityType="AdministracionAngelaModel.LineaFactura" />
           <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
-          <EntitySet Name="Producto" EntityType="AdministracionAngelaModel.Producto" />
           <EntitySet Name="sysdiagrams" EntityType="AdministracionAngelaModel.sysdiagrams" />
-          <AssociationSet Name="FK_Producto_IVA" Association="AdministracionAngelaModel.FK_Producto_IVA">
-            <End Role="IVA" EntitySet="IVA" />
-            <End Role="Producto" EntitySet="Producto" />
-          </AssociationSet>
-          <AssociationSet Name="FK_LineaFactura_Producto" Association="AdministracionAngelaModel.FK_LineaFactura_Producto">
-            <End Role="Producto" EntitySet="Producto" />
-            <End Role="LineaFactura" EntitySet="LineaFactura" />
-          </AssociationSet>
           <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
           <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
             <End Role="Direccion" EntitySet="Direccion" />
@@ -336,6 +332,15 @@
             <End Role="Contacto" EntitySet="Contacto" />
             <End Role="Perfil" EntitySet="Perfil" />
           </AssociationSet>
+          <EntitySet Name="Producto" EntityType="AdministracionAngelaModel.Producto" />
+          <AssociationSet Name="FK_Producto_IVA" Association="AdministracionAngelaModel.FK_Producto_IVA">
+            <End Role="IVA" EntitySet="IVA" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LineaFactura_Producto" Association="AdministracionAngelaModel.FK_LineaFactura_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="LineaFactura" EntitySet="LineaFactura" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="IVA">
           <Key>
@@ -358,8 +363,8 @@
           <Property Name="PorcentajeRE" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Kgs" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
           <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
+          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
@@ -375,17 +380,6 @@
           <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
           <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
         </EntityType>
-        <EntityType Name="Producto">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CodigoProducto" Type="Int32" Nullable="false" />
-          <Property Name="IVAId" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="IVA" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="Producto" ToRole="IVA" />
-          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="Producto" ToRole="LineaFactura" />
-        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -396,30 +390,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <Association Name="FK_Producto_IVA">
-          <End Type="AdministracionAngelaModel.IVA" Role="IVA" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IVA">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Producto">
-              <PropertyRef Name="IVAId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_LineaFactura_Producto">
-          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Producto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="LineaFactura">
-              <PropertyRef Name="ProductoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Direccion">
           <Key>
             <PropertyRef Name="Id" />
@@ -585,6 +555,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoProducto" Type="Int32" Nullable="false" />
+          <Property Name="IVAId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NombreCientifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArtePesca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZonaCaptura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abreviacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IVA" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="Producto" ToRole="IVA" />
+          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="Producto" ToRole="LineaFactura" />
+        </EntityType>
+        <Association Name="FK_Producto_IVA">
+          <End Type="AdministracionAngelaModel.IVA" Role="IVA" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IVA">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="IVAId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LineaFactura_Producto">
+          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LineaFactura">
+              <PropertyRef Name="ProductoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -623,16 +633,6 @@
                 <ScalarProperty Name="CIF" ColumnName="CIF" />
                 <ScalarProperty Name="NIF" ColumnName="NIF" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Producto">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Producto">
-              <MappingFragment StoreEntitySet="Producto">
-                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="IVAId" ColumnName="IVAId" />
-                <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -720,6 +720,21 @@
                 <ScalarProperty Name="Fax" ColumnName="Fax" />
                 <ScalarProperty Name="Telefono2" ColumnName="Telefono2" />
                 <ScalarProperty Name="Telefono1" ColumnName="Telefono1" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Producto">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Producto">
+              <MappingFragment StoreEntitySet="Producto">
+                <ScalarProperty Name="Abreviacion" ColumnName="Abreviacion" />
+                <ScalarProperty Name="ZonaCaptura" ColumnName="ZonaCaptura" />
+                <ScalarProperty Name="ArtePesca" ColumnName="ArtePesca" />
+                <ScalarProperty Name="FAO" ColumnName="FAO" />
+                <ScalarProperty Name="NombreCientifico" ColumnName="NombreCientifico" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IVAId" ColumnName="IVAId" />
+                <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

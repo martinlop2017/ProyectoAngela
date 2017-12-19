@@ -28,66 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liquidaciones));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liquidaciones));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.buttonAeptar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonAeptar = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 94);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label1.Location = new System.Drawing.Point(34, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.Size = new System.Drawing.Size(167, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Liquidacion de fecha.";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(204, 87);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(204, 131);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(150, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(102, 24);
             this.dateTimePicker1.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 93);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "a fecha.";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(412, 87);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(150, 20);
-            this.dateTimePicker2.TabIndex = 3;
-            // 
-            // buttonAeptar
-            // 
-            this.buttonAeptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAeptar.BackgroundImage")));
-            this.buttonAeptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAeptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonAeptar.FlatAppearance.BorderSize = 0;
-            this.buttonAeptar.Location = new System.Drawing.Point(581, 62);
-            this.buttonAeptar.Name = "buttonAeptar";
-            this.buttonAeptar.Size = new System.Drawing.Size(139, 45);
-            this.buttonAeptar.TabIndex = 4;
-            this.buttonAeptar.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 12, 19, 17, 25, 49, 0);
             // 
             // dataGridView1
             // 
@@ -105,7 +89,8 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5});
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,12 +99,78 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 149);
+            this.dataGridView1.Location = new System.Drawing.Point(39, 218);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 20;
-            this.dataGridView1.Size = new System.Drawing.Size(752, 590);
+            this.dataGridView1.Size = new System.Drawing.Size(907, 545);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // buttonAeptar
+            // 
+            this.buttonAeptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAeptar.BackgroundImage")));
+            this.buttonAeptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAeptar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonAeptar.FlatAppearance.BorderSize = 0;
+            this.buttonAeptar.Location = new System.Drawing.Point(519, 121);
+            this.buttonAeptar.Name = "buttonAeptar";
+            this.buttonAeptar.Size = new System.Drawing.Size(169, 47);
+            this.buttonAeptar.TabIndex = 4;
+            this.buttonAeptar.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label15.Location = new System.Drawing.Point(340, 27);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(404, 42);
+            this.label15.TabIndex = 101;
+            this.label15.Text = "Gestión Liquidaciones";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label3.Location = new System.Drawing.Point(314, 134);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(68, 18);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "a fecha.";
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(388, 131);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(102, 24);
+            this.dateTimePicker3.TabIndex = 103;
+            this.dateTimePicker3.Value = new System.DateTime(2017, 12, 19, 17, 25, 49, 0);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(774, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(156, 18);
+            this.label6.TabIndex = 106;
+            this.label6.Text = "TOTAL A LIQUIDAR";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(763, 142);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(183, 26);
+            this.label8.TabIndex = 107;
+            this.label8.Text = "9.999.9999,99 €";
             // 
             // Column1
             // 
@@ -151,18 +202,55 @@
             this.Column5.Name = "Column5";
             this.Column5.Width = 125;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Total";
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 150;
+            // 
+            // button7
+            // 
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.Location = new System.Drawing.Point(238, 803);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(208, 60);
+            this.button7.TabIndex = 108;
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.Location = new System.Drawing.Point(549, 803);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(208, 60);
+            this.button8.TabIndex = 109;
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // Liquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 761);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(991, 910);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.buttonAeptar);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label1);
             this.Name = "Liquidaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Liquidaciones";
             this.Load += new System.EventHandler(this.Liquidaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -175,14 +263,20 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Button buttonAeptar;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }

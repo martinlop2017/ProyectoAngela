@@ -87,6 +87,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                         (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
                         (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCajas"].Value = lineaFactura.Cajas;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaFactura.Importe;
@@ -212,7 +213,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.viewModel.LineasFactura = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows, this.viewModel.ArticuloIdsAndDescripciones);
             this.facturaProvider.CalculateIVAs(viewModel);
-            //this.FillIVAs(this.viewModel.LineasIVA);
             this.UpdateIVAs(this.viewModel.LineasIVA);
             this.UpdateTotals();
         }

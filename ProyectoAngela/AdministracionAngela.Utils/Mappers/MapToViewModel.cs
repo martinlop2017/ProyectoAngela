@@ -254,6 +254,7 @@ namespace AdministracionAngela.Utils.Mappers
                     lineasFactura.Add(new LineaFacturaViewModel()
                     {
                         ProductoId = ArticuloIdsAndDescripciones[row.Cells["ColumnProducto"].Value.ToString()],
+                        Cajas = row.Cells["ColumnCajas"].Value.ToString(),
                         Kgs = Convert.ToDecimal(row.Cells["ColumnKgs"].Value),
                         Precio = Convert.ToDecimal(row.Cells["ColumnPrecio"].Value),
                         Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value)

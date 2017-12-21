@@ -67,6 +67,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotalCajas = new System.Windows.Forms.Label();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCajas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -170,6 +171,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
+            this.ColumnCodigo,
             this.ColumnCajas,
             this.ColumnKgs,
             this.ColumnPrecio,
@@ -452,6 +454,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            // 
             // ColumnCajas
             // 
             this.ColumnCajas.HeaderText = "Cajas";
@@ -562,6 +570,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private Label labelTotalCajas;
         private Label labelNumeroFactura;
         private DataGridViewComboBoxColumn ColumnProducto;
+        private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnCajas;
         private DataGridViewTextBoxColumn ColumnKgs;
         private DataGridViewTextBoxColumn ColumnPrecio;

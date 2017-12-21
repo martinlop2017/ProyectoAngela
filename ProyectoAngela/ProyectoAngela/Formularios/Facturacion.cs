@@ -86,8 +86,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                         this.dataGridViewLineasFactura.Rows.Add();
                         var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
 
+                        var codigoArticulo = lineaFactura.SelectedProduct.Substring(0, lineaFactura.SelectedProduct.IndexOf("-")).Trim();
+
                         (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
                         (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCodigo"].Value = codigoArticulo;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCajas"].Value = lineaFactura.Cajas;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
@@ -150,6 +153,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 if (combo != null)
                 {
                     combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
+                    combo.SelectedValueChanged += new EventHandler(ComboInGrid_SelectedValueChanged);
                 }
             }
             else
@@ -174,6 +178,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
 
             combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
+        }
+
+        private void ComboInGrid_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var selectedText = (sender as ComboBox).Text;
+            var codigoArticulo = selectedText.Substring(0, selectedText.IndexOf("-")).Trim();
+            this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnCodigo"].Value = codigoArticulo;
         }
 
         private void TextboxInGrid_TextChanged(object sender, EventArgs e)

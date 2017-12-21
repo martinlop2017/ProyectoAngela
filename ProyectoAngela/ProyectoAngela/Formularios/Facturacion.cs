@@ -75,6 +75,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.originalProductValues = viewModel.ArticuloIdsAndDescripciones.Keys.ToList<string>();
                 this.comboBoxClientes.DataSource = originalClientValues;
                 this.labelNumeroFactura.Text = viewModel.Id.ToString();
+                this.textBoxLote.Text = viewModel.Lote;
                 this.FillIVAs(viewModel.LineasIVA);
 
                 if (this.isUpdate)

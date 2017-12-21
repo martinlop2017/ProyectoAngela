@@ -197,6 +197,7 @@ namespace AdministracionAngela.Utils.Mappers
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
                 Fecha = DateTime.Today.ToString("yyyy MM dd"),
+                Lote = DateTime.Today.ToString("yyyy MM dd"),
                 LineasIVA = MapListToLineaIVAViewModel(ivas)
             };
         }

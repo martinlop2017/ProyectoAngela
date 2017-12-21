@@ -15,6 +15,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         public Dictionary<string, long> ArticuloIdsAndDescripciones { get; set; }
         public string SelectedClient { get; set; }
         public string Fecha { get; set; }
+        public string Lote { get; set; }
         public List<LineaFacturaViewModel> LineasFactura { get; set; }
         public List<LineaIVAViewModel> LineasIVA { get; set; }
         public decimal TotalBase

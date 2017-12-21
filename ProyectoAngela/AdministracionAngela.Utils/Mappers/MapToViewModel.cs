@@ -212,7 +212,8 @@ namespace AdministracionAngela.Utils.Mappers
                 SelectedClient = string.Format("{0} - {1}", factura.Cliente.Id, factura.Cliente.Nombre),
                 Fecha = factura.Fecha.ToString(),
                 LineasFactura = MapListToLineaFacturaViewModel(factura.LineaFactura.ToList()),
-                LineasIVA = MapListToLineaIVAViewModel(ivas)
+                LineasIVA = MapListToLineaIVAViewModel(ivas),
+                Lote = factura.EtiquetaLote
             };
         }
 

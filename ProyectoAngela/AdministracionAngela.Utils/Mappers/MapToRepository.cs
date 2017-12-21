@@ -170,7 +170,8 @@ namespace AdministracionAngela.Utils.Mappers
                 TotalRecargoEquivalencia = altaFactura.TotalRecargoEquivalencia,
                 TotalIVA = altaFactura.TotalIVA,
                 Total = altaFactura.Total,
-                Impreso = false
+                Impreso = false,
+                EtiquetaLote = altaFactura.Lote
             };
         }
 

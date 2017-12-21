@@ -315,6 +315,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.viewModel.Id = Convert.ToInt32(this.labelNumeroFactura.Text);
             this.viewModel.SelectedClient = this.comboBoxClientes.Text;
             this.viewModel.Fecha = this.dateTimePickerFecha.Value.ToString();
+            this.viewModel.Lote= this.textBoxLote.Text;
         }
 
         private void buttonEliminarLinea_Click(object sender, EventArgs e)

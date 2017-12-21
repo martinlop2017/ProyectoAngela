@@ -76,6 +76,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     articuloToupdate.ArtePesca = articuloRepository.ArtePesca;
                     articuloToupdate.FAO = articuloRepository.FAO;
                     articuloToupdate.NombreCientifico = articuloRepository.NombreCientifico;
+                    articuloToupdate.Abreviacion = articuloRepository.Abreviacion;
 
                     this.dbContext.SaveChanges();
                 }

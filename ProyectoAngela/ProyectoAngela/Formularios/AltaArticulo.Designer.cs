@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaArticulo));
             this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBoxAbreviacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxZonaCaptura = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -68,14 +68,14 @@
             this.label7.TabIndex = 30;
             this.label7.Text = "Gestión de Articulos";
             // 
-            // textBox5
+            // textBoxAbreviacion
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(401, 259);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(62, 23);
-            this.textBox5.TabIndex = 50;
-            this.textBox5.Text = "fdfdf";
+            this.textBoxAbreviacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxAbreviacion.Location = new System.Drawing.Point(401, 259);
+            this.textBoxAbreviacion.Name = "textBoxAbreviacion";
+            this.textBoxAbreviacion.Size = new System.Drawing.Size(62, 23);
+            this.textBoxAbreviacion.TabIndex = 50;
+            this.textBoxAbreviacion.Text = "fdfdf";
             // 
             // label8
             // 
@@ -272,7 +272,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.textBoxAbreviacion);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxZonaCaptura);
             this.Controls.Add(this.label6);
@@ -302,7 +302,7 @@
         #endregion
         private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBoxAbreviacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxZonaCaptura;
         private System.Windows.Forms.Label label6;

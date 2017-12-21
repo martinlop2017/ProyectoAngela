@@ -47,7 +47,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 ArtePesca = this.textBoxArtePesca.Text,
                 CodigoFAO = textBoxFAO.Text,
                 NombreCientifico = textBoxNombreCientifico.Text,
-                ZonaCaptura = textBoxZonaCaptura.Text
+                ZonaCaptura = textBoxZonaCaptura.Text,
+                Abreviacion = textBoxAbreviacion.Text
             };
         }
 
@@ -60,6 +61,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxFAO.Text = articulo.CodigoFAO;
             this.textBoxArtePesca.Text = articulo.ArtePesca;
             this.textBoxFAO.Text = articulo.CodigoFAO;
+            this.textBoxAbreviacion.Text = articulo.Abreviacion;
+            this.textBoxNombreCientifico.Text = articulo.NombreCientifico;
         }
 
         private void AltaArticulo_Load(object sender, EventArgs e)

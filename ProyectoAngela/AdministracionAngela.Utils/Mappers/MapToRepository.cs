@@ -86,7 +86,8 @@ namespace AdministracionAngela.Utils.Mappers
                 ZonaCaptura = nuevoArticuloViewModel.ZonaCaptura,
                 FAO = nuevoArticuloViewModel.CodigoFAO,
                 NombreCientifico = nuevoArticuloViewModel.NombreCientifico,
-                IVAId = iva.Id
+                IVAId = iva.Id,
+                Abreviacion = nuevoArticuloViewModel.Abreviacion
             };
         }
 

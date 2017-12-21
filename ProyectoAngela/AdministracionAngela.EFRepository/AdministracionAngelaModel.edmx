@@ -88,6 +88,7 @@
           <Property Name="PorcentajeRE" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Kgs" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Cajas" Type="int" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
@@ -295,7 +296,6 @@
       <Schema Namespace="AdministracionAngelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AdministracionAngelaContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
-          <EntitySet Name="LineaFactura" EntityType="AdministracionAngelaModel.LineaFactura" />
           <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
           <EntitySet Name="sysdiagrams" EntityType="AdministracionAngelaModel.sysdiagrams" />
           <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
@@ -304,10 +304,6 @@
             <End Role="Perfil" EntitySet="Perfil" />
           </AssociationSet>
           <EntitySet Name="Factura" EntityType="AdministracionAngelaModel.Factura" />
-          <AssociationSet Name="FK_LineaFactura_Factura" Association="AdministracionAngelaModel.FK_LineaFactura_Factura">
-            <End Role="Factura" EntitySet="Factura" />
-            <End Role="LineaFactura" EntitySet="LineaFactura" />
-          </AssociationSet>
           <EntitySet Name="User" EntityType="AdministracionAngelaModel.User" />
           <EntitySet Name="FormaPago" EntityType="AdministracionAngelaModel.FormaPago" />
           <EntitySet Name="Cliente" EntityType="AdministracionAngelaModel.Cliente" />
@@ -337,6 +333,11 @@
             <End Role="IVA" EntitySet="IVA" />
             <End Role="Producto" EntitySet="Producto" />
           </AssociationSet>
+          <EntitySet Name="LineaFactura" EntityType="AdministracionAngelaModel.LineaFactura" />
+          <AssociationSet Name="FK_LineaFactura_Factura" Association="AdministracionAngelaModel.FK_LineaFactura_Factura">
+            <End Role="Factura" EntitySet="Factura" />
+            <End Role="LineaFactura" EntitySet="LineaFactura" />
+          </AssociationSet>
           <AssociationSet Name="FK_LineaFactura_Producto" Association="AdministracionAngelaModel.FK_LineaFactura_Producto">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
@@ -351,20 +352,6 @@
           <Property Name="Porcentaje" Type="Int32" />
           <Property Name="PorcentanjeRE" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="IVA" ToRole="Producto" />
-        </EntityType>
-        <EntityType Name="LineaFactura">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NumeroFactura" Type="Int64" Nullable="false" />
-          <Property Name="ProductoId" Type="Int64" Nullable="false" />
-          <Property Name="PorcentajeIVA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="PorcentajeRE" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Kgs" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
-          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
@@ -426,21 +413,9 @@
           <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Impreso" Type="Boolean" />
-          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
+          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
         </EntityType>
-        <Association Name="FK_LineaFactura_Factura">
-          <End Type="AdministracionAngelaModel.Factura" Role="Factura" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Factura">
-              <PropertyRef Name="NumeroFactura" />
-            </Principal>
-            <Dependent Role="LineaFactura">
-              <PropertyRef Name="NumeroFactura" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserName" />
@@ -583,6 +558,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LineaFactura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroFactura" Type="Int64" Nullable="false" />
+          <Property Name="ProductoId" Type="Int64" Nullable="false" />
+          <Property Name="PorcentajeIVA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PorcentajeRE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Kgs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cajas" Type="Int32" />
+          <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
+          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
+        </EntityType>
+        <Association Name="FK_LineaFactura_Factura">
+          <End Type="AdministracionAngelaModel.Factura" Role="Factura" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Factura">
+              <PropertyRef Name="NumeroFactura" />
+            </Principal>
+            <Dependent Role="LineaFactura">
+              <PropertyRef Name="NumeroFactura" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_LineaFactura_Producto">
           <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="1" />
           <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
@@ -607,19 +609,6 @@
                 <ScalarProperty Name="PorcentanjeRE" ColumnName="PorcentanjeRE" />
                 <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="LineaFactura">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.LineaFactura">
-              <MappingFragment StoreEntitySet="LineaFactura">
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="Kgs" ColumnName="Kgs" />
-                <ScalarProperty Name="PorcentajeRE" ColumnName="PorcentajeRE" />
-                <ScalarProperty Name="PorcentajeIVA" ColumnName="PorcentajeIVA" />
-                <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
-                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -735,6 +724,20 @@
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="IVAId" ColumnName="IVAId" />
                 <ScalarProperty Name="CodigoProducto" ColumnName="CodigoProducto" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LineaFactura">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.LineaFactura">
+              <MappingFragment StoreEntitySet="LineaFactura">
+                <ScalarProperty Name="Cajas" ColumnName="Cajas" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Kgs" ColumnName="Kgs" />
+                <ScalarProperty Name="PorcentajeRE" ColumnName="PorcentajeRE" />
+                <ScalarProperty Name="PorcentajeIVA" ColumnName="PorcentajeIVA" />
+                <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
+                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -12,7 +12,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         public string SelectedProduct { get; set; }
         public decimal PorcentajeIVA { get; set; }
         public decimal PorcentajeRE { get; set; }
-        public string Cajas { get; set; }
+        public int Cajas { get; set; }
         public decimal Kgs { get; set; }
         public decimal Precio { get; set; }
         public decimal Importe { get; set; }

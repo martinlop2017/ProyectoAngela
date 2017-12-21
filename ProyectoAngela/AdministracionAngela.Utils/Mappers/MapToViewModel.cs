@@ -230,7 +230,8 @@ namespace AdministracionAngela.Utils.Mappers
                 PorcentajeRE = lineaFactura.PorcentajeRE.Value,
                 Kgs = lineaFactura.Kgs.Value,
                 Precio = lineaFactura.Precio.Value,
-                Importe = lineaFactura.Kgs.Value * lineaFactura.Precio.Value
+                Importe = lineaFactura.Kgs.Value * lineaFactura.Precio.Value,
+                Cajas = lineaFactura.Cajas.Value
             };
         }
 
@@ -254,7 +255,7 @@ namespace AdministracionAngela.Utils.Mappers
                     lineasFactura.Add(new LineaFacturaViewModel()
                     {
                         ProductoId = ArticuloIdsAndDescripciones[row.Cells["ColumnProducto"].Value.ToString()],
-                        Cajas = row.Cells["ColumnCajas"].Value.ToString(),
+                        Cajas = Convert.ToInt32(row.Cells["ColumnCajas"].Value),
                         Kgs = Convert.ToDecimal(row.Cells["ColumnKgs"].Value),
                         Precio = Convert.ToDecimal(row.Cells["ColumnPrecio"].Value),
                         Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value)

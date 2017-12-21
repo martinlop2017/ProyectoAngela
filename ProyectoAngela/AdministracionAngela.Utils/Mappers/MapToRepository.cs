@@ -183,7 +183,8 @@ namespace AdministracionAngela.Utils.Mappers
                 PorcentajeIVA = linea.PorcentajeIVA,
                 PorcentajeRE = linea.PorcentajeRE,
                 Precio = linea.Precio,
-                Kgs = linea.Kgs
+                Kgs = linea.Kgs,
+                Cajas = linea.Cajas
             }).ToList();
         }
 

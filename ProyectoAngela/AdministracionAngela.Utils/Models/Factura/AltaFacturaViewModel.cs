@@ -23,7 +23,6 @@ namespace AdministracionAngela.Utils.Models.Factura
             {
                 return LineasIVA.Sum(i => i.BaseIVA);
             }
-            set { }
         }
         public decimal TotalIVA
         {
@@ -31,7 +30,6 @@ namespace AdministracionAngela.Utils.Models.Factura
             {
                 return LineasIVA.Sum(i => i.ImporteIVA);
             }
-            set { }
         }
         public decimal TotalRecargoEquivalencia
         {
@@ -39,13 +37,16 @@ namespace AdministracionAngela.Utils.Models.Factura
             {
                 return LineasIVA.Sum(i => i.ImporteRecargoEquivalencia);
             }
-            set { }
         }
 
         public decimal Total
         {
             get { return TotalBase + TotalIVA + TotalRecargoEquivalencia; }
-            set { }
+        }
+
+        public int TotalCajas
+        {
+            get { return LineasFactura.Sum(lf => lf.Cajas); }
         }
 
         public AltaFacturaViewModel()

@@ -31,9 +31,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -64,10 +64,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelTotalCajas = new System.Windows.Forms.Label();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColumnCodProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCajas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,27 +150,26 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // dataGridViewLineasFactura
             // 
             this.dataGridViewLineasFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewLineasFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
-            this.ColumnCodProducto,
             this.ColumnCajas,
             this.ColumnKgs,
             this.ColumnPrecio,
@@ -426,14 +424,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label4.TabIndex = 54;
             this.label4.Text = "Total Bultos: ";
             // 
-            // label6
+            // labelTotalCajas
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(126, 672);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 18);
-            this.label6.TabIndex = 55;
-            this.label6.Text = "125";
+            this.labelTotalCajas.AutoSize = true;
+            this.labelTotalCajas.Location = new System.Drawing.Point(126, 672);
+            this.labelTotalCajas.Name = "labelTotalCajas";
+            this.labelTotalCajas.Size = new System.Drawing.Size(0, 18);
+            this.labelTotalCajas.TabIndex = 55;
             // 
             // labelNumeroFactura
             // 
@@ -447,18 +444,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // ColumnProducto
             // 
             this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle6;
             this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
             this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnCodProducto
-            // 
-            this.ColumnCodProducto.HeaderText = "CodigoProducto";
-            this.ColumnCodProducto.Name = "ColumnCodProducto";
             // 
             // ColumnCajas
             // 
@@ -491,7 +483,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 750);
             this.Controls.Add(this.labelNumeroFactura);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelTotalCajas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.textBox1);
@@ -567,10 +559,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private Label label33;
         private Label label32;
         private Label label4;
-        private Label label6;
+        private Label labelTotalCajas;
         private Label labelNumeroFactura;
         private DataGridViewComboBoxColumn ColumnProducto;
-        private DataGridViewTextBoxColumn ColumnCodProducto;
         private DataGridViewTextBoxColumn ColumnCajas;
         private DataGridViewTextBoxColumn ColumnKgs;
         private DataGridViewTextBoxColumn ColumnPrecio;

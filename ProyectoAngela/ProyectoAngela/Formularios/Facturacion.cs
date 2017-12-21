@@ -223,6 +223,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotalIVA.Text = this.viewModel.TotalIVA.ToString();
             this.labelTotalRE.Text = this.viewModel.TotalRecargoEquivalencia.ToString();
             this.labelTotal.Text = this.viewModel.Total.ToString();
+            this.labelTotalCajas.Text = this.viewModel.TotalCajas.ToString();
         }
 
         /// <summary>
@@ -271,7 +272,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                             }
                             break;
                         }
-
+                    case "ColumnCajas":
+                        {
+                            if (currentCell.Value.ToString().IsInt())
+                            {
+                                Ok = true;
+                            }
+                            break;
+                        }
                     case "ColumnProducto":
                         {
                             Ok = true;

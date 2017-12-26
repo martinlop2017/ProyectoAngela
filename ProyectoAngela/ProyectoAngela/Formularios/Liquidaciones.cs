@@ -55,6 +55,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillForm(LiquidacionesViewModel viewModel)
         {
+            this.dataGridViewLiquidaciones.AutoGenerateColumns = false;
             this.dataGridViewLiquidaciones.DataSource = viewModel.LineasLiquidacion;
         }
     }

@@ -42,6 +42,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBultos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnKilos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecioMedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLiquidaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +84,13 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewLiquidaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewLiquidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLiquidaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnCodigo,
+            this.ColumnConcepto,
+            this.ColumnBultos,
+            this.ColumnKilos,
+            this.ColumnPrecioMedio,
+            this.ColumnTotal});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -184,6 +197,47 @@
             this.button8.TabIndex = 109;
             this.button8.UseVisualStyleBackColor = true;
             // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.DataPropertyName = "CodigoArticulo";
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            // 
+            // ColumnConcepto
+            // 
+            this.ColumnConcepto.DataPropertyName = "Concepto";
+            this.ColumnConcepto.HeaderText = "Concepto";
+            this.ColumnConcepto.Name = "ColumnConcepto";
+            this.ColumnConcepto.ReadOnly = true;
+            // 
+            // ColumnBultos
+            // 
+            this.ColumnBultos.DataPropertyName = "Bultos";
+            this.ColumnBultos.HeaderText = "Bultos";
+            this.ColumnBultos.Name = "ColumnBultos";
+            this.ColumnBultos.ReadOnly = true;
+            // 
+            // ColumnKilos
+            // 
+            this.ColumnKilos.DataPropertyName = "Kilos";
+            this.ColumnKilos.HeaderText = "Kilos";
+            this.ColumnKilos.Name = "ColumnKilos";
+            this.ColumnKilos.ReadOnly = true;
+            // 
+            // ColumnPrecioMedio
+            // 
+            this.ColumnPrecioMedio.DataPropertyName = "PrecioMedio";
+            this.ColumnPrecioMedio.HeaderText = "PrecioMedio";
+            this.ColumnPrecioMedio.Name = "ColumnPrecioMedio";
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.DataPropertyName = "Total";
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            // 
             // Liquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,5 +278,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnConcepto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnBultos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKilos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecioMedio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
     }
 }

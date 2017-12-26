@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Factura;
+using AdministracionAngela.Utils.Models.Liquidaciones;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -18,5 +19,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void UpdateFactura(AltaFacturaViewModel viewModel);
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
+        List<LineaFacturaLiquidacion> GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);
     }
 }

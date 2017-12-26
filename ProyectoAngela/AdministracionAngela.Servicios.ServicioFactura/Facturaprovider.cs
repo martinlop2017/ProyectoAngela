@@ -7,6 +7,7 @@ using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Factura;
+using AdministracionAngela.Utils.Models.Liquidaciones;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -126,6 +127,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void SetFacturaImpresa(List<long> selectedFacturaIds)
         {
             this.repositorioFactura.SetFacturaImpresa(selectedFacturaIds);
+        }
+
+        public List<LineaFacturaLiquidacion> GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class Liquidaciones : Form
     {
-        public Liquidaciones()
+        IFacturaProvider facturaProvider;
+
+        public Liquidaciones(IFacturaProvider facturaProvider)
         {
+            this.facturaProvider = facturaProvider;
             InitializeComponent();
         }
 
@@ -30,6 +34,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void label6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonEjecutar_Click(object sender, EventArgs e)
+        {
+            var startDate = this.dateTimePickerStart.Value;
+            var endDate = this.dateTimePickerEnd.Value;
+
+            if(startDate > endDate)
+            {
+                MessageBox.Show("Las fechas introducidas son incorrectas.");
+            }
+            else
+            {
+                var lineasFactura = this.facturaProvider.GetLineasFacturaParaFechas(startDate, endDate);
+            }
         }
     }
 }

@@ -76,6 +76,7 @@
     <Compile Include="Models\FormaDePago\GestionFormaDePagoViewModel.cs" />
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
     <Compile Include="Models\IVA\IVAViewModel.cs" />
+    <Compile Include="Models\Liquidaciones\LineaFacturaLiquidacion.cs" />
     <Compile Include="Models\Perfil\PerfilViewModel.cs" />
     <Compile Include="Models\RutasSalida\RutasSalidaViewModel.cs" />
     <Compile Include="Models\Usuario\AltaUsuarioViewModel.cs" />

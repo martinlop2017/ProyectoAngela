@@ -380,16 +380,15 @@ namespace AdministracionAngela.Utils.Mappers
                 {
                     Bultos = lineas.Sum(l => l.Cajas.Value),
                     CodigoArticulo = groupedLinea.Key.ToString(),
-                    Kilos = sumatorioKilos,
-                    PrecioMedio = precioMedio.Value,
+                    Kilos = decimal.Round(sumatorioKilos, 2),
+                    PrecioMedio = decimal.Round(precioMedio.Value, 2),
                     Total = decimal.Round(sumatorioKilos * precioMedio.Value, 2) 
                 });
             }
 
-            //var liquidacionesViewModel = MapLineaLiquidacionesList(repositoryLineasFactura);
-
             return new LiquidacionesViewModel()
             {
+                Total = lineasLiquidacionViewModel.Sum(l => l.Total),
                 LineasLiquidacion = new BindingList<LineaLiquidacionViewModel>(lineasLiquidacionViewModel)
             };
         }

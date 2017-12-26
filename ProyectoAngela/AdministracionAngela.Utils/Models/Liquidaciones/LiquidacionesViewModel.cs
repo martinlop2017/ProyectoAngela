@@ -9,6 +9,7 @@ namespace AdministracionAngela.Utils.Models.Liquidaciones
 {
     public class LiquidacionesViewModel
     {
+        public decimal Total { get; set; }
         public BindingList<LineaLiquidacionViewModel> LineasLiquidacion { get; set; }
 
         public LiquidacionesViewModel()

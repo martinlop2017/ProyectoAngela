@@ -55,6 +55,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillForm(LiquidacionesViewModel viewModel)
         {
+            this.labelTotalLiquidaciones.Text = viewModel.Total.ToString();
             this.dataGridViewLiquidaciones.AutoGenerateColumns = false;
             this.dataGridViewLiquidaciones.DataSource = viewModel.LineasLiquidacion;
         }
@@ -65,12 +66,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if (e.RowIndex != -1 && columnName.Equals("ColumnPrecioMedio"))
             {
                 var changedRow = this.dataGridViewLiquidaciones.Rows[e.RowIndex];
-                var total = this.RecalcularTotal(changedRow);
-                changedRow.Cells["ColumnTotal"].Value = total.ToString();
+                var rowTotal = this.RecalcularTotalRow(changedRow);
+                changedRow.Cells["ColumnTotal"].Value = rowTotal.ToString();
+
+                var total = this.RecalcularTotal();
+                this.labelTotalLiquidaciones.Text = total.ToString();
             }
         }
 
-        private decimal RecalcularTotal(DataGridViewRow changedRow)
+        private decimal RecalcularTotal()
+        {
+            decimal total = 0;
+            for(int i = 0; i < this.dataGridViewLiquidaciones.Rows.Count; i++)
+            {
+                var row = this.dataGridViewLiquidaciones.Rows[i];
+                var rowTotal = decimal.Parse(row.Cells["ColumnTotal"].Value.ToString());
+                total += rowTotal;
+            }
+
+            return total;
+        }
+
+        private decimal RecalcularTotalRow(DataGridViewRow changedRow)
         {
             var kilos = decimal.Parse(changedRow.Cells["ColumnKilos"].Value.ToString());
             var precioMedio = decimal.Parse(changedRow.Cells["ColumnPrecioMedio"].Value.ToString());

@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liquidaciones));
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewLiquidaciones = new System.Windows.Forms.DataGridView();
-            this.buttonEjecutar = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnBultos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnKilos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnPrecioMedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonEjecutar = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelTotalLiquidaciones = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLiquidaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,14 +75,15 @@
             // 
             // dataGridViewLiquidaciones
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLiquidaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewLiquidaciones.AllowUserToAddRows = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLiquidaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewLiquidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLiquidaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
@@ -91,14 +92,14 @@
             this.ColumnKilos,
             this.ColumnPrecioMedio,
             this.ColumnTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLiquidaciones.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLiquidaciones.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewLiquidaciones.Location = new System.Drawing.Point(39, 218);
             this.dataGridViewLiquidaciones.Name = "dataGridViewLiquidaciones";
             this.dataGridViewLiquidaciones.RowHeadersWidth = 20;
@@ -106,6 +107,47 @@
             this.dataGridViewLiquidaciones.TabIndex = 5;
             this.dataGridViewLiquidaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLiquidaciones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLiquidaciones_CellValueChanged);
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.DataPropertyName = "CodigoArticulo";
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            // 
+            // ColumnConcepto
+            // 
+            this.ColumnConcepto.DataPropertyName = "Concepto";
+            this.ColumnConcepto.HeaderText = "Concepto";
+            this.ColumnConcepto.Name = "ColumnConcepto";
+            this.ColumnConcepto.ReadOnly = true;
+            // 
+            // ColumnBultos
+            // 
+            this.ColumnBultos.DataPropertyName = "Bultos";
+            this.ColumnBultos.HeaderText = "Bultos";
+            this.ColumnBultos.Name = "ColumnBultos";
+            this.ColumnBultos.ReadOnly = true;
+            // 
+            // ColumnKilos
+            // 
+            this.ColumnKilos.DataPropertyName = "Kilos";
+            this.ColumnKilos.HeaderText = "Kilos";
+            this.ColumnKilos.Name = "ColumnKilos";
+            this.ColumnKilos.ReadOnly = true;
+            // 
+            // ColumnPrecioMedio
+            // 
+            this.ColumnPrecioMedio.DataPropertyName = "PrecioMedio";
+            this.ColumnPrecioMedio.HeaderText = "PrecioMedio";
+            this.ColumnPrecioMedio.Name = "ColumnPrecioMedio";
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.DataPropertyName = "Total";
+            this.ColumnTotal.HeaderText = "Total";
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
             // 
             // buttonEjecutar
             // 
@@ -164,15 +206,14 @@
             this.label6.TabIndex = 106;
             this.label6.Text = "TOTAL A LIQUIDAR";
             // 
-            // label8
+            // labelTotalLiquidaciones
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(763, 142);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(183, 26);
-            this.label8.TabIndex = 107;
-            this.label8.Text = "9.999.9999,99 €";
+            this.labelTotalLiquidaciones.AutoSize = true;
+            this.labelTotalLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalLiquidaciones.Location = new System.Drawing.Point(763, 142);
+            this.labelTotalLiquidaciones.Name = "labelTotalLiquidaciones";
+            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(0, 26);
+            this.labelTotalLiquidaciones.TabIndex = 107;
             // 
             // button7
             // 
@@ -198,47 +239,6 @@
             this.button8.TabIndex = 109;
             this.button8.UseVisualStyleBackColor = true;
             // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.DataPropertyName = "CodigoArticulo";
-            this.ColumnCodigo.HeaderText = "Codigo";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            // 
-            // ColumnConcepto
-            // 
-            this.ColumnConcepto.DataPropertyName = "Concepto";
-            this.ColumnConcepto.HeaderText = "Concepto";
-            this.ColumnConcepto.Name = "ColumnConcepto";
-            this.ColumnConcepto.ReadOnly = true;
-            // 
-            // ColumnBultos
-            // 
-            this.ColumnBultos.DataPropertyName = "Bultos";
-            this.ColumnBultos.HeaderText = "Bultos";
-            this.ColumnBultos.Name = "ColumnBultos";
-            this.ColumnBultos.ReadOnly = true;
-            // 
-            // ColumnKilos
-            // 
-            this.ColumnKilos.DataPropertyName = "Kilos";
-            this.ColumnKilos.HeaderText = "Kilos";
-            this.ColumnKilos.Name = "ColumnKilos";
-            this.ColumnKilos.ReadOnly = true;
-            // 
-            // ColumnPrecioMedio
-            // 
-            this.ColumnPrecioMedio.DataPropertyName = "PrecioMedio";
-            this.ColumnPrecioMedio.HeaderText = "PrecioMedio";
-            this.ColumnPrecioMedio.Name = "ColumnPrecioMedio";
-            // 
-            // ColumnTotal
-            // 
-            this.ColumnTotal.DataPropertyName = "Total";
-            this.ColumnTotal.HeaderText = "Total";
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
-            // 
             // Liquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,7 +247,7 @@
             this.ClientSize = new System.Drawing.Size(991, 781);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labelTotalLiquidaciones);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePickerEnd);
             this.Controls.Add(this.label3);
@@ -276,7 +276,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelTotalLiquidaciones;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;

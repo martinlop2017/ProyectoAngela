@@ -15,6 +15,7 @@ using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Models.FormaDePago;
+using AdministracionAngela.Utils.Models.Liquidaciones;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -343,6 +344,56 @@ namespace AdministracionAngela.Utils.Mappers
                 FormasDePago = new BindingList<FormaDePagoViewModel>(formasDePagosViewModel)
             };
         }
+        #endregion
+
+        #region Mapeo Liquidacion
+
+        public static LineaLiquidacionViewModel MapLineaLiquidacion(LineaFactura lineaFactura)
+        {
+            return new LineaLiquidacionViewModel()
+            {
+                Bultos = lineaFactura.Cajas.Value,
+                Kilos = lineaFactura.Kgs.Value
+            };
+        }
+
+        public static List<LineaLiquidacionViewModel> MapLineaLiquidacionesList(List<LineaFactura> lineasFactura)
+        {
+            return lineasFactura.Select(lf => MapLineaLiquidacion(lf)).ToList<LineaLiquidacionViewModel>();
+        }
+
+        public static LiquidacionesViewModel MapToLiquidacion(List<LineaFactura> repositoryLineasFactura)
+        {
+            var groupedLineas = repositoryLineasFactura.GroupBy(lf => lf.ProductoId);
+
+            var lineasLiquidacionViewModel = new List<LineaLiquidacionViewModel>();
+            foreach(var groupedLinea in groupedLineas)
+            {
+                var lineas = groupedLinea.ToList();
+
+                var sumatorioprecios = lineas.Sum(l => l.Precio);
+                var numeroLineas = lineas.Count();
+                var precioMedio = sumatorioprecios / numeroLineas;
+                var sumatorioKilos = lineas.Sum(l => l.Kgs.Value);
+
+                lineasLiquidacionViewModel.Add(new LineaLiquidacionViewModel()
+                {
+                    Bultos = lineas.Sum(l => l.Cajas.Value),
+                    CodigoArticulo = groupedLinea.Key.ToString(),
+                    Kilos = sumatorioKilos,
+                    PrecioMedio = precioMedio.Value,
+                    Total = decimal.Round(sumatorioKilos * precioMedio.Value, 2) 
+                });
+            }
+
+            //var liquidacionesViewModel = MapLineaLiquidacionesList(repositoryLineasFactura);
+
+            return new LiquidacionesViewModel()
+            {
+                LineasLiquidacion = new BindingList<LineaLiquidacionViewModel>(lineasLiquidacionViewModel)
+            };
+        }
+
         #endregion
     }
 }

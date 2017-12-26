@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Models.Liquidaciones;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -47,8 +48,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
             else
             {
-                var lineasFactura = this.facturaProvider.GetLineasFacturaParaFechas(startDate, endDate);
+                var viewModel = this.facturaProvider.GetLineasFacturaParaFechas(startDate, endDate);
+                this.FillForm(viewModel);
             }
+        }
+
+        private void FillForm(LiquidacionesViewModel viewModel)
+        {
+            this.dataGridViewLiquidaciones.DataSource = viewModel.LineasLiquidacion;
         }
     }
 }

@@ -19,6 +19,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void UpdateFactura(AltaFacturaViewModel viewModel);
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
-        List<LineaFacturaLiquidacion> GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);
+        LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);
     }
 }

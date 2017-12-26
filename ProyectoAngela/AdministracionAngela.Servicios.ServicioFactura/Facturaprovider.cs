@@ -8,6 +8,7 @@ using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.Liquidaciones;
+using AdministracionAngela.EFRepository;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -129,9 +130,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.SetFacturaImpresa(selectedFacturaIds);
         }
 
-        public List<LineaFacturaLiquidacion> GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate)
+        public LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate)
         {
-            throw new NotImplementedException();
+            var lineasFactura = new List<LineaFactura>();
+            var facturas = this.repositorioFactura.GetAllFacturas().Where(f => f.Fecha.Value > startDate && f.Fecha.Value < endDate).ToList();
+            facturas.ForEach(f => lineasFactura.AddRange(f.LineaFactura));
+
+            return MapToViewModel.MapToLiquidacion(lineasFactura);
         }
     }
 }

@@ -58,5 +58,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLiquidaciones.AutoGenerateColumns = false;
             this.dataGridViewLiquidaciones.DataSource = viewModel.LineasLiquidacion;
         }
+
+        private void dataGridViewLiquidaciones_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            var columnName = dataGridViewLiquidaciones.Columns[e.ColumnIndex].Name;
+            if (e.RowIndex != -1 && columnName.Equals("ColumnPrecioMedio"))
+            {
+                var changedRow = this.dataGridViewLiquidaciones.Rows[e.RowIndex];
+                var total = this.RecalcularTotal(changedRow);
+                changedRow.Cells["ColumnTotal"].Value = total.ToString();
+            }
+        }
+
+        private decimal RecalcularTotal(DataGridViewRow changedRow)
+        {
+            var kilos = decimal.Parse(changedRow.Cells["ColumnKilos"].Value.ToString());
+            var precioMedio = decimal.Parse(changedRow.Cells["ColumnPrecioMedio"].Value.ToString());
+
+            return kilos * precioMedio;
+        }
     }
 }

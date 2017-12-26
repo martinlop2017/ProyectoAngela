@@ -105,6 +105,7 @@
             this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(907, 545);
             this.dataGridViewLiquidaciones.TabIndex = 5;
             this.dataGridViewLiquidaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewLiquidaciones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLiquidaciones_CellValueChanged);
             // 
             // buttonEjecutar
             // 

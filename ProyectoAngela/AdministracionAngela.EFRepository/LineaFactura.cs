@@ -22,8 +22,13 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> Kgs { get; set; }
         public Nullable<decimal> Precio { get; set; }
         public Nullable<int> Cajas { get; set; }
+        public string FAO { get; set; }
+        public string ZonaCaptura { get; set; }
+        public string NombreCientifico { get; set; }
+        public string ArtePesca { get; set; }
+        public string Lote { get; set; }
     
-        public virtual Producto Producto { get; set; }
         public virtual Factura Factura { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

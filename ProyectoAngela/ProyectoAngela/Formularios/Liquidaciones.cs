@@ -84,7 +84,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 total += rowTotal;
             }
 
-            return total;
+            return decimal.Round(total, 2);
         }
 
         private decimal RecalcularTotalRow(DataGridViewRow changedRow)

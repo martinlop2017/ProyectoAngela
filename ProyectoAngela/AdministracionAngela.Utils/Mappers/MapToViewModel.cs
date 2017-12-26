@@ -373,16 +373,16 @@ namespace AdministracionAngela.Utils.Mappers
 
                 var sumatorioprecios = lineas.Sum(l => l.Precio);
                 var numeroLineas = lineas.Count();
-                var precioMedio = sumatorioprecios / numeroLineas;
-                var sumatorioKilos = lineas.Sum(l => l.Kgs.Value);
+                var precioMedio = decimal.Round((sumatorioprecios.Value / numeroLineas), 2);
+                var sumatorioKilos = decimal.Round(lineas.Sum(l => l.Kgs.Value), 2);
 
                 lineasLiquidacionViewModel.Add(new LineaLiquidacionViewModel()
                 {
                     Bultos = lineas.Sum(l => l.Cajas.Value),
                     CodigoArticulo = groupedLinea.Key.ToString(),
-                    Kilos = decimal.Round(sumatorioKilos, 2),
-                    PrecioMedio = decimal.Round(precioMedio.Value, 2),
-                    Total = decimal.Round(sumatorioKilos * precioMedio.Value, 2) 
+                    Kilos = sumatorioKilos,
+                    PrecioMedio = precioMedio,
+                    Total = decimal.Round(sumatorioKilos * precioMedio, 2) 
                 });
             }
 

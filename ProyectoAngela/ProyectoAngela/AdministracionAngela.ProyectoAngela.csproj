@@ -80,6 +80,12 @@
     <Compile Include="Formularios\AltaCliente.Designer.cs">
       <DependentUpon>AltaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\AltaLineaFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\AltaLineaFactura.Designer.cs">
+      <DependentUpon>AltaLineaFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\AltaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AltaClientes3.resx">
       <DependentUpon>AltaClientes3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\AltaLineaFactura.resx">
+      <DependentUpon>AltaLineaFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AltaUsuario.resx">
       <DependentUpon>AltaUsuario.cs</DependentUpon>

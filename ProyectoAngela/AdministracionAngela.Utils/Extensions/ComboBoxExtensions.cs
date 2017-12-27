@@ -11,7 +11,7 @@ namespace AdministracionAngela.Utils.Extensions
     {
         public static void FilterByTextIntroduced(this ComboBox Combo, List<string> OriginalValues )
         {
-            string filter_param = Combo.Text;
+            string filter_param = Combo.Text.ToUpper();
 
             //if empty, it should contain original values
             //else it will contains filtered values

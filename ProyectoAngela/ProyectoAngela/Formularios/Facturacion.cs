@@ -201,6 +201,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            using (var form = new AltaLineaFactura(this.originalProductValues))
+            {
+                var result = form.ShowDialog();
+                if(result == DialogResult.OK)
+                {
+                    var lineaFactura = form.lineaFactura;
+                    lineaFactura.ProductoId = this.viewModel.ArticuloIdsAndDescripciones[lineaFactura.SelectedProduct];
+                }
+            }
+
             this.AddNewLineaFactura();
         }
 

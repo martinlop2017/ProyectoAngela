@@ -84,5 +84,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.labelImporte.Text = importe.ToString();
             }
         }
+
+        private void comboBoxProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

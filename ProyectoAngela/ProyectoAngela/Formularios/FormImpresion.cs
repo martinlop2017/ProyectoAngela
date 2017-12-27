@@ -62,9 +62,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             //}
             //};
 
-            ImpresionFacturaBindingSource.DataSource = this.facturas;
-            this.reportViewer1.RefreshReport();
-
         }
     }
 }

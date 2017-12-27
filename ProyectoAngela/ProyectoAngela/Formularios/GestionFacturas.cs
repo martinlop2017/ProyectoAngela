@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Extensions;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -150,11 +152,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
             {
-                formImpresion.SetFacturas(facturasParaImprimir);
+                ReportDocument oRep = new ReportDocument();
+                ParameterField pf = new ParameterField();
+                ParameterFields pfs = new ParameterFields();
+                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                pf.Name = "@NumeroFactura";
+                pdv.Value = 6;
+                pf.CurrentValues.Add(pdv);
+                pfs.Add(pf);
+                formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
+                oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
+                formImpresion.crystalReportViewer1.ReportSource = oRep;
+                var test = formImpresion.ShowDialog();
+
+                /*formImpresion.SetFacturas(facturasParaImprimir);
                 formImpresion.ShowDialog();
 
                 this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
-                this.FillControls();
+                this.FillControls();*/
             }
         }
     }

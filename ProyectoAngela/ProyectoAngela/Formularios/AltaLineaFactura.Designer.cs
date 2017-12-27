@@ -39,8 +39,8 @@
             this.textBoxCajas = new System.Windows.Forms.TextBox();
             this.textBoxKgs = new System.Windows.Forms.TextBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
-            this.textBoxImporte = new System.Windows.Forms.TextBox();
             this.labelCodigo = new System.Windows.Forms.Label();
+            this.labelImporte = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxProducto
@@ -130,6 +130,7 @@
             this.textBoxKgs.Name = "textBoxKgs";
             this.textBoxKgs.Size = new System.Drawing.Size(65, 20);
             this.textBoxKgs.TabIndex = 11;
+            this.textBoxKgs.TextChanged += new System.EventHandler(this.textBoxKgs_TextChanged);
             // 
             // textBoxPrecio
             // 
@@ -137,13 +138,7 @@
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(65, 20);
             this.textBoxPrecio.TabIndex = 12;
-            // 
-            // textBoxImporte
-            // 
-            this.textBoxImporte.Location = new System.Drawing.Point(287, 134);
-            this.textBoxImporte.Name = "textBoxImporte";
-            this.textBoxImporte.Size = new System.Drawing.Size(65, 20);
-            this.textBoxImporte.TabIndex = 13;
+            this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
             // 
             // labelCodigo
             // 
@@ -153,13 +148,21 @@
             this.labelCodigo.Size = new System.Drawing.Size(0, 13);
             this.labelCodigo.TabIndex = 14;
             // 
+            // labelImporte
+            // 
+            this.labelImporte.AutoSize = true;
+            this.labelImporte.Location = new System.Drawing.Point(287, 140);
+            this.labelImporte.Name = "labelImporte";
+            this.labelImporte.Size = new System.Drawing.Size(0, 13);
+            this.labelImporte.TabIndex = 15;
+            // 
             // AltaLineaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(408, 284);
+            this.Controls.Add(this.labelImporte);
             this.Controls.Add(this.labelCodigo);
-            this.Controls.Add(this.textBoxImporte);
             this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.textBoxKgs);
             this.Controls.Add(this.textBoxCajas);
@@ -192,7 +195,7 @@
         private System.Windows.Forms.TextBox textBoxCajas;
         private System.Windows.Forms.TextBox textBoxKgs;
         private System.Windows.Forms.TextBox textBoxPrecio;
-        private System.Windows.Forms.TextBox textBoxImporte;
         private System.Windows.Forms.Label labelCodigo;
+        private System.Windows.Forms.Label labelImporte;
     }
 }

@@ -66,7 +66,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label4 = new System.Windows.Forms.Label();
             this.labelTotalCajas = new System.Windows.Forms.Label();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
-            this.ColumnProducto = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCajas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -446,37 +446,41 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // ColumnProducto
             // 
             this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnProducto.DataPropertyName = "SelectedProduct";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColumnProducto.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
             this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnProducto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // ColumnCodigo
             // 
+            this.ColumnCodigo.DataPropertyName = "ProductoId";
             this.ColumnCodigo.HeaderText = "Codigo";
             this.ColumnCodigo.Name = "ColumnCodigo";
             this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnCajas
             // 
+            this.ColumnCajas.DataPropertyName = "Cajas";
             this.ColumnCajas.HeaderText = "Cajas";
             this.ColumnCajas.Name = "ColumnCajas";
             // 
             // ColumnKgs
             // 
+            this.ColumnKgs.DataPropertyName = "Kgs";
             this.ColumnKgs.HeaderText = "Kgs";
             this.ColumnKgs.Name = "ColumnKgs";
             // 
             // ColumnPrecio
             // 
+            this.ColumnPrecio.DataPropertyName = "Precio";
             this.ColumnPrecio.HeaderText = "Precio";
             this.ColumnPrecio.Name = "ColumnPrecio";
             // 
             // ColumnImporte
             // 
+            this.ColumnImporte.DataPropertyName = "Importe";
             this.ColumnImporte.HeaderText = "Importe";
             this.ColumnImporte.Name = "ColumnImporte";
             this.ColumnImporte.ReadOnly = true;
@@ -569,7 +573,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private Label label4;
         private Label labelTotalCajas;
         private Label labelNumeroFactura;
-        private DataGridViewComboBoxColumn ColumnProducto;
+        private DataGridViewTextBoxColumn ColumnProducto;
         private DataGridViewTextBoxColumn ColumnCodigo;
         private DataGridViewTextBoxColumn ColumnCajas;
         private DataGridViewTextBoxColumn ColumnKgs;

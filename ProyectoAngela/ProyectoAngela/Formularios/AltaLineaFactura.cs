@@ -25,13 +25,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
+            var precio = decimal.Parse(this.textBoxPrecio.Text);
+            var kgs = decimal.Parse(this.textBoxKgs.Text);
             this.lineaFactura = new LineaFacturaViewModel()
             {
                 Cajas = int.Parse(this.textBoxCajas.Text),
-                Importe = decimal.Parse(this.textBoxImporte.Text),
-                Kgs = decimal.Parse(this.textBoxKgs.Text),
-                Precio = decimal.Parse(this.textBoxPrecio.Text),
-                SelectedProduct = comboBoxProducto.Text
+                Kgs = kgs,
+                Precio = precio,
+                SelectedProduct = comboBoxProducto.Text,
+                Importe = kgs * precio
             };
 
             this.DialogResult = DialogResult.OK;
@@ -55,6 +57,31 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 var codigo = text.Substring(0, text.IndexOf(' '));
                 this.labelCodigo.Text = codigo;
+            }
+        }
+
+        private void textBoxKgs_TextChanged(object sender, EventArgs e)
+        {
+            RecalculateImporte();
+        }
+
+        private void textBoxPrecio_TextChanged(object sender, EventArgs e)
+        {
+            RecalculateImporte();
+        }
+
+        private void RecalculateImporte()
+        {
+            var precio = this.textBoxPrecio.Text;
+            var kgs = this.textBoxKgs.Text;
+
+            if (!string.IsNullOrEmpty(precio) && !string.IsNullOrEmpty(kgs) && precio.IsDecimal() && kgs.IsDecimal())
+            {
+                var decimalPrecio = decimal.Parse(precio);
+                var decimalKgs = decimal.Parse(kgs);
+
+                var importe = decimal.Round(decimalPrecio * decimalKgs, 2);
+                this.labelImporte.Text = importe.ToString();
             }
         }
     }

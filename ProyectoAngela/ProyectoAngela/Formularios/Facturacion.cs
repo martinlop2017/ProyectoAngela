@@ -208,10 +208,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 {
                     var lineaFactura = form.lineaFactura;
                     lineaFactura.ProductoId = this.viewModel.ArticuloIdsAndDescripciones[lineaFactura.SelectedProduct];
+                    this.AddLineaFActura(lineaFactura);
                 }
             }
 
-            this.AddNewLineaFactura();
         }
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -360,17 +360,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
         }
 
+        private void AddLineaFActura(LineaFacturaViewModel lineaFactura)
+        {
+            this.dataGridViewLineasFactura.Rows.Add(lineaFactura.SelectedProduct, lineaFactura.ProductoId, lineaFactura.Cajas, lineaFactura.Kgs, lineaFactura.Precio, lineaFactura.Importe);
+            //this.dataGridViewLineasFactura.Rows.Add(lineaFactura);
+        }
         private void AddNewLineaFactura()
         {
             this.dataGridViewLineasFactura.Rows.Add();
-            var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
+
+            /*var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
 
             var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
             cell.DataSource = originalProductValues;
 
             //Set focus on column product
             this.dataGridViewLineasFactura.Focus();
-            this.dataGridViewLineasFactura.CurrentCell = cell;
+            this.dataGridViewLineasFactura.CurrentCell = cell;*/
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)

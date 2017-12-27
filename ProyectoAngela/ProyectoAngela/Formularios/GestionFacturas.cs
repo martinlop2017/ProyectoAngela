@@ -162,9 +162,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 pfs.Add(pf);
                 formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
                 oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
+                oRep.SetParameterValue("@NumeroFactura", 6);
                 formImpresion.crystalReportViewer1.ReportSource = oRep;
-                var test = formImpresion.ShowDialog();
-
+                //var test = formImpresion.ShowDialog();
+                oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\Alvarito\Desktop\IMPRESIONES\factura.pdf");
                 /*formImpresion.SetFacturas(facturasParaImprimir);
                 formImpresion.ShowDialog();
 

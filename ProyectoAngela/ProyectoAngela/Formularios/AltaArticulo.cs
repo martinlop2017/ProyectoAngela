@@ -57,10 +57,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxCodigoArticulo.Text = articulo.CodigoArticulo.ToString();
             this.textBoxDescripcion.Text = articulo.Descripcion;
             this.comboBoxIVA.DataSource = articulo.IVAs;
+            this.comboBoxIVA.Text = articulo.SelectedIVA;
             this.textBoxZonaCaptura.Text = articulo.ZonaCaptura;
             this.textBoxFAO.Text = articulo.CodigoFAO;
             this.textBoxArtePesca.Text = articulo.ArtePesca;
-            this.textBoxFAO.Text = articulo.CodigoFAO;
             this.textBoxAbreviacion.Text = articulo.Abreviacion;
             this.textBoxNombreCientifico.Text = articulo.NombreCientifico;
         }

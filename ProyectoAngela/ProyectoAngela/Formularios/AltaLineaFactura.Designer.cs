@@ -58,7 +58,7 @@
             this.buttonGuardar.Location = new System.Drawing.Point(76, 205);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(75, 23);
-            this.buttonGuardar.TabIndex = 2;
+            this.buttonGuardar.TabIndex = 4;
             this.buttonGuardar.Text = "Ok";
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
@@ -122,14 +122,14 @@
             this.textBoxCajas.Location = new System.Drawing.Point(86, 85);
             this.textBoxCajas.Name = "textBoxCajas";
             this.textBoxCajas.Size = new System.Drawing.Size(65, 20);
-            this.textBoxCajas.TabIndex = 10;
+            this.textBoxCajas.TabIndex = 1;
             // 
             // textBoxKgs
             // 
             this.textBoxKgs.Location = new System.Drawing.Point(287, 81);
             this.textBoxKgs.Name = "textBoxKgs";
             this.textBoxKgs.Size = new System.Drawing.Size(65, 20);
-            this.textBoxKgs.TabIndex = 11;
+            this.textBoxKgs.TabIndex = 2;
             this.textBoxKgs.TextChanged += new System.EventHandler(this.textBoxKgs_TextChanged);
             // 
             // textBoxPrecio
@@ -137,7 +137,7 @@
             this.textBoxPrecio.Location = new System.Drawing.Point(86, 134);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(65, 20);
-            this.textBoxPrecio.TabIndex = 12;
+            this.textBoxPrecio.TabIndex = 3;
             this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
             // 
             // labelCodigo

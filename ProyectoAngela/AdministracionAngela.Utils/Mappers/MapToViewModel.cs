@@ -123,7 +123,8 @@ namespace AdministracionAngela.Utils.Mappers
                 ZonaCaptura = articuloFromRepository.ZonaCaptura,
                 NombreCientifico = articuloFromRepository.NombreCientifico,
                 IVAs = ivas.Select(iva => iva.Descripcion).ToList(),
-                Abreviacion = articuloFromRepository.Abreviacion
+                Abreviacion = articuloFromRepository.Abreviacion,
+                SelectedIVA = articuloFromRepository.IVA.Descripcion
             };
         }
 

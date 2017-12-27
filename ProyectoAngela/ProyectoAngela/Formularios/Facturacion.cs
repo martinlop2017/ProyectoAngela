@@ -201,17 +201,21 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            NuevaLineaFactura();
+        }
+
+        private void NuevaLineaFactura()
+        {
             using (var form = new AltaLineaFactura(this.originalProductValues))
             {
                 var result = form.ShowDialog();
-                if(result == DialogResult.OK)
+                if (result == DialogResult.OK)
                 {
                     var lineaFactura = form.lineaFactura;
                     lineaFactura.ProductoId = this.viewModel.ArticuloIdsAndDescripciones[lineaFactura.SelectedProduct];
                     this.AddLineaFActura(lineaFactura);
                 }
             }
-
         }
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -387,6 +391,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Facturacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar.ToString().Equals("+"))
+            {
+                this.NuevaLineaFactura();
+            }
         }
     }
 }

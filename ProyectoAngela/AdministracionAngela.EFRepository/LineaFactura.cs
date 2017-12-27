@@ -27,6 +27,9 @@ namespace AdministracionAngela.EFRepository
         public string NombreCientifico { get; set; }
         public string ArtePesca { get; set; }
         public string Lote { get; set; }
+        public Nullable<decimal> Importe { get; set; }
+        public Nullable<decimal> ImporteIVA { get; set; }
+        public Nullable<decimal> ImporteRE { get; set; }
     
         public virtual Factura Factura { get; set; }
         public virtual Producto Producto { get; set; }

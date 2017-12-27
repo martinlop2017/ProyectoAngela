@@ -95,6 +95,9 @@
           <Property Name="NombreCientifico" Type="nvarchar(max)" />
           <Property Name="ArtePesca" Type="nvarchar(max)" />
           <Property Name="Lote" Type="nvarchar(max)" />
+          <Property Name="Importe" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ImporteIVA" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ImporteRE" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Perfil">
           <Key>
@@ -348,7 +351,7 @@
             <End Role="Producto" EntitySet="Producto" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="IVA">
           <Key>
             <PropertyRef Name="Id" />
@@ -582,6 +585,9 @@
           <Property Name="NombreCientifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="ArtePesca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Lote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImporteIVA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImporteRE" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
           <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
         </EntityType>
@@ -744,6 +750,9 @@
           <EntitySetMapping Name="LineaFactura">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.LineaFactura">
               <MappingFragment StoreEntitySet="LineaFactura">
+                <ScalarProperty Name="ImporteRE" ColumnName="ImporteRE" />
+                <ScalarProperty Name="ImporteIVA" ColumnName="ImporteIVA" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
                 <ScalarProperty Name="Lote" ColumnName="Lote" />
                 <ScalarProperty Name="ArtePesca" ColumnName="ArtePesca" />
                 <ScalarProperty Name="NombreCientifico" ColumnName="NombreCientifico" />

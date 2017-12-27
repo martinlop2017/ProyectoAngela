@@ -22,7 +22,7 @@
         <AssociationConnector Association="AdministracionAngelaModel.FK_Producto_IVA" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="8.125" PointY="4.75" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="10.5" PointY="2.375" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="10.5" PointY="2.125" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
         </Diagram>

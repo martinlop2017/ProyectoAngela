@@ -363,7 +363,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void AddLineaFActura(LineaFacturaViewModel lineaFactura)
         {
             this.dataGridViewLineasFactura.Rows.Add(lineaFactura.SelectedProduct, lineaFactura.ProductoId, lineaFactura.Cajas, lineaFactura.Kgs, lineaFactura.Precio, lineaFactura.Importe);
-            //this.dataGridViewLineasFactura.Rows.Add(lineaFactura);
+            this.Recalculate();
         }
         private void AddNewLineaFactura()
         {

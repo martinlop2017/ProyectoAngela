@@ -34,10 +34,9 @@
             this.textBoxCajas = new System.Windows.Forms.TextBox();
             this.textBoxKgs = new System.Windows.Forms.TextBox();
             this.textBoxPrecio = new System.Windows.Forms.TextBox();
-            this.labelCodigo = new System.Windows.Forms.Label();
             this.labelImporte = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
+            this.labelTotal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -82,7 +81,6 @@
             this.textBoxCajas.Name = "textBoxCajas";
             this.textBoxCajas.Size = new System.Drawing.Size(85, 23);
             this.textBoxCajas.TabIndex = 1;
-            this.textBoxCajas.Text = "999999";
             this.textBoxCajas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxKgs
@@ -92,7 +90,6 @@
             this.textBoxKgs.Name = "textBoxKgs";
             this.textBoxKgs.Size = new System.Drawing.Size(98, 23);
             this.textBoxKgs.TabIndex = 2;
-            this.textBoxKgs.Text = "99.999.999,00";
             this.textBoxKgs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxKgs.TextChanged += new System.EventHandler(this.textBoxKgs_TextChanged);
             // 
@@ -103,18 +100,8 @@
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(117, 23);
             this.textBoxPrecio.TabIndex = 3;
-            this.textBoxPrecio.Text = "0,00";
             this.textBoxPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
-            // 
-            // labelCodigo
-            // 
-            this.labelCodigo.AutoSize = true;
-            this.labelCodigo.Location = new System.Drawing.Point(132, 208);
-            this.labelCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelCodigo.Name = "labelCodigo";
-            this.labelCodigo.Size = new System.Drawing.Size(0, 17);
-            this.labelCodigo.TabIndex = 14;
             // 
             // labelImporte
             // 
@@ -125,26 +112,25 @@
             this.labelImporte.Size = new System.Drawing.Size(0, 17);
             this.labelImporte.TabIndex = 15;
             // 
-            // textBox1
+            // textBoxCodigo
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(45, 140);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(85, 23);
-            this.textBox1.TabIndex = 16;
+            this.textBoxCodigo.Enabled = false;
+            this.textBoxCodigo.Location = new System.Drawing.Point(45, 140);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(85, 23);
+            this.textBoxCodigo.TabIndex = 16;
             // 
-            // label5
+            // labelTotal
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(385, 223);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 24);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "99.999.999,00";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelTotal.AutoSize = true;
+            this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotal.Location = new System.Drawing.Point(385, 223);
+            this.labelTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotal.Name = "labelTotal";
+            this.labelTotal.Size = new System.Drawing.Size(0, 24);
+            this.labelTotal.TabIndex = 18;
+            this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
             // 
@@ -273,10 +259,9 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.labelTotal);
+            this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.labelImporte);
-            this.Controls.Add(this.labelCodigo);
             this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.textBoxKgs);
             this.Controls.Add(this.textBoxCajas);
@@ -302,10 +287,9 @@
         private System.Windows.Forms.TextBox textBoxCajas;
         private System.Windows.Forms.TextBox textBoxKgs;
         private System.Windows.Forms.TextBox textBoxPrecio;
-        private System.Windows.Forms.Label labelCodigo;
         private System.Windows.Forms.Label labelImporte;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBoxCodigo;
+        private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

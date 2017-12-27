@@ -56,7 +56,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if(!string.IsNullOrEmpty(text))
             {
                 var codigo = text.Substring(0, text.IndexOf(' '));
-                this.labelCodigo.Text = codigo;
+                this.textBoxCodigo.Text = codigo;
             }
         }
 
@@ -81,7 +81,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var decimalKgs = decimal.Parse(kgs);
 
                 var importe = decimal.Round(decimalPrecio * decimalKgs, 2);
-                this.labelImporte.Text = importe.ToString();
+                this.labelTotal.Text = importe.ToString();
             }
         }
 

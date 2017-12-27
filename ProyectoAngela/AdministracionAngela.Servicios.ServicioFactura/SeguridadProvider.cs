@@ -24,6 +24,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var usersFromRepository = this.repositorioSeguridad.GetAllUsers();
             return MapToViewModel.MapToGestionUsuario(usersFromRepository);
 
+
         }
 
         public void SaveUser(AltaUsuarioViewModel newUser)

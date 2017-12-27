@@ -182,10 +182,13 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroFactura = numeroFactura,
                 ProductoId = linea.ProductoId,
                 PorcentajeIVA = linea.PorcentajeIVA,
+                ImporteIVA = linea.ImporteIVA,
                 PorcentajeRE = linea.PorcentajeRE,
+                ImporteRE = linea.ImporteRE,
                 Precio = linea.Precio,
                 Kgs = linea.Kgs,
-                Cajas = linea.Cajas
+                Cajas = linea.Cajas,
+                Importe = linea.Importe
             }).ToList();
         }
 

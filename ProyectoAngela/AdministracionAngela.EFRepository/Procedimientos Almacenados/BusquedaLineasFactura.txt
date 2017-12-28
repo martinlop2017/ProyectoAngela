@@ -1,0 +1,19 @@
+﻿USE [AdministracionAngela]
+GO
+
+/****** Object:  StoredProcedure [dbo].[BusquedaLineasFactura]    Script Date: 28/12/2017 15:24:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaLineasFactura] @NumeroFactura nvarchar(30)
+AS
+select LF.NumeroFactura, P.CodigoProducto, P.Descripcion, LF.Cajas, LF.Kgs, LF.Precio, LF.Lote, LF.Importe
+from LineaFactura LF
+inner join Producto P on P.Id = LF.ProductoId
+Where NumeroFactura = @NumeroFactura
+GO
+
+

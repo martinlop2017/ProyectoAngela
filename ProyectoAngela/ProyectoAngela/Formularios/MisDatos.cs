@@ -100,6 +100,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 this.perfilProvider.SavePerfil(nuevoPerfil);
             }
+            Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog buscar = new OpenFileDialog();
+
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                textBox23.Text = buscar.FileName;
+                Bitmap Picture = new Bitmap(buscar.FileName);
+                pictureBox1.Image = (Image)Picture;
+            }
+
         }
     }
 }

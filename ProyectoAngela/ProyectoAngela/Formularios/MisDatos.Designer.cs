@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MisDatos));
             this.label15 = new System.Windows.Forms.Label();
             this.customGroupBox7 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.formadepago = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
@@ -70,12 +70,15 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customGroupBox7.SuspendLayout();
             this.formadepago.SuspendLayout();
             this.customGroupBox6.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
             this.customGroupBox2.SuspendLayout();
             this.customGroupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -146,7 +149,7 @@
             this.formadepago.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.formadepago.BorderColor = System.Drawing.Color.SteelBlue;
             this.formadepago.BorderThickness = 3F;
-            this.formadepago.Controls.Add(this.panel1);
+            this.formadepago.Controls.Add(this.pictureBox1);
             this.formadepago.Controls.Add(this.button3);
             this.formadepago.Controls.Add(this.label2);
             this.formadepago.Controls.Add(this.customGroupBox6);
@@ -168,29 +171,20 @@
             this.formadepago.TabStop = false;
             this.formadepago.Text = "customGroupBox4";
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(728, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(72, 96);
-            this.panel1.TabIndex = 115;
-            // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.Window;
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(466, 44);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(29, 27);
             this.button3.TabIndex = 114;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -290,7 +284,7 @@
             this.textBox10.MaxLength = 4;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(50, 22);
-            this.textBox10.TabIndex = 111;
+            this.textBox10.TabIndex = 110;
             this.textBox10.Text = "ES99";
             // 
             // textBox11
@@ -302,7 +296,7 @@
             this.textBox11.MaxLength = 4;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(50, 22);
-            this.textBox11.TabIndex = 110;
+            this.textBox11.TabIndex = 111;
             this.textBox11.Text = "ES99";
             // 
             // textBox23
@@ -626,6 +620,22 @@
             this.label27.TabIndex = 1;
             this.label27.Text = "Direccion:";
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Black;
+            this.imageList1.Images.SetKeyName(0, "Rectangulo 7 Azulina.png");
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Albaranes;
+            this.pictureBox1.Location = new System.Drawing.Point(728, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 96);
+            this.pictureBox1.TabIndex = 112;
+            this.pictureBox1.TabStop = false;
+            // 
             // MisDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,6 +662,7 @@
             this.customGroupBox2.PerformLayout();
             this.customGroupBox3.ResumeLayout(false);
             this.customGroupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -663,7 +674,6 @@
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Button button2;
         private CustomControls.CustomGroupBox formadepago;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
         private CustomControls.CustomGroupBox customGroupBox6;
@@ -699,5 +709,7 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

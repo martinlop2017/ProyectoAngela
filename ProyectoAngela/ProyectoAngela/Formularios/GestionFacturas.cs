@@ -152,25 +152,34 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
             {
+                try
+                {
+
                 ReportDocument oRep = new ReportDocument();
                 ParameterField pf = new ParameterField();
                 ParameterFields pfs = new ParameterFields();
                 ParameterDiscreteValue pdv = new ParameterDiscreteValue();
                 pf.Name = "@NumeroFactura";
-                pdv.Value = 6;
+                //pdv.Value = 6;
                 pf.CurrentValues.Add(pdv);
                 pfs.Add(pf);
                 formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
                 oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
-                oRep.SetParameterValue("@NumeroFactura", 6);
+                //oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionIVA.rpt");
+                oRep.SetParameterValue("@NumeroFactura", 1);
                 formImpresion.crystalReportViewer1.ReportSource = oRep;
                 //var test = formImpresion.ShowDialog();
                 oRep.ExportToDisk(ExportFormatType.PortableDocFormat, @"C:\Users\Alvarito\Desktop\IMPRESIONES\factura.pdf");
-                /*formImpresion.SetFacturas(facturasParaImprimir);
-                formImpresion.ShowDialog();
+                    /*formImpresion.SetFacturas(facturasParaImprimir);
+                    formImpresion.ShowDialog();
 
-                this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
-                this.FillControls();*/
+                    this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
+                    this.FillControls();*/
+                }
+                catch(Exception exp)
+                {
+
+                }
             }
         }
     }

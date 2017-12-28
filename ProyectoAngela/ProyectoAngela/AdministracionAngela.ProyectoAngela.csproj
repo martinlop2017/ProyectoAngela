@@ -110,6 +110,12 @@
       <DependentUpon>CrystalReportImpresionFactura.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Formularios\CrystalReportImpresionIVA.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReportImpresionIVA.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Formularios\FormaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +223,10 @@
     <EmbeddedResource Include="Formularios\CrystalReportImpresionFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReportImpresionFactura.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\CrystalReportImpresionIVA.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReportImpresionIVA.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Facturacion.resx">
       <DependentUpon>Facturacion.cs</DependentUpon>

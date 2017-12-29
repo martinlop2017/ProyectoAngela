@@ -12,6 +12,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Extensions;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -170,7 +171,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 {
                     oRep.SetParameterValue("@NumeroFactura", numeroFacrura);
                     formImpresion.crystalReportViewer1.ReportSource = oRep;
-                    var path = string.Format(@"C:\Users\Alvarito\Desktop\IMPRESIONES\factura{0}.pdf", numeroFacrura);
+                    var path = string.Format(@"{0}\factura{1}.pdf", RutasSalida.RutaFacturacion, numeroFacrura);
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
                 }
             }

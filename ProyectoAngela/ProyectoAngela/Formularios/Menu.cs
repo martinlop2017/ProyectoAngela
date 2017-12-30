@@ -122,7 +122,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonIva.Visible = false;
             buttonRutas.Visible = false;
             buttonCobro.Visible = false;
-            this.formOpener.ShowModalForm<GestionFacturas>();
+
+            this.formOpener.ShowDocumentoGestionForm("Factura");
+            //this.formOpener.ShowModalForm<GestionFacturas>();
         }
 
         private void buttonListados_Click(object sender, EventArgs e)

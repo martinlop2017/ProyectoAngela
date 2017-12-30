@@ -50,6 +50,7 @@
     <Compile Include="Extensions\DataGridViewRowExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Genericos\RutasSalida.cs" />
+    <Compile Include="Interfaces\IDocumentoGestion.cs" />
     <Compile Include="Models\FormaDePago\FormaDePagoViewModel.cs" />
     <Compile Include="Interfaces\IArticuloProvider.cs" />
     <Compile Include="Interfaces\IClienteProvider.cs" />

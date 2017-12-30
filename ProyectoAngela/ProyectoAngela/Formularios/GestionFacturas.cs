@@ -20,11 +20,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     {
         private IFormOpener formOpener;
         private IFacturaProvider facturaProvider;
+        private IDocumentoGestion documentoGestion;
 
-        public GestionFacturas(IFormOpener formOpener, IFacturaProvider facturaProvider)
+        public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, IFacturaProvider facturaProvider)
         {
             this.formOpener = formOpener;
             this.facturaProvider = facturaProvider;
+            this.documentoGestion = documentoGestion;
             InitializeComponent();
         }
 
@@ -108,13 +110,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
 
-            this.facturaProvider.DeleteFacturas(mappedSelectedRows);
+            this.documentoGestion.DeleteDocumentos(mappedSelectedRows);
+            //this.facturaProvider.DeleteFacturas(mappedSelectedRows);
             this.FillControls();
         }
 
         private void FillControls()
         {
-            var viewModel = this.facturaProvider.GetGestionFactura();
+            //var viewModel = this.facturaProvider.GetGestionFactura();
+            var viewModel = this.documentoGestion.GetDocumentos();
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
         }
 
@@ -150,7 +154,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var selectedFacturaIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
 
             ExportarFacturas(selectedFacturaIds);
-            this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
+            this.documentoGestion.SetDocumentoImpresa(selectedFacturaIds);
+            //this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
             this.FillControls();
         }
 
@@ -167,11 +172,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 pfs.Add(pf);
                 formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
                 oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
-                foreach (var numeroFacrura in selectedFacturaIds)
+                foreach (var numeroFactura in selectedFacturaIds)
                 {
-                    oRep.SetParameterValue("@NumeroFactura", numeroFacrura);
+                    oRep.SetParameterValue("@NumeroFactura", numeroFactura);
                     formImpresion.crystalReportViewer1.ReportSource = oRep;
-                    var path = string.Format(@"{0}\factura{1}.pdf", RutasSalida.RutaFacturacion, numeroFacrura);
+                    //var path = string.Format(@"{0}\factura{1}.pdf", RutasSalida.RutaFacturacion, numeroFacrura);
+                    var path = this.documentoGestion.GetExportPath(numeroFactura);
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
                 }
             }

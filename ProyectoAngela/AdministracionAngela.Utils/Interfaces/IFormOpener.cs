@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         DialogResult ShowModalForm<TForm>() where TForm : Form;
         Form GetForm<TForm>() where TForm : Form;
+        DialogResult ShowDocumentoGestionForm(string documento);
     }
 }

@@ -1,4 +1,7 @@
-﻿using AdministracionAngela.Utils.Interfaces;
+﻿using AdministracionAngela.ProyectoAngela.Formularios;
+using AdministracionAngela.Servicios.ServicioDatos;
+using AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion;
+using AdministracionAngela.Utils.Interfaces;
 using StructureMap;
 using System;
 using System.Collections.Generic;
@@ -34,6 +37,27 @@ namespace AdministracionAngela.ProyectoAngela.Utils
                 {
                     return form.ShowDialog();
                 }
+            }
+            catch(Exception exp)
+            {
+                return DialogResult.Abort;
+            }
+        }
+
+        public DialogResult ShowDocumentoGestionForm(string documento)
+        {
+            try
+            {
+                Form form = new Form();
+
+                if(documento.Equals("Factura"))
+                {
+                    IDocumentoGestion documentoGestion = this.container.GetInstance<DocumentoFactura>();
+                    IFacturaProvider facturaProvider = this.container.GetInstance<FacturaProvider>();
+                    form = new GestionFacturas(this, documentoGestion, facturaProvider);
+                }
+
+                return form.ShowDialog();
             }
             catch(Exception exp)
             {

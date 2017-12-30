@@ -22,10 +22,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private IFacturaProvider facturaProvider;
         private IDocumentoGestion documentoGestion;
 
-        public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, IFacturaProvider facturaProvider)
+        public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion)
         {
             this.formOpener = formOpener;
-            this.facturaProvider = facturaProvider;
             this.documentoGestion = documentoGestion;
             InitializeComponent();
         }
@@ -111,13 +110,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
 
             this.documentoGestion.DeleteDocumentos(mappedSelectedRows);
-            //this.facturaProvider.DeleteFacturas(mappedSelectedRows);
             this.FillControls();
         }
 
         private void FillControls()
         {
-            //var viewModel = this.facturaProvider.GetGestionFactura();
             var viewModel = this.documentoGestion.GetDocumentos();
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
         }
@@ -155,7 +152,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             ExportarFacturas(selectedFacturaIds);
             this.documentoGestion.SetDocumentoImpresa(selectedFacturaIds);
-            //this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
             this.FillControls();
         }
 
@@ -176,7 +172,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 {
                     oRep.SetParameterValue("@NumeroFactura", numeroFactura);
                     formImpresion.crystalReportViewer1.ReportSource = oRep;
-                    //var path = string.Format(@"{0}\factura{1}.pdf", RutasSalida.RutaFacturacion, numeroFacrura);
                     var path = this.documentoGestion.GetExportPath(numeroFactura);
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
                 }

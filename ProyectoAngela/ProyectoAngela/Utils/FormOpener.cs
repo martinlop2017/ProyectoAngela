@@ -48,16 +48,18 @@ namespace AdministracionAngela.ProyectoAngela.Utils
         {
             try
             {
-                Form form = new Form();
+                Form form = null;
+                IDocumentoGestion documentoGestion = null;
 
-                if(documento.Equals("Factura"))
+                if (documento.Equals("Factura"))
                 {
-                    IDocumentoGestion documentoGestion = this.container.GetInstance<DocumentoFactura>();
-                    IFacturaProvider facturaProvider = this.container.GetInstance<FacturaProvider>();
-                    form = new GestionFacturas(this, documentoGestion, facturaProvider);
+                    documentoGestion = this.container.GetInstance<DocumentoFactura>();
                 }
 
-                return form.ShowDialog();
+                using (form = new GestionFacturas(this, documentoGestion))
+                {
+                    return form.ShowDialog();
+                }
             }
             catch(Exception exp)
             {

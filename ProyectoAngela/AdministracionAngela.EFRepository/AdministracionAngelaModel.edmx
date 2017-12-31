@@ -5,6 +5,20 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="AdministracionAngelaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Albaran">
+          <Key>
+            <PropertyRef Name="NumeroAlbaran" />
+          </Key>
+          <Property Name="NumeroAlbaran" Type="bigint" Nullable="false" />
+          <Property Name="ClienteId" Type="bigint" />
+          <Property Name="Fecha" Type="datetime" />
+          <Property Name="TotalRecargoEquivalencia" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBase" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Impreso" Type="bit" />
+          <Property Name="EtiquetaLote" Type="nvarchar" MaxLength="50" />
+          <Property Name="Albarano" Type="bit" />
+        </EntityType>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id" />
@@ -142,6 +156,18 @@
           <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Albaran_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="Albaran" Type="Self.Albaran" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Albaran">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Cliente_Contacto">
           <End Role="Contacto" Type="Self.Contacto" Multiplicity="0..1" />
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="*" />
@@ -251,6 +277,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="AdministracionAngelaModelStoreContainer">
+          <EntitySet Name="Albaran" EntityType="Self.Albaran" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contacto" EntityType="Self.Contacto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Direccion" EntityType="Self.Direccion" Schema="dbo" store:Type="Tables" />
@@ -262,6 +289,10 @@
           <EntitySet Name="Producto" EntityType="Self.Producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Albaran_Cliente" Association="Self.FK_Albaran_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Albaran" EntitySet="Albaran" />
+          </AssociationSet>
           <AssociationSet Name="FK_Cliente_Contacto" Association="Self.FK_Cliente_Contacto">
             <End Role="Contacto" EntitySet="Contacto" />
             <End Role="Cliente" EntitySet="Cliente" />
@@ -350,6 +381,11 @@
           <AssociationSet Name="FK_LineaFactura_Producto" Association="AdministracionAngelaModel.FK_LineaFactura_Producto">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
+          </AssociationSet>
+          <EntitySet Name="Albaran" EntityType="AdministracionAngelaModel.Albaran" />
+          <AssociationSet Name="FK_Albaran_Cliente" Association="AdministracionAngelaModel.FK_Albaran_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="Albaran" EntitySet="Albaran" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="IVA">
@@ -447,6 +483,7 @@
           <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Cliente" ToRole="Direccion" />
           <NavigationProperty Name="FormaPago" Relationship="AdministracionAngelaModel.FK_Cliente_FormaPago" FromRole="Cliente" ToRole="FormaPago" />
           <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
+          <NavigationProperty Name="Albaran" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Cliente" ToRole="Albaran" />
         </EntityType>
         <EntityType Name="Contacto">
           <Key>
@@ -615,6 +652,33 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Albaran">
+          <Key>
+            <PropertyRef Name="NumeroAlbaran" />
+          </Key>
+          <Property Name="NumeroAlbaran" Type="Int64" Nullable="false" />
+          <Property Name="ClienteId" Type="Int64" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="TotalRecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Impreso" Type="Boolean" />
+          <Property Name="EtiquetaLote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Albarano" Type="Boolean" />
+          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Albaran" ToRole="Cliente" />
+        </EntityType>
+        <Association Name="FK_Albaran_Cliente">
+          <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+          <End Type="AdministracionAngelaModel.Albaran" Role="Albaran" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Albaran">
+              <PropertyRef Name="ClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -766,6 +830,21 @@
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Albaran">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Albaran">
+              <MappingFragment StoreEntitySet="Albaran">
+                <ScalarProperty Name="Albarano" ColumnName="Albarano" />
+                <ScalarProperty Name="EtiquetaLote" ColumnName="EtiquetaLote" />
+                <ScalarProperty Name="Impreso" ColumnName="Impreso" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="TotalBase" ColumnName="TotalBase" />
+                <ScalarProperty Name="TotalRecargoEquivalencia" ColumnName="TotalRecargoEquivalencia" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="NumeroAlbaran" ColumnName="NumeroAlbaran" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

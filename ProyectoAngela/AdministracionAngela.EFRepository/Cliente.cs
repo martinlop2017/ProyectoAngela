@@ -18,6 +18,7 @@ namespace AdministracionAngela.EFRepository
         public Cliente()
         {
             this.Factura = new HashSet<Factura>();
+            this.Albaran = new HashSet<Albaran>();
         }
     
         public long Id { get; set; }
@@ -39,5 +40,7 @@ namespace AdministracionAngela.EFRepository
         public virtual FormaPago FormaPago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Albaran> Albaran { get; set; }
     }
 }

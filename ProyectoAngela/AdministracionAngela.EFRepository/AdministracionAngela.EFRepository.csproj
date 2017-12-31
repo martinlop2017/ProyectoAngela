@@ -72,6 +72,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AdministracionAngelaModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Albaran.cs">
+      <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Cliente.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>

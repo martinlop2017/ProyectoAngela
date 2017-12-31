@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="ArticuloProvider.cs" />
     <Compile Include="ClienteProvider.cs" />
+    <Compile Include="DocumentosGestion\DocumentoAlbaran.cs" />
     <Compile Include="DocumentosGestion\DocumentoFactura.cs" />
     <Compile Include="FacturaProvider.cs" />
     <Compile Include="IVAProvider.cs" />

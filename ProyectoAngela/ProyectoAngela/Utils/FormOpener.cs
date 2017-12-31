@@ -1,6 +1,7 @@
 ﻿using AdministracionAngela.ProyectoAngela.Formularios;
 using AdministracionAngela.Servicios.ServicioDatos;
 using AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion;
+using AdministracionAngela.Utils.Enumerados;
 using AdministracionAngela.Utils.Interfaces;
 using StructureMap;
 using System;
@@ -44,27 +45,37 @@ namespace AdministracionAngela.ProyectoAngela.Utils
             }
         }
 
-        public DialogResult ShowDocumentoGestionForm(string documento)
+        public DialogResult ShowDocumentoGestionForm(EnumDocumentosGestion documento)
         {
             try
             {
                 Form form = null;
-                IDocumentoGestion documentoGestion = null;
-
-                if (documento.Equals("Factura"))
-                {
-                    documentoGestion = this.container.GetInstance<DocumentoFactura>();
-                }
+                IDocumentoGestion documentoGestion = GetDocumentoGestion(documento);
 
                 using (form = new GestionFacturas(this, documentoGestion))
                 {
                     return form.ShowDialog();
                 }
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
                 return DialogResult.Abort;
             }
+        }
+
+        private IDocumentoGestion GetDocumentoGestion(EnumDocumentosGestion documento)
+        {
+            IDocumentoGestion documentoGestion;
+            if (documento == EnumDocumentosGestion.Factura)
+            {
+                documentoGestion = this.container.GetInstance<DocumentoFactura>();
+            }
+            else
+            {
+                documentoGestion = this.container.GetInstance<DocumentoAlbaran>();
+            }
+
+            return documentoGestion;
         }
 
         public Form GetForm<TForm>() where TForm : Form

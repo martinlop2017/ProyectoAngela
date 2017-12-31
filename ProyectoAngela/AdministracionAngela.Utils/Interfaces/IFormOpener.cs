@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Enumerados;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,6 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         DialogResult ShowModalForm<TForm>() where TForm : Form;
         Form GetForm<TForm>() where TForm : Form;
-        DialogResult ShowDocumentoGestionForm(string documento);
+        DialogResult ShowDocumentoGestionForm(EnumDocumentosGestion documento);
     }
 }

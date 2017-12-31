@@ -1,4 +1,5 @@
-﻿using AdministracionAngela.Utils.Models.Factura;
+﻿using AdministracionAngela.Utils.Enumerados;
+using AdministracionAngela.Utils.Models.Factura;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void SetDocumentoImpresa(List<long> selectedFacturaIds);
         string GetExportPath(long numeroDocumento);
         string GetTitulo();
+        EnumDocumentosGestion GetTipoDocumento();
     }
 }

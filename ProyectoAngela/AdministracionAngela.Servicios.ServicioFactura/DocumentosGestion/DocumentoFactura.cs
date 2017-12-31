@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using AdministracionAngela.Utils.Genericos;
+using AdministracionAngela.Utils.Enumerados;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 {
@@ -50,6 +51,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         public string GetTitulo()
         {
             return "Gestion de Facturas";
+        }
+
+        public EnumDocumentosGestion GetTipoDocumento()
+        {
+            return EnumDocumentosGestion.Factura;
         }
     }
 }

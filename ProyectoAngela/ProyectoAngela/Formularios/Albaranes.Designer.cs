@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Albaranes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.textBoxLote = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.buttonEliminarLinea = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAñadirLinea = new System.Windows.Forms.Button();
             this.dataGridViewLineasFactura = new System.Windows.Forms.DataGridView();
             this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +67,8 @@
             this.label33 = new System.Windows.Forms.Label();
             this.labelTotalBase = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.buttonClose = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,36 +196,38 @@
             this.buttonEliminarLinea.Size = new System.Drawing.Size(52, 50);
             this.buttonEliminarLinea.TabIndex = 61;
             this.buttonEliminarLinea.UseVisualStyleBackColor = true;
+            this.buttonEliminarLinea.Click += new System.EventHandler(this.buttonEliminarLinea_Click);
             // 
-            // button1
+            // buttonAñadirLinea
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(31, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 50);
-            this.button1.TabIndex = 60;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonAñadirLinea.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAñadirLinea.BackgroundImage")));
+            this.buttonAñadirLinea.Location = new System.Drawing.Point(31, 142);
+            this.buttonAñadirLinea.Name = "buttonAñadirLinea";
+            this.buttonAñadirLinea.Size = new System.Drawing.Size(52, 50);
+            this.buttonAñadirLinea.TabIndex = 60;
+            this.buttonAñadirLinea.UseVisualStyleBackColor = true;
+            this.buttonAñadirLinea.Click += new System.EventHandler(this.buttonAñadirLinea_Click);
             // 
             // dataGridViewLineasFactura
             // 
             this.dataGridViewLineasFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewLineasFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
@@ -239,13 +243,15 @@
             this.dataGridViewLineasFactura.Size = new System.Drawing.Size(785, 260);
             this.dataGridViewLineasFactura.StandardTab = true;
             this.dataGridViewLineasFactura.TabIndex = 70;
+            this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
+            this.dataGridViewLineasFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewLineasFactura_KeyPress);
             // 
             // ColumnProducto
             // 
             this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnProducto.DataPropertyName = "SelectedProduct";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle9;
             this.ColumnProducto.HeaderText = "Producto";
             this.ColumnProducto.Name = "ColumnProducto";
             this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -380,6 +386,7 @@
             this.buttonSave.TabIndex = 81;
             this.buttonSave.Text = "Guardar";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // label35
             // 
@@ -460,12 +467,37 @@
             this.label32.TabIndex = 84;
             this.label32.Text = "Total Base.";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Window;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(769, 127);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 13);
+            this.label5.TabIndex = 87;
+            this.label5.Text = "&Salir";
+            this.label5.Visible = false;
+            // 
+            // buttonClose
+            // 
+            this.buttonClose.BackColor = System.Drawing.SystemColors.Window;
+            this.buttonClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonClose.BackgroundImage")));
+            this.buttonClose.Location = new System.Drawing.Point(758, 142);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(52, 50);
+            this.buttonClose.TabIndex = 86;
+            this.buttonClose.UseVisualStyleBackColor = false;
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            // 
             // Albaranes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(854, 781);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelTotalBase);
             this.Controls.Add(this.label32);
             this.Controls.Add(this.labelTotalCajas);
@@ -494,10 +526,12 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonEliminarLinea);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAñadirLinea);
+            this.KeyPreview = true;
             this.Name = "Albaranes";
             this.Text = "Albaranes";
             this.Load += new System.EventHandler(this.Albaranes_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Albaranes_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -518,7 +552,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonEliminarLinea;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAñadirLinea;
         private System.Windows.Forms.DataGridView dataGridViewLineasFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
@@ -541,5 +575,7 @@
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label labelTotalBase;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonClose;
     }
 }

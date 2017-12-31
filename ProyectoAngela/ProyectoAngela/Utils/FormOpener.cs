@@ -63,6 +63,14 @@ namespace AdministracionAngela.ProyectoAngela.Utils
             }
         }
 
+        public DialogResult ShowDocumentoForm(EnumDocumentosGestion documento)
+        {
+                if (documento == EnumDocumentosGestion.Factura)
+                    return this.ShowModalForm<Facturacion>();
+                else
+                    return this.ShowModalForm<Albaranes>();
+        }
+
         private IDocumentoGestion GetDocumentoGestion(EnumDocumentosGestion documento)
         {
             IDocumentoGestion documentoGestion;

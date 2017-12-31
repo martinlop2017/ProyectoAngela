@@ -19,7 +19,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class GestionFacturas : Form
     {
         private IFormOpener formOpener;
-        private IFacturaProvider facturaProvider;
         private IDocumentoGestion documentoGestion;
 
         public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion)
@@ -37,7 +36,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<Facturacion>();
+            var typeDocumento = this.documentoGestion.GetTipoDocumento();
+            this.formOpener.ShowDocumentoForm(typeDocumento);
         }
 
         private void button6_MouseEnter(object sender, EventArgs e)

@@ -126,7 +126,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button4.Size = new System.Drawing.Size(52, 50);
             this.button4.TabIndex = 15;
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // buttonEliminarLinea
             // 
@@ -184,7 +183,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.StandardTab = true;
             this.dataGridViewLineasFactura.TabIndex = 6;
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
-            this.dataGridViewLineasFactura.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewLineasFactura_EditingControlShowing);
             this.dataGridViewLineasFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewLineasFactura_KeyPress);
             // 
             // dateTimePickerFecha

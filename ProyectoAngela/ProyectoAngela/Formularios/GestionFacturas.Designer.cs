@@ -41,7 +41,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAñadir = new System.Windows.Forms.Button();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -172,16 +172,16 @@
             this.buttonBorrar.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.buttonBorrar.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
-            // button1
+            // buttonAñadir
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(20, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 56);
-            this.button1.TabIndex = 15;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.buttonAñadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAñadir.BackgroundImage")));
+            this.buttonAñadir.Location = new System.Drawing.Point(20, 130);
+            this.buttonAñadir.Name = "buttonAñadir";
+            this.buttonAñadir.Size = new System.Drawing.Size(52, 56);
+            this.buttonAñadir.TabIndex = 15;
+            this.buttonAñadir.UseVisualStyleBackColor = true;
+            this.buttonAñadir.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAñadir.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
             // labelTitulo
             // 
@@ -238,7 +238,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonBorrar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAñadir);
             this.DoubleBuffered = true;
             this.Name = "GestionFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -261,7 +261,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonBorrar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAñadir;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.Label label7;

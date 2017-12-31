@@ -140,65 +140,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
         }
 
-        private void dataGridViewLineasFactura_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            if (e.Control.GetType() == typeof(DataGridViewComboBoxEditingControl))
-            {
-                if (((ComboBox)e.Control).SelectedIndex == 0)
-                {
-                    ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
-                }
-
-                var combo = e.Control as ComboBox;
-                if (combo != null)
-                {
-                    combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
-                    combo.SelectedValueChanged += new EventHandler(ComboInGrid_SelectedValueChanged);
-                }
-            }
-            else
-            {
-                var textBox = e.Control as TextBox;
-                if(textBox != null)
-                {
-                    textBox.TextChanged += new EventHandler(TextboxInGrid_TextChanged);
-                }
-            }
-        }
-
-        private void ComboInGrid_TextChanged(object sender, EventArgs e)
-        {
-            var combo = sender as ComboBox;
-            combo.TextChanged -= new EventHandler(ComboInGrid_TextChanged);
-
-            //Este if evita que, cuando se selecciona un producto, vuelva a mostrarse las opciones del combo
-            if(!originalProductValues.Contains(combo.Text))
-            {
-                (sender as ComboBox).FilterByTextIntroduced(originalProductValues);
-            }
-
-            combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
-        }
-
-        private void ComboInGrid_SelectedValueChanged(object sender, EventArgs e)
-        {
-            var selectedText = (sender as ComboBox).Text;
-            var codigoArticulo = selectedText.Substring(0, selectedText.IndexOf("-")).Trim();
-            this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnCodigo"].Value = codigoArticulo;
-        }
-
-        private void TextboxInGrid_TextChanged(object sender, EventArgs e)
-        {
-            if (this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name.Equals("ColumnPrecio"))
-            {
-                var textbox = (sender as TextBox);
-                if(!string.IsNullOrEmpty(textbox.Text) && textbox.Text.Last().ToString().Equals("+"))
-                {
-                    this.AddNewLineaFactura();
-                }
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             NuevaLineaFactura();
@@ -372,25 +313,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void AddNewLineaFactura()
         {
             this.dataGridViewLineasFactura.Rows.Add();
-
-            /*var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
-
-            var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
-            cell.DataSource = originalProductValues;
-
-            //Set focus on column product
-            this.dataGridViewLineasFactura.Focus();
-            this.dataGridViewLineasFactura.CurrentCell = cell;*/
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Facturacion_KeyPress(object sender, KeyPressEventArgs e)

@@ -42,7 +42,7 @@
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.labelTitulo = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
@@ -183,16 +183,16 @@
             this.button1.Click += new System.EventHandler(this.button1_Click);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
-            // label6
+            // labelTitulo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(245, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(366, 42);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Gestión de Facturas";
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelTitulo.Location = new System.Drawing.Point(245, 33);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(366, 42);
+            this.labelTitulo.TabIndex = 27;
+            this.labelTitulo.Text = "Gestión de Facturas";
             // 
             // buttonImprimir
             // 
@@ -227,7 +227,7 @@
             this.ClientSize = new System.Drawing.Size(805, 630);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonImprimir);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.dataGridViewFacturas);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -262,7 +262,7 @@
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonBorrar;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.Label label7;
     }

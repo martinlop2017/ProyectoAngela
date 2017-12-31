@@ -46,5 +46,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return string.Format(@"{0}\factura{1}.pdf", RutasSalida.RutaFacturacion, numeroDocumento);
         }
+
+        public string GetTitulo()
+        {
+            return "Gestion de Facturas";
+        }
     }
 }

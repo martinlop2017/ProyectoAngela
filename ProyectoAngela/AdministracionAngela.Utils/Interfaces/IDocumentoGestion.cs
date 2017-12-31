@@ -13,5 +13,6 @@ namespace AdministracionAngela.Utils.Interfaces
         GestionFacturaViewModel GetDocumentos();
         void SetDocumentoImpresa(List<long> selectedFacturaIds);
         string GetExportPath(long numeroDocumento);
+        string GetTitulo();
     }
 }

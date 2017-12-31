@@ -27,6 +27,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.formOpener = formOpener;
             this.documentoGestion = documentoGestion;
             InitializeComponent();
+            this.labelTitulo.Text = this.documentoGestion.GetTitulo();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

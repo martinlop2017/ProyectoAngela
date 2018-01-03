@@ -65,6 +65,19 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
+        public Albaran GetLastAlbaran()
+        {
+            try
+            {
+                return this.dbContext.Albaranes.OrderByDescending(albaran => albaran.NumeroAlbaran).FirstOrDefault();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public Factura GetLastFactura()
         {
             try

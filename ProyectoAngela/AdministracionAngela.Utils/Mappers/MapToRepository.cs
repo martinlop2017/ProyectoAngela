@@ -11,6 +11,7 @@ using AdministracionAngela.Utils.Models.IVA;
 using AdministracionAngela.Utils.Models.Perfil;
 using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Models.FormaDePago;
+using AdministracionAngela.Utils.Models.Albaran;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -152,6 +153,44 @@ namespace AdministracionAngela.Utils.Mappers
         public static List<IVA> MapListOfIVAViewModel(List<IVAViewModel> ivas)
         {
             return ivas.Select(iva => MapIVAViewModel(iva)).ToList<IVA>();
+        }
+
+        #endregion
+
+        #region Mapeo de Albaran
+
+        public static Albaran MapAltaAlbaranViewModel(AltaAlbaranViewModel altaAlbaran)
+        {
+            return new Albaran()
+            {
+                NumeroAlbaran = altaAlbaran.Id,
+                ClienteId = altaAlbaran.ClienteIdsAndDescripciones[altaAlbaran.SelectedClient],
+                Fecha = Convert.ToDateTime(altaAlbaran.Fecha),
+                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id),
+                TotalBase = altaAlbaran.TotalBase,
+                TotalRecargoEquivalencia = altaAlbaran.TotalRecargoEquivalencia,
+                TotalIVA = altaAlbaran.TotalIVA,
+                Total = altaAlbaran.Total,
+                Impreso = false,
+                EtiquetaLote = altaAlbaran.Lote
+            };
+        }
+
+        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran)
+        {
+            return lineasAlbaran.Select(linea => new LineaAlbaran()
+            {
+                NumeroAlbaran = numeroAlbaran,
+                ProductoId = linea.ProductoId,
+                PorcentajeIVA = linea.PorcentajeIVA,
+                ImporteIVA = linea.ImporteIVA,
+                PorcentajeRE = linea.PorcentajeRE,
+                ImporteRE = linea.ImporteRE,
+                Precio = linea.Precio,
+                Kgs = linea.Kgs,
+                Cajas = linea.Cajas,
+                Importe = linea.Importe
+            }).ToList();
         }
 
         #endregion

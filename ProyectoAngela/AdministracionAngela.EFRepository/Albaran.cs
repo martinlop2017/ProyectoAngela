@@ -14,6 +14,12 @@ namespace AdministracionAngela.EFRepository
     
     public partial class Albaran
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Albaran()
+        {
+            this.LineaAlbaran = new HashSet<LineaAlbaran>();
+        }
+    
         public long NumeroAlbaran { get; set; }
         public Nullable<long> ClienteId { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
@@ -22,8 +28,10 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> Total { get; set; }
         public Nullable<bool> Impreso { get; set; }
         public string EtiquetaLote { get; set; }
-        public Nullable<bool> Albarano { get; set; }
+        public bool Albarano { get; set; }
     
         public virtual Cliente Cliente { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LineaAlbaran> LineaAlbaran { get; set; }
     }
 }

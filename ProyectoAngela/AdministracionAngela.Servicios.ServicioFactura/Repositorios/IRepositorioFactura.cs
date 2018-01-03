@@ -10,6 +10,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
     public interface IRepositorioFactura
     {
         Factura GetLastFactura();
+        Albaran GetLastAlbaran();
         void SaveFactura(Factura factura);
         List<Factura> GetAllFacturas();
         void DeleteLineasFacturaByNumeroFactura(List<Factura> repositoryFacturasToDelete);

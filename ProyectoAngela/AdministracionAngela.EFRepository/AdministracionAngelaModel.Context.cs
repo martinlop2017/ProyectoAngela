@@ -27,8 +27,10 @@ namespace AdministracionAngela.EFRepository
     
         public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Factura> Facturas { get; set; }
+        public virtual DbSet<Albaran> Albaranes { get; set; }
         public virtual DbSet<IVA> IVAs { get; set; }
         public virtual DbSet<LineaFactura> LineasFactura { get; set; }
+        public virtual DbSet<LineaAlbaran> LineasAlbaran { get; set; }
         public virtual DbSet<Producto> Productos { get; set; }
         public virtual DbSet<Direccion> Direcciones { get; set; }
         public virtual DbSet<Contacto> Contactos { get; set; }

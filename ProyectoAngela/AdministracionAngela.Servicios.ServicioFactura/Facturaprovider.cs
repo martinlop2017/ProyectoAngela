@@ -42,6 +42,19 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToAltaFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
         }
 
+        public AltaFacturaViewModel GetAlbaranViewModel()
+        {
+            var clientes = this.repositorioCliente.GetAllClients();
+            var articulos = this.repositorioArticulo.GetAllArticulos();
+
+            var lastAlbaran = this.repositorioFactura.GetLastAlbaran();
+            var numeroAlbaran = lastAlbaran != null ? lastAlbaran.NumeroAlbaran + 1 : 1;
+
+            var ivas = this.repositorioIVA.GetAllIVAs();
+
+            return MapToViewModel.MapToAltaFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroAlbaran), ivas);
+        }
+
         public List<LineaIVAViewModel> CalculateIVAs(AltaFacturaViewModel altaFacturaViewModel)
         {
             //reset baseIva, ya que va a ser recalculado
@@ -72,6 +85,21 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, facturaToRepository.Fecha.Value.ToString("ddMMyyy"));
             }
             this.repositorioFactura.SaveFactura(facturaToRepository);
+        }
+
+        public void SaveAlbaran(AltaAlbaranViewModel viewModel)
+        {
+            var albaranToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
+            foreach (var lineaFactura in albaranToRepository.LineaFactura)
+            {
+                var producto = this.repositorioArticulo.GetArticuloById(lineaFactura.ProductoId);
+                lineaFactura.FAO = producto.FAO;
+                lineaFactura.ZonaCaptura = producto.ZonaCaptura;
+                lineaFactura.ArtePesca = producto.ArtePesca;
+                lineaFactura.NombreCientifico = producto.NombreCientifico;
+                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, albaranToRepository.Fecha.Value.ToString("ddMMyyy"));
+            }
+            this.repositorioFactura.SaveFactura(albaranToRepository);
         }
 
         public GestionFacturaViewModel GetGestionFactura()

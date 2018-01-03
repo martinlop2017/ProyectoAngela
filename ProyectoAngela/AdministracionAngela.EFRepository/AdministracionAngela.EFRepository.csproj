@@ -94,6 +94,9 @@
     <Compile Include="IVA.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LineaAlbaran.cs">
+      <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="LineaFactura.cs">
       <DependentUpon>AdministracionAngelaModel.tt</DependentUpon>
     </Compile>

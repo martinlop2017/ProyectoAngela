@@ -75,8 +75,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                         var codigoArticulo = lineaAlbaran.SelectedProduct.Substring(0, lineaAlbaran.SelectedProduct.IndexOf("-")).Trim();
 
-                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
-                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaAlbaran.SelectedProduct;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"].Value = lineaAlbaran.SelectedProduct;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCodigo"].Value = codigoArticulo;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCajas"].Value = lineaAlbaran.Cajas;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaAlbaran.Kgs;

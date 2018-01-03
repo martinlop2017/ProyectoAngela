@@ -16,7 +16,7 @@ namespace AdministracionAngela.EFRepository
     {
         public long Id { get; set; }
         public long NumeroAlbaran { get; set; }
-        public bool Albarano { get; set; }
+        public bool IsAlbaran { get; set; }
         public long ProductoId { get; set; }
         public decimal PorcentajeIVA { get; set; }
         public Nullable<decimal> PorcentajeRE { get; set; }
@@ -32,7 +32,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> ImporteIVA { get; set; }
         public Nullable<decimal> ImporteRE { get; set; }
     
-        public virtual Producto Producto { get; set; }
         public virtual Albaran Albaran { get; set; }
+        public virtual Producto Producto { get; set; }
     }
 }

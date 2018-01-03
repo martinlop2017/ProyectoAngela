@@ -193,16 +193,16 @@ namespace AdministracionAngela.Utils.Mappers
             }).ToList();
         }
 
-        public static List<Albaran> MapListOfAlbaranViewModel(List<AlbaranViewModel> albaranes)
+        public static List<Albaran> MapListOfAlbaranViewModel(List<FacturaViewModel> albaranes)
         {
             return albaranes.Where(f => f != null).Select(albaran => MapAlbaranViewModel(albaran)).ToList<Albaran>();
         }
 
-        public static Albaran MapAlbaranViewModel(AlbaranViewModel albaran)
+        public static Albaran MapAlbaranViewModel(FacturaViewModel albaran)
         {
             return new Albaran()
             {
-                NumeroAlbaran = albaran.CodigoAlbaran,
+                NumeroAlbaran = albaran.CodigoFactura,
                 Albarano = albaran.Albarano
             };
         }

@@ -43,7 +43,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToAltaFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
         }
 
-        public AltaFacturaViewModel GetAlbaranViewModel()
+        public AltaAlbaranViewModel GetAlbaranViewModel()
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
@@ -53,7 +53,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             var ivas = this.repositorioIVA.GetAllIVAs();
 
-            return MapToViewModel.MapToAltaFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroAlbaran), ivas);
+            return MapToViewModel.MapToAltaAlbaranViewModel(clientes, articulos, Convert.ToInt32(numeroAlbaran), ivas);
         }
 
         public List<LineaIVAViewModel> CalculateIVAs(AltaFacturaViewModel altaFacturaViewModel)
@@ -71,6 +71,23 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             }
 
             return altaFacturaViewModel.LineasIVA;
+        }
+
+        public List<LineaIVAViewModel> CalculateIVAs(AltaAlbaranViewModel altaAlbaranViewModel)
+        {
+            //reset baseIva, ya que va a ser recalculado
+            altaAlbaranViewModel.LineasIVA.ForEach(l => l.BaseIVA = 0);
+            foreach (var lineaFactura in altaAlbaranViewModel.LineasAlbaran)
+            {
+                var iva = repositorioArticulo.GetArticuloById(lineaFactura.ProductoId).IVA;
+                //Guarda Id de IVA para el mapeo a la hora de guardar la altaFactura
+                lineaFactura.PorcentajeIVA = iva.Porcentaje.Value;
+                lineaFactura.PorcentajeRE = iva.PorcentanjeRE.Value;
+                var lineaIva = altaAlbaranViewModel.LineasIVA.Single(i => i.PorcentajeIVA == iva.Porcentaje.Value);
+                lineaIva.BaseIVA += lineaFactura.Importe;
+            }
+
+            return altaAlbaranViewModel.LineasIVA;
         }
 
         public void SaveFactura(AltaFacturaViewModel viewModel)
@@ -117,7 +134,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.DeleteFacturas(repositoryFacturasToDelete);
         }
 
-        public void DeleteAlbaranes(List<AlbaranViewModel> albaranesToDelete)
+        public void DeleteAlbaranes(List<FacturaViewModel> albaranesToDelete)
         {
             var repositoryAlbaranesToDelete = MapToRepository.MapListOfAlbaranViewModel(albaranesToDelete);
 

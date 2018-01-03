@@ -13,6 +13,7 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         AltaFacturaViewModel GetFacturaViewModel();
         List<LineaIVAViewModel> CalculateIVAs(AltaFacturaViewModel altaFacturaViewModel);
+        List<LineaIVAViewModel> CalculateIVAs(AltaAlbaranViewModel altaAlbaranViewModel);
         void SaveFactura(AltaFacturaViewModel viewModel);
         GestionFacturaViewModel GetGestionFactura();
         void DeleteFacturas(List<FacturaViewModel> mappedSelectedRows);
@@ -21,9 +22,9 @@ namespace AdministracionAngela.Utils.Interfaces
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
         LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);
-        AltaFacturaViewModel GetAlbaranViewModel();
+        AltaAlbaranViewModel GetAlbaranViewModel();
         void SaveAlbaran(AltaAlbaranViewModel viewModel);
-        void DeleteAlbaranes(List<AlbaranViewModel> albaranesToDelete);
+        void DeleteAlbaranes(List<FacturaViewModel> albaranesToDelete);
         AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId);
         void UpdateAlbaran(AltaAlbaranViewModel viewModel);
         void SetAlbaranImpresa(List<long> selectedAlbaranIds);

@@ -20,7 +20,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 
         public void DeleteDocumentos(List<FacturaViewModel> mappedSelectedRows)
         {
-            throw new NotImplementedException();
+            this.facturaProvider.DeleteAlbaranes(mappedSelectedRows);
         }
 
         public GestionFacturaViewModel GetDocumentos()
@@ -43,9 +43,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             return "Gestion Albaranes";
         }
 
-        public void SetDocumentoImpresa(List<long> selectedFacturaIds)
+        public void SetDocumentoImpresa(List<long> selectedDocumentoIds)
         {
-            throw new NotImplementedException();
+            this.facturaProvider.SetAlbaranImpresa(selectedDocumentoIds);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Mappers;
+using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Factura;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// </summary>
         private List<string> originalClientValues;
         private List<string> originalProductValues;
-        private AltaFacturaViewModel viewModel;
+        private AltaAlbaranViewModel viewModel;
         private bool isUpdate = false;
         private long AlbaranId;
 
@@ -43,17 +44,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             if (!this.isUpdate)
             {
-                viewModel = this.facturaProvider.GetFacturaViewModel();
+                viewModel = this.facturaProvider.GetAlbaranViewModel();
             }
             else
             {
-                viewModel = this.facturaProvider.GetFacturaViewModelById(this.AlbaranId);
+                viewModel = this.facturaProvider.GetAlbaranViewModelById(this.AlbaranId);
             }
 
             this.FillControls(viewModel);
         }
 
-        private void FillControls(AltaFacturaViewModel viewModel)
+        private void FillControls(AltaAlbaranViewModel viewModel)
         {
             try
             {
@@ -67,20 +68,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 if (this.isUpdate)
                 {
                     this.comboBoxClientes.Text = viewModel.SelectedClient;
-                    foreach (var lineaFactura in viewModel.LineasFactura)
+                    foreach (var lineaAlbaran in viewModel.LineasAlbaran)
                     {
                         this.dataGridViewLineasFactura.Rows.Add();
                         var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
 
-                        var codigoArticulo = lineaFactura.SelectedProduct.Substring(0, lineaFactura.SelectedProduct.IndexOf("-")).Trim();
+                        var codigoArticulo = lineaAlbaran.SelectedProduct.Substring(0, lineaAlbaran.SelectedProduct.IndexOf("-")).Trim();
 
                         (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
-                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
+                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaAlbaran.SelectedProduct;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCodigo"].Value = codigoArticulo;
-                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCajas"].Value = lineaFactura.Cajas;
-                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
-                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
-                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaFactura.Importe;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCajas"].Value = lineaAlbaran.Cajas;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaAlbaran.Kgs;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaAlbaran.Precio;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaAlbaran.Importe;
                     }
 
                     this.Recalculate();
@@ -174,7 +175,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Recalculate()
         {
-            this.viewModel.LineasFactura = MapToViewModel.MapDataGridViewRowsToLineasFacturaViewModel(this.dataGridViewLineasFactura.Rows, this.viewModel.ArticuloIdsAndDescripciones);
+            this.viewModel.LineasAlbaran = MapToViewModel.MapDataGridViewRowsToLineasAlbaranViewModel(this.dataGridViewLineasFactura.Rows, this.viewModel.ArticuloIdsAndDescripciones);
             this.facturaProvider.CalculateIVAs(viewModel);
             this.UpdateIVAs(this.viewModel.LineasIVA);
             this.UpdateTotals();
@@ -259,11 +260,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             ReadGenericDataFromForm();
             if (this.isUpdate)
             {
-                this.facturaProvider.UpdateFactura(this.viewModel);
+                this.facturaProvider.UpdateAlbaran(this.viewModel);
             }
             else
             {
-                this.facturaProvider.SaveFactura(this.viewModel);
+                this.facturaProvider.SaveAlbaran(this.viewModel);
             }
 
             this.Close();

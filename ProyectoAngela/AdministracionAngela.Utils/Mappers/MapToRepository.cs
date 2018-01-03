@@ -193,6 +193,19 @@ namespace AdministracionAngela.Utils.Mappers
             }).ToList();
         }
 
+        public static List<Albaran> MapListOfAlbaranViewModel(List<AlbaranViewModel> albaranes)
+        {
+            return albaranes.Where(f => f != null).Select(albaran => MapAlbaranViewModel(albaran)).ToList<Albaran>();
+        }
+
+        public static Albaran MapAlbaranViewModel(AlbaranViewModel albaran)
+        {
+            return new Albaran()
+            {
+                NumeroAlbaran = albaran.CodigoAlbaran,
+                Albarano = albaran.Albarano
+            };
+        }
         #endregion
 
         #region Mapeo de Factura

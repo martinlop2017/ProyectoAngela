@@ -9,6 +9,7 @@ using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.EFRepository;
+using AdministracionAngela.Utils.Models.Albaran;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -89,17 +90,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public void SaveAlbaran(AltaAlbaranViewModel viewModel)
         {
-            var albaranToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
-            foreach (var lineaFactura in albaranToRepository.LineaFactura)
+            var albaranToRepository = MapToRepository.MapAltaAlbaranViewModel(viewModel);
+            foreach (var lineaAlbaran in albaranToRepository.LineaAlbaran)
             {
-                var producto = this.repositorioArticulo.GetArticuloById(lineaFactura.ProductoId);
-                lineaFactura.FAO = producto.FAO;
-                lineaFactura.ZonaCaptura = producto.ZonaCaptura;
-                lineaFactura.ArtePesca = producto.ArtePesca;
-                lineaFactura.NombreCientifico = producto.NombreCientifico;
-                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, albaranToRepository.Fecha.Value.ToString("ddMMyyy"));
+                var producto = this.repositorioArticulo.GetArticuloById(lineaAlbaran.ProductoId);
+                lineaAlbaran.FAO = producto.FAO;
+                lineaAlbaran.ZonaCaptura = producto.ZonaCaptura;
+                lineaAlbaran.ArtePesca = producto.ArtePesca;
+                lineaAlbaran.NombreCientifico = producto.NombreCientifico;
+                lineaAlbaran.Lote = string.Format("{0}/{1}", producto.Abreviacion, albaranToRepository.Fecha.Value.ToString("ddMMyyy"));
             }
-            this.repositorioFactura.SaveFactura(albaranToRepository);
+            this.repositorioFactura.SaveAlbaran(albaranToRepository);
         }
 
         public GestionFacturaViewModel GetGestionFactura()
@@ -116,6 +117,14 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.DeleteFacturas(repositoryFacturasToDelete);
         }
 
+        public void DeleteAlbaranes(List<AlbaranViewModel> albaranesToDelete)
+        {
+            var repositoryAlbaranesToDelete = MapToRepository.MapListOfAlbaranViewModel(albaranesToDelete);
+
+            this.repositorioFactura.DeleteLineasAlbaranByNumeroAlbaran(repositoryAlbaranesToDelete);
+            this.repositorioFactura.DeleteAlbaranes(repositoryAlbaranesToDelete);
+        }
+
         public AltaFacturaViewModel GetFacturaViewModelById(long facturaId)
         {
             var clientes = this.repositorioCliente.GetAllClients();
@@ -128,10 +137,28 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToUpdateAltaFacturaViewModel(clientes, articulos, facturaFromRepository, ivas);
         }
 
+        public AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId)
+        {
+            var clientes = this.repositorioCliente.GetAllClients();
+            var articulos = this.repositorioArticulo.GetAllArticulos();
+
+            var albaranFromRepository = this.repositorioFactura.GetAlbaranById(AlbaranId);
+
+            var ivas = this.repositorioIVA.GetAllIVAs();
+
+            return MapToViewModel.MapToUpdateAltaAlbaranViewModel(clientes, articulos, albaranFromRepository, ivas);
+        }
+
         public void UpdateFactura(AltaFacturaViewModel viewModel)
         {
             var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
             this.repositorioFactura.UpdateFactura(facturaToRepository);
+        }
+
+        public void UpdateAlbaran(AltaAlbaranViewModel viewModel)
+        {
+            var albaranToRepository = MapToRepository.MapAltaAlbaranViewModel(viewModel);
+            this.repositorioFactura.UpdateAlbaran(albaranToRepository);
         }
 
         public List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds)
@@ -167,6 +194,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.SetFacturaImpresa(selectedFacturaIds);
         }
 
+        public void SetAlbaranImpresa(List<long> selectedAlbaranIds)
+        {
+            this.repositorioFactura.SetAlbaranImpresa(selectedAlbaranIds);
+        }
+
         public LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate)
         {
             var lineasFactura = new List<LineaFactura>();
@@ -174,6 +206,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             facturas.ForEach(f => lineasFactura.AddRange(f.LineaFactura));
 
             return MapToViewModel.MapToLiquidacion(lineasFactura);
+        }
+
+        public LiquidacionesViewModel GetLineasAlbaranParaFechas(DateTime startDate, DateTime endDate)
+        {
+            var lineasAlbaran = new List<LineaAlbaran>();
+            var albaranes = this.repositorioFactura.GetAllAlbaranes().Where(f => f.Fecha.Value > startDate && f.Fecha.Value < endDate).ToList();
+            albaranes.ForEach(f => lineasAlbaran.AddRange(f.LineaAlbaran));
+
+            return MapToViewModel.MapToLiquidacion(lineasAlbaran);
         }
     }
 }

@@ -29,6 +29,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<bool> Impreso { get; set; }
         public string EtiquetaLote { get; set; }
         public bool Albarano { get; set; }
+        public Nullable<decimal> TotalIVA { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

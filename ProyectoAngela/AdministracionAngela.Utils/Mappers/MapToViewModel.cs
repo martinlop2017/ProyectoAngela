@@ -467,6 +467,37 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
+        public static LiquidacionesViewModel MapToLiquidacion(List<LineaAlbaran> repositoryLineasAlbaran)
+        {
+            var groupedLineas = repositoryLineasAlbaran.GroupBy(lf => lf.ProductoId);
+
+            var lineasLiquidacionViewModel = new List<LineaLiquidacionViewModel>();
+            foreach (var groupedLinea in groupedLineas)
+            {
+                var lineas = groupedLinea.ToList();
+
+                var sumatorioprecios = lineas.Sum(l => l.Precio);
+                var numeroLineas = lineas.Count();
+                var precioMedio = decimal.Round((sumatorioprecios.Value / numeroLineas), 2);
+                var sumatorioKilos = decimal.Round(lineas.Sum(l => l.Kgs.Value), 2);
+
+                lineasLiquidacionViewModel.Add(new LineaLiquidacionViewModel()
+                {
+                    Bultos = lineas.Sum(l => l.Cajas.Value),
+                    CodigoArticulo = groupedLinea.Key.ToString(),
+                    Kilos = sumatorioKilos,
+                    PrecioMedio = precioMedio,
+                    Total = decimal.Round(sumatorioKilos * precioMedio, 2)
+                });
+            }
+
+            return new LiquidacionesViewModel()
+            {
+                Total = lineasLiquidacionViewModel.Sum(l => l.Total),
+                LineasLiquidacion = new BindingList<LineaLiquidacionViewModel>(lineasLiquidacionViewModel)
+            };
+        }
+
         #endregion
     }
 }

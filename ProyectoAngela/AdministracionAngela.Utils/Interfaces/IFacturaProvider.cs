@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.Liquidaciones;
+using AdministracionAngela.Utils.Models.Albaran;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -20,5 +21,12 @@ namespace AdministracionAngela.Utils.Interfaces
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
         LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);
+        AltaFacturaViewModel GetAlbaranViewModel();
+        void SaveAlbaran(AltaAlbaranViewModel viewModel);
+        void DeleteAlbaranes(List<AlbaranViewModel> albaranesToDelete);
+        AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId);
+        void UpdateAlbaran(AltaAlbaranViewModel viewModel);
+        void SetAlbaranImpresa(List<long> selectedAlbaranIds);
+        LiquidacionesViewModel GetLineasAlbaranParaFechas(DateTime startDate, DateTime endDate);
     }
 }

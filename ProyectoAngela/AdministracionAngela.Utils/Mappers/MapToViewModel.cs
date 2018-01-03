@@ -261,6 +261,31 @@ namespace AdministracionAngela.Utils.Mappers
             return lineasAlbaran;
         }
 
+        public static GestionFacturaViewModel MapToGestionAlbaran(List<Albaran> albaranes)
+        {
+            var albaranesViewModel = MapToFacturaList(albaranes);
+
+            return new GestionFacturaViewModel()
+            {
+                Facturas = new BindingList<FacturaViewModel>(albaranesViewModel)
+            };
+        }
+
+        public static List<FacturaViewModel> MapToFacturaList(List<Albaran> albaranes)
+        {
+            return albaranes.Select(f => new FacturaViewModel()
+            {
+                Cliente = f.Cliente.Nombre,
+                CodigoFactura = f.NumeroAlbaran,
+                Albarano = f.Albarano,
+                Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
+                IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
+                RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,
+                Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
+                Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
+            }).ToList();
+        }
+
         #endregion
         #region Mapeo Facturas
 

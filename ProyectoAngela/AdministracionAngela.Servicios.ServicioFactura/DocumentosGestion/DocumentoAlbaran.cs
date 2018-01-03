@@ -25,7 +25,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 
         public GestionFacturaViewModel GetDocumentos()
         {
-            return this.facturaProvider.GetGestionFactura();
+            return this.facturaProvider.GetGestionFacturaAlbaranes();
         }
 
         public string GetExportPath(long numeroDocumento)

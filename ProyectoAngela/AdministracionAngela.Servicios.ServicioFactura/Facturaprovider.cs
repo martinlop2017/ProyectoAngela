@@ -126,6 +126,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionFactura(facturas);
         }
 
+        public GestionFacturaViewModel GetGestionFacturaAlbaranes()
+        {
+            var albaranes = this.repositorioFactura.GetAllAlbaranes();
+            return MapToViewModel.MapToGestionAlbaran(albaranes);
+        }
+
         public void DeleteFacturas(List<FacturaViewModel> facturasToDelete)
         {
             var repositoryFacturasToDelete = MapToRepository.MapListOfFacturaViewModel(facturasToDelete);

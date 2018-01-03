@@ -15,6 +15,6 @@ namespace AdministracionAngela.Utils.Models.Factura
         public decimal RecargoEquivalencia { get; set; }
         public decimal Total { get; set; }
         public bool Impreso { get; set; }
-        public bool Albarano { get; set; }
+        public bool IsAlbaran { get; set; }
     }
 }

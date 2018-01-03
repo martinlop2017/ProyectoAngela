@@ -277,7 +277,7 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 Cliente = f.Cliente.Nombre,
                 CodigoFactura = f.NumeroAlbaran,
-                Albarano = f.Albarano,
+                IsAlbaran = f.IsAlbaran,
                 Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
                 IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
                 RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,

@@ -203,7 +203,7 @@ namespace AdministracionAngela.Utils.Mappers
             return new Albaran()
             {
                 NumeroAlbaran = albaran.CodigoFactura,
-                Albarano = albaran.Albarano
+                IsAlbaran = albaran.IsAlbaran
             };
         }
         #endregion

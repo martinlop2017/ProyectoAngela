@@ -8,7 +8,7 @@
         <EntityType Name="Albaran">
           <Key>
             <PropertyRef Name="NumeroAlbaran" />
-            <PropertyRef Name="Albarano" />
+            <PropertyRef Name="IsAlbaran" />
           </Key>
           <Property Name="NumeroAlbaran" Type="bigint" Nullable="false" />
           <Property Name="ClienteId" Type="bigint" />
@@ -18,7 +18,7 @@
           <Property Name="Total" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Impreso" Type="bit" />
           <Property Name="EtiquetaLote" Type="nvarchar" MaxLength="50" />
-          <Property Name="Albarano" Type="bit" Nullable="false" />
+          <Property Name="IsAlbaran" Type="bit" Nullable="false" />
           <Property Name="TotalIVA" Type="decimal" Precision="18" Scale="2" />
         </EntityType>
         <EntityType Name="Cliente">
@@ -246,7 +246,7 @@
           <ReferentialConstraint>
             <Principal Role="Albaran">
               <PropertyRef Name="NumeroAlbaran" />
-              <PropertyRef Name="Albarano" />
+              <PropertyRef Name="IsAlbaran" />
             </Principal>
             <Dependent Role="LineaAlbaran">
               <PropertyRef Name="NumeroAlbaran" />
@@ -760,7 +760,7 @@
         <EntityType Name="Albaran">
           <Key>
             <PropertyRef Name="NumeroAlbaran" />
-            <PropertyRef Name="Albarano" />
+            <PropertyRef Name="IsAlbaran" />
           </Key>
           <Property Name="NumeroAlbaran" Type="Int64" Nullable="false" />
           <Property Name="ClienteId" Type="Int64" />
@@ -770,7 +770,7 @@
           <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Impreso" Type="Boolean" />
           <Property Name="EtiquetaLote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Albarano" Type="Boolean" Nullable="false" />
+          <Property Name="IsAlbaran" Type="Boolean" Nullable="false" />
           <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Albaran" ToRole="Cliente" />
           <NavigationProperty Name="LineaAlbaran" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Albaran" FromRole="Albaran" ToRole="LineaAlbaran" />
@@ -793,7 +793,7 @@
           <ReferentialConstraint>
             <Principal Role="Albaran">
               <PropertyRef Name="NumeroAlbaran" />
-              <PropertyRef Name="Albarano" />
+              <PropertyRef Name="IsAlbaran" />
             </Principal>
             <Dependent Role="LineaAlbaran">
               <PropertyRef Name="NumeroAlbaran" />
@@ -982,7 +982,7 @@
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Albaran">
               <MappingFragment StoreEntitySet="Albaran">
                 <ScalarProperty Name="TotalIVA" ColumnName="TotalIVA" />
-                <ScalarProperty Name="Albarano" ColumnName="Albarano" />
+                <ScalarProperty Name="IsAlbaran" ColumnName="IsAlbaran" />
                 <ScalarProperty Name="EtiquetaLote" ColumnName="EtiquetaLote" />
                 <ScalarProperty Name="Impreso" ColumnName="Impreso" />
                 <ScalarProperty Name="Total" ColumnName="Total" />

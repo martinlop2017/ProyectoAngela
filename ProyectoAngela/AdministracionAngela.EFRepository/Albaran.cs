@@ -28,7 +28,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> Total { get; set; }
         public Nullable<bool> Impreso { get; set; }
         public string EtiquetaLote { get; set; }
-        public bool Albarano { get; set; }
+        public bool IsAlbaran { get; set; }
         public Nullable<decimal> TotalIVA { get; set; }
     
         public virtual Cliente Cliente { get; set; }

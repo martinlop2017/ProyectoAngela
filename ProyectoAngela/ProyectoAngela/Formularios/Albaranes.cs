@@ -27,6 +27,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private AltaAlbaranViewModel viewModel;
         private bool isUpdate = false;
         private long AlbaranId;
+        private bool IsAlbaran = true;
 
         public Albaranes(IFacturaProvider facturaProvider)
         {
@@ -317,6 +318,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 this.NuevaLineaFactura();
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.IsAlbaran = false;
         }
     }
 }

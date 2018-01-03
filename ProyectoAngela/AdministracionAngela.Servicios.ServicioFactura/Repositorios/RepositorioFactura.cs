@@ -229,6 +229,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 albaranToupdate.Total = AlbaranToRepository.Total;
                 albaranToupdate.TotalBase = AlbaranToRepository.TotalBase;
                 albaranToupdate.EtiquetaLote = AlbaranToRepository.EtiquetaLote;
+                albaranToupdate.IsAlbaran = AlbaranToRepository.IsAlbaran;
 
                 dbContext.SaveChanges();
             }

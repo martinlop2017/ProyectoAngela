@@ -16,6 +16,7 @@ namespace AdministracionAngela.Utils.Models.Albaran
         public string SelectedClient { get; set; }
         public string Fecha { get; set; }
         public string Lote { get; set; }
+        public bool IsAlbaran { get; set; }
         public List<LineaAlbaranViewModel> LineasAlbaran { get; set; }
         public List<LineaIVAViewModel> LineasIVA { get; set; }
         public decimal TotalBase

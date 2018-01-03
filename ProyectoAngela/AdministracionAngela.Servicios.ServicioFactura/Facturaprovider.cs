@@ -116,6 +116,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 lineaAlbaran.ArtePesca = producto.ArtePesca;
                 lineaAlbaran.NombreCientifico = producto.NombreCientifico;
                 lineaAlbaran.Lote = string.Format("{0}/{1}", producto.Abreviacion, albaranToRepository.Fecha.Value.ToString("ddMMyyy"));
+                lineaAlbaran.IsAlbaran = albaranToRepository.IsAlbaran;
             }
             this.repositorioFactura.SaveAlbaran(albaranToRepository);
         }

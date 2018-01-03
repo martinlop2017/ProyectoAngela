@@ -279,6 +279,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.viewModel.SelectedClient = this.comboBoxClientes.Text;
             this.viewModel.Fecha = this.dateTimePickerFecha.Value.ToString();
             this.viewModel.Lote = this.textBoxLote.Text;
+            this.viewModel.IsAlbaran = this.IsAlbaran;
         }
 
         private void buttonEliminarLinea_Click(object sender, EventArgs e)

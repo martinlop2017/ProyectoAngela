@@ -29,7 +29,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             this.facturaProvider.DeleteFacturas(mappedSelectedRows);
         }
 
-        public GestionFacturaViewModel GetDocumentos()
+        public GestionFacturaViewModel GetDocumentos(bool Isdocumento)
         {
             return this.facturaProvider.GetGestionFactura();
         }

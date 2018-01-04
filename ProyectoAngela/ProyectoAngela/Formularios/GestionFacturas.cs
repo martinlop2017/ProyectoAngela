@@ -20,6 +20,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     {
         private IFormOpener formOpener;
         private IDocumentoGestion documentoGestion;
+        private bool IsDocumento = true;
 
         public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion)
         {
@@ -116,7 +117,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillControls()
         {
-            var viewModel = this.documentoGestion.GetDocumentos();
+            var viewModel = this.documentoGestion.GetDocumentos(IsDocumento);
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
         }
 
@@ -177,6 +178,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.IsDocumento = false;
+            this.FillControls();
         }
     }
 }

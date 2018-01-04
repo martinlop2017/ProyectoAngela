@@ -23,9 +23,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             this.facturaProvider.DeleteAlbaranes(mappedSelectedRows);
         }
 
-        public GestionFacturaViewModel GetDocumentos()
+        public GestionFacturaViewModel GetDocumentos(bool IsDocumento)
         {
-            return this.facturaProvider.GetGestionFacturaAlbaranes();
+            return this.facturaProvider.GetGestionFacturaAlbaranes(IsDocumento);
         }
 
         public string GetExportPath(long numeroDocumento)

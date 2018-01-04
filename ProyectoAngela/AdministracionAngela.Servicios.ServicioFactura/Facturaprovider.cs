@@ -127,9 +127,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionFactura(facturas);
         }
 
-        public GestionFacturaViewModel GetGestionFacturaAlbaranes()
+        public GestionFacturaViewModel GetGestionFacturaAlbaranes(bool isAlbaran)
         {
-            var albaranes = this.repositorioFactura.GetAllAlbaranes();
+            var albaranes = this.repositorioFactura.GetAllAlbaranes().Where(a => a.IsAlbaran == isAlbaran).ToList();
             return MapToViewModel.MapToGestionAlbaran(albaranes);
         }
 

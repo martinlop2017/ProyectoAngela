@@ -11,7 +11,7 @@ namespace AdministracionAngela.Utils.Interfaces
     public interface IDocumentoGestion
     {
         void DeleteDocumentos(List<FacturaViewModel> mappedSelectedRows);
-        GestionFacturaViewModel GetDocumentos();
+        GestionFacturaViewModel GetDocumentos(bool IsDocumento);
         void SetDocumentoImpresa(List<long> selectedFacturaIds);
         string GetExportPath(long numeroDocumento);
         string GetTitulo();

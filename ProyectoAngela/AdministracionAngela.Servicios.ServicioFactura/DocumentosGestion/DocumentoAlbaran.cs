@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Enumerados;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 {
@@ -30,7 +31,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 
         public string GetExportPath(long numeroDocumento)
         {
-            throw new NotImplementedException();
+            return string.Format(@"{0}\albaran{1}.pdf", RutasSalida.RutaAlbaranes, numeroDocumento);
         }
 
         public EnumDocumentosGestion GetTipoDocumento()

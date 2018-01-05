@@ -58,5 +58,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             this.facturaProvider.SetAlbaranImpresa(selectedDocumentoIds);
         }
+
+        public bool PuedeFacturar()
+        {
+            return true;
+        }
     }
 }

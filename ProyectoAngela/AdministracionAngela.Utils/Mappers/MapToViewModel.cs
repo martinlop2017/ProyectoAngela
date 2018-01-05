@@ -273,15 +273,16 @@ namespace AdministracionAngela.Utils.Mappers
 
         public static List<FacturaViewModel> MapToFacturaList(List<Albaran> albaranes)
         {
-            return albaranes.Select(f => new FacturaViewModel()
+            return albaranes.Select(a => new FacturaViewModel()
             {
-                Cliente = f.Cliente.Nombre,
-                CodigoFactura = f.NumeroAlbaran,
-                Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
-                IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
-                RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,
-                Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
-                Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
+                Cliente = a.Cliente.Nombre,
+                CodigoFactura = a.NumeroAlbaran,
+                Base = a.TotalBase.HasValue ? Decimal.Round(a.TotalBase.Value, 2) : 0,
+                IVA = a.TotalIVA.HasValue ? Decimal.Round(a.TotalIVA.Value, 2) : 0,
+                RecargoEquivalencia = a.TotalRecargoEquivalencia.HasValue ? Decimal.Round(a.TotalRecargoEquivalencia.Value, 2) : 0,
+                Total = a.Total.HasValue ? Decimal.Round(a.Total.Value, 2) : 0,
+                Impreso = a.Impreso.HasValue ? a.Impreso.Value : false,
+                Facturado = a.Facturado.HasValue ? a.Facturado.Value : false
             }).ToList();
         }
 

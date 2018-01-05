@@ -173,7 +173,8 @@ namespace AdministracionAngela.Utils.Mappers
                 Total = altaAlbaran.Total,
                 Impreso = false,
                 EtiquetaLote = altaAlbaran.Lote,
-                IsAlbaran = altaAlbaran.IsAlbaran
+                IsAlbaran = altaAlbaran.IsAlbaran,
+                Facturado = false
             };
         }
 

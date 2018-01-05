@@ -121,6 +121,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var viewModel = this.documentoGestion.GetDocumentos(IsDocumento);
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
+            if(!this.documentoGestion.PuedeFacturar())
+            {
+                this.dataGridViewFacturas.Columns["Facturado"].Visible = false;
+            }
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
@@ -199,6 +203,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
             var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
             this.documentoGestion.Facturar(selectedDocumentosIds);
+
+            FillControls();
         }
     }
 }

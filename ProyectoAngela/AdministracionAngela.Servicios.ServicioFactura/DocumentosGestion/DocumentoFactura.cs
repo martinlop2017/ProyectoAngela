@@ -62,5 +62,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return false;
         }
+
+        public void Facturar(List<long> albaranesIds)
+        {
+        }
     }
 }

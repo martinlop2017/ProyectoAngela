@@ -186,5 +186,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.IsDocumento = false;
             this.FillControls();
         }
+
+        private void buttonFacturar_Click(object sender, EventArgs e)
+        {
+            var selectedRow = this.dataGridViewFacturas.SelectedRows;
+            var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
+            var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
+
+        }
     }
 }

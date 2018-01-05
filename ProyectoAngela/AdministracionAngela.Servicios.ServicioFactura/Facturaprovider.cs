@@ -240,5 +240,62 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return MapToViewModel.MapToLiquidacion(lineasAlbaran);
         }
+
+        public void Facturar(List<long> albaranesIds)
+        {
+            var albaranes = this.repositorioFactura.GetAlbaranesByIds(albaranesIds);
+
+        }
+
+        private List<Factura> FacturarAlbaranes(List<Albaran> albaranes)
+        {
+            List<Factura> facturas = new List<Factura>();
+            foreach(var albaran in albaranes)
+            {
+                facturas.Add(FacturarAlbaran(albaran));
+            }
+
+            return facturas;
+        }
+
+        private Factura FacturarAlbaran(Albaran albaran)
+        {
+            return new Factura()
+            {
+                ClienteId = albaran.ClienteId.Value,
+                Cliente = albaran.Cliente,
+                Fecha = albaran.Fecha,
+                TotalRecargoEquivalencia = albaran.TotalRecargoEquivalencia,
+                TotalBase = albaran.TotalBase,
+                Total = albaran.Total,
+                TotalIVA = albaran.TotalIVA,
+                Impreso = false,
+                EtiquetaLote = albaran.EtiquetaLote,
+                LineaFactura = FacturarLineasAlbaran(albaran.LineaAlbaran)
+            };
+        }
+
+        private ICollection<LineaFactura> FacturarLineasAlbaran(ICollection<LineaAlbaran> lineasAlbaran)
+        {
+            return lineasAlbaran.Select(la => new LineaFactura()
+            {
+                ProductoId = la.ProductoId,
+                Producto = la.Producto,
+                PorcentajeIVA = la.PorcentajeIVA,
+                PorcentajeRE = la.PorcentajeRE,
+                Kgs = la.Kgs,
+                Precio = la.Precio,
+                Cajas = la.Cajas,
+                FAO = la.FAO,
+                ZonaCaptura = la.ZonaCaptura,
+                NombreCientifico = la.NombreCientifico,
+                ArtePesca = la.ArtePesca,
+                Lote = la.Lote,
+                Importe = la.Importe,
+                ImporteIVA = la.ImporteIVA,
+                ImporteRE = la.ImporteRE
+            })
+            .ToList();
+        }
     }
 }

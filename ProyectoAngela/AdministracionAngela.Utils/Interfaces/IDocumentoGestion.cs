@@ -17,5 +17,6 @@ namespace AdministracionAngela.Utils.Interfaces
         string GetTitulo();
         EnumDocumentosGestion GetTipoDocumento();
         bool CanBeDocumento();
+        void Facturar(List<long> albaranesIds);
     }
 }

@@ -20,6 +20,7 @@ namespace AdministracionAngela.Utils.Interfaces
         void DeleteFacturas(List<FacturaViewModel> mappedSelectedRows);
         AltaFacturaViewModel GetFacturaViewModelById(long facturaId);
         void UpdateFactura(AltaFacturaViewModel viewModel);
+        void Facturar(List<long> albaranesIds);
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
         LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);

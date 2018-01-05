@@ -238,5 +238,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
             }
         }
+
+        public List<Albaran> GetAlbaranesByIds(List<long> albaranesIds)
+        {
+            return this.dbContext.Albaranes.Where(a => albaranesIds.Contains(a.NumeroAlbaran) && a.IsAlbaran).ToList();
+        }
     }
 }

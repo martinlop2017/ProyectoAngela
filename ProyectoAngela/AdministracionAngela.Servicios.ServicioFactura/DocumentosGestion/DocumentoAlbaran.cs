@@ -29,6 +29,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             this.facturaProvider.DeleteAlbaranes(mappedSelectedRows);
         }
 
+        public void Facturar(List<long> albaranesIds)
+        {
+            this.facturaProvider.Facturar(albaranesIds);
+        }
+
         public GestionFacturaViewModel GetDocumentos(bool IsDocumento)
         {
             return this.facturaProvider.GetGestionFacturaAlbaranes(IsDocumento);

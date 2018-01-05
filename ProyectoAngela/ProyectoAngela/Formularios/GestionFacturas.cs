@@ -12,19 +12,22 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Extensions;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionFacturas : Form
     {
         private IFormOpener formOpener;
-        private IFacturaProvider facturaProvider;
+        private IDocumentoGestion documentoGestion;
+        private bool IsDocumento = true;
 
-        public GestionFacturas(IFormOpener formOpener, IFacturaProvider facturaProvider)
+        public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion)
         {
             this.formOpener = formOpener;
-            this.facturaProvider = facturaProvider;
+            this.documentoGestion = documentoGestion;
             InitializeComponent();
+            this.labelTitulo.Text = this.documentoGestion.GetTitulo();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -34,7 +37,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<Facturacion>();
+            var typeDocumento = this.documentoGestion.GetTipoDocumento();
+            this.formOpener.ShowDocumentoForm(typeDocumento);
         }
 
         private void button6_MouseEnter(object sender, EventArgs e)
@@ -107,13 +111,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
 
-            this.facturaProvider.DeleteFacturas(mappedSelectedRows);
+            this.documentoGestion.DeleteDocumentos(mappedSelectedRows);
             this.FillControls();
         }
 
         private void FillControls()
         {
-            var viewModel = this.facturaProvider.GetGestionFactura();
+            var viewModel = this.documentoGestion.GetDocumentos(IsDocumento);
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
         }
 
@@ -149,7 +153,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var selectedFacturaIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
 
             ExportarFacturas(selectedFacturaIds);
-            this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
+            this.documentoGestion.SetDocumentoImpresa(selectedFacturaIds);
             this.FillControls();
         }
 
@@ -166,14 +170,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 pfs.Add(pf);
                 formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
                 oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
-                foreach (var numeroFacrura in selectedFacturaIds)
+                foreach (var numeroFactura in selectedFacturaIds)
                 {
-                    oRep.SetParameterValue("@NumeroFactura", numeroFacrura);
+                    oRep.SetParameterValue("@NumeroFactura", numeroFactura);
                     formImpresion.crystalReportViewer1.ReportSource = oRep;
-                    var path = string.Format(@"C:\Users\Alvarito\Desktop\IMPRESIONES\factura{0}.pdf", numeroFacrura);
+                    var path = this.documentoGestion.GetExportPath(numeroFactura);
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
                 }
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.IsDocumento = false;
+            this.FillControls();
         }
     }
 }

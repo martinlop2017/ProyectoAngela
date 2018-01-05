@@ -18,6 +18,7 @@ namespace AdministracionAngela.EFRepository
         public Producto()
         {
             this.LineaFactura = new HashSet<LineaFactura>();
+            this.LineaAlbaran = new HashSet<LineaAlbaran>();
         }
     
         public long Id { get; set; }
@@ -33,5 +34,7 @@ namespace AdministracionAngela.EFRepository
         public virtual IVA IVA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaFactura> LineaFactura { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<LineaAlbaran> LineaAlbaran { get; set; }
     }
 }

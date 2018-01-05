@@ -45,11 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enumerados\DocumentosGestion.cs" />
     <Compile Include="Extensions\ComboBoxExtensions.cs" />
     <Compile Include="Extensions\DataGridViewExtensions.cs" />
     <Compile Include="Extensions\DataGridViewRowExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Genericos\RutasSalida.cs" />
+    <Compile Include="Interfaces\IDocumentoGestion.cs" />
+    <Compile Include="Models\Albaran\AlbaranViewModel.cs" />
+    <Compile Include="Models\Albaran\AltaAlbaranViewModel.cs" />
+    <Compile Include="Models\Albaran\LineaAlbaranViewModel.cs" />
     <Compile Include="Models\FormaDePago\FormaDePagoViewModel.cs" />
     <Compile Include="Interfaces\IArticuloProvider.cs" />
     <Compile Include="Interfaces\IClienteProvider.cs" />

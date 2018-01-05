@@ -41,10 +41,11 @@
             this.button4 = new System.Windows.Forms.Button();
             this.buttonModificar = new System.Windows.Forms.Button();
             this.buttonBorrar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
+            this.buttonAñadir = new System.Windows.Forms.Button();
+            this.labelTitulo = new System.Windows.Forms.Label();
             this.buttonImprimir = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -172,27 +173,27 @@
             this.buttonBorrar.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.buttonBorrar.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
-            // button1
+            // buttonAñadir
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.Location = new System.Drawing.Point(20, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 56);
-            this.button1.TabIndex = 15;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
+            this.buttonAñadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAñadir.BackgroundImage")));
+            this.buttonAñadir.Location = new System.Drawing.Point(20, 130);
+            this.buttonAñadir.Name = "buttonAñadir";
+            this.buttonAñadir.Size = new System.Drawing.Size(52, 56);
+            this.buttonAñadir.TabIndex = 15;
+            this.buttonAñadir.UseVisualStyleBackColor = true;
+            this.buttonAñadir.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAñadir.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             // 
-            // label6
+            // labelTitulo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label6.Location = new System.Drawing.Point(245, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(366, 42);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "Gestión de Facturas";
+            this.labelTitulo.AutoSize = true;
+            this.labelTitulo.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitulo.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelTitulo.Location = new System.Drawing.Point(245, 33);
+            this.labelTitulo.Name = "labelTitulo";
+            this.labelTitulo.Size = new System.Drawing.Size(366, 42);
+            this.labelTitulo.TabIndex = 27;
+            this.labelTitulo.Text = "Gestión de Facturas";
             // 
             // buttonImprimir
             // 
@@ -217,6 +218,15 @@
             this.label7.Text = "&Imprimir";
             this.label7.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(20, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(23, 19);
+            this.button1.TabIndex = 30;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // GestionFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,9 +235,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(805, 630);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.buttonImprimir);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelTitulo);
             this.Controls.Add(this.dataGridViewFacturas);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -238,7 +249,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.buttonModificar);
             this.Controls.Add(this.buttonBorrar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonAñadir);
             this.DoubleBuffered = true;
             this.Name = "GestionFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -261,9 +272,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button buttonModificar;
         private System.Windows.Forms.Button buttonBorrar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button buttonAñadir;
+        private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.Button buttonImprimir;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
     }
 }

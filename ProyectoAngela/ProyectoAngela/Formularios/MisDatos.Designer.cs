@@ -237,7 +237,6 @@
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(50, 22);
             this.textBox22.TabIndex = 106;
-            this.textBox22.Text = "ES99";
             // 
             // textBox21
             // 
@@ -249,7 +248,6 @@
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(50, 22);
             this.textBox21.TabIndex = 107;
-            this.textBox21.Text = "ES99";
             // 
             // textBox20
             // 
@@ -261,7 +259,6 @@
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(50, 22);
             this.textBox20.TabIndex = 108;
-            this.textBox20.Text = "ES99";
             // 
             // textBox12
             // 
@@ -273,7 +270,6 @@
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(50, 22);
             this.textBox12.TabIndex = 109;
-            this.textBox12.Text = "ES99";
             // 
             // textBox10
             // 
@@ -308,7 +304,6 @@
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(303, 23);
             this.textBox23.TabIndex = 112;
-            this.textBox23.Text = "C:\\IMAGENCORPORATIVA\\MI LOGO";
             // 
             // customGroupBox1
             // 
@@ -348,7 +343,6 @@
             this.textBoxMiCif.Name = "textBoxMiCif";
             this.textBoxMiCif.Size = new System.Drawing.Size(163, 23);
             this.textBoxMiCif.TabIndex = 1;
-            this.textBoxMiCif.Text = "B-21.144.896";
             // 
             // textBoxMiNombre
             // 
@@ -358,7 +352,6 @@
             this.textBoxMiNombre.Name = "textBoxMiNombre";
             this.textBoxMiNombre.Size = new System.Drawing.Size(462, 23);
             this.textBoxMiNombre.TabIndex = 0;
-            this.textBoxMiNombre.Text = "PESCADOS REBOLLO DE PAN DURO S.L.";
             // 
             // label17
             // 
@@ -421,7 +414,6 @@
             this.textBoxMiTLF2.Name = "textBoxMiTLF2";
             this.textBoxMiTLF2.Size = new System.Drawing.Size(117, 23);
             this.textBoxMiTLF2.TabIndex = 1;
-            this.textBoxMiTLF2.Text = "95912 ";
             // 
             // label19
             // 
@@ -440,7 +432,6 @@
             this.textBoxMiPersonaContacto.Name = "textBoxMiPersonaContacto";
             this.textBoxMiPersonaContacto.Size = new System.Drawing.Size(144, 23);
             this.textBoxMiPersonaContacto.TabIndex = 3;
-            this.textBoxMiPersonaContacto.Text = "ANTONIO";
             // 
             // textBoxMiMail
             // 
@@ -450,7 +441,6 @@
             this.textBoxMiMail.Name = "textBoxMiMail";
             this.textBoxMiMail.Size = new System.Drawing.Size(222, 23);
             this.textBoxMiMail.TabIndex = 4;
-            this.textBoxMiMail.Text = "PESCADOREBOLLO@GMAIL.COM";
             // 
             // textBoxMiFax
             // 
@@ -460,7 +450,6 @@
             this.textBoxMiFax.Name = "textBoxMiFax";
             this.textBoxMiFax.Size = new System.Drawing.Size(117, 23);
             this.textBoxMiFax.TabIndex = 2;
-            this.textBoxMiFax.Text = "95931112 ";
             // 
             // textBoxMiTLF1
             // 
@@ -470,7 +459,6 @@
             this.textBoxMiTLF1.Name = "textBoxMiTLF1";
             this.textBoxMiTLF1.Size = new System.Drawing.Size(117, 23);
             this.textBoxMiTLF1.TabIndex = 0;
-            this.textBoxMiTLF1.Text = "959311";
             // 
             // label20
             // 
@@ -547,7 +535,6 @@
             this.textBoxMiCP.Name = "textBoxMiCP";
             this.textBoxMiCP.Size = new System.Drawing.Size(81, 23);
             this.textBoxMiCP.TabIndex = 3;
-            this.textBoxMiCP.Text = "211560";
             // 
             // textBoxMiProvincia
             // 
@@ -557,7 +544,6 @@
             this.textBoxMiProvincia.Name = "textBoxMiProvincia";
             this.textBoxMiProvincia.Size = new System.Drawing.Size(140, 23);
             this.textBoxMiProvincia.TabIndex = 2;
-            this.textBoxMiProvincia.Text = "LA ALCARRIA ";
             // 
             // textBoxMiPoblacion
             // 
@@ -567,7 +553,6 @@
             this.textBoxMiPoblacion.Name = "textBoxMiPoblacion";
             this.textBoxMiPoblacion.Size = new System.Drawing.Size(145, 23);
             this.textBoxMiPoblacion.TabIndex = 1;
-            this.textBoxMiPoblacion.Text = "PUNTA UMBRIA";
             // 
             // textBoxMiDireccion
             // 
@@ -577,7 +562,6 @@
             this.textBoxMiDireccion.Name = "textBoxMiDireccion";
             this.textBoxMiDireccion.Size = new System.Drawing.Size(378, 23);
             this.textBoxMiDireccion.TabIndex = 0;
-            this.textBoxMiDireccion.Text = "C/ DEL PORRON  5, POLIGONO  EL RASTRO NAVE 6 Y 9";
             // 
             // label24
             // 

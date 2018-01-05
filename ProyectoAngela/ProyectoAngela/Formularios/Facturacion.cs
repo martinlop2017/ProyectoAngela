@@ -88,8 +88,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                         var codigoArticulo = lineaFactura.SelectedProduct.Substring(0, lineaFactura.SelectedProduct.IndexOf("-")).Trim();
 
-                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).DataSource = originalProductValues;
-                        (this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell).Value = lineaFactura.SelectedProduct;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"].Value = lineaFactura.SelectedProduct;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCodigo"].Value = codigoArticulo;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnCajas"].Value = lineaFactura.Cajas;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
@@ -137,65 +136,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 (tableLayoutPanel1.GetControlFromPosition(2, i + 1) as Label).Text = lineaIVA.ImporteIVA.ToString();
                 (tableLayoutPanel1.GetControlFromPosition(3, i + 1) as Label).Text = lineaIVA.PorcentajeRecargoEquivalencia.ToString();
                 (tableLayoutPanel1.GetControlFromPosition(4, i + 1) as Label).Text = lineaIVA.ImporteRecargoEquivalencia.ToString();
-            }
-        }
-
-        private void dataGridViewLineasFactura_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            if (e.Control.GetType() == typeof(DataGridViewComboBoxEditingControl))
-            {
-                if (((ComboBox)e.Control).SelectedIndex == 0)
-                {
-                    ((ComboBox)e.Control).DropDownStyle = ComboBoxStyle.DropDown;
-                }
-
-                var combo = e.Control as ComboBox;
-                if (combo != null)
-                {
-                    combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
-                    combo.SelectedValueChanged += new EventHandler(ComboInGrid_SelectedValueChanged);
-                }
-            }
-            else
-            {
-                var textBox = e.Control as TextBox;
-                if(textBox != null)
-                {
-                    textBox.TextChanged += new EventHandler(TextboxInGrid_TextChanged);
-                }
-            }
-        }
-
-        private void ComboInGrid_TextChanged(object sender, EventArgs e)
-        {
-            var combo = sender as ComboBox;
-            combo.TextChanged -= new EventHandler(ComboInGrid_TextChanged);
-
-            //Este if evita que, cuando se selecciona un producto, vuelva a mostrarse las opciones del combo
-            if(!originalProductValues.Contains(combo.Text))
-            {
-                (sender as ComboBox).FilterByTextIntroduced(originalProductValues);
-            }
-
-            combo.TextChanged += new EventHandler(ComboInGrid_TextChanged);
-        }
-
-        private void ComboInGrid_SelectedValueChanged(object sender, EventArgs e)
-        {
-            var selectedText = (sender as ComboBox).Text;
-            var codigoArticulo = selectedText.Substring(0, selectedText.IndexOf("-")).Trim();
-            this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnCodigo"].Value = codigoArticulo;
-        }
-
-        private void TextboxInGrid_TextChanged(object sender, EventArgs e)
-        {
-            if (this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name.Equals("ColumnPrecio"))
-            {
-                var textbox = (sender as TextBox);
-                if(!string.IsNullOrEmpty(textbox.Text) && textbox.Text.Last().ToString().Equals("+"))
-                {
-                    this.AddNewLineaFactura();
-                }
             }
         }
 
@@ -372,25 +312,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void AddNewLineaFactura()
         {
             this.dataGridViewLineasFactura.Rows.Add();
-
-            /*var indexOFLastRow = this.dataGridViewLineasFactura.Rows.Count - 1;
-
-            var cell = this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnProducto"] as DataGridViewComboBoxCell;
-            cell.DataSource = originalProductValues;
-
-            //Set focus on column product
-            this.dataGridViewLineasFactura.Focus();
-            this.dataGridViewLineasFactura.CurrentCell = cell;*/
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void Facturacion_KeyPress(object sender, KeyPressEventArgs e)

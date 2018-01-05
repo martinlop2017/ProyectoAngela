@@ -16,6 +16,7 @@ using AdministracionAngela.Utils.Models.Perfil;
 using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Models.FormaDePago;
 using AdministracionAngela.Utils.Models.Liquidaciones;
+using AdministracionAngela.Utils.Models.Albaran;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -189,6 +190,102 @@ namespace AdministracionAngela.Utils.Mappers
 
         #endregion
 
+        #region Mapeo Albaranes
+
+        public static AltaAlbaranViewModel MapToAltaAlbaranViewModel(List<Cliente> clientes, List<Producto> articulos, int numeroAlbaran, List<IVA> ivas)
+        {
+            return new AltaAlbaranViewModel()
+            {
+                Id = numeroAlbaran,
+                ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
+                ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
+                Fecha = DateTime.Today.ToString("yyyy MM dd"),
+                Lote = DateTime.Today.ToString("ddMMyyyy"),
+                LineasIVA = MapListToLineaIVAViewModel(ivas)
+            };
+        }
+
+        public static AltaAlbaranViewModel MapToUpdateAltaAlbaranViewModel(List<Cliente> clientes, List<Producto> articulos, Albaran albaran, List<IVA> ivas)
+        {
+            return new AltaAlbaranViewModel()
+            {
+                Id = (int)albaran.NumeroAlbaran,
+                ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
+                ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
+                SelectedClient = string.Format("{0} - {1}", albaran.Cliente.Id, albaran.Cliente.Nombre),
+                Fecha = albaran.Fecha.ToString(),
+                LineasAlbaran = MapListToLineaAlbaranViewModel(albaran.LineaAlbaran.ToList()),
+                LineasIVA = MapListToLineaIVAViewModel(ivas),
+                Lote = albaran.EtiquetaLote
+            };
+        }
+
+        public static List<LineaAlbaranViewModel> MapListToLineaAlbaranViewModel(List<LineaAlbaran> lineasAlbaran)
+        {
+            return lineasAlbaran.Select(lf => MapToLineaAlbaranViewModel(lf)).ToList();
+        }
+
+        public static LineaAlbaranViewModel MapToLineaAlbaranViewModel(LineaAlbaran lineaAlbaran)
+        {
+            return new LineaAlbaranViewModel()
+            {
+                SelectedProduct = string.Format("{0} - {1}", lineaAlbaran.Producto.CodigoProducto, lineaAlbaran.Producto.Descripcion),
+                ProductoId = lineaAlbaran.ProductoId,
+                PorcentajeIVA = lineaAlbaran.PorcentajeIVA,
+                PorcentajeRE = lineaAlbaran.PorcentajeRE.Value,
+                Kgs = lineaAlbaran.Kgs.Value,
+                Precio = lineaAlbaran.Precio.Value,
+                Importe = lineaAlbaran.Kgs.Value * lineaAlbaran.Precio.Value,
+                Cajas = lineaAlbaran.Cajas.Value
+            };
+        }
+
+        public static List<LineaAlbaranViewModel> MapDataGridViewRowsToLineasAlbaranViewModel(DataGridViewRowCollection rows, Dictionary<string, long> ArticuloIdsAndDescripciones)
+        {
+            List<LineaAlbaranViewModel> lineasAlbaran = new List<LineaAlbaranViewModel>(rows.Count);
+            foreach (DataGridViewRow row in rows)
+            {
+                if (!row.HasNullValues())
+                {
+                    lineasAlbaran.Add(new LineaAlbaranViewModel()
+                    {
+                        ProductoId = ArticuloIdsAndDescripciones[row.Cells["ColumnProducto"].Value.ToString()],
+                        Cajas = Convert.ToInt32(row.Cells["ColumnCajas"].Value),
+                        Kgs = Convert.ToDecimal(row.Cells["ColumnKgs"].Value),
+                        Precio = Convert.ToDecimal(row.Cells["ColumnPrecio"].Value),
+                        Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value)
+                    });
+                }
+            }
+
+            return lineasAlbaran;
+        }
+
+        public static GestionFacturaViewModel MapToGestionAlbaran(List<Albaran> albaranes)
+        {
+            var albaranesViewModel = MapToFacturaList(albaranes);
+
+            return new GestionFacturaViewModel()
+            {
+                Facturas = new BindingList<FacturaViewModel>(albaranesViewModel)
+            };
+        }
+
+        public static List<FacturaViewModel> MapToFacturaList(List<Albaran> albaranes)
+        {
+            return albaranes.Select(f => new FacturaViewModel()
+            {
+                Cliente = f.Cliente.Nombre,
+                CodigoFactura = f.NumeroAlbaran,
+                Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
+                IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
+                RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,
+                Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
+                Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
+            }).ToList();
+        }
+
+        #endregion
         #region Mapeo Facturas
 
         public static AltaFacturaViewModel MapToAltaFacturaViewModel(List<Cliente> clientes, List<Producto> articulos, int numeroFactura, List<IVA> ivas )
@@ -384,6 +481,37 @@ namespace AdministracionAngela.Utils.Mappers
                     Kilos = sumatorioKilos,
                     PrecioMedio = precioMedio,
                     Total = decimal.Round(sumatorioKilos * precioMedio, 2) 
+                });
+            }
+
+            return new LiquidacionesViewModel()
+            {
+                Total = lineasLiquidacionViewModel.Sum(l => l.Total),
+                LineasLiquidacion = new BindingList<LineaLiquidacionViewModel>(lineasLiquidacionViewModel)
+            };
+        }
+
+        public static LiquidacionesViewModel MapToLiquidacion(List<LineaAlbaran> repositoryLineasAlbaran)
+        {
+            var groupedLineas = repositoryLineasAlbaran.GroupBy(lf => lf.ProductoId);
+
+            var lineasLiquidacionViewModel = new List<LineaLiquidacionViewModel>();
+            foreach (var groupedLinea in groupedLineas)
+            {
+                var lineas = groupedLinea.ToList();
+
+                var sumatorioprecios = lineas.Sum(l => l.Precio);
+                var numeroLineas = lineas.Count();
+                var precioMedio = decimal.Round((sumatorioprecios.Value / numeroLineas), 2);
+                var sumatorioKilos = decimal.Round(lineas.Sum(l => l.Kgs.Value), 2);
+
+                lineasLiquidacionViewModel.Add(new LineaLiquidacionViewModel()
+                {
+                    Bultos = lineas.Sum(l => l.Cajas.Value),
+                    CodigoArticulo = groupedLinea.Key.ToString(),
+                    Kilos = sumatorioKilos,
+                    PrecioMedio = precioMedio,
+                    Total = decimal.Round(sumatorioKilos * precioMedio, 2)
                 });
             }
 

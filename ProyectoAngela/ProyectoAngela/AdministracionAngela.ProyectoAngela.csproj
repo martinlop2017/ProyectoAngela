@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Albaranes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Albaranes.Designer.cs">
+      <DependentUpon>Albaranes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\AltaArticulo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Albaranes.resx">
+      <DependentUpon>Albaranes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\AltaArticulo.resx">
       <DependentUpon>AltaArticulo.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Enumerados;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -113,6 +114,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonIva.Visible = false;
             buttonCobro.Visible = false;
             buttonRutas.Visible = false;
+
+            this.formOpener.ShowDocumentoGestionForm(EnumDocumentosGestion.Albaran);
         }
 
         private void buttonFactura_Click(object sender, EventArgs e)
@@ -122,7 +125,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonIva.Visible = false;
             buttonRutas.Visible = false;
             buttonCobro.Visible = false;
-            this.formOpener.ShowModalForm<GestionFacturas>();
+
+            this.formOpener.ShowDocumentoGestionForm(EnumDocumentosGestion.Factura);
         }
 
         private void buttonListados_Click(object sender, EventArgs e)

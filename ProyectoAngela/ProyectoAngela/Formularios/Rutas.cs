@@ -83,6 +83,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var viewModel = ReadFromForm();
 
             this.sistemaProvider.SaveRutasSalida(viewModel);
+
+            Close();
         }
 
         private RutasSalidaViewModel ReadFromForm()

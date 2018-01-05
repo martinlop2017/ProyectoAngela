@@ -148,6 +148,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
+
+            this.formOpener.ShowModalForm<ImprimirFacturas>();
+
+
+
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
             var selectedFacturaIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();

@@ -57,5 +57,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return EnumDocumentosGestion.Factura;
         }
+
+        public bool CanBeDocumento()
+        {
+            return false;
+        }
     }
 }

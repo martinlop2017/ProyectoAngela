@@ -19,6 +19,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             this.facturaProvider = facturaProvider;
         }
 
+        public bool CanBeDocumento()
+        {
+            return true;
+        }
+
         public void DeleteDocumentos(List<FacturaViewModel> mappedSelectedRows)
         {
             this.facturaProvider.DeleteAlbaranes(mappedSelectedRows);

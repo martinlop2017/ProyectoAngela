@@ -28,6 +28,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.documentoGestion = documentoGestion;
             InitializeComponent();
             this.labelTitulo.Text = this.documentoGestion.GetTitulo();
+            this.button1.Enabled = this.documentoGestion.CanBeDocumento();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

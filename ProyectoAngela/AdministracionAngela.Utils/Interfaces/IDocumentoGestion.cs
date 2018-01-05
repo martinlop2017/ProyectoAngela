@@ -16,5 +16,6 @@ namespace AdministracionAngela.Utils.Interfaces
         string GetExportPath(long numeroDocumento);
         string GetTitulo();
         EnumDocumentosGestion GetTipoDocumento();
+        bool CanBeDocumento();
     }
 }

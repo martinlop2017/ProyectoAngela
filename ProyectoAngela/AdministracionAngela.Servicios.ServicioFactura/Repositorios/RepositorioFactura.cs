@@ -246,7 +246,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public void SetFacturado(long numeroAlbaran)
         {
-            
+            var albaranToUpdate = this.dbContext.Albaranes.Find(numeroAlbaran, true);
+            albaranToUpdate.Facturado = true;
+
+            this.dbContext.SaveChanges();
         }
     }
 }

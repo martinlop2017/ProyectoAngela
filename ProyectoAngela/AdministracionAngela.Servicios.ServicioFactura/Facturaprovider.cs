@@ -244,7 +244,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void Facturar(List<long> albaranesIds)
         {
             var albaranes = this.repositorioFactura.GetAlbaranesByIds(albaranesIds);
+            var facturas = FacturarAlbaranes(albaranes);
 
+            facturas.ForEach( f => repositorioFactura.SaveFactura(f));
+            albaranes.ForEach(a => repositorioFactura.SetFacturado(a.NumeroAlbaran));
         }
 
         private List<Factura> FacturarAlbaranes(List<Albaran> albaranes)

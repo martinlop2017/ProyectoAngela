@@ -26,5 +26,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void UpdateAlbaran(Albaran albaranToRepository);
         void SetAlbaranImpresa(List<long> selectedAlbaranIds);
         List<Albaran> GetAllAlbaranes();
+        void SetFacturado(long numeroAlbaran);
     }
 }

@@ -197,7 +197,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
             var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
-
+            this.documentoGestion.Facturar(selectedDocumentosIds);
         }
     }
 }

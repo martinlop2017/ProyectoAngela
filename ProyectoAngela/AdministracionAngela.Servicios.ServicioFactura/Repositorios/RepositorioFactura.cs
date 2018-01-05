@@ -243,5 +243,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             return this.dbContext.Albaranes.Where(a => albaranesIds.Contains(a.NumeroAlbaran) && a.IsAlbaran).ToList();
         }
+
+        public void SetFacturado(long numeroAlbaran)
+        {
+            
+        }
     }
 }

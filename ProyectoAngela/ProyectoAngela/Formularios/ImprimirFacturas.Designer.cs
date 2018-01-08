@@ -32,9 +32,9 @@
             this.button8 = new System.Windows.Forms.Button();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxKgs = new System.Windows.Forms.TextBox();
+            this.textBoxDocumentoInicial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxDocumentoFinal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
@@ -80,14 +80,14 @@
             this.label3.Text = "Documento Inical";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBoxKgs
+            // textBoxDocumentoInicial
             // 
-            this.textBoxKgs.Location = new System.Drawing.Point(190, 130);
-            this.textBoxKgs.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxKgs.Name = "textBoxKgs";
-            this.textBoxKgs.Size = new System.Drawing.Size(96, 20);
-            this.textBoxKgs.TabIndex = 39;
-            this.textBoxKgs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDocumentoInicial.Location = new System.Drawing.Point(190, 130);
+            this.textBoxDocumentoInicial.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDocumentoInicial.Name = "textBoxDocumentoInicial";
+            this.textBoxDocumentoInicial.Size = new System.Drawing.Size(96, 20);
+            this.textBoxDocumentoInicial.TabIndex = 39;
+            this.textBoxDocumentoInicial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label1
             // 
@@ -101,14 +101,14 @@
             this.label1.TabIndex = 42;
             this.label1.Text = "Documento Final";
             // 
-            // textBox1
+            // textBoxDocumentoFinal
             // 
-            this.textBox1.Location = new System.Drawing.Point(188, 178);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(98, 20);
-            this.textBox1.TabIndex = 41;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxDocumentoFinal.Location = new System.Drawing.Point(188, 178);
+            this.textBoxDocumentoFinal.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxDocumentoFinal.Name = "textBoxDocumentoFinal";
+            this.textBoxDocumentoFinal.Size = new System.Drawing.Size(98, 20);
+            this.textBoxDocumentoFinal.TabIndex = 41;
+            this.textBoxDocumentoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label9
             // 
@@ -164,9 +164,9 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxDocumentoFinal);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBoxKgs);
+            this.Controls.Add(this.textBoxDocumentoInicial);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.buttonGuardar);
             this.Name = "ImprimirFacturas";
@@ -182,9 +182,9 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxKgs;
+        private System.Windows.Forms.TextBox textBoxDocumentoInicial;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxDocumentoFinal;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Drawing.Printing.PrintDocument printDocument1;

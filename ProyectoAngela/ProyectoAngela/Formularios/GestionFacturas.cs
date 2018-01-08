@@ -154,41 +154,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-
-            this.formOpener.ShowModalForm<ImprimirFacturas>();
-
-
-
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
-            var selectedFacturaIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
+            var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
 
-            ExportarFacturas(selectedFacturaIds);
-            this.documentoGestion.SetDocumentoImpresa(selectedFacturaIds);
+            var formImprimir = new ImprimirFacturas( this.formOpener, this.documentoGestion, selectedDocumentosIds.First());
+            formImprimir.ShowDialog();
+            
             this.FillControls();
-        }
-
-        private void ExportarFacturas(List<long> selectedFacturaIds)
-        {
-            using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
-            {
-                ReportDocument oRep = new ReportDocument();
-                ParameterField pf = new ParameterField();
-                ParameterFields pfs = new ParameterFields();
-                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-                pf.Name = "@NumeroFactura";
-                pf.CurrentValues.Add(pdv);
-                pfs.Add(pf);
-                formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
-                oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
-                foreach (var numeroFactura in selectedFacturaIds)
-                {
-                    oRep.SetParameterValue("@NumeroFactura", numeroFactura);
-                    formImpresion.crystalReportViewer1.ReportSource = oRep;
-                    var path = this.documentoGestion.GetExportPath(numeroFactura);
-                    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
-                }
-            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)

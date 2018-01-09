@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,7 +61,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 pf.CurrentValues.Add(pdv);
                 pfs.Add(pf);
                 formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
-                oRep.Load(@"C:\MyProjects\ProyectoAngela\ProyectoAngela\ProyectoAngela\Formularios\CrystalReportImpresionFactura.rpt");
+                var reportPath = string.Format(@"{0}\..\..\Formularios\CrystalReportImpresionFactura.rpt", Directory.GetCurrentDirectory());
+                oRep.Load(reportPath);
                 foreach (var numeroFactura in selectedFacturaIds)
                 {
                     oRep.SetParameterValue("@NumeroFactura", numeroFactura);

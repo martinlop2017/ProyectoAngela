@@ -122,6 +122,12 @@
       <DependentUpon>CrystalReportImpresionIVA.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Formularios\FormEsperarcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormEsperarcs.Designer.cs">
+      <DependentUpon>FormEsperarcs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormaPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormaPago.resx">
       <DependentUpon>FormaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormEsperarcs.resx">
+      <DependentUpon>FormEsperarcs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormImpresion.resx">
       <DependentUpon>FormImpresion.cs</DependentUpon>

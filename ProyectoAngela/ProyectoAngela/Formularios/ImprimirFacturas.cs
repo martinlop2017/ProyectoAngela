@@ -37,15 +37,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            var documentoInicial = int.Parse(this.textBoxDocumentoInicial.Text);
-            var documentoFinal = int.Parse(this.textBoxDocumentoFinal.Text);
+            bool impreso = false;
+            var form = new FormEsperarcs("Imprimiendo");
+            CheckForIllegalCrossThreadCalls = false;
+            var test = Task.Factory.StartNew(() =>
+            {
+                var documentoInicial = int.Parse(this.textBoxDocumentoInicial.Text);
+                var documentoFinal = int.Parse(this.textBoxDocumentoFinal.Text);
 
-            IEnumerable<int> documentosAImprimir = Enumerable.Range(documentoInicial, documentoFinal-documentoInicial + 1).Select(x => x);
-            ExportarFacturas(documentosAImprimir.ToList());
+                IEnumerable<int> documentosAImprimir = Enumerable.Range(documentoInicial, documentoFinal - documentoInicial + 1).Select(x => x);
+                ExportarFacturas(documentosAImprimir.ToList());
 
-            var longDocumentosAImprimir = documentosAImprimir.ToList().Select(x => Convert.ToInt64(x)).ToList();
-            this.documentoGestion.SetDocumentoImpresa(longDocumentosAImprimir);
+                var longDocumentosAImprimir = documentosAImprimir.ToList().Select(x => Convert.ToInt64(x)).ToList();
+                this.documentoGestion.SetDocumentoImpresa(longDocumentosAImprimir);
 
+                form.Close();
+            }
+            );
+
+            form.ShowDialog();
+
+            test.Dispose();
+            CheckForIllegalCrossThreadCalls = true;
             this.Close();
         }
 

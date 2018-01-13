@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    public partial class FormEsperarcs : Form
+    public partial class FormEsperar : Form
     {
-        public FormEsperarcs(string text)
+        public FormEsperar(string text)
         {
             InitializeComponent();
             this.label1.Text = text;

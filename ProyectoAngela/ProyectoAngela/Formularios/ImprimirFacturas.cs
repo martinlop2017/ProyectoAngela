@@ -38,7 +38,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
             bool impreso = false;
-            var form = new FormEsperarcs("Imprimiendo");
+            var form = new FormEsperar("Imprimiendo");
             CheckForIllegalCrossThreadCalls = false;
             var test = Task.Factory.StartNew(() =>
             {

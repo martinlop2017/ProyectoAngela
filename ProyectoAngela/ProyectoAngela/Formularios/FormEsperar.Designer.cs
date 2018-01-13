@@ -1,6 +1,6 @@
 ﻿namespace AdministracionAngela.ProyectoAngela.Formularios
 {
-    partial class FormEsperarcs
+    partial class FormEsperar
     {
         /// <summary>
         /// Required designer variable.
@@ -40,14 +40,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
-            // FormEsperarcs
+            // FormEsperar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(271, 89);
             this.ControlBox = false;
             this.Controls.Add(this.label1);
-            this.Name = "FormEsperarcs";
+            this.Name = "FormEsperar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 

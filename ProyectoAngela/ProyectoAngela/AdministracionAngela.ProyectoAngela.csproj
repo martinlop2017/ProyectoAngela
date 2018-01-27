@@ -104,12 +104,6 @@
     <Compile Include="Formularios\AltaUsuario.Designer.cs">
       <DependentUpon>AltaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\CrystalReportFactura1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReportFactura.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Formularios\CrystalReportImpresionFactura.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -236,10 +230,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ControlUsusarios.resx">
       <DependentUpon>ControlUsusarios.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\CrystalReportFactura.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReportFactura1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\CrystalReportImpresionFactura.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

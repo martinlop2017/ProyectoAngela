@@ -1,0 +1,30 @@
+USE [AdministracionAngela]
+GO
+
+/****** Object:  StoredProcedure [dbo].[BusquedaLineasIVAAlbaran]    Script Date: 27/01/2018 11:51:22 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[BusquedaLineasIVAAlbaran] @NumeroAlbaran nvarchar(30)
+AS
+select I.Id as IVAId
+, I.Porcentaje
+, I.PorcentanjeRE
+, SUM(LA.Importe) as BaseIVA
+, SUM(LA.ImporteIVA) as ImporteIVA
+, SUM(LA.ImporteRE) as ImporteRE
+from LineaAlbaran LA
+inner join Producto P on P.Id = LA.ProductoId
+inner join IVA I on I.Id = P.IVAId
+where LA.NumeroAlbaran = @NumeroAlbaran
+group by I.Id, I.Porcentaje, I.PorcentanjeRE 
+
+
+GO
+
+

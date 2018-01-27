@@ -1,0 +1,31 @@
+USE [AdministracionAngela]
+GO
+
+/****** Object:  StoredProcedure [dbo].[BusquedaLineasAlbaran]    Script Date: 27/01/2018 11:50:58 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[BusquedaLineasAlbaran] @NumeroAlbaran nvarchar(30)
+AS
+select LA.NumeroAlbaran
+, P.CodigoProducto
+, P.Descripcion
+, P.NombreCientifico
+, P.FAO
+, P.ZonaCaptura
+, LA.Cajas
+, LA.Kgs
+, LA.Precio
+, LA.Lote
+, LA.Importe
+from LineaAlbaran LA
+inner join Producto P on P.Id = LA.ProductoId
+Where NumeroAlbaran = @NumeroAlbaran
+
+GO
+
+

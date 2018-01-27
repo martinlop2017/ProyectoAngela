@@ -71,5 +71,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return false;
         }
+
+        public string GetReportImpresion()
+        {
+            return "CrystalReportImpresionFactura";
+        }
+
+        public string GetVariableImpresion()
+        {
+            return "@NumeroFactura";
+        }
     }
 }

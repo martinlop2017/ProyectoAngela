@@ -19,8 +19,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private long numeroDocumentoInicial;
         private IFormOpener formOpener;
         private IDocumentoGestion documentoGestion;
+        private string reportName;
+        private string variableName;
 
-        public ImprimirFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, long numeroDocumentoInicial)
+        public ImprimirFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, long numeroDocumentoInicial, string reportName, string variableName)
         {
             this.numeroDocumentoInicial = numeroDocumentoInicial;
             this.formOpener = formOpener;
@@ -28,6 +30,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             InitializeComponent();
             this.textBoxDocumentoInicial.Text = numeroDocumentoInicial.ToString();
+
+            this.reportName = reportName;
+            this.variableName = variableName;
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -70,15 +75,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 ParameterField pf = new ParameterField();
                 ParameterFields pfs = new ParameterFields();
                 ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-                pf.Name = "@NumeroFactura";
+                pf.Name = variableName;
                 pf.CurrentValues.Add(pdv);
                 pfs.Add(pf);
                 formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
-                var reportPath = string.Format(@"{0}\..\..\Formularios\CrystalReportImpresionFactura.rpt", Directory.GetCurrentDirectory());
+                var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
                 oRep.Load(reportPath);
                 foreach (var numeroFactura in selectedFacturaIds)
                 {
-                    oRep.SetParameterValue("@NumeroFactura", numeroFactura);
+                    oRep.SetParameterValue(variableName, numeroFactura);
                     formImpresion.crystalReportViewer1.ReportSource = oRep;
                     var path = this.documentoGestion.GetExportPath(numeroFactura);
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);

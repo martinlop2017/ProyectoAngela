@@ -63,5 +63,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return true;
         }
+
+        public string GetReportImpresion()
+        {
+            return "CrystalReportImpresionAlbaran";
+        }
+
+        public string GetVariableImpresion()
+        {
+            return "@NumeroAlbaran";
+        }
     }
 }

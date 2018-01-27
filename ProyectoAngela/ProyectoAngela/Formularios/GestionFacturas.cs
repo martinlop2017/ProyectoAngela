@@ -158,7 +158,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
             var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
 
-            var formImprimir = new ImprimirFacturas( this.formOpener, this.documentoGestion, selectedDocumentosIds.First());
+            var reportImpresion = this.documentoGestion.GetReportImpresion();
+            var variableImpresion = this.documentoGestion.GetVariableImpresion();
+            var formImprimir = new ImprimirFacturas( this.formOpener, this.documentoGestion, selectedDocumentosIds.First(), reportImpresion, variableImpresion);
             formImprimir.ShowDialog();
             
             this.FillControls();

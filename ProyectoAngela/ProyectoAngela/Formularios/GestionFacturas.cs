@@ -13,6 +13,7 @@ using AdministracionAngela.Utils.Extensions;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 using AdministracionAngela.Utils.Genericos;
+using AdministracionAngela.Utils.Enumerados;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -143,11 +144,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void OpenFormToModify(FacturaViewModel selectedFactura)
         {
-            using (var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion)
+            var typeDocumento = this.documentoGestion.GetTipoDocumento();
+            if(typeDocumento == EnumDocumentosGestion.Factura)
             {
+                var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion;
                 formAltaCliente.IsUpdate(selectedFactura.CodigoFactura);
                 formAltaCliente.ShowDialog();
             }
+            else
+            {
+                var formAltaCliente = this.formOpener.GetForm<Albaranes>() as Albaranes;
+                formAltaCliente.IsUpdate(selectedFactura.CodigoFactura, IsDocumento);
+                formAltaCliente.ShowDialog();
+            }
+            //using (var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion)
+            //{
+            //    formAltaCliente.IsUpdate(selectedFactura.CodigoFactura);
+            //    formAltaCliente.ShowDialog();
+            //}
 
             this.FillControls();
         }

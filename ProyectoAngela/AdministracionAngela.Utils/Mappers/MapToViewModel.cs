@@ -235,7 +235,7 @@ namespace AdministracionAngela.Utils.Mappers
                 PorcentajeRE = lineaAlbaran.PorcentajeRE.Value,
                 Kgs = lineaAlbaran.Kgs.Value,
                 Precio = lineaAlbaran.Precio.Value,
-                Importe = lineaAlbaran.Kgs.Value * lineaAlbaran.Precio.Value,
+                Importe = Decimal.Round(lineaAlbaran.Kgs.Value * lineaAlbaran.Precio.Value, 2),
                 Cajas = lineaAlbaran.Cajas.Value
             };
         }

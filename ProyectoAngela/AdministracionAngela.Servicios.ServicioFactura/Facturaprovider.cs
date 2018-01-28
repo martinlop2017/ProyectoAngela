@@ -161,12 +161,24 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToUpdateAltaFacturaViewModel(clientes, articulos, facturaFromRepository, ivas);
         }
 
-        public AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId)
+        //public AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId)
+        //{
+        //    var clientes = this.repositorioCliente.GetAllClients();
+        //    var articulos = this.repositorioArticulo.GetAllArticulos();
+
+        //    var albaranFromRepository = this.repositorioFactura.GetAlbaranById(AlbaranId);
+
+        //    var ivas = this.repositorioIVA.GetAllIVAs();
+
+        //    return MapToViewModel.MapToUpdateAltaAlbaranViewModel(clientes, articulos, albaranFromRepository, ivas);
+        //}
+
+        public AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId, bool isAlbaran)
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
 
-            var albaranFromRepository = this.repositorioFactura.GetAlbaranById(AlbaranId);
+            var albaranFromRepository = this.repositorioFactura.GetAlbaranById(AlbaranId, isAlbaran);
 
             var ivas = this.repositorioIVA.GetAllIVAs();
 

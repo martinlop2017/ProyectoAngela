@@ -17,7 +17,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void DeleteFacturas(List<Factura> repositoryFacturasToDelete);
         Factura GetFacturaById(long facturaId);
         List<Albaran> GetAlbaranesByIds(List<long> albaranesIds);
-        Albaran GetAlbaranById(long albaranId);
+        Albaran GetAlbaranById(long albaranId, bool isAlbaran);
         void UpdateFactura(Factura facturaToRepository);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
         void SaveAlbaran(Albaran albaranToRepository);

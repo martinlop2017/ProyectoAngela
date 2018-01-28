@@ -27,7 +27,8 @@ namespace AdministracionAngela.Utils.Interfaces
         AltaAlbaranViewModel GetAlbaranViewModel();
         void SaveAlbaran(AltaAlbaranViewModel viewModel);
         void DeleteAlbaranes(List<FacturaViewModel> albaranesToDelete);
-        AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId);
+        //AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId);
+        AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId, bool isAlbaran);
         void UpdateAlbaran(AltaAlbaranViewModel viewModel);
         void SetAlbaranImpresa(List<long> selectedAlbaranIds);
         LiquidacionesViewModel GetLineasAlbaranParaFechas(DateTime startDate, DateTime endDate);

@@ -102,11 +102,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        public Albaran GetAlbaranById(long albaranId)
+        public Albaran GetAlbaranById(long albaranId, bool isAlbaran)
         {
             try
             {
-                return this.dbContext.Albaranes.Find(albaranId);
+                return this.dbContext.Albaranes.Find(albaranId, isAlbaran);
             }
             catch (Exception exp)
             {
@@ -221,7 +221,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var albaranToupdate = this.dbContext.Albaranes.Find(AlbaranToRepository.NumeroAlbaran);
+                var albaranToupdate = this.dbContext.Albaranes.Find(AlbaranToRepository.NumeroAlbaran, AlbaranToRepository.IsAlbaran);
 
                 albaranToupdate.Cliente = AlbaranToRepository.Cliente;
                 albaranToupdate.Fecha = AlbaranToRepository.Fecha;

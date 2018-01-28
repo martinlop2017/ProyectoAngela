@@ -184,7 +184,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.IsDocumento = false;
+            this.IsDocumento = !this.IsDocumento;
             this.FillControls();
         }
 

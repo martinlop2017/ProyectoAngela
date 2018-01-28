@@ -37,7 +37,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         public void IsUpdate(long albaranId, bool isAlbaran)
         {
-            this.IsAlbaran = IsAlbaran;
+            this.IsAlbaran = isAlbaran;
             this.isUpdate = true;
             this.AlbaranId= albaranId;
         }

@@ -38,7 +38,7 @@
             this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.labelTotal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -143,18 +143,18 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "€";
             // 
-            // label9
+            // labelTitle
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label9.Location = new System.Drawing.Point(128, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(308, 42);
-            this.label9.TabIndex = 28;
-            this.label9.Text = "Linea de Factura";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.BackColor = System.Drawing.Color.White;
+            this.labelTitle.Font = new System.Drawing.Font("Tahoma", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.SteelBlue;
+            this.labelTitle.Location = new System.Drawing.Point(128, 32);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(308, 42);
+            this.labelTitle.TabIndex = 28;
+            this.labelTitle.Text = "Linea de Factura";
+            this.labelTitle.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -257,7 +257,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.textBoxCodigo);
@@ -291,7 +291,7 @@
         private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label labelTitle;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

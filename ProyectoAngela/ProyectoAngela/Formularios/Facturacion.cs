@@ -146,7 +146,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void NuevaLineaFactura()
         {
-            using (var form = new AltaLineaFactura(this.originalProductValues))
+            using (var form = new AltaLineaFactura(this.originalProductValues, "Linea de Factura"))
             {
                 var result = form.ShowDialog();
                 if (result == DialogResult.OK)

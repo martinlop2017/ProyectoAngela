@@ -16,9 +16,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     {
         public LineaFacturaViewModel lineaFactura { get; set; }
         public List<string> Products { get; set; }
+        private string title;
 
-        public AltaLineaFactura(List<string> products)
+        public AltaLineaFactura(List<string> products, string title)
         {
+            this.title = title;
             this.Products = products;
             InitializeComponent();
         }
@@ -42,6 +44,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void AltaLineaFactura_Load(object sender, EventArgs e)
         {
+            this.labelTitle.Text = title;
             this.comboBoxProducto.DataSource = this.Products;
         }
 

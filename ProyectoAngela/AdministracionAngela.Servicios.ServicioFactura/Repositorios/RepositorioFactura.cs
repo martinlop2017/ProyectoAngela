@@ -202,19 +202,30 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             {
                 var facturaToupdate = this.dbContext.Facturas.Find(facturaToRepository.NumeroFactura);
 
-                facturaToupdate.Cliente = facturaToRepository.Cliente;
+                facturaToupdate.ClienteId = facturaToRepository.ClienteId;
                 facturaToupdate.Fecha = facturaToRepository.Fecha;
-                facturaToupdate.LineaFactura = facturaToRepository.LineaFactura;
+                ////facturaToupdate.LineaFactura = facturaToRepository.LineaFactura;
                 facturaToupdate.Total = facturaToRepository.Total;
                 facturaToupdate.TotalBase = facturaToRepository.TotalBase;
                 facturaToupdate.EtiquetaLote = facturaToRepository.EtiquetaLote;
 
                 dbContext.SaveChanges();
+
+                UpdateLineasFactura(facturaToRepository);
             }
             catch(Exception exp)
             {
 
             }
+        }
+
+        private void UpdateLineasFactura(Factura facturaToRepository)
+        {
+            var lineasToDelete = this.dbContext.LineasFactura.Where(x => x.NumeroFactura.Equals(facturaToRepository.NumeroFactura));
+            this.dbContext.LineasFactura.RemoveRange(lineasToDelete);
+            this.dbContext.LineasFactura.AddRange(facturaToRepository.LineaFactura);
+
+            dbContext.SaveChanges();
         }
 
         public void UpdateAlbaran(Albaran AlbaranToRepository)

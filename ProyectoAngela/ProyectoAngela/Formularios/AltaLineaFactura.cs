@@ -25,8 +25,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            var precio = decimal.Parse(this.textBoxPrecio.Text);
-            var kgs = decimal.Parse(this.textBoxKgs.Text);
+            var precio = decimal.Parse(this.textBoxPrecio.Text.Replace(".", ","));
+            var kgs = decimal.Parse(this.textBoxKgs.Text.Replace(".", ","));
             this.lineaFactura = new LineaFacturaViewModel()
             {
                 Cajas = int.Parse(this.textBoxCajas.Text),
@@ -72,8 +72,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void RecalculateImporte()
         {
-            var precio = this.textBoxPrecio.Text;
-            var kgs = this.textBoxKgs.Text;
+            var precio = this.textBoxPrecio.Text.Replace(".", ",");
+            var kgs = this.textBoxKgs.Text.Replace(".", ",");
 
             if (!string.IsNullOrEmpty(precio) && !string.IsNullOrEmpty(kgs) && precio.IsDecimal() && kgs.IsDecimal())
             {

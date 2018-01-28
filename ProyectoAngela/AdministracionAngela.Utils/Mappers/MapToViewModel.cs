@@ -332,7 +332,7 @@ namespace AdministracionAngela.Utils.Mappers
                 PorcentajeRE = lineaFactura.PorcentajeRE.Value,
                 Kgs = lineaFactura.Kgs.Value,
                 Precio = lineaFactura.Precio.Value,
-                Importe = lineaFactura.Kgs.Value * lineaFactura.Precio.Value,
+                Importe = Decimal.Round(lineaFactura.Kgs.Value * lineaFactura.Precio.Value, 2),
                 Cajas = lineaFactura.Cajas.Value
             };
         }

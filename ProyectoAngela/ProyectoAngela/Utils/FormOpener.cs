@@ -32,17 +32,24 @@ namespace AdministracionAngela.ProyectoAngela.Utils
 
         public DialogResult ShowModalForm<TForm>() where TForm : Form
         {
-            try
-            {
+            //try
+            //{
                 using (var form = this.GetForm<TForm>())
                 {
-                    return form.ShowDialog();
+                    try
+                    {
+                        return form.ShowDialog();
+                    }
+                    catch (Exception exp)
+                    {
+                        return DialogResult.Abort;
+                    }
                 }
-            }
-            catch(Exception exp)
-            {
-                return DialogResult.Abort;
-            }
+            //}
+            //catch(Exception exp)
+            //{
+            //    return DialogResult.Abort;
+            //}
         }
 
         public DialogResult ShowDocumentoGestionForm(EnumDocumentosGestion documento)

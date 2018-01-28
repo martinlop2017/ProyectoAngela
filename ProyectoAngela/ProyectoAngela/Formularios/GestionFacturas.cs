@@ -42,6 +42,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var typeDocumento = this.documentoGestion.GetTipoDocumento();
             this.formOpener.ShowDocumentoForm(typeDocumento);
+            this.FillControls();
         }
 
         private void button6_MouseEnter(object sender, EventArgs e)
@@ -140,6 +141,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var selectedFactura = (FacturaViewModel)selectedRows[0].DataBoundItem;
                 this.OpenFormToModify(selectedFactura);
             }
+            this.FillControls();
         }
 
         private void OpenFormToModify(FacturaViewModel selectedFactura)

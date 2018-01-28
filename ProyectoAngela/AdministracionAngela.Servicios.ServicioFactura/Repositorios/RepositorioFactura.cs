@@ -82,11 +82,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public List<Factura> GetAllFacturas()
         {
+            this.dbContext.ReloadEntities<Factura>();
             return this.dbContext.Facturas.ToList();
         }
 
         public List<Albaran> GetAllAlbaranes()
         {
+            this.dbContext.ReloadEntities<Albaran>();
             return this.dbContext.Albaranes.ToList();
         }
 
@@ -204,7 +206,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
                 facturaToupdate.ClienteId = facturaToRepository.ClienteId;
                 facturaToupdate.Fecha = facturaToRepository.Fecha;
-                ////facturaToupdate.LineaFactura = facturaToRepository.LineaFactura;
                 facturaToupdate.Total = facturaToRepository.Total;
                 facturaToupdate.TotalBase = facturaToRepository.TotalBase;
                 facturaToupdate.EtiquetaLote = facturaToRepository.EtiquetaLote;
@@ -212,6 +213,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 dbContext.SaveChanges();
 
                 UpdateLineasFactura(facturaToRepository);
+
             }
             catch(Exception exp)
             {
@@ -228,26 +230,36 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             dbContext.SaveChanges();
         }
 
-        public void UpdateAlbaran(Albaran AlbaranToRepository)
+        public void UpdateAlbaran(Albaran albaranToRepository)
         {
             try
             {
-                var albaranToupdate = this.dbContext.Albaranes.Find(AlbaranToRepository.NumeroAlbaran, AlbaranToRepository.IsAlbaran);
+                var albaranToupdate = this.dbContext.Albaranes.Find(albaranToRepository.NumeroAlbaran, albaranToRepository.IsAlbaran);
 
-                albaranToupdate.Cliente = AlbaranToRepository.Cliente;
-                albaranToupdate.Fecha = AlbaranToRepository.Fecha;
-                albaranToupdate.LineaAlbaran = AlbaranToRepository.LineaAlbaran;
-                albaranToupdate.Total = AlbaranToRepository.Total;
-                albaranToupdate.TotalBase = AlbaranToRepository.TotalBase;
-                albaranToupdate.EtiquetaLote = AlbaranToRepository.EtiquetaLote;
-                albaranToupdate.IsAlbaran = AlbaranToRepository.IsAlbaran;
+                albaranToupdate.ClienteId = albaranToRepository.ClienteId;
+                albaranToupdate.Fecha = albaranToRepository.Fecha;
+                albaranToupdate.Total = albaranToRepository.Total;
+                albaranToupdate.TotalBase = albaranToRepository.TotalBase;
+                albaranToupdate.EtiquetaLote = albaranToRepository.EtiquetaLote;
+                albaranToupdate.IsAlbaran = albaranToRepository.IsAlbaran;
 
                 dbContext.SaveChanges();
+
+                UpdateLineasAlbaran(albaranToRepository);
             }
             catch (Exception exp)
             {
 
             }
+        }
+
+        private void UpdateLineasAlbaran(Albaran albaranToRepository)
+        {
+            var lineasToDelete = this.dbContext.LineasAlbaran.Where(x => x.NumeroAlbaran.Equals(albaranToRepository.NumeroAlbaran) && x.IsAlbaran == albaranToRepository.IsAlbaran);
+            this.dbContext.LineasAlbaran.RemoveRange(lineasToDelete);
+            this.dbContext.LineasAlbaran.AddRange(albaranToRepository.LineaAlbaran);
+
+            dbContext.SaveChanges();
         }
 
         public List<Albaran> GetAlbaranesByIds(List<long> albaranesIds)

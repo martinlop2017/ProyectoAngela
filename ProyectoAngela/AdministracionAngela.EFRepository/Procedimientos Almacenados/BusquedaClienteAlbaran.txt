@@ -1,27 +1,30 @@
 USE [AdministracionAngela]
 GO
 
-/****** Object:  StoredProcedure [dbo].[BusquedaLineasIVA]    Script Date: 27/01/2018 11:44:58 ******/
+/****** Object:  StoredProcedure [dbo].[BusquedaClienteAlbaran]    Script Date: 29/01/2018 19:34:41 ******/
 SET ANSI_NULLS ON
 GO
 
-SET QUOTED_IDENTIFIER ON
+SET QUOTED_IDENTIFIER OFF
 GO
 
 
-CREATE PROCEDURE [dbo].[BusquedaLineasIVAAlbaran] @NumeroAlbaran nvarchar(30)
+CREATE PROCEDURE [dbo].[BusquedaClienteAlbaran] @NumeroAlbaran nvarchar(30)
 AS
-select I.Id as IVAId
-, I.Porcentaje
-, I.PorcentanjeRE
-, SUM(LA.Importe) as BaseIVA
-, SUM(LA.ImporteIVA) as ImporteIVA
-, SUM(LA.ImporteRE) as ImporteRE
-from LineaAlbaran LA
-inner join Producto P on P.Id = LA.ProductoId
-inner join IVA I on I.Id = P.IVAId
-where LA.NumeroAlbaran = @NumeroAlbaran
-group by I.Id, I.Porcentaje, I.PorcentanjeRE 
+select 
+A.NumeroAlbaran
+, A.Fecha
+, C.NIF
+, A.Total
+, C.Nombre
+, D.LineaDireccion
+, D.Poblacion
+, D.Provincia
+, D.CodigoPostal
+from Albaran A
+inner join Cliente C on C.Id = A.ClienteId
+inner join Direccion D on D.Id = C.DireccionId
+Where A.NumeroAlbaran = @NumeroAlbaran
 
 GO
 

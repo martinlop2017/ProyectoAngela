@@ -1,0 +1,630 @@
+
+-- --------------------------------------------------
+-- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
+-- --------------------------------------------------
+-- Date Created: 01/29/2018 19:24:25
+-- Generated from EDMX file: C:\MyProjects\ProyectoAngela\ProyectoAngela\AdministracionAngela.EFRepository\AdministracionAngelaModel.edmx
+-- --------------------------------------------------
+
+SET QUOTED_IDENTIFIER OFF;
+GO
+USE [AdministracionAngela];
+GO
+IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
+GO
+
+-- --------------------------------------------------
+-- Dropping existing FOREIGN KEY constraints
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[FK_Albaran_Cliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Albaran] DROP CONSTRAINT [FK_Albaran_Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Cliente_Contacto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cliente] DROP CONSTRAINT [FK_Cliente_Contacto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Cliente_Direccion]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cliente] DROP CONSTRAINT [FK_Cliente_Direccion];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Cliente_FormaPago]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Cliente] DROP CONSTRAINT [FK_Cliente_FormaPago];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Factura_Cliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Factura] DROP CONSTRAINT [FK_Factura_Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LineaAlbaran_Albaran]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineaAlbaran] DROP CONSTRAINT [FK_LineaAlbaran_Albaran];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LineaAlbaran_Producto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineaAlbaran] DROP CONSTRAINT [FK_LineaAlbaran_Producto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LineaFactura_Factura]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineaFactura] DROP CONSTRAINT [FK_LineaFactura_Factura];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LineaFactura_Producto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LineaFactura] DROP CONSTRAINT [FK_LineaFactura_Producto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Perfil_Contacto]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Perfil] DROP CONSTRAINT [FK_Perfil_Contacto];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Perfil_Direccion]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Perfil] DROP CONSTRAINT [FK_Perfil_Direccion];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Producto_IVA]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Producto] DROP CONSTRAINT [FK_Producto_IVA];
+GO
+
+-- --------------------------------------------------
+-- Dropping existing tables
+-- --------------------------------------------------
+
+IF OBJECT_ID(N'[dbo].[Albaran]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Albaran];
+GO
+IF OBJECT_ID(N'[dbo].[Cliente]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Cliente];
+GO
+IF OBJECT_ID(N'[dbo].[Contacto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Contacto];
+GO
+IF OBJECT_ID(N'[dbo].[Direccion]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Direccion];
+GO
+IF OBJECT_ID(N'[dbo].[Factura]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Factura];
+GO
+IF OBJECT_ID(N'[dbo].[FormaPago]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FormaPago];
+GO
+IF OBJECT_ID(N'[dbo].[IVA]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[IVA];
+GO
+IF OBJECT_ID(N'[dbo].[LineaAlbaran]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LineaAlbaran];
+GO
+IF OBJECT_ID(N'[dbo].[LineaFactura]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LineaFactura];
+GO
+IF OBJECT_ID(N'[dbo].[Perfil]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Perfil];
+GO
+IF OBJECT_ID(N'[dbo].[Producto]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Producto];
+GO
+IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[sysdiagrams];
+GO
+IF OBJECT_ID(N'[dbo].[User]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[User];
+GO
+
+-- --------------------------------------------------
+-- Creating all tables
+-- --------------------------------------------------
+
+-- Creating table 'IVA'
+CREATE TABLE [dbo].[IVA] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Descripcion] nvarchar(max)  NULL,
+    [Porcentaje] int  NULL,
+    [PorcentanjeRE] decimal(18,2)  NULL
+);
+GO
+
+-- Creating table 'Perfil'
+CREATE TABLE [dbo].[Perfil] (
+    [Id] int  NOT NULL,
+    [Nombre] nvarchar(max)  NULL,
+    [NIF] nvarchar(max)  NULL,
+    [CIF] nvarchar(max)  NULL,
+    [DireccionId] int  NULL,
+    [ContactoId] int  NULL,
+    [Iban] nvarchar(max)  NULL
+);
+GO
+
+-- Creating table 'sysdiagrams'
+CREATE TABLE [dbo].[sysdiagrams] (
+    [name] nvarchar(128)  NOT NULL,
+    [principal_id] int  NOT NULL,
+    [diagram_id] int IDENTITY(1,1) NOT NULL,
+    [version] int  NULL,
+    [definition] varbinary(max)  NULL
+);
+GO
+
+-- Creating table 'Direccion'
+CREATE TABLE [dbo].[Direccion] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [LineaDireccion] nvarchar(max)  NULL,
+    [Poblacion] nvarchar(max)  NULL,
+    [Provincia] nvarchar(max)  NULL,
+    [CodigoPostal] int  NULL
+);
+GO
+
+-- Creating table 'User'
+CREATE TABLE [dbo].[User] (
+    [UserName] nvarchar(50)  NOT NULL,
+    [Password] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'FormaPago'
+CREATE TABLE [dbo].[FormaPago] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Concepto] nvarchar(max)  NULL,
+    [Dias] int  NULL
+);
+GO
+
+-- Creating table 'Cliente'
+CREATE TABLE [dbo].[Cliente] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [CodigoCliente] int  NOT NULL,
+    [DireccionId] int  NULL,
+    [ContactoId] int  NULL,
+    [CIF] nvarchar(max)  NULL,
+    [NIF] nvarchar(max)  NULL,
+    [Nombre] nvarchar(max)  NOT NULL,
+    [RiesgoMaximo] decimal(18,2)  NOT NULL,
+    [IsGeneral] bit  NOT NULL,
+    [RecargoEquivalencia] bit  NOT NULL,
+    [UnionEuropea] bit  NOT NULL,
+    [Excento] bit  NOT NULL,
+    [FormaDePagoId] int  NOT NULL
+);
+GO
+
+-- Creating table 'Contacto'
+CREATE TABLE [dbo].[Contacto] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Telefono1] int  NULL,
+    [Telefono2] int  NULL,
+    [Fax] int  NULL,
+    [Email] nvarchar(max)  NULL,
+    [Email2] nvarchar(max)  NULL,
+    [Email3] nvarchar(max)  NULL,
+    [Email4] nvarchar(max)  NULL,
+    [PersonaContacto] nvarchar(max)  NULL
+);
+GO
+
+-- Creating table 'Producto'
+CREATE TABLE [dbo].[Producto] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [CodigoProducto] int  NOT NULL,
+    [IVAId] int  NOT NULL,
+    [Descripcion] nvarchar(max)  NULL,
+    [NombreCientifico] nvarchar(max)  NULL,
+    [FAO] nvarchar(50)  NULL,
+    [ArtePesca] nvarchar(max)  NULL,
+    [ZonaCaptura] nvarchar(max)  NULL,
+    [Abreviacion] nvarchar(50)  NULL
+);
+GO
+
+-- Creating table 'Factura'
+CREATE TABLE [dbo].[Factura] (
+    [NumeroFactura] bigint IDENTITY(1,1) NOT NULL,
+    [ClienteId] bigint  NOT NULL,
+    [Fecha] datetime  NULL,
+    [TotalRecargoEquivalencia] decimal(18,2)  NULL,
+    [TotalBase] decimal(18,2)  NULL,
+    [Total] decimal(18,2)  NULL,
+    [TotalIVA] decimal(18,2)  NULL,
+    [Impreso] bit  NULL,
+    [EtiquetaLote] nvarchar(50)  NULL
+);
+GO
+
+-- Creating table 'LineaFactura'
+CREATE TABLE [dbo].[LineaFactura] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [NumeroFactura] bigint  NOT NULL,
+    [ProductoId] bigint  NOT NULL,
+    [PorcentajeIVA] decimal(18,2)  NOT NULL,
+    [PorcentajeRE] decimal(18,2)  NULL,
+    [Kgs] decimal(18,2)  NULL,
+    [Precio] decimal(18,2)  NULL,
+    [Cajas] int  NULL,
+    [FAO] nvarchar(50)  NULL,
+    [ZonaCaptura] nvarchar(max)  NULL,
+    [NombreCientifico] nvarchar(max)  NULL,
+    [ArtePesca] nvarchar(max)  NULL,
+    [Lote] nvarchar(max)  NULL,
+    [Importe] decimal(18,2)  NULL,
+    [ImporteIVA] decimal(18,2)  NULL,
+    [ImporteRE] decimal(18,2)  NULL
+);
+GO
+
+-- Creating table 'LineaAlbaran'
+CREATE TABLE [dbo].[LineaAlbaran] (
+    [Id] bigint IDENTITY(1,1) NOT NULL,
+    [NumeroAlbaran] bigint  NOT NULL,
+    [IsAlbaran] bit  NOT NULL,
+    [ProductoId] bigint  NOT NULL,
+    [PorcentajeIVA] decimal(18,2)  NOT NULL,
+    [PorcentajeRE] decimal(18,2)  NULL,
+    [Kgs] decimal(18,2)  NULL,
+    [Precio] decimal(18,2)  NULL,
+    [Cajas] int  NULL,
+    [FAO] nvarchar(50)  NULL,
+    [ZonaCaptura] nvarchar(max)  NULL,
+    [NombreCientifico] nvarchar(max)  NULL,
+    [ArtePesca] nvarchar(max)  NULL,
+    [Lote] nvarchar(max)  NULL,
+    [Importe] decimal(18,2)  NULL,
+    [ImporteIVA] decimal(18,2)  NULL,
+    [ImporteRE] decimal(18,2)  NULL
+);
+GO
+
+-- Creating table 'Albaran'
+CREATE TABLE [dbo].[Albaran] (
+    [NumeroAlbaran] bigint  NOT NULL,
+    [ClienteId] bigint  NULL,
+    [Fecha] datetime  NULL,
+    [TotalRecargoEquivalencia] decimal(18,2)  NULL,
+    [TotalBase] decimal(18,2)  NULL,
+    [Total] decimal(18,2)  NULL,
+    [Impreso] bit  NULL,
+    [EtiquetaLote] nvarchar(50)  NULL,
+    [IsAlbaran] bit  NOT NULL,
+    [TotalIVA] decimal(18,2)  NULL,
+    [Facturado] bit  NULL
+);
+GO
+
+-- --------------------------------------------------
+-- Creating all PRIMARY KEY constraints
+-- --------------------------------------------------
+
+-- Creating primary key on [Id] in table 'IVA'
+ALTER TABLE [dbo].[IVA]
+ADD CONSTRAINT [PK_IVA]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Perfil'
+ALTER TABLE [dbo].[Perfil]
+ADD CONSTRAINT [PK_Perfil]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [diagram_id] in table 'sysdiagrams'
+ALTER TABLE [dbo].[sysdiagrams]
+ADD CONSTRAINT [PK_sysdiagrams]
+    PRIMARY KEY CLUSTERED ([diagram_id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Direccion'
+ALTER TABLE [dbo].[Direccion]
+ADD CONSTRAINT [PK_Direccion]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [UserName] in table 'User'
+ALTER TABLE [dbo].[User]
+ADD CONSTRAINT [PK_User]
+    PRIMARY KEY CLUSTERED ([UserName] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'FormaPago'
+ALTER TABLE [dbo].[FormaPago]
+ADD CONSTRAINT [PK_FormaPago]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Cliente'
+ALTER TABLE [dbo].[Cliente]
+ADD CONSTRAINT [PK_Cliente]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Contacto'
+ALTER TABLE [dbo].[Contacto]
+ADD CONSTRAINT [PK_Contacto]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'Producto'
+ALTER TABLE [dbo].[Producto]
+ADD CONSTRAINT [PK_Producto]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [NumeroFactura] in table 'Factura'
+ALTER TABLE [dbo].[Factura]
+ADD CONSTRAINT [PK_Factura]
+    PRIMARY KEY CLUSTERED ([NumeroFactura] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'LineaFactura'
+ALTER TABLE [dbo].[LineaFactura]
+ADD CONSTRAINT [PK_LineaFactura]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'LineaAlbaran'
+ALTER TABLE [dbo].[LineaAlbaran]
+ADD CONSTRAINT [PK_LineaAlbaran]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [NumeroAlbaran], [IsAlbaran] in table 'Albaran'
+ALTER TABLE [dbo].[Albaran]
+ADD CONSTRAINT [PK_Albaran]
+    PRIMARY KEY CLUSTERED ([NumeroAlbaran], [IsAlbaran] ASC);
+GO
+
+-- --------------------------------------------------
+-- Creating all FOREIGN KEY constraints
+-- --------------------------------------------------
+
+-- Creating foreign key on [Id] in table 'Perfil'
+ALTER TABLE [dbo].[Perfil]
+ADD CONSTRAINT [FK_Perfil_Direccion]
+    FOREIGN KEY ([Id])
+    REFERENCES [dbo].[Direccion]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating foreign key on [ContactoId] in table 'Cliente'
+ALTER TABLE [dbo].[Cliente]
+ADD CONSTRAINT [FK_Cliente_Contacto]
+    FOREIGN KEY ([ContactoId])
+    REFERENCES [dbo].[Contacto]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Cliente_Contacto'
+CREATE INDEX [IX_FK_Cliente_Contacto]
+ON [dbo].[Cliente]
+    ([ContactoId]);
+GO
+
+-- Creating foreign key on [DireccionId] in table 'Cliente'
+ALTER TABLE [dbo].[Cliente]
+ADD CONSTRAINT [FK_Cliente_Direccion]
+    FOREIGN KEY ([DireccionId])
+    REFERENCES [dbo].[Direccion]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Cliente_Direccion'
+CREATE INDEX [IX_FK_Cliente_Direccion]
+ON [dbo].[Cliente]
+    ([DireccionId]);
+GO
+
+-- Creating foreign key on [FormaDePagoId] in table 'Cliente'
+ALTER TABLE [dbo].[Cliente]
+ADD CONSTRAINT [FK_Cliente_FormaPago]
+    FOREIGN KEY ([FormaDePagoId])
+    REFERENCES [dbo].[FormaPago]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Cliente_FormaPago'
+CREATE INDEX [IX_FK_Cliente_FormaPago]
+ON [dbo].[Cliente]
+    ([FormaDePagoId]);
+GO
+
+-- Creating foreign key on [ContactoId] in table 'Perfil'
+ALTER TABLE [dbo].[Perfil]
+ADD CONSTRAINT [FK_Perfil_Contacto]
+    FOREIGN KEY ([ContactoId])
+    REFERENCES [dbo].[Contacto]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Perfil_Contacto'
+CREATE INDEX [IX_FK_Perfil_Contacto]
+ON [dbo].[Perfil]
+    ([ContactoId]);
+GO
+
+-- Creating foreign key on [IVAId] in table 'Producto'
+ALTER TABLE [dbo].[Producto]
+ADD CONSTRAINT [FK_Producto_IVA]
+    FOREIGN KEY ([IVAId])
+    REFERENCES [dbo].[IVA]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Producto_IVA'
+CREATE INDEX [IX_FK_Producto_IVA]
+ON [dbo].[Producto]
+    ([IVAId]);
+GO
+
+-- Creating foreign key on [ClienteId] in table 'Factura'
+ALTER TABLE [dbo].[Factura]
+ADD CONSTRAINT [FK_Factura_Cliente]
+    FOREIGN KEY ([ClienteId])
+    REFERENCES [dbo].[Cliente]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Factura_Cliente'
+CREATE INDEX [IX_FK_Factura_Cliente]
+ON [dbo].[Factura]
+    ([ClienteId]);
+GO
+
+-- Creating foreign key on [NumeroFactura] in table 'LineaFactura'
+ALTER TABLE [dbo].[LineaFactura]
+ADD CONSTRAINT [FK_LineaFactura_Factura]
+    FOREIGN KEY ([NumeroFactura])
+    REFERENCES [dbo].[Factura]
+        ([NumeroFactura])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LineaFactura_Factura'
+CREATE INDEX [IX_FK_LineaFactura_Factura]
+ON [dbo].[LineaFactura]
+    ([NumeroFactura]);
+GO
+
+-- Creating foreign key on [ProductoId] in table 'LineaFactura'
+ALTER TABLE [dbo].[LineaFactura]
+ADD CONSTRAINT [FK_LineaFactura_Producto]
+    FOREIGN KEY ([ProductoId])
+    REFERENCES [dbo].[Producto]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LineaFactura_Producto'
+CREATE INDEX [IX_FK_LineaFactura_Producto]
+ON [dbo].[LineaFactura]
+    ([ProductoId]);
+GO
+
+-- Creating foreign key on [ProductoId] in table 'LineaAlbaran'
+ALTER TABLE [dbo].[LineaAlbaran]
+ADD CONSTRAINT [FK_LineaAlbaran_Producto]
+    FOREIGN KEY ([ProductoId])
+    REFERENCES [dbo].[Producto]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LineaAlbaran_Producto'
+CREATE INDEX [IX_FK_LineaAlbaran_Producto]
+ON [dbo].[LineaAlbaran]
+    ([ProductoId]);
+GO
+
+-- Creating foreign key on [ClienteId] in table 'Albaran'
+ALTER TABLE [dbo].[Albaran]
+ADD CONSTRAINT [FK_Albaran_Cliente]
+    FOREIGN KEY ([ClienteId])
+    REFERENCES [dbo].[Cliente]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Albaran_Cliente'
+CREATE INDEX [IX_FK_Albaran_Cliente]
+ON [dbo].[Albaran]
+    ([ClienteId]);
+GO
+
+-- Creating foreign key on [NumeroAlbaran], [IsAlbaran] in table 'LineaAlbaran'
+ALTER TABLE [dbo].[LineaAlbaran]
+ADD CONSTRAINT [FK_LineaAlbaran_Albaran]
+    FOREIGN KEY ([NumeroAlbaran], [IsAlbaran])
+    REFERENCES [dbo].[Albaran]
+        ([NumeroAlbaran], [IsAlbaran])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LineaAlbaran_Albaran'
+CREATE INDEX [IX_FK_LineaAlbaran_Albaran]
+ON [dbo].[LineaAlbaran]
+    ([NumeroAlbaran], [IsAlbaran]);
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaClienteAlbaran] @NumeroAlbaran nvarchar(30)
+AS
+select 
+A.NumeroAlbaran
+, A.Fecha
+, C.NIF
+, A.Total
+, C.Nombre
+, D.LineaDireccion
+, D.Poblacion
+, D.Provincia
+, D.CodigoPostal
+from Albaran A
+inner join Cliente C on C.Id = A.ClienteId
+inner join Direccion D on D.Id = C.DireccionId
+Where A.NumeroAlbaran = @NumeroAlbaran
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaClienteFactura] @NumeroFactura nvarchar(30)
+AS
+select F.NumeroFactura, F.Fecha, C.NIF, F.Total, C.Nombre, D.LineaDireccion, D.Poblacion, D.Provincia, D.CodigoPostal
+from Factura F
+inner join Cliente C on C.Id = F.ClienteId
+inner join Direccion D on D.Id = C.DireccionId
+Where NumeroFactura = @NumeroFactura
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaLineasAlbaran] @NumeroAlbaran nvarchar(30)
+AS
+select LA.NumeroAlbaran
+, P.CodigoProducto
+, P.Descripcion
+, P.NombreCientifico
+, P.FAO
+, P.ZonaCaptura
+, LA.Cajas
+, LA.Kgs
+, LA.Precio
+, LA.Lote
+, LA.Importe
+from LineaAlbaran LA
+inner join Producto P on P.Id = LA.ProductoId
+Where NumeroAlbaran = @NumeroAlbaran
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaLineasFactura] @NumeroFactura nvarchar(30)
+AS
+select LF.NumeroFactura
+, P.CodigoProducto
+, P.Descripcion
+, P.NombreCientifico
+, P.FAO
+, P.ZonaCaptura
+, LF.Cajas
+, LF.Kgs
+, LF.Precio
+, LF.Lote
+, LF.Importe
+from LineaFactura LF
+inner join Producto P on P.Id = LF.ProductoId
+Where NumeroFactura = @NumeroFactura
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaLineasIVA] @NumeroFactura nvarchar(30)
+AS
+select I.Id as IVAId, I.Porcentaje, I.PorcentanjeRE, SUM(LF.Importe) as BaseIVA, SUM(LF.ImporteIVA) as ImporteIVA, SUM(LF.ImporteRE) as ImporteRE
+from LineaFactura LF
+inner join Producto P on P.Id = LF.ProductoId
+inner join IVA I on I.Id = P.IVAId
+where LF.NumeroFactura = @NumeroFactura
+group by I.Id, I.Porcentaje, I.PorcentanjeRE 
+GO
+
+CREATE PROCEDURE [dbo].[BusquedaLineasIVAAlbaran] @NumeroAlbaran nvarchar(30)
+AS
+select I.Id as IVAId
+, I.Porcentaje
+, I.PorcentanjeRE
+, SUM(LA.Importe) as BaseIVA
+, SUM(LA.ImporteIVA) as ImporteIVA
+, SUM(LA.ImporteRE) as ImporteRE
+from LineaAlbaran LA
+inner join Producto P on P.Id = LA.ProductoId
+inner join IVA I on I.Id = P.IVAId
+where LA.NumeroAlbaran = @NumeroAlbaran
+group by I.Id, I.Porcentaje, I.PorcentanjeRE 
+
+Go
+-- --------------------------------------------------
+-- Script has ended
+-- --------------------------------------------------

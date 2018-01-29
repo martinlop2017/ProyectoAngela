@@ -137,6 +137,7 @@
       <DependentUpon>AdministracionAngelaModel.edmx</DependentUpon>
       <LastGenOutput>AdministracionAngelaModel.cs</LastGenOutput>
     </Content>
+    <Content Include="CreacionBaseDeDatos.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaClienteAlbaran.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaClienteFactura.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaLineasAlbaran.txt" />

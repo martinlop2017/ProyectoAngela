@@ -29,7 +29,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.documentoGestion = documentoGestion;
             InitializeComponent();
             this.labelTitulo.Text = this.documentoGestion.GetTitulo();
-            this.button1.Enabled = this.documentoGestion.CanBeDocumento();
+            this.pictureBox1.Visible = this.documentoGestion.CanBeDocumento();
             this.buttonFacturar.Visible = this.documentoGestion.PuedeFacturar();
         }
 
@@ -182,12 +182,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.FillControls();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            this.IsDocumento = !this.IsDocumento;
-            this.FillControls();
-        }
-
         private void buttonFacturar_Click(object sender, EventArgs e)
         {
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
@@ -196,6 +190,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.documentoGestion.Facturar(selectedDocumentosIds);
 
             FillControls();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.IsDocumento = !this.IsDocumento;
+            this.FillControls();
         }
     }
 }

@@ -195,6 +195,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.IsDocumento = !this.IsDocumento;
+            this.dataGridViewFacturas.BackgroundColor = this.IsDocumento ? Color.White : Color.Gray;
             this.FillControls();
         }
     }

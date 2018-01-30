@@ -322,9 +322,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.IsAlbaran = false;
+            this.IsAlbaran = !this.IsAlbaran;
+
+            this.dataGridViewLineasFactura.BackgroundColor = this.IsAlbaran ? Color.White : Color.Gray;
         }
     }
 }

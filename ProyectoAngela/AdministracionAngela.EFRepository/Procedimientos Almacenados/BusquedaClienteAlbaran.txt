@@ -13,7 +13,7 @@ CREATE PROCEDURE [dbo].[BusquedaClienteAlbaran] @NumeroAlbaran nvarchar(30)
 AS
 select 
 A.NumeroAlbaran
-, A.Fecha
+, FORMAT(A.Fecha, 'dd/MM/yyyy') as Fecha
 , C.NIF
 , A.Total
 , C.Nombre

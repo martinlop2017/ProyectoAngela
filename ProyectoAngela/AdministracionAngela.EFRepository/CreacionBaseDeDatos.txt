@@ -541,7 +541,7 @@ CREATE PROCEDURE [dbo].[BusquedaClienteAlbaran] @NumeroAlbaran nvarchar(30)
 AS
 select 
 A.NumeroAlbaran
-, A.Fecha
+, FORMAT(A.Fecha, 'dd/MM/yyyy') as Fecha
 , C.NIF
 , A.Total
 , C.Nombre
@@ -557,7 +557,8 @@ GO
 
 CREATE PROCEDURE [dbo].[BusquedaClienteFactura] @NumeroFactura nvarchar(30)
 AS
-select F.NumeroFactura, F.Fecha, C.NIF, F.Total, C.Nombre, D.LineaDireccion, D.Poblacion, D.Provincia, D.CodigoPostal
+select F.NumeroFactura
+, FORMAT(F.Fecha, 'dd/MM/yyyy') as Fecha, C.NIF, F.Total, C.Nombre, D.LineaDireccion, D.Poblacion, D.Provincia, D.CodigoPostal
 from Factura F
 inner join Cliente C on C.Id = F.ClienteId
 inner join Direccion D on D.Id = C.DireccionId

@@ -168,7 +168,7 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroAlbaran = altaAlbaran.Id,
                 ClienteId = altaAlbaran.ClienteIdsAndDescripciones[altaAlbaran.SelectedClient],
                 Fecha = Convert.ToDateTime(altaAlbaran.Fecha),
-                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id, altaAlbaran.IsAlbaran),
+                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id),
                 TotalBase = altaAlbaran.TotalBase,
                 TotalRecargoEquivalencia = altaAlbaran.TotalRecargoEquivalencia,
                 TotalIVA = altaAlbaran.TotalIVA,
@@ -180,11 +180,10 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran, bool isAlbaran)
+        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran)
         {
             return lineasAlbaran.Select(linea => new LineaAlbaran()
             {
-                NumeroAlbaran = numeroAlbaran,
                 ProductoId = linea.ProductoId,
                 PorcentajeIVA = linea.PorcentajeIVA,
                 ImporteIVA = linea.ImporteIVA,
@@ -194,7 +193,6 @@ namespace AdministracionAngela.Utils.Mappers
                 Kgs = linea.Kgs,
                 Cajas = linea.Cajas,
                 Importe = linea.Importe,
-                IsAlbaran = isAlbaran
             }).ToList();
         }
 

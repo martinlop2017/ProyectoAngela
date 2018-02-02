@@ -20,6 +20,7 @@ namespace AdministracionAngela.EFRepository
             this.LineaAlbaran = new HashSet<LineaAlbaran>();
         }
     
+        public long Id { get; set; }
         public long NumeroAlbaran { get; set; }
         public Nullable<long> ClienteId { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }
@@ -32,8 +33,8 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> TotalIVA { get; set; }
         public Nullable<bool> Facturado { get; set; }
     
+        public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LineaAlbaran> LineaAlbaran { get; set; }
-        public virtual Cliente Cliente { get; set; }
     }
 }

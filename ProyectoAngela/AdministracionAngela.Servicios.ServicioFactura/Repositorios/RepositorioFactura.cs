@@ -38,8 +38,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             try
             {
                 var numerosAlbaran = repositoryAlbaranesToDelete.Select(f => f.NumeroAlbaran);
-                var albaranesToDelete = this.dbContext.Albaranes.Where(f => numerosAlbaran.Contains(f.NumeroAlbaran));
+                var albaranesToDelete = this.dbContext.Albaranes.Where(f => numerosAlbaran.Contains(f.NumeroAlbaran)).ToList();
 
+                DeleteLineasAlbaranByNumeroAlbaran(albaranesToDelete);
                 this.dbContext.Albaranes.RemoveRange(albaranesToDelete);
                 this.dbContext.SaveChanges();
             }
@@ -69,8 +70,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var numerosAlbaran = repositoryAlbaranesToDelete.Select(f => f.NumeroAlbaran);
-                var lineasAlbaranToDelete = this.dbContext.LineasAlbaran.Where(lf => numerosAlbaran.Contains(lf.NumeroAlbaran)).ToList();
+                var albaranId = repositoryAlbaranesToDelete.Select(f => f.Id);
+                var lineasAlbaranToDelete = this.dbContext.LineasAlbaran.Where(lf => albaranId.Contains(lf.AlbaranId)).ToList();
 
                 this.dbContext.LineasAlbaran.RemoveRange(lineasAlbaranToDelete);
                 this.dbContext.SaveChanges();
@@ -105,11 +106,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        public Albaran GetAlbaranById(long albaranId, bool isAlbaran)
+        public Albaran GetAlbaranById(long numeroAlbaran, bool isAlbaran)
         {
             try
             {
-                return this.dbContext.Albaranes.Find(albaranId, isAlbaran);
+                return this.dbContext.Albaranes.First(a=> a.NumeroAlbaran == numeroAlbaran && a.IsAlbaran == isAlbaran);
             }
             catch (Exception exp)
             {
@@ -240,7 +241,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var albaranToupdate = this.dbContext.Albaranes.Find(albaranToRepository.NumeroAlbaran, albaranToRepository.IsAlbaran);
+                var albaranToupdate = this.dbContext.Albaranes.First(f => f.NumeroAlbaran == albaranToRepository.NumeroAlbaran && f.IsAlbaran == albaranToRepository.IsAlbaran);
 
                 albaranToupdate.ClienteId = albaranToRepository.ClienteId;
                 albaranToupdate.Fecha = albaranToRepository.Fecha;
@@ -251,7 +252,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
                 dbContext.SaveChanges();
 
-                UpdateLineasAlbaran(albaranToRepository);
+                UpdateLineasAlbaran(albaranToupdate.Id, albaranToRepository.LineaAlbaran);
             }
             catch (Exception exp)
             {
@@ -259,11 +260,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        private void UpdateLineasAlbaran(Albaran albaranToRepository)
+        private void UpdateLineasAlbaran(long albaranId, ICollection<LineaAlbaran> lineas)
         {
-            var lineasToDelete = this.dbContext.LineasAlbaran.Where(x => x.NumeroAlbaran.Equals(albaranToRepository.NumeroAlbaran) && x.IsAlbaran == albaranToRepository.IsAlbaran);
+            var lineasToDelete = this.dbContext.LineasAlbaran.Where(x => x.AlbaranId == albaranId);
             this.dbContext.LineasAlbaran.RemoveRange(lineasToDelete);
-            this.dbContext.LineasAlbaran.AddRange(albaranToRepository.LineaAlbaran);
+            foreach (var linea in lineas)
+            {
+                linea.AlbaranId = albaranId;
+            }
+
+            this.dbContext.LineasAlbaran.AddRange(lineas);
 
             dbContext.SaveChanges();
         }
@@ -275,7 +281,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public void SetFacturado(long numeroAlbaran)
         {
-            var albaranToUpdate = this.dbContext.Albaranes.Find(numeroAlbaran, true);
+            var albaranToUpdate = this.dbContext.Albaranes.Single(a => a.NumeroAlbaran == numeroAlbaran && a.IsAlbaran);
             albaranToUpdate.Facturado = true;
 
             this.dbContext.SaveChanges();

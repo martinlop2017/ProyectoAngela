@@ -31,9 +31,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -42,6 +42,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.buttonEliminarLinea = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewLineasFactura = new System.Windows.Forms.DataGridView();
+            this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCajas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,12 +72,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label4 = new System.Windows.Forms.Label();
             this.labelTotalCajas = new System.Windows.Forms.Label();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
-            this.ColumnProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCajas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnKgs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +114,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button5.Location = new System.Drawing.Point(761, 139);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(52, 50);
-            this.button5.TabIndex = 16;
+            this.button5.TabIndex = 6;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -124,7 +124,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.button4.Location = new System.Drawing.Point(145, 139);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 50);
-            this.button4.TabIndex = 15;
+            this.button4.TabIndex = 5;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // buttonEliminarLinea
@@ -150,23 +150,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // dataGridViewLineasFactura
             // 
             this.dataGridViewLineasFactura.AllowUserToAddRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dataGridViewLineasFactura.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewLineasFactura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewLineasFactura.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewLineasFactura.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewLineasFactura.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLineasFactura.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewLineasFactura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLineasFactura.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnProducto,
@@ -185,6 +185,48 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLineasFactura.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLineasFactura_CellEndEdit);
             this.dataGridViewLineasFactura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewLineasFactura_KeyPress);
             // 
+            // ColumnProducto
+            // 
+            this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnProducto.DataPropertyName = "SelectedProduct";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ColumnProducto.HeaderText = "Producto";
+            this.ColumnProducto.Name = "ColumnProducto";
+            this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.DataPropertyName = "ProductoId";
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            // 
+            // ColumnCajas
+            // 
+            this.ColumnCajas.DataPropertyName = "Cajas";
+            this.ColumnCajas.HeaderText = "Cajas";
+            this.ColumnCajas.Name = "ColumnCajas";
+            // 
+            // ColumnKgs
+            // 
+            this.ColumnKgs.DataPropertyName = "Kgs";
+            this.ColumnKgs.HeaderText = "Kgs";
+            this.ColumnKgs.Name = "ColumnKgs";
+            // 
+            // ColumnPrecio
+            // 
+            this.ColumnPrecio.DataPropertyName = "Precio";
+            this.ColumnPrecio.HeaderText = "Precio";
+            this.ColumnPrecio.Name = "ColumnPrecio";
+            // 
+            // ColumnImporte
+            // 
+            this.ColumnImporte.DataPropertyName = "Importe";
+            this.ColumnImporte.HeaderText = "Importe";
+            this.ColumnImporte.Name = "ColumnImporte";
+            this.ColumnImporte.ReadOnly = true;
+            // 
             // dateTimePickerFecha
             // 
             this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -193,7 +235,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dateTimePickerFecha.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateTimePickerFecha.RightToLeftLayout = true;
             this.dateTimePickerFecha.Size = new System.Drawing.Size(135, 24);
-            this.dateTimePickerFecha.TabIndex = 2;
+            this.dateTimePickerFecha.TabIndex = 1;
             // 
             // label10
             // 
@@ -230,7 +272,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.buttonSave.Location = new System.Drawing.Point(697, 682);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(116, 38);
-            this.buttonSave.TabIndex = 49;
+            this.buttonSave.TabIndex = 7;
             this.buttonSave.Text = "Guardar";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -252,7 +294,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.Location = new System.Drawing.Point(165, 62);
             this.comboBoxClientes.Name = "comboBoxClientes";
             this.comboBoxClientes.Size = new System.Drawing.Size(344, 26);
-            this.comboBoxClientes.TabIndex = 2;
+            this.comboBoxClientes.TabIndex = 0;
             // 
             // label2
             // 
@@ -281,7 +323,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxLote.Location = new System.Drawing.Point(703, 67);
             this.textBoxLote.Name = "textBoxLote";
             this.textBoxLote.Size = new System.Drawing.Size(105, 24);
-            this.textBoxLote.TabIndex = 53;
+            this.textBoxLote.TabIndex = 2;
             // 
             // label42
             // 
@@ -440,48 +482,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelNumeroFactura.Size = new System.Drawing.Size(46, 18);
             this.labelNumeroFactura.TabIndex = 56;
             this.labelNumeroFactura.Text = "label9";
-            // 
-            // ColumnProducto
-            // 
-            this.ColumnProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColumnProducto.DataPropertyName = "SelectedProduct";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.ColumnProducto.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ColumnProducto.HeaderText = "Producto";
-            this.ColumnProducto.Name = "ColumnProducto";
-            this.ColumnProducto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.DataPropertyName = "ProductoId";
-            this.ColumnCodigo.HeaderText = "Codigo";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            // 
-            // ColumnCajas
-            // 
-            this.ColumnCajas.DataPropertyName = "Cajas";
-            this.ColumnCajas.HeaderText = "Cajas";
-            this.ColumnCajas.Name = "ColumnCajas";
-            // 
-            // ColumnKgs
-            // 
-            this.ColumnKgs.DataPropertyName = "Kgs";
-            this.ColumnKgs.HeaderText = "Kgs";
-            this.ColumnKgs.Name = "ColumnKgs";
-            // 
-            // ColumnPrecio
-            // 
-            this.ColumnPrecio.DataPropertyName = "Precio";
-            this.ColumnPrecio.HeaderText = "Precio";
-            this.ColumnPrecio.Name = "ColumnPrecio";
-            // 
-            // ColumnImporte
-            // 
-            this.ColumnImporte.DataPropertyName = "Importe";
-            this.ColumnImporte.HeaderText = "Importe";
-            this.ColumnImporte.Name = "ColumnImporte";
-            this.ColumnImporte.ReadOnly = true;
             // 
             // Facturacion
             // 

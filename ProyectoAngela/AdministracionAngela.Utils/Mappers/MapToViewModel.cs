@@ -151,7 +151,14 @@ namespace AdministracionAngela.Utils.Mappers
                     Fax = perfilFromRepository.Contacto.Fax.Value,
                     Telefono1 = perfilFromRepository.Contacto.Telefono1.Value,
                     Telefono2 = perfilFromRepository.Contacto.Telefono2.Value,
-                    Iban = perfilFromRepository.Iban,
+                    Iban1 = perfilFromRepository.Iban1,
+                    Iban2 = perfilFromRepository.Iban2,
+                    Iban3 = perfilFromRepository.Iban3,
+                    Iban4 = perfilFromRepository.Iban4,
+                    Iban5 = perfilFromRepository.Iban5,
+                    Iban6 = perfilFromRepository.Iban6,
+                    PersonaContacto = perfilFromRepository.Contacto.PersonaContacto,
+                    LogoPath = perfilFromRepository.LogoPath,
                 };
             }
 
@@ -293,7 +300,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new AltaFacturaViewModel()
             {
-                Id = numeroFactura,
+                NumeroFactura = numeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
                 Fecha = DateTime.Today.ToString("yyyy MM dd"),
@@ -306,7 +313,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new AltaFacturaViewModel()
             {
-                Id = (int)factura.NumeroFactura,
+                NumeroFactura = (int)factura.NumeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
                 SelectedClient = string.Format("{0} - {1}", factura.Cliente.Id, factura.Cliente.Nombre),

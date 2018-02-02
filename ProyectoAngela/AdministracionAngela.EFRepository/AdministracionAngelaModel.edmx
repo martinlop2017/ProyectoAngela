@@ -7,9 +7,9 @@
     <Schema Namespace="AdministracionAngelaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Albaran">
           <Key>
-            <PropertyRef Name="NumeroAlbaran" />
-            <PropertyRef Name="IsAlbaran" />
+            <PropertyRef Name="Id" />
           </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NumeroAlbaran" Type="bigint" Nullable="false" />
           <Property Name="ClienteId" Type="bigint" />
           <Property Name="Fecha" Type="datetime" />
@@ -66,9 +66,10 @@
         </EntityType>
         <EntityType Name="Factura">
           <Key>
-            <PropertyRef Name="NumeroFactura" />
+            <PropertyRef Name="Id" />
           </Key>
-          <Property Name="NumeroFactura" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroFactura" Type="bigint" Nullable="false" />
           <Property Name="ClienteId" Type="bigint" Nullable="false" />
           <Property Name="Fecha" Type="datetime" />
           <Property Name="TotalRecargoEquivalencia" Type="decimal" Precision="18" Scale="2" />
@@ -100,8 +101,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NumeroAlbaran" Type="bigint" Nullable="false" />
-          <Property Name="IsAlbaran" Type="bit" Nullable="false" />
+          <Property Name="AlbaranId" Type="bigint" Nullable="false" />
           <Property Name="ProductoId" Type="bigint" Nullable="false" />
           <Property Name="PorcentajeIVA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="PorcentajeRE" Type="decimal" Precision="18" Scale="2" />
@@ -122,7 +122,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="NumeroFactura" Type="bigint" Nullable="false" />
+          <Property Name="FacturaId" Type="bigint" Nullable="false" />
           <Property Name="ProductoId" Type="bigint" Nullable="false" />
           <Property Name="PorcentajeIVA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="PorcentajeRE" Type="decimal" Precision="18" Scale="2" />
@@ -149,6 +149,13 @@
           <Property Name="DireccionId" Type="int" />
           <Property Name="ContactoId" Type="int" />
           <Property Name="Iban" Type="nvarchar(max)" />
+          <Property Name="LogoPath" Type="nvarchar(max)" />
+          <Property Name="Iban1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Iban2" Type="nchar" MaxLength="10" />
+          <Property Name="Iban3" Type="nchar" MaxLength="10" />
+          <Property Name="Iban4" Type="nchar" MaxLength="10" />
+          <Property Name="Iban5" Type="nchar" MaxLength="10" />
+          <Property Name="Iban6" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -246,12 +253,10 @@
           <End Role="LineaAlbaran" Type="Self.LineaAlbaran" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Albaran">
-              <PropertyRef Name="NumeroAlbaran" />
-              <PropertyRef Name="IsAlbaran" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="LineaAlbaran">
-              <PropertyRef Name="NumeroAlbaran" />
-              <PropertyRef Name="IsAlbaran" />
+              <PropertyRef Name="AlbaranId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -272,10 +277,10 @@
           <End Role="LineaFactura" Type="Self.LineaFactura" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Factura">
-              <PropertyRef Name="NumeroFactura" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="LineaFactura">
-              <PropertyRef Name="NumeroFactura" />
+              <PropertyRef Name="FacturaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -396,17 +401,19 @@
       <Schema Namespace="AdministracionAngelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AdministracionAngelaContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
-          <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
           <EntitySet Name="sysdiagrams" EntityType="AdministracionAngelaModel.sysdiagrams" />
           <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
-          <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
-            <End Role="Direccion" EntitySet="Direccion" />
-            <End Role="Perfil" EntitySet="Perfil" />
-          </AssociationSet>
           <EntitySet Name="User" EntityType="AdministracionAngelaModel.User" />
           <EntitySet Name="FormaPago" EntityType="AdministracionAngelaModel.FormaPago" />
-          <EntitySet Name="Cliente" EntityType="AdministracionAngelaModel.Cliente" />
           <EntitySet Name="Contacto" EntityType="AdministracionAngelaModel.Contacto" />
+          <EntitySet Name="Producto" EntityType="AdministracionAngelaModel.Producto" />
+          <AssociationSet Name="FK_Producto_IVA" Association="AdministracionAngelaModel.FK_Producto_IVA">
+            <End Role="IVA" EntitySet="IVA" />
+            <End Role="Producto" EntitySet="Producto" />
+          </AssociationSet>
+          <EntitySet Name="Cliente" EntityType="AdministracionAngelaModel.Cliente" />
+          <EntitySet Name="Factura" EntityType="AdministracionAngelaModel.Factura" />
+          <EntitySet Name="LineaFactura" EntityType="AdministracionAngelaModel.LineaFactura" />
           <AssociationSet Name="FK_Cliente_Contacto" Association="AdministracionAngelaModel.FK_Cliente_Contacto">
             <End Role="Contacto" EntitySet="Contacto" />
             <End Role="Cliente" EntitySet="Cliente" />
@@ -419,21 +426,10 @@
             <End Role="FormaPago" EntitySet="FormaPago" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
-          <AssociationSet Name="FK_Perfil_Contacto" Association="AdministracionAngelaModel.FK_Perfil_Contacto">
-            <End Role="Contacto" EntitySet="Contacto" />
-            <End Role="Perfil" EntitySet="Perfil" />
-          </AssociationSet>
-          <EntitySet Name="Producto" EntityType="AdministracionAngelaModel.Producto" />
-          <AssociationSet Name="FK_Producto_IVA" Association="AdministracionAngelaModel.FK_Producto_IVA">
-            <End Role="IVA" EntitySet="IVA" />
-            <End Role="Producto" EntitySet="Producto" />
-          </AssociationSet>
-          <EntitySet Name="Factura" EntityType="AdministracionAngelaModel.Factura" />
           <AssociationSet Name="FK_Factura_Cliente" Association="AdministracionAngelaModel.FK_Factura_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
-          <EntitySet Name="LineaFactura" EntityType="AdministracionAngelaModel.LineaFactura" />
           <AssociationSet Name="FK_LineaFactura_Factura" Association="AdministracionAngelaModel.FK_LineaFactura_Factura">
             <End Role="Factura" EntitySet="Factura" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
@@ -442,12 +438,8 @@
             <End Role="Producto" EntitySet="Producto" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
-          <EntitySet Name="LineaAlbaran" EntityType="AdministracionAngelaModel.LineaAlbaran" />
-          <AssociationSet Name="FK_LineaAlbaran_Producto" Association="AdministracionAngelaModel.FK_LineaAlbaran_Producto">
-            <End Role="Producto" EntitySet="Producto" />
-            <End Role="LineaAlbaran" EntitySet="LineaAlbaran" />
-          </AssociationSet>
           <EntitySet Name="Albaran" EntityType="AdministracionAngelaModel.Albaran" />
+          <EntitySet Name="LineaAlbaran" EntityType="AdministracionAngelaModel.LineaAlbaran" />
           <AssociationSet Name="FK_Albaran_Cliente" Association="AdministracionAngelaModel.FK_Albaran_Cliente">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Albaran" EntitySet="Albaran" />
@@ -455,6 +447,19 @@
           <AssociationSet Name="FK_LineaAlbaran_Albaran" Association="AdministracionAngelaModel.FK_LineaAlbaran_Albaran">
             <End Role="Albaran" EntitySet="Albaran" />
             <End Role="LineaAlbaran" EntitySet="LineaAlbaran" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LineaAlbaran_Producto" Association="AdministracionAngelaModel.FK_LineaAlbaran_Producto">
+            <End Role="Producto" EntitySet="Producto" />
+            <End Role="LineaAlbaran" EntitySet="LineaAlbaran" />
+          </AssociationSet>
+          <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
+          <AssociationSet Name="FK_Perfil_Contacto" Association="AdministracionAngelaModel.FK_Perfil_Contacto">
+            <End Role="Contacto" EntitySet="Contacto" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Perfil" EntitySet="Perfil" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="IVA">
@@ -466,20 +471,6 @@
           <Property Name="Porcentaje" Type="Int32" />
           <Property Name="PorcentanjeRE" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="IVA" ToRole="Producto" />
-        </EntityType>
-        <EntityType Name="Perfil">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DireccionId" Type="Int32" />
-          <Property Name="ContactoId" Type="Int32" />
-          <Property Name="Iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
-          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -500,21 +491,9 @@
           <Property Name="Poblacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Provincia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CodigoPostal" Type="Int32" />
-          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Direccion" ToRole="Perfil" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Direccion" ToRole="Cliente" />
+          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Direccion" ToRole="Perfil" />
         </EntityType>
-        <Association Name="FK_Perfil_Direccion">
-          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Direccion">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Perfil">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserName" />
@@ -531,6 +510,51 @@
           <Property Name="Dias" Type="Int32" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_FormaPago" FromRole="FormaPago" ToRole="Cliente" />
         </EntityType>
+        <EntityType Name="Contacto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Telefono1" Type="Int32" />
+          <Property Name="Telefono2" Type="Int32" />
+          <Property Name="Fax" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PersonaContacto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Contacto" FromRole="Contacto" ToRole="Cliente" />
+          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Contacto" ToRole="Perfil" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoProducto" Type="Int32" Nullable="false" />
+          <Property Name="IVAId" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NombreCientifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ArtePesca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ZonaCaptura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abreviacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="IVA" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="Producto" ToRole="IVA" />
+          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="Producto" ToRole="LineaFactura" />
+          <NavigationProperty Name="LineaAlbaran" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Producto" FromRole="Producto" ToRole="LineaAlbaran" />
+        </EntityType>
+        <Association Name="FK_Producto_IVA">
+          <End Type="AdministracionAngelaModel.IVA" Role="IVA" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="IVA">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="IVAId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="Cliente">
           <Key>
             <PropertyRef Name="Id" />
@@ -554,21 +578,45 @@
           <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
           <NavigationProperty Name="Albaran" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Cliente" ToRole="Albaran" />
         </EntityType>
-        <EntityType Name="Contacto">
+        <EntityType Name="Factura">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Telefono1" Type="Int32" />
-          <Property Name="Telefono2" Type="Int32" />
-          <Property Name="Fax" Type="Int32" />
-          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Email4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="PersonaContacto" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Contacto" FromRole="Contacto" ToRole="Cliente" />
-          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Contacto" ToRole="Perfil" />
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroFactura" Type="Int64" Nullable="false" />
+          <Property Name="ClienteId" Type="Int64" Nullable="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="TotalRecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Impreso" Type="Boolean" />
+          <Property Name="EtiquetaLote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
+          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
+        </EntityType>
+        <EntityType Name="LineaFactura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacturaId" Type="Int64" Nullable="false" />
+          <Property Name="ProductoId" Type="Int64" Nullable="false" />
+          <Property Name="PorcentajeIVA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PorcentajeRE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Kgs" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Cajas" Type="Int32" />
+          <Property Name="FAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ZonaCaptura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NombreCientifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ArtePesca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Lote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImporteIVA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ImporteRE" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
+          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
         </EntityType>
         <Association Name="FK_Cliente_Contacto">
           <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
@@ -606,63 +654,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Perfil_Contacto">
-          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
-          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contacto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Perfil">
-              <PropertyRef Name="ContactoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Producto">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CodigoProducto" Type="Int32" Nullable="false" />
-          <Property Name="IVAId" Type="Int32" Nullable="false" />
-          <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NombreCientifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="FAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ArtePesca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ZonaCaptura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Abreviacion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="IVA" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="Producto" ToRole="IVA" />
-          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="Producto" ToRole="LineaFactura" />
-          <NavigationProperty Name="LineaAlbaran" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Producto" FromRole="Producto" ToRole="LineaAlbaran" />
-        </EntityType>
-        <Association Name="FK_Producto_IVA">
-          <End Type="AdministracionAngelaModel.IVA" Role="IVA" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IVA">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Producto">
-              <PropertyRef Name="IVAId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Factura">
-          <Key>
-            <PropertyRef Name="NumeroFactura" />
-          </Key>
-          <Property Name="NumeroFactura" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClienteId" Type="Int64" Nullable="false" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="TotalRecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Impreso" Type="Boolean" />
-          <Property Name="EtiquetaLote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
-          <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
-        </EntityType>
         <Association Name="FK_Factura_Cliente">
           <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="1" />
           <End Type="AdministracionAngelaModel.Factura" Role="Factura" Multiplicity="*" />
@@ -675,38 +666,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="LineaFactura">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="NumeroFactura" Type="Int64" Nullable="false" />
-          <Property Name="ProductoId" Type="Int64" Nullable="false" />
-          <Property Name="PorcentajeIVA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
-          <Property Name="PorcentajeRE" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Kgs" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Cajas" Type="Int32" />
-          <Property Name="FAO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="ZonaCaptura" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NombreCientifico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ArtePesca" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Lote" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="ImporteIVA" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="ImporteRE" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="LineaFactura" ToRole="Factura" />
-          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaFactura_Producto" FromRole="LineaFactura" ToRole="Producto" />
-        </EntityType>
         <Association Name="FK_LineaFactura_Factura">
           <End Type="AdministracionAngelaModel.Factura" Role="Factura" Multiplicity="1" />
           <End Type="AdministracionAngelaModel.LineaFactura" Role="LineaFactura" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Factura">
-              <PropertyRef Name="NumeroFactura" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="LineaFactura">
-              <PropertyRef Name="NumeroFactura" />
+              <PropertyRef Name="FacturaId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -722,13 +690,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="LineaAlbaran">
+        <EntityType Name="Albaran">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NumeroAlbaran" Type="Int64" Nullable="false" />
+          <Property Name="ClienteId" Type="Int64" />
+          <Property Name="Fecha" Type="DateTime" Precision="3" />
+          <Property Name="TotalRecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Impreso" Type="Boolean" />
+          <Property Name="EtiquetaLote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="IsAlbaran" Type="Boolean" Nullable="false" />
+          <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Facturado" Type="Boolean" />
+          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Albaran" ToRole="Cliente" />
+          <NavigationProperty Name="LineaAlbaran" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Albaran" FromRole="Albaran" ToRole="LineaAlbaran" />
+        </EntityType>
+        <EntityType Name="LineaAlbaran">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AlbaranId" Type="Int64" Nullable="false" />
           <Property Name="ProductoId" Type="Int64" Nullable="false" />
           <Property Name="PorcentajeIVA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="PorcentajeRE" Type="Decimal" Precision="18" Scale="2" />
@@ -743,39 +729,8 @@
           <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="ImporteIVA" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="ImporteRE" Type="Decimal" Precision="18" Scale="2" />
-          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Producto" FromRole="LineaAlbaran" ToRole="Producto" />
           <NavigationProperty Name="Albaran" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Albaran" FromRole="LineaAlbaran" ToRole="Albaran" />
-        </EntityType>
-        <Association Name="FK_LineaAlbaran_Producto">
-          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.LineaAlbaran" Role="LineaAlbaran" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Producto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="LineaAlbaran">
-              <PropertyRef Name="ProductoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="Albaran">
-          <Key>
-            <PropertyRef Name="NumeroAlbaran" />
-            <PropertyRef Name="IsAlbaran" />
-          </Key>
-          <Property Name="NumeroAlbaran" Type="Int64" Nullable="false" />
-          <Property Name="ClienteId" Type="Int64" />
-          <Property Name="Fecha" Type="DateTime" Precision="3" />
-          <Property Name="TotalRecargoEquivalencia" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TotalBase" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Total" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Impreso" Type="Boolean" />
-          <Property Name="EtiquetaLote" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="IsAlbaran" Type="Boolean" Nullable="false" />
-          <Property Name="TotalIVA" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="Facturado" Type="Boolean" />
-          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Albaran" ToRole="Cliente" />
-          <NavigationProperty Name="LineaAlbaran" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Albaran" FromRole="Albaran" ToRole="LineaAlbaran" />
+          <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_LineaAlbaran_Producto" FromRole="LineaAlbaran" ToRole="Producto" />
         </EntityType>
         <Association Name="FK_Albaran_Cliente">
           <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="0..1" />
@@ -794,12 +749,67 @@
           <End Type="AdministracionAngelaModel.LineaAlbaran" Role="LineaAlbaran" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Albaran">
-              <PropertyRef Name="NumeroAlbaran" />
-              <PropertyRef Name="IsAlbaran" />
+              <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="LineaAlbaran">
-              <PropertyRef Name="NumeroAlbaran" />
-              <PropertyRef Name="IsAlbaran" />
+              <PropertyRef Name="AlbaranId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LineaAlbaran_Producto">
+          <End Type="AdministracionAngelaModel.Producto" Role="Producto" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.LineaAlbaran" Role="LineaAlbaran" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Producto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LineaAlbaran">
+              <PropertyRef Name="ProductoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionId" Type="Int32" />
+          <Property Name="ContactoId" Type="Int32" />
+          <Property Name="Iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Iban1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Iban2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban4" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban5" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban6" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
+          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
+        </EntityType>
+        <Association Name="FK_Perfil_Contacto">
+          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
+          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="ContactoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfil_Direccion">
+          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -815,19 +825,6 @@
                 <ScalarProperty Name="PorcentanjeRE" ColumnName="PorcentanjeRE" />
                 <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Perfil">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Perfil">
-              <MappingFragment StoreEntitySet="Perfil">
-                <ScalarProperty Name="Iban" ColumnName="Iban" />
-                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
-                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
-                <ScalarProperty Name="CIF" ColumnName="CIF" />
-                <ScalarProperty Name="NIF" ColumnName="NIF" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -871,25 +868,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Cliente">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Cliente">
-              <MappingFragment StoreEntitySet="Cliente">
-                <ScalarProperty Name="FormaDePagoId" ColumnName="FormaDePagoId" />
-                <ScalarProperty Name="Excento" ColumnName="Excento" />
-                <ScalarProperty Name="UnionEuropea" ColumnName="UnionEuropea" />
-                <ScalarProperty Name="RecargoEquivalencia" ColumnName="RecargoEquivalencia" />
-                <ScalarProperty Name="IsGeneral" ColumnName="IsGeneral" />
-                <ScalarProperty Name="RiesgoMaximo" ColumnName="RiesgoMaximo" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="NIF" ColumnName="NIF" />
-                <ScalarProperty Name="CIF" ColumnName="CIF" />
-                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
-                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
-                <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Contacto">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Contacto">
               <MappingFragment StoreEntitySet="Contacto">
@@ -920,6 +898,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="FormaDePagoId" ColumnName="FormaDePagoId" />
+                <ScalarProperty Name="Excento" ColumnName="Excento" />
+                <ScalarProperty Name="UnionEuropea" ColumnName="UnionEuropea" />
+                <ScalarProperty Name="RecargoEquivalencia" ColumnName="RecargoEquivalencia" />
+                <ScalarProperty Name="IsGeneral" ColumnName="IsGeneral" />
+                <ScalarProperty Name="RiesgoMaximo" ColumnName="RiesgoMaximo" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="CIF" ColumnName="CIF" />
+                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="CodigoCliente" ColumnName="CodigoCliente" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
@@ -932,6 +929,7 @@
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -952,7 +950,25 @@
                 <ScalarProperty Name="PorcentajeRE" ColumnName="PorcentajeRE" />
                 <ScalarProperty Name="PorcentajeIVA" ColumnName="PorcentajeIVA" />
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
-                <ScalarProperty Name="NumeroFactura" ColumnName="NumeroFactura" />
+                <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Albaran">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Albaran">
+              <MappingFragment StoreEntitySet="Albaran">
+                <ScalarProperty Name="Facturado" ColumnName="Facturado" />
+                <ScalarProperty Name="TotalIVA" ColumnName="TotalIVA" />
+                <ScalarProperty Name="IsAlbaran" ColumnName="IsAlbaran" />
+                <ScalarProperty Name="EtiquetaLote" ColumnName="EtiquetaLote" />
+                <ScalarProperty Name="Impreso" ColumnName="Impreso" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="TotalBase" ColumnName="TotalBase" />
+                <ScalarProperty Name="TotalRecargoEquivalencia" ColumnName="TotalRecargoEquivalencia" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="NumeroAlbaran" ColumnName="NumeroAlbaran" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -974,26 +990,28 @@
                 <ScalarProperty Name="PorcentajeRE" ColumnName="PorcentajeRE" />
                 <ScalarProperty Name="PorcentajeIVA" ColumnName="PorcentajeIVA" />
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
-                <ScalarProperty Name="IsAlbaran" ColumnName="IsAlbaran" />
-                <ScalarProperty Name="NumeroAlbaran" ColumnName="NumeroAlbaran" />
+                <ScalarProperty Name="AlbaranId" ColumnName="AlbaranId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Albaran">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Albaran">
-              <MappingFragment StoreEntitySet="Albaran">
-                <ScalarProperty Name="Facturado" ColumnName="Facturado" />
-                <ScalarProperty Name="TotalIVA" ColumnName="TotalIVA" />
-                <ScalarProperty Name="IsAlbaran" ColumnName="IsAlbaran" />
-                <ScalarProperty Name="EtiquetaLote" ColumnName="EtiquetaLote" />
-                <ScalarProperty Name="Impreso" ColumnName="Impreso" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="TotalBase" ColumnName="TotalBase" />
-                <ScalarProperty Name="TotalRecargoEquivalencia" ColumnName="TotalRecargoEquivalencia" />
-                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
-                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
-                <ScalarProperty Name="NumeroAlbaran" ColumnName="NumeroAlbaran" />
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="Iban6" ColumnName="Iban6" />
+                <ScalarProperty Name="Iban5" ColumnName="Iban5" />
+                <ScalarProperty Name="Iban4" ColumnName="Iban4" />
+                <ScalarProperty Name="Iban3" ColumnName="Iban3" />
+                <ScalarProperty Name="Iban2" ColumnName="Iban2" />
+                <ScalarProperty Name="Iban1" ColumnName="Iban1" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Iban" ColumnName="Iban" />
+                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="CIF" ColumnName="CIF" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

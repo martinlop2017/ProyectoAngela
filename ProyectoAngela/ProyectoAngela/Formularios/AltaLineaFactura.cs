@@ -102,5 +102,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             Close();
         }
+
+        private void AltaLineaFactura_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true; SendKeys.Send("{TAB}");
+            }
+        }
     }
 }

@@ -85,7 +85,7 @@ namespace AdministracionAngela.Servicios.ServicioDatosTests
 
             var facturaViewModel = this.facturaProvider.GetFacturaViewModel();
 
-            Assert.Equal(5, facturaViewModel.Id);
+            Assert.Equal(5, facturaViewModel.NumeroFactura);
         }
 
         [Fact]

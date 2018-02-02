@@ -196,7 +196,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.IsDocumento = !this.IsDocumento;
             this.dataGridViewFacturas.BackgroundColor = this.IsDocumento ? Color.White : Color.Gray;
+            this.dataGridViewFacturas.ColumnHeadersDefaultCellStyle.BackColor = this.IsDocumento ? Color.White : Color.Yellow;
+            this.dataGridViewFacturas.RowHeadersDefaultCellStyle .BackColor = this.IsDocumento ? Color.White : Color.Yellow;
+            this.dataGridViewFacturas.RowTemplate.DefaultCellStyle.BackColor = this.IsDocumento ? Color.White : Color.LemonChiffon;
             this.FillControls();
+        }
+
+        private void buttonFacturar_MouseEnter(object sender, EventArgs e)
+        {
+            labelFacturar.Visible = true;
+        }
+
+        private void buttonFacturar_MouseLeave(object sender, EventArgs e)
+        {
+            labelFacturar.Visible = false;
         }
     }
 }

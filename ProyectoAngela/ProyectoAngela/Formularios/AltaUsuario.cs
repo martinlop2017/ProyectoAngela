@@ -74,5 +74,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             this.FillFormWithArticulo(viewModel);
         }
+
+        private void AltaUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true; SendKeys.Send("{TAB}");
+            }
+        }
     }
 }

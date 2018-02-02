@@ -9,7 +9,7 @@ namespace AdministracionAngela.Utils.Models.Factura
 {
     public class AltaFacturaViewModel
     {
-        public int Id { get; set; }
+        public int NumeroFactura { get; set; }
         public long ClienteId { get; set; }
         public Dictionary<string, long> ClienteIdsAndDescripciones { get; set; }
         public Dictionary<string, long> ArticuloIdsAndDescripciones { get; set; }

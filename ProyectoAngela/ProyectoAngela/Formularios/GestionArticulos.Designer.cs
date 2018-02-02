@@ -164,6 +164,7 @@
             // 
             // buttonDelete
             // 
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
             this.buttonDelete.Location = new System.Drawing.Point(91, 154);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(52, 56);

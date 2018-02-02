@@ -172,7 +172,7 @@
             this.checkBoxExcento.AutoSize = true;
             this.checkBoxExcento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxExcento.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxExcento.Location = new System.Drawing.Point(290, 38);
+            this.checkBoxExcento.Location = new System.Drawing.Point(290, 34);
             this.checkBoxExcento.Name = "checkBoxExcento";
             this.checkBoxExcento.Size = new System.Drawing.Size(75, 20);
             this.checkBoxExcento.TabIndex = 3;
@@ -406,14 +406,14 @@
             // 
             // textBoxEmail3
             // 
+            this.textBoxEmail3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail3.Location = new System.Drawing.Point(10, 251);
             this.textBoxEmail3.Name = "textBoxEmail3";
             this.textBoxEmail3.Size = new System.Drawing.Size(372, 23);
-            this.textBoxEmail3.TabIndex = 15;
+            this.textBoxEmail3.TabIndex = 6;
             validationRule5.ErrorMessage = "El email introducido es incorrecto";
             validationRule5.IsCaseSensitive = false;
-            validationRule5.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail3, validationRule5);
             // 
             // label17
@@ -427,14 +427,14 @@
             // 
             // textBoxEmail2
             // 
+            this.textBoxEmail2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail2.Location = new System.Drawing.Point(10, 201);
             this.textBoxEmail2.Name = "textBoxEmail2";
             this.textBoxEmail2.Size = new System.Drawing.Size(372, 23);
-            this.textBoxEmail2.TabIndex = 13;
+            this.textBoxEmail2.TabIndex = 5;
             validationRule6.ErrorMessage = "El email introducido es incorrecto";
             validationRule6.IsCaseSensitive = false;
-            validationRule6.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail2, validationRule6);
             // 
             // label16
@@ -448,14 +448,14 @@
             // 
             // textBoxEmail1
             // 
+            this.textBoxEmail1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail1.Location = new System.Drawing.Point(10, 151);
             this.textBoxEmail1.Name = "textBoxEmail1";
             this.textBoxEmail1.Size = new System.Drawing.Size(372, 23);
-            this.textBoxEmail1.TabIndex = 11;
+            this.textBoxEmail1.TabIndex = 4;
             validationRule7.ErrorMessage = "El email introducido es incorrecto";
             validationRule7.IsCaseSensitive = false;
-            validationRule7.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail1, validationRule7);
             // 
             // label12
@@ -471,7 +471,7 @@
             // 
             this.textBoxTelefono2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxTelefono2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTelefono2.Location = new System.Drawing.Point(135, 51);
+            this.textBoxTelefono2.Location = new System.Drawing.Point(142, 51);
             this.textBoxTelefono2.Name = "textBoxTelefono2";
             this.textBoxTelefono2.Size = new System.Drawing.Size(117, 23);
             this.textBoxTelefono2.TabIndex = 1;
@@ -502,14 +502,14 @@
             // 
             // textBoxEmail4
             // 
+            this.textBoxEmail4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail4.Location = new System.Drawing.Point(10, 301);
             this.textBoxEmail4.Name = "textBoxEmail4";
             this.textBoxEmail4.Size = new System.Drawing.Size(372, 23);
-            this.textBoxEmail4.TabIndex = 4;
+            this.textBoxEmail4.TabIndex = 7;
             validationRule10.ErrorMessage = "El email introducido es incorrecto";
             validationRule10.IsCaseSensitive = false;
-            validationRule10.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail4, validationRule10);
             // 
             // textBoxFax
@@ -770,10 +770,12 @@
             this.Controls.Add(this.customGroupBox7);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.customGroupBox1);
+            this.KeyPreview = true;
             this.Name = "AltaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.AltaCliente2_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AltaCliente_KeyPress);
             this.formadepago.ResumeLayout(false);
             this.formadepago.PerformLayout();
             this.customGroupBox6.ResumeLayout(false);

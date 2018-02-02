@@ -26,7 +26,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private List<string> originalProductValues;
         private AltaAlbaranViewModel viewModel;
         private bool isUpdate = false;
-        private long AlbaranId;
+        private long numeroAlbaran;
         private bool IsAlbaran = true;
 
         public Albaranes(IFacturaProvider facturaProvider)
@@ -39,7 +39,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.IsAlbaran = isAlbaran;
             this.isUpdate = true;
-            this.AlbaranId= albaranId;
+            this.numeroAlbaran= albaranId;
         }
 
         private void Albaranes_Load(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
             else
             {
-                viewModel = this.facturaProvider.GetAlbaranViewModelById(this.AlbaranId, IsAlbaran);
+                viewModel = this.facturaProvider.GetAlbaranViewModelById(this.numeroAlbaran, IsAlbaran);
             }
 
             this.FillControls(viewModel);
@@ -320,13 +320,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 this.NuevaLineaFactura();
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.IsAlbaran = !this.IsAlbaran;
-
-            this.dataGridViewLineasFactura.BackgroundColor = this.IsAlbaran ? Color.White : Color.Gray;
         }
     }
 }

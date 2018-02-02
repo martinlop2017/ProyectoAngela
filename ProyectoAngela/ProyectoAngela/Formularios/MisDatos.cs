@@ -44,11 +44,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Direccion = textBoxMiDireccion.Text,
                 Provincia = textBoxMiProvincia.Text,
                 Poblacion = textBoxMiPoblacion.Text,
+                PersonaContacto = textBoxMiPersonaContacto.Text,
                 Fax = Convert.ToInt32(textBoxMiFax.Text),
                 Telefono1 = Convert.ToInt32(textBoxMiTLF1.Text),
                 Telefono2 = Convert.ToInt32(textBoxMiTLF2.Text),
                 CodigoPostal = Convert.ToInt32(textBoxMiCP.Text),
-                Email = textBoxMiMail.Text
+                Email = textBoxMiMail.Text,
+                LogoPath = textBoxLogoPath.Text,
+                Iban1 = textBoxIBAN1.Text,
+                Iban2 = textBoxIBAN3.Text,
+                Iban3 = textBoxIBAN3.Text,
+                Iban4 = textBoxIBAN4.Text,
+                Iban5 = textBoxIBAN5.Text,
+                Iban6 = textBoxIBAN6.Text,
             };
         }
 
@@ -82,6 +90,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxMiTLF2.Text = perfil.Telefono2.ToString();
             this.textBoxMiFax.Text = perfil.Fax.ToString();
             this.textBoxMiMail.Text = perfil.Email;
+            this.textBoxLogoPath.Text = perfil.LogoPath;
+            this.textBoxMiPersonaContacto.Text = perfil.PersonaContacto;
+            this.textBoxIBAN1.Text = perfil.Iban1;
+            this.textBoxIBAN2.Text = perfil.Iban2;
+            this.textBoxIBAN3.Text = perfil.Iban3;
+            this.textBoxIBAN4.Text = perfil.Iban4;
+            this.textBoxIBAN5.Text = perfil.Iban5;
+            this.textBoxIBAN6.Text = perfil.Iban6;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,11 +125,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textBox23.Text = buscar.FileName;
+                textBoxLogoPath.Text = buscar.FileName;
                 Bitmap Picture = new Bitmap(buscar.FileName);
                 pictureBox1.Image = (Image)Picture;
             }
 
+        }
+
+        private void MisDatos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true; SendKeys.Send("{TAB}");
+            }
         }
     }
 }

@@ -169,9 +169,12 @@
             this.Controls.Add(this.textBoxDocumentoInicial);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.buttonGuardar);
+            this.KeyPreview = true;
             this.Name = "ImprimirFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImprimirFacturas";
+            this.Load += new System.EventHandler(this.ImprimirFacturas_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ImprimirFacturas_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

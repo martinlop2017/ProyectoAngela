@@ -20,6 +20,7 @@ namespace AdministracionAngela.EFRepository
             this.LineaAlbaran = new HashSet<LineaAlbaran>();
         }
     
+        public long Id { get; set; }
         public long NumeroAlbaran { get; set; }
         public Nullable<long> ClienteId { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }

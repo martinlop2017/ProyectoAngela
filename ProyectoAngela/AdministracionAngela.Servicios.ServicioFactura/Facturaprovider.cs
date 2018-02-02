@@ -116,7 +116,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 lineaAlbaran.ArtePesca = producto.ArtePesca;
                 lineaAlbaran.NombreCientifico = producto.NombreCientifico;
                 lineaAlbaran.Lote = string.Format("{0}/{1}", producto.Abreviacion, albaranToRepository.Fecha.Value.ToString("ddMMyyy"));
-                lineaAlbaran.IsAlbaran = albaranToRepository.IsAlbaran;
             }
             this.repositorioFactura.SaveAlbaran(albaranToRepository);
         }
@@ -149,12 +148,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.DeleteAlbaranes(repositoryAlbaranesToDelete);
         }
 
-        public AltaFacturaViewModel GetFacturaViewModelById(long facturaId)
+        public AltaFacturaViewModel GetFacturaViewModelById(long numeroFActura)
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
 
-            var facturaFromRepository = this.repositorioFactura.GetFacturaById(facturaId);
+            var facturaFromRepository = this.repositorioFactura.GetFacturaById(numeroFActura);
 
             var ivas = this.repositorioIVA.GetAllIVAs();
 
@@ -173,12 +172,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         //    return MapToViewModel.MapToUpdateAltaAlbaranViewModel(clientes, articulos, albaranFromRepository, ivas);
         //}
 
-        public AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId, bool isAlbaran)
+        public AltaAlbaranViewModel GetAlbaranViewModelById(long numeroAlbaran, bool isAlbaran)
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
 
-            var albaranFromRepository = this.repositorioFactura.GetAlbaranById(AlbaranId, isAlbaran);
+            var albaranFromRepository = this.repositorioFactura.GetAlbaranById(numeroAlbaran, isAlbaran);
 
             var ivas = this.repositorioIVA.GetAllIVAs();
 
@@ -275,8 +274,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         private Factura FacturarAlbaran(Albaran albaran)
         {
+            var lastFactura = repositorioFactura.GetLastFactura();
+            var numeroFactura = lastFactura != null ? lastFactura.NumeroFactura + 1 : 1;
             return new Factura()
             {
+                NumeroFactura = numeroFactura,
                 ClienteId = albaran.ClienteId.Value,
                 Cliente = albaran.Cliente,
                 Fecha = albaran.Fecha,

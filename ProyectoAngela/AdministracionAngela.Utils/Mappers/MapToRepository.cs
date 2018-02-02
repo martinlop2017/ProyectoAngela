@@ -118,12 +118,14 @@ namespace AdministracionAngela.Utils.Mappers
                 Id = perfil.Id,
                 NIF = perfil.NIF,
                 Nombre = perfil.Nombre,
+                LogoPath = perfil.LogoPath,
                 Contacto = new Contacto()
                 {
                     Email = perfil.Email,
                     Fax = perfil.Fax,
                     Telefono1 = perfil.Telefono1,
-                    Telefono2 = perfil.Telefono2
+                    Telefono2 = perfil.Telefono2,
+                    PersonaContacto = perfil.PersonaContacto
                 },
                 Direccion = new Direccion()
                 {
@@ -132,7 +134,12 @@ namespace AdministracionAngela.Utils.Mappers
                     Poblacion = perfil.Poblacion,
                     Provincia = perfil.Provincia
                 },
-                Iban = perfil.Iban
+                Iban1 = perfil.Iban1,
+                Iban2 = perfil.Iban2,
+                Iban3 = perfil.Iban3,
+                Iban4 = perfil.Iban4,
+                Iban5 = perfil.Iban5,
+                Iban6 = perfil.Iban6,
             };
         }
         #endregion
@@ -166,7 +173,7 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroAlbaran = altaAlbaran.Id,
                 ClienteId = altaAlbaran.ClienteIdsAndDescripciones[altaAlbaran.SelectedClient],
                 Fecha = Convert.ToDateTime(altaAlbaran.Fecha),
-                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id, altaAlbaran.IsAlbaran),
+                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id),
                 TotalBase = altaAlbaran.TotalBase,
                 TotalRecargoEquivalencia = altaAlbaran.TotalRecargoEquivalencia,
                 TotalIVA = altaAlbaran.TotalIVA,
@@ -178,11 +185,10 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran, bool isAlbaran)
+        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran)
         {
             return lineasAlbaran.Select(linea => new LineaAlbaran()
             {
-                NumeroAlbaran = numeroAlbaran,
                 ProductoId = linea.ProductoId,
                 PorcentajeIVA = linea.PorcentajeIVA,
                 ImporteIVA = linea.ImporteIVA,
@@ -192,7 +198,6 @@ namespace AdministracionAngela.Utils.Mappers
                 Kgs = linea.Kgs,
                 Cajas = linea.Cajas,
                 Importe = linea.Importe,
-                IsAlbaran = isAlbaran
             }).ToList();
         }
 
@@ -216,10 +221,10 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Factura()
             {
-                NumeroFactura = altaFactura.Id,
+                NumeroFactura = altaFactura.NumeroFactura,
                 ClienteId = altaFactura.ClienteIdsAndDescripciones[altaFactura.SelectedClient],
                 Fecha = Convert.ToDateTime(altaFactura.Fecha),
-                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura, altaFactura.Id),
+                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura),
                 TotalBase = altaFactura.TotalBase,
                 TotalRecargoEquivalencia = altaFactura.TotalRecargoEquivalencia,
                 TotalIVA = altaFactura.TotalIVA,
@@ -229,11 +234,10 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura, long numeroFactura)
+        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura)
         {
             return lineasFactura.Select(linea => new LineaFactura()
             {
-                NumeroFactura = numeroFactura,
                 ProductoId = linea.ProductoId,
                 PorcentajeIVA = linea.PorcentajeIVA,
                 ImporteIVA = linea.ImporteIVA,

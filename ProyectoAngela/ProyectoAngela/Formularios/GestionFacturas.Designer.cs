@@ -70,11 +70,13 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewFacturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewFacturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewFacturas.EnableHeadersVisualStyles = false;
             this.dataGridViewFacturas.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewFacturas.Location = new System.Drawing.Point(20, 192);
             this.dataGridViewFacturas.Name = "dataGridViewFacturas";
             this.dataGridViewFacturas.ReadOnly = true;
             this.dataGridViewFacturas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewFacturas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewFacturas.Size = new System.Drawing.Size(760, 396);
             this.dataGridViewFacturas.TabIndex = 25;

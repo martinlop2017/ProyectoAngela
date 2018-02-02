@@ -30,6 +30,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             InitializeComponent();
             this.textBoxDocumentoInicial.Text = numeroDocumentoInicial.ToString();
+            this.textBoxDocumentoFinal.Text = numeroDocumentoInicial.ToString();
+
 
             this.reportName = reportName;
             this.variableName = variableName;
@@ -99,6 +101,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button8_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void ImprimirFacturas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

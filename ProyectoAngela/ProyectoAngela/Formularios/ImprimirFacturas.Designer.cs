@@ -172,6 +172,7 @@
             this.Name = "ImprimirFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ImprimirFacturas";
+            this.Load += new System.EventHandler(this.ImprimirFacturas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

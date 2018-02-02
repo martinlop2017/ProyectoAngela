@@ -44,11 +44,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Direccion = textBoxMiDireccion.Text,
                 Provincia = textBoxMiProvincia.Text,
                 Poblacion = textBoxMiPoblacion.Text,
+                PersonaContacto = textBoxMiPersonaContacto.Text,
                 Fax = Convert.ToInt32(textBoxMiFax.Text),
                 Telefono1 = Convert.ToInt32(textBoxMiTLF1.Text),
                 Telefono2 = Convert.ToInt32(textBoxMiTLF2.Text),
                 CodigoPostal = Convert.ToInt32(textBoxMiCP.Text),
-                Email = textBoxMiMail.Text
+                Email = textBoxMiMail.Text,
+                LogoPath = textBoxLogoPath.Text
             };
         }
 
@@ -82,6 +84,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxMiTLF2.Text = perfil.Telefono2.ToString();
             this.textBoxMiFax.Text = perfil.Fax.ToString();
             this.textBoxMiMail.Text = perfil.Email;
+            this.textBoxLogoPath.Text = perfil.LogoPath;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -109,7 +112,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textBox23.Text = buscar.FileName;
+                textBoxLogoPath.Text = buscar.FileName;
                 Bitmap Picture = new Bitmap(buscar.FileName);
                 pictureBox1.Image = (Image)Picture;
             }

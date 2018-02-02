@@ -123,7 +123,8 @@ namespace AdministracionAngela.Utils.Mappers
                     Email = perfil.Email,
                     Fax = perfil.Fax,
                     Telefono1 = perfil.Telefono1,
-                    Telefono2 = perfil.Telefono2
+                    Telefono2 = perfil.Telefono2,
+                    PersonaContacto = perfil.PersonaContacto
                 },
                 Direccion = new Direccion()
                 {

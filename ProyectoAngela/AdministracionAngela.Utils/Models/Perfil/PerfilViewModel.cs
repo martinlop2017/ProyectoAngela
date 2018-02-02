@@ -15,11 +15,13 @@ namespace AdministracionAngela.Utils.Models.Perfil
         public int CodigoPostal { get; set; }
         public string Poblacion { get; set; }
         public string Provincia { get; set; }
+        public string PersonaContacto { get; set; }
         public int Telefono1 { get; set; }
         public int Telefono2 { get; set; }
         public int Fax { get; set; }
         public string Email { get; set; }
         public string Iban { get; set; }
+        public string LogoPath { get; set; }
 
         public PerfilViewModel()
         {

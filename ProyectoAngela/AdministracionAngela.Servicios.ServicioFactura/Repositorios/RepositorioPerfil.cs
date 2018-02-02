@@ -49,7 +49,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var perfilToUpdate = this.dbContext.Perfiles.Find(nuevoPerfil.Id);
+                var perfilToUpdate = this.dbContext.Perfiles.First();
 
                 if (perfilToUpdate != null)
                 {
@@ -63,7 +63,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     perfilToUpdate.Contacto.Fax = nuevoPerfil.Contacto.Fax;
                     perfilToUpdate.Contacto.Telefono1 = nuevoPerfil.Contacto.Telefono1;
                     perfilToUpdate.Contacto.Telefono2 = nuevoPerfil.Contacto.Telefono2;
-
+                    perfilToUpdate.Contacto.PersonaContacto = nuevoPerfil.Contacto.PersonaContacto;
+                    perfilToUpdate.LogoPath = nuevoPerfil.LogoPath;
                     this.dbContext.SaveChanges();
                 }
             }

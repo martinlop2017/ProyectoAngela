@@ -118,6 +118,7 @@ namespace AdministracionAngela.Utils.Mappers
                 Id = perfil.Id,
                 NIF = perfil.NIF,
                 Nombre = perfil.Nombre,
+                LogoPath = perfil.LogoPath,
                 Contacto = new Contacto()
                 {
                     Email = perfil.Email,

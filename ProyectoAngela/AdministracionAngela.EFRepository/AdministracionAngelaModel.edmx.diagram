@@ -10,24 +10,24 @@
         <EntityTypeShape EntityType="AdministracionAngelaModel.Direccion" Width="1.5" PointX="0.625" PointY="4.625" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.User" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.FormaPago" Width="1.5" PointX="8.375" PointY="8.75" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Cliente" Width="1.5" PointX="5.875" PointY="3.875" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Contacto" Width="1.5" PointX="3.5" PointY="1" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_Contacto" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_Direccion" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_FormaPago" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Producto" Width="1.5" PointX="8.25" PointY="0.75" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Producto_IVA" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="8.125" PointY="4.75" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="10.5" PointY="2.125" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.LineaAlbaran" Width="1.5" PointX="11.5" PointY="7.5" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaAlbaran_Producto" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Albaran" Width="1.5" PointX="8.125" PointY="11.375" />
-        <AssociationConnector Association="AdministracionAngelaModel.FK_Albaran_Cliente" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaAlbaran_Albaran" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.Perfil" Width="1.5" PointX="3.5" PointY="5.25" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Cliente" Width="1.5" PointX="11.75" PointY="1.75" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Factura" Width="1.5" PointX="6.25" PointY="5" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.LineaFactura" Width="1.5" PointX="14.75" PointY="2.125" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Albaran_Cliente" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_Contacto" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_Direccion" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Cliente_FormaPago" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_Factura_Cliente" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Factura" />
+        <AssociationConnector Association="AdministracionAngelaModel.FK_LineaFactura_Producto" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.Perfil" Width="1.5" PointX="3.25" PointY="5.5" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Contacto" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Perfil_Direccion" />
         </Diagram>

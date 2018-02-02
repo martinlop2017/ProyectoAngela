@@ -218,10 +218,10 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Factura()
             {
-                NumeroFactura = altaFactura.Id,
+                NumeroFactura = altaFactura.NumeroFactura,
                 ClienteId = altaFactura.ClienteIdsAndDescripciones[altaFactura.SelectedClient],
                 Fecha = Convert.ToDateTime(altaFactura.Fecha),
-                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura, altaFactura.Id),
+                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura),
                 TotalBase = altaFactura.TotalBase,
                 TotalRecargoEquivalencia = altaFactura.TotalRecargoEquivalencia,
                 TotalIVA = altaFactura.TotalIVA,
@@ -231,11 +231,10 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura, long numeroFactura)
+        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura)
         {
             return lineasFactura.Select(linea => new LineaFactura()
             {
-                NumeroFactura = numeroFactura,
                 ProductoId = linea.ProductoId,
                 PorcentajeIVA = linea.PorcentajeIVA,
                 ImporteIVA = linea.ImporteIVA,

@@ -20,6 +20,7 @@ namespace AdministracionAngela.EFRepository
             this.LineaFactura = new HashSet<LineaFactura>();
         }
     
+        public long Id { get; set; }
         public long NumeroFactura { get; set; }
         public long ClienteId { get; set; }
         public Nullable<System.DateTime> Fecha { get; set; }

@@ -295,7 +295,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new AltaFacturaViewModel()
             {
-                Id = numeroFactura,
+                NumeroFactura = numeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
                 Fecha = DateTime.Today.ToString("yyyy MM dd"),
@@ -308,7 +308,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new AltaFacturaViewModel()
             {
-                Id = (int)factura.NumeroFactura,
+                NumeroFactura = (int)factura.NumeroFactura,
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
                 SelectedClient = string.Format("{0} - {1}", factura.Cliente.Id, factura.Cliente.Nombre),

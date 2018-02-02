@@ -15,7 +15,7 @@ namespace AdministracionAngela.EFRepository
     public partial class LineaFactura
     {
         public long Id { get; set; }
-        public long NumeroFactura { get; set; }
+        public long FacturaId { get; set; }
         public long ProductoId { get; set; }
         public decimal PorcentajeIVA { get; set; }
         public Nullable<decimal> PorcentajeRE { get; set; }

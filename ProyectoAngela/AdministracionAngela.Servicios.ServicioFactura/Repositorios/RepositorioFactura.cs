@@ -21,8 +21,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             try
             {
                 var numerosFactura = repositoryFacturasToDelete.Select(f => f.NumeroFactura);
-                var facturasToDelete = this.dbContext.Facturas.Where(f => numerosFactura.Contains(f.NumeroFactura));
+                var facturasToDelete = this.dbContext.Facturas.Where(f => numerosFactura.Contains(f.NumeroFactura)).ToList();
 
+                DeleteLineasFacturaByNumeroFactura(facturasToDelete);
                 this.dbContext.Facturas.RemoveRange(facturasToDelete);
                 this.dbContext.SaveChanges();
             }
@@ -52,8 +53,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var numerosFactura = repositoryFacturasToDelete.Select(f => f.NumeroFactura);
-                var lineasFacturaToDelete = this.dbContext.LineasFactura.Where(lf => numerosFactura.Contains(lf.NumeroFactura)).ToList();
+                var facturasID = repositoryFacturasToDelete.Select(f => f.Id);
+                var lineasFacturaToDelete = this.dbContext.LineasFactura.Where(lf => facturasID.Contains(lf.FacturaId)).ToList();
 
                 this.dbContext.LineasFactura.RemoveRange(lineasFacturaToDelete);
                 this.dbContext.SaveChanges();
@@ -92,11 +93,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Albaranes.ToList();
         }
 
-        public Factura GetFacturaById(long facturaId)
+        public Factura GetFacturaById(long numeroFActura)
         {
             try
             {
-                return this.dbContext.Facturas.Find(facturaId);
+                return this.dbContext.Facturas.Single(f => f.NumeroFactura == numeroFActura);
             }
             catch(Exception exp)
             {
@@ -202,7 +203,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                var facturaToupdate = this.dbContext.Facturas.Find(facturaToRepository.NumeroFactura);
+                var facturaToupdate = this.dbContext.Facturas.Single(f => f.NumeroFactura == facturaToRepository.NumeroFactura);
 
                 facturaToupdate.ClienteId = facturaToRepository.ClienteId;
                 facturaToupdate.Fecha = facturaToRepository.Fecha;
@@ -212,7 +213,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
                 dbContext.SaveChanges();
 
-                UpdateLineasFactura(facturaToRepository);
+                UpdateLineasFactura(facturaToupdate.Id, facturaToRepository.LineaFactura);
 
             }
             catch(Exception exp)
@@ -221,11 +222,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        private void UpdateLineasFactura(Factura facturaToRepository)
+        private void UpdateLineasFactura(long facturaId, ICollection<LineaFactura> lineas)
         {
-            var lineasToDelete = this.dbContext.LineasFactura.Where(x => x.NumeroFactura.Equals(facturaToRepository.NumeroFactura));
+            var lineasToDelete = this.dbContext.LineasFactura.Where(x => x.FacturaId.Equals(facturaId));
             this.dbContext.LineasFactura.RemoveRange(lineasToDelete);
-            this.dbContext.LineasFactura.AddRange(facturaToRepository.LineaFactura);
+            foreach(var linea in lineas)
+            {
+                linea.FacturaId = facturaId;
+            }
+
+            this.dbContext.LineasFactura.AddRange(lineas);
 
             dbContext.SaveChanges();
         }

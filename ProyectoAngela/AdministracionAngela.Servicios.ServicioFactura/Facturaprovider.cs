@@ -149,12 +149,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.DeleteAlbaranes(repositoryAlbaranesToDelete);
         }
 
-        public AltaFacturaViewModel GetFacturaViewModelById(long facturaId)
+        public AltaFacturaViewModel GetFacturaViewModelById(long numeroFActura)
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
 
-            var facturaFromRepository = this.repositorioFactura.GetFacturaById(facturaId);
+            var facturaFromRepository = this.repositorioFactura.GetFacturaById(numeroFActura);
 
             var ivas = this.repositorioIVA.GetAllIVAs();
 

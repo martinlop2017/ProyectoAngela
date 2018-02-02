@@ -25,7 +25,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private List<string> originalProductValues;
         private AltaFacturaViewModel viewModel;
         private bool isUpdate = false;
-        private long facturaId;
+        private long numeroFactura;
 
         public Facturacion(IFacturaProvider facturaProvider)
         {
@@ -36,7 +36,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         public void IsUpdate(long facturaId)
         {
             this.isUpdate = true;
-            this.facturaId = facturaId;
+            this.numeroFactura = facturaId;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
             else
             {
-                viewModel = this.facturaProvider.GetFacturaViewModelById(this.facturaId);
+                viewModel = this.facturaProvider.GetFacturaViewModelById(this.numeroFactura);
             }
             this.FillControls(viewModel);
         }
@@ -74,7 +74,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.originalClientValues = viewModel.ClienteIdsAndDescripciones.Keys.ToList<string>();
                 this.originalProductValues = viewModel.ArticuloIdsAndDescripciones.Keys.ToList<string>();
                 this.comboBoxClientes.DataSource = originalClientValues;
-                this.labelNumeroFactura.Text = viewModel.Id.ToString();
+                this.labelNumeroFactura.Text = viewModel.NumeroFactura.ToString();
                 this.textBoxLote.Text = viewModel.Lote;
                 this.FillIVAs(viewModel.LineasIVA);
 
@@ -277,7 +277,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// </summary>
         private void ReadGenericDataFromForm()
         {
-            this.viewModel.Id = Convert.ToInt32(this.labelNumeroFactura.Text);
+            this.viewModel.NumeroFactura = Convert.ToInt32(this.labelNumeroFactura.Text);
             this.viewModel.SelectedClient = this.comboBoxClientes.Text;
             this.viewModel.Fecha = this.dateTimePickerFecha.Value.ToString();
             this.viewModel.Lote= this.textBoxLote.Text;

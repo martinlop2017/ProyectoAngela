@@ -73,23 +73,38 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
             {
+
+                DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
+                DataTable table = dataset.Tables.Add("Items");
+                table.Columns.Add("NumeroFactura", Type.GetType("System.Int32"));
+                table.Columns.Add("Dni", Type.GetType("System.String"));
+
+                DataRow row = table.NewRow();
+                row[0] = 1;
+                row[1] = "442";
+                table.Rows.Add(row);
+
                 ReportDocument oRep = new ReportDocument();
-                ParameterField pf = new ParameterField();
-                ParameterFields pfs = new ParameterFields();
-                ParameterDiscreteValue pdv = new ParameterDiscreteValue();
-                pf.Name = variableName;
-                pf.CurrentValues.Add(pdv);
-                pfs.Add(pf);
-                formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
+                //ParameterField pf = new ParameterField();
+                //ParameterFields pfs = new ParameterFields();
+                //ParameterDiscreteValue pdv = new ParameterDiscreteValue();
+                //pf.Name = variableName;
+                //pf.CurrentValues.Add(pdv);
+                //pfs.Add(pf);
+                //formImpresion.crystalReportViewer1.ParameterFieldInfo = pfs;
                 var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
                 oRep.Load(reportPath);
-                foreach (var numeroFactura in selectedFacturaIds)
-                {
-                    oRep.SetParameterValue(variableName, numeroFactura);
-                    formImpresion.crystalReportViewer1.ReportSource = oRep;
-                    var path = this.documentoGestion.GetExportPath(numeroFactura);
-                    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
-                }
+                oRep.SetDataSource(dataset.Tables[1]);
+
+                var path = this.documentoGestion.GetExportPath(1);
+                oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                //foreach (var numeroFactura in selectedFacturaIds)
+                //{
+                //    oRep.SetParameterValue(variableName, numeroFactura);
+                //    formImpresion.crystalReportViewer1.ReportSource = oRep;
+                //    var path = this.documentoGestion.GetExportPath(numeroFactura);
+                //    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                //}
             }
         }
 

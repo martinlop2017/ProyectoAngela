@@ -134,7 +134,12 @@ namespace AdministracionAngela.Utils.Mappers
                     Poblacion = perfil.Poblacion,
                     Provincia = perfil.Provincia
                 },
-                Iban = perfil.Iban
+                Iban1 = perfil.Iban1,
+                Iban2 = perfil.Iban2,
+                Iban3 = perfil.Iban3,
+                Iban4 = perfil.Iban4,
+                Iban5 = perfil.Iban5,
+                Iban6 = perfil.Iban6,
             };
         }
         #endregion

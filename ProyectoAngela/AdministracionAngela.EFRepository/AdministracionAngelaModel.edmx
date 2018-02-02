@@ -150,6 +150,12 @@
           <Property Name="ContactoId" Type="int" />
           <Property Name="Iban" Type="nvarchar(max)" />
           <Property Name="LogoPath" Type="nvarchar(max)" />
+          <Property Name="Iban1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Iban2" Type="nchar" MaxLength="10" />
+          <Property Name="Iban3" Type="nchar" MaxLength="10" />
+          <Property Name="Iban4" Type="nchar" MaxLength="10" />
+          <Property Name="Iban5" Type="nchar" MaxLength="10" />
+          <Property Name="Iban6" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -432,15 +438,6 @@
             <End Role="Producto" EntitySet="Producto" />
             <End Role="LineaFactura" EntitySet="LineaFactura" />
           </AssociationSet>
-          <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
-          <AssociationSet Name="FK_Perfil_Contacto" Association="AdministracionAngelaModel.FK_Perfil_Contacto">
-            <End Role="Contacto" EntitySet="Contacto" />
-            <End Role="Perfil" EntitySet="Perfil" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
-            <End Role="Direccion" EntitySet="Direccion" />
-            <End Role="Perfil" EntitySet="Perfil" />
-          </AssociationSet>
           <EntitySet Name="Albaran" EntityType="AdministracionAngelaModel.Albaran" />
           <EntitySet Name="LineaAlbaran" EntityType="AdministracionAngelaModel.LineaAlbaran" />
           <AssociationSet Name="FK_Albaran_Cliente" Association="AdministracionAngelaModel.FK_Albaran_Cliente">
@@ -454,6 +451,15 @@
           <AssociationSet Name="FK_LineaAlbaran_Producto" Association="AdministracionAngelaModel.FK_LineaAlbaran_Producto">
             <End Role="Producto" EntitySet="Producto" />
             <End Role="LineaAlbaran" EntitySet="LineaAlbaran" />
+          </AssociationSet>
+          <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
+          <AssociationSet Name="FK_Perfil_Contacto" Association="AdministracionAngelaModel.FK_Perfil_Contacto">
+            <End Role="Contacto" EntitySet="Contacto" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Perfil" EntitySet="Perfil" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="IVA">
@@ -684,45 +690,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Perfil">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DireccionId" Type="Int32" />
-          <Property Name="ContactoId" Type="Int32" />
-          <Property Name="Iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="LogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
-          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
-        </EntityType>
-        <Association Name="FK_Perfil_Contacto">
-          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
-          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contacto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Perfil">
-              <PropertyRef Name="ContactoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Perfil_Direccion">
-          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Direccion">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Perfil">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Albaran">
           <Key>
             <PropertyRef Name="Id" />
@@ -798,6 +765,51 @@
             </Principal>
             <Dependent Role="LineaAlbaran">
               <PropertyRef Name="ProductoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionId" Type="Int32" />
+          <Property Name="ContactoId" Type="Int32" />
+          <Property Name="Iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Iban1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Iban2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban4" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban5" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Iban6" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
+          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
+        </EntityType>
+        <Association Name="FK_Perfil_Contacto">
+          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
+          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="ContactoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfil_Direccion">
+          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="Id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -943,20 +955,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Perfil">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Perfil">
-              <MappingFragment StoreEntitySet="Perfil">
-                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
-                <ScalarProperty Name="Iban" ColumnName="Iban" />
-                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
-                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
-                <ScalarProperty Name="CIF" ColumnName="CIF" />
-                <ScalarProperty Name="NIF" ColumnName="NIF" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Albaran">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Albaran">
               <MappingFragment StoreEntitySet="Albaran">
@@ -993,6 +991,26 @@
                 <ScalarProperty Name="PorcentajeIVA" ColumnName="PorcentajeIVA" />
                 <ScalarProperty Name="ProductoId" ColumnName="ProductoId" />
                 <ScalarProperty Name="AlbaranId" ColumnName="AlbaranId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="Iban6" ColumnName="Iban6" />
+                <ScalarProperty Name="Iban5" ColumnName="Iban5" />
+                <ScalarProperty Name="Iban4" ColumnName="Iban4" />
+                <ScalarProperty Name="Iban3" ColumnName="Iban3" />
+                <ScalarProperty Name="Iban2" ColumnName="Iban2" />
+                <ScalarProperty Name="Iban1" ColumnName="Iban1" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Iban" ColumnName="Iban" />
+                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="CIF" ColumnName="CIF" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

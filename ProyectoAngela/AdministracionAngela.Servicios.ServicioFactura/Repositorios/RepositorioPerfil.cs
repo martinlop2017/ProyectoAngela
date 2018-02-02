@@ -65,6 +65,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     perfilToUpdate.Contacto.Telefono2 = nuevoPerfil.Contacto.Telefono2;
                     perfilToUpdate.Contacto.PersonaContacto = nuevoPerfil.Contacto.PersonaContacto;
                     perfilToUpdate.LogoPath = nuevoPerfil.LogoPath;
+                    perfilToUpdate.Iban1 = nuevoPerfil.Iban1;
+                    perfilToUpdate.Iban2 = nuevoPerfil.Iban2;
+                    perfilToUpdate.Iban3 = nuevoPerfil.Iban3;
+                    perfilToUpdate.Iban4 = nuevoPerfil.Iban4;
+                    perfilToUpdate.Iban5 = nuevoPerfil.Iban5;
+                    perfilToUpdate.Iban6 = nuevoPerfil.Iban6;
                     this.dbContext.SaveChanges();
                 }
             }

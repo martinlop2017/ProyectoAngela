@@ -151,9 +151,14 @@ namespace AdministracionAngela.Utils.Mappers
                     Fax = perfilFromRepository.Contacto.Fax.Value,
                     Telefono1 = perfilFromRepository.Contacto.Telefono1.Value,
                     Telefono2 = perfilFromRepository.Contacto.Telefono2.Value,
-                    Iban = perfilFromRepository.Iban,
+                    Iban1 = perfilFromRepository.Iban1,
+                    Iban2 = perfilFromRepository.Iban2,
+                    Iban3 = perfilFromRepository.Iban3,
+                    Iban4 = perfilFromRepository.Iban4,
+                    Iban5 = perfilFromRepository.Iban5,
+                    Iban6 = perfilFromRepository.Iban6,
                     PersonaContacto = perfilFromRepository.Contacto.PersonaContacto,
-                    LogoPath = perfilFromRepository.LogoPath
+                    LogoPath = perfilFromRepository.LogoPath,
                 };
             }
 

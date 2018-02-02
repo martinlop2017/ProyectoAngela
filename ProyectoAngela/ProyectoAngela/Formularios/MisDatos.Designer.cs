@@ -39,12 +39,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBoxIBAN1 = new System.Windows.Forms.TextBox();
+            this.textBoxIBAN2 = new System.Windows.Forms.TextBox();
+            this.textBoxIBAN3 = new System.Windows.Forms.TextBox();
+            this.textBoxIBAN4 = new System.Windows.Forms.TextBox();
+            this.textBoxIBAN5 = new System.Windows.Forms.TextBox();
+            this.textBoxIBAN6 = new System.Windows.Forms.TextBox();
             this.textBoxLogoPath = new System.Windows.Forms.TextBox();
             this.customGroupBox1 = new AdministracionAngela.CustomControls.CustomGroupBox();
             this.textBoxMiCif = new System.Windows.Forms.TextBox();
@@ -216,12 +216,12 @@
             this.customGroupBox6.BackgroundGradientMode = AdministracionAngela.CustomControls.CustomGroupBox.GroupBoxGradientMode.None;
             this.customGroupBox6.BorderColor = System.Drawing.Color.SteelBlue;
             this.customGroupBox6.BorderThickness = 1F;
-            this.customGroupBox6.Controls.Add(this.textBox22);
-            this.customGroupBox6.Controls.Add(this.textBox21);
-            this.customGroupBox6.Controls.Add(this.textBox20);
-            this.customGroupBox6.Controls.Add(this.textBox12);
-            this.customGroupBox6.Controls.Add(this.textBox10);
-            this.customGroupBox6.Controls.Add(this.textBox11);
+            this.customGroupBox6.Controls.Add(this.textBoxIBAN1);
+            this.customGroupBox6.Controls.Add(this.textBoxIBAN2);
+            this.customGroupBox6.Controls.Add(this.textBoxIBAN3);
+            this.customGroupBox6.Controls.Add(this.textBoxIBAN4);
+            this.customGroupBox6.Controls.Add(this.textBoxIBAN5);
+            this.customGroupBox6.Controls.Add(this.textBoxIBAN6);
             this.customGroupBox6.CustomGroupBoxColor = System.Drawing.Color.White;
             this.customGroupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.customGroupBox6.GroupImage = null;
@@ -238,73 +238,71 @@
             this.customGroupBox6.TabStop = false;
             this.customGroupBox6.Text = "customGroupBox6";
             // 
-            // textBox22
+            // textBoxIBAN1
             // 
-            this.textBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(14, 37);
-            this.textBox22.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox22.MaxLength = 4;
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(50, 22);
-            this.textBox22.TabIndex = 106;
+            this.textBoxIBAN1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIBAN1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIBAN1.Location = new System.Drawing.Point(14, 37);
+            this.textBoxIBAN1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIBAN1.MaxLength = 4;
+            this.textBoxIBAN1.Name = "textBoxIBAN1";
+            this.textBoxIBAN1.Size = new System.Drawing.Size(50, 22);
+            this.textBoxIBAN1.TabIndex = 106;
             // 
-            // textBox21
+            // textBoxIBAN2
             // 
-            this.textBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(72, 37);
-            this.textBox21.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox21.MaxLength = 4;
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(50, 22);
-            this.textBox21.TabIndex = 107;
+            this.textBoxIBAN2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIBAN2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIBAN2.Location = new System.Drawing.Point(72, 37);
+            this.textBoxIBAN2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIBAN2.MaxLength = 4;
+            this.textBoxIBAN2.Name = "textBoxIBAN2";
+            this.textBoxIBAN2.Size = new System.Drawing.Size(50, 22);
+            this.textBoxIBAN2.TabIndex = 107;
             // 
-            // textBox20
+            // textBoxIBAN3
             // 
-            this.textBox20.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(130, 37);
-            this.textBox20.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox20.MaxLength = 4;
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(50, 22);
-            this.textBox20.TabIndex = 108;
+            this.textBoxIBAN3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIBAN3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIBAN3.Location = new System.Drawing.Point(130, 37);
+            this.textBoxIBAN3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIBAN3.MaxLength = 4;
+            this.textBoxIBAN3.Name = "textBoxIBAN3";
+            this.textBoxIBAN3.Size = new System.Drawing.Size(50, 22);
+            this.textBoxIBAN3.TabIndex = 108;
             // 
-            // textBox12
+            // textBoxIBAN4
             // 
-            this.textBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(188, 37);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox12.MaxLength = 4;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(50, 22);
-            this.textBox12.TabIndex = 109;
+            this.textBoxIBAN4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIBAN4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIBAN4.Location = new System.Drawing.Point(188, 37);
+            this.textBoxIBAN4.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIBAN4.MaxLength = 4;
+            this.textBoxIBAN4.Name = "textBoxIBAN4";
+            this.textBoxIBAN4.Size = new System.Drawing.Size(50, 22);
+            this.textBoxIBAN4.TabIndex = 109;
             // 
-            // textBox10
+            // textBoxIBAN5
             // 
-            this.textBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(246, 37);
-            this.textBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox10.MaxLength = 4;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(50, 22);
-            this.textBox10.TabIndex = 110;
-            this.textBox10.Text = "ES99";
+            this.textBoxIBAN5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIBAN5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIBAN5.Location = new System.Drawing.Point(246, 37);
+            this.textBoxIBAN5.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIBAN5.MaxLength = 4;
+            this.textBoxIBAN5.Name = "textBoxIBAN5";
+            this.textBoxIBAN5.Size = new System.Drawing.Size(50, 22);
+            this.textBoxIBAN5.TabIndex = 110;
             // 
-            // textBox11
+            // textBoxIBAN6
             // 
-            this.textBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(304, 38);
-            this.textBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox11.MaxLength = 4;
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(50, 22);
-            this.textBox11.TabIndex = 111;
-            this.textBox11.Text = "ES99";
+            this.textBoxIBAN6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBoxIBAN6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIBAN6.Location = new System.Drawing.Point(304, 38);
+            this.textBoxIBAN6.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxIBAN6.MaxLength = 4;
+            this.textBoxIBAN6.Name = "textBoxIBAN6";
+            this.textBoxIBAN6.Size = new System.Drawing.Size(50, 22);
+            this.textBoxIBAN6.TabIndex = 111;
             // 
             // textBoxLogoPath
             // 
@@ -664,12 +662,12 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
         private CustomControls.CustomGroupBox customGroupBox6;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBoxIBAN1;
+        private System.Windows.Forms.TextBox textBoxIBAN2;
+        private System.Windows.Forms.TextBox textBoxIBAN3;
+        private System.Windows.Forms.TextBox textBoxIBAN4;
+        private System.Windows.Forms.TextBox textBoxIBAN5;
+        private System.Windows.Forms.TextBox textBoxIBAN6;
         private System.Windows.Forms.TextBox textBoxLogoPath;
         private CustomControls.CustomGroupBox customGroupBox1;
         private System.Windows.Forms.TextBox textBoxMiCif;

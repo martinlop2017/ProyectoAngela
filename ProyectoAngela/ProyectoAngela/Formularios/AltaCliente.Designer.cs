@@ -406,6 +406,7 @@
             // 
             // textBoxEmail3
             // 
+            this.textBoxEmail3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail3.Location = new System.Drawing.Point(10, 251);
             this.textBoxEmail3.Name = "textBoxEmail3";
@@ -413,7 +414,7 @@
             this.textBoxEmail3.TabIndex = 6;
             validationRule5.ErrorMessage = "El email introducido es incorrecto";
             validationRule5.IsCaseSensitive = false;
-            validationRule5.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            validationRule5.RegExPattern = "^[_A-Z0-9-]+(\\.[_A-ZA0-9-]+)*@[A-Z0-9-]+(\\.[A-Z0-9-]+)*(\\.[A-Z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail3, validationRule5);
             // 
             // label17
@@ -427,6 +428,7 @@
             // 
             // textBoxEmail2
             // 
+            this.textBoxEmail2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail2.Location = new System.Drawing.Point(10, 201);
             this.textBoxEmail2.Name = "textBoxEmail2";
@@ -434,7 +436,7 @@
             this.textBoxEmail2.TabIndex = 5;
             validationRule6.ErrorMessage = "El email introducido es incorrecto";
             validationRule6.IsCaseSensitive = false;
-            validationRule6.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            validationRule6.RegExPattern = "^[_A-Z0-9-]+(\\.[_A-ZA0-9-]+)*@[A-Z0-9-]+(\\.[A-Z0-9-]+)*(\\.[A-Z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail2, validationRule6);
             // 
             // label16
@@ -448,6 +450,7 @@
             // 
             // textBoxEmail1
             // 
+            this.textBoxEmail1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail1.Location = new System.Drawing.Point(10, 151);
             this.textBoxEmail1.Name = "textBoxEmail1";
@@ -455,7 +458,7 @@
             this.textBoxEmail1.TabIndex = 4;
             validationRule7.ErrorMessage = "El email introducido es incorrecto";
             validationRule7.IsCaseSensitive = false;
-            validationRule7.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            validationRule7.RegExPattern = "^[_A-Z0-9-]+(\\.[_A-ZA0-9-]+)*@[A-Z0-9-]+(\\.[A-Z0-9-]+)*(\\.[A-Z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail1, validationRule7);
             // 
             // label12
@@ -502,6 +505,7 @@
             // 
             // textBoxEmail4
             // 
+            this.textBoxEmail4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxEmail4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxEmail4.Location = new System.Drawing.Point(10, 301);
             this.textBoxEmail4.Name = "textBoxEmail4";
@@ -509,7 +513,7 @@
             this.textBoxEmail4.TabIndex = 7;
             validationRule10.ErrorMessage = "El email introducido es incorrecto";
             validationRule10.IsCaseSensitive = false;
-            validationRule10.RegExPattern = "^[_a-z0-9-]+(\\.[_a-z0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$";
+            validationRule10.RegExPattern = "^[_A-Z0-9-]+(\\.[_A-ZA0-9-]+)*@[A-Z0-9-]+(\\.[A-Z0-9-]+)*(\\.[A-Z]{2,3})$";
             this.validationProvider1.SetValidationRule(this.textBoxEmail4, validationRule10);
             // 
             // textBoxFax

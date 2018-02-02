@@ -70,12 +70,13 @@
             // 
             // textBoxAbreviacion
             // 
+            this.textBoxAbreviacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxAbreviacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAbreviacion.Location = new System.Drawing.Point(401, 259);
             this.textBoxAbreviacion.Name = "textBoxAbreviacion";
             this.textBoxAbreviacion.Size = new System.Drawing.Size(62, 23);
-            this.textBoxAbreviacion.TabIndex = 50;
-            this.textBoxAbreviacion.Text = "fdfdf";
+            this.textBoxAbreviacion.TabIndex = 6;
+            this.textBoxAbreviacion.Text = "FDFDF";
             // 
             // label8
             // 
@@ -91,12 +92,13 @@
             // 
             // textBoxZonaCaptura
             // 
+            this.textBoxZonaCaptura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxZonaCaptura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxZonaCaptura.Location = new System.Drawing.Point(43, 259);
             this.textBoxZonaCaptura.Name = "textBoxZonaCaptura";
             this.textBoxZonaCaptura.Size = new System.Drawing.Size(352, 23);
-            this.textBoxZonaCaptura.TabIndex = 48;
-            this.textBoxZonaCaptura.Text = "fdfdf";
+            this.textBoxZonaCaptura.TabIndex = 5;
+            this.textBoxZonaCaptura.Text = "FDFDF";
             // 
             // label6
             // 
@@ -112,12 +114,13 @@
             // 
             // textBoxArtePesca
             // 
+            this.textBoxArtePesca.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxArtePesca.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxArtePesca.Location = new System.Drawing.Point(414, 209);
             this.textBoxArtePesca.Name = "textBoxArtePesca";
             this.textBoxArtePesca.Size = new System.Drawing.Size(176, 23);
-            this.textBoxArtePesca.TabIndex = 46;
-            this.textBoxArtePesca.Text = "fdfdf";
+            this.textBoxArtePesca.TabIndex = 4;
+            this.textBoxArtePesca.Text = "FDFDF";
             // 
             // label4
             // 
@@ -133,12 +136,13 @@
             // 
             // textBoxFAO
             // 
+            this.textBoxFAO.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxFAO.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxFAO.Location = new System.Drawing.Point(506, 159);
             this.textBoxFAO.Name = "textBoxFAO";
             this.textBoxFAO.Size = new System.Drawing.Size(84, 23);
-            this.textBoxFAO.TabIndex = 44;
-            this.textBoxFAO.Text = "fdfdf";
+            this.textBoxFAO.TabIndex = 2;
+            this.textBoxFAO.Text = "FDFDF";
             // 
             // label3
             // 
@@ -159,7 +163,7 @@
             this.textBoxNombreCientifico.Location = new System.Drawing.Point(43, 209);
             this.textBoxNombreCientifico.Name = "textBoxNombreCientifico";
             this.textBoxNombreCientifico.Size = new System.Drawing.Size(365, 23);
-            this.textBoxNombreCientifico.TabIndex = 42;
+            this.textBoxNombreCientifico.TabIndex = 3;
             // 
             // label2
             // 
@@ -179,7 +183,7 @@
             this.comboBoxIVA.Location = new System.Drawing.Point(469, 259);
             this.comboBoxIVA.Name = "comboBoxIVA";
             this.comboBoxIVA.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxIVA.TabIndex = 40;
+            this.comboBoxIVA.TabIndex = 7;
             // 
             // label1
             // 
@@ -199,7 +203,7 @@
             this.textBoxCodigoArticulo.Location = new System.Drawing.Point(43, 159);
             this.textBoxCodigoArticulo.Name = "textBoxCodigoArticulo";
             this.textBoxCodigoArticulo.Size = new System.Drawing.Size(84, 23);
-            this.textBoxCodigoArticulo.TabIndex = 35;
+            this.textBoxCodigoArticulo.TabIndex = 0;
             this.textBoxCodigoArticulo.Text = "fdfdf";
             // 
             // label5
@@ -221,7 +225,7 @@
             this.textBoxDescripcion.Location = new System.Drawing.Point(133, 159);
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(365, 23);
-            this.textBoxDescripcion.TabIndex = 37;
+            this.textBoxDescripcion.TabIndex = 1;
             // 
             // label10
             // 
@@ -244,7 +248,7 @@
             this.button7.Location = new System.Drawing.Point(81, 335);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(208, 60);
-            this.button7.TabIndex = 51;
+            this.button7.TabIndex = 8;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click_1);
             // 
@@ -257,7 +261,7 @@
             this.button8.Location = new System.Drawing.Point(348, 335);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(208, 60);
-            this.button8.TabIndex = 52;
+            this.button8.TabIndex = 9;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click_1);
             // 

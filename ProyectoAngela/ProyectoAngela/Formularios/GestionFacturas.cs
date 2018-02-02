@@ -201,5 +201,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewFacturas.RowTemplate.DefaultCellStyle.BackColor = this.IsDocumento ? Color.White : Color.LemonChiffon;
             this.FillControls();
         }
+
+        private void buttonFacturar_MouseEnter(object sender, EventArgs e)
+        {
+            labelFacturar.Visible = true;
+        }
+
+        private void buttonFacturar_MouseLeave(object sender, EventArgs e)
+        {
+            labelFacturar.Visible = false;
+        }
     }
 }

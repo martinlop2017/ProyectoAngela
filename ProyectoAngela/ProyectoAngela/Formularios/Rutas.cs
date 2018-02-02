@@ -107,5 +107,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textListados.Text = RutasSalida.RutaLiquidaciones;
             this.textSguridad.Text = RutasSalida.RutaSeguridad;
         }
+
+        private void Rutas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true; SendKeys.Send("{TAB}");
+            }
+        }
     }
 }

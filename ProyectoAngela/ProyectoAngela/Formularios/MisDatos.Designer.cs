@@ -193,6 +193,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(29, 27);
             this.button3.TabIndex = 114;
+            this.button3.TabStop = false;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -631,10 +632,12 @@
             this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.customGroupBox7);
+            this.KeyPreview = true;
             this.Name = "MisDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MisDatos";
             this.Load += new System.EventHandler(this.MisDatos_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MisDatos_KeyPress);
             this.customGroupBox7.ResumeLayout(false);
             this.formadepago.ResumeLayout(false);
             this.formadepago.PerformLayout();

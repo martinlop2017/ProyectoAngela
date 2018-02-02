@@ -94,5 +94,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             return kilos * precioMedio;
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -92,7 +92,7 @@
             this.buttonGuardar.Location = new System.Drawing.Point(92, 408);
             this.buttonGuardar.Name = "buttonGuardar";
             this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
-            this.buttonGuardar.TabIndex = 142;
+            this.buttonGuardar.TabIndex = 5;
             this.buttonGuardar.UseVisualStyleBackColor = true;
             this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
@@ -105,7 +105,7 @@
             this.button2.Location = new System.Drawing.Point(317, 408);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(208, 60);
-            this.button2.TabIndex = 143;
+            this.button2.TabIndex = 6;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -117,7 +117,7 @@
             this.textAlbaranes.Name = "textAlbaranes";
             this.textAlbaranes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textAlbaranes.Size = new System.Drawing.Size(330, 23);
-            this.textAlbaranes.TabIndex = 139;
+            this.textAlbaranes.TabIndex = 1;
             this.textAlbaranes.Text = "C:\\DIRECTORIO";
             // 
             // label15
@@ -152,7 +152,7 @@
             this.textFactura.Name = "textFactura";
             this.textFactura.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textFactura.Size = new System.Drawing.Size(330, 23);
-            this.textFactura.TabIndex = 134;
+            this.textFactura.TabIndex = 0;
             this.textFactura.Text = "C:\\DIRECTORIO";
             // 
             // buttonListados
@@ -185,7 +185,7 @@
             this.textLiquidaciones.Name = "textLiquidaciones";
             this.textLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textLiquidaciones.Size = new System.Drawing.Size(330, 23);
-            this.textLiquidaciones.TabIndex = 151;
+            this.textLiquidaciones.TabIndex = 3;
             this.textLiquidaciones.Text = "C:\\DIRECTORIO";
             // 
             // label1
@@ -220,7 +220,7 @@
             this.textListados.Name = "textListados";
             this.textListados.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textListados.Size = new System.Drawing.Size(330, 23);
-            this.textListados.TabIndex = 148;
+            this.textListados.TabIndex = 2;
             this.textListados.Text = "C:\\DIRECTORIO";
             // 
             // buttonSeguridad
@@ -242,7 +242,7 @@
             this.textSguridad.Name = "textSguridad";
             this.textSguridad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textSguridad.Size = new System.Drawing.Size(330, 23);
-            this.textSguridad.TabIndex = 155;
+            this.textSguridad.TabIndex = 4;
             this.textSguridad.Text = "C:\\DIRECTORIO";
             // 
             // label3
@@ -282,12 +282,14 @@
             this.Controls.Add(this.label20);
             this.Controls.Add(this.textFactura);
             this.Controls.Add(this.label13);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Rutas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rutas";
             this.Load += new System.EventHandler(this.Rutas_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Rutas_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -149,6 +149,7 @@
           <Property Name="DireccionId" Type="int" />
           <Property Name="ContactoId" Type="int" />
           <Property Name="Iban" Type="nvarchar(max)" />
+          <Property Name="LogoPath" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Producto">
           <Key>
@@ -396,13 +397,8 @@
       <Schema Namespace="AdministracionAngelaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="AdministracionAngelaContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
-          <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
           <EntitySet Name="sysdiagrams" EntityType="AdministracionAngelaModel.sysdiagrams" />
           <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
-          <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
-            <End Role="Direccion" EntitySet="Direccion" />
-            <End Role="Perfil" EntitySet="Perfil" />
-          </AssociationSet>
           <EntitySet Name="User" EntityType="AdministracionAngelaModel.User" />
           <EntitySet Name="FormaPago" EntityType="AdministracionAngelaModel.FormaPago" />
           <EntitySet Name="Cliente" EntityType="AdministracionAngelaModel.Cliente" />
@@ -418,10 +414,6 @@
           <AssociationSet Name="FK_Cliente_FormaPago" Association="AdministracionAngelaModel.FK_Cliente_FormaPago">
             <End Role="FormaPago" EntitySet="FormaPago" />
             <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Perfil_Contacto" Association="AdministracionAngelaModel.FK_Perfil_Contacto">
-            <End Role="Contacto" EntitySet="Contacto" />
-            <End Role="Perfil" EntitySet="Perfil" />
           </AssociationSet>
           <EntitySet Name="Producto" EntityType="AdministracionAngelaModel.Producto" />
           <AssociationSet Name="FK_Producto_IVA" Association="AdministracionAngelaModel.FK_Producto_IVA">
@@ -456,6 +448,15 @@
             <End Role="Albaran" EntitySet="Albaran" />
             <End Role="LineaAlbaran" EntitySet="LineaAlbaran" />
           </AssociationSet>
+          <EntitySet Name="Perfil" EntityType="AdministracionAngelaModel.Perfil" />
+          <AssociationSet Name="FK_Perfil_Contacto" Association="AdministracionAngelaModel.FK_Perfil_Contacto">
+            <End Role="Contacto" EntitySet="Contacto" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Perfil" EntitySet="Perfil" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="IVA">
           <Key>
@@ -466,20 +467,6 @@
           <Property Name="Porcentaje" Type="Int32" />
           <Property Name="PorcentanjeRE" Type="Decimal" Precision="18" Scale="2" />
           <NavigationProperty Name="Producto" Relationship="AdministracionAngelaModel.FK_Producto_IVA" FromRole="IVA" ToRole="Producto" />
-        </EntityType>
-        <EntityType Name="Perfil">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" />
-          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DireccionId" Type="Int32" />
-          <Property Name="ContactoId" Type="Int32" />
-          <Property Name="Iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
-          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -500,21 +487,9 @@
           <Property Name="Poblacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Provincia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="CodigoPostal" Type="Int32" />
-          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Direccion" ToRole="Perfil" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Direccion" ToRole="Cliente" />
+          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Direccion" ToRole="Perfil" />
         </EntityType>
-        <Association Name="FK_Perfil_Direccion">
-          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
-          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Direccion">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Perfil">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserName" />
@@ -603,18 +578,6 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="FormaDePagoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Perfil_Contacto">
-          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
-          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Contacto">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Perfil">
-              <PropertyRef Name="ContactoId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -803,6 +766,45 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CIF" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DireccionId" Type="Int32" />
+          <Property Name="ContactoId" Type="Int32" />
+          <Property Name="Iban" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LogoPath" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Perfil_Contacto" FromRole="Perfil" ToRole="Contacto" />
+          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Perfil" ToRole="Direccion" />
+        </EntityType>
+        <Association Name="FK_Perfil_Contacto">
+          <End Type="AdministracionAngelaModel.Contacto" Role="Contacto" Multiplicity="0..1" />
+          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacto">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="ContactoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Perfil_Direccion">
+          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
+          <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Perfil">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -815,19 +817,6 @@
                 <ScalarProperty Name="PorcentanjeRE" ColumnName="PorcentanjeRE" />
                 <ScalarProperty Name="Porcentaje" ColumnName="Porcentaje" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Perfil">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Perfil">
-              <MappingFragment StoreEntitySet="Perfil">
-                <ScalarProperty Name="Iban" ColumnName="Iban" />
-                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
-                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
-                <ScalarProperty Name="CIF" ColumnName="CIF" />
-                <ScalarProperty Name="NIF" ColumnName="NIF" />
-                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -994,6 +983,20 @@
                 <ScalarProperty Name="Fecha" ColumnName="Fecha" />
                 <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
                 <ScalarProperty Name="NumeroAlbaran" ColumnName="NumeroAlbaran" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Iban" ColumnName="Iban" />
+                <ScalarProperty Name="ContactoId" ColumnName="ContactoId" />
+                <ScalarProperty Name="DireccionId" ColumnName="DireccionId" />
+                <ScalarProperty Name="CIF" ColumnName="CIF" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

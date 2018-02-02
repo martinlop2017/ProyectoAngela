@@ -21,8 +21,9 @@ namespace AdministracionAngela.EFRepository
         public Nullable<int> DireccionId { get; set; }
         public Nullable<int> ContactoId { get; set; }
         public string Iban { get; set; }
+        public string LogoPath { get; set; }
     
-        public virtual Direccion Direccion { get; set; }
         public virtual Contacto Contacto { get; set; }
+        public virtual Direccion Direccion { get; set; }
     }
 }

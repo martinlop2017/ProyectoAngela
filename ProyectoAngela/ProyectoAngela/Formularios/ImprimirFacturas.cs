@@ -75,14 +75,35 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
 
                 DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
-                DataTable table = dataset.Tables.Add("Items");
+                DataTable table = dataset.Tables.Add("FacturaCliente");
                 table.Columns.Add("NumeroFactura", Type.GetType("System.Int32"));
                 table.Columns.Add("Dni", Type.GetType("System.String"));
+                table.Columns.Add("Descripcion", Type.GetType("System.String"));
 
                 DataRow row = table.NewRow();
                 row[0] = 1;
                 row[1] = "442";
+                row[2] = "aaaa";
                 table.Rows.Add(row);
+
+                DataRow row1 = table.NewRow();
+                row1[0] = 1;
+                row1[1] = "442";
+                row1[2] = "bbbbb";
+                table.Rows.Add(row1);
+
+                DataSetFacturaImpresion dataset2 = new DataSetFacturaImpresion();
+                DataTable table3 = dataset2.Tables.Add("Iva");
+                table3.Columns.Add("Porcentaje", Type.GetType("System.Int32"));
+
+                DataRow row3 = table3.NewRow();
+                row3[0] = 5;
+                table3.Rows.Add(row3);
+
+                DataRow row4 = table3.NewRow();
+                row4[0] = 5;
+                table3.Rows.Add(row4);
+
 
                 ReportDocument oRep = new ReportDocument();
                 //ParameterField pf = new ParameterField();
@@ -95,6 +116,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
                 oRep.Load(reportPath);
                 oRep.SetDataSource(dataset.Tables[1]);
+                oRep.Subreports[0].SetDataSource(dataset2.Tables[1]);
 
                 var path = this.documentoGestion.GetExportPath(1);
                 oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);

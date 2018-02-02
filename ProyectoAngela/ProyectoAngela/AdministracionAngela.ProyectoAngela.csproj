@@ -73,6 +73,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFacturaImpresion.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetIvaFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetIvaFactura.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Albaranes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +334,17 @@
     </None>
     <None Include="DataSetFacturaImpresion.xss">
       <DependentUpon>DataSetFacturaImpresion.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetIvaFactura.xsc">
+      <DependentUpon>DataSetIvaFactura.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetIvaFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetIvaFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetIvaFactura.xss">
+      <DependentUpon>DataSetIvaFactura.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

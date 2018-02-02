@@ -209,6 +209,7 @@
             treeNode17});
             this.treeView1.Size = new System.Drawing.Size(310, 205);
             this.treeView1.TabIndex = 28;
+            this.treeView1.TabStop = false;
             // 
             // maskedTextBox2
             // 
@@ -435,12 +436,14 @@
             this.Controls.Add(this.customGroupBox7);
             this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.label7);
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AltaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaUsuario";
             this.Load += new System.EventHandler(this.AltaUsuario_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AltaUsuario_KeyPress);
             this.customGroupBox1.ResumeLayout(false);
             this.customGroupBox1.PerformLayout();
             this.customGroupBox2.ResumeLayout(false);

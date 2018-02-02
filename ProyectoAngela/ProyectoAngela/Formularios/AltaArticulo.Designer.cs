@@ -294,10 +294,12 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.DoubleBuffered = true;
+            this.KeyPreview = true;
             this.Name = "AltaArticulo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaArticulo";
             this.Load += new System.EventHandler(this.AltaArticulo_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AltaArticulo_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 

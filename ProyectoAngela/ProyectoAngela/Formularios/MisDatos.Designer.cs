@@ -35,6 +35,7 @@
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.formadepago = new AdministracionAngela.CustomControls.CustomGroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.customGroupBox6 = new AdministracionAngela.CustomControls.CustomGroupBox();
@@ -71,14 +72,13 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.customGroupBox7.SuspendLayout();
             this.formadepago.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.customGroupBox6.SuspendLayout();
             this.customGroupBox1.SuspendLayout();
             this.customGroupBox2.SuspendLayout();
             this.customGroupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label15
@@ -171,6 +171,16 @@
             this.formadepago.TabStop = false;
             this.formadepago.Text = "customGroupBox4";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Albaranes;
+            this.pictureBox1.Location = new System.Drawing.Point(728, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(72, 96);
+            this.pictureBox1.TabIndex = 112;
+            this.pictureBox1.TabStop = false;
+            // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
@@ -183,6 +193,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(29, 27);
             this.button3.TabIndex = 114;
+            this.button3.TabStop = false;
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -610,16 +621,6 @@
             this.imageList1.TransparentColor = System.Drawing.Color.Black;
             this.imageList1.Images.SetKeyName(0, "Rectangulo 7 Azulina.png");
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Albaranes;
-            this.pictureBox1.Location = new System.Drawing.Point(728, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(72, 96);
-            this.pictureBox1.TabIndex = 112;
-            this.pictureBox1.TabStop = false;
-            // 
             // MisDatos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -631,13 +632,16 @@
             this.Controls.Add(this.customGroupBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.customGroupBox7);
+            this.KeyPreview = true;
             this.Name = "MisDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MisDatos";
             this.Load += new System.EventHandler(this.MisDatos_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MisDatos_KeyPress);
             this.customGroupBox7.ResumeLayout(false);
             this.formadepago.ResumeLayout(false);
             this.formadepago.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.customGroupBox6.ResumeLayout(false);
             this.customGroupBox6.PerformLayout();
             this.customGroupBox1.ResumeLayout(false);
@@ -646,7 +650,6 @@
             this.customGroupBox2.PerformLayout();
             this.customGroupBox3.ResumeLayout(false);
             this.customGroupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

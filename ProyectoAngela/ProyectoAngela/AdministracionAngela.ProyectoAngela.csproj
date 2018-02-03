@@ -68,6 +68,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetFacturaImpresion.cs">
+      <DependentUpon>DataSetFacturaImpresion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSetFacturaImpresion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

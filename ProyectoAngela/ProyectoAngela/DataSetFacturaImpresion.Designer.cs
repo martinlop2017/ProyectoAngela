@@ -307,6 +307,24 @@ namespace AdministracionAngela.ProyectoAngela {
             
             private global::System.Data.DataColumn columnCodigoPostal;
             
+            private global::System.Data.DataColumn columnNombreEmpresa;
+            
+            private global::System.Data.DataColumn columnDniPerfil;
+            
+            private global::System.Data.DataColumn columnCodigoPostalPerfil;
+            
+            private global::System.Data.DataColumn columnPoblacionPerfil;
+            
+            private global::System.Data.DataColumn columnProvinciaPerfil;
+            
+            private global::System.Data.DataColumn columnLineaDireccionPerfil;
+            
+            private global::System.Data.DataColumn columnTelefonoPerfil;
+            
+            private global::System.Data.DataColumn columnEmailPerfil;
+            
+            private global::System.Data.DataColumn columnFaxPerfil;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FacturaClienteDataTable() {
@@ -454,6 +472,78 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreEmpresaColumn {
+                get {
+                    return this.columnNombreEmpresa;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DniPerfilColumn {
+                get {
+                    return this.columnDniPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn CodigoPostalPerfilColumn {
+                get {
+                    return this.columnCodigoPostalPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PoblacionPerfilColumn {
+                get {
+                    return this.columnPoblacionPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ProvinciaPerfilColumn {
+                get {
+                    return this.columnProvinciaPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LineaDireccionPerfilColumn {
+                get {
+                    return this.columnLineaDireccionPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TelefonoPerfilColumn {
+                get {
+                    return this.columnTelefonoPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmailPerfilColumn {
+                get {
+                    return this.columnEmailPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FaxPerfilColumn {
+                get {
+                    return this.columnFaxPerfil;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +579,30 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FacturaClienteRow AddFacturaClienteRow(string NumeroFactura, string Dni, string Descripcion, string Fecha, string Codigo, string Bultos, string Kgs, string Precio, string Importe, string Total, string LineaDireccionCliente, string Poblacion, string Provincia, string CodigoPostal) {
+            public FacturaClienteRow AddFacturaClienteRow(
+                        string NumeroFactura, 
+                        string Dni, 
+                        string Descripcion, 
+                        string Fecha, 
+                        string Codigo, 
+                        string Bultos, 
+                        string Kgs, 
+                        string Precio, 
+                        string Importe, 
+                        string Total, 
+                        string LineaDireccionCliente, 
+                        string Poblacion, 
+                        string Provincia, 
+                        string CodigoPostal, 
+                        string NombreEmpresa, 
+                        string DniPerfil, 
+                        string CodigoPostalPerfil, 
+                        string PoblacionPerfil, 
+                        string ProvinciaPerfil, 
+                        string LineaDireccionPerfil, 
+                        string TelefonoPerfil, 
+                        string EmailPerfil, 
+                        string FaxPerfil) {
                 FacturaClienteRow rowFacturaClienteRow = ((FacturaClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumeroFactura,
@@ -505,7 +618,16 @@ namespace AdministracionAngela.ProyectoAngela {
                         LineaDireccionCliente,
                         Poblacion,
                         Provincia,
-                        CodigoPostal};
+                        CodigoPostal,
+                        NombreEmpresa,
+                        DniPerfil,
+                        CodigoPostalPerfil,
+                        PoblacionPerfil,
+                        ProvinciaPerfil,
+                        LineaDireccionPerfil,
+                        TelefonoPerfil,
+                        EmailPerfil,
+                        FaxPerfil};
                 rowFacturaClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturaClienteRow);
                 return rowFacturaClienteRow;
@@ -542,6 +664,15 @@ namespace AdministracionAngela.ProyectoAngela {
                 this.columnPoblacion = base.Columns["Poblacion"];
                 this.columnProvincia = base.Columns["Provincia"];
                 this.columnCodigoPostal = base.Columns["CodigoPostal"];
+                this.columnNombreEmpresa = base.Columns["NombreEmpresa"];
+                this.columnDniPerfil = base.Columns["DniPerfil"];
+                this.columnCodigoPostalPerfil = base.Columns["CodigoPostalPerfil"];
+                this.columnPoblacionPerfil = base.Columns["PoblacionPerfil"];
+                this.columnProvinciaPerfil = base.Columns["ProvinciaPerfil"];
+                this.columnLineaDireccionPerfil = base.Columns["LineaDireccionPerfil"];
+                this.columnTelefonoPerfil = base.Columns["TelefonoPerfil"];
+                this.columnEmailPerfil = base.Columns["EmailPerfil"];
+                this.columnFaxPerfil = base.Columns["FaxPerfil"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +706,24 @@ namespace AdministracionAngela.ProyectoAngela {
                 base.Columns.Add(this.columnProvincia);
                 this.columnCodigoPostal = new global::System.Data.DataColumn("CodigoPostal", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodigoPostal);
+                this.columnNombreEmpresa = new global::System.Data.DataColumn("NombreEmpresa", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreEmpresa);
+                this.columnDniPerfil = new global::System.Data.DataColumn("DniPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDniPerfil);
+                this.columnCodigoPostalPerfil = new global::System.Data.DataColumn("CodigoPostalPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigoPostalPerfil);
+                this.columnPoblacionPerfil = new global::System.Data.DataColumn("PoblacionPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPoblacionPerfil);
+                this.columnProvinciaPerfil = new global::System.Data.DataColumn("ProvinciaPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProvinciaPerfil);
+                this.columnLineaDireccionPerfil = new global::System.Data.DataColumn("LineaDireccionPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLineaDireccionPerfil);
+                this.columnTelefonoPerfil = new global::System.Data.DataColumn("TelefonoPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTelefonoPerfil);
+                this.columnEmailPerfil = new global::System.Data.DataColumn("EmailPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmailPerfil);
+                this.columnFaxPerfil = new global::System.Data.DataColumn("FaxPerfil", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFaxPerfil);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -942,6 +1091,150 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreEmpresa {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.NombreEmpresaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreEmpresa\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.NombreEmpresaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DniPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.DniPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DniPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.DniPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string CodigoPostalPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.CodigoPostalPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CodigoPostalPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.CodigoPostalPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PoblacionPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.PoblacionPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PoblacionPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.PoblacionPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ProvinciaPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.ProvinciaPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ProvinciaPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.ProvinciaPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LineaDireccionPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.LineaDireccionPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LineaDireccionPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.LineaDireccionPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TelefonoPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.TelefonoPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TelefonoPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.TelefonoPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EmailPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.EmailPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmailPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.EmailPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FaxPerfil {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.FaxPerfilColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FaxPerfil\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.FaxPerfilColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumeroFacturaNull() {
                 return this.IsNull(this.tableFacturaCliente.NumeroFacturaColumn);
             }
@@ -1106,6 +1399,114 @@ namespace AdministracionAngela.ProyectoAngela {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCodigoPostalNull() {
                 this[this.tableFacturaCliente.CodigoPostalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreEmpresaNull() {
+                return this.IsNull(this.tableFacturaCliente.NombreEmpresaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreEmpresaNull() {
+                this[this.tableFacturaCliente.NombreEmpresaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDniPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.DniPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDniPerfilNull() {
+                this[this.tableFacturaCliente.DniPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCodigoPostalPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.CodigoPostalPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCodigoPostalPerfilNull() {
+                this[this.tableFacturaCliente.CodigoPostalPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPoblacionPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.PoblacionPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPoblacionPerfilNull() {
+                this[this.tableFacturaCliente.PoblacionPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsProvinciaPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.ProvinciaPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetProvinciaPerfilNull() {
+                this[this.tableFacturaCliente.ProvinciaPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLineaDireccionPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.LineaDireccionPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLineaDireccionPerfilNull() {
+                this[this.tableFacturaCliente.LineaDireccionPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTelefonoPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.TelefonoPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTelefonoPerfilNull() {
+                this[this.tableFacturaCliente.TelefonoPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmailPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.EmailPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmailPerfilNull() {
+                this[this.tableFacturaCliente.EmailPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFaxPerfilNull() {
+                return this.IsNull(this.tableFacturaCliente.FaxPerfilColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFaxPerfilNull() {
+                this[this.tableFacturaCliente.FaxPerfilColumn] = global::System.Convert.DBNull;
             }
         }
         

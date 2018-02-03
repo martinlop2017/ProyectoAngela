@@ -345,6 +345,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var factura = this.repositorioFactura.GetFacturaById(numeroFactura);
             var cliente = this.repositorioCliente.GetClientById(factura.ClienteId);
             var lineas = repositorioFactura.GetLineasFactura(factura.Id);
+            var perfil = this.repositorioPerfil.GetPerfil();
 
             foreach(var linea in lineas)
             {
@@ -363,7 +364,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     LineaDireccion = cliente.Direccion.LineaDireccion,
                     Provincia = cliente.Direccion.Provincia,
                     Poblacion = cliente.Direccion.Poblacion,
-                    CodigoPostal = cliente.Direccion.CodigoPostal.ToString()
+                    CodigoPostal = cliente.Direccion.CodigoPostal.ToString(),
+                    NombreEmpresa = perfil.Nombre,
+                    DniPerfil = perfil.NIF,
+                    CodigoPostalPerfil = perfil.Direccion.CodigoPostal.ToString(),
+                    PoblacionPerfil = perfil.Direccion.Poblacion,
+                    ProvinciaPerfil = perfil.Direccion.Provincia,
+                    LineaDireccionPerfil = perfil.Direccion.LineaDireccion,
+                    EmailPerfil = perfil.Contacto.Email,
+                    FaxPerfil = perfil.Contacto.Fax.Value,
+                    TelefonoPerfil = perfil.Contacto.Telefono1.Value
                 };
 
                 facturasClientes.Add(facturaCliente);

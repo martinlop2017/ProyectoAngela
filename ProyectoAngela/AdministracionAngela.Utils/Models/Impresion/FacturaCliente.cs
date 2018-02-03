@@ -23,5 +23,14 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public string Provincia { get; set; }
         public string Poblacion { get; set; }
         public string CodigoPostal { get; set; }
+        public string NombreEmpresa { get; set; }
+        public string DniPerfil { get; set; }
+        public string CodigoPostalPerfil { get; set; }
+        public string ProvinciaPerfil { get; set; }
+        public string PoblacionPerfil { get; set; }
+        public string LineaDireccionPerfil { get; set; }
+        public string EmailPerfil { get; set; }
+        public long TelefonoPerfil { get; set; }
+        public long FaxPerfil { get; set; }
     }
 }

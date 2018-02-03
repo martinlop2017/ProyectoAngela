@@ -126,7 +126,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
             if(!this.documentoGestion.PuedeFacturar())
             {
-                this.dataGridViewFacturas.Columns["Facturado"].Visible = false;
+                this.dataGridViewFacturas.Columns["ColumnFacturado"].Visible = false;
             }
         }
 

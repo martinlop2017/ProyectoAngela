@@ -121,6 +121,25 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             table.Columns.Add("Kgs", Type.GetType("System.String"));
             table.Columns.Add("Precio", Type.GetType("System.String"));
             table.Columns.Add("Importe", Type.GetType("System.String"));
+            table.Columns.Add("Total", Type.GetType("System.String"));
+            table.Columns.Add("LineaDireccionCliente", Type.GetType("System.String"));
+            table.Columns.Add("Provincia", Type.GetType("System.String"));
+            table.Columns.Add("Poblacion", Type.GetType("System.String"));
+            table.Columns.Add("CodigoPostal", Type.GetType("System.String"));
+            table.Columns.Add("NombreEmpresa", Type.GetType("System.String"));
+            table.Columns.Add("DniPerfil", Type.GetType("System.String"));
+            table.Columns.Add("CodigoPostalPerfil", Type.GetType("System.String"));
+            table.Columns.Add("PoblacionPerfil", Type.GetType("System.String"));
+            table.Columns.Add("ProvinciaPerfil", Type.GetType("System.String"));
+            table.Columns.Add("LineaDireccionPerfil", Type.GetType("System.String"));
+            table.Columns.Add("TelefonoPerfil", Type.GetType("System.String"));
+            table.Columns.Add("EmailPerfil", Type.GetType("System.String"));
+            table.Columns.Add("FaxPerfil", Type.GetType("System.String"));
+            table.Columns.Add("ZonaCaptura", Type.GetType("System.String"));
+            table.Columns.Add("FAO", Type.GetType("System.String"));
+            table.Columns.Add("Arte", Type.GetType("System.String"));
+            table.Columns.Add("NombreCientifico", Type.GetType("System.String"));
+            table.Columns.Add("Abreviacion", Type.GetType("System.String"));
 
             var lineas = this.facturaProvider.GetFacturaCliente(numeroDocumento);
             foreach (var linea in lineas)
@@ -135,6 +154,25 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[6] = linea.Kgs.ToString();
                 row[7] = linea.Precio.ToString();
                 row[8] = linea.Importe.ToString();
+                row[9] = linea.Total.ToString();
+                row[10] = linea.LineaDireccion.ToString();
+                row[11] = linea.Provincia.ToString();
+                row[12] = linea.Poblacion.ToString();
+                row[13] = linea.CodigoPostal.ToString();
+                row[14] = linea.NombreEmpresa;
+                row[15] = linea.DniPerfil;
+                row[16] = linea.CodigoPostalPerfil.ToString();
+                row[17] = linea.PoblacionPerfil;
+                row[18] = linea.ProvinciaPerfil;
+                row[19] = linea.LineaDireccionPerfil;
+                row[20] = linea.TelefonoPerfil.ToString();
+                row[21] = linea.EmailPerfil;
+                row[22] = linea.FaxPerfil.ToString();
+                row[23] = linea.ZonaCAptura;
+                row[24] = linea.FAO;
+                row[25] = linea.Arte;
+                row[26] = linea.NombreCientifico;
+                row[27] = linea.Abreviacion;
                 table.Rows.Add(row);
             }
 

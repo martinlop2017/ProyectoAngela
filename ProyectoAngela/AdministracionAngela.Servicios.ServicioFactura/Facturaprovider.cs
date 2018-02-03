@@ -328,7 +328,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 var misLineas = lineasFActura.Where(x => x.Producto.IVAId == iva.Id);
                 result.Add(new FacturaIva()
                 {
-                    BaseImponible = iva.Descripcion,
+                    BaseImponible = misLineas.Sum(x => x.Importe.Value),
                     PorcentajeIVA = iva.Porcentaje.Value,
                     ImporteIVA = misLineas.Sum(x => x.ImporteIVA.Value),
                     PorcentajeRE = iva.PorcentanjeRE.Value,
@@ -345,6 +345,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var factura = this.repositorioFactura.GetFacturaById(numeroFactura);
             var cliente = this.repositorioCliente.GetClientById(factura.ClienteId);
             var lineas = repositorioFactura.GetLineasFactura(factura.Id);
+            var perfil = this.repositorioPerfil.GetPerfil();
 
             foreach(var linea in lineas)
             {
@@ -358,7 +359,26 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     Bultos = linea.Cajas.Value,
                     Importe = linea.Importe.Value,
                     Kgs = linea.Kgs.Value,
-                    Precio = linea.Precio.Value
+                    Precio = linea.Precio.Value,
+                    Total = factura.Total.Value,
+                    LineaDireccion = cliente.Direccion.LineaDireccion,
+                    Provincia = cliente.Direccion.Provincia,
+                    Poblacion = cliente.Direccion.Poblacion,
+                    CodigoPostal = cliente.Direccion.CodigoPostal.ToString(),
+                    NombreEmpresa = perfil.Nombre,
+                    DniPerfil = perfil.NIF,
+                    CodigoPostalPerfil = perfil.Direccion.CodigoPostal.ToString(),
+                    PoblacionPerfil = perfil.Direccion.Poblacion,
+                    ProvinciaPerfil = perfil.Direccion.Provincia,
+                    LineaDireccionPerfil = perfil.Direccion.LineaDireccion,
+                    EmailPerfil = perfil.Contacto.Email,
+                    FaxPerfil = perfil.Contacto.Fax.Value,
+                    TelefonoPerfil = perfil.Contacto.Telefono1.Value,
+                    ZonaCAptura = linea.Producto.ZonaCaptura,
+                    Arte = linea.Producto.ArtePesca,
+                    FAO = linea.Producto.FAO,
+                    NombreCientifico = linea.Producto.NombreCientifico,
+                    Abreviacion = linea.Producto.Abreviacion
                 };
 
                 facturasClientes.Add(facturaCliente);

@@ -176,7 +176,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[26] = linea.NombreCientifico;
                 row[27] = linea.Abreviacion;
                 row[28] = linea.NombreCliente;
-                row[29] = "FACTURA";
+                row[29] = "F A C T U R A";
                 table.Rows.Add(row);
             }
 

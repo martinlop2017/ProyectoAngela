@@ -73,24 +73,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
             {
-                DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
-                DataSetIvaFactura datasetIva = new DataSetIvaFactura();
+                foreach (var numeroFactura in selectedFacturaIds)
+                {
 
-                var tableFactura = documentoGestion.GetDatosImpresion(selectedFacturaIds.First());
-                var tableIva = documentoGestion.GatDatosIva(selectedFacturaIds.First());
+                    DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
+                    DataSetIvaFactura datasetIva = new DataSetIvaFactura();
 
-                dataset.Tables.Add(tableFactura);
-                datasetIva.Tables.Add(tableIva);
-                
-                ReportDocument oRep = new ReportDocument();
+                    var tableFactura = documentoGestion.GetDatosImpresion(numeroFactura);
+                    var tableIva = documentoGestion.GatDatosIva(numeroFactura);
 
-                var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
-                oRep.Load(reportPath);
-                oRep.SetDataSource(dataset.Tables[1]);
-                oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
+                    dataset.Tables.Add(tableFactura);
+                    datasetIva.Tables.Add(tableIva);
 
-                var path = this.documentoGestion.GetExportPath(1);
-                oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                    ReportDocument oRep = new ReportDocument();
+
+                    var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
+                    oRep.Load(reportPath);
+                    oRep.SetDataSource(dataset.Tables[1]);
+                    oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
+
+                    var path = this.documentoGestion.GetExportPath(numeroFactura);
+                    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                }
             }
         }
 

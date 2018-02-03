@@ -43,6 +43,9 @@
             this.buttonModify = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,8 +68,9 @@
             this.dataGridViewUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewUsuarios.CausesValidation = false;
             this.dataGridViewUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -75,18 +79,23 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridViewUsuarios.EnableHeadersVisualStyles = false;
             this.dataGridViewUsuarios.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewUsuarios.Location = new System.Drawing.Point(31, 188);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
             this.dataGridViewUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewUsuarios.Size = new System.Drawing.Size(643, 377);
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(629, 377);
             this.dataGridViewUsuarios.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(633, 110);
+            this.label5.Location = new System.Drawing.Point(619, 110);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 24;
@@ -136,7 +145,7 @@
             // button5
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.Location = new System.Drawing.Point(622, 126);
+            this.button5.Location = new System.Drawing.Point(608, 126);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(52, 56);
             this.button5.TabIndex = 19;
@@ -191,6 +200,27 @@
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Codigo";
+            this.Column1.HeaderText = "Cod.";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 90;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nombre";
+            this.Column2.HeaderText = "Cliente";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 380;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NIF";
+            this.Column3.HeaderText = "NIF/CIF";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 110;
+            // 
             // GestionUsusarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +228,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Rectangulo_10;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(709, 588);
+            this.ClientSize = new System.Drawing.Size(686, 588);
             this.ControlBox = false;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dataGridViewUsuarios);
@@ -237,5 +267,8 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

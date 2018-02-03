@@ -70,7 +70,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (buscar.ShowDialog() == DialogResult.OK)
             {
-                textSguridad.Text = buscar.SelectedPath;
+                textAlbaranes2.Text = buscar.SelectedPath;
             }
         }
         private void button2_Click(object sender, EventArgs e)
@@ -93,9 +93,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 PathFacturas = textFactura.Text,
                 PathAlbaranes = textAlbaranes.Text,
+                PathAlbaranes2 = textAlbaranes2.Text,
                 PathListados = textListados.Text,
                 PathLiquidaciones= textLiquidaciones.Text,
-                PathSeguridad = textSguridad.Text
+                PathSeguridad = textAlbaranes2.Text
             };
         }
 
@@ -103,9 +104,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.textFactura.Text = RutasSalida.RutaFacturacion;
             this.textAlbaranes.Text = RutasSalida.RutaAlbaranes;
+            this.textAlbaranes2.Text = RutasSalida.RutaAlbaranes2;
             this.textLiquidaciones.Text = RutasSalida.RutaLiquidaciones;
             this.textListados.Text = RutasSalida.RutaLiquidaciones;
-            this.textSguridad.Text = RutasSalida.RutaSeguridad;
+            this.textAlbaranes2.Text = RutasSalida.RutaSeguridad;
         }
 
         private void Rutas_KeyPress(object sender, KeyPressEventArgs e)

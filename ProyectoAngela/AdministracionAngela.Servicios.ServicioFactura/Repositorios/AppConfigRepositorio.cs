@@ -21,6 +21,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             RutasSalida.RutaFacturacion = viewModel.PathFacturas;
             RutasSalida.RutaAlbaranes = viewModel.PathAlbaranes;
+            RutasSalida.RutaAlbaranes2 = viewModel.PathAlbaranes2;
             RutasSalida.RutaLiquidaciones = viewModel.PathLiquidaciones;
             RutasSalida.RutaListados = viewModel.PathListados;
             RutasSalida.RutaSeguridad = viewModel.PathSeguridad;

@@ -10,6 +10,7 @@ namespace AdministracionAngela.Utils.Genericos
     {
         public static string RutaFacturacion { get; set; }
         public static string RutaAlbaranes { get; set; }
+        public static string RutaAlbaranes2 { get; set; }
         public static string RutaListados { get; set; }
         public static string RutaLiquidaciones { get; set; }
         public static string RutaSeguridad { get; set; }

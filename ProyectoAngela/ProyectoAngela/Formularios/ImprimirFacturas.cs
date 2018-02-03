@@ -95,7 +95,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     oRep.SetDataSource(dataset.Tables[1]);
                     oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
 
-                    var path = this.documentoGestion.GetExportPath(numeroFactura);
+                    var path = this.documentoGestion.GetExportPath(numeroFactura, isDocumento);
                     oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
                 }
             }

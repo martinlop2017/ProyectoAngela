@@ -56,7 +56,22 @@ namespace AdministracionAngela.ProyectoAngela.Properties {
                 this["RutaAlbaranes"] = value;
             }
         }
-        
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RutaAlbaranes2
+        {
+            get
+            {
+                return ((string)(this["RutaAlbaranes2"]));
+            }
+            set
+            {
+                this["RutaAlbaranes2"] = value;
+            }
+        }
+
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]

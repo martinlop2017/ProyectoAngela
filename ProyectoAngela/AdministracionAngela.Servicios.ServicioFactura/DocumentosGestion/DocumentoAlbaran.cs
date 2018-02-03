@@ -40,9 +40,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             return this.facturaProvider.GetGestionFacturaAlbaranes(IsDocumento);
         }
 
-        public string GetExportPath(long numeroDocumento)
+        public string GetExportPath(long numeroDocumento, bool isDocumento = true)
         {
-            return string.Format(@"{0}\albaran{1}.pdf", RutasSalida.RutaAlbaranes, numeroDocumento);
+            var rutaSalida = isDocumento ? RutasSalida.RutaAlbaranes : RutasSalida.RutaAlbaranes2;
+            return string.Format(@"{0}\albaran{1}.pdf", rutaSalida, numeroDocumento);
         }
 
         public EnumDocumentosGestion GetTipoDocumento()

@@ -44,7 +44,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             this.facturaProvider.SetFacturaImpresa(selectedFacturaIds);
         }
 
-        public string GetExportPath(long numeroDocumento)
+        public string GetExportPath(long numeroDocumento, bool isDocumento = true)
         {
             return string.Format(@"{0}\factura{1}.pdf", RutasSalida.RutaFacturacion, numeroDocumento);
         }

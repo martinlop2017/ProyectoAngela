@@ -80,6 +80,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             Properties.Settings.Default.RutaFacturacion = RutasSalida.RutaFacturacion;
             Properties.Settings.Default.RutaAlbaranes = RutasSalida.RutaAlbaranes;
+            Properties.Settings.Default.RutaAlbaranes2 = RutasSalida.RutaAlbaranes2;
             Properties.Settings.Default.RutaLiquidaciones = RutasSalida.RutaLiquidaciones;
             Properties.Settings.Default.RutaListados = RutasSalida.RutaListados;
             Properties.Settings.Default.RutaSeguridad = RutasSalida.RutaSeguridad;
@@ -91,6 +92,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             RutasSalida.RutaFacturacion = Properties.Settings.Default.RutaFacturacion;
             RutasSalida.RutaAlbaranes = Properties.Settings.Default.RutaAlbaranes;
+            RutasSalida.RutaAlbaranes2 = Properties.Settings.Default.RutaAlbaranes2;
             RutasSalida.RutaLiquidaciones = Properties.Settings.Default.RutaLiquidaciones;
             RutasSalida.RutaListados = Properties.Settings.Default.RutaListados;
             RutasSalida.RutaSeguridad = Properties.Settings.Default.RutaSeguridad;

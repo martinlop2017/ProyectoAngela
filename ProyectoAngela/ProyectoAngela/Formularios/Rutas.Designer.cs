@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textListados = new System.Windows.Forms.TextBox();
             this.buttonSeguridad = new System.Windows.Forms.Button();
-            this.textSguridad = new System.Windows.Forms.TextBox();
+            this.textAlbaranes2 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -158,7 +158,7 @@
             // buttonListados
             // 
             this.buttonListados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListados.Location = new System.Drawing.Point(529, 233);
+            this.buttonListados.Location = new System.Drawing.Point(529, 265);
             this.buttonListados.Name = "buttonListados";
             this.buttonListados.Size = new System.Drawing.Size(27, 23);
             this.buttonListados.TabIndex = 153;
@@ -169,7 +169,7 @@
             // buttonLiquidaciones
             // 
             this.buttonLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLiquidaciones.Location = new System.Drawing.Point(529, 278);
+            this.buttonLiquidaciones.Location = new System.Drawing.Point(529, 310);
             this.buttonLiquidaciones.Name = "buttonLiquidaciones";
             this.buttonLiquidaciones.Size = new System.Drawing.Size(27, 23);
             this.buttonLiquidaciones.TabIndex = 152;
@@ -181,7 +181,7 @@
             // 
             this.textLiquidaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLiquidaciones.Location = new System.Drawing.Point(195, 278);
+            this.textLiquidaciones.Location = new System.Drawing.Point(195, 310);
             this.textLiquidaciones.Name = "textLiquidaciones";
             this.textLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textLiquidaciones.Size = new System.Drawing.Size(330, 23);
@@ -194,7 +194,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(56, 282);
+            this.label1.Location = new System.Drawing.Point(56, 314);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 150;
@@ -206,7 +206,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(56, 237);
+            this.label2.Location = new System.Drawing.Point(56, 269);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 15);
             this.label2.TabIndex = 149;
@@ -216,7 +216,7 @@
             // 
             this.textListados.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textListados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textListados.Location = new System.Drawing.Point(195, 233);
+            this.textListados.Location = new System.Drawing.Point(195, 265);
             this.textListados.Name = "textListados";
             this.textListados.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textListados.Size = new System.Drawing.Size(330, 23);
@@ -226,7 +226,7 @@
             // buttonSeguridad
             // 
             this.buttonSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSeguridad.Location = new System.Drawing.Point(529, 320);
+            this.buttonSeguridad.Location = new System.Drawing.Point(529, 227);
             this.buttonSeguridad.Name = "buttonSeguridad";
             this.buttonSeguridad.Size = new System.Drawing.Size(27, 23);
             this.buttonSeguridad.TabIndex = 156;
@@ -234,16 +234,16 @@
             this.buttonSeguridad.UseVisualStyleBackColor = true;
             this.buttonSeguridad.Click += new System.EventHandler(this.button7_Click);
             // 
-            // textSguridad
+            // textAlbaranes2
             // 
-            this.textSguridad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textSguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textSguridad.Location = new System.Drawing.Point(195, 320);
-            this.textSguridad.Name = "textSguridad";
-            this.textSguridad.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textSguridad.Size = new System.Drawing.Size(330, 23);
-            this.textSguridad.TabIndex = 4;
-            this.textSguridad.Text = "C:\\DIRECTORIO";
+            this.textAlbaranes2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textAlbaranes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textAlbaranes2.Location = new System.Drawing.Point(195, 227);
+            this.textAlbaranes2.Name = "textAlbaranes2";
+            this.textAlbaranes2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textAlbaranes2.Size = new System.Drawing.Size(330, 23);
+            this.textAlbaranes2.TabIndex = 4;
+            this.textAlbaranes2.Text = "C:\\DIRECTORIO";
             // 
             // label3
             // 
@@ -251,11 +251,11 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label3.Location = new System.Drawing.Point(56, 324);
+            this.label3.Location = new System.Drawing.Point(56, 231);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 15);
+            this.label3.Size = new System.Drawing.Size(117, 15);
             this.label3.TabIndex = 154;
-            this.label3.Text = "Ruta Seguridad.";
+            this.label3.Text = "Ruta Albaranes2.";
             // 
             // Rutas
             // 
@@ -265,7 +265,7 @@
             this.ClientSize = new System.Drawing.Size(620, 522);
             this.ControlBox = false;
             this.Controls.Add(this.buttonSeguridad);
-            this.Controls.Add(this.textSguridad);
+            this.Controls.Add(this.textAlbaranes2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonListados);
             this.Controls.Add(this.buttonLiquidaciones);
@@ -313,7 +313,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textListados;
         private System.Windows.Forms.Button buttonSeguridad;
-        private System.Windows.Forms.TextBox textSguridad;
+        private System.Windows.Forms.TextBox textAlbaranes2;
         private System.Windows.Forms.Label label3;
     }
 }

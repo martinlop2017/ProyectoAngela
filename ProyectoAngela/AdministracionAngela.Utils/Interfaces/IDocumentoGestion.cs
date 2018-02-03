@@ -22,7 +22,7 @@ namespace AdministracionAngela.Utils.Interfaces
         bool PuedeFacturar();
         string GetReportImpresion();
         string GetVariableImpresion();
-        DataTable GetDatosImpresion(int numeroDocumento);
-        DataTable GatDatosIva(int numeroDocumento);
+        DataTable GetDatosImpresion(int numeroDocumento, bool isDocumento = true);
+        DataTable GatDatosIva(int numeroDocumento, bool isDocumento = true);
     }
 }

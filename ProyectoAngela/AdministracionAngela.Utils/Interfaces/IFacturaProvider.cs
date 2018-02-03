@@ -35,5 +35,7 @@ namespace AdministracionAngela.Utils.Interfaces
         LiquidacionesViewModel GetLineasAlbaranParaFechas(DateTime startDate, DateTime endDate);
         List<FacturaCliente> GetFacturaCliente(int numeroFactura);
         List<FacturaIva> GetFacturaIva(int numerFactura);
+        List<FacturaCliente> GetAlbaranCliente(int numeroAlbaran, bool isAlbaran);
+        List<FacturaIva> GetAlbaranIva(int numerFactura, bool isAlbaran);
     }
 }

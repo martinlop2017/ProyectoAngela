@@ -21,12 +21,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private IDocumentoGestion documentoGestion;
         private string reportName;
         private string variableName;
+        private bool isDocumento;
 
-        public ImprimirFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, long numeroDocumentoInicial, string reportName, string variableName)
+        public ImprimirFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, long numeroDocumentoInicial, string reportName, string variableName, bool isDocumento)
         {
             this.numeroDocumentoInicial = numeroDocumentoInicial;
             this.formOpener = formOpener;
             this.documentoGestion = documentoGestion;
+            this.isDocumento = isDocumento;
 
             InitializeComponent();
             this.textBoxDocumentoInicial.Text = numeroDocumentoInicial.ToString();
@@ -73,24 +75,28 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
             {
-                DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
-                DataSetIvaFactura datasetIva = new DataSetIvaFactura();
+                foreach (var numeroFactura in selectedFacturaIds)
+                {
 
-                var tableFactura = documentoGestion.GetDatosImpresion(selectedFacturaIds.First());
-                var tableIva = documentoGestion.GatDatosIva(selectedFacturaIds.First());
+                    DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
+                    DataSetIvaFactura datasetIva = new DataSetIvaFactura();
 
-                dataset.Tables.Add(tableFactura);
-                datasetIva.Tables.Add(tableIva);
-                
-                ReportDocument oRep = new ReportDocument();
+                    var tableFactura = documentoGestion.GetDatosImpresion(numeroFactura, isDocumento);
+                    var tableIva = documentoGestion.GatDatosIva(numeroFactura, isDocumento);
 
-                var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
-                oRep.Load(reportPath);
-                oRep.SetDataSource(dataset.Tables[1]);
-                oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
+                    dataset.Tables.Add(tableFactura);
+                    datasetIva.Tables.Add(tableIva);
 
-                var path = this.documentoGestion.GetExportPath(1);
-                oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                    ReportDocument oRep = new ReportDocument();
+
+                    var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
+                    oRep.Load(reportPath);
+                    oRep.SetDataSource(dataset.Tables[1]);
+                    oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
+
+                    var path = this.documentoGestion.GetExportPath(numeroFactura);
+                    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                }
             }
         }
 

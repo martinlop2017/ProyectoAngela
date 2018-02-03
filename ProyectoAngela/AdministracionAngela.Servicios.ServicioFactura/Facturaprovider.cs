@@ -10,6 +10,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Albaran;
+using AdministracionAngela.Utils.Models.Impresion;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -313,6 +314,57 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 ImporteRE = la.ImporteRE
             })
             .ToList();
+        }
+
+        public List<FacturaIva> GetFacturaIva(int numerFactura)
+        {
+            var result = new List<FacturaIva>();
+            var factura = repositorioFactura.GetFacturaById(numerFactura);
+            var lineasFActura = repositorioFactura.GetLineasFactura(factura.Id);
+
+            var ivas = repositorioIVA.GetAllIVAs();
+            foreach(var iva in ivas)
+            {
+                var misLineas = lineasFActura.Where(x => x.Producto.IVAId == iva.Id);
+                result.Add(new FacturaIva()
+                {
+                    BaseImponible = iva.Descripcion,
+                    PorcentajeIVA = iva.Porcentaje.Value,
+                    ImporteIVA = misLineas.Sum(x => x.ImporteIVA.Value),
+                    PorcentajeRE = iva.PorcentanjeRE.Value,
+                    ImporteRE = misLineas.Sum(x => x.ImporteRE.Value),
+                });
+            }
+
+            return result;
+        }
+
+        public List<FacturaCliente> GetFacturaCliente(int numeroFactura)
+        {
+            var facturasClientes = new List<FacturaCliente>();
+            var factura = this.repositorioFactura.GetFacturaById(numeroFactura);
+            var cliente = this.repositorioCliente.GetClientById(factura.ClienteId);
+            var lineas = repositorioFactura.GetLineasFactura(factura.Id);
+
+            foreach(var linea in lineas)
+            {
+                var facturaCliente = new FacturaCliente()
+                {
+                    NumeroFactura = numeroFactura,
+                    Fecha = factura.Fecha.Value,
+                    Dni = cliente.NIF,
+                    CodigoArticulo = linea.ProductoId,
+                    Descripcion = linea.Producto.Descripcion,
+                    Bultos = linea.Cajas.Value,
+                    Importe = linea.Importe.Value,
+                    Kgs = linea.Kgs.Value,
+                    Precio = linea.Precio.Value
+                };
+
+                facturasClientes.Add(facturaCliente);
+            }
+
+            return facturasClientes;
         }
     }
 }

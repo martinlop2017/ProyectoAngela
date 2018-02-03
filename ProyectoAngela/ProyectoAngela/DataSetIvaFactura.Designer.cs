@@ -279,7 +279,17 @@ namespace AdministracionAngela.ProyectoAngela {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class IvaDataTable : global::System.Data.TypedTableBase<IvaRow> {
             
-            private global::System.Data.DataColumn columnPorcentaje;
+            private global::System.Data.DataColumn columnPorcentajeIVA;
+            
+            private global::System.Data.DataColumn columnBaseImponible;
+            
+            private global::System.Data.DataColumn columnImporteIVA;
+            
+            private global::System.Data.DataColumn columnPorcentajeRE;
+            
+            private global::System.Data.DataColumn columnImporteRE;
+            
+            private global::System.Data.DataColumn columnGastosSuplidos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -316,9 +326,49 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PorcentajeColumn {
+            public global::System.Data.DataColumn PorcentajeIVAColumn {
                 get {
-                    return this.columnPorcentaje;
+                    return this.columnPorcentajeIVA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn BaseImponibleColumn {
+                get {
+                    return this.columnBaseImponible;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImporteIVAColumn {
+                get {
+                    return this.columnImporteIVA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PorcentajeREColumn {
+                get {
+                    return this.columnPorcentajeRE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ImporteREColumn {
+                get {
+                    return this.columnImporteRE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn GastosSuplidosColumn {
+                get {
+                    return this.columnGastosSuplidos;
                 }
             }
             
@@ -359,10 +409,15 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public IvaRow AddIvaRow(string Porcentaje) {
+            public IvaRow AddIvaRow(string PorcentajeIVA, string BaseImponible, string ImporteIVA, string PorcentajeRE, string ImporteRE, string GastosSuplidos) {
                 IvaRow rowIvaRow = ((IvaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Porcentaje};
+                        PorcentajeIVA,
+                        BaseImponible,
+                        ImporteIVA,
+                        PorcentajeRE,
+                        ImporteRE,
+                        GastosSuplidos};
                 rowIvaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIvaRow);
                 return rowIvaRow;
@@ -385,14 +440,29 @@ namespace AdministracionAngela.ProyectoAngela {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnPorcentaje = base.Columns["Porcentaje"];
+                this.columnPorcentajeIVA = base.Columns["PorcentajeIVA"];
+                this.columnBaseImponible = base.Columns["BaseImponible"];
+                this.columnImporteIVA = base.Columns["ImporteIVA"];
+                this.columnPorcentajeRE = base.Columns["PorcentajeRE"];
+                this.columnImporteRE = base.Columns["ImporteRE"];
+                this.columnGastosSuplidos = base.Columns["GastosSuplidos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnPorcentaje = new global::System.Data.DataColumn("Porcentaje", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPorcentaje);
+                this.columnPorcentajeIVA = new global::System.Data.DataColumn("PorcentajeIVA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentajeIVA);
+                this.columnBaseImponible = new global::System.Data.DataColumn("BaseImponible", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaseImponible);
+                this.columnImporteIVA = new global::System.Data.DataColumn("ImporteIVA", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImporteIVA);
+                this.columnPorcentajeRE = new global::System.Data.DataColumn("PorcentajeRE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentajeRE);
+                this.columnImporteRE = new global::System.Data.DataColumn("ImporteRE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImporteRE);
+                this.columnGastosSuplidos = new global::System.Data.DataColumn("GastosSuplidos", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGastosSuplidos);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -535,30 +605,170 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Porcentaje {
+            public string PorcentajeIVA {
                 get {
                     try {
-                        return ((string)(this[this.tableIva.PorcentajeColumn]));
+                        return ((string)(this[this.tableIva.PorcentajeIVAColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Porcentaje\' in table \'Iva\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PorcentajeIVA\' in table \'Iva\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableIva.PorcentajeColumn] = value;
+                    this[this.tableIva.PorcentajeIVAColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsPorcentajeNull() {
-                return this.IsNull(this.tableIva.PorcentajeColumn);
+            public string BaseImponible {
+                get {
+                    try {
+                        return ((string)(this[this.tableIva.BaseImponibleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BaseImponible\' in table \'Iva\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIva.BaseImponibleColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetPorcentajeNull() {
-                this[this.tableIva.PorcentajeColumn] = global::System.Convert.DBNull;
+            public string ImporteIVA {
+                get {
+                    try {
+                        return ((string)(this[this.tableIva.ImporteIVAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImporteIVA\' in table \'Iva\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIva.ImporteIVAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string PorcentajeRE {
+                get {
+                    try {
+                        return ((string)(this[this.tableIva.PorcentajeREColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PorcentajeRE\' in table \'Iva\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIva.PorcentajeREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ImporteRE {
+                get {
+                    try {
+                        return ((string)(this[this.tableIva.ImporteREColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ImporteRE\' in table \'Iva\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIva.ImporteREColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string GastosSuplidos {
+                get {
+                    try {
+                        return ((string)(this[this.tableIva.GastosSuplidosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GastosSuplidos\' in table \'Iva\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableIva.GastosSuplidosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPorcentajeIVANull() {
+                return this.IsNull(this.tableIva.PorcentajeIVAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPorcentajeIVANull() {
+                this[this.tableIva.PorcentajeIVAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsBaseImponibleNull() {
+                return this.IsNull(this.tableIva.BaseImponibleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetBaseImponibleNull() {
+                this[this.tableIva.BaseImponibleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsImporteIVANull() {
+                return this.IsNull(this.tableIva.ImporteIVAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetImporteIVANull() {
+                this[this.tableIva.ImporteIVAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPorcentajeRENull() {
+                return this.IsNull(this.tableIva.PorcentajeREColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPorcentajeRENull() {
+                this[this.tableIva.PorcentajeREColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsImporteRENull() {
+                return this.IsNull(this.tableIva.ImporteREColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetImporteRENull() {
+                this[this.tableIva.ImporteREColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsGastosSuplidosNull() {
+                return this.IsNull(this.tableIva.GastosSuplidosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetGastosSuplidosNull() {
+                this[this.tableIva.GastosSuplidosColumn] = global::System.Convert.DBNull;
             }
         }
         

@@ -35,6 +35,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             InitializeComponent();
         }
 
+        public void SetIsAlbaran(bool isAlbaran)
+        {
+            this.IsAlbaran = isAlbaran;
+        }
+
         public void IsUpdate(long albaranId, bool isAlbaran)
         {
             this.IsAlbaran = isAlbaran;

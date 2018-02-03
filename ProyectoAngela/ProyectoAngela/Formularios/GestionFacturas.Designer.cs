@@ -62,7 +62,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnFacturado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +93,7 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.Column7});
+            this.ColumnFacturado});
             this.dataGridViewFacturas.EnableHeadersVisualStyles = false;
             this.dataGridViewFacturas.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewFacturas.Location = new System.Drawing.Point(20, 192);
@@ -373,16 +373,16 @@
             this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Column6.Width = 60;
             // 
-            // Column7
+            // ColumnFacturado
             // 
-            this.Column7.DataPropertyName = "Facturado";
-            this.Column7.FillWeight = 85.27919F;
-            this.Column7.HeaderText = "Facturado";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column7.Width = 60;
+            this.ColumnFacturado.DataPropertyName = "Facturado";
+            this.ColumnFacturado.FillWeight = 85.27919F;
+            this.ColumnFacturado.HeaderText = "Facturado";
+            this.ColumnFacturado.Name = "ColumnFacturado";
+            this.ColumnFacturado.ReadOnly = true;
+            this.ColumnFacturado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnFacturado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnFacturado.Width = 60;
             // 
             // GestionFacturas
             // 
@@ -446,6 +446,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnFacturado;
     }
 }

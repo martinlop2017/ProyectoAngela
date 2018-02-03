@@ -141,9 +141,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[7] = linea.Precio.ToString();
                 row[8] = linea.Importe.ToString();
                 row[9] = linea.Total.ToString();
-                row[10] = linea.Provincia.ToString();
-                row[11] = linea.Poblacion.ToString();
-                row[12] = linea.CodigoPostal.ToString();
+                row[10] = linea.LineaDireccion.ToString();
+                row[11] = linea.Provincia.ToString();
+                row[12] = linea.Poblacion.ToString();
+                row[13] = linea.CodigoPostal.ToString();
                 table.Rows.Add(row);
             }
 

@@ -35,6 +35,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             InitializeComponent();
         }
 
+        public void SetIsAlbaran(bool isAlbaran)
+        {
+            this.IsAlbaran = isAlbaran;
+        }
+
         public void IsUpdate(long albaranId, bool isAlbaran)
         {
             this.IsAlbaran = isAlbaran;
@@ -46,7 +51,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             if (!this.isUpdate)
             {
-                viewModel = this.facturaProvider.GetAlbaranViewModel();
+                viewModel = this.facturaProvider.GetAlbaranViewModel(IsAlbaran);
             }
             else
             {

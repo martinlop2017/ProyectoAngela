@@ -44,12 +44,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToAltaFacturaViewModel(clientes, articulos, Convert.ToInt32(numeroFactura), ivas);
         }
 
-        public AltaAlbaranViewModel GetAlbaranViewModel()
+        public AltaAlbaranViewModel GetAlbaranViewModel(bool isAlbaran)
         {
             var clientes = this.repositorioCliente.GetAllClients();
             var articulos = this.repositorioArticulo.GetAllArticulos();
 
-            var lastAlbaran = this.repositorioFactura.GetLastAlbaran();
+            var lastAlbaran = this.repositorioFactura.GetLastAlbaran(isAlbaran);
             var numeroAlbaran = lastAlbaran != null ? lastAlbaran.NumeroAlbaran + 1 : 1;
 
             var ivas = this.repositorioIVA.GetAllIVAs();

@@ -41,7 +41,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button1_Click(object sender, EventArgs e)
         {
             var typeDocumento = this.documentoGestion.GetTipoDocumento();
-            this.formOpener.ShowDocumentoForm(typeDocumento);
+            if(typeDocumento == EnumDocumentosGestion.Albaran)
+            {
+                var formAltaAlbaran = this.formOpener.GetForm<Albaranes>() as Albaranes;
+                formAltaAlbaran.SetIsAlbaran(IsDocumento);
+                formAltaAlbaran.ShowDialog();
+            }
+            else
+            {
+                this.formOpener.ShowModalForm<Facturacion>();
+            }
+
             this.FillControls();
         }
 

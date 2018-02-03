@@ -130,11 +130,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        public Albaran GetLastAlbaran()
+        public Albaran GetLastAlbaran(bool isAlbaran)
         {
             try
             {
-                return this.dbContext.Albaranes.OrderByDescending(albaran => albaran.NumeroAlbaran).FirstOrDefault();
+                return this.dbContext.Albaranes.OrderByDescending(albaran => albaran.NumeroAlbaran).FirstOrDefault(x => x.IsAlbaran == isAlbaran);
             }
             catch (Exception e)
             {

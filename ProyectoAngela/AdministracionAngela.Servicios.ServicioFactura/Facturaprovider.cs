@@ -339,6 +339,78 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return result;
         }
 
+        public List<FacturaIva> GetAlbaranIva(int numerFactura, bool isAlbaran)
+        {
+            var result = new List<FacturaIva>();
+            var albaran = repositorioFactura.GetAlbaranById(numerFactura, isAlbaran);
+            var lineasAlbaran = repositorioFactura.GetLineasAlbaran(albaran.Id);
+
+            var ivas = repositorioIVA.GetAllIVAs();
+            foreach (var iva in ivas)
+            {
+                var misLineas = lineasAlbaran.Where(x => x.Producto.IVAId == iva.Id);
+                result.Add(new FacturaIva()
+                {
+                    BaseImponible = misLineas.Sum(x => x.Importe.Value),
+                    PorcentajeIVA = iva.Porcentaje.Value,
+                    ImporteIVA = misLineas.Sum(x => x.ImporteIVA.Value),
+                    PorcentajeRE = iva.PorcentanjeRE.Value,
+                    ImporteRE = misLineas.Sum(x => x.ImporteRE.Value),
+                });
+            }
+
+            return result;
+        }
+
+        public List<FacturaCliente> GetAlbaranCliente(int numeroAlbaran, bool isAlbaran)
+        {
+            var albaranClientes = new List<FacturaCliente>();
+            var albaran = this.repositorioFactura.GetAlbaranById(numeroAlbaran, isAlbaran);
+            var cliente = this.repositorioCliente.GetClientById(albaran.ClienteId.Value);
+            var lineas = repositorioFactura.GetLineasAlbaran(albaran.Id);
+            var perfil = this.repositorioPerfil.GetPerfil();
+
+            foreach (var linea in lineas)
+            {
+                var albaranCliente = new FacturaCliente()
+                {
+                    NumeroFactura = numeroAlbaran,
+                    Fecha = albaran.Fecha.Value,
+                    Dni = cliente.NIF,
+                    CodigoArticulo = linea.ProductoId,
+                    Descripcion = linea.Producto.Descripcion,
+                    Bultos = linea.Cajas.Value,
+                    Importe = linea.Importe.Value,
+                    Kgs = linea.Kgs.Value,
+                    Precio = linea.Precio.Value,
+                    Total = albaran.Total.Value,
+                    LineaDireccion = cliente.Direccion.LineaDireccion,
+                    Provincia = cliente.Direccion.Provincia,
+                    Poblacion = cliente.Direccion.Poblacion,
+                    CodigoPostal = cliente.Direccion.CodigoPostal.ToString(),
+                    NombreEmpresa = perfil.Nombre,
+                    DniPerfil = perfil.NIF,
+                    CodigoPostalPerfil = perfil.Direccion.CodigoPostal.ToString(),
+                    PoblacionPerfil = perfil.Direccion.Poblacion,
+                    ProvinciaPerfil = perfil.Direccion.Provincia,
+                    LineaDireccionPerfil = perfil.Direccion.LineaDireccion,
+                    EmailPerfil = perfil.Contacto.Email,
+                    FaxPerfil = perfil.Contacto.Fax.Value,
+                    TelefonoPerfil = perfil.Contacto.Telefono1.Value,
+                    ZonaCAptura = linea.Producto.ZonaCaptura,
+                    Arte = linea.Producto.ArtePesca,
+                    FAO = linea.Producto.FAO,
+                    NombreCientifico = linea.Producto.NombreCientifico,
+                    Abreviacion = linea.Producto.Abreviacion,
+                    NombreCliente = cliente.Nombre
+                };
+
+                albaranClientes.Add(albaranCliente);
+            }
+
+            return albaranClientes;
+        }
+
         public List<FacturaCliente> GetFacturaCliente(int numeroFactura)
         {
             var facturasClientes = new List<FacturaCliente>();

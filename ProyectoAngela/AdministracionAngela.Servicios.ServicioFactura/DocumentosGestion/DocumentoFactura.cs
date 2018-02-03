@@ -83,7 +83,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             return "@NumeroFactura";
         }
 
-        public DataTable GatDatosIva(int numeroDocumento)
+        public DataTable GatDatosIva(int numeroDocumento, bool isDocumento = true)
         {
             DataTable table = new DataTable("FacturaIVA");
             table.Columns.Add("BaseImponible", Type.GetType("System.String"));
@@ -109,7 +109,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             return table;
         }
 
-        public DataTable GetDatosImpresion(int numeroDocumento)
+        public DataTable GetDatosImpresion(int numeroDocumento, bool isDocumento = true)
         {
             DataTable table = new DataTable("FacturaCliente");
             table.Columns.Add("NumeroFactura", Type.GetType("System.Int32"));

@@ -21,12 +21,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private IDocumentoGestion documentoGestion;
         private string reportName;
         private string variableName;
+        private bool isDocumento;
 
-        public ImprimirFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, long numeroDocumentoInicial, string reportName, string variableName)
+        public ImprimirFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion, long numeroDocumentoInicial, string reportName, string variableName, bool isDocumento)
         {
             this.numeroDocumentoInicial = numeroDocumentoInicial;
             this.formOpener = formOpener;
             this.documentoGestion = documentoGestion;
+            this.isDocumento = isDocumento;
 
             InitializeComponent();
             this.textBoxDocumentoInicial.Text = numeroDocumentoInicial.ToString();
@@ -79,8 +81,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
                     DataSetIvaFactura datasetIva = new DataSetIvaFactura();
 
-                    var tableFactura = documentoGestion.GetDatosImpresion(numeroFactura);
-                    var tableIva = documentoGestion.GatDatosIva(numeroFactura);
+                    var tableFactura = documentoGestion.GetDatosImpresion(numeroFactura, isDocumento);
+                    var tableIva = documentoGestion.GatDatosIva(numeroFactura, isDocumento);
 
                     dataset.Tables.Add(tableFactura);
                     datasetIva.Tables.Add(tableIva);

@@ -89,6 +89,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.LineasFactura.Where(x => x.FacturaId == facturaId).ToList();
         }
 
+        public List<LineaAlbaran> GetLineasAlbaran(long albaranId)
+        {
+            return this.dbContext.LineasAlbaran.Where(x => x.AlbaranId == albaranId).ToList();
+        }
+
         public List<Factura> GetAllFacturas()
         {
             this.dbContext.ReloadEntities<Factura>();

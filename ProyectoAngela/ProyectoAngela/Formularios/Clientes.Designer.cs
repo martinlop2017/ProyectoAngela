@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Clientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
@@ -43,6 +44,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -162,9 +166,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             this.dataGridViewClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewClientes.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridViewClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridViewClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -173,6 +177,11 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dataGridViewClientes.EnableHeadersVisualStyles = false;
             this.dataGridViewClientes.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewClientes.Location = new System.Drawing.Point(31, 192);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
@@ -192,6 +201,29 @@
             this.label7.Size = new System.Drawing.Size(358, 42);
             this.label7.TabIndex = 14;
             this.label7.Text = "Gestión de Clientes";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Codigo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.HeaderText = "Cod.";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 90;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Nombre";
+            this.Column2.HeaderText = "Cliente";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 400;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "NIF";
+            this.Column3.HeaderText = "NIF/CIB";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 110;
             // 
             // Clientes
             // 
@@ -238,5 +270,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }

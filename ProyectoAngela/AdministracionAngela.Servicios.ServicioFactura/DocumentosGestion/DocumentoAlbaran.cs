@@ -65,9 +65,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             return true;
         }
 
-        public string GetReportImpresion()
+        public string GetReportImpresion(bool isDocumento = true)
         {
-            return "CrystalReportImpresionFactura";
+            return  isDocumento ? "CrystalReportImpresionFactura" : "CrystalReportImpresionAlbaranNo";
         }
 
         public string GetVariableImpresion()

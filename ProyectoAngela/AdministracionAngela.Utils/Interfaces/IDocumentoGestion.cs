@@ -20,7 +20,7 @@ namespace AdministracionAngela.Utils.Interfaces
         bool CanBeDocumento();
         void Facturar(List<long> albaranesIds);
         bool PuedeFacturar();
-        string GetReportImpresion();
+        string GetReportImpresion(bool isDocumento = true);
         string GetVariableImpresion();
         DataTable GetDatosImpresion(int numeroDocumento, bool isDocumento = true);
         DataTable GatDatosIva(int numeroDocumento, bool isDocumento = true);

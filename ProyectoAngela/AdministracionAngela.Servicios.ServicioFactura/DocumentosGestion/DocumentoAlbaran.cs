@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Enumerados;
 using AdministracionAngela.Utils.Genericos;
+using System.Data;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 {
@@ -72,6 +73,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         public string GetVariableImpresion()
         {
             return "@NumeroAlbaran";
+        }
+
+        public DataTable GetDatosImpresion(int numeroDocumento)
+        {
+            return null;
+        }
+
+        public DataTable GatDatosIva(int numeroDocumento)
+        {
+            throw new NotImplementedException();
         }
     }
 }

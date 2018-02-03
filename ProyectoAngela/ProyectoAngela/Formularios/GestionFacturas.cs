@@ -177,6 +177,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             var reportImpresion = this.documentoGestion.GetReportImpresion();
             var variableImpresion = this.documentoGestion.GetVariableImpresion();
+
             var formImprimir = new ImprimirFacturas( this.formOpener, this.documentoGestion, selectedDocumentosIds.First(), reportImpresion, variableImpresion);
             formImprimir.ShowDialog();
             

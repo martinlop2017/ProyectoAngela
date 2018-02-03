@@ -26,8 +26,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 DeleteLineasFacturaByNumeroFactura(facturasToDelete);
                 this.dbContext.Facturas.RemoveRange(facturasToDelete);
                 this.dbContext.SaveChanges();
+                this.dbContext.ReloadEntities<Albaran>();
+
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
 
             }
@@ -80,6 +82,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             {
 
             }
+        }
+
+        public List<LineaFactura> GetLineasFactura(long facturaId)
+        {
+            return this.dbContext.LineasFactura.Where(x => x.FacturaId == facturaId).ToList();
         }
 
         public List<Factura> GetAllFacturas()
@@ -211,10 +218,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 facturaToupdate.Total = facturaToRepository.Total;
                 facturaToupdate.TotalBase = facturaToRepository.TotalBase;
                 facturaToupdate.EtiquetaLote = facturaToRepository.EtiquetaLote;
-
+                
                 dbContext.SaveChanges();
 
-                UpdateLineasFactura(facturaToupdate.Id, facturaToRepository.LineaFactura);
+                UpdateLineasFactura(facturaToupdate, facturaToRepository.LineaFactura);
 
             }
             catch(Exception exp)
@@ -223,16 +230,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        private void UpdateLineasFactura(long facturaId, ICollection<LineaFactura> lineas)
+        private void UpdateLineasFactura(Factura factura, ICollection<LineaFactura> lineas)
         {
-            var lineasToDelete = this.dbContext.LineasFactura.Where(x => x.FacturaId.Equals(facturaId));
+            var lineasToDelete = this.dbContext.LineasFactura.Where(x => x.FacturaId.Equals(factura.Id));
             this.dbContext.LineasFactura.RemoveRange(lineasToDelete);
             foreach(var linea in lineas)
             {
-                linea.FacturaId = facturaId;
+                linea.FacturaId = factura.Id;
             }
 
             this.dbContext.LineasFactura.AddRange(lineas);
+            factura.LineaFactura = lineas;
 
             dbContext.SaveChanges();
         }

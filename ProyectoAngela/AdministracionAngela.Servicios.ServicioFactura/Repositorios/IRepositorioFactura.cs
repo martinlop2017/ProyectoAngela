@@ -27,5 +27,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void SetAlbaranImpresa(List<long> selectedAlbaranIds);
         List<Albaran> GetAllAlbaranes();
         void SetFacturado(long numeroAlbaran);
+        List<LineaFactura> GetLineasFactura(long facturaId);
     }
 }

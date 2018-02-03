@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetIvaFactura" targetNamespace="http://tempuri.org/DataSetIvaFactura.xsd" xmlns:mstns="http://tempuri.org/DataSetIvaFactura.xsd" xmlns="http://tempuri.org/DataSetIvaFactura.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetIvaFactura" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetIvaFactura" msprop:Generator_UserDSName="DataSetIvaFactura">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Iva" msprop:Generator_TableClassName="IvaDataTable" msprop:Generator_TableVarName="tableIva" msprop:Generator_RowChangedName="IvaRowChanged" msprop:Generator_TablePropName="Iva" msprop:Generator_RowDeletingName="IvaRowDeleting" msprop:Generator_RowChangingName="IvaRowChanging" msprop:Generator_RowEvHandlerName="IvaRowChangeEventHandler" msprop:Generator_RowDeletedName="IvaRowDeleted" msprop:Generator_RowClassName="IvaRow" msprop:Generator_UserTableName="Iva" msprop:Generator_RowEvArgName="IvaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PorcentajeIVA" msprop:Generator_ColumnVarNameInTable="columnPorcentajeIVA" msprop:Generator_ColumnPropNameInRow="PorcentajeIVA" msprop:Generator_ColumnPropNameInTable="PorcentajeIVAColumn" msprop:Generator_UserColumnName="PorcentajeIVA" type="xs:string" minOccurs="0" />
+              <xs:element name="BaseImponible" msprop:Generator_ColumnVarNameInTable="columnBaseImponible" msprop:Generator_ColumnPropNameInRow="BaseImponible" msprop:Generator_ColumnPropNameInTable="BaseImponibleColumn" msprop:Generator_UserColumnName="BaseImponible" type="xs:string" minOccurs="0" />
+              <xs:element name="ImporteIVA" msprop:Generator_ColumnVarNameInTable="columnImporteIVA" msprop:Generator_ColumnPropNameInRow="ImporteIVA" msprop:Generator_ColumnPropNameInTable="ImporteIVAColumn" msprop:Generator_UserColumnName="ImporteIVA" type="xs:string" minOccurs="0" />
+              <xs:element name="PorcentajeRE" msprop:Generator_ColumnVarNameInTable="columnPorcentajeRE" msprop:Generator_ColumnPropNameInRow="PorcentajeRE" msprop:Generator_ColumnPropNameInTable="PorcentajeREColumn" msprop:Generator_UserColumnName="PorcentajeRE" type="xs:string" minOccurs="0" />
+              <xs:element name="ImporteRE" msprop:Generator_ColumnVarNameInTable="columnImporteRE" msprop:Generator_ColumnPropNameInRow="ImporteRE" msprop:Generator_ColumnPropNameInTable="ImporteREColumn" msprop:Generator_UserColumnName="ImporteRE" type="xs:string" minOccurs="0" />
+              <xs:element name="GastosSuplidos" msprop:Generator_ColumnVarNameInTable="columnGastosSuplidos" msprop:Generator_ColumnPropNameInRow="GastosSuplidos" msprop:Generator_ColumnPropNameInTable="GastosSuplidosColumn" msprop:Generator_UserColumnName="GastosSuplidos" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.Utils.Models.Albaran;
+using AdministracionAngela.Utils.Models.Impresion;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -32,5 +33,7 @@ namespace AdministracionAngela.Utils.Interfaces
         void UpdateAlbaran(AltaAlbaranViewModel viewModel);
         void SetAlbaranImpresa(List<long> selectedAlbaranIds);
         LiquidacionesViewModel GetLineasAlbaranParaFechas(DateTime startDate, DateTime endDate);
+        List<FacturaCliente> GetFacturaCliente(int numeroFactura);
+        List<FacturaIva> GetFacturaIva(int numerFactura);
     }
 }

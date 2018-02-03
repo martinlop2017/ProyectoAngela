@@ -51,7 +51,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             if (!this.isUpdate)
             {
-                viewModel = this.facturaProvider.GetAlbaranViewModel();
+                viewModel = this.facturaProvider.GetAlbaranViewModel(IsAlbaran);
             }
             else
             {

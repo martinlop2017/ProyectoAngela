@@ -55,10 +55,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var documentoFinal = int.Parse(this.textBoxDocumentoFinal.Text);
 
                 IEnumerable<int> documentosAImprimir = Enumerable.Range(documentoInicial, documentoFinal - documentoInicial + 1).Select(x => x);
-                ExportarFacturas(documentosAImprimir.ToList());
+                var resultMessage = ExportarFacturas(documentosAImprimir.ToList());
 
-                var longDocumentosAImprimir = documentosAImprimir.ToList().Select(x => Convert.ToInt64(x)).ToList();
-                this.documentoGestion.SetDocumentoImpresa(longDocumentosAImprimir);
+                if(!string.IsNullOrEmpty(resultMessage))
+                {
+                    MessageBox.Show("Error al imprimir: " + resultMessage);
+                }
+                else
+                {
+                    var longDocumentosAImprimir = documentosAImprimir.ToList().Select(x => Convert.ToInt64(x)).ToList();
+                    this.documentoGestion.SetDocumentoImpresa(longDocumentosAImprimir);
+                }
 
                 form.Close();
             }
@@ -71,34 +78,48 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.Close();
         }
 
-        private void ExportarFacturas(List<int> selectedFacturaIds)
+        private string ExportarFacturas(List<int> selectedDocumentosIds)
         {
-            using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
+            var messageError = string.Empty;
+            try
             {
-                foreach (var numeroFactura in selectedFacturaIds)
+                using (var formImpresion = this.formOpener.GetForm<FormImpresion>() as FormImpresion)
                 {
+                    foreach (var numeroDocumento in selectedDocumentosIds)
+                    {
+                        if (!documentoGestion.DocumentoExiste(numeroDocumento, isDocumento))
+                        {
+                            continue;
+                        }
 
-                    DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
-                    DataSetIvaFactura datasetIva = new DataSetIvaFactura();
+                        DataSetFacturaImpresion dataset = new DataSetFacturaImpresion();
+                        DataSetIvaFactura datasetIva = new DataSetIvaFactura();
 
-                    var tableFactura = documentoGestion.GetDatosImpresion(numeroFactura, isDocumento);
-                    var tableIva = documentoGestion.GatDatosIva(numeroFactura, isDocumento);
+                        var tableFactura = documentoGestion.GetDatosImpresion(numeroDocumento, isDocumento);
+                        var tableIva = documentoGestion.GatDatosIva(numeroDocumento, isDocumento);
 
-                    dataset.Tables.Add(tableFactura);
-                    datasetIva.Tables.Add(tableIva);
+                        dataset.Tables.Add(tableFactura);
+                        datasetIva.Tables.Add(tableIva);
 
-                    ReportDocument oRep = new ReportDocument();
+                        ReportDocument oRep = new ReportDocument();
 
-                    var reportPath = string.Format(@"{0}\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
-                    //var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
-                    oRep.Load(reportPath);
-                    oRep.SetDataSource(dataset.Tables[1]);
-                    oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
+                        var reportPath = string.Format(@"{0}\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
+                        //var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
+                        oRep.Load(reportPath);
+                        oRep.SetDataSource(dataset.Tables[1]);
+                        oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);
 
-                    var path = this.documentoGestion.GetExportPath(numeroFactura, isDocumento);
-                    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                        var path = this.documentoGestion.GetExportPath(numeroDocumento, isDocumento);
+                        oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
+                    }
                 }
             }
+            catch(Exception exp)
+            {
+                messageError = exp.Message;
+            }
+
+            return messageError;
         }
 
         private void label9_Click(object sender, EventArgs e)

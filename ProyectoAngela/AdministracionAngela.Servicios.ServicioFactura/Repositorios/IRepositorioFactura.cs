@@ -29,5 +29,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void SetFacturado(long numeroAlbaran);
         List<LineaFactura> GetLineasFactura(long facturaId);
         List<LineaAlbaran> GetLineasAlbaran(long albaranId);
+        bool ExisteFactura(int numeroDocumento);
+        bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
     }
 }

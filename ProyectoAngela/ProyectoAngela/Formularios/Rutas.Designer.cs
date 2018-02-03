@@ -118,7 +118,6 @@
             this.textAlbaranes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textAlbaranes.Size = new System.Drawing.Size(330, 23);
             this.textAlbaranes.TabIndex = 1;
-            this.textAlbaranes.Text = "C:\\DIRECTORIO";
             // 
             // label15
             // 
@@ -153,7 +152,6 @@
             this.textFactura.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textFactura.Size = new System.Drawing.Size(330, 23);
             this.textFactura.TabIndex = 0;
-            this.textFactura.Text = "C:\\DIRECTORIO";
             // 
             // buttonListados
             // 
@@ -186,7 +184,6 @@
             this.textLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textLiquidaciones.Size = new System.Drawing.Size(330, 23);
             this.textLiquidaciones.TabIndex = 3;
-            this.textLiquidaciones.Text = "C:\\DIRECTORIO";
             // 
             // label1
             // 
@@ -221,7 +218,6 @@
             this.textListados.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textListados.Size = new System.Drawing.Size(330, 23);
             this.textListados.TabIndex = 2;
-            this.textListados.Text = "C:\\DIRECTORIO";
             // 
             // buttonSeguridad
             // 
@@ -243,7 +239,6 @@
             this.textAlbaranes2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textAlbaranes2.Size = new System.Drawing.Size(330, 23);
             this.textAlbaranes2.TabIndex = 4;
-            this.textAlbaranes2.Text = "C:\\DIRECTORIO";
             // 
             // label3
             // 

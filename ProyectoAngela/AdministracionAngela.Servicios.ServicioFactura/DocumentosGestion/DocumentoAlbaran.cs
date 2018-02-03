@@ -177,5 +177,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 
             return table;
         }
+
+        public bool DocumentoExiste(int numeroDocumento, bool isDocumento = true)
+        {
+            return this.facturaProvider.ExisteAlbaran(numeroDocumento, isDocumento);
+        }
     }
 }

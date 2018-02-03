@@ -466,5 +466,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return facturasClientes;
         }
+
+        public bool ExisteFactura(int numeroDocumento)
+        {
+            return this.repositorioFactura.ExisteFactura(numeroDocumento);
+        }
+
+        public bool ExisteAlbaran(int numeroDocumento, bool isDocumento)
+        {
+            return this.repositorioFactura.ExisteAlbaran(numeroDocumento, isDocumento);
+        }
     }
 }

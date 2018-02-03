@@ -20,9 +20,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             InitializeComponent();
             facturas = new List<ImpresionFactura>();
-
-            //ReportParameter parameter = new ReportParameter("NumeroFacturaParameter", "1");
-            //this.reportViewer1.LocalReport.SetParameters(parameter);
         }
 
         public void SetFacturas(List<ImpresionFactura> facturasParaImprimir)
@@ -32,35 +29,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Form20_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'DataSetnUEVO.LineaFactura' table. You can move, or remove it, as needed.
-            //this.LineaFacturaTableAdapter.Fill(this.DataSetnUEVO.LineaFactura);
-
-            //this.reportViewer1.RefreshReport();
-
-            //ImpresionFacturaBindingSource.DataSource = new List<ImpresionFactura>()
-            //{
-            //    new ImpresionFactura()
-            //    {
-            //    NumeroFactura = 1,
-            //    DescripcionProducto = "Sardinas",
-            //    NombreCliente = "Pepe",
-            //    Precio = 10
-            //},
-            //    new ImpresionFactura()
-            //    {
-            //    NumeroFactura = 1,
-            //    DescripcionProducto = "Boquerones",
-            //    NombreCliente = "Papa",
-            //    Precio = 14
-            //},
-            //    new ImpresionFactura()
-            //    {
-            //    NumeroFactura = 2,
-            //    DescripcionProducto = "Caballa",
-            //    NombreCliente = "Alvaro",
-            //    Precio = 20
-            //}
-            //};
+           
 
         }
     }

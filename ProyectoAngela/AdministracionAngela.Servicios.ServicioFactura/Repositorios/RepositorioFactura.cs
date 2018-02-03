@@ -299,5 +299,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
             this.dbContext.SaveChanges();
         }
+
+        public bool ExisteFactura(int numeroDocumento)
+        {
+            return this.dbContext.Facturas.Any(x => x.NumeroFactura == numeroDocumento);
+        }
+
+        public bool ExisteAlbaran(int numeroDocumento, bool isDocumento)
+        {
+            return this.dbContext.Albaranes.Any(x => x.NumeroAlbaran == numeroDocumento && x.IsAlbaran == isDocumento);
+        }
     }
 }

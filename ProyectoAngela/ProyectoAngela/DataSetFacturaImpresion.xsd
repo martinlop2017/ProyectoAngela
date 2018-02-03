@@ -12,7 +12,7 @@
   <xs:element name="DataSetFacturaImpresion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetFacturaImpresion" msprop:Generator_UserDSName="DataSetFacturaImpresion">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FacturaCliente" msprop:Generator_TableClassName="FacturaClienteDataTable" msprop:Generator_TableVarName="tableFacturaCliente" msprop:Generator_TablePropName="FacturaCliente" msprop:Generator_RowDeletingName="FacturaClienteRowDeleting" msprop:Generator_RowChangingName="FacturaClienteRowChanging" msprop:Generator_RowEvHandlerName="FacturaClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaClienteRowDeleted" msprop:Generator_UserTableName="FacturaCliente" msprop:Generator_RowChangedName="FacturaClienteRowChanged" msprop:Generator_RowEvArgName="FacturaClienteRowChangeEvent" msprop:Generator_RowClassName="FacturaClienteRow">
+        <xs:element name="FacturaCliente" msprop:Generator_TableClassName="FacturaClienteDataTable" msprop:Generator_TableVarName="tableFacturaCliente" msprop:Generator_RowChangedName="FacturaClienteRowChanged" msprop:Generator_TablePropName="FacturaCliente" msprop:Generator_RowDeletingName="FacturaClienteRowDeleting" msprop:Generator_RowChangingName="FacturaClienteRowChanging" msprop:Generator_RowEvHandlerName="FacturaClienteRowChangeEventHandler" msprop:Generator_RowDeletedName="FacturaClienteRowDeleted" msprop:Generator_RowClassName="FacturaClienteRow" msprop:Generator_UserTableName="FacturaCliente" msprop:Generator_RowEvArgName="FacturaClienteRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="NumeroFactura" msprop:Generator_ColumnVarNameInTable="columnNumeroFactura" msprop:Generator_ColumnPropNameInRow="NumeroFactura" msprop:Generator_ColumnPropNameInTable="NumeroFacturaColumn" msprop:Generator_UserColumnName="NumeroFactura" type="xs:string" minOccurs="0" />
@@ -43,6 +43,7 @@
               <xs:element name="Arte" msprop:Generator_ColumnVarNameInTable="columnArte" msprop:Generator_ColumnPropNameInRow="Arte" msprop:Generator_ColumnPropNameInTable="ArteColumn" msprop:Generator_UserColumnName="Arte" type="xs:string" minOccurs="0" />
               <xs:element name="NombreCientifico" msprop:Generator_ColumnVarNameInTable="columnNombreCientifico" msprop:Generator_ColumnPropNameInRow="NombreCientifico" msprop:Generator_ColumnPropNameInTable="NombreCientificoColumn" msprop:Generator_UserColumnName="NombreCientifico" type="xs:string" minOccurs="0" />
               <xs:element name="Abreviacion" msprop:Generator_ColumnVarNameInTable="columnAbreviacion" msprop:Generator_ColumnPropNameInRow="Abreviacion" msprop:Generator_ColumnPropNameInTable="AbreviacionColumn" msprop:Generator_UserColumnName="Abreviacion" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreCliente" msprop:Generator_ColumnVarNameInTable="columnNombreCliente" msprop:Generator_ColumnPropNameInRow="NombreCliente" msprop:Generator_ColumnPropNameInTable="NombreClienteColumn" msprop:Generator_UserColumnName="NombreCliente" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -37,5 +37,6 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public string FAO { get; set; }
         public string NombreCientifico { get; set; }
         public string Abreviacion { get; set; }
+        public string NombreCliente { get; set; }
     }
 }

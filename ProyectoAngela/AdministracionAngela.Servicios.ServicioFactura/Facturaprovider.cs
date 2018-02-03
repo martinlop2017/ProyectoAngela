@@ -378,7 +378,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     Arte = linea.Producto.ArtePesca,
                     FAO = linea.Producto.FAO,
                     NombreCientifico = linea.Producto.NombreCientifico,
-                    Abreviacion = linea.Producto.Abreviacion
+                    Abreviacion = linea.Producto.Abreviacion,
+                    NombreCliente = cliente.Nombre
                 };
 
                 facturasClientes.Add(facturaCliente);

@@ -142,6 +142,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             table.Columns.Add("Abreviacion", Type.GetType("System.String"));
             table.Columns.Add("NombreCliente", Type.GetType("System.String"));
             table.Columns.Add("NombreDocumento", Type.GetType("System.String"));
+            table.Columns.Add("NombreDocumentoSmall", Type.GetType("System.String"));
 
             var lineas = this.facturaProvider.GetFacturaCliente(numeroDocumento);
             foreach (var linea in lineas)
@@ -177,6 +178,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[27] = linea.Abreviacion;
                 row[28] = linea.NombreCliente;
                 row[29] = "F A C T U R A";
+                row[30] = "FACTURA";
                 table.Rows.Add(row);
             }
 

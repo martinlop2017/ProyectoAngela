@@ -235,13 +235,20 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioFactura.SetAlbaranImpresa(selectedAlbaranIds);
         }
 
-        public LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate)
+        public LiquidacionesViewModel GetLiquidacionesParaFechas(DateTime startDate, DateTime endDate)
         {
             var lineasFactura = new List<LineaFactura>();
             var facturas = this.repositorioFactura.GetAllFacturas().Where(f => f.Fecha.Value > startDate && f.Fecha.Value < endDate).ToList();
             facturas.ForEach(f => lineasFactura.AddRange(f.LineaFactura));
 
-            return MapToViewModel.MapToLiquidacion(lineasFactura);
+            var albaranesSinFacturar = this.repositorioFactura.GetAllAlbaranes().Where(a => a.IsAlbaran && !a.Facturado.Value && a.Fecha.Value > startDate && a.Fecha.Value < endDate).ToList();
+            var otrosAlbaranes = this.repositorioFactura.GetAllAlbaranes().Where(a => !a.IsAlbaran & a.Fecha.Value > startDate && a.Fecha.Value < endDate).ToList();
+            var lineasAlbaranes = new List<LineaAlbaran>();
+
+            albaranesSinFacturar.ForEach(x => lineasAlbaranes.AddRange(x.LineaAlbaran));
+            otrosAlbaranes.ForEach(x => lineasAlbaranes.AddRange(x.LineaAlbaran));
+
+            return MapToViewModel.MapToLiquidacion(lineasFactura, lineasAlbaranes);
         }
 
         public LiquidacionesViewModel GetLineasAlbaranParaFechas(DateTime startDate, DateTime endDate)

@@ -468,8 +468,27 @@ namespace AdministracionAngela.Utils.Mappers
             return lineasFactura.Select(lf => MapLineaLiquidacion(lf)).ToList<LineaLiquidacionViewModel>();
         }
 
-        public static LiquidacionesViewModel MapToLiquidacion(List<LineaFactura> repositoryLineasFactura)
+        public static LiquidacionesViewModel MapToLiquidacion(List<LineaFactura> repositoryLineasFactura, List<LineaAlbaran> lineasAlbaran)
         {
+            lineasAlbaran.ForEach(x => repositoryLineasFactura.Add(new LineaFactura()
+            {
+                ArtePesca = x.ArtePesca,
+                Cajas = x.Cajas,
+                FAO = x.FAO,
+                Importe = x.Importe,
+                ImporteIVA = x.ImporteIVA,
+                ImporteRE = x.ImporteRE,
+                Kgs = x.Kgs,
+                Lote = x.Lote,
+                NombreCientifico = x.NombreCientifico,
+                PorcentajeIVA = x.PorcentajeIVA,
+                PorcentajeRE = x.PorcentajeRE,
+                Precio = x.Precio,
+                Producto = x.Producto,
+                ProductoId = x.ProductoId,
+                ZonaCaptura = x.ZonaCaptura
+            }));
+
             var groupedLineas = repositoryLineasFactura.GroupBy(lf => lf.ProductoId);
 
             var lineasLiquidacionViewModel = new List<LineaLiquidacionViewModel>();
@@ -484,6 +503,7 @@ namespace AdministracionAngela.Utils.Mappers
 
                 lineasLiquidacionViewModel.Add(new LineaLiquidacionViewModel()
                 {
+                    Concepto = lineas.First().Producto.Descripcion,
                     Bultos = lineas.Sum(l => l.Cajas.Value),
                     CodigoArticulo = groupedLinea.Key.ToString(),
                     Kilos = sumatorioKilos,

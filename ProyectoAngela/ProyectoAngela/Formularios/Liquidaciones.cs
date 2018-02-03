@@ -48,7 +48,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
             else
             {
-                var viewModel = this.facturaProvider.GetLineasFacturaParaFechas(startDate, endDate);
+                var viewModel = this.facturaProvider.GetLiquidacionesParaFechas(startDate, endDate);
                 this.FillForm(viewModel);
             }
         }

@@ -24,7 +24,7 @@ namespace AdministracionAngela.Utils.Interfaces
         void Facturar(List<long> albaranesIds);
         List<ImpresionFactura> GetImpresionFactura(List<long> selectedFacturaIds);
         void SetFacturaImpresa(List<long> selectedFacturaIds);
-        LiquidacionesViewModel GetLineasFacturaParaFechas(DateTime startDate, DateTime endDate);
+        LiquidacionesViewModel GetLiquidacionesParaFechas(DateTime startDate, DateTime endDate);
         AltaAlbaranViewModel GetAlbaranViewModel(bool isAlbaran);
         void SaveAlbaran(AltaAlbaranViewModel viewModel);
         void DeleteAlbaranes(List<FacturaViewModel> albaranesToDelete);

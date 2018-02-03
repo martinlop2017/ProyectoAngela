@@ -121,6 +121,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             table.Columns.Add("Kgs", Type.GetType("System.String"));
             table.Columns.Add("Precio", Type.GetType("System.String"));
             table.Columns.Add("Importe", Type.GetType("System.String"));
+            table.Columns.Add("Total", Type.GetType("System.String"));
+            table.Columns.Add("LineaDireccionCliente", Type.GetType("System.String"));
+            table.Columns.Add("Provincia", Type.GetType("System.String"));
+            table.Columns.Add("Poblacion", Type.GetType("System.String"));
+            table.Columns.Add("CodigoPostal", Type.GetType("System.String"));
 
             var lineas = this.facturaProvider.GetFacturaCliente(numeroDocumento);
             foreach (var linea in lineas)
@@ -135,6 +140,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[6] = linea.Kgs.ToString();
                 row[7] = linea.Precio.ToString();
                 row[8] = linea.Importe.ToString();
+                row[9] = linea.Total.ToString();
+                row[10] = linea.Provincia.ToString();
+                row[11] = linea.Poblacion.ToString();
+                row[12] = linea.CodigoPostal.ToString();
                 table.Rows.Add(row);
             }
 

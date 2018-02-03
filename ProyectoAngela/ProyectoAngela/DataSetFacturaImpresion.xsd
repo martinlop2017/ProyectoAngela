@@ -24,6 +24,11 @@
               <xs:element name="Kgs" msprop:Generator_ColumnVarNameInTable="columnKgs" msprop:Generator_ColumnPropNameInRow="Kgs" msprop:Generator_ColumnPropNameInTable="KgsColumn" msprop:Generator_UserColumnName="Kgs" type="xs:string" minOccurs="0" />
               <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:string" minOccurs="0" />
               <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:string" minOccurs="0" />
+              <xs:element name="Total" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:string" minOccurs="0" />
+              <xs:element name="LineaDireccionCliente" msprop:Generator_ColumnVarNameInTable="columnLineaDireccionCliente" msprop:Generator_ColumnPropNameInRow="LineaDireccionCliente" msprop:Generator_ColumnPropNameInTable="LineaDireccionClienteColumn" msprop:Generator_UserColumnName="LineaDireccionCliente" type="xs:string" minOccurs="0" />
+              <xs:element name="Poblacion" msprop:Generator_ColumnVarNameInTable="columnPoblacion" msprop:Generator_ColumnPropNameInRow="Poblacion" msprop:Generator_ColumnPropNameInTable="PoblacionColumn" msprop:Generator_UserColumnName="Poblacion" type="xs:string" minOccurs="0" />
+              <xs:element name="Provincia" msprop:Generator_ColumnVarNameInTable="columnProvincia" msprop:Generator_ColumnPropNameInRow="Provincia" msprop:Generator_ColumnPropNameInTable="ProvinciaColumn" msprop:Generator_UserColumnName="Provincia" type="xs:string" minOccurs="0" />
+              <xs:element name="CodigoPostal" msprop:Generator_ColumnVarNameInTable="columnCodigoPostal" msprop:Generator_ColumnPropNameInRow="CodigoPostal" msprop:Generator_ColumnPropNameInTable="CodigoPostalColumn" msprop:Generator_UserColumnName="CodigoPostal" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

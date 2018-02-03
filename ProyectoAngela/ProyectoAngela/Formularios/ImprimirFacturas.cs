@@ -91,13 +91,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                 var path = this.documentoGestion.GetExportPath(1);
                 oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
-                //foreach (var numeroFactura in selectedFacturaIds)
-                //{
-                //    oRep.SetParameterValue(variableName, numeroFactura);
-                //    formImpresion.crystalReportViewer1.ReportSource = oRep;
-                //    var path = this.documentoGestion.GetExportPath(numeroFactura);
-                //    oRep.ExportToDisk(ExportFormatType.PortableDocFormat, path);
-                //}
             }
         }
 

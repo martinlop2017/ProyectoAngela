@@ -328,7 +328,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 var misLineas = lineasFActura.Where(x => x.Producto.IVAId == iva.Id);
                 result.Add(new FacturaIva()
                 {
-                    BaseImponible = iva.Descripcion,
+                    BaseImponible = misLineas.Sum(x => x.Importe.Value),
                     PorcentajeIVA = iva.Porcentaje.Value,
                     ImporteIVA = misLineas.Sum(x => x.ImporteIVA.Value),
                     PorcentajeRE = iva.PorcentanjeRE.Value,
@@ -358,7 +358,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     Bultos = linea.Cajas.Value,
                     Importe = linea.Importe.Value,
                     Kgs = linea.Kgs.Value,
-                    Precio = linea.Precio.Value
+                    Precio = linea.Precio.Value,
+                    Total = factura.Total.Value,
+                    LineaDireccion = cliente.Direccion.LineaDireccion,
+                    Provincia = cliente.Direccion.Provincia,
+                    Poblacion = cliente.Direccion.Poblacion,
+                    CodigoPostal = cliente.Direccion.CodigoPostal.ToString()
                 };
 
                 facturasClientes.Add(facturaCliente);

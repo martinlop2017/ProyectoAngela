@@ -89,7 +89,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                     ReportDocument oRep = new ReportDocument();
 
-                    var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
+                    var reportPath = string.Format(@"{0}\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
+                    //var reportPath = string.Format(@"{0}\..\..\Formularios\{1}.rpt", Directory.GetCurrentDirectory(), reportName);
                     oRep.Load(reportPath);
                     oRep.SetDataSource(dataset.Tables[1]);
                     oRep.Subreports[0].SetDataSource(datasetIva.Tables[1]);

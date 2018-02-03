@@ -135,6 +135,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             table.Columns.Add("TelefonoPerfil", Type.GetType("System.String"));
             table.Columns.Add("EmailPerfil", Type.GetType("System.String"));
             table.Columns.Add("FaxPerfil", Type.GetType("System.String"));
+            table.Columns.Add("ZonaCaptura", Type.GetType("System.String"));
+            table.Columns.Add("FAO", Type.GetType("System.String"));
+            table.Columns.Add("Arte", Type.GetType("System.String"));
+            table.Columns.Add("NombreCientifico", Type.GetType("System.String"));
+            table.Columns.Add("Abreviacion", Type.GetType("System.String"));
 
             var lineas = this.facturaProvider.GetFacturaCliente(numeroDocumento);
             foreach (var linea in lineas)
@@ -163,6 +168,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[20] = linea.TelefonoPerfil.ToString();
                 row[21] = linea.EmailPerfil;
                 row[22] = linea.FaxPerfil.ToString();
+                row[23] = linea.ZonaCAptura;
+                row[24] = linea.FAO;
+                row[25] = linea.Arte;
+                row[26] = linea.NombreCientifico;
+                row[27] = linea.Abreviacion;
                 table.Rows.Add(row);
             }
 

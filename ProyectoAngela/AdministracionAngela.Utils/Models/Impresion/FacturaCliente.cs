@@ -32,5 +32,10 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public string EmailPerfil { get; set; }
         public long TelefonoPerfil { get; set; }
         public long FaxPerfil { get; set; }
+        public string ZonaCAptura { get; set; }
+        public string Arte { get; set; }
+        public string FAO { get; set; }
+        public string NombreCientifico { get; set; }
+        public string Abreviacion { get; set; }
     }
 }

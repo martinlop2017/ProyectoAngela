@@ -325,6 +325,16 @@ namespace AdministracionAngela.ProyectoAngela {
             
             private global::System.Data.DataColumn columnFaxPerfil;
             
+            private global::System.Data.DataColumn columnZonaCaptura;
+            
+            private global::System.Data.DataColumn columnFAO;
+            
+            private global::System.Data.DataColumn columnArte;
+            
+            private global::System.Data.DataColumn columnNombreCientifico;
+            
+            private global::System.Data.DataColumn columnAbreviacion;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FacturaClienteDataTable() {
@@ -544,6 +554,46 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ZonaCapturaColumn {
+                get {
+                    return this.columnZonaCaptura;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FAOColumn {
+                get {
+                    return this.columnFAO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn ArteColumn {
+                get {
+                    return this.columnArte;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn NombreCientificoColumn {
+                get {
+                    return this.columnNombreCientifico;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AbreviacionColumn {
+                get {
+                    return this.columnAbreviacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -602,7 +652,12 @@ namespace AdministracionAngela.ProyectoAngela {
                         string LineaDireccionPerfil, 
                         string TelefonoPerfil, 
                         string EmailPerfil, 
-                        string FaxPerfil) {
+                        string FaxPerfil, 
+                        string ZonaCaptura, 
+                        string FAO, 
+                        string Arte, 
+                        string NombreCientifico, 
+                        string Abreviacion) {
                 FacturaClienteRow rowFacturaClienteRow = ((FacturaClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumeroFactura,
@@ -627,7 +682,12 @@ namespace AdministracionAngela.ProyectoAngela {
                         LineaDireccionPerfil,
                         TelefonoPerfil,
                         EmailPerfil,
-                        FaxPerfil};
+                        FaxPerfil,
+                        ZonaCaptura,
+                        FAO,
+                        Arte,
+                        NombreCientifico,
+                        Abreviacion};
                 rowFacturaClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturaClienteRow);
                 return rowFacturaClienteRow;
@@ -673,6 +733,11 @@ namespace AdministracionAngela.ProyectoAngela {
                 this.columnTelefonoPerfil = base.Columns["TelefonoPerfil"];
                 this.columnEmailPerfil = base.Columns["EmailPerfil"];
                 this.columnFaxPerfil = base.Columns["FaxPerfil"];
+                this.columnZonaCaptura = base.Columns["ZonaCaptura"];
+                this.columnFAO = base.Columns["FAO"];
+                this.columnArte = base.Columns["Arte"];
+                this.columnNombreCientifico = base.Columns["NombreCientifico"];
+                this.columnAbreviacion = base.Columns["Abreviacion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -724,6 +789,16 @@ namespace AdministracionAngela.ProyectoAngela {
                 base.Columns.Add(this.columnEmailPerfil);
                 this.columnFaxPerfil = new global::System.Data.DataColumn("FaxPerfil", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFaxPerfil);
+                this.columnZonaCaptura = new global::System.Data.DataColumn("ZonaCaptura", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZonaCaptura);
+                this.columnFAO = new global::System.Data.DataColumn("FAO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFAO);
+                this.columnArte = new global::System.Data.DataColumn("Arte", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnArte);
+                this.columnNombreCientifico = new global::System.Data.DataColumn("NombreCientifico", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombreCientifico);
+                this.columnAbreviacion = new global::System.Data.DataColumn("Abreviacion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAbreviacion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1235,6 +1310,86 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string ZonaCaptura {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.ZonaCapturaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ZonaCaptura\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.ZonaCapturaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FAO {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.FAOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FAO\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.FAOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Arte {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.ArteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Arte\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.ArteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string NombreCientifico {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.NombreCientificoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NombreCientifico\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.NombreCientificoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Abreviacion {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.AbreviacionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Abreviacion\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.AbreviacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumeroFacturaNull() {
                 return this.IsNull(this.tableFacturaCliente.NumeroFacturaColumn);
             }
@@ -1507,6 +1662,66 @@ namespace AdministracionAngela.ProyectoAngela {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetFaxPerfilNull() {
                 this[this.tableFacturaCliente.FaxPerfilColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsZonaCapturaNull() {
+                return this.IsNull(this.tableFacturaCliente.ZonaCapturaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetZonaCapturaNull() {
+                this[this.tableFacturaCliente.ZonaCapturaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFAONull() {
+                return this.IsNull(this.tableFacturaCliente.FAOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFAONull() {
+                this[this.tableFacturaCliente.FAOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsArteNull() {
+                return this.IsNull(this.tableFacturaCliente.ArteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetArteNull() {
+                this[this.tableFacturaCliente.ArteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsNombreCientificoNull() {
+                return this.IsNull(this.tableFacturaCliente.NombreCientificoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetNombreCientificoNull() {
+                this[this.tableFacturaCliente.NombreCientificoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAbreviacionNull() {
+                return this.IsNull(this.tableFacturaCliente.AbreviacionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAbreviacionNull() {
+                this[this.tableFacturaCliente.AbreviacionColumn] = global::System.Convert.DBNull;
             }
         }
         

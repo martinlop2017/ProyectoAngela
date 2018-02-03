@@ -373,7 +373,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     LineaDireccionPerfil = perfil.Direccion.LineaDireccion,
                     EmailPerfil = perfil.Contacto.Email,
                     FaxPerfil = perfil.Contacto.Fax.Value,
-                    TelefonoPerfil = perfil.Contacto.Telefono1.Value
+                    TelefonoPerfil = perfil.Contacto.Telefono1.Value,
+                    ZonaCAptura = linea.Producto.ZonaCaptura,
+                    Arte = linea.Producto.ArtePesca,
+                    FAO = linea.Producto.FAO,
+                    NombreCientifico = linea.Producto.NombreCientifico,
+                    Abreviacion = linea.Producto.Abreviacion
                 };
 
                 facturasClientes.Add(facturaCliente);

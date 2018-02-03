@@ -107,6 +107,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionFacturas_Load(object sender, EventArgs e)
         {
+          
             this.FillControls();
         }
 
@@ -150,13 +151,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if(typeDocumento == EnumDocumentosGestion.Factura)
             {
                 var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion;
-                formAltaCliente.IsUpdate(selectedFactura.CodigoFactura);
+                formAltaCliente.IsUpdate(selectedFactura.Codigo);
                 formAltaCliente.ShowDialog();
             }
             else
             {
                 var formAltaCliente = this.formOpener.GetForm<Albaranes>() as Albaranes;
-                formAltaCliente.IsUpdate(selectedFactura.CodigoFactura, IsDocumento);
+                formAltaCliente.IsUpdate(selectedFactura.Codigo, IsDocumento);
                 formAltaCliente.ShowDialog();
             }
             //using (var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion)
@@ -172,7 +173,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
-            var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
+            var selectedDocumentosIds = mappedSelectedRows.Select(f => f.Codigo).ToList();
 
             var reportImpresion = this.documentoGestion.GetReportImpresion();
             var variableImpresion = this.documentoGestion.GetVariableImpresion();
@@ -187,7 +188,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var selectedRow = this.dataGridViewFacturas.SelectedRows;
             var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
-            var selectedDocumentosIds = mappedSelectedRows.Select(f => f.CodigoFactura).ToList();
+            var selectedDocumentosIds = mappedSelectedRows.Select(f => f.Codigo).ToList();
             this.documentoGestion.Facturar(selectedDocumentosIds);
 
             FillControls();
@@ -196,10 +197,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.IsDocumento = !this.IsDocumento;
-            this.dataGridViewFacturas.BackgroundColor = this.IsDocumento ? Color.White : Color.Gray;
-            this.dataGridViewFacturas.ColumnHeadersDefaultCellStyle.BackColor = this.IsDocumento ? Color.White : Color.Yellow;
+            this.dataGridViewFacturas.BackgroundColor = this.IsDocumento ? Color.White : Color.LemonChiffon;
             this.dataGridViewFacturas.RowHeadersDefaultCellStyle .BackColor = this.IsDocumento ? Color.White : Color.Yellow;
             this.dataGridViewFacturas.RowTemplate.DefaultCellStyle.BackColor = this.IsDocumento ? Color.White : Color.LemonChiffon;
+    
+            
             this.FillControls();
         }
 

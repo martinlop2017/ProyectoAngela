@@ -210,7 +210,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Albaran()
             {
-                NumeroAlbaran = albaran.CodigoFactura
+                NumeroAlbaran = albaran.Codigo
             };
         }
         #endregion
@@ -259,7 +259,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new Factura()
             {
-                NumeroFactura = factura.CodigoFactura,
+                NumeroFactura = factura.Codigo,
             };
         }
         #endregion

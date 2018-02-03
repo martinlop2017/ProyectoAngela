@@ -283,7 +283,7 @@ namespace AdministracionAngela.Utils.Mappers
             return albaranes.Select(a => new FacturaViewModel()
             {
                 Cliente = a.Cliente.Nombre,
-                CodigoFactura = a.NumeroAlbaran,
+                Codigo = a.NumeroAlbaran,
                 Base = a.TotalBase.HasValue ? Decimal.Round(a.TotalBase.Value, 2) : 0,
                 IVA = a.TotalIVA.HasValue ? Decimal.Round(a.TotalIVA.Value, 2) : 0,
                 RecargoEquivalencia = a.TotalRecargoEquivalencia.HasValue ? Decimal.Round(a.TotalRecargoEquivalencia.Value, 2) : 0,
@@ -390,7 +390,7 @@ namespace AdministracionAngela.Utils.Mappers
             return facturas.Select(f => new FacturaViewModel()
             {
                 Cliente = f.Cliente.Nombre,
-                CodigoFactura = f.NumeroFactura,
+                Codigo = f.NumeroFactura,
                 Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
                 IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
                 RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,

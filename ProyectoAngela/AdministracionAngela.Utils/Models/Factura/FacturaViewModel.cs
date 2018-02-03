@@ -8,7 +8,7 @@ namespace AdministracionAngela.Utils.Models.Factura
 {
     public class FacturaViewModel
     {
-        public long CodigoFactura { get; set; }
+        public long Codigo { get; set; }
         public string Cliente { get; set; }
         public decimal Base { get; set; }
         public decimal IVA { get; set; }

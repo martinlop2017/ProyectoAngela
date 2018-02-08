@@ -53,7 +53,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Direccion = textBoxDireccion.Text,
                 Poblacion = textBoxPoblacion.Text,
                 Provincia = textBoxProvincia.Text,
-                CodigoPostal = Convert.ToInt32(textBoxCodigoPostal.Text),
+                CodigoPostal = textBoxCodigoPostal.Text,
                 Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
                 Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
                 Fax = Convert.ToInt32(textBoxFax.Text),

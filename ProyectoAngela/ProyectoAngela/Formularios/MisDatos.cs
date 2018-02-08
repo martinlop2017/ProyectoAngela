@@ -48,7 +48,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Fax = Convert.ToInt32(textBoxMiFax.Text),
                 Telefono1 = Convert.ToInt32(textBoxMiTLF1.Text),
                 Telefono2 = Convert.ToInt32(textBoxMiTLF2.Text),
-                CodigoPostal = Convert.ToInt32(textBoxMiCP.Text),
+                CodigoPostal = textBoxMiCP.Text,
                 Email = textBoxMiMail.Text,
                 LogoPath = textBoxLogoPath.Text,
                 Iban1 = textBoxIBAN1.Text,

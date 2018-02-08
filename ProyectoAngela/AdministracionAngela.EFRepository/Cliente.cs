@@ -36,11 +36,11 @@ namespace AdministracionAngela.EFRepository
         public int FormaDePagoId { get; set; }
     
         public virtual Contacto Contacto { get; set; }
-        public virtual Direccion Direccion { get; set; }
         public virtual FormaPago FormaPago { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Factura> Factura { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Albaran> Albaran { get; set; }
+        public virtual Direccion Direccion { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace AdministracionAngela.UtilsTest.Mappers
             {
                 Id = 1,
                 NIF = "49083366L",
-                CodigoPostal = 21045,
+                CodigoPostal = "21045",
                 Direccion = "TestAddress",
                 Email1 = "TestEmail@gmail.com",
                 Fax = 11,

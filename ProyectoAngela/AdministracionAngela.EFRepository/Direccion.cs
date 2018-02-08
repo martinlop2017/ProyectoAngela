@@ -24,7 +24,7 @@ namespace AdministracionAngela.EFRepository
         public string LineaDireccion { get; set; }
         public string Poblacion { get; set; }
         public string Provincia { get; set; }
-        public Nullable<int> CodigoPostal { get; set; }
+        public string CodigoPostal { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cliente> Cliente { get; set; }

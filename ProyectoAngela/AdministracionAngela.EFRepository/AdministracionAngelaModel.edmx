@@ -62,7 +62,7 @@
           <Property Name="LineaDireccion" Type="nvarchar(max)" />
           <Property Name="Poblacion" Type="nvarchar(max)" />
           <Property Name="Provincia" Type="nvarchar(max)" />
-          <Property Name="CodigoPostal" Type="int" />
+          <Property Name="CodigoPostal" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -402,7 +402,6 @@
         <EntityContainer Name="AdministracionAngelaContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="IVA" EntityType="AdministracionAngelaModel.IVA" />
           <EntitySet Name="sysdiagrams" EntityType="AdministracionAngelaModel.sysdiagrams" />
-          <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
           <EntitySet Name="User" EntityType="AdministracionAngelaModel.User" />
           <EntitySet Name="FormaPago" EntityType="AdministracionAngelaModel.FormaPago" />
           <EntitySet Name="Contacto" EntityType="AdministracionAngelaModel.Contacto" />
@@ -416,10 +415,6 @@
           <EntitySet Name="LineaFactura" EntityType="AdministracionAngelaModel.LineaFactura" />
           <AssociationSet Name="FK_Cliente_Contacto" Association="AdministracionAngelaModel.FK_Cliente_Contacto">
             <End Role="Contacto" EntitySet="Contacto" />
-            <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cliente_Direccion" Association="AdministracionAngelaModel.FK_Cliente_Direccion">
-            <End Role="Direccion" EntitySet="Direccion" />
             <End Role="Cliente" EntitySet="Cliente" />
           </AssociationSet>
           <AssociationSet Name="FK_Cliente_FormaPago" Association="AdministracionAngelaModel.FK_Cliente_FormaPago">
@@ -457,6 +452,11 @@
             <End Role="Contacto" EntitySet="Contacto" />
             <End Role="Perfil" EntitySet="Perfil" />
           </AssociationSet>
+          <EntitySet Name="Direccion" EntityType="AdministracionAngelaModel.Direccion" />
+          <AssociationSet Name="FK_Cliente_Direccion" Association="AdministracionAngelaModel.FK_Cliente_Direccion">
+            <End Role="Direccion" EntitySet="Direccion" />
+            <End Role="Cliente" EntitySet="Cliente" />
+          </AssociationSet>
           <AssociationSet Name="FK_Perfil_Direccion" Association="AdministracionAngelaModel.FK_Perfil_Direccion">
             <End Role="Direccion" EntitySet="Direccion" />
             <End Role="Perfil" EntitySet="Perfil" />
@@ -481,18 +481,6 @@
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="Direccion">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LineaDireccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Poblacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Provincia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CodigoPostal" Type="Int32" />
-          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Direccion" ToRole="Cliente" />
-          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Direccion" ToRole="Perfil" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -573,10 +561,10 @@
           <Property Name="Excento" Type="Boolean" Nullable="false" />
           <Property Name="FormaDePagoId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Contacto" Relationship="AdministracionAngelaModel.FK_Cliente_Contacto" FromRole="Cliente" ToRole="Contacto" />
-          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Cliente" ToRole="Direccion" />
           <NavigationProperty Name="FormaPago" Relationship="AdministracionAngelaModel.FK_Cliente_FormaPago" FromRole="Cliente" ToRole="FormaPago" />
           <NavigationProperty Name="Factura" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Cliente" ToRole="Factura" />
           <NavigationProperty Name="Albaran" Relationship="AdministracionAngelaModel.FK_Albaran_Cliente" FromRole="Cliente" ToRole="Albaran" />
+          <NavigationProperty Name="Direccion" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Cliente" ToRole="Direccion" />
         </EntityType>
         <EntityType Name="Factura">
           <Key>
@@ -627,18 +615,6 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="ContactoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Cliente_Direccion">
-          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="0..1" />
-          <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Direccion">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Cliente">
-              <PropertyRef Name="DireccionId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -801,6 +777,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Direccion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LineaDireccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Poblacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Provincia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CodigoPostal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Cliente_Direccion" FromRole="Direccion" ToRole="Cliente" />
+          <NavigationProperty Name="Perfil" Relationship="AdministracionAngelaModel.FK_Perfil_Direccion" FromRole="Direccion" ToRole="Perfil" />
+        </EntityType>
+        <Association Name="FK_Cliente_Direccion">
+          <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="0..1" />
+          <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Direccion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Cliente">
+              <PropertyRef Name="DireccionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Perfil_Direccion">
           <End Type="AdministracionAngelaModel.Direccion" Role="Direccion" Multiplicity="1" />
           <End Type="AdministracionAngelaModel.Perfil" Role="Perfil" Multiplicity="0..1" />
@@ -837,17 +837,6 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Direccion">
-            <EntityTypeMapping TypeName="AdministracionAngelaModel.Direccion">
-              <MappingFragment StoreEntitySet="Direccion">
-                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
-                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
-                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
-                <ScalarProperty Name="LineaDireccion" ColumnName="LineaDireccion" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1011,6 +1000,17 @@
                 <ScalarProperty Name="CIF" ColumnName="CIF" />
                 <ScalarProperty Name="NIF" ColumnName="NIF" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Direccion">
+            <EntityTypeMapping TypeName="AdministracionAngelaModel.Direccion">
+              <MappingFragment StoreEntitySet="Direccion">
+                <ScalarProperty Name="CodigoPostal" ColumnName="CodigoPostal" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Poblacion" ColumnName="Poblacion" />
+                <ScalarProperty Name="LineaDireccion" ColumnName="LineaDireccion" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

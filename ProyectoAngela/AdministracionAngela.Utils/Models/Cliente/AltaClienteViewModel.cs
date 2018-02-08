@@ -21,7 +21,7 @@ namespace AdministracionAngela.Utils.Models.Cliente
         public string Direccion { get; set; }
         public string Poblacion { get; set; }
         public string Provincia { get; set; }
-        public int CodigoPostal { get; set; }
+        public string CodigoPostal { get; set; }
 
         #endregion
 

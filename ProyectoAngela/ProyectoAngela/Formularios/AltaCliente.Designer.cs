@@ -328,8 +328,8 @@
             this.textBoxNIF.Name = "textBoxNIF";
             this.textBoxNIF.Size = new System.Drawing.Size(163, 23);
             this.textBoxNIF.TabIndex = 1;
-            validationRule3.ErrorMessage = "El DNI introducido no es valido.";
-            validationRule3.RegExPattern = "^[0-9]{8}[A-Z]$";
+            validationRule3.ErrorMessage = "";
+            validationRule3.IsCaseSensitive = false;
             this.validationProvider1.SetValidationRule(this.textBoxNIF, validationRule3);
             // 
             // textBoxNombreComercial
@@ -521,7 +521,6 @@
             this.textBoxFax.Size = new System.Drawing.Size(117, 23);
             this.textBoxFax.TabIndex = 2;
             validationRule11.ErrorMessage = "Debe contener digitos";
-            validationRule11.RegExPattern = "(^[0-9]+$)";
             this.validationProvider1.SetValidationRule(this.textBoxFax, validationRule11);
             // 
             // textBoxTelefono1
@@ -651,7 +650,6 @@
             this.textBoxDireccion.Size = new System.Drawing.Size(378, 23);
             this.textBoxDireccion.TabIndex = 0;
             validationRule16.ErrorMessage = "La direccion no puede estar vacia.";
-            validationRule16.IsRequired = true;
             this.validationProvider1.SetValidationRule(this.textBoxDireccion, validationRule16);
             // 
             // label4

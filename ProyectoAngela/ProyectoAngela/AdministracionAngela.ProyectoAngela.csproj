@@ -192,6 +192,12 @@
     <Compile Include="Formularios\TipoIVA.Designer.cs">
       <DependentUpon>TipoIVA.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ReportViewerLiquidaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewerLiquidaciones.Designer.cs">
+      <DependentUpon>ReportViewerLiquidaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Infraestructura\ProyectoAngelaRegistry.cs" />
     <Compile Include="Formularios\MisDatos.cs">
       <SubType>Form</SubType>
@@ -303,6 +309,7 @@
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ReportImpresionFactura.rdlc" />
+    <EmbeddedResource Include="Formularios\ReportLiquidaciones.rdlc" />
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\MisDatos.resx">
       <DependentUpon>MisDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewerLiquidaciones.resx">
+      <DependentUpon>ReportViewerLiquidaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -99,5 +99,35 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             Close();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            List<ClaseLiquidacion > lista = new List<ClaseLiquidacion>();
+
+
+
+            foreach (DataGridViewRow row in dataGridViewLiquidaciones.Rows)
+
+            {
+                ClaseLiquidacion datosalistar = new ClaseLiquidacion();
+
+                //      datosalistar.liqemisor = 
+                datosalistar.liqdefecha = dateTimePickerStart.Text;
+                datosalistar.liqdafecha = dateTimePickerEnd.Text;
+                datosalistar.liqtotalliquidacion = labelTotalLiquidaciones.Text;
+                datosalistar.liqarticulo = Convert.ToString(row.Cells["Concepto"].Value);
+                datosalistar.liqbultos = Convert.ToString(row.Cells["Bultos"].Value);
+                datosalistar.liqkilos = Convert.ToString(row.Cells["Kilos"].Value);
+                datosalistar.liqmedio = Convert.ToString(row.Cells["PrecioMedio"].Value);
+                datosalistar.liqtotal = Convert.ToString(row.Cells["Total"].Value);
+
+
+
+                lista.Add(datosalistar);
+
+            }
+
+           
+        }
     }
 }

@@ -346,5 +346,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             buttonLiq.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Liquidaciones;
         }
+
+        private void Menu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           Application.Exit();
+        }
+
+
     }
 }

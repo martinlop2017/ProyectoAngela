@@ -360,36 +360,6 @@
             </Border>
           </Style>
         </Rectangle>
-        <Textbox Name="Textbox3">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>19/12/2018</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>5.19772cm</Top>
-          <Left>4.20045cm</Left>
-          <Height>0.53146cm</Height>
-          <Width>2.04611cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
         <Textbox Name="Textbox4">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -411,37 +381,7 @@
           <Left>1.27816cm</Left>
           <Height>0.49417cm</Height>
           <Width>1.67569cm</Width>
-          <ZIndex>4</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox6">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>9.999.999,00€</Value>
-                  <Style />
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.3312cm</Top>
-          <Left>4.60046cm</Left>
-          <Height>0.49417cm</Height>
-          <Width>2.39007cm</Width>
-          <ZIndex>5</ZIndex>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -473,7 +413,7 @@
           <Left>1.19302cm</Left>
           <Height>0.49417cm</Height>
           <Width>3.26632cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -553,7 +493,7 @@
           <Left>12.56391cm</Left>
           <Height>0.8cm</Height>
           <Width>7.32834cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>5</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -565,7 +505,7 @@
           <Left>1.01358cm</Left>
           <Height>0cm</Height>
           <Width>18.87866cm</Width>
-          <ZIndex>8</ZIndex>
+          <ZIndex>6</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -594,7 +534,7 @@
           <Left>1.27816cm</Left>
           <Height>0.49417cm</Height>
           <Width>2.85174cm</Width>
-          <ZIndex>9</ZIndex>
+          <ZIndex>7</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -626,7 +566,7 @@
           <Left>1.27816cm</Left>
           <Height>0.6cm</Height>
           <Width>1.67569cm</Width>
-          <ZIndex>10</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -658,7 +598,7 @@
           <Left>17.90735cm</Left>
           <Height>0.52944cm</Height>
           <Width>1.06715cm</Width>
-          <ZIndex>11</ZIndex>
+          <ZIndex>9</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -690,7 +630,7 @@
           <Left>15.1689cm</Left>
           <Height>0.52944cm</Height>
           <Width>1.67569cm</Width>
-          <ZIndex>12</ZIndex>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -722,7 +662,7 @@
           <Left>13.43588cm</Left>
           <Height>0.52944cm</Height>
           <Width>0.72319cm</Width>
-          <ZIndex>13</ZIndex>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -754,7 +694,7 @@
           <Left>11.17925cm</Left>
           <Height>0.52944cm</Height>
           <Width>1.27882cm</Width>
-          <ZIndex>14</ZIndex>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -770,7 +710,7 @@
           <Left>1.01358cm</Left>
           <Height>0cm</Height>
           <Width>18.87866cm</Width>
-          <ZIndex>15</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -778,25 +718,85 @@
             </Border>
           </Style>
         </Line>
-        <Textbox Name="Textbox5">
+        <Textbox Name="liqdafecha">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>19/12/2018</Value>
+                  <Value>=First(Fields!liqdafecha.Value, "DataSet1")</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>5.76446cm</Top>
-          <Left>4.20045cm</Left>
-          <Height>0.53146cm</Height>
-          <Width>2.04611cm</Width>
+          <rd:DefaultName>liqdafecha</rd:DefaultName>
+          <Top>5.23502cm</Top>
+          <Left>4.20046cm</Left>
+          <Height>0.49417cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="liqdefecha">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!liqdefecha.Value, "DataSet1")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>liqdefecha</rd:DefaultName>
+          <Top>5.83703cm</Top>
+          <Left>4.20046cm</Left>
+          <Height>0.49417cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>15</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="liqtotalliquidacion">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!liqtotalliquidacion.Value, "DataSet1")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>liqtotalliquidacion</rd:DefaultName>
+          <Top>6.36648cm</Top>
+          <Left>4.71774cm</Left>
+          <Height>0.45889cm</Height>
+          <Width>2.5cm</Width>
           <ZIndex>16</ZIndex>
           <Style>
             <Border>

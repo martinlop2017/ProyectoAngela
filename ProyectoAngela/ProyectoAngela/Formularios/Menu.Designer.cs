@@ -43,6 +43,8 @@
             this.factruasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.avisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -67,8 +69,6 @@
             this.buttonIva = new System.Windows.Forms.Button();
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
-            this.seguridadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.avisosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -178,6 +178,18 @@
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(92, 20);
             this.seguridadToolStripMenuItem.Text = "Liquidaciones";
             this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
+            // 
+            // seguridadToolStripMenuItem1
+            // 
+            this.seguridadToolStripMenuItem1.Name = "seguridadToolStripMenuItem1";
+            this.seguridadToolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
+            this.seguridadToolStripMenuItem1.Text = "Seguridad";
+            // 
+            // avisosToolStripMenuItem
+            // 
+            this.avisosToolStripMenuItem.Name = "avisosToolStripMenuItem";
+            this.avisosToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.avisosToolStripMenuItem.Text = "Avisos";
             // 
             // statusStrip1
             // 
@@ -491,18 +503,6 @@
             this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
             this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
-            // seguridadToolStripMenuItem1
-            // 
-            this.seguridadToolStripMenuItem1.Name = "seguridadToolStripMenuItem1";
-            this.seguridadToolStripMenuItem1.Size = new System.Drawing.Size(72, 20);
-            this.seguridadToolStripMenuItem1.Text = "Seguridad";
-            // 
-            // avisosToolStripMenuItem
-            // 
-            this.avisosToolStripMenuItem.Name = "avisosToolStripMenuItem";
-            this.avisosToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.avisosToolStripMenuItem.Text = "Avisos";
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,6 +534,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

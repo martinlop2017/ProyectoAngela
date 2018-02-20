@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Liquidaciones));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dataGridViewLiquidaciones = new System.Windows.Forms.DataGridView();
-            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnBultos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnKilos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnPrecioMedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonEjecutar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +49,13 @@
             this.labelTotalLiquidaciones = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnConcepto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnBultos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnKilos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPrecioMedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLiquidaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,15 +84,18 @@
             // dataGridViewLiquidaciones
             // 
             this.dataGridViewLiquidaciones.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewLiquidaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewLiquidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewLiquidaciones.AllowUserToDeleteRows = false;
+            this.dataGridViewLiquidaciones.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewLiquidaciones.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dataGridViewLiquidaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dataGridViewLiquidaciones.ColumnHeadersHeight = 26;
+            this.dataGridViewLiquidaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridViewLiquidaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnCodigo,
             this.ColumnConcepto,
@@ -92,62 +103,32 @@
             this.ColumnKilos,
             this.ColumnPrecioMedio,
             this.ColumnTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewLiquidaciones.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewLiquidaciones.Location = new System.Drawing.Point(37, 211);
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewLiquidaciones.DefaultCellStyle = dataGridViewCellStyle17;
+            this.dataGridViewLiquidaciones.EnableHeadersVisualStyles = false;
+            this.dataGridViewLiquidaciones.GridColor = System.Drawing.Color.White;
+            this.dataGridViewLiquidaciones.Location = new System.Drawing.Point(37, 210);
             this.dataGridViewLiquidaciones.Name = "dataGridViewLiquidaciones";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewLiquidaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewLiquidaciones.RowHeadersWidth = 20;
+            this.dataGridViewLiquidaciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(907, 545);
             this.dataGridViewLiquidaciones.TabIndex = 5;
             this.dataGridViewLiquidaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLiquidaciones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLiquidaciones_CellValueChanged);
-            // 
-            // ColumnCodigo
-            // 
-            this.ColumnCodigo.DataPropertyName = "CodigoArticulo";
-            this.ColumnCodigo.HeaderText = "Codigo";
-            this.ColumnCodigo.Name = "ColumnCodigo";
-            this.ColumnCodigo.ReadOnly = true;
-            // 
-            // ColumnConcepto
-            // 
-            this.ColumnConcepto.DataPropertyName = "Concepto";
-            this.ColumnConcepto.HeaderText = "Concepto";
-            this.ColumnConcepto.Name = "ColumnConcepto";
-            this.ColumnConcepto.ReadOnly = true;
-            // 
-            // ColumnBultos
-            // 
-            this.ColumnBultos.DataPropertyName = "Bultos";
-            this.ColumnBultos.HeaderText = "Bultos";
-            this.ColumnBultos.Name = "ColumnBultos";
-            this.ColumnBultos.ReadOnly = true;
-            // 
-            // ColumnKilos
-            // 
-            this.ColumnKilos.DataPropertyName = "Kilos";
-            this.ColumnKilos.HeaderText = "Kilos";
-            this.ColumnKilos.Name = "ColumnKilos";
-            this.ColumnKilos.ReadOnly = true;
-            // 
-            // ColumnPrecioMedio
-            // 
-            this.ColumnPrecioMedio.DataPropertyName = "PrecioMedio";
-            this.ColumnPrecioMedio.HeaderText = "PrecioMedio";
-            this.ColumnPrecioMedio.Name = "ColumnPrecioMedio";
-            // 
-            // ColumnTotal
-            // 
-            this.ColumnTotal.DataPropertyName = "Total";
-            this.ColumnTotal.HeaderText = "Total";
-            this.ColumnTotal.Name = "ColumnTotal";
-            this.ColumnTotal.ReadOnly = true;
             // 
             // buttonEjecutar
             // 
@@ -210,10 +191,12 @@
             // 
             this.labelTotalLiquidaciones.AutoSize = true;
             this.labelTotalLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalLiquidaciones.Location = new System.Drawing.Point(763, 142);
+            this.labelTotalLiquidaciones.Location = new System.Drawing.Point(853, 140);
             this.labelTotalLiquidaciones.Name = "labelTotalLiquidaciones";
-            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(0, 26);
+            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(58, 26);
             this.labelTotalLiquidaciones.TabIndex = 107;
+            this.labelTotalLiquidaciones.Text = "0,00";
+            this.labelTotalLiquidaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button7
             // 
@@ -241,12 +224,92 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // ColumnCodigo
+            // 
+            this.ColumnCodigo.DataPropertyName = "CodigoArticulo";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N0";
+            dataGridViewCellStyle11.NullValue = "0";
+            this.ColumnCodigo.DefaultCellStyle = dataGridViewCellStyle11;
+            this.ColumnCodigo.HeaderText = "Codigo";
+            this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
+            this.ColumnCodigo.Width = 70;
+            // 
+            // ColumnConcepto
+            // 
+            this.ColumnConcepto.DataPropertyName = "Concepto";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.ColumnConcepto.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ColumnConcepto.HeaderText = "Concepto";
+            this.ColumnConcepto.Name = "ColumnConcepto";
+            this.ColumnConcepto.ReadOnly = true;
+            this.ColumnConcepto.Width = 405;
+            // 
+            // ColumnBultos
+            // 
+            this.ColumnBultos.DataPropertyName = "Bultos";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = "0";
+            this.ColumnBultos.DefaultCellStyle = dataGridViewCellStyle13;
+            this.ColumnBultos.HeaderText = "  Bultos";
+            this.ColumnBultos.Name = "ColumnBultos";
+            this.ColumnBultos.ReadOnly = true;
+            this.ColumnBultos.Width = 75;
+            // 
+            // ColumnKilos
+            // 
+            this.ColumnKilos.DataPropertyName = "Kilos";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "N2";
+            dataGridViewCellStyle14.NullValue = "0";
+            this.ColumnKilos.DefaultCellStyle = dataGridViewCellStyle14;
+            this.ColumnKilos.HeaderText = " Kilos";
+            this.ColumnKilos.Name = "ColumnKilos";
+            this.ColumnKilos.ReadOnly = true;
+            this.ColumnKilos.Width = 125;
+            // 
+            // ColumnPrecioMedio
+            // 
+            this.ColumnPrecioMedio.DataPropertyName = "PrecioMedio";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = "0";
+            this.ColumnPrecioMedio.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ColumnPrecioMedio.HeaderText = " P.Medio";
+            this.ColumnPrecioMedio.Name = "ColumnPrecioMedio";
+            this.ColumnPrecioMedio.Width = 75;
+            // 
+            // ColumnTotal
+            // 
+            this.ColumnTotal.DataPropertyName = "Total";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "C2";
+            dataGridViewCellStyle16.NullValue = "0";
+            this.ColumnTotal.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ColumnTotal.HeaderText = "  Total";
+            this.ColumnTotal.Name = "ColumnTotal";
+            this.ColumnTotal.ReadOnly = true;
+            this.ColumnTotal.Width = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(905, 140);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 26);
+            this.label2.TabIndex = 110;
+            this.label2.Text = "€";
+            // 
             // Liquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(991, 907);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.labelTotalLiquidaciones);
@@ -287,5 +350,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKilos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecioMedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
+        private System.Windows.Forms.Label label2;
     }
 }

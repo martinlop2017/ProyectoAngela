@@ -24,7 +24,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Liquidaciones_Load(object sender, EventArgs e)
         {
-
+            dateTimePickerStart.Value = DateTime.Now;
+            dateTimePickerEnd.Value = DateTime.Now;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -115,11 +116,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 datosalistar.liqdefecha = dateTimePickerStart.Text;
                 datosalistar.liqdafecha = dateTimePickerEnd.Text;
                 datosalistar.liqtotalliquidacion = labelTotalLiquidaciones.Text;
-                datosalistar.liqarticulo = Convert.ToString(row.Cells["Concepto"].Value);
-                datosalistar.liqbultos = Convert.ToString(row.Cells["Bultos"].Value);
-                datosalistar.liqkilos = Convert.ToString(row.Cells["Kilos"].Value);
-                datosalistar.liqmedio = Convert.ToString(row.Cells["PrecioMedio"].Value);
-                datosalistar.liqtotal = Convert.ToString(row.Cells["Total"].Value);
+                datosalistar.liqarticulo = Convert.ToString(row.Cells["ColumnConcepto"].Value);
+                datosalistar.liqbultos = Convert.ToString(row.Cells["ColumnBultos"].Value);
+                datosalistar.liqkilos = Convert.ToString(row.Cells["ColumnKilos"].Value);
+                datosalistar.liqmedio = Convert.ToString(row.Cells["ColumnPrecioMedio"].Value);
+                datosalistar.liqtotal = Convert.ToString(row.Cells["ColumnTotal"].Value);
 
 
 
@@ -127,7 +128,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             }
 
-           
+            var form = new ReportViewerLiquidaciones(lista);
+            form.ShowDialog();
         }
     }
 }

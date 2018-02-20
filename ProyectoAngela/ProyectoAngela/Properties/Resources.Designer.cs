@@ -313,6 +313,16 @@ namespace AdministracionAngela.ProyectoAngela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Logo_Pescados_Hnos_Diaz {
+            get {
+                object obj = ResourceManager.GetObject("Logo Pescados Hnos Diaz", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Mis_Datos {
             get {
                 object obj = ResourceManager.GetObject("Mis Datos", resourceCulture);

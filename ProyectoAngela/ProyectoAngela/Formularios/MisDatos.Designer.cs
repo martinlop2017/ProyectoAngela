@@ -174,6 +174,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Image = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Albaranes;
             this.pictureBox1.Location = new System.Drawing.Point(728, 22);
             this.pictureBox1.Name = "pictureBox1";

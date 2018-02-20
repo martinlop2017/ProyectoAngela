@@ -56,7 +56,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void FillForm(LiquidacionesViewModel viewModel)
         {
-            this.labelTotalLiquidaciones.Text = viewModel.Total.ToString();
+
+            this.labelTotalLiquidaciones.Text =viewModel.Total.ToString("C2");
+
+
             this.dataGridViewLiquidaciones.AutoGenerateColumns = false;
             this.dataGridViewLiquidaciones.DataSource = viewModel.LineasLiquidacion;
         }

@@ -31,7 +31,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void factruasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<GestionFacturas>();
+            formOpener.ShowDocumentoGestionForm(EnumDocumentosGestion.Factura);
         }
 
         private void misDatosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void seguridadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.formOpener.ShowModalForm<Liquidaciones>();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -352,6 +352,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
            Application.Exit();
         }
 
+        private void label4_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void albaranesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowDocumentoGestionForm(EnumDocumentosGestion.Albaran);
+        }
     }
 }

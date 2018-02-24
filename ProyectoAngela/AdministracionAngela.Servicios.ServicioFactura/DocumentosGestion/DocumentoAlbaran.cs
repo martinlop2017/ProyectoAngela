@@ -182,5 +182,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return this.facturaProvider.ExisteAlbaran(numeroDocumento, isDocumento);
         }
+
+        public void SetCobrado(int numeroDocumento, bool cobrado)
+        {
+            this.facturaProvider.SetCobrado(numeroDocumento, cobrado);
+        }
     }
 }

@@ -39,5 +39,6 @@ namespace AdministracionAngela.Utils.Interfaces
         List<FacturaIva> GetAlbaranIva(int numerFactura, bool isAlbaran);
         bool ExisteFactura(int numeroDocumento);
         bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
+        void SetCobrado(int numeroDocumento, bool cobrado);
     }
 }

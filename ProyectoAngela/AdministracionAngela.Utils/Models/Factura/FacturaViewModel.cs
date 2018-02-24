@@ -16,5 +16,6 @@ namespace AdministracionAngela.Utils.Models.Factura
         public decimal Total { get; set; }
         public bool Impreso { get; set; }
         public bool Facturado { get; set; }
+        public bool Cobrado { get; set; }
     }
 }

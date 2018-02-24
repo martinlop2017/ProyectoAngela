@@ -289,7 +289,8 @@ namespace AdministracionAngela.Utils.Mappers
                 RecargoEquivalencia = a.TotalRecargoEquivalencia.HasValue ? Decimal.Round(a.TotalRecargoEquivalencia.Value, 2) : 0,
                 Total = a.Total.HasValue ? Decimal.Round(a.Total.Value, 2) : 0,
                 Impreso = a.Impreso.HasValue ? a.Impreso.Value : false,
-                Facturado = a.Facturado.HasValue ? a.Facturado.Value : false
+                Facturado = a.Facturado.HasValue ? a.Facturado.Value : false,
+                Cobrado = a.Cobrado.HasValue ? a.Cobrado.Value : false
             }).ToList();
         }
 

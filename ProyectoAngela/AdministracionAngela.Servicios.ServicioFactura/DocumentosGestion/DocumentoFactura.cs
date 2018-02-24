@@ -189,5 +189,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         {
             return this.facturaProvider.ExisteFactura(numeroDocumento);
         }
+
+        public void SetCobrado(int numeroDocumento, bool cobrado)
+        {
+        }
     }
 }

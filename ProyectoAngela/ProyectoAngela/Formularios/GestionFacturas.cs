@@ -33,11 +33,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.buttonFacturar.Visible = this.documentoGestion.PuedeFacturar();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             var typeDocumento = this.documentoGestion.GetTipoDocumento();
@@ -139,6 +134,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.dataGridViewFacturas.Columns["ColumnFacturado"].Visible = false;
                 this.dataGridViewFacturas.Columns["ColumnCobrado"].Visible = false;
             }
+            this.dataGridViewFacturas.Columns["ColumnCobrado"].Visible = !IsDocumento;
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
@@ -171,11 +167,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 formAltaCliente.IsUpdate(selectedFactura.Codigo, IsDocumento);
                 formAltaCliente.ShowDialog();
             }
-            //using (var formAltaCliente = this.formOpener.GetForm<Facturacion>() as Facturacion)
-            //{
-            //    formAltaCliente.IsUpdate(selectedFactura.CodigoFactura);
-            //    formAltaCliente.ShowDialog();
-            //}
 
             this.FillControls();
         }
@@ -224,6 +215,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonFacturar_MouseLeave(object sender, EventArgs e)
         {
             labelFacturar.Visible = false;
+        }
+
+        private void dataGridViewFacturas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dataGridViewFacturas.CurrentCell.OwningColumn.Name.Equals("ColumnCobrado"))
+            {
+                var selectedRow = this.dataGridViewFacturas.SelectedRows[0];
+                selectedRow.Cells[8].Value = !(bool)selectedRow.Cells[8].Value;
+                var value = (bool)(selectedRow.Cells[8] as DataGridViewCheckBoxCell).Value;
+                var num = (long)selectedRow.Cells[0].Value;
+
+                documentoGestion.SetCobrado((int)num, value);
+            }
         }
     }
 }

@@ -309,5 +309,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             return this.dbContext.Albaranes.Any(x => x.NumeroAlbaran == numeroDocumento && x.IsAlbaran == isDocumento);
         }
+
+        public void SetCobrado(int numeroDocumento, bool cobrado)
+        {
+            var albaran = this.dbContext.Albaranes.FirstOrDefault(x => x.NumeroAlbaran == numeroDocumento && !x.IsAlbaran);
+            if(albaran != null)
+            {
+                albaran.Cobrado = cobrado;
+                this.dbContext.SaveChanges();
+            }
+        }
     }
 }

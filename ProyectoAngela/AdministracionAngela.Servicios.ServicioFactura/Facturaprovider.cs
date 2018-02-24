@@ -479,5 +479,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         {
             return this.repositorioFactura.ExisteAlbaran(numeroDocumento, isDocumento);
         }
+
+        public void SetCobrado(int numeroDocumento, bool cobrado)
+        {
+            this.repositorioFactura.SetCobrado(numeroDocumento, cobrado);
+        }
     }
 }

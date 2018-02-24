@@ -25,5 +25,6 @@ namespace AdministracionAngela.Utils.Interfaces
         DataTable GetDatosImpresion(int numeroDocumento, bool isDocumento = true);
         DataTable GatDatosIva(int numeroDocumento, bool isDocumento = true);
         bool DocumentoExiste(int numeroDocumento, bool isDocumento = true);
+        void SetCobrado(int numeroDocumento, bool cobrado);
     }
 }

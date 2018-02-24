@@ -31,5 +31,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         List<LineaAlbaran> GetLineasAlbaran(long albaranId);
         bool ExisteFactura(int numeroDocumento);
         bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
+        void SetCobrado(int numeroDocumento, bool cobrado);
     }
 }

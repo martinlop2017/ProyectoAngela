@@ -144,6 +144,7 @@
     <Content Include="Procedimientos Almacenados\BusquedaLineasFactura.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaLineasIVA.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaLineasIVAAlbaran.txt" />
+    <Content Include="Scripts\PrimeraVersion.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

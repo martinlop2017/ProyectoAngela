@@ -333,14 +333,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             foreach(var iva in ivas)
             {
                 var misLineas = lineasFActura.Where(x => x.Producto.IVAId == iva.Id);
-                result.Add(new FacturaIva()
+                if(misLineas.Count() > 0)
                 {
-                    BaseImponible = misLineas.Sum(x => x.Importe.Value),
-                    PorcentajeIVA = iva.Porcentaje.Value,
-                    ImporteIVA = misLineas.Sum(x => x.ImporteIVA.Value),
-                    PorcentajeRE = iva.PorcentanjeRE.Value,
-                    ImporteRE = misLineas.Sum(x => x.ImporteRE.Value),
-                });
+                    result.Add(new FacturaIva()
+                    {
+                        BaseImponible = misLineas.Sum(x => x.Importe.Value),
+                        PorcentajeIVA = iva.Porcentaje.Value,
+                        ImporteIVA = misLineas.Sum(x => x.ImporteIVA.Value),
+                        PorcentajeRE = iva.PorcentanjeRE.Value,
+                        ImporteRE = misLineas.Sum(x => x.ImporteRE.Value),
+                    });
+                }
             }
 
             return result;

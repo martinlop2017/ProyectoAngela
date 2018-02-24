@@ -63,6 +63,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColumnFacturado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnCobrado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -93,12 +94,12 @@
             this.Column4,
             this.Column5,
             this.Column6,
-            this.ColumnFacturado});
+            this.ColumnFacturado,
+            this.ColumnCobrado});
             this.dataGridViewFacturas.EnableHeadersVisualStyles = false;
             this.dataGridViewFacturas.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewFacturas.Location = new System.Drawing.Point(20, 192);
             this.dataGridViewFacturas.Name = "dataGridViewFacturas";
-            this.dataGridViewFacturas.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,6 +306,7 @@
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.DataPropertyName = "Cliente";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Column1.DefaultCellStyle = dataGridViewCellStyle4;
@@ -312,7 +314,6 @@
             this.Column1.HeaderText = "Cliente";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 268;
             // 
             // Column2
             // 
@@ -384,6 +385,12 @@
             this.ColumnFacturado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnFacturado.Width = 60;
             // 
+            // ColumnCobrado
+            // 
+            this.ColumnCobrado.HeaderText = "Cobrado";
+            this.ColumnCobrado.Name = "ColumnCobrado";
+            this.ColumnCobrado.Width = 60;
+            // 
             // GestionFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,5 +454,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnFacturado;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCobrado;
     }
 }

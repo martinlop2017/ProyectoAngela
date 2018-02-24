@@ -137,6 +137,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if(!this.documentoGestion.PuedeFacturar())
             {
                 this.dataGridViewFacturas.Columns["ColumnFacturado"].Visible = false;
+                this.dataGridViewFacturas.Columns["ColumnCobrado"].Visible = false;
             }
         }
 

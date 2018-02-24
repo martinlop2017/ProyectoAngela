@@ -31,7 +31,7 @@ namespace AdministracionAngela.EFRepository
         public Nullable<decimal> ImporteIVA { get; set; }
         public Nullable<decimal> ImporteRE { get; set; }
     
-        public virtual Albaran Albaran { get; set; }
         public virtual Producto Producto { get; set; }
+        public virtual Albaran Albaran { get; set; }
     }
 }

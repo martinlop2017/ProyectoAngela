@@ -17,3 +17,6 @@ ADD Iban5 nchar(10)
 
 ALTER TABLE Perfil
 ADD Iban6 nchar(10)
+
+ALTER TABLE Albaran
+ADD Cobrado bit

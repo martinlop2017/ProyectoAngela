@@ -40,8 +40,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonEjecutar_Click(object sender, EventArgs e)
         {
-            var startDate = this.dateTimePickerStart.Value;
-            var endDate = this.dateTimePickerEnd.Value;
+            var startDate = this.dateTimePickerStart.Value.Date;
+            var endDate = this.dateTimePickerEnd.Value.Date;
 
             if(startDate > endDate)
             {

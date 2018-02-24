@@ -238,7 +238,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public LiquidacionesViewModel GetLiquidacionesParaFechas(DateTime startDate, DateTime endDate)
         {
             var lineasFactura = new List<LineaFactura>();
-            var facturas = this.repositorioFactura.GetAllFacturas().Where(f => f.Fecha.Value > startDate && f.Fecha.Value < endDate).ToList();
+            var facturas = this.repositorioFactura.GetAllFacturas().Where(f => f.Fecha.Value >= startDate && f.Fecha.Value <= endDate.AddDays(1)).ToList();
             facturas.ForEach(f => lineasFactura.AddRange(f.LineaFactura));
 
             var albaranesSinFacturar = this.repositorioFactura.GetAllAlbaranes().Where(a => a.IsAlbaran && !a.Facturado.Value && a.Fecha.Value > startDate && a.Fecha.Value < endDate).ToList();

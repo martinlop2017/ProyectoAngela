@@ -79,7 +79,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxDireccion.Text = cliente.Direccion;
             this.textBoxPoblacion.Text = cliente.Poblacion;
             this.textBoxProvincia.Text = cliente.Provincia;
-            this.textBoxCodigoPostal.Text = cliente.CodigoPostal.ToString();
+            this.textBoxCodigoPostal.Text = cliente.CodigoPostal?.ToString();
             this.textBoxTelefono1.Text = cliente.Telefono1.ToString();
             this.textBoxTelefono2.Text = cliente.Telefono2.ToString();
             this.textBoxFax.Text = cliente.Fax.ToString();

@@ -131,8 +131,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             }
 
-            var form = new ReportViewerLiquidaciones(lista);
-            form.ShowDialog();
+            var form = new ReportViewerLiquidaciones();
+            form.ExportarToPdf(lista);
+            //form.ShowDialog();
         }
     }
 }

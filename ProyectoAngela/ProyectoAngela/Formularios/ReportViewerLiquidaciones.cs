@@ -1,8 +1,11 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Genericos;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,17 +15,31 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class ReportViewerLiquidaciones : Form
     {
-        private List<ClaseLiquidacion> liquidaciones;
-        public ReportViewerLiquidaciones(List<ClaseLiquidacion> liquidaciones)
+        public ReportViewerLiquidaciones()
         {
-            this.liquidaciones = liquidaciones;
             InitializeComponent();
         }
 
         private void viwLiquidaciones_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        public void ExportarToPdf(List<ClaseLiquidacion> liquidaciones)
+        {
             this.ClaseLiquidacionBindingSource.DataSource = liquidaciones;
-            this.reportViewer1.RefreshReport();
+            //this.reportViewer1.RefreshReport();
+            string mimeType = string.Empty;
+            string encoding = string.Empty;
+            string extension = string.Empty;
+            Warning[] warnings;
+            string[] streamIds;
+
+            byte[] bytes = reportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding,
+                out extension, out streamIds, out warnings);
+
+            var exportPath = string.Format(@"{0}\testpdf.pdf", RutasSalida.RutaLiquidaciones);
+            File.WriteAllBytes(exportPath, bytes);
         }
     }
 }

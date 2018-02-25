@@ -112,7 +112,7 @@
             this.dataGridViewLiquidaciones.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewLiquidaciones.EnableHeadersVisualStyles = false;
             this.dataGridViewLiquidaciones.GridColor = System.Drawing.Color.White;
-            this.dataGridViewLiquidaciones.Location = new System.Drawing.Point(37, 210);
+            this.dataGridViewLiquidaciones.Location = new System.Drawing.Point(37, 202);
             this.dataGridViewLiquidaciones.Name = "dataGridViewLiquidaciones";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
@@ -124,7 +124,7 @@
             this.dataGridViewLiquidaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewLiquidaciones.RowHeadersWidth = 20;
             this.dataGridViewLiquidaciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(907, 545);
+            this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(907, 199);
             this.dataGridViewLiquidaciones.TabIndex = 5;
             this.dataGridViewLiquidaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLiquidaciones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLiquidaciones_CellValueChanged);
@@ -264,7 +264,7 @@
             this.labelTotalLiquidaciones.Location = new System.Drawing.Point(772, 134);
             this.labelTotalLiquidaciones.Name = "labelTotalLiquidaciones";
             this.labelTotalLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(146, 26);
+            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(143, 0);
             this.labelTotalLiquidaciones.TabIndex = 107;
             this.labelTotalLiquidaciones.Text = "0,00 €";
             this.labelTotalLiquidaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -275,7 +275,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.Location = new System.Drawing.Point(233, 803);
+            this.button7.Location = new System.Drawing.Point(577, 439);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(208, 60);
             this.button7.TabIndex = 108;
@@ -300,7 +300,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(991, 907);
+            this.ClientSize = new System.Drawing.Size(988, 773);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.labelTotalLiquidaciones);

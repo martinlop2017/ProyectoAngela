@@ -35,11 +35,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             Warning[] warnings;
             string[] streamIds;
 
-            byte[] bytes = reportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding,
+            var form = new FormEsperar("Imprimiendo");
+            CheckForIllegalCrossThreadCalls = false;
+            var test = Task.Factory.StartNew(() =>
+            {
+                byte[] bytes = reportViewer1.LocalReport.Render("PDF", null, out mimeType, out encoding,
                 out extension, out streamIds, out warnings);
 
-            var exportPath = string.Format(@"{0}\testpdf.pdf", RutasSalida.RutaLiquidaciones);
-            File.WriteAllBytes(exportPath, bytes);
+                var exportPath = string.Format(@"{0}\testpdf.pdf", RutasSalida.RutaLiquidaciones);
+                File.WriteAllBytes(exportPath, bytes);
+
+                form.Close();
+            });
+
+            form.ShowDialog();
+
+            test.Dispose();
+            CheckForIllegalCrossThreadCalls = true;
+
         }
     }
 }

@@ -54,9 +54,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Poblacion = textBoxPoblacion.Text,
                 Provincia = textBoxProvincia.Text,
                 CodigoPostal = textBoxCodigoPostal.Text,
-                Telefono1 = Convert.ToInt32(textBoxTelefono1.Text),
-                Telefono2 = Convert.ToInt32(textBoxTelefono2.Text),
-                Fax = Convert.ToInt32(textBoxFax.Text),
+                Telefono1 = textBoxTelefono1.Text,
+                Telefono2 = textBoxTelefono2.Text,
+                Fax = textBoxFax.Text,
                 Email1 = textBoxEmail1.Text,
                 Email2 = textBoxEmail2.Text,
                 Email3 = textBoxEmail3.Text,
@@ -80,9 +80,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxPoblacion.Text = cliente.Poblacion;
             this.textBoxProvincia.Text = cliente.Provincia;
             this.textBoxCodigoPostal.Text = cliente.CodigoPostal?.ToString();
-            this.textBoxTelefono1.Text = cliente.Telefono1.ToString();
-            this.textBoxTelefono2.Text = cliente.Telefono2.ToString();
-            this.textBoxFax.Text = cliente.Fax.ToString();
+            this.textBoxTelefono1.Text = cliente.Telefono1?.ToString();
+            this.textBoxTelefono2.Text = cliente.Telefono2?.ToString();
+            this.textBoxFax.Text = cliente.Fax?.ToString();
             this.textBoxEmail1.Text = cliente.Email1;
             this.textBoxEmail2.Text = cliente.Email2;
             this.textBoxEmail3.Text = cliente.Email3;

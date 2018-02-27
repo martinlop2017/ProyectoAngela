@@ -37,9 +37,9 @@ namespace AdministracionAngela.Utils.Mappers
                 Nombre = nuevoClienteViewModel.NombreComercial,
                 Contacto = new Contacto()
                 {
-                    Telefono1 = nuevoClienteViewModel.Telefono1,
-                    Telefono2 = nuevoClienteViewModel.Telefono2,
-                    Fax = nuevoClienteViewModel.Fax,
+                    Telefono1 = Convert.ToInt32(nuevoClienteViewModel.Telefono1),
+                    Telefono2 = Convert.ToInt32(nuevoClienteViewModel.Telefono2),
+                    Fax = Convert.ToInt32(nuevoClienteViewModel.Fax),
                     Email = nuevoClienteViewModel.Email1,
                     Email2 = nuevoClienteViewModel.Email2,
                     Email3 = nuevoClienteViewModel.Email3,

@@ -27,9 +27,9 @@ namespace AdministracionAngela.Utils.Models.Cliente
 
         #region Contacto
 
-        public int Telefono1 { get; set; }
-        public int Telefono2 { get; set; }
-        public int Fax { get; set; }
+        public string Telefono1 { get; set; }
+        public string Telefono2 { get; set; }
+        public string Fax { get; set; }
         public string Email1 { get; set; }
         public string Email2 { get; set; }
         public string Email3 { get; set; }

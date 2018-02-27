@@ -27,15 +27,15 @@ namespace AdministracionAngela.UtilsTest.Mappers
                 CodigoPostal = "21045",
                 Direccion = "TestAddress",
                 Email1 = "TestEmail@gmail.com",
-                Fax = 11,
+                Fax = "11",
                 FormaDePagoSelected = "TestFormaDePago",
                 NombreComercial = "TestNombreComercial",
                 PersonaDeContacto = "TestPersonaDeContacto",
                 Poblacion = "TestPoblacion",
                 Provincia = "TestProvincia",
                 RiesgoMaximo = 50,
-                Telefono1 = 61234567,
-                Telefono2 = 67654321
+                Telefono1 = "61234567",
+                Telefono2 = "67654321"
             };
 
             var formaDePago = new FormaPago()

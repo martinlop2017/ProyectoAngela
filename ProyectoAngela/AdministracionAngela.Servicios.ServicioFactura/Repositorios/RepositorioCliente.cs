@@ -111,19 +111,35 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                     clientToUpdate.CodigoCliente = newClient.CodigoCliente;
                     clientToUpdate.NIF = newClient.NIF;
                     clientToUpdate.CIF = string.Empty;
-                    clientToUpdate.Direccion.LineaDireccion = newClient.Direccion.LineaDireccion;
-                    clientToUpdate.Direccion.Poblacion = newClient.Direccion.Poblacion;
-                    clientToUpdate.Direccion.Provincia = newClient.Direccion.Provincia;
-                    clientToUpdate.Direccion.CodigoPostal = newClient.Direccion.CodigoPostal;
+                    if(clientToUpdate.Direccion == null)
+                    {
+                        clientToUpdate.Direccion = newClient.Direccion;
+                        clientToUpdate.DireccionId = newClient.DireccionId;
+                    }
+                    else
+                    {
+                        clientToUpdate.Direccion.LineaDireccion = newClient.Direccion.LineaDireccion;
+                        clientToUpdate.Direccion.Poblacion = newClient.Direccion.Poblacion;
+                        clientToUpdate.Direccion.Provincia = newClient.Direccion.Provincia;
+                        clientToUpdate.Direccion.CodigoPostal = newClient.Direccion.CodigoPostal;
+                    }
                     clientToUpdate.Nombre = newClient.Nombre;
-                    clientToUpdate.Contacto.Telefono1 = newClient.Contacto.Telefono1;
-                    clientToUpdate.Contacto.Telefono2 = newClient.Contacto.Telefono2;
-                    clientToUpdate.Contacto.Fax = newClient.Contacto.Fax;
-                    clientToUpdate.Contacto.Email = newClient.Contacto.Email;
-                    clientToUpdate.Contacto.Email2 = newClient.Contacto.Email2;
-                    clientToUpdate.Contacto.Email3 = newClient.Contacto.Email3;
-                    clientToUpdate.Contacto.Email4 = newClient.Contacto.Email4;
-                    clientToUpdate.Contacto.PersonaContacto = newClient.Contacto.PersonaContacto;
+                    if(clientToUpdate.Contacto == null)
+                    {
+                        clientToUpdate.Contacto = newClient.Contacto;
+                        clientToUpdate.ContactoId = newClient.ContactoId;
+                    }
+                    else
+                    {
+                        clientToUpdate.Contacto.Telefono1 = newClient.Contacto.Telefono1;
+                        clientToUpdate.Contacto.Telefono2 = newClient.Contacto.Telefono2;
+                        clientToUpdate.Contacto.Fax = newClient.Contacto.Fax;
+                        clientToUpdate.Contacto.Email = newClient.Contacto.Email;
+                        clientToUpdate.Contacto.Email2 = newClient.Contacto.Email2;
+                        clientToUpdate.Contacto.Email3 = newClient.Contacto.Email3;
+                        clientToUpdate.Contacto.Email4 = newClient.Contacto.Email4;
+                        clientToUpdate.Contacto.PersonaContacto = newClient.Contacto.PersonaContacto;
+                    }
                     clientToUpdate.RiesgoMaximo = newClient.RiesgoMaximo;
                     clientToUpdate.FormaDePagoId = newClient.FormaDePagoId;
                     clientToUpdate.FormaPago = newClient.FormaPago;

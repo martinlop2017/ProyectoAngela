@@ -108,8 +108,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             List<ClaseLiquidacion > lista = new List<ClaseLiquidacion>();
 
-
-
             foreach (DataGridViewRow row in dataGridViewLiquidaciones.Rows)
 
             {
@@ -125,15 +123,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 datosalistar.liqmedio = Convert.ToString(row.Cells["ColumnPrecioMedio"].Value);
                 datosalistar.liqtotal = Convert.ToString(row.Cells["ColumnTotal"].Value);
 
-
-
                 lista.Add(datosalistar);
 
             }
 
             var form = new ReportViewerLiquidaciones();
             form.ExportarToPdf(lista);
-            //form.ShowDialog();
         }
     }
 }

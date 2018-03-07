@@ -160,19 +160,27 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void dataGridViewLineasFactura_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            var currentColumnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
-            var Ok = this.ValidateCell(currentColumnName);
-
-            if (Ok && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
+            try
             {
-                this.RecalcularImporteDeLinea();
-            }
-            else if(!Ok)
-            {
-                this.dataGridViewLineasFactura.CurrentCell.Value = null;
-            }
 
-            this.Recalculate();
+                var currentColumnName = this.dataGridViewLineasFactura.CurrentCell.OwningColumn.Name;
+                var Ok = this.ValidateCell(currentColumnName);
+
+                if (Ok && (currentColumnName.Equals("ColumnKgs") || currentColumnName.Equals("ColumnPrecio")))
+                {
+                    this.RecalcularImporteDeLinea();
+                }
+                else if (!Ok)
+                {
+                    this.dataGridViewLineasFactura.CurrentCell.Value = null;
+                }
+
+                this.Recalculate();
+            }
+            catch (Exception exp)
+            {
+
+            }
         }
 
         private void Recalculate()
@@ -197,16 +205,25 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// </summary>
         private void RecalcularImporteDeLinea()
         {
-            var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
-            var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
-
-            if (cellKgs.Value != null && cellPrecio.Value != null)
+            try
             {
-                var kgs = Convert.ToDecimal(cellKgs.Value);
-                var precio = Convert.ToDecimal(cellPrecio.Value);
-                var importe = kgs * precio;
 
-                this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Decimal.Round(importe, 2);
+
+                var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
+                var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
+
+                if (cellKgs.Value != null && cellPrecio.Value != null)
+                {
+                    var kgs = Convert.ToDecimal(cellKgs.Value);
+                    var precio = Convert.ToDecimal(cellPrecio.Value);
+                    var importe = kgs * precio;
+
+                    this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnImporte"].Value = Decimal.Round(importe, 2);
+                }
+            }
+            catch(Exception exp)
+            {
+
             }
         }
 
@@ -218,42 +235,49 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private bool ValidateCell(string currentColumnName)
         {
             bool Ok = false;
-            var currentCell = this.dataGridViewLineasFactura.CurrentCell;
-
-            if (currentCell.Value != null)
+            try
             {
-                switch (currentColumnName)
+
+
+                var currentCell = this.dataGridViewLineasFactura.CurrentCell;
+
+                if (currentCell.Value != null)
                 {
-                    case "ColumnKgs":
-                    case "ColumnPrecio":
-                        {
-                            if (currentCell.Value.ToString().IsDecimal())
+                    switch (currentColumnName)
+                    {
+                        case "ColumnKgs":
+                        case "ColumnPrecio":
                             {
-                                Ok = true;
-                                //reemplaza puntos por comas para que el convert to decimal funcione y no tengamos que obligar al usuario a usar comas
-                                var valueFormatted = currentCell.Value.ToString().Replace('.', ',');
-                                var decimalValue = Convert.ToDecimal(valueFormatted);
+                                if (currentCell.Value.ToString().IsDecimal())
+                                {
+                                    Ok = true;
+                                    //reemplaza puntos por comas para que el convert to decimal funcione y no tengamos que obligar al usuario a usar comas
+                                    var valueFormatted = currentCell.Value.ToString().Replace('.', ',');
+                                    var decimalValue = Convert.ToDecimal(valueFormatted);
 
-                                currentCell.Value = Decimal.Round(decimalValue, 2);
+                                    currentCell.Value = Decimal.Round(decimalValue, 2);
+                                }
+                                break;
                             }
-                            break;
-                        }
-                    case "ColumnCajas":
-                        {
-                            if (currentCell.Value.ToString().IsInt())
+                        case "ColumnCajas":
+                            {
+                                if (currentCell.Value.ToString().IsInt())
+                                {
+                                    Ok = true;
+                                }
+                                break;
+                            }
+                        case "ColumnProducto":
                             {
                                 Ok = true;
+                                break;
                             }
-                            break;
-                        }
-                    case "ColumnProducto":
-                        {
-                            Ok = true;
-                            break;
-                        }
+                    }
                 }
-            }
+            }catch(Exception exp)
+            {
 
+            }
             return Ok;
         }
 

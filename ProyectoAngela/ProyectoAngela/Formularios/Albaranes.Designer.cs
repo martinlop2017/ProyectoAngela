@@ -529,6 +529,7 @@
             this.Controls.Add(this.buttonAñadirLinea);
             this.KeyPreview = true;
             this.Name = "Albaranes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Albaranes";
             this.Load += new System.EventHandler(this.Albaranes_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Albaranes_KeyPress);

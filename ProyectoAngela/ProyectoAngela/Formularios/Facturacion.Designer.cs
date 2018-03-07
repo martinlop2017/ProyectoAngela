@@ -295,6 +295,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.Name = "comboBoxClientes";
             this.comboBoxClientes.Size = new System.Drawing.Size(344, 26);
             this.comboBoxClientes.TabIndex = 0;
+            this.comboBoxClientes.TextUpdate += new System.EventHandler(this.comboBoxClientes_TextUpdate);
             // 
             // label2
             // 

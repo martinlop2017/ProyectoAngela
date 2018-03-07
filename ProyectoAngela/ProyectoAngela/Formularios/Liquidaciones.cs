@@ -64,10 +64,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.dataGridViewLiquidaciones.DataSource = viewModel.LineasLiquidacion;
         }
 
+        private bool ColumnIsEditable(string columnName)
+        {
+            return columnName.Equals("ColumnPrecioMedio") || columnName.Equals("ColumnBultos") || columnName.Equals("ColumnKilos");
+        }
+
         private void dataGridViewLiquidaciones_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             var columnName = dataGridViewLiquidaciones.Columns[e.ColumnIndex].Name;
-            if (e.RowIndex != -1 && columnName.Equals("ColumnPrecioMedio"))
+            if (e.RowIndex != -1 && ColumnIsEditable(columnName))
             {
                 var changedRow = this.dataGridViewLiquidaciones.Rows[e.RowIndex];
                 var rowTotal = this.RecalcularTotalRow(changedRow);

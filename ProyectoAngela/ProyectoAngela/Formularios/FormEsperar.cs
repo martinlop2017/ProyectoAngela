@@ -17,5 +17,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             InitializeComponent();
             this.label1.Text = text;
         }
+
+        private void FormEsperar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

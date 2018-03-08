@@ -247,7 +247,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(774, 114);
+            this.label6.Location = new System.Drawing.Point(774, 121);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(156, 18);
             this.label6.TabIndex = 106;
@@ -260,7 +260,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTotalLiquidaciones.AutoSize = true;
             this.labelTotalLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalLiquidaciones.Location = new System.Drawing.Point(772, 136);
+            this.labelTotalLiquidaciones.Location = new System.Drawing.Point(852, 142);
             this.labelTotalLiquidaciones.Name = "labelTotalLiquidaciones";
             this.labelTotalLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelTotalLiquidaciones.Size = new System.Drawing.Size(78, 26);
@@ -274,7 +274,7 @@
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.Location = new System.Drawing.Point(234, 803);
+            this.button7.Location = new System.Drawing.Point(255, 634);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(208, 60);
             this.button7.TabIndex = 108;
@@ -287,7 +287,7 @@
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.Location = new System.Drawing.Point(549, 803);
+            this.button8.Location = new System.Drawing.Point(570, 634);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(208, 60);
             this.button8.TabIndex = 109;
@@ -299,7 +299,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(988, 773);
+            this.ClientSize = new System.Drawing.Size(988, 737);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.labelTotalLiquidaciones);

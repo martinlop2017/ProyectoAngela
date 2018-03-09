@@ -115,12 +115,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             if (checkBoxChecked == this.checkBoxIVAGeneral)
             {
+                checkBoxRE.Checked = false;
                 checkBoxUE.Checked = false;
                 checkBoxExcento.Checked = false;
             }
-            else if(checkBoxChecked == this.checkBoxRE)
+            else if(checkBoxChecked == this.checkBoxRE && !checkBoxIVAGeneral.Checked)
             {
-                checkBoxRE.Checked = checkBoxIVAGeneral.Checked;
+                checkBoxRE.Checked = false;
+            }
+            else if(checkBoxChecked == this.checkBoxRE && checkBoxIVAGeneral.Checked)
+            {
+                return;
             }
             else if (checkBoxChecked == this.checkBoxUE)
             {

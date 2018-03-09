@@ -171,7 +171,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[2] = iva.ImporteIVA.ToString();
                 row[3] = iva.PorcentajeRE.ToString();
                 row[4] = iva.ImporteRE.ToString();
-                row[4] = iva.GastosSuplidos.ToString();
+                row[5] = iva.GastosSuplidos.ToString();
                 table.Rows.Add(row);
             }
 

@@ -18,6 +18,8 @@ namespace AdministracionAngela.Utils.Models.Factura
         public string Lote { get; set; }
         public List<LineaFacturaViewModel> LineasFactura { get; set; }
         public List<LineaIVAViewModel> LineasIVA { get; set; }
+        public bool FillIVA { get; set; }
+        public bool FillRE { get; set; }
         public decimal TotalBase
         {
             get
@@ -42,7 +44,14 @@ namespace AdministracionAngela.Utils.Models.Factura
 
         public decimal Total
         {
-            get { return TotalBase + TotalIVA + TotalRecargoEquivalencia; }
+            get
+            {
+                if(TotalIVA == 0 && TotalBase == 0)
+                {
+                    return LineasFactura.Sum(x => x.Importe);
+                }
+                return TotalBase + TotalIVA + TotalRecargoEquivalencia;
+            }
         }
 
         public int TotalCajas

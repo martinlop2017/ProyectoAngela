@@ -297,7 +297,7 @@ namespace AdministracionAngela.Utils.Mappers
         #endregion
         #region Mapeo Facturas
 
-        public static AltaFacturaViewModel MapToAltaFacturaViewModel(List<Cliente> clientes, List<Producto> articulos, int numeroFactura, List<IVA> ivas )
+        public static AltaFacturaViewModel MapToAltaFacturaViewModel(List<Cliente> clientes, List<Producto> articulos, int numeroFactura, List<IVA> ivas)
         {
             return new AltaFacturaViewModel()
             {
@@ -349,6 +349,7 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return ivas.Select(iva => new LineaIVAViewModel()
             {
+                IvaId = iva.Id,
                 PorcentajeIVA = iva.Porcentaje.Value,
                 PorcentajeRecargoEquivalencia = iva.PorcentanjeRE.Value
             })

@@ -8,6 +8,7 @@ namespace AdministracionAngela.Utils.Models.Factura
 {
     public class LineaIVAViewModel
     {
+        public int IvaId { get; set; }
         public decimal BaseIVA { get; set; }
         public decimal PorcentajeIVA { get; set; }
         public decimal ImporteIVA

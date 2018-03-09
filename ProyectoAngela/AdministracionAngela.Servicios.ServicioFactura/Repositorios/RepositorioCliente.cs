@@ -77,6 +77,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Clientes.Find(clienteId);
         }
 
+        public bool GetIsIVASelected(long clienteId)
+        {
+            return this.dbContext.Clientes.FirstOrDefault(x => x.Id == clienteId).IsGeneral;
+        }
+
+        public bool GetIsRESelected(long clienteId)
+        {
+            return this.dbContext.Clientes.FirstOrDefault(x => x.Id == clienteId).RecargoEquivalencia;
+        }
+
         public Cliente GetLastClient()
         {
             return this.dbContext.Clientes.OrderByDescending(c => c.Id).FirstOrDefault();

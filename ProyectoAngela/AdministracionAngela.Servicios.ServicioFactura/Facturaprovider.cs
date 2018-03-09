@@ -67,8 +67,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 //Guarda Id de IVA para el mapeo a la hora de guardar la altaFactura
                 lineaFactura.PorcentajeIVA = iva.Porcentaje.Value;
                 lineaFactura.PorcentajeRE = iva.PorcentanjeRE.Value;
-                var lineaIva = altaFacturaViewModel.LineasIVA.Single(i => i.PorcentajeIVA == iva.Porcentaje.Value);
-                lineaIva.BaseIVA += lineaFactura.Importe;
+                var lineaIva = altaFacturaViewModel.LineasIVA.SingleOrDefault(i => i.PorcentajeIVA == iva.Porcentaje.Value);
+                if(lineaIva != null)
+                    lineaIva.BaseIVA += lineaFactura.Importe;
             }
 
             return altaFacturaViewModel.LineasIVA;
@@ -483,6 +484,31 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void SetCobrado(int numeroDocumento, bool cobrado)
         {
             this.repositorioFactura.SetCobrado(numeroDocumento, cobrado);
+        }
+
+        public void LoadIVAAndREBy(AltaFacturaViewModel viewModel)
+        {
+            var clienteID = viewModel.ClienteIdsAndDescripciones[viewModel.SelectedClient];
+            viewModel.FillIVA = repositorioCliente.GetIsIVASelected(clienteID);
+            viewModel.FillRE = repositorioCliente.GetIsRESelected(clienteID);
+
+            var ivas = this.repositorioIVA.GetAllIVAs();
+
+            foreach(var lineaIva in viewModel.LineasIVA)
+            {
+                var iva = ivas.Single(x => x.Id == lineaIva.IvaId);
+                lineaIva.PorcentajeIVA = iva.Porcentaje.Value;
+                lineaIva.PorcentajeRecargoEquivalencia = iva.PorcentanjeRE.Value;
+            }
+
+            if (!viewModel.FillRE)
+            {
+                viewModel.LineasIVA.ForEach(x => x.PorcentajeRecargoEquivalencia = 0);
+            }
+            if (!viewModel.FillIVA)
+            {
+                viewModel.LineasIVA.ForEach(x => x.PorcentajeIVA = 0);
+            }
         }
     }
 }

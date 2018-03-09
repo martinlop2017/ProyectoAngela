@@ -28,7 +28,6 @@ namespace AdministracionAngela.Utils.Interfaces
         AltaAlbaranViewModel GetAlbaranViewModel(bool isAlbaran);
         void SaveAlbaran(AltaAlbaranViewModel viewModel);
         void DeleteAlbaranes(List<FacturaViewModel> albaranesToDelete);
-        //AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId);
         AltaAlbaranViewModel GetAlbaranViewModelById(long AlbaranId, bool isAlbaran);
         void UpdateAlbaran(AltaAlbaranViewModel viewModel);
         void SetAlbaranImpresa(List<long> selectedAlbaranIds);
@@ -40,5 +39,6 @@ namespace AdministracionAngela.Utils.Interfaces
         bool ExisteFactura(int numeroDocumento);
         bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
         void SetCobrado(int numeroDocumento, bool cobrado);
+        void LoadIVAAndREBy(AltaFacturaViewModel viewModel);
     }
 }

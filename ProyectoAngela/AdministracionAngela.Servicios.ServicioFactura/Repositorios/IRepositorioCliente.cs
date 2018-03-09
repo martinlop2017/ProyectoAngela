@@ -17,5 +17,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         bool UpdateClient(Cliente newClient);
         void DeleteAddressByClientIds(List<Cliente> repositoryClientstoDelete);
         void DeleteContactsByClientIds(List<Cliente> repositoryClientstoDelete);
+        bool GetIsIVASelected(long clienteId);
+        bool GetIsRESelected(long clienteId);
     }
 }

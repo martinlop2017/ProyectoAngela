@@ -209,8 +209,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             try
             {
-
-
                 var cellKgs = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnKgs"];
                 var cellPrecio = this.dataGridViewLineasFactura.CurrentRow.Cells["ColumnPrecio"];
 

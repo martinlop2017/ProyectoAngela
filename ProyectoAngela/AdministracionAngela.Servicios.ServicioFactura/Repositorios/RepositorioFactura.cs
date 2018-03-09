@@ -223,7 +223,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 facturaToupdate.Total = facturaToRepository.Total;
                 facturaToupdate.TotalBase = facturaToRepository.TotalBase;
                 facturaToupdate.EtiquetaLote = facturaToRepository.EtiquetaLote;
-                
+                facturaToupdate.TotalIVA = facturaToRepository.TotalIVA;
+                facturaToupdate.TotalRecargoEquivalencia = facturaToRepository.TotalRecargoEquivalencia;
+
                 dbContext.SaveChanges();
 
                 UpdateLineasFactura(facturaToupdate, facturaToRepository.LineaFactura);

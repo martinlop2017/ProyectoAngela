@@ -224,25 +224,25 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroFactura = altaFactura.NumeroFactura,
                 ClienteId = altaFactura.ClienteIdsAndDescripciones[altaFactura.SelectedClient],
                 Fecha = Convert.ToDateTime(altaFactura.Fecha),
-                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura),
+                LineaFactura = MapLineasFacturaViewModel(altaFactura.LineasFactura, altaFactura.FillIVA, altaFactura.FillRE),
                 TotalBase = altaFactura.TotalBase,
-                TotalRecargoEquivalencia = altaFactura.TotalRecargoEquivalencia,
-                TotalIVA = altaFactura.TotalIVA,
+                TotalRecargoEquivalencia = altaFactura.FillRE ? altaFactura.TotalRecargoEquivalencia : 0,
+                TotalIVA = altaFactura.FillIVA ? altaFactura.TotalIVA : 0,
                 Total = altaFactura.Total,
                 Impreso = false,
                 EtiquetaLote = altaFactura.Lote
             };
         }
 
-        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura)
+        public static List<LineaFactura> MapLineasFacturaViewModel(List<LineaFacturaViewModel> lineasFactura, bool fillIVA, bool fillRE)
         {
             return lineasFactura.Select(linea => new LineaFactura()
             {
                 ProductoId = linea.ProductoId,
-                PorcentajeIVA = linea.PorcentajeIVA,
-                ImporteIVA = linea.ImporteIVA,
-                PorcentajeRE = linea.PorcentajeRE,
-                ImporteRE = linea.ImporteRE,
+                PorcentajeIVA = fillIVA ? linea.PorcentajeIVA : 0,
+                ImporteIVA = fillIVA ? linea.ImporteIVA : 0,
+                PorcentajeRE = fillRE ? linea.PorcentajeRE : 0,
+                ImporteRE = fillRE ?  linea.ImporteRE: 0,
                 Precio = linea.Precio,
                 Kgs = linea.Kgs,
                 Cajas = linea.Cajas,

@@ -71,6 +71,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.labelNumeroFactura.Text = viewModel.Id.ToString();
                 this.textBoxLote.Text = viewModel.Lote;
                 this.FillIVAs(viewModel.LineasIVA);
+                this.comboBoxClientes.Text = string.Empty;
 
                 if (this.isUpdate)
                 {
@@ -90,6 +91,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaAlbaran.Importe;
                     }
 
+                    this.facturaProvider.LoadIVAAndREBy(viewModel);
                     this.Recalculate();
                 }
             }
@@ -325,6 +327,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 this.NuevaLineaFactura();
             }
+        }
+
+        private void comboBoxClientes_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            this.viewModel.SelectedClient = this.comboBoxClientes.SelectedValue.ToString();
+            this.facturaProvider.LoadIVAAndREBy(viewModel);
+            Recalculate();
         }
     }
 }

@@ -173,10 +173,10 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroAlbaran = altaAlbaran.Id,
                 ClienteId = altaAlbaran.ClienteIdsAndDescripciones[altaAlbaran.SelectedClient],
                 Fecha = Convert.ToDateTime(altaAlbaran.Fecha),
-                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id),
+                LineaAlbaran = MapLineasAlbaranViewModel(altaAlbaran.LineasAlbaran, altaAlbaran.Id, altaAlbaran.FillIVA, altaAlbaran.FillRE),
                 TotalBase = altaAlbaran.TotalBase,
-                TotalRecargoEquivalencia = altaAlbaran.TotalRecargoEquivalencia,
-                TotalIVA = altaAlbaran.TotalIVA,
+                TotalRecargoEquivalencia = altaAlbaran.FillRE ? altaAlbaran.TotalRecargoEquivalencia : 0,
+                TotalIVA = altaAlbaran.FillIVA ? altaAlbaran.TotalIVA : 0,
                 Total = altaAlbaran.Total,
                 Impreso = false,
                 EtiquetaLote = altaAlbaran.Lote,
@@ -185,15 +185,15 @@ namespace AdministracionAngela.Utils.Mappers
             };
         }
 
-        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran)
+        public static List<LineaAlbaran> MapLineasAlbaranViewModel(List<LineaAlbaranViewModel> lineasAlbaran, long numeroAlbaran, bool fillIva, bool fillRE)
         {
             return lineasAlbaran.Select(linea => new LineaAlbaran()
             {
                 ProductoId = linea.ProductoId,
-                PorcentajeIVA = linea.PorcentajeIVA,
-                ImporteIVA = linea.ImporteIVA,
-                PorcentajeRE = linea.PorcentajeRE,
-                ImporteRE = linea.ImporteRE,
+                PorcentajeIVA = fillIva ? linea.PorcentajeIVA : 0,
+                ImporteIVA = fillIva ? linea.ImporteIVA : 0,
+                PorcentajeRE = fillRE ? linea.PorcentajeRE : 0,
+                ImporteRE = fillRE ? linea.ImporteRE : 0,
                 Precio = linea.Precio,
                 Kgs = linea.Kgs,
                 Cajas = linea.Cajas,

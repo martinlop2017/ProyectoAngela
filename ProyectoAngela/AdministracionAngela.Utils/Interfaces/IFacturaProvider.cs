@@ -40,5 +40,6 @@ namespace AdministracionAngela.Utils.Interfaces
         bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
         void SetCobrado(int numeroDocumento, bool cobrado);
         void LoadIVAAndREBy(AltaFacturaViewModel viewModel);
+        void LoadIVAAndREBy(AltaAlbaranViewModel viewModel);
     }
 }

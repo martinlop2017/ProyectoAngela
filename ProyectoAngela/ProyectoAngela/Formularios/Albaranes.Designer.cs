@@ -118,6 +118,7 @@
             this.comboBoxClientes.Name = "comboBoxClientes";
             this.comboBoxClientes.Size = new System.Drawing.Size(344, 21);
             this.comboBoxClientes.TabIndex = 58;
+            this.comboBoxClientes.SelectionChangeCommitted += new System.EventHandler(this.comboBoxClientes_SelectionChangeCommitted);
             // 
             // label10
             // 
@@ -495,7 +496,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(854, 781);
+            this.ClientSize = new System.Drawing.Size(854, 773);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonClose);
             this.Controls.Add(this.labelTotalBase);

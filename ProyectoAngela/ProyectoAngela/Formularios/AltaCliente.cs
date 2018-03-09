@@ -113,10 +113,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         /// <param name="checkBoxChecked"></param>
         private void AdjustIVAcheckBoxes(object checkBoxChecked)
         {
-            if (checkBoxChecked == this.checkBoxIVAGeneral || checkBoxChecked == this.checkBoxRE)
+            if (checkBoxChecked == this.checkBoxIVAGeneral)
             {
                 checkBoxUE.Checked = false;
                 checkBoxExcento.Checked = false;
+            }
+            else if(checkBoxChecked == this.checkBoxRE)
+            {
+                checkBoxRE.Checked = checkBoxIVAGeneral.Checked;
             }
             else if (checkBoxChecked == this.checkBoxUE)
             {

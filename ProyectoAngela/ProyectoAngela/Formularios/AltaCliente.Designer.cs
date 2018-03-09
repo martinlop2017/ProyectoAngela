@@ -174,9 +174,9 @@
             this.checkBoxExcento.ForeColor = System.Drawing.Color.Black;
             this.checkBoxExcento.Location = new System.Drawing.Point(290, 34);
             this.checkBoxExcento.Name = "checkBoxExcento";
-            this.checkBoxExcento.Size = new System.Drawing.Size(75, 20);
+            this.checkBoxExcento.Size = new System.Drawing.Size(68, 20);
             this.checkBoxExcento.TabIndex = 3;
-            this.checkBoxExcento.Text = "Excento";
+            this.checkBoxExcento.Text = "Exento";
             this.checkBoxExcento.UseVisualStyleBackColor = true;
             this.checkBoxExcento.Click += new System.EventHandler(this.checkBoxIVA_Click);
             // 

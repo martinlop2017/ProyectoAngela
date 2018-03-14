@@ -414,7 +414,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     FAO = linea.Producto.FAO,
                     NombreCientifico = linea.Producto.NombreCientifico,
                     Abreviacion = linea.Producto.Abreviacion,
-                    NombreCliente = cliente.Nombre
+                    NombreCliente = cliente.Nombre,
+                    EtiquetaLote = albaran.EtiquetaLote
                 };
 
                 albaranClientes.Add(albaranCliente);

@@ -341,6 +341,8 @@ namespace AdministracionAngela.ProyectoAngela {
             
             private global::System.Data.DataColumn columnNombreDocumentoSmall;
             
+            private global::System.Data.DataColumn columnEtiquetaLote;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FacturaClienteDataTable() {
@@ -624,6 +626,14 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EtiquetaLoteColumn {
+                get {
+                    return this.columnEtiquetaLote;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -690,7 +700,8 @@ namespace AdministracionAngela.ProyectoAngela {
                         string Abreviacion, 
                         string NombreCliente, 
                         string NombreDocumento, 
-                        string NombreDocumentoSmall) {
+                        string NombreDocumentoSmall, 
+                        string EtiquetaLote) {
                 FacturaClienteRow rowFacturaClienteRow = ((FacturaClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumeroFactura,
@@ -723,7 +734,8 @@ namespace AdministracionAngela.ProyectoAngela {
                         Abreviacion,
                         NombreCliente,
                         NombreDocumento,
-                        NombreDocumentoSmall};
+                        NombreDocumentoSmall,
+                        EtiquetaLote};
                 rowFacturaClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturaClienteRow);
                 return rowFacturaClienteRow;
@@ -777,6 +789,7 @@ namespace AdministracionAngela.ProyectoAngela {
                 this.columnNombreCliente = base.Columns["NombreCliente"];
                 this.columnNombreDocumento = base.Columns["NombreDocumento"];
                 this.columnNombreDocumentoSmall = base.Columns["NombreDocumentoSmall"];
+                this.columnEtiquetaLote = base.Columns["EtiquetaLote"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -844,6 +857,8 @@ namespace AdministracionAngela.ProyectoAngela {
                 base.Columns.Add(this.columnNombreDocumento);
                 this.columnNombreDocumentoSmall = new global::System.Data.DataColumn("NombreDocumentoSmall", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNombreDocumentoSmall);
+                this.columnEtiquetaLote = new global::System.Data.DataColumn("EtiquetaLote", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEtiquetaLote);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1483,6 +1498,22 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string EtiquetaLote {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.EtiquetaLoteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'EtiquetaLote\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.EtiquetaLoteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumeroFacturaNull() {
                 return this.IsNull(this.tableFacturaCliente.NumeroFacturaColumn);
             }
@@ -1851,6 +1882,18 @@ namespace AdministracionAngela.ProyectoAngela {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNombreDocumentoSmallNull() {
                 this[this.tableFacturaCliente.NombreDocumentoSmallColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEtiquetaLoteNull() {
+                return this.IsNull(this.tableFacturaCliente.EtiquetaLoteColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEtiquetaLoteNull() {
+                this[this.tableFacturaCliente.EtiquetaLoteColumn] = global::System.Convert.DBNull;
             }
         }
         

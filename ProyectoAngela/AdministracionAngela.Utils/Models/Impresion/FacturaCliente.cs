@@ -38,5 +38,6 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public string NombreCientifico { get; set; }
         public string Abreviacion { get; set; }
         public string NombreCliente { get; set; }
+        public string EtiquetaLote { get; set; }
     }
 }

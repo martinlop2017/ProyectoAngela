@@ -119,6 +119,7 @@
             this.comboBoxClientes.Size = new System.Drawing.Size(344, 21);
             this.comboBoxClientes.TabIndex = 58;
             this.comboBoxClientes.SelectionChangeCommitted += new System.EventHandler(this.comboBoxClientes_SelectionChangeCommitted);
+            this.comboBoxClientes.TextUpdate += new System.EventHandler(this.comboBoxClientes_TextUpdate);
             // 
             // label10
             // 

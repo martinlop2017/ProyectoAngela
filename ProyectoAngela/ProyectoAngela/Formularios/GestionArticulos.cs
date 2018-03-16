@@ -51,13 +51,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = this.dataGridViewArticulos.SelectedRows;
 
-            var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
 
-            this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+            if (MessageBox.Show("Va a proceder a eliminar el registro seleccionado.\n                     Desea Eliminar el registro?"
+                , "Eliminar Registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Information)== DialogResult.Yes);
+            {
 
-            this.FillControls();
+                var selectedRows = this.dataGridViewArticulos.SelectedRows;
+
+                var mappedSelectedRows = selectedRows.ToList<ArticuloViewModel>();
+
+                this.articuloProvider.DeleteArticulos(mappedSelectedRows);
+
+                this.FillControls();
+            }
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
@@ -89,6 +96,71 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
             
             this.FillControls();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            label1.Visible = true;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+        }
+
+        private void buttonDelete_MouseEnter(object sender, EventArgs e)
+        {
+            label2.Visible = true;
+        }
+
+        private void buttonDelete_MouseLeave(object sender, EventArgs e)
+        {
+            label2.Visible = false;
+        }
+
+        private void buttonModify_MouseEnter(object sender, EventArgs e)
+        {
+            label3.Visible = true;
+        }
+
+        private void buttonModify_MouseLeave(object sender, EventArgs e)
+        {
+            label3.Visible = false;
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            label5.Visible = true;
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            label5.Visible = false;
+        }
+
+        private void comboBoxClientes_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void comboBoxClientes_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
         }
     }
 }

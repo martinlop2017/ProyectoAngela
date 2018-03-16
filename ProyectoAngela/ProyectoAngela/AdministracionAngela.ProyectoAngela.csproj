@@ -512,6 +512,9 @@
   <ItemGroup>
     <None Include="Resources\Logo Pescados Hnos Diaz.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Gestion Articulos.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)Formularios\*.rpt" "$(ProjectDir)$(OutDir)"</PostBuildEvent>

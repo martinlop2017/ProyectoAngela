@@ -166,6 +166,9 @@
   <data name="Sistema Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sistema Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Gestion Articulos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Gestion Articulos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Listados Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Listados Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,6 +214,9 @@
   <data name="Albaranes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Albaranes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo Pescados Hnos Diaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Pescados Hnos Diaz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Avisos Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Avisos Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,7 +229,7 @@
   <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Pescados Hnos Diaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Pescados Hnos Diaz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Gestion Articulos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Gestion Articulos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

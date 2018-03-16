@@ -223,6 +223,26 @@ namespace AdministracionAngela.ProyectoAngela.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Gestion_Articulos {
+            get {
+                object obj = ResourceManager.GetObject("Gestion Articulos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Gestion_Articulos1 {
+            get {
+                object obj = ResourceManager.GetObject("Gestion Articulos1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Impuestos {
             get {
                 object obj = ResourceManager.GetObject("Impuestos", resourceCulture);

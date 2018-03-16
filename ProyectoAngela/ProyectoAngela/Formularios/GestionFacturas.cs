@@ -118,11 +118,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
-            var selectedRow = this.dataGridViewFacturas.SelectedRows;
-            var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
 
-            this.documentoGestion.DeleteDocumentos(mappedSelectedRows);
-            this.FillControls();
+            if (MessageBox.Show("Va a proceder a eliminar el registro seleccionado.\n                     Desea Eliminar el registro?"
+                                 , "Eliminar Registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) ;
+            {
+
+                var selectedRow = this.dataGridViewFacturas.SelectedRows;
+                var mappedSelectedRows = selectedRow.ToList<FacturaViewModel>();
+
+                this.documentoGestion.DeleteDocumentos(mappedSelectedRows);
+                this.FillControls();
+
+            }
         }
 
         private void FillControls()

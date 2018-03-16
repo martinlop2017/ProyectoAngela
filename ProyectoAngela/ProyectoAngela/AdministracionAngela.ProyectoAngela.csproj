@@ -515,6 +515,12 @@
   <ItemGroup>
     <None Include="Imagenes\Gestion Articulos.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Gestion Facturas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Imagenes\Gestion Facturas1png.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)Formularios\*.rpt" "$(ProjectDir)$(OutDir)"</PostBuildEvent>

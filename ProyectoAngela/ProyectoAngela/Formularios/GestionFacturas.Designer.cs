@@ -112,7 +112,7 @@
             this.dataGridViewFacturas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewFacturas.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dataGridViewFacturas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewFacturas.Size = new System.Drawing.Size(820, 408);
+            this.dataGridViewFacturas.Size = new System.Drawing.Size(820, 466);
             this.dataGridViewFacturas.TabIndex = 25;
             this.dataGridViewFacturas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewFacturas_CellContentClick);
             // 
@@ -221,7 +221,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(799, 114);
+            this.label5.Location = new System.Drawing.Point(799, 104);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(27, 13);
             this.label5.TabIndex = 24;
@@ -231,7 +231,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(200, 114);
+            this.label4.Location = new System.Drawing.Point(200, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 23;
@@ -241,7 +241,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 114);
+            this.label3.Location = new System.Drawing.Point(137, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 22;
@@ -251,7 +251,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 114);
+            this.label2.Location = new System.Drawing.Point(84, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 21;
@@ -261,7 +261,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 114);
+            this.label1.Location = new System.Drawing.Point(27, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 20;
@@ -271,7 +271,7 @@
             // button5
             // 
             this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.Location = new System.Drawing.Point(788, 130);
+            this.button5.Location = new System.Drawing.Point(788, 120);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(52, 56);
             this.button5.TabIndex = 19;
@@ -283,7 +283,7 @@
             // button4
             // 
             this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.Location = new System.Drawing.Point(194, 130);
+            this.button4.Location = new System.Drawing.Point(194, 120);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(52, 56);
             this.button4.TabIndex = 18;
@@ -294,7 +294,7 @@
             // buttonModificar
             // 
             this.buttonModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonModificar.BackgroundImage")));
-            this.buttonModificar.Location = new System.Drawing.Point(136, 130);
+            this.buttonModificar.Location = new System.Drawing.Point(136, 120);
             this.buttonModificar.Name = "buttonModificar";
             this.buttonModificar.Size = new System.Drawing.Size(52, 56);
             this.buttonModificar.TabIndex = 17;
@@ -306,7 +306,7 @@
             // buttonBorrar
             // 
             this.buttonBorrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonBorrar.BackgroundImage")));
-            this.buttonBorrar.Location = new System.Drawing.Point(78, 130);
+            this.buttonBorrar.Location = new System.Drawing.Point(78, 120);
             this.buttonBorrar.Name = "buttonBorrar";
             this.buttonBorrar.Size = new System.Drawing.Size(52, 56);
             this.buttonBorrar.TabIndex = 16;
@@ -318,7 +318,7 @@
             // buttonAñadir
             // 
             this.buttonAñadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAñadir.BackgroundImage")));
-            this.buttonAñadir.Location = new System.Drawing.Point(20, 130);
+            this.buttonAñadir.Location = new System.Drawing.Point(20, 120);
             this.buttonAñadir.Name = "buttonAñadir";
             this.buttonAñadir.Size = new System.Drawing.Size(52, 56);
             this.buttonAñadir.TabIndex = 15;
@@ -341,7 +341,7 @@
             // 
             this.buttonImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImprimir.BackgroundImage")));
             this.buttonImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonImprimir.Location = new System.Drawing.Point(252, 130);
+            this.buttonImprimir.Location = new System.Drawing.Point(252, 120);
             this.buttonImprimir.Name = "buttonImprimir";
             this.buttonImprimir.Size = new System.Drawing.Size(52, 56);
             this.buttonImprimir.TabIndex = 28;
@@ -353,7 +353,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(257, 114);
+            this.label7.Location = new System.Drawing.Point(257, 104);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 29;
@@ -364,7 +364,7 @@
             // 
             this.buttonFacturar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFacturar.BackgroundImage")));
             this.buttonFacturar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonFacturar.Location = new System.Drawing.Point(312, 130);
+            this.buttonFacturar.Location = new System.Drawing.Point(312, 120);
             this.buttonFacturar.Name = "buttonFacturar";
             this.buttonFacturar.Size = new System.Drawing.Size(52, 56);
             this.buttonFacturar.TabIndex = 31;
@@ -376,7 +376,7 @@
             // labelFacturar
             // 
             this.labelFacturar.AutoSize = true;
-            this.labelFacturar.Location = new System.Drawing.Point(318, 114);
+            this.labelFacturar.Location = new System.Drawing.Point(318, 104);
             this.labelFacturar.Name = "labelFacturar";
             this.labelFacturar.Size = new System.Drawing.Size(46, 13);
             this.labelFacturar.TabIndex = 32;
@@ -398,9 +398,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(860, 630);
+            this.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Gestion_Facturas1png;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(860, 689);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelFacturar);
             this.Controls.Add(this.buttonFacturar);

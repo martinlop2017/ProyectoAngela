@@ -112,10 +112,22 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionFacturas_Load(object sender, EventArgs e)
         {
-          
-            this.FillControls();
-        }
 
+            this.FillControls();
+            var typeDocumento = this.documentoGestion.GetTipoDocumento();
+            if (typeDocumento == EnumDocumentosGestion.Factura)
+            {
+                panel1.Width = 530;
+                panel1.Location = new Point(252, 120);
+                label4.Location = new Point(265, 104);
+                comboBoxClientes.Width = 505;
+            }
+
+            if (typeDocumento == EnumDocumentosGestion.Albaran)
+            {
+                this.Text = "Gestion de Albaranes.";
+            }
+        }
         private void buttonBorrar_Click(object sender, EventArgs e)
         {
 
@@ -235,6 +247,31 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                 documentoGestion.SetCobrado((int)num, value);
             }
+        }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void comboBoxClientes_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void comboBoxClientes_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void buttonAñadir_MouseLeave(object sender, EventArgs e)
+        {
+            label1.Visible = false;
         }
     }
 }

@@ -30,13 +30,13 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPago));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormaPago));
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewFormasDePago = new System.Windows.Forms.DataGridView();
-            this.buttonGuardar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonGuardar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFormasDePago)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,19 +84,6 @@
             this.dataGridViewFormasDePago.TabIndex = 32;
             this.dataGridViewFormasDePago.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // buttonGuardar
-            // 
-            this.buttonGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.BackgroundImage")));
-            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonGuardar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.buttonGuardar.FlatAppearance.BorderSize = 0;
-            this.buttonGuardar.Location = new System.Drawing.Point(118, 535);
-            this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
-            this.buttonGuardar.TabIndex = 33;
-            this.buttonGuardar.UseVisualStyleBackColor = true;
-            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
-            // 
             // Column1
             // 
             this.Column1.DataPropertyName = "Concepto";
@@ -113,18 +100,34 @@
             this.Column2.Name = "Column2";
             this.Column2.Width = 102;
             // 
+            // buttonGuardar
+            // 
+            this.buttonGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.BackgroundImage")));
+            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonGuardar.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonGuardar.FlatAppearance.BorderSize = 0;
+            this.buttonGuardar.Location = new System.Drawing.Point(118, 535);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
+            this.buttonGuardar.TabIndex = 33;
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
             // FormaPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(447, 651);
+            this.ControlBox = false;
             this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.dataGridViewFormasDePago);
             this.Controls.Add(this.label7);
+            this.MaximumSize = new System.Drawing.Size(463, 689);
+            this.MinimumSize = new System.Drawing.Size(463, 689);
             this.Name = "FormaPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Forma_Pago";
+            this.Text = "Formas de Pago.";
             this.Load += new System.EventHandler(this.FormaPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFormasDePago)).EndInit();
             this.ResumeLayout(false);

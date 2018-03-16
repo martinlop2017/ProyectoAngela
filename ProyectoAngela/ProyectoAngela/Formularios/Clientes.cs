@@ -149,5 +149,25 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             FillControls();
 
         }
+
+        private void panel1_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void panel1_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
+
+        private void comboBoxClientes_MouseEnter(object sender, EventArgs e)
+        {
+            label4.Visible = true;
+        }
+
+        private void comboBoxClientes_MouseLeave(object sender, EventArgs e)
+        {
+            label4.Visible = false;
+        }
     }
 }

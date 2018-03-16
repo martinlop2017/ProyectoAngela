@@ -279,10 +279,12 @@
             this.Controls.Add(this.label13);
             this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(636, 560);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(636, 560);
             this.Name = "Rutas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Rutas";
+            this.Text = "Rutas de Exportación.";
             this.Load += new System.EventHandler(this.Rutas_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Rutas_KeyPress);
             this.ResumeLayout(false);

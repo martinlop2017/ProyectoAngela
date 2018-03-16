@@ -632,9 +632,11 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.customGroupBox7);
             this.KeyPreview = true;
+            this.MaximumSize = new System.Drawing.Size(863, 689);
+            this.MinimumSize = new System.Drawing.Size(863, 689);
             this.Name = "MisDatos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MisDatos";
+            this.Text = "Mis Datos.";
             this.Load += new System.EventHandler(this.MisDatos_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MisDatos_KeyPress);
             this.customGroupBox7.ResumeLayout(false);

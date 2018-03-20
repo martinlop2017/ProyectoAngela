@@ -26,22 +26,29 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
-        {
-            var precio = decimal.Parse(this.textBoxPrecio.Text.Replace(".", ","));
-            var kgs = decimal.Parse(this.textBoxKgs.Text.Replace(".", ","));
-            this.lineaFactura = new LineaFacturaViewModel()
+        { if (Validate())
             {
-                Cajas = int.Parse(this.textBoxCajas.Text),
-                Kgs = kgs,
-                Precio = precio,
-                SelectedProduct = comboBoxProducto.Text,
-                Importe = kgs * precio
-            };
+                var precio = decimal.Parse(this.textBoxPrecio.Text.Replace(".", ","));
+                var kgs = decimal.Parse(this.textBoxKgs.Text.Replace(".", ","));
+                this.lineaFactura = new LineaFacturaViewModel()
+                {
+                    Cajas = int.Parse(this.textBoxCajas.Text),
+                    Kgs = kgs,
+                    Precio = precio,
+                    SelectedProduct = comboBoxProducto.Text,
+                    Importe = Decimal.Round(kgs * precio, 2)
+                };
 
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+
         }
-
+        private bool Validate()
+        {
+            return
+                string.IsNullOrEmpty(this.validationProvider1.ValidationMessages(!this.validationProvider1.Validate()));
+        }
         private void AltaLineaFactura_Load(object sender, EventArgs e)
         {
             this.labelTitle.Text = title;

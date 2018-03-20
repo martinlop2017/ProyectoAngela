@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaLineaFactura));
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             this.comboBoxProducto = new System.Windows.Forms.ComboBox();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.textBoxCajas = new System.Windows.Forms.TextBox();
@@ -46,6 +49,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
+            this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
             this.SuspendLayout();
             // 
             // comboBoxProducto
@@ -91,6 +95,9 @@
             this.textBoxKgs.Size = new System.Drawing.Size(98, 23);
             this.textBoxKgs.TabIndex = 2;
             this.textBoxKgs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            validationRule1.ErrorMessage = "no se admiten mas de dos decimales";
+            validationRule1.RegExPattern = "^-?[0-9]*([\\.\\,][0-9]{1,2})?$";
+            this.validationProvider1.SetValidationRule(this.textBoxKgs, validationRule1);
             this.textBoxKgs.TextChanged += new System.EventHandler(this.textBoxKgs_TextChanged);
             // 
             // textBoxPrecio
@@ -101,6 +108,9 @@
             this.textBoxPrecio.Size = new System.Drawing.Size(117, 23);
             this.textBoxPrecio.TabIndex = 3;
             this.textBoxPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            validationRule2.ErrorMessage = "no se admiten mas de dos decimales";
+            validationRule2.RegExPattern = "^-?[0-9]*([\\.\\,][0-9]{1,2})?$";
+            this.validationProvider1.SetValidationRule(this.textBoxPrecio, validationRule2);
             this.textBoxPrecio.TextChanged += new System.EventHandler(this.textBoxPrecio_TextChanged);
             // 
             // labelImporte
@@ -241,6 +251,11 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // validationProvider1
+            // 
+            this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
+            // 
             // AltaLineaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,5 +316,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button8;
+        private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
     }
 }

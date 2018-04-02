@@ -614,7 +614,6 @@
             this.textBoxCodigoPostal.TabIndex = 3;
             validationRule13.ErrorMessage = "El Codigo Postal introducido no es valido";
             validationRule13.IsRequired = true;
-            validationRule13.RegExPattern = "^(5[0-2]|[0-4][0-9])[0-9]{3}$";
             this.validationProvider1.SetValidationRule(this.textBoxCodigoPostal, validationRule13);
             // 
             // textBoxProvincia

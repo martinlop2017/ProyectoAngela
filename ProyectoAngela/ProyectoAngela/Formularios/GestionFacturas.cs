@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Extensions;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using AdministracionAngela.Utils.Genericos;
 using AdministracionAngela.Utils.Enumerados;
+using System.ComponentModel;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -22,6 +17,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private IFormOpener formOpener;
         private IDocumentoGestion documentoGestion;
         private bool IsDocumento = true;
+        private BindingList<FacturaViewModel> documentos;
 
         public GestionFacturas(IFormOpener formOpener, IDocumentoGestion documentoGestion)
         {
@@ -120,7 +116,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 panel1.Width = 530;
                 panel1.Location = new Point(252, 120);
                 label4.Location = new Point(265, 104);
-                comboBoxClientes.Width = 505;
+                //comboBoxClientes.Width = 505;
             }
 
             if (typeDocumento == EnumDocumentosGestion.Albaran)
@@ -148,6 +144,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var viewModel = this.documentoGestion.GetDocumentos(IsDocumento);
             this.dataGridViewFacturas.DataSource = viewModel.Facturas;
+            this.documentos = viewModel.Facturas;
             if(!this.documentoGestion.PuedeFacturar())
             {
                 this.dataGridViewFacturas.Columns["ColumnFacturado"].Visible = false;
@@ -272,6 +269,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonAñadir_MouseLeave(object sender, EventArgs e)
         {
             label1.Visible = false;
+        }
+
+        private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if(comboBoxClientes.Text.Equals("Numero"))
+            {
+                dataGridViewFacturas.DataSource = documentos.Where(x => x.Codigo.ToString().Contains(textBoxBusqueda.Text)).ToList();
+            }
+
+            if (comboBoxClientes.Text.Equals("Cliente"))
+            {
+                dataGridViewFacturas.DataSource = documentos.Where(x => x.Cliente.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdministracionAngela.Utils.Genericos
 {
-    public class Encriptar
+    public static class Encriptar
     {
         /// Esta clase contiene funciones para encriptar/desencriptar
         /// El ser estática no es necesario instanciar un objeto para 

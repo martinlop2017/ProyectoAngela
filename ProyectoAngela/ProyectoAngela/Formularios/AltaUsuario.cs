@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -55,7 +56,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             return new AltaUsuarioViewModel()
             {
                 UserName = this.textBoxUserName.Text,
-                Password = this.maskedTextBoxPassword.Text
+                Password = Encriptar.codificar( this.maskedTextBoxPassword.Text)
             };
         }
 

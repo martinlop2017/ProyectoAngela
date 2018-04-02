@@ -7,7 +7,6 @@
       <Diagram DiagramId="ed14bd6bbb12450888f24b20e320d14a" Name="Diagram1" ZoomLevel="53">
         <EntityTypeShape EntityType="AdministracionAngelaModel.IVA" Width="1.5" PointX="6" PointY="0.75" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1.75" />
-        <EntityTypeShape EntityType="AdministracionAngelaModel.User" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.FormaPago" Width="1.5" PointX="8.375" PointY="8.75" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Contacto" Width="1.5" PointX="3.5" PointY="1" />
         <EntityTypeShape EntityType="AdministracionAngelaModel.Producto" Width="1.5" PointX="8.25" PointY="0.75" />
@@ -30,6 +29,7 @@
         <EntityTypeShape EntityType="AdministracionAngelaModel.Albaran" Width="1.5" PointX="14" PointY="8" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_Albaran_Cliente" />
         <AssociationConnector Association="AdministracionAngelaModel.FK_LineaAlbaran_Albaran" />
+        <EntityTypeShape EntityType="AdministracionAngelaModel.User" Width="1.5" PointX="0.75" PointY="8.875" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

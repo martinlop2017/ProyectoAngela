@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Interfaces;
@@ -18,6 +15,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private IFormOpener formOpener;
         private IClienteProvider clienteProvider;
         private GestionClienteViewModel viewModel;
+        private BindingList<ClienteViewModel> clientes;
 
         public Clientes(IFormOpener formOpener, IClienteProvider clienteProvider)
         {
@@ -32,6 +30,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             viewModel = clienteProvider.GetGestionCliente();
 
             this.dataGridViewClientes.DataSource = viewModel.Clientes;
+            clientes = viewModel.Clientes;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -168,6 +167,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void comboBoxClientes_MouseLeave(object sender, EventArgs e)
         {
             label4.Visible = false;
+        }
+
+        private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBusqueda.Text.Equals("Codigo"))
+            {
+                dataGridViewClientes.DataSource = clientes.Where(x => x.Codigo.ToString().Contains(textBoxBusqueda.Text)).ToList();
+            }
+
+            if (comboBoxBusqueda.Text.Equals("Cliente"))
+            {
+                dataGridViewClientes.DataSource = clientes.Where(x => x.Nombre.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
+            }
         }
     }
 }

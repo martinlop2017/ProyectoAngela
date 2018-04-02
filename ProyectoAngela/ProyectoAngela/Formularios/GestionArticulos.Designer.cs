@@ -45,7 +45,8 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBoxClientes = new System.Windows.Forms.ComboBox();
+            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
+            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -211,7 +212,8 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.comboBoxClientes);
+            this.panel1.Controls.Add(this.textBoxBusqueda);
+            this.panel1.Controls.Add(this.comboBoxBusqueda);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(191, 115);
             this.panel1.Name = "panel1";
@@ -220,15 +222,29 @@
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
-            // comboBoxClientes
+            // comboBoxBusqueda
             // 
-            this.comboBoxClientes.FormattingEnabled = true;
-            this.comboBoxClientes.Location = new System.Drawing.Point(13, 19);
-            this.comboBoxClientes.Name = "comboBoxClientes";
-            this.comboBoxClientes.Size = new System.Drawing.Size(371, 21);
-            this.comboBoxClientes.TabIndex = 28;
-            this.comboBoxClientes.MouseEnter += new System.EventHandler(this.comboBoxClientes_MouseEnter);
-            this.comboBoxClientes.MouseLeave += new System.EventHandler(this.comboBoxClientes_MouseLeave);
+            this.comboBoxBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxBusqueda.FormattingEnabled = true;
+            this.comboBoxBusqueda.Items.AddRange(new object[] {
+            "Codigo",
+            "Articulo"});
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(274, 19);
+            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(110, 21);
+            this.comboBoxBusqueda.TabIndex = 28;
+            this.comboBoxBusqueda.Text = "Codigo";
+            this.comboBoxBusqueda.MouseEnter += new System.EventHandler(this.comboBoxClientes_MouseEnter);
+            this.comboBoxBusqueda.MouseLeave += new System.EventHandler(this.comboBoxClientes_MouseLeave);
+            // 
+            // textBoxBusqueda
+            // 
+            this.textBoxBusqueda.Location = new System.Drawing.Point(22, 19);
+            this.textBoxBusqueda.Name = "textBoxBusqueda";
+            this.textBoxBusqueda.Size = new System.Drawing.Size(224, 20);
+            this.textBoxBusqueda.TabIndex = 29;
+            this.textBoxBusqueda.TextChanged += new System.EventHandler(this.textBoxBusqueda_TextChanged);
             // 
             // GestionArticulos
             // 
@@ -237,7 +253,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Gestion_Articulos1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(669, 687);
+            this.ClientSize = new System.Drawing.Size(669, 686);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -261,6 +277,7 @@
             this.Load += new System.EventHandler(this.GestionArticulos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +299,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxClientes;
+        private System.Windows.Forms.ComboBox comboBoxBusqueda;
+        private System.Windows.Forms.TextBox textBoxBusqueda;
     }
 }

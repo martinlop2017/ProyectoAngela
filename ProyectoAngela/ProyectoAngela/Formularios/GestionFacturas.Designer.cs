@@ -65,7 +65,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
-            this.comboBoxClientes = new System.Windows.Forms.ComboBox();
+            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -391,7 +391,7 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.textBoxBusqueda);
-            this.panel1.Controls.Add(this.comboBoxClientes);
+            this.panel1.Controls.Add(this.comboBoxBusqueda);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(308, 120);
             this.panel1.Name = "panel1";
@@ -408,21 +408,21 @@
             this.textBoxBusqueda.TabIndex = 29;
             this.textBoxBusqueda.TextChanged += new System.EventHandler(this.textBoxBusqueda_TextChanged);
             // 
-            // comboBoxClientes
+            // comboBoxBusqueda
             // 
-            this.comboBoxClientes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.comboBoxBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxClientes.FormattingEnabled = true;
-            this.comboBoxClientes.Items.AddRange(new object[] {
+            this.comboBoxBusqueda.FormattingEnabled = true;
+            this.comboBoxBusqueda.Items.AddRange(new object[] {
             "Numero",
             "Cliente"});
-            this.comboBoxClientes.Location = new System.Drawing.Point(325, 19);
-            this.comboBoxClientes.Name = "comboBoxClientes";
-            this.comboBoxClientes.Size = new System.Drawing.Size(125, 21);
-            this.comboBoxClientes.TabIndex = 28;
-            this.comboBoxClientes.Text = "Numero";
-            this.comboBoxClientes.MouseEnter += new System.EventHandler(this.comboBoxClientes_MouseEnter);
-            this.comboBoxClientes.MouseLeave += new System.EventHandler(this.comboBoxClientes_MouseLeave);
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(325, 19);
+            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxBusqueda.TabIndex = 28;
+            this.comboBoxBusqueda.Text = "Numero";
+            this.comboBoxBusqueda.MouseEnter += new System.EventHandler(this.comboBoxClientes_MouseEnter);
+            this.comboBoxBusqueda.MouseLeave += new System.EventHandler(this.comboBoxClientes_MouseLeave);
             // 
             // GestionFacturas
             // 
@@ -493,7 +493,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnFacturado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCobrado;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBoxClientes;
+        private System.Windows.Forms.ComboBox comboBoxBusqueda;
         private System.Windows.Forms.TextBox textBoxBusqueda;
     }
 }

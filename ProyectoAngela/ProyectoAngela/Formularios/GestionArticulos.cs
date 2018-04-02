@@ -18,6 +18,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private IFormOpener formOpener;
         private IArticuloProvider articuloProvider;
         private GestionArticuloViewModel viewModel;
+        private BindingList<ArticuloViewModel> articulos;
 
         public GestionArticulos(IFormOpener formOpener, IArticuloProvider articuloProvider)
         {
@@ -47,6 +48,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             viewModel = articuloProvider.GetGestionArticulo();
             this.dataGridViewArticulos.DataSource = viewModel.Articulos;
+            articulos = viewModel.Articulos;
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
@@ -161,6 +163,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void comboBoxClientes_MouseLeave(object sender, EventArgs e)
         {
             label4.Visible = false;
+        }
+
+        private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBusqueda.Text.Equals("Codigo"))
+            {
+                dataGridViewArticulos.DataSource = articulos.Where(x => x.Codigo.ToString().Contains(textBoxBusqueda.Text)).ToList();
+            }
+
+            if (comboBoxBusqueda.Text.Equals("Articulo"))
+            {
+                dataGridViewArticulos.DataSource = articulos.Where(x => x.Descripcion.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
+            }
         }
     }
 }

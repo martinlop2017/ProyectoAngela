@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -273,12 +272,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
         {
-            if(comboBoxClientes.Text.Equals("Numero"))
+            if(comboBoxBusqueda.Text.Equals("Numero"))
             {
                 dataGridViewFacturas.DataSource = documentos.Where(x => x.Codigo.ToString().Contains(textBoxBusqueda.Text)).ToList();
             }
 
-            if (comboBoxClientes.Text.Equals("Cliente"))
+            if (comboBoxBusqueda.Text.Equals("Cliente"))
             {
                 dataGridViewFacturas.DataSource = documentos.Where(x => x.Cliente.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
             }

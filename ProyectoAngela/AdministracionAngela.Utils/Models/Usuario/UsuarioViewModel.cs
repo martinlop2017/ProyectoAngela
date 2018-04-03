@@ -10,6 +10,8 @@ namespace AdministracionAngela.Utils.Models.Usuario
     {
         public string Usuario { get; set; }
         public string Password { get; set; }
+        public string Nivel { get; set; }
+        public bool Activo { get; set; }
 
         public UsuarioViewModel()
         {

@@ -100,6 +100,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Facturas.ToList();
         }
 
+        public List<Factura> GetAllFacurasByClienteId(long clienteId)
+        {
+            this.dbContext.ReloadEntities<Factura>();
+            return this.dbContext.Facturas.Where(x => x.ClienteId == clienteId).ToList();
+        }
+
         public List<Albaran> GetAllAlbaranes()
         {
             this.dbContext.ReloadEntities<Albaran>();

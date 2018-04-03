@@ -282,6 +282,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonSave_Click(object sender, EventArgs e)
         {
             ReadGenericDataFromForm();
+            if(this.facturaProvider.ClienteExcedeRiesgo(this.viewModel))
+            {
+                MessageBox.Show("El cliente excedería su riesgo maximo con esta factura");
+                return;
+            }
+
             if(this.isUpdate)
             {
                 this.facturaProvider.UpdateFactura(this.viewModel);

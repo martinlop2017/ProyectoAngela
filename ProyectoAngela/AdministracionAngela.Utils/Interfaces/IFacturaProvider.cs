@@ -12,6 +12,7 @@ namespace AdministracionAngela.Utils.Interfaces
 {
     public interface IFacturaProvider
     {
+        bool ClienteExcedeRiesgo(AltaFacturaViewModel viewModel);
         AltaFacturaViewModel GetFacturaViewModel();
         List<LineaIVAViewModel> CalculateIVAs(AltaFacturaViewModel altaFacturaViewModel);
         List<LineaIVAViewModel> CalculateIVAs(AltaAlbaranViewModel altaAlbaranViewModel);

@@ -9,6 +9,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
     public interface IRepositorioFactura
     {
+        List<Factura> GetAllFacurasByClienteId(long clienteId);
         Factura GetLastFactura();
         Albaran GetLastAlbaran(bool isAlbaran);
         void SaveFactura(Factura factura);

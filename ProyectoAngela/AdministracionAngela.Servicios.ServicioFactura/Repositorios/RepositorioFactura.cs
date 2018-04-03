@@ -231,6 +231,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 facturaToupdate.EtiquetaLote = facturaToRepository.EtiquetaLote;
                 facturaToupdate.TotalIVA = facturaToRepository.TotalIVA;
                 facturaToupdate.TotalRecargoEquivalencia = facturaToRepository.TotalRecargoEquivalencia;
+                facturaToupdate.FechaVencimiento = facturaToRepository.FechaVencimiento;
 
                 dbContext.SaveChanges();
 

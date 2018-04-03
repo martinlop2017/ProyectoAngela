@@ -103,6 +103,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void SaveFactura(AltaFacturaViewModel viewModel)
         {
             var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
+            var diasVencimiento = repositorioCliente.GetClientById(viewModel.SelectedClientId).FormaPago.Dias;
+
+            facturaToRepository.FechaVencimiento = facturaToRepository.Fecha.Value.AddDays(diasVencimiento.Value);
+
             foreach(var lineaFactura in facturaToRepository.LineaFactura)
             {
                 var producto = this.repositorioArticulo.GetArticuloById(lineaFactura.ProductoId);
@@ -197,6 +201,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void UpdateFactura(AltaFacturaViewModel viewModel)
         {
             var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
+
+            var diasVencimiento = repositorioCliente.GetClientById(viewModel.SelectedClientId).FormaPago.Dias;
+
+            facturaToRepository.FechaVencimiento = facturaToRepository.Fecha.Value.AddDays(diasVencimiento.Value);
+
             this.repositorioFactura.UpdateFactura(facturaToRepository);
         }
 

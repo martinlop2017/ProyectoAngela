@@ -270,7 +270,9 @@ namespace AdministracionAngela.Utils.Mappers
             return new User()
             {
                 UserName = altaUsuario.UserName,
-                Password = altaUsuario.Password
+                Password = altaUsuario.Password,
+                Nivel = altaUsuario.Nivel,
+                Activo = altaUsuario.Activo
             };
         }
         #endregion

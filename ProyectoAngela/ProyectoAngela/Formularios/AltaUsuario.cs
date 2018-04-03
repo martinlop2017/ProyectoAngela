@@ -18,6 +18,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         ISeguridadProvider seguridadProvider;
         private bool isUpdate = false;
         private string userId;
+        
 
         public AltaUsuario(ISeguridadProvider seguridadProvider)
         {
@@ -56,7 +57,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             return new AltaUsuarioViewModel()
             {
                 UserName = this.textBoxUserName.Text,
-                Password = Encriptar.codificar( this.maskedTextBoxPassword.Text)
+                Password = Encriptar.codificar( this.maskedTextBoxPassword.Text),
+                Nivel = this.comboBox1.Text,
+                Activo = radioButton1.Checked
+             
+
+
             };
         }
 
@@ -82,6 +88,49 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 e.Handled = true; SendKeys.Send("{TAB}");
             }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            maskedTextBoxPassword.UseSystemPasswordChar = false;
+            maskedTextBox2.UseSystemPasswordChar = false;
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox2_Leave(object sender, EventArgs e)
+        {
+            if (maskedTextBoxPassword.Text != maskedTextBox2.Text)
+            {
+                MessageBox.Show("Los valores no coinciden.");
+                maskedTextBox2.Text = "";
+                maskedTextBoxPassword.Text = "";
+                maskedTextBoxPassword.Focus();
+            }
+        }
+
+        private void panel2_MouseLeave(object sender, EventArgs e)
+        {
+            maskedTextBoxPassword.UseSystemPasswordChar = true;
+            maskedTextBox2.UseSystemPasswordChar = true;
         }
     }
 }

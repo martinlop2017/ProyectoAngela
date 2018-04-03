@@ -1,0 +1,9 @@
+
+ALTER TABLE [User]
+ADD Nivel nvarchar(50)
+
+ALTER TABLE [User]
+ADD Activo bit
+
+ALTER TABLE [Factura]
+ADD FechaVencimiento DateTime

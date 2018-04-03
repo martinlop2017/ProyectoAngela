@@ -144,6 +144,7 @@
     <Content Include="Procedimientos Almacenados\BusquedaLineasFactura.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaLineasIVA.txt" />
     <Content Include="Procedimientos Almacenados\BusquedaLineasIVAAlbaran.txt" />
+    <Content Include="Scripts\Segunda.txt" />
     <Content Include="Scripts\PrimeraVersion.txt" />
   </ItemGroup>
   <ItemGroup>

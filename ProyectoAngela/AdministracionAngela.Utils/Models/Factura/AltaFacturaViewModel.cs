@@ -13,6 +13,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         public long ClienteId { get; set; }
         public Dictionary<string, long> ClienteIdsAndDescripciones { get; set; }
         public Dictionary<string, long> ArticuloIdsAndDescripciones { get; set; }
+        public long SelectedClientId => ClienteIdsAndDescripciones[SelectedClient];
         public string SelectedClient { get; set; }
         public string Fecha { get; set; }
         public string Lote { get; set; }

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Mappers;
@@ -91,6 +89,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             }
 
             return altaAlbaranViewModel.LineasIVA;
+        }
+
+        public bool ClienteExcedeRiesgo(AltaFacturaViewModel viewModel)
+        {
+            var cliente = this.repositorioCliente.GetClientById(viewModel.SelectedClientId);
+            var facturas = this.repositorioFactura.GetAllFacurasByClienteId(viewModel.SelectedClientId);
+            var totalFacturas = facturas.Sum(x => x.Total) + viewModel.Total;
+
+            return totalFacturas > cliente.RiesgoMaximo;
         }
 
         public void SaveFactura(AltaFacturaViewModel viewModel)

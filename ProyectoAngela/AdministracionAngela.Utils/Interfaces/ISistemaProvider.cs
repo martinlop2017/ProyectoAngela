@@ -13,5 +13,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void SaveFormaDePago(List<FormaDePagoViewModel> mappedRows);
         GestionFormaDePagoViewModel GetGestionFormasDePago();
         void SaveRutasSalida(RutasSalidaViewModel viewModel);
+        bool HayFacturasCaducadas();
     }
 }

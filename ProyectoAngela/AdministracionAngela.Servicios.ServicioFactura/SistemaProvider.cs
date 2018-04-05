@@ -15,11 +15,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos
     {
         private IRepositorioSistema repositorioSistema;
         private IAppConfigRepositorio appConfigRepositorio;
+        private IRepositorioFactura repositorioFactura;
 
-        public SistemaProvider(IRepositorioSistema reposirotioSistema, IAppConfigRepositorio appConfigRepositorio)
+        public SistemaProvider(IRepositorioSistema reposirotioSistema, IRepositorioFactura repositorioFactura, IAppConfigRepositorio appConfigRepositorio)
         {
             this.repositorioSistema = reposirotioSistema;
             this.appConfigRepositorio = appConfigRepositorio;
+            this.repositorioFactura = repositorioFactura;
         }
 
         public GestionFormaDePagoViewModel GetGestionFormasDePago()
@@ -48,6 +50,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public void SaveRutasSalida(RutasSalidaViewModel viewModel)
         {
             this.appConfigRepositorio.SaveRutasSalida(viewModel);
+        }
+
+        public bool HayFacturasCaducadas()
+        {
+            var facturasCaducadas = repositorioFactura.GetFacturasCaducadas();
+            return facturasCaducadas != null && facturasCaducadas.Count > 0;
         }
     }
 }

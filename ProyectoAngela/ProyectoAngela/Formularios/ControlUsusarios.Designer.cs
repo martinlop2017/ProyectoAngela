@@ -32,12 +32,12 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +71,7 @@
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Controls.Add(this.textBoxUser);
+            this.panel2.Controls.Add(this.comboBox1);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.textBoxPassword);
@@ -82,14 +82,6 @@
             this.panel2.Size = new System.Drawing.Size(304, 199);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // textBoxUser
-            // 
-            this.textBoxUser.Location = new System.Drawing.Point(131, 46);
-            this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(156, 30);
-            this.textBoxUser.TabIndex = 1;
-            this.textBoxUser.Text = "admin";
             // 
             // label3
             // 
@@ -114,8 +106,8 @@
             this.textBoxPassword.Location = new System.Drawing.Point(131, 103);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(156, 30);
-            this.textBoxPassword.TabIndex = 2;
-            this.textBoxPassword.Text = "admin";
+            this.textBoxPassword.TabIndex = 1;
+            this.textBoxPassword.UseSystemPasswordChar = true;
             // 
             // panel1
             // 
@@ -141,6 +133,14 @@
             this.label1.Text = "Entrada Usuarios";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(131, 46);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(156, 31);
+            this.comboBox1.TabIndex = 0;
+            // 
             // ControlUsusarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -152,11 +152,13 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.KeyPreview = true;
             this.Name = "ControlUsusarios";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ControlUsusarios_FormClosing);
             this.Load += new System.EventHandler(this.ControlUsusarios_Load);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ControlUsusarios_KeyPress);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -175,7 +177,7 @@
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBoxUser;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

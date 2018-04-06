@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImprimirFacturas));
             this.button8 = new System.Windows.Forms.Button();
-            this.buttonGuardar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxDocumentoInicial = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.buttonGuardar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button8
@@ -54,18 +54,6 @@
             this.button8.TabIndex = 38;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // buttonGuardar
-            // 
-            this.buttonGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.BackgroundImage")));
-            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonGuardar.Location = new System.Drawing.Point(42, 261);
-            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonGuardar.Name = "buttonGuardar";
-            this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
-            this.buttonGuardar.TabIndex = 37;
-            this.buttonGuardar.UseVisualStyleBackColor = true;
-            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
             // 
             // label3
             // 
@@ -154,6 +142,18 @@
             this.checkBox2.Text = "Archivo";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
+            // buttonGuardar
+            // 
+            this.buttonGuardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonGuardar.BackgroundImage")));
+            this.buttonGuardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonGuardar.Location = new System.Drawing.Point(42, 261);
+            this.buttonGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(208, 60);
+            this.buttonGuardar.TabIndex = 37;
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
             // ImprimirFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -183,7 +183,6 @@
         #endregion
 
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button buttonGuardar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxDocumentoInicial;
         private System.Windows.Forms.Label label1;
@@ -193,5 +192,6 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button buttonGuardar;
     }
 }

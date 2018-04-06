@@ -169,6 +169,12 @@
     <Compile Include="Formularios\GestionAvisos.Designer.cs">
       <DependentUpon>GestionAvisos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\GestionListados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionListados.Designer.cs">
+      <DependentUpon>GestionListados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\GestionUsusarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionListados.resx">
+      <DependentUpon>GestionListados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionUsusarios.resx">
       <DependentUpon>GestionUsusarios.cs</DependentUpon>

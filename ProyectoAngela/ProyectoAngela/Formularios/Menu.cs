@@ -157,6 +157,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonIva.Visible = false;
             buttonCobro.Visible = false;
             buttonRutas.Visible = false;
+            this.formOpener.ShowModalForm<GestionAvisos>();
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

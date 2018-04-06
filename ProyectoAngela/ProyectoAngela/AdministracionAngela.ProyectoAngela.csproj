@@ -163,6 +163,12 @@
     <Compile Include="Formularios\GestionArticulos.Designer.cs">
       <DependentUpon>GestionArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\GestionAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\GestionAvisos.Designer.cs">
+      <DependentUpon>GestionAvisos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\GestionUsusarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -300,6 +306,9 @@
     <EmbeddedResource Include="Formularios\GestionArticulos.resx">
       <DependentUpon>GestionArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\GestionAvisos.resx">
+      <DependentUpon>GestionAvisos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionFacturas.resx">
       <DependentUpon>GestionFacturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +324,7 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportVencimientos.rdlc" />
     <EmbeddedResource Include="Formularios\ReportLiquidaciones.rdlc" />
     <EmbeddedResource Include="Formularios\ReportViewerFacturacion Nuevo.resx">
       <DependentUpon>ReportViewerFacturacion Nuevo.cs</DependentUpon>

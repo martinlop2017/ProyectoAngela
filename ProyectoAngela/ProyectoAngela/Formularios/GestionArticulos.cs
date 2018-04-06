@@ -177,5 +177,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 dataGridViewArticulos.DataSource = articulos.Where(x => x.Descripcion.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
             }
         }
+
+        private void comboBoxBusqueda_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

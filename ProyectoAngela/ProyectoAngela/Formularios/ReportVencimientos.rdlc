@@ -231,7 +231,7 @@
   <Width>8.09225in</Width>
   <Page>
     <PageHeader>
-      <Height>7.49746cm</Height>
+      <Height>8.21183cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -242,7 +242,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Vencimientos</Value>
+                  <Value>L i q u i d a c i o n</Value>
                   <Style>
                     <FontFamily>Tahoma</FontFamily>
                     <FontSize>18pt</FontSize>
@@ -377,8 +377,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>5.27029cm</Top>
-          <Left>1.34872cm</Left>
+          <Top>5.76446cm</Top>
+          <Left>1.27816cm</Left>
           <Height>0.49417cm</Height>
           <Width>1.67569cm</Width>
           <ZIndex>3</ZIndex>
@@ -409,8 +409,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>5.83703cm</Top>
-          <Left>1.26358cm</Left>
+          <Top>6.3312cm</Top>
+          <Left>1.19302cm</Left>
           <Height>0.49417cm</Height>
           <Width>3.26632cm</Width>
           <ZIndex>4</ZIndex>
@@ -501,7 +501,7 @@
           </Style>
         </Rectangle>
         <Line Name="Line1">
-          <Top>7.29417cm</Top>
+          <Top>8cm</Top>
           <Left>1.01358cm</Left>
           <Height>0cm</Height>
           <Width>18.87866cm</Width>
@@ -513,14 +513,14 @@
             </Border>
           </Style>
         </Line>
-        <Textbox Name="Textbox12">
+        <Textbox Name="Textbox2">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cliente</Value>
+                  <Value>Liquidacion de:</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -530,11 +530,43 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.50211cm</Top>
+          <Top>5.23502cm</Top>
+          <Left>1.27816cm</Left>
+          <Height>0.49417cm</Height>
+          <Width>2.85174cm</Width>
+          <ZIndex>7</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox12">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Articulo</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>7.20794cm</Top>
           <Left>1.27816cm</Left>
           <Height>0.6cm</Height>
           <Width>1.67569cm</Width>
-          <ZIndex>7</ZIndex>
+          <ZIndex>8</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -552,7 +584,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Importe</Value>
+                  <Value>Total</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -562,11 +594,43 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.50211cm</Top>
-          <Left>17.77506cm</Left>
+          <Top>7.20794cm</Top>
+          <Left>17.90735cm</Left>
           <Height>0.52944cm</Height>
-          <Width>1.73447cm</Width>
-          <ZIndex>8</ZIndex>
+          <Width>1.06715cm</Width>
+          <ZIndex>9</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox14">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>P. Medio</Value>
+                  <Style>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>7.20794cm</Top>
+          <Left>15.1689cm</Left>
+          <Height>0.52944cm</Height>
+          <Width>1.67569cm</Width>
+          <ZIndex>10</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -584,7 +648,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>F. Vencim.</Value>
+                  <Value>Kg.</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -594,11 +658,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.50211cm</Top>
-          <Left>14.75113cm</Left>
+          <Top>7.20794cm</Top>
+          <Left>13.43588cm</Left>
           <Height>0.52944cm</Height>
-          <Width>2.22752cm</Width>
-          <ZIndex>9</ZIndex>
+          <Width>0.72319cm</Width>
+          <ZIndex>11</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -616,7 +680,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>F. Factura</Value>
+                  <Value>Bultos</Value>
                   <Style>
                     <FontWeight>Bold</FontWeight>
                   </Style>
@@ -626,11 +690,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>6.50211cm</Top>
-          <Left>11.95346cm</Left>
+          <Top>7.20794cm</Top>
+          <Left>11.17925cm</Left>
           <Height>0.52944cm</Height>
-          <Width>1.96674cm</Width>
-          <ZIndex>10</ZIndex>
+          <Width>1.27882cm</Width>
+          <ZIndex>12</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -642,11 +706,11 @@
           </Style>
         </Textbox>
         <Line Name="Line2">
-          <Top>7.20794cm</Top>
+          <Top>7.91377cm</Top>
           <Left>1.01358cm</Left>
           <Height>0cm</Height>
           <Width>18.87866cm</Width>
-          <ZIndex>11</ZIndex>
+          <ZIndex>13</ZIndex>
           <Style>
             <Border>
               <Style>Solid</Style>
@@ -654,6 +718,36 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="liqdafecha">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!liqdafecha.Value, "DataSet1")</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>liqdafecha</rd:DefaultName>
+          <Top>5.23502cm</Top>
+          <Left>4.20046cm</Left>
+          <Height>0.49417cm</Height>
+          <Width>2.5cm</Width>
+          <ZIndex>14</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
         <Textbox Name="liqdefecha">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -669,11 +763,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>liqdefecha</rd:DefaultName>
-          <Top>5.34286cm</Top>
-          <Left>4.27102cm</Left>
+          <Top>5.83703cm</Top>
+          <Left>4.20046cm</Left>
           <Height>0.49417cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>12</ZIndex>
+          <ZIndex>15</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -699,11 +793,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>liqtotalliquidacion</rd:DefaultName>
-          <Top>5.87231cm</Top>
-          <Left>4.7883cm</Left>
+          <Top>6.36648cm</Top>
+          <Left>4.71774cm</Left>
           <Height>0.45889cm</Height>
           <Width>2.5cm</Width>
-          <ZIndex>13</ZIndex>
+          <ZIndex>16</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

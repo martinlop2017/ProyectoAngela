@@ -315,8 +315,6 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Report1.rdlc" />
-    <EmbeddedResource Include="Formularios\ReportImpresionFactura.rdlc" />
     <EmbeddedResource Include="Formularios\ReportLiquidaciones.rdlc" />
     <EmbeddedResource Include="Formularios\ReportViewerFacturacion Nuevo.resx">
       <DependentUpon>ReportViewerFacturacion Nuevo.cs</DependentUpon>

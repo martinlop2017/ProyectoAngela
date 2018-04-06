@@ -105,7 +105,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var facturaToRepository = MapToRepository.MapAltaFacturaViewModel(viewModel);
             var diasVencimiento = repositorioCliente.GetClientById(viewModel.SelectedClientId).FormaPago.Dias;
 
-            facturaToRepository.FechaVencimiento = facturaToRepository.Fecha.Value.AddDays(diasVencimiento.Value);
+            facturaToRepository.FechaVencimiento = diasVencimiento > 0 ? facturaToRepository.Fecha.Value.AddDays(diasVencimiento.Value) : (DateTime?)null;
 
             foreach(var lineaFactura in facturaToRepository.LineaFactura)
             {

@@ -1,12 +1,5 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Enumerados;
 
@@ -15,11 +8,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class Menu : Form
     {
         IClienteProvider clienteProvider;
+        ISistemaProvider sistemaProvider;
         private IFormOpener formOpener;
+        private bool hayFacturasCaducadas = false;
 
-        public Menu(IClienteProvider clienteProvider, IFormOpener formOpener)
+        public Menu(IClienteProvider clienteProvider, ISistemaProvider sistemaProvider, IFormOpener formOpener)
         {
             this.clienteProvider = clienteProvider;
+            this.sistemaProvider = sistemaProvider;
             this.formOpener = formOpener;
             InitializeComponent();
         }
@@ -52,9 +48,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void Menu_Load(object sender, EventArgs e)
         {
             //inicia la fecha al cargar la forma
-       
-          FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToShortTimeString() + "  "; 
 
+            FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToShortTimeString() + "  ";
+            hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)

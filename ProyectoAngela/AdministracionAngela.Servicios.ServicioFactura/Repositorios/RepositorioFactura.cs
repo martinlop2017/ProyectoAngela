@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
@@ -327,6 +327,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 albaran.Cobrado = cobrado;
                 this.dbContext.SaveChanges();
             }
+        }
+
+        public List<Factura> GetFacturasCaducadas()
+        {
+            return this.dbContext.Facturas.Where(x => x.FechaVencimiento.HasValue &&
+            DbFunctions.TruncateTime(x.FechaVencimiento.Value) < DateTime.Today.Date)
+            .ToList();
         }
     }
 }

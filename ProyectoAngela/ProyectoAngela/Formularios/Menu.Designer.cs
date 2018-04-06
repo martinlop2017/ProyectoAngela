@@ -354,11 +354,12 @@
             // 
             // buttonAvisos
             // 
-            this.buttonAvisos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonAvisos.BackgroundImage")));
+            this.buttonAvisos.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Rojos1;
             this.buttonAvisos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonAvisos.Enabled = false;
             this.buttonAvisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonAvisos.ImageKey = "(ninguno)";
-            this.buttonAvisos.Location = new System.Drawing.Point(1128, 43);
+            this.buttonAvisos.Location = new System.Drawing.Point(1126, 43);
             this.buttonAvisos.Name = "buttonAvisos";
             this.buttonAvisos.Size = new System.Drawing.Size(130, 130);
             this.buttonAvisos.TabIndex = 12;

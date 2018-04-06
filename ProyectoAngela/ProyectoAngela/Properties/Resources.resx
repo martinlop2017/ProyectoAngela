@@ -121,8 +121,14 @@
   <data name="Clientes Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clientes Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Rutas Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Rutas Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Facturass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Facturass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Albaranes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Albaranes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Copias Seguridad Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Copias Seguridad Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,9 +148,6 @@
   <data name="Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cobros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cobros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Rutas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rutas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,8 +166,8 @@
   <data name="Impuestos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Impuestos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Rutas Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Rutas Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Cobros" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cobros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Sistema Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sistema Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,9 +196,6 @@
   <data name="Gestion Facturas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\Gestion Facturas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Mis Datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Mis Datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Mis Datos Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mis Datos Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -205,11 +205,17 @@
   <data name="Llave azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Llave azul.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Avisos Rojos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avisos Rojos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Rectangulo 10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangulo 10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Liquidaciones Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Liquidaciones Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Avisos Azul Rojo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avisos Azul Rojo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Rectangulo 7 Azulina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Rectangulo 7 Azulina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,17 +223,20 @@
   <data name="Sistema" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sistema.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Gestion Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Gestion Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Albaranes Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Albaranes Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Albaranes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Albaranes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mis Datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mis Datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo Pescados Hnos Diaz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo Pescados Hnos Diaz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Avisos Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Avisos Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Gestion Facturas1png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Imagenes\Gestion Facturas1png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,10 +247,10 @@
   <data name="Usuarios Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuarios Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Avisos Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avisos Azul.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Gestion Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\Gestion Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Avisos Rojos1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Avisos Rojos1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -51,6 +51,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToShortTimeString() + "  ";
             hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
+
+
+            if (hayFacturasCaducadas == true)
+            {
+                buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Rojos;
+                buttonAvisos.Enabled = true;
+            }
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -244,12 +251,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonAvisos_MouseEnter(object sender, EventArgs e)
         {
-            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Azul;
+            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Azul_Rojo;
         }
 
         private void buttonAvisos_MouseLeave(object sender, EventArgs e)
         {
-            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos;
+            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Rojos;
         }
 
         private void buttonMisdatos_MouseEnter(object sender, EventArgs e)

@@ -264,7 +264,7 @@
             this.labelTotalLiquidaciones.Location = new System.Drawing.Point(777, 142);
             this.labelTotalLiquidaciones.Name = "labelTotalLiquidaciones";
             this.labelTotalLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(153, 26);
+            this.labelTotalLiquidaciones.Size = new System.Drawing.Size(153, 0);
             this.labelTotalLiquidaciones.TabIndex = 107;
             this.labelTotalLiquidaciones.Text = "0,00 €";
             this.labelTotalLiquidaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

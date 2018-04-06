@@ -541,6 +541,9 @@
   <ItemGroup>
     <None Include="Resources\Avisos Rojos1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boton Largo imprimir Azul.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)Formularios\*.rpt" "$(ProjectDir)$(OutDir)"</PostBuildEvent>

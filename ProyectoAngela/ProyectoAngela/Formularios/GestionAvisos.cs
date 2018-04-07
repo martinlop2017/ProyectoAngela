@@ -1,12 +1,9 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Avisos;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
@@ -14,9 +11,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class GestionAvisos : Form
     {
         private IFacturaProvider facturaProvider;
+        private BindingList<AvisoViewModel> avisos;
+
         public GestionAvisos(IFacturaProvider facturaProvider)
         {
             this.facturaProvider = facturaProvider;
+            this.avisos = new BindingList<AvisoViewModel>();
             InitializeComponent();
         }
 
@@ -59,6 +59,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var viewModel = facturaProvider.GetGestionFacturasVencidas();
             this.dataGridViewAvisos.DataSource = viewModel.Avisos;
+            this.avisos = viewModel.Avisos;
         }
 
         private void dataGridViewAvisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,6 +72,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var codigoFactura = selectedRow.Cells["ColumnCodigoFactura"].Value;
 
                 this.facturaProvider.SetFacturaCobrada((long)codigoFactura);
+            }
+        }
+
+        private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBusqueda.Text.Equals("Codigo"))
+            {
+                dataGridViewAvisos.DataSource = avisos.Where(x => x.CodigoFactura.ToString().Contains(textBoxBusqueda.Text)).ToList();
+            }
+
+            if (comboBoxBusqueda.Text.Equals("Cliente"))
+            {
+                dataGridViewAvisos.DataSource = avisos.Where(x => x.Cliente.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
             }
         }
     }

@@ -32,19 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridViewAvisos = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
             this.ColumnCodigoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxBusqueda = new System.Windows.Forms.TextBox();
+            this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvisos)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.textBoxBusqueda);
+            this.panel1.Controls.Add(this.comboBoxBusqueda);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(201, 118);
             this.panel1.Name = "panel1";
@@ -61,15 +63,6 @@
             this.panel1.TabIndex = 31;
             this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
             this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
-            // 
-            // textBoxBusqueda
-            // 
-            this.textBoxBusqueda.Location = new System.Drawing.Point(12, 20);
-            this.textBoxBusqueda.Name = "textBoxBusqueda";
-            this.textBoxBusqueda.Size = new System.Drawing.Size(388, 20);
-            this.textBoxBusqueda.TabIndex = 29;
-            this.textBoxBusqueda.MouseEnter += new System.EventHandler(this.textBoxBusqueda_MouseEnter);
-            this.textBoxBusqueda.MouseLeave += new System.EventHandler(this.textBoxBusqueda_MouseLeave);
             // 
             // label5
             // 
@@ -143,27 +136,6 @@
             this.dataGridViewAvisos.TabIndex = 32;
             this.dataGridViewAvisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAvisos_CellContentClick);
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(26, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 56);
-            this.button1.TabIndex = 33;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(178, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(338, 42);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Gestión de Cobros";
-            // 
             // ColumnCodigoFactura
             // 
             this.ColumnCodigoFactura.DataPropertyName = "CodigoFactura";
@@ -213,6 +185,49 @@
             this.ColumnCobrada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnCobrada.Width = 50;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(26, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(169, 56);
+            this.button1.TabIndex = 33;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label7.Location = new System.Drawing.Point(178, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(338, 42);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Gestión de Cobros";
+            // 
+            // textBoxBusqueda
+            // 
+            this.textBoxBusqueda.Location = new System.Drawing.Point(19, 18);
+            this.textBoxBusqueda.Name = "textBoxBusqueda";
+            this.textBoxBusqueda.Size = new System.Drawing.Size(232, 20);
+            this.textBoxBusqueda.TabIndex = 31;
+            this.textBoxBusqueda.TextChanged += new System.EventHandler(this.textBoxBusqueda_TextChanged);
+            // 
+            // comboBoxBusqueda
+            // 
+            this.comboBoxBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxBusqueda.FormattingEnabled = true;
+            this.comboBoxBusqueda.Items.AddRange(new object[] {
+            "Codigo",
+            "Cliente"});
+            this.comboBoxBusqueda.Location = new System.Drawing.Point(281, 18);
+            this.comboBoxBusqueda.Name = "comboBoxBusqueda";
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(115, 21);
+            this.comboBoxBusqueda.TabIndex = 30;
+            this.comboBoxBusqueda.Text = "Codigo";
+            // 
             // GestionAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,7 +262,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBoxBusqueda;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
@@ -260,5 +274,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVencimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnImporte;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCobrada;
+        private System.Windows.Forms.TextBox textBoxBusqueda;
+        private System.Windows.Forms.ComboBox comboBoxBusqueda;
     }
 }

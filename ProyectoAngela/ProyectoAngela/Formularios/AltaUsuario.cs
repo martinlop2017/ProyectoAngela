@@ -1,13 +1,6 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Usuario;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Genericos;
 
@@ -16,21 +9,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     public partial class AltaUsuario : Form
     {
         ISeguridadProvider seguridadProvider;
-        private bool isUpdate = false;
-        private string userId;
+        private UsuarioViewModel userToUpdate;
         
 
-        public AltaUsuario(ISeguridadProvider seguridadProvider)
+        public AltaUsuario(ISeguridadProvider seguridadProvider, UsuarioViewModel userToUpdate = null)
         {
             this.seguridadProvider = seguridadProvider;
+            this.userToUpdate = userToUpdate;
 
             InitializeComponent();
-        }
-
-        public void IsUpdate(string userId)
-        {
-            this.isUpdate = true;
-            this.userId = userId;
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
@@ -47,7 +34,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var newUser = this.ReadNewUserFromForm();
 
-            this.seguridadProvider.SaveUser(newUser);
+            if(userToUpdate != null)
+            {
+                this.seguridadProvider.UpdateUser(newUser);
+            }
+            else
+            {
+                this.seguridadProvider.SaveUser(newUser);
+            }
 
             this.Close();
         }
@@ -58,28 +52,34 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 UserName = this.textBoxUserName.Text,
                 Password = Encriptar.codificar( this.maskedTextBoxPassword.Text),
-                Nivel = this.comboBox1.Text,
+                Nivel = this.comboBoxNivel.Text,
                 Activo = radioButton1.Checked
-             
-
-
             };
         }
 
-        private void FillFormWithArticulo(AltaUsuarioViewModel viewModel)
+        private void FillFormWithUser(AltaUsuarioViewModel viewModel)
         {
             this.textBoxUserName.Text = viewModel.UserName;
+            this.maskedTextBoxPassword.Text = Encriptar.Descodificar(viewModel.Password);
+            this.maskedTextBox2.Text = Encriptar.Descodificar(viewModel.Password);
+            this.comboBoxNivel.Text = viewModel.Nivel;
+            this.radioButton1.Checked = viewModel.Activo;
+            this.radioButton2.Checked = !viewModel.Activo;
         }
 
         private void AltaUsuario_Load(object sender, EventArgs e)
         {
             var viewModel = new AltaUsuarioViewModel();
-            if(isUpdate)
+            if(userToUpdate != null)
             {
-                viewModel.UserName = this.userId;
+                this.textBoxUserName.Enabled = false;
+                viewModel.UserName = userToUpdate.Nombre;
+                viewModel.Password = userToUpdate.Password;
+                viewModel.Nivel = userToUpdate.Nivel;
+                viewModel.Activo = userToUpdate.Activo;
             }
 
-            this.FillFormWithArticulo(viewModel);
+            this.FillFormWithUser(viewModel);
         }
 
         private void AltaUsuario_KeyPress(object sender, KeyPressEventArgs e)

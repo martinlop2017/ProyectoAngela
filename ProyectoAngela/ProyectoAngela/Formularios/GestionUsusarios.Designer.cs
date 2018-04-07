@@ -33,9 +33,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GestionUsusarios));
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,6 +44,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxClientes = new System.Windows.Forms.ComboBox();
+            this.ColumNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnPassword = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
             this.dataGridViewUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUsuarios.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridViewUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridViewUsuarios.CausesValidation = false;
@@ -82,38 +84,19 @@
             this.dataGridViewUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.ColumNombre,
+            this.ColumnPassword,
+            this.ColumnNivel,
+            this.ColumnActivo});
             this.dataGridViewUsuarios.EnableHeadersVisualStyles = false;
             this.dataGridViewUsuarios.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewUsuarios.Location = new System.Drawing.Point(22, 195);
             this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
+            this.dataGridViewUsuarios.ReadOnly = true;
             this.dataGridViewUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewUsuarios.Size = new System.Drawing.Size(624, 377);
             this.dataGridViewUsuarios.TabIndex = 25;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Codigo";
-            this.Column1.HeaderText = "Cod.";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 90;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Nombre";
-            this.Column2.HeaderText = "Cliente";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 380;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "NIF";
-            this.Column3.HeaderText = "NIF/CIF";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 110;
             // 
             // label5
             // 
@@ -236,6 +219,39 @@
             this.comboBoxClientes.MouseEnter += new System.EventHandler(this.comboBoxClientes_MouseEnter);
             this.comboBoxClientes.MouseLeave += new System.EventHandler(this.comboBoxClientes_MouseLeave);
             // 
+            // ColumNombre
+            // 
+            this.ColumNombre.DataPropertyName = "Nombre";
+            this.ColumNombre.HeaderText = "Nombre";
+            this.ColumNombre.Name = "ColumNombre";
+            this.ColumNombre.ReadOnly = true;
+            // 
+            // ColumnPassword
+            // 
+            this.ColumnPassword.DataPropertyName = "Password";
+            this.ColumnPassword.HeaderText = "Password";
+            this.ColumnPassword.Name = "ColumnPassword";
+            this.ColumnPassword.ReadOnly = true;
+            // 
+            // ColumnNivel
+            // 
+            this.ColumnNivel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColumnNivel.DataPropertyName = "Nivel";
+            this.ColumnNivel.HeaderText = "Nivel";
+            this.ColumnNivel.Name = "ColumnNivel";
+            this.ColumnNivel.ReadOnly = true;
+            // 
+            // ColumnActivo
+            // 
+            this.ColumnActivo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.ColumnActivo.DataPropertyName = "Activo";
+            this.ColumnActivo.HeaderText = "Activo";
+            this.ColumnActivo.Name = "ColumnActivo";
+            this.ColumnActivo.ReadOnly = true;
+            this.ColumnActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnActivo.Width = 62;
+            // 
             // GestionUsusarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,7 +259,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Gestion_Ususarios;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(666, 602);
+            this.ClientSize = new System.Drawing.Size(666, 601);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -284,10 +300,11 @@
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBoxClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNivel;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnActivo;
     }
 }

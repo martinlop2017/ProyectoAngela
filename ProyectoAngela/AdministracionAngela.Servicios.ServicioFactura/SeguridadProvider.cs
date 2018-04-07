@@ -33,6 +33,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioSeguridad.SaveUser(userRepositorio);
         }
 
+        public void UpdateUser(AltaUsuarioViewModel newUser)
+        {
+            var userRepositorio = MapToRepository.MapAltaUsuarioViewModel(newUser);
+            this.repositorioSeguridad.UpdateUser(userRepositorio);
+        }
+
         public bool UsuarioEsValido(string userName, string pass)
         {
             if (userName.ToUpper().Equals("ADMIN") && pass.ToUpper().Equals("ADMIN"))

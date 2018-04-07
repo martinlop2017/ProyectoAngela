@@ -31,5 +31,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             this.dbContext.Users.Add(newUser);
             this.dbContext.SaveChanges();
         }
+
+        public void UpdateUser(User newUser)
+        {
+            var user = this.dbContext.Users.FirstOrDefault(x => x.UserName.Equals(newUser.UserName));
+
+            user.Password = newUser.Password;
+            user.Nivel = newUser.Nivel;
+            user.Activo = newUser.Activo;
+
+            this.dbContext.SaveChanges();
+        }
     }
 }

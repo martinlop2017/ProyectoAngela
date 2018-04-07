@@ -11,6 +11,7 @@ namespace AdministracionAngela.Utils.Interfaces
     {
         bool UsuarioEsValido(string userName, string pass);
         void SaveUser(AltaUsuarioViewModel newUser);
+        void UpdateUser(AltaUsuarioViewModel newUser);
         GestionUsuarioViewModel GetGestionUsuario();
     }
 }

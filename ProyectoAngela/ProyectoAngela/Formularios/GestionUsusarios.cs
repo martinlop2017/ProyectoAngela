@@ -1,13 +1,6 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Usuario;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 
@@ -64,18 +57,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void OpenFormToModify(UsuarioViewModel selectedUser)
         {
-            using (var formAltaUsuario = this.formOpener.GetForm<AltaUsuario>() as AltaUsuario)
-            {
-                formAltaUsuario.IsUpdate(selectedUser.Usuario);
-                formAltaUsuario.ShowDialog();
-            }
+            var formularioAlta = new AltaUsuario(this.seguridadProvider, selectedUser);
+            formularioAlta.ShowDialog();
 
             this.FillControls();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.formOpener.ShowModalForm<AltaUsuario>();
+            var formulario = new AltaUsuario(this.seguridadProvider);
+            formulario.ShowDialog();
+
+            this.FillControls();
         }
 
         private void button1_MouseEnter(object sender, EventArgs e)

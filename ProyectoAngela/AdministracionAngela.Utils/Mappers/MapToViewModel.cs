@@ -424,12 +424,10 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return new UsuarioViewModel()
             {
-                Usuario = usuario.UserName,
+                Nombre = usuario.UserName,
                 Password = usuario.Password,
                 Nivel = usuario.Nivel,
                 Activo = Convert.ToBoolean (usuario.Activo)
-                
-
             };
         }
         #endregion

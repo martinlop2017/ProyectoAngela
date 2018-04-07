@@ -17,6 +17,11 @@ namespace AdministracionAngela.Utils.Genericos
         /// Encripta una cadena
         public static string codificar(this string _cadenaAencriptar)
         {
+            if (string.IsNullOrEmpty(_cadenaAencriptar))
+            {
+                return string.Empty;
+            }
+
             string result = string.Empty;
             byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
             result = Convert.ToBase64String(encryted);
@@ -26,9 +31,13 @@ namespace AdministracionAngela.Utils.Genericos
         /// Esta función desencripta la cadena que le envíamos en el parámentro de entrada.
         public static string Descodificar(this string _cadenaAdesencriptar)
         {
+            if(string.IsNullOrEmpty(_cadenaAdesencriptar))
+            {
+                return string.Empty;
+            }
+
             string result = string.Empty;
             byte[] decryted = Convert.FromBase64String(_cadenaAdesencriptar);
-            //result = System.Text.Encoding.Unicode.GetString(decryted, 0, decryted.ToArray().Length);
             result = System.Text.Encoding.Unicode.GetString(decryted);
             return result;
         }

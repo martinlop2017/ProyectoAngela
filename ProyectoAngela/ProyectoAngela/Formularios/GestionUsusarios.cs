@@ -1,7 +1,9 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Usuario;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
+using System.Linq;
 
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
@@ -11,11 +13,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private ISeguridadProvider seguridadProvider;
         private IFormOpener formOpener;
         private GestionUsuarioViewModel viewModel;
+        private BindingList<UsuarioViewModel> usuarios;
 
         public GestionUsusarios(IFormOpener formOpener, ISeguridadProvider seguridadProvider)
         {
             this.formOpener = formOpener;
             this.seguridadProvider = seguridadProvider;
+            usuarios = new BindingList<UsuarioViewModel>();
             InitializeComponent();
         }
 
@@ -28,6 +32,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             viewModel = seguridadProvider.GetGestionUsuario();
             this.dataGridViewUsuarios.DataSource = viewModel.Usuarios;
+            usuarios = viewModel.Usuarios;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -154,6 +159,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void comboBoxClientes_MouseLeave(object sender, EventArgs e)
         {
             label4.Visible = false;
+        }
+
+        private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxBusqueda.Text.Equals("Nombre"))
+            {
+                this.dataGridViewUsuarios.DataSource = usuarios.Where(x => x.Nombre.ToUpper().Contains(textBoxBusqueda.Text.ToUpper())).ToList();
+            }
+
+            if (comboBoxBusqueda.Text.Equals("Nivel"))
+            {
+                dataGridViewUsuarios.DataSource = usuarios.Where(x => x.Nivel.ToUpper().Contains(textBoxBusqueda.Text.ToUpper())).ToList();
+            }
         }
     }
 }

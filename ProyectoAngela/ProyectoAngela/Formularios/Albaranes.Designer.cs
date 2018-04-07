@@ -106,7 +106,6 @@
             this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerFecha.Location = new System.Drawing.Point(544, 68);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
-            this.dateTimePickerFecha.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dateTimePickerFecha.RightToLeftLayout = true;
             this.dateTimePickerFecha.Size = new System.Drawing.Size(135, 20);
             this.dateTimePickerFecha.TabIndex = 57;

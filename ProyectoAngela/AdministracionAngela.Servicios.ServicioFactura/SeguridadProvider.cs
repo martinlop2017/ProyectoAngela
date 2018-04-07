@@ -1,10 +1,5 @@
 ﻿using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Utils.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Mappers;
 
@@ -25,6 +20,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionUsuario(usersFromRepository);
 
 
+        }
+
+        public void RemoveUser(string userToRemove)
+        {
+            this.repositorioSeguridad.RemoveUser(userToRemove);
         }
 
         public void SaveUser(AltaUsuarioViewModel newUser)

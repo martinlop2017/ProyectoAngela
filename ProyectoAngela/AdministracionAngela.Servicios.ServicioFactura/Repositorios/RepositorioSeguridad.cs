@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.EFRepository;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
@@ -24,6 +21,14 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         public User GetUser(string userName)
         {
             return dbContext.Users.SingleOrDefault(u => u.UserName.Equals(userName));
+        }
+
+        public void RemoveUser(string userToRemove)
+        {
+            var user = this.dbContext.Users.FirstOrDefault(x => x.UserName.Equals(userToRemove));
+            this.dbContext.Users.Remove(user);
+
+            this.dbContext.SaveChanges();
         }
 
         public void SaveUser(User newUser)

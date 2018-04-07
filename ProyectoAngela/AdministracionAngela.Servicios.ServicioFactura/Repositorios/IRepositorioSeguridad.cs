@@ -14,5 +14,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void SaveUser(User newUser);
         void UpdateUser(User newUser);
         List<User> GetAllUsers();
+        void RemoveUser(string userToRemove);
     }
 }

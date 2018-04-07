@@ -131,8 +131,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             if (MessageBox.Show("Va a proceder a eliminar el registro seleccionado.\n                     Desea Eliminar el registro?"
     , "Eliminar Registro.", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes) ;
             {
+                var selectedRow = this.dataGridViewUsuarios.SelectedRows[0];
+                var userToRemove = selectedRow.Cells["ColumnNombre"].Value.ToString();
 
-
+                this.seguridadProvider.RemoveUser(userToRemove);
+                this.FillControls();
             }
         }
 

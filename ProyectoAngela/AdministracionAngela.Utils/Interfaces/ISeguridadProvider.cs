@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AdministracionAngela.Utils.Models.Usuario;
+﻿using AdministracionAngela.Utils.Models.Usuario;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -13,5 +8,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void SaveUser(AltaUsuarioViewModel newUser);
         void UpdateUser(AltaUsuarioViewModel newUser);
         GestionUsuarioViewModel GetGestionUsuario();
+        void RemoveUser(string userToRemove);
     }
 }

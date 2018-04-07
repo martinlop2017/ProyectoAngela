@@ -50,7 +50,6 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.FechaInicio = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -69,6 +68,7 @@
             this.buttonIva = new System.Windows.Forms.Button();
             this.buttonFactura = new System.Windows.Forms.Button();
             this.buttonSistema = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -202,7 +202,7 @@
             this.toolStripStatusLabel2,
             this.FechaInicio,
             this.toolStripStatusLabel1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 767);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 736);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1284, 45);
             this.statusStrip1.TabIndex = 1;
@@ -243,10 +243,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(22, 40);
             this.toolStripStatusLabel1.Text = "  ";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
             // 
             // label1
             // 
@@ -356,7 +352,6 @@
             // 
             this.buttonAvisos.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Rojos1;
             this.buttonAvisos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonAvisos.Enabled = false;
             this.buttonAvisos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.buttonAvisos.ImageKey = "(ninguno)";
             this.buttonAvisos.Location = new System.Drawing.Point(1126, 43);
@@ -365,8 +360,6 @@
             this.buttonAvisos.TabIndex = 12;
             this.buttonAvisos.UseVisualStyleBackColor = true;
             this.buttonAvisos.Click += new System.EventHandler(this.buttonAvisos_Click);
-            this.buttonAvisos.MouseEnter += new System.EventHandler(this.buttonAvisos_MouseEnter);
-            this.buttonAvisos.MouseLeave += new System.EventHandler(this.buttonAvisos_MouseLeave);
             // 
             // buttonSeguridad
             // 
@@ -506,13 +499,18 @@
             this.buttonSistema.MouseEnter += new System.EventHandler(this.buttonSistema_MouseEnter);
             this.buttonSistema.MouseLeave += new System.EventHandler(this.buttonSistema_MouseLeave);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1284, 812);
+            this.ClientSize = new System.Drawing.Size(1284, 781);
             this.Controls.Add(this.buttonLiq);
             this.Controls.Add(this.buttonRutas);
             this.Controls.Add(this.buttonCobro);
@@ -561,7 +559,6 @@
         private System.Windows.Forms.ToolStripMenuItem factruasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripStatusLabel FechaInicio;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
@@ -590,5 +587,6 @@
         private System.Windows.Forms.Button buttonLiq;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem avisosToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
     }
 }

@@ -10,7 +10,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         IClienteProvider clienteProvider;
         ISistemaProvider sistemaProvider;
         private IFormOpener formOpener;
-        private bool hayFacturasCaducadas = false;
 
         public Menu(IClienteProvider clienteProvider, ISistemaProvider sistemaProvider, IFormOpener formOpener)
         {
@@ -47,17 +46,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            //inicia la fecha al cargar la forma
+            var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
+            buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
 
-            FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToShortTimeString() + "  ";
-            hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
-
-
-            if (hayFacturasCaducadas == true)
-            {
-                buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Rojos;
-                buttonAvisos.Enabled = true;
-            }
+            this.timer1.Start();
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -248,17 +240,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonSeguridad_MouseLeave(object sender, EventArgs e)
         {
             buttonSeguridad.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Copias_Seguridad;
-        }
-
-        private void buttonAvisos_MouseEnter(object sender, EventArgs e)
-        {
-            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Azul_Rojo;
-        }
-
-        private void buttonAvisos_MouseLeave(object sender, EventArgs e)
-        {
-            buttonAvisos.BackgroundImage = AdministracionAngela.ProyectoAngela.Properties.Resources.Avisos_Rojos;
-        }
+        }  
 
         private void buttonMisdatos_MouseEnter(object sender, EventArgs e)
         {
@@ -364,6 +346,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void albaranesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.formOpener.ShowDocumentoGestionForm(EnumDocumentosGestion.Albaran);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            FechaInicio.Text = "    Fecha : " + DateTime.Now.ToString("dd/MM/yyyy") + "   -   Hora: " + DateTime.Now.ToShortTimeString() + "  ";
+
+            var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
+            buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
         }
     }
 }

@@ -561,5 +561,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var facturas = this.repositorioFactura.GetFacturasCaducadas();
             return MapToViewModel.MapToGestionAvisos(facturas);
         }
+
+        public void SetFacturaCobrada(long codigoFactura)
+        {
+            this.repositorioFactura.SetFacturaCobrada(codigoFactura);
+        }
     }
 }

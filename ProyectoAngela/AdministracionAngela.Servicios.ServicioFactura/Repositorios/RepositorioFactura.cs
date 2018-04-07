@@ -335,5 +335,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             DbFunctions.TruncateTime(x.FechaVencimiento.Value) < DateTime.Today.Date)
             .ToList();
         }
+
+        public void SetFacturaCobrada(long codigoFactura)
+        {
+            var factura = this.dbContext.Facturas.FirstOrDefault(x => x.NumeroFactura == codigoFactura);
+            factura.FechaVencimiento = null;
+
+            this.dbContext.SaveChanges();
+        }
     }
 }

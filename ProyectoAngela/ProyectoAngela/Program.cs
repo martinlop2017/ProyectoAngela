@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AdministracionAngela.Servicios.ServicioDatos;
-using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using StructureMap;
 using AdministracionAngela.ProyectoAngela.Infraestructura;
-using AdministracionAngela.ProyectoAngela.Utils;
-using AdministracionAngela.ProyectoAngela.Formularios;
-using ProyectoAngela;
 
 namespace AdministracionAngela.ProyectoAngela
 {

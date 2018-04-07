@@ -41,6 +41,7 @@ namespace AdministracionAngela.Utils.Interfaces
         bool ExisteFactura(int numeroDocumento);
         bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
         void SetCobrado(int numeroDocumento, bool cobrado);
+        void SetFacturaCobrada(long codigoFactura);
         void LoadIVAAndREBy(AltaFacturaViewModel viewModel);
         void LoadIVAAndREBy(AltaAlbaranViewModel viewModel);
         GestionAvisosViewModel GetGestionFacturasVencidas();

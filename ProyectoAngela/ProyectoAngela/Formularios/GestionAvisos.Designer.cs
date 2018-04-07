@@ -131,16 +131,17 @@
             this.ColumnVencimiento,
             this.ColumnImporte,
             this.ColumnCobrada});
+            this.dataGridViewAvisos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnKeystroke;
             this.dataGridViewAvisos.EnableHeadersVisualStyles = false;
             this.dataGridViewAvisos.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewAvisos.Location = new System.Drawing.Point(26, 195);
             this.dataGridViewAvisos.Name = "dataGridViewAvisos";
-            this.dataGridViewAvisos.ReadOnly = true;
             this.dataGridViewAvisos.RowHeadersWidth = 20;
             this.dataGridViewAvisos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAvisos.Size = new System.Drawing.Size(647, 455);
             this.dataGridViewAvisos.TabIndex = 32;
+            this.dataGridViewAvisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAvisos_CellContentClick);
             // 
             // button1
             // 
@@ -208,7 +209,6 @@
             this.ColumnCobrada.DataPropertyName = "Cobrada";
             this.ColumnCobrada.HeaderText = "Cobrada";
             this.ColumnCobrada.Name = "ColumnCobrada";
-            this.ColumnCobrada.ReadOnly = true;
             this.ColumnCobrada.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnCobrada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnCobrada.Width = 50;

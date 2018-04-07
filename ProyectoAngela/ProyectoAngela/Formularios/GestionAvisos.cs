@@ -60,5 +60,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var viewModel = facturaProvider.GetGestionFacturasVencidas();
             this.dataGridViewAvisos.DataSource = viewModel.Avisos;
         }
+
+        private void dataGridViewAvisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dataGridViewAvisos.CurrentCell.OwningColumn.Name.Equals("ColumnCobrada"))
+            {
+                var selectedRow = this.dataGridViewAvisos.SelectedRows[0];
+                selectedRow.Cells["ColumnCobrada"].Value = !(bool)selectedRow.Cells["ColumnCobrada"].Value;
+                var cobrada = (bool)(selectedRow.Cells["ColumnCobrada"] as DataGridViewCheckBoxCell).Value;
+                var codigoFactura = selectedRow.Cells["ColumnCodigoFactura"].Value;
+
+                this.facturaProvider.SetFacturaCobrada((long)codigoFactura);
+            }
+        }
     }
 }

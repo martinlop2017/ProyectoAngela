@@ -73,6 +73,7 @@
             // 
             // dataGridViewFacturas
             // 
+            this.dataGridViewFacturas.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
@@ -104,6 +105,7 @@
             this.dataGridViewFacturas.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewFacturas.Location = new System.Drawing.Point(20, 192);
             this.dataGridViewFacturas.Name = "dataGridViewFacturas";
+            this.dataGridViewFacturas.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,6 +221,7 @@
             this.ColumnCobrado.DataPropertyName = "Cobrado";
             this.ColumnCobrado.HeaderText = "Cobrado";
             this.ColumnCobrado.Name = "ColumnCobrado";
+            this.ColumnCobrado.ReadOnly = true;
             this.ColumnCobrado.Width = 60;
             // 
             // label5

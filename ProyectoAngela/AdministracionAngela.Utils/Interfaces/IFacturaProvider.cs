@@ -7,6 +7,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Impresion;
+using AdministracionAngela.Utils.Models.Avisos;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -42,5 +43,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void SetCobrado(int numeroDocumento, bool cobrado);
         void LoadIVAAndREBy(AltaFacturaViewModel viewModel);
         void LoadIVAAndREBy(AltaAlbaranViewModel viewModel);
+        GestionAvisosViewModel GetGestionFacturasVencidas();
     }
 }

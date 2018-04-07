@@ -9,6 +9,7 @@ using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Impresion;
+using AdministracionAngela.Utils.Models.Avisos;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -553,6 +554,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             {
                 viewModel.LineasIVA.ForEach(x => x.PorcentajeIVA = 0);
             }
+        }
+
+        public GestionAvisosViewModel GetGestionFacturasVencidas()
+        {
+            var facturas = this.repositorioFactura.GetFacturasCaducadas();
+            return MapToViewModel.MapToGestionAvisos(facturas);
         }
     }
 }

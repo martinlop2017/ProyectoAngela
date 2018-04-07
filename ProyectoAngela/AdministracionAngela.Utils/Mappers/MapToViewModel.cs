@@ -17,6 +17,7 @@ using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Models.FormaDePago;
 using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.Utils.Models.Albaran;
+using AdministracionAngela.Utils.Models.Avisos;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -553,6 +554,38 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 Total = lineasLiquidacionViewModel.Sum(l => l.Total),
                 LineasLiquidacion = new BindingList<LineaLiquidacionViewModel>(lineasLiquidacionViewModel)
+            };
+        }
+
+        #endregion
+
+        #region Avisos
+
+        public static GestionAvisosViewModel MapToGestionAvisos(List<Factura> facturas)
+        {
+            var avisosViewModel = MapAvisosList(facturas);
+
+            return new GestionAvisosViewModel()
+            {
+                Avisos = new BindingList<AvisoViewModel>(avisosViewModel)
+            };
+        }
+
+        private static List<AvisoViewModel> MapAvisosList(List<Factura> facturas)
+        {
+            return facturas.Select(f => MapAvisoViewModel(f)).ToList<AvisoViewModel>();
+        }
+
+        private static AvisoViewModel MapAvisoViewModel(Factura f)
+        {
+            return new AvisoViewModel()
+            {
+                CodigoFactura = f.NumeroFactura,
+                Cliente = f.Cliente.Nombre,
+                FechaFactura = f.Fecha.Value.ToString("dd/MM/yyyy"),
+                FechaVencimiento = f.FechaVencimiento.Value.ToString("dd/MM/yyyy"),
+                Importe = f.Total.Value,
+                Cobrada = false
             };
         }
 

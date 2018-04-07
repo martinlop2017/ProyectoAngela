@@ -36,17 +36,17 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.dataGridViewArticulos = new System.Windows.Forms.DataGridView();
-            this.Cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cobrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewAvisos = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.ColumnCodigoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvisos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -104,17 +104,17 @@
             this.button5.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
             // 
-            // dataGridViewArticulos
+            // dataGridViewAvisos
             // 
-            this.dataGridViewArticulos.AllowUserToDeleteRows = false;
-            this.dataGridViewArticulos.AllowUserToResizeRows = false;
+            this.dataGridViewAvisos.AllowUserToDeleteRows = false;
+            this.dataGridViewAvisos.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            this.dataGridViewArticulos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewArticulos.BackgroundColor = System.Drawing.SystemColors.Window;
-            this.dataGridViewArticulos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dataGridViewArticulos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            this.dataGridViewAvisos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewAvisos.BackgroundColor = System.Drawing.SystemColors.Window;
+            this.dataGridViewAvisos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridViewAvisos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,67 +122,25 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewArticulos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewArticulos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Cod,
-            this.Cliente,
-            this.Fecha,
-            this.vencimiento,
-            this.Importe,
-            this.Cobrada});
-            this.dataGridViewArticulos.EnableHeadersVisualStyles = false;
-            this.dataGridViewArticulos.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewArticulos.Location = new System.Drawing.Point(26, 195);
-            this.dataGridViewArticulos.Name = "dataGridViewArticulos";
-            this.dataGridViewArticulos.ReadOnly = true;
-            this.dataGridViewArticulos.RowHeadersWidth = 20;
-            this.dataGridViewArticulos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridViewArticulos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewArticulos.Size = new System.Drawing.Size(647, 455);
-            this.dataGridViewArticulos.TabIndex = 32;
-            // 
-            // Cod
-            // 
-            this.Cod.HeaderText = "Cod.";
-            this.Cod.Name = "Cod";
-            this.Cod.ReadOnly = true;
-            this.Cod.Width = 60;
-            // 
-            // Cliente
-            // 
-            this.Cliente.HeaderText = "Cliente";
-            this.Cliente.Name = "Cliente";
-            this.Cliente.ReadOnly = true;
-            this.Cliente.Width = 275;
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "F. Fact.";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 80;
-            // 
-            // vencimiento
-            // 
-            this.vencimiento.HeaderText = "F. Vencim.";
-            this.vencimiento.Name = "vencimiento";
-            this.vencimiento.ReadOnly = true;
-            this.vencimiento.Width = 80;
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 80;
-            // 
-            // Cobrada
-            // 
-            this.Cobrada.HeaderText = "Cobrada";
-            this.Cobrada.Name = "Cobrada";
-            this.Cobrada.ReadOnly = true;
-            this.Cobrada.Width = 50;
+            this.dataGridViewAvisos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewAvisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewAvisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnCodigoFactura,
+            this.ColumnCliente,
+            this.ColumnFecha,
+            this.ColumnVencimiento,
+            this.ColumnImporte,
+            this.ColumnCobrada});
+            this.dataGridViewAvisos.EnableHeadersVisualStyles = false;
+            this.dataGridViewAvisos.GridColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewAvisos.Location = new System.Drawing.Point(26, 195);
+            this.dataGridViewAvisos.Name = "dataGridViewAvisos";
+            this.dataGridViewAvisos.ReadOnly = true;
+            this.dataGridViewAvisos.RowHeadersWidth = 20;
+            this.dataGridViewAvisos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewAvisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewAvisos.Size = new System.Drawing.Size(647, 455);
+            this.dataGridViewAvisos.TabIndex = 32;
             // 
             // button1
             // 
@@ -205,6 +163,56 @@
             this.label7.TabIndex = 35;
             this.label7.Text = "Gestión de Cobros";
             // 
+            // ColumnCodigoFactura
+            // 
+            this.ColumnCodigoFactura.DataPropertyName = "CodigoFactura";
+            this.ColumnCodigoFactura.HeaderText = "Cod.";
+            this.ColumnCodigoFactura.Name = "ColumnCodigoFactura";
+            this.ColumnCodigoFactura.ReadOnly = true;
+            this.ColumnCodigoFactura.Width = 60;
+            // 
+            // ColumnCliente
+            // 
+            this.ColumnCliente.DataPropertyName = "Cliente";
+            this.ColumnCliente.HeaderText = "Cliente";
+            this.ColumnCliente.Name = "ColumnCliente";
+            this.ColumnCliente.ReadOnly = true;
+            this.ColumnCliente.Width = 275;
+            // 
+            // ColumnFecha
+            // 
+            this.ColumnFecha.DataPropertyName = "FechaFactura";
+            this.ColumnFecha.HeaderText = "F. Fact.";
+            this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
+            this.ColumnFecha.Width = 80;
+            // 
+            // ColumnVencimiento
+            // 
+            this.ColumnVencimiento.DataPropertyName = "FechaVencimiento";
+            this.ColumnVencimiento.HeaderText = "F. Vencim.";
+            this.ColumnVencimiento.Name = "ColumnVencimiento";
+            this.ColumnVencimiento.ReadOnly = true;
+            this.ColumnVencimiento.Width = 80;
+            // 
+            // ColumnImporte
+            // 
+            this.ColumnImporte.DataPropertyName = "Importe";
+            this.ColumnImporte.HeaderText = "Importe";
+            this.ColumnImporte.Name = "ColumnImporte";
+            this.ColumnImporte.ReadOnly = true;
+            this.ColumnImporte.Width = 80;
+            // 
+            // ColumnCobrada
+            // 
+            this.ColumnCobrada.DataPropertyName = "Cobrada";
+            this.ColumnCobrada.HeaderText = "Cobrada";
+            this.ColumnCobrada.Name = "ColumnCobrada";
+            this.ColumnCobrada.ReadOnly = true;
+            this.ColumnCobrada.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnCobrada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColumnCobrada.Width = 50;
+            // 
             // GestionAvisos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,11 +220,11 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::AdministracionAngela.ProyectoAngela.Properties.Resources.Gestion_Articulos1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(700, 688);
+            this.ClientSize = new System.Drawing.Size(700, 687);
             this.ControlBox = false;
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridViewArticulos);
+            this.Controls.Add(this.dataGridViewAvisos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -227,9 +235,10 @@
             this.Name = "GestionAvisos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GestionAvisos";
+            this.Load += new System.EventHandler(this.GestionAvisos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewArticulos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvisos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,14 +251,14 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DataGridView dataGridViewArticulos;
+        private System.Windows.Forms.DataGridView dataGridViewAvisos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vencimiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cobrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnVencimiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnImporte;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCobrada;
     }
 }

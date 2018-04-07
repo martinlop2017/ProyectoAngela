@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionAvisos : Form
     {
-        public GestionAvisos()
+        private IFacturaProvider facturaProvider;
+        public GestionAvisos(IFacturaProvider facturaProvider)
         {
+            this.facturaProvider = facturaProvider;
             InitializeComponent();
         }
 
@@ -50,6 +53,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void button5_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void GestionAvisos_Load(object sender, EventArgs e)
+        {
+            var viewModel = facturaProvider.GetGestionFacturasVencidas();
+            this.dataGridViewAvisos.DataSource = viewModel.Avisos;
         }
     }
 }

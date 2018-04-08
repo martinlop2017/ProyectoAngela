@@ -426,7 +426,7 @@ namespace AdministracionAngela.Utils.Mappers
             {
                 Nombre = usuario.UserName,
                 Password = usuario.Password,
-                Nivel = usuario.Nivel,
+                Nivel = usuario.Nivel.Trim(),
                 Activo = Convert.ToBoolean (usuario.Activo)
             };
         }

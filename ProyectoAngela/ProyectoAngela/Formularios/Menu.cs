@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Enumerados;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -46,6 +47,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            if(NivelUsuario.Nivel.Equals("Usuario"))
+            {
+                buttonSistema.Visible = false;
+                buttonCliente.Visible = false;
+                buttonArticulos.Visible = false;
+                buttonFactura.Visible = false;
+                buttonListados.Visible = false;
+                buttonSeguridad.Visible = false;
+                buttonLiq.Visible = false;
+                buttonAvisos.Visible = false;
+            }
             var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
             buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
 

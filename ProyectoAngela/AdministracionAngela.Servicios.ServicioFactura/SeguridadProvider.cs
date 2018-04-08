@@ -39,19 +39,17 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             this.repositorioSeguridad.UpdateUser(userRepositorio);
         }
 
-        public bool UsuarioEsValido(string userName, string pass)
+        public UsuarioViewModel GetUser(string userName, string pass)
         {
             if (userName.ToUpper().Equals("ADMIN") && pass.ToUpper().Equals("ADMIN"))
-                return true;
+                return new UsuarioViewModel()
+                {
+                    Nombre = "ADMIN",
+                    Nivel = "Administrador"
+                };
 
-            var userValido = false;
-            var user = this.repositorioSeguridad.GetUser(userName);
-            if (user != null && user.Password.Equals(pass))
-            {
-                userValido = true;
-            }
-
-            return userValido;
+            var user = this.repositorioSeguridad.GetUser(userName, pass);
+            return MapToViewModel.MapUser(user);
         }
     }
 }

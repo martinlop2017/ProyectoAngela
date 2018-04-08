@@ -1,18 +1,9 @@
-﻿using AdministracionAngela.ProyectoAngela.Infraestructura;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using StructureMap;
-using AdministracionAngela.ProyectoAngela.Utils;
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Genericos;
-using AdministracionAngela.EFRepository;
 
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
@@ -52,15 +43,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string llave = Encriptar.codificar(textBoxPassword.Text);
+            string password = Encriptar.codificar(textBoxPassword.Text);
 
-            var compro = bd.Users.Where(X => X.UserName == comboBox1.Text && X.Password == llave).ToList();
-            if (compro.Count == 1)
+            var user = this.seguridadProvider.GetUser(comboBox1.Text, password);
+            var compro = bd.Users.Where(X => X.UserName == comboBox1.Text && X.Password == password).ToList();
+            if (user != null)
             {
-
                 // Abre el menu principal
-                this.formOpener.ShowModalForm<Menu>();
-        
+                var menu = this.formOpener.GetForm<Menu>() as Menu;
+                NivelUsuario.Nivel = user.Nivel;
+                menu.ShowDialog();
             }
             else
             {
@@ -75,24 +67,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     Close();
                 }
             }
-
-            if (textBoxPassword.Text == "citroenc5")
-            { // Abre el menu principal
-                this.formOpener.ShowModalForm<Menu>();
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)

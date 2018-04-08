@@ -22,34 +22,19 @@ namespace AdministracionAngela.ProyectoAngela.Utils
             this.container = container;
         }
 
-        public DialogResult ShowModalFormWithParameter<TForm>(int Id) where TForm : Form
+        public DialogResult ShowModalForm<TForm>() where TForm : Form
         {
             using (var form = this.GetForm<TForm>())
             {
-                return form.ShowDialog();
-            }
-        }
-
-        public DialogResult ShowModalForm<TForm>() where TForm : Form
-        {
-            //try
-            //{
-                using (var form = this.GetForm<TForm>())
+                try
                 {
-                    try
-                    {
-                        return form.ShowDialog();
-                    }
-                    catch (Exception exp)
-                    {
-                        return DialogResult.Abort;
-                    }
+                    return form.ShowDialog();
                 }
-            //}
-            //catch(Exception exp)
-            //{
-            //    return DialogResult.Abort;
-            //}
+                catch (Exception exp)
+                {
+                    return DialogResult.Abort;
+                }
+            }
         }
 
         public DialogResult ShowDocumentoGestionForm(EnumDocumentosGestion documento)

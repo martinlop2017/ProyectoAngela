@@ -23,6 +23,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return dbContext.Users.SingleOrDefault(u => u.UserName.Equals(userName));
         }
 
+        public User GetUser(string userName, string password)
+        {
+            return dbContext.Users.SingleOrDefault(u => u.UserName.Equals(userName) && u.Password.Equals(password));
+        }
+
         public void RemoveUser(string userToRemove)
         {
             var user = this.dbContext.Users.FirstOrDefault(x => x.UserName.Equals(userToRemove));

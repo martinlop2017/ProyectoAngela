@@ -78,6 +78,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 viewModel.Nivel = userToUpdate.Nivel;
                 viewModel.Activo = userToUpdate.Activo;
             }
+            else
+            {
+                viewModel.Activo = true;
+            }
 
             this.FillFormWithUser(viewModel);
         }

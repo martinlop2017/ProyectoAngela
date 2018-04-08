@@ -51,6 +51,7 @@
     <Compile Include="Extensions\DataGridViewRowExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Genericos\Encriptar.cs" />
+    <Compile Include="Genericos\NivelUsuario.cs" />
     <Compile Include="Genericos\RutasSalida.cs" />
     <Compile Include="Interfaces\IDocumentoGestion.cs" />
     <Compile Include="Models\Albaran\AlbaranViewModel.cs" />

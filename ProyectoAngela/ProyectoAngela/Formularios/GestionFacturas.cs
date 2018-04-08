@@ -8,6 +8,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Extensions;
 using AdministracionAngela.Utils.Enumerados;
 using System.ComponentModel;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -107,7 +108,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionFacturas_Load(object sender, EventArgs e)
         {
-
+            if(NivelUsuario.Nivel.Equals("Usuario"))
+            {
+                buttonBorrar.Visible = false;
+                buttonModificar.Visible = false;
+                buttonImprimir.Visible = false;
+                buttonFacturar.Visible = false;
+            }
             this.FillControls();
             var typeDocumento = this.documentoGestion.GetTipoDocumento();
             if (typeDocumento == EnumDocumentosGestion.Factura)

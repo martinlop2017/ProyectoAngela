@@ -2,6 +2,8 @@
 using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Mappers;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -50,6 +52,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             var user = this.repositorioSeguridad.GetUser(userName, pass);
             return MapToViewModel.MapUser(user);
+        }
+
+        public List<string> GetAllUserNames()
+        {
+            var users = this.repositorioSeguridad.GetAllUsers();
+            if (users.Count > 0)
+                return users.Select(x => x.UserName).ToList();
+            else
+                return new List<string>(); 
         }
     }
 }

@@ -12,7 +12,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
     {
         ISeguridadProvider seguridadProvider;
         IFormOpener formOpener;
-        AdministracionAngela.EFRepository.AdministracionAngelaContext bd;
        // AdministracionAntonioEntities baseDeDatos;
         int contador = 0;
 
@@ -20,10 +19,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.seguridadProvider = seguridadProvider;
             this.formOpener = formOpener;
-            bd = new AdministracionAngela.EFRepository.AdministracionAngelaContext();
             
             InitializeComponent();
-            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -46,7 +43,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             string password = Encriptar.codificar(textBoxPassword.Text);
 
             var user = this.seguridadProvider.GetUser(comboBox1.Text, password);
-            var compro = bd.Users.Where(X => X.UserName == comboBox1.Text && X.Password == password).ToList();
             if (user != null)
             {
                 // Abre el menu principal
@@ -115,7 +111,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             RutasSalida.RutaListados = Properties.Settings.Default.RutaListados;
             RutasSalida.RutaSeguridad = Properties.Settings.Default.RutaSeguridad;
 
-            comboBox1.DataSource = bd.Users.Where(user => user.Activo == true).Select(user => user.UserName).ToList<string>();
+            comboBox1.DataSource = this.seguridadProvider.GetAllUserNames();
         }
 
         private void ControlUsusarios_KeyPress(object sender, KeyPressEventArgs e)

@@ -1,10 +1,6 @@
 ﻿using AdministracionAngela.Servicios.ServicioDatos.Repositorios;
 using AdministracionAngela.Utils.Interfaces;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.FormaDePago;
 using AdministracionAngela.Utils.Models.RutasSalida;
@@ -58,9 +54,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return facturasCaducadas != null && facturasCaducadas.Count > 0;
         }
 
-        public void BackUp()
+        public bool BackUp()
         {
-            this.repositorioSistema.BackUp();
+            return this.repositorioSistema.BackUp();
         }
     }
 }

@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.RutasSalida;
 using AdministracionAngela.Utils.Genericos;
 
@@ -52,9 +50,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        public void BackUp()
+        public bool BackUp()
         {
-            this.dbContext.BackUp(RutasSalida.RutaSeguridad);
+            return this.dbContext.BackUp(RutasSalida.RutaSeguridad);
         }
     }
 }

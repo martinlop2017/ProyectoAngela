@@ -153,7 +153,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonCobro.Visible = false;
             buttonRutas.Visible = false;
 
-            this.sistemaProvider.BackUp();
+            var backUpOk = this.sistemaProvider.BackUp();
+            var message = backUpOk ? "Copia de seguridad realizada correctamente" : "Fallo al realizar la copia de seguridad";
+
+            MessageBox.Show(message);
         }
 
         private void buttonAvisos_Click(object sender, EventArgs e)

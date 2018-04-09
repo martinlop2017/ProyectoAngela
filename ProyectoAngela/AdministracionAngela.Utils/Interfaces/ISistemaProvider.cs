@@ -1,9 +1,5 @@
 ﻿using AdministracionAngela.Utils.Models.FormaDePago;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.RutasSalida;
 
 namespace AdministracionAngela.Utils.Interfaces
@@ -14,6 +10,6 @@ namespace AdministracionAngela.Utils.Interfaces
         GestionFormaDePagoViewModel GetGestionFormasDePago();
         void SaveRutasSalida(RutasSalidaViewModel viewModel);
         bool HayFacturasCaducadas();
-        void BackUp();
+        bool BackUp();
     }
 }

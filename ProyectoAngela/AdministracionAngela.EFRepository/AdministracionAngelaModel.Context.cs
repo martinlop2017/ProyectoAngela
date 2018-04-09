@@ -65,10 +65,20 @@ namespace AdministracionAngela.EFRepository
             }
         }
 
-        public void BackUp(string path)
+        public bool BackUp(string path)
         {
-            string sqlCommand = string.Format(@"BACKUP DATABASE [AdministracionAngela] TO  DISK = N'{0}\BackUp {1}.bak'", path, DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss"));
-            Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
+            bool Ok = true;
+            try
+            {
+                string sqlCommand = string.Format(@"BACKUP DATABASE [AdministracionAngela] TO  DISK = N'{0}\BackUp {1}.bak'", path, DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss"));
+                Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
+            }
+            catch(Exception exp)
+            {
+                Ok = false;
+            }
+
+            return Ok;
         }
     }
 }

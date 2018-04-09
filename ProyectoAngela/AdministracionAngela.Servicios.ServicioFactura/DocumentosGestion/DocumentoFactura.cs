@@ -144,6 +144,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
             table.Columns.Add("NombreDocumento", Type.GetType("System.String"));
             table.Columns.Add("NombreDocumentoSmall", Type.GetType("System.String"));
             table.Columns.Add("EtiquetaLote", Type.GetType("System.String"));
+            table.Columns.Add("NumeroCuenta", Type.GetType("System.String"));
 
             var lineas = this.facturaProvider.GetFacturaCliente(numeroDocumento);
             foreach (var linea in lineas)
@@ -181,6 +182,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[29] = "F A C T U R A";
                 row[30] = "FACTURA";
                 row[31] = linea.EtiquetaLote;
+                row[32] = linea.NumeroCuenta;
                 table.Rows.Add(row);
             }
 

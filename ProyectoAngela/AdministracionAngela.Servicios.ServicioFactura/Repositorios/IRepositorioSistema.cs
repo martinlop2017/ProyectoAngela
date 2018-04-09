@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.RutasSalida;
 
@@ -15,5 +11,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         List<FormaPago> GetAllFormasDePago();
         void SaveRutasSalida(RutasSalidaViewModel viewModel);
         FormaPago GetAllFormasDePagoByDescription(string formaDePago);
+        void BackUp();
     }
 }

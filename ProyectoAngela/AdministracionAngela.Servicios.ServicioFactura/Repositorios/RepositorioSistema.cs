@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AdministracionAngela.Utils.Models.RutasSalida;
+using AdministracionAngela.Utils.Genericos;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 {
@@ -49,6 +50,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 formaDePagoToUpdate.Dias = formaDePago.Dias;
                 this.dbContext.SaveChanges();
             }
+        }
+
+        public void BackUp()
+        {
+            this.dbContext.BackUp(RutasSalida.RutaSeguridad);
         }
     }
 }

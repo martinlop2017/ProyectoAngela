@@ -422,6 +422,8 @@ namespace AdministracionAngela.Utils.Mappers
 
         public static UsuarioViewModel MapUser(User usuario)
         {
+            if (usuario == null)
+                return null;
             return new UsuarioViewModel()
             {
                 Nombre = usuario.UserName,

@@ -152,6 +152,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonIva.Visible = false;
             buttonCobro.Visible = false;
             buttonRutas.Visible = false;
+
+            this.sistemaProvider.BackUp();
         }
 
         private void buttonAvisos_Click(object sender, EventArgs e)

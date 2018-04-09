@@ -50,6 +50,7 @@ namespace AdministracionAngela.EFRepository
         /// <typeparam name="T"></typeparam>
         public void ReloadEntities<T>() where T : class
         {
+            
             var properties = this.GetType().GetProperties();
             foreach (var property in properties)
             {
@@ -62,6 +63,12 @@ namespace AdministracionAngela.EFRepository
                     }
                 }
             }
+        }
+
+        public void BackUp(string path)
+        {
+            string sqlCommand = string.Format(@"BACKUP DATABASE [AdministracionAngela] TO  DISK = N'{0}\BackUp {1}.bak'", path, DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss"));
+            Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
         }
     }
 }

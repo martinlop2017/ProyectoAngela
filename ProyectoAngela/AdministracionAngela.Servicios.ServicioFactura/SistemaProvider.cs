@@ -57,5 +57,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var facturasCaducadas = repositorioFactura.GetFacturasCaducadas();
             return facturasCaducadas != null && facturasCaducadas.Count > 0;
         }
+
+        public void BackUp()
+        {
+            this.repositorioSistema.BackUp();
+        }
     }
 }

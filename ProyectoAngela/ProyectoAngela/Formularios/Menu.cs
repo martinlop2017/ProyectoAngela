@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Enumerados;
 using AdministracionAngela.Utils.Genericos;
+using System.Drawing;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -59,8 +60,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 buttonAvisos.Visible = false;
                 //desactiva el menu superior
                 menuStrip1.Visible = false;
-                    
-             }
+                buttonAlbaranes.Location = new Point(26, 43);
+
+            }
             var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
             buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
 

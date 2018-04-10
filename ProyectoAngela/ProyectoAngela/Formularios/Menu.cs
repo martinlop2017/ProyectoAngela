@@ -57,7 +57,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 buttonSeguridad.Visible = false;
                 buttonLiq.Visible = false;
                 buttonAvisos.Visible = false;
-            }
+                //desactiva el menu superior
+                menuStrip1.Visible = false;
+                    
+             }
             var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
             buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
 

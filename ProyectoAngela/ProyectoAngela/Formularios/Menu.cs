@@ -148,6 +148,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             buttonIva.Visible = false;
             buttonCobro.Visible = false;
             buttonRutas.Visible = false;
+            this.formOpener.ShowModalForm<GestionListados>();
         }
 
         private void buttonSeguridad_Click(object sender, EventArgs e)
@@ -376,6 +377,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
             buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
+        }
+
+        private void listadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.formOpener.ShowModalForm<GestionListados>();
         }
     }
 }

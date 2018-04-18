@@ -85,6 +85,7 @@
     <Compile Include="Models\FormaDePago\GestionFormaDePagoViewModel.cs" />
     <Compile Include="Models\Impresion\FacturaCliente.cs" />
     <Compile Include="Models\Impresion\FacturaIVA.cs" />
+    <Compile Include="Models\Impresion\ListadoArticulos.cs" />
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
     <Compile Include="Models\IVA\IVAViewModel.cs" />
     <Compile Include="Models\Liquidaciones\LineaLiquidacionViewModel.cs" />

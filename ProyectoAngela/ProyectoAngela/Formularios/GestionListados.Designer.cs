@@ -52,7 +52,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxFechaInicial = new System.Windows.Forms.TextBox();
             this.button8 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonImprimir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // treeView1
@@ -78,10 +78,10 @@
             treeNode4.SelectedImageIndex = 0;
             treeNode4.Text = "Albaranes Clientes Entre Fechas";
             treeNode5.ImageIndex = 0;
-            treeNode5.Name = "Nodo5";
+            treeNode5.Name = "Facturas";
             treeNode5.Text = "Facturas Clientes Entre Fechas";
             treeNode6.ImageIndex = 1;
-            treeNode6.Name = "Facturas";
+            treeNode6.Name = "Gestion";
             treeNode6.SelectedImageIndex = 1;
             treeNode6.Text = "Gestion";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
@@ -221,24 +221,25 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button1
+            // buttonImprimir
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(84, 379);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(208, 60);
-            this.button1.TabIndex = 55;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonImprimir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonImprimir.BackgroundImage")));
+            this.buttonImprimir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonImprimir.Location = new System.Drawing.Point(84, 379);
+            this.buttonImprimir.Name = "buttonImprimir";
+            this.buttonImprimir.Size = new System.Drawing.Size(208, 60);
+            this.buttonImprimir.TabIndex = 55;
+            this.buttonImprimir.UseVisualStyleBackColor = true;
+            this.buttonImprimir.Click += new System.EventHandler(this.buttonImprimir_Click);
             // 
             // GestionListados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(616, 502);
+            this.ClientSize = new System.Drawing.Size(616, 501);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxFechaFinal);
@@ -276,6 +277,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxFechaInicial;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonImprimir;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class GestionListados : Form
     {
-        public GestionListados()
+        IArticuloProvider articuloProvider;
+        IClienteProvider clienteProvider;
+        IFacturaProvider facturaProvider;         
+
+        public GestionListados(IArticuloProvider articuloProvider, IClienteProvider clienteProvider, IFacturaProvider facturaProvider)
         {
+            this.articuloProvider = articuloProvider;
+            this.clienteProvider = clienteProvider;
+            this.facturaProvider = facturaProvider;
             InitializeComponent();
         }
 
@@ -39,24 +47,31 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (treeView1.Nodes[1].Nodes[0].IsSelected || treeView1.Nodes[1].Nodes[1].IsSelected)
+            var nodoSeleccionado = treeView1.SelectedNode.Name;
+            var nodoHijoGestionSeleccionado = (nodoSeleccionado.Equals("Facturas") || nodoSeleccionado.Equals("Albaranes"));
+
+            HabilitarFiltros(nodoHijoGestionSeleccionado);
+        }
+
+        private void HabilitarFiltros(bool enable)
+        {
+            textBoxClienteInicial.Enabled = enable;
+            textBoxClienteFinal.Enabled = enable;
+            textBoxFechaInicial.Enabled = enable;
+            textBoxFechaFinal.Enabled = enable;
+
+            if(!enable)
             {
-                textBoxClienteInicial.Enabled = true;
-                textBoxClienteFinal.Enabled = true;
-                textBoxFechaInicial.Enabled = true;
-                textBoxFechaFinal.Enabled = true;
-            }
-            else
-            {
-                textBoxClienteInicial.Enabled = false;
-                textBoxClienteInicial.Text= "";
-                textBoxClienteFinal.Enabled = false;
+                textBoxClienteInicial.Text = "";
                 textBoxClienteFinal.Text = "";
-                textBoxFechaInicial.Enabled = false;
                 textBoxFechaInicial.Text = "";
-                textBoxFechaFinal.Enabled = false;
                 textBoxFechaFinal.Text = "";
             }
+        }
+
+        private void buttonImprimir_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

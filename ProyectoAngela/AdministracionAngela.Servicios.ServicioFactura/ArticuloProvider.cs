@@ -65,5 +65,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var articuloRepository = MapToRepository.MapAltaArticuloViewModel(nuevoArticulo, iva);
             return this.repositoryArticulo.UpdateArticulo(articuloRepository);
         }
+
+        public List<AltaArticuloViewModel> GetAllArticulos()
+        {
+            var articulos = this.repositoryArticulo.GetAllArticulos();
+
+            return articulos.Select(x => MapToViewModel.MapAltaArticulo(x, null)).ToList();
+        }
     }
 }

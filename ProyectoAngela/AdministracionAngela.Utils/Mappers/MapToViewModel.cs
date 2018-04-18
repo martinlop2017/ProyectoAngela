@@ -124,7 +124,7 @@ namespace AdministracionAngela.Utils.Mappers
                 CodigoFAO = articuloFromRepository.FAO,
                 ZonaCaptura = articuloFromRepository.ZonaCaptura,
                 NombreCientifico = articuloFromRepository.NombreCientifico,
-                IVAs = ivas.Select(iva => iva.Descripcion).ToList(),
+                IVAs = ivas?.Select(iva => iva.Descripcion).ToList(),
                 Abreviacion = articuloFromRepository.Abreviacion,
                 SelectedIVA = articuloFromRepository.IVA.Descripcion
             };

@@ -199,6 +199,12 @@
     <Compile Include="Formularios\ReportViewerFacturacion Nuevo.Designer.cs">
       <DependentUpon>ReportViewerFacturacion Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ReportViewerListadoArticulos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewerListadoArticulos.Designer.cs">
+      <DependentUpon>ReportViewerListadoArticulos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +348,9 @@
     <EmbeddedResource Include="Formularios\ReportViewerFacturacion Nuevo.resx">
       <DependentUpon>ReportViewerFacturacion Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewerListadoArticulos.resx">
+      <DependentUpon>ReportViewerListadoArticulos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,6 +398,7 @@
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AdministracionAngela.ProyectoAngela.Formularios.ClaseLiquidacion.datasource" />
+    <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Articulo.AltaArticuloViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

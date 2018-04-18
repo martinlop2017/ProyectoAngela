@@ -15,5 +15,6 @@ namespace AdministracionAngela.Utils.Interfaces
         AltaArticuloViewModel GetAltaArticuloById(long articuloId);
         bool UpdateArticulo(AltaArticuloViewModel nuevoArticulo);
         AltaArticuloViewModel GetAltaArticulo();
+        List<AltaArticuloViewModel> GetAllArticulos();
     }
 }

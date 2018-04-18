@@ -71,7 +71,16 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
-            
+            var nodoSeleccionado = treeView1.SelectedNode.Name;
+            if(nodoSeleccionado.Equals("Articulos"))
+            {
+                var articulos = articuloProvider.GetAllArticulos();
+                if(articulos.Any())
+                {
+                    var form = new ReportViewerListadoArticulos();
+                    form.ExportarToPdf(articulos);
+                }
+            }
         }
     }
 }

@@ -330,6 +330,7 @@
     <EmbeddedResource Include="Formularios\Liquidaciones.resx">
       <DependentUpon>Liquidaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ListadoAlbaranes.rdlc" />
     <EmbeddedResource Include="Formularios\ListadoArticulos.rdlc" />
     <EmbeddedResource Include="Formularios\ListadoClientes.rdlc" />
     <EmbeddedResource Include="Formularios\Menu.resx">

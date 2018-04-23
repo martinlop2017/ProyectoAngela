@@ -66,5 +66,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var clientRepository = MapToRepository.MapAltaClienteViewModel(newClient, formaDePago);
             return this.repositorioCliente.UpdateClient(clientRepository);
         }
+
+        public List<AltaClienteViewModel> GetAllClientes()
+        {
+            var clientes = repositorioCliente.GetAllClients();
+
+            return clientes.Select(x => MapToViewModel.MapAltaClient(x, null)).ToList();
+        }
     }
 }

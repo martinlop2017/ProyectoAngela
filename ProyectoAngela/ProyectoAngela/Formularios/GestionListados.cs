@@ -81,6 +81,33 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     form.ExportarToPdf(articulos);
                 }
             }
+            else if(nodoSeleccionado.Equals("Clientes"))
+            {
+                var clientes = clienteProvider.GetAllClientes();
+                if(clientes.Any())
+                {
+                    var form = new ReportViewerListadoClientes();
+                    form.ExportarToPdf(clientes);
+                }
+            }
+            else if(nodoSeleccionado.Equals("Facturas"))
+            {
+                var from = Convert.ToDateTime(textBoxClienteInicial.Text);
+                var to = Convert.ToDateTime(textBoxFechaFinal.Text);
+                var facturas = facturaProvider.GetAllFacturasFromDateRange(from, to);
+
+                foreach(var factura in facturas)
+                {
+                    factura.DeFecha = textBoxClienteInicial.Text;
+                    factura.DeFecha = textBoxClienteInicial.Text;
+                }
+
+                if(facturas.Any())
+                {
+                    var form = new ReportViewerListadoFactura();
+                    form.ExportarToPdf(facturas);
+                }
+            }
         }
     }
 }

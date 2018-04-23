@@ -35,5 +35,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         void SetCobrado(int numeroDocumento, bool cobrado);
         List<Factura> GetFacturasCaducadas();
         void SetFacturaCobrada(long codigoFactura);
+        List<Factura> GetFacturasByDateRange(DateTime from, DateTime to);
     }
 }

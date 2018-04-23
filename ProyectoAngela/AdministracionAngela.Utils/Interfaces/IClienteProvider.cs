@@ -18,5 +18,6 @@ namespace AdministracionAngela.Utils.Interfaces
         AltaClienteViewModel GetAltaClienteById(long clienteId);
         AltaClienteViewModel GetAltaCliente();
         bool UpdateClient(AltaClienteViewModel newClient);
+        List<AltaClienteViewModel> GetAllClientes();
     }
 }

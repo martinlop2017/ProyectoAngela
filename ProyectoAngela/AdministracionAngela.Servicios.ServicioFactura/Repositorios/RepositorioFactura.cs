@@ -100,6 +100,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Facturas.ToList();
         }
 
+        public List<Factura> GetFacturasByDateRange(DateTime from, DateTime to)
+        {
+            this.dbContext.ReloadEntities<Factura>();
+            return this.dbContext.Facturas.Where(x => x.Fecha.Value >= from && x.Fecha.Value <= to).ToList();
+        }
+
         public List<Factura> GetAllFacurasByClienteId(long clienteId)
         {
             this.dbContext.ReloadEntities<Factura>();

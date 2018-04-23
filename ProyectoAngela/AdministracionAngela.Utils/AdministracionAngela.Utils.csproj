@@ -54,6 +54,7 @@
     <Compile Include="Genericos\NivelUsuario.cs" />
     <Compile Include="Genericos\RutasSalida.cs" />
     <Compile Include="Interfaces\IDocumentoGestion.cs" />
+    <Compile Include="Mappers\MapToImpresion.cs" />
     <Compile Include="Models\Albaran\AlbaranViewModel.cs" />
     <Compile Include="Models\Albaran\AltaAlbaranViewModel.cs" />
     <Compile Include="Models\Albaran\LineaAlbaranViewModel.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Models\FormaDePago\GestionFormaDePagoViewModel.cs" />
     <Compile Include="Models\Impresion\FacturaCliente.cs" />
     <Compile Include="Models\Impresion\FacturaIVA.cs" />
-    <Compile Include="Models\Impresion\ListadoArticulos.cs" />
+    <Compile Include="Models\Impresion\ListadoFactura.cs" />
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
     <Compile Include="Models\IVA\IVAViewModel.cs" />
     <Compile Include="Models\Liquidaciones\LineaLiquidacionViewModel.cs" />
@@ -102,6 +103,9 @@
       <Project>{F0FB3C29-77A5-4997-9CBA-CBA150BB96AB}</Project>
       <Name>AdministracionAngela.EFRepository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Impresion.ListadoFactura.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

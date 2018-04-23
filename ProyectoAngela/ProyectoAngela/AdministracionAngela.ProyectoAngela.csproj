@@ -205,6 +205,18 @@
     <Compile Include="Formularios\ReportViewerListadoArticulos.Designer.cs">
       <DependentUpon>ReportViewerListadoArticulos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ReportViewerListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewerListadoClientes.Designer.cs">
+      <DependentUpon>ReportViewerListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ReportViewerListadoFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewerListadoFactura.Designer.cs">
+      <DependentUpon>ReportViewerListadoFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Rutas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +363,12 @@
     <EmbeddedResource Include="Formularios\ReportViewerListadoArticulos.resx">
       <DependentUpon>ReportViewerListadoArticulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewerListadoClientes.resx">
+      <DependentUpon>ReportViewerListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewerListadoFactura.resx">
+      <DependentUpon>ReportViewerListadoFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Rutas.resx">
       <DependentUpon>Rutas.cs</DependentUpon>
     </EmbeddedResource>
@@ -399,6 +417,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AdministracionAngela.ProyectoAngela.Formularios.ClaseLiquidacion.datasource" />
     <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Articulo.AltaArticuloViewModel.datasource" />
+    <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Cliente.AltaClienteViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

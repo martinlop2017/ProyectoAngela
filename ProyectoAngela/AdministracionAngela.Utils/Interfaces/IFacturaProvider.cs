@@ -45,5 +45,7 @@ namespace AdministracionAngela.Utils.Interfaces
         void LoadIVAAndREBy(AltaFacturaViewModel viewModel);
         void LoadIVAAndREBy(AltaAlbaranViewModel viewModel);
         GestionAvisosViewModel GetGestionFacturasVencidas();
+        //List<AltaAlbaranViewModel> GetAllAlbaranes();
+        List<ListadoFactura> GetAllFacturasFromDateRange(DateTime from, DateTime to);
     }
 }

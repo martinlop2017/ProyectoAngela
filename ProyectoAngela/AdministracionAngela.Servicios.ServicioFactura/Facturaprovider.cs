@@ -567,5 +567,20 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         {
             this.repositorioFactura.SetFacturaCobrada(codigoFactura);
         }
+
+        //public List<AltaAlbaranViewModel> GetAllAlbaranes()
+        //{
+        //    var albaranes = repositorioFactura.GetAllAlbaranes();
+
+        //    return albaranes.Select(x =>  MapToViewModel.MapToAltaAlbaranViewModel(x, ));
+        //}
+
+        public List<ListadoFactura> GetAllFacturasFromDateRange(DateTime from, DateTime to)
+        {
+            var facturas = repositorioFactura.GetFacturasByDateRange(from, to);
+
+
+            return MapToImpresion.MapListaFactura(facturas);
+        }
     }
 }

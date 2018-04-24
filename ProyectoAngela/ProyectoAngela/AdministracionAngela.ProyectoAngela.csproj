@@ -199,6 +199,12 @@
     <Compile Include="Formularios\ReportViewerFacturacion Nuevo.Designer.cs">
       <DependentUpon>ReportViewerFacturacion Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ReportViewerListadoAlbaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ReportViewerListadoAlbaran.Designer.cs">
+      <DependentUpon>ReportViewerListadoAlbaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ReportViewerListadoArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +366,9 @@
     <EmbeddedResource Include="Formularios\ReportViewerFacturacion Nuevo.resx">
       <DependentUpon>ReportViewerFacturacion Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ReportViewerListadoAlbaran.resx">
+      <DependentUpon>ReportViewerListadoAlbaran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ReportViewerListadoArticulos.resx">
       <DependentUpon>ReportViewerListadoArticulos.cs</DependentUpon>
     </EmbeddedResource>
@@ -418,6 +427,7 @@
     <None Include="Properties\DataSources\AdministracionAngela.ProyectoAngela.Formularios.ClaseLiquidacion.datasource" />
     <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Articulo.AltaArticuloViewModel.datasource" />
     <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Cliente.AltaClienteViewModel.datasource" />
+    <None Include="Properties\DataSources\AdministracionAngela.Utils.Models.Impresion.ListadoAlbaran.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

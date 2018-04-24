@@ -26,5 +26,22 @@ namespace AdministracionAngela.Utils.Mappers
                 Total = factura.Total.Value
             };
         }
+
+        public static List<ListadoAlbaran> MapListaAlbaran(List<Albaran> albaranes)
+        {
+            return albaranes.Select(x => MapAlbaran(x)).ToList();
+        }
+
+        public static ListadoAlbaran MapAlbaran(Albaran albaran)
+        {
+            return new ListadoAlbaran()
+            {
+                Cliente = albaran.Cliente.Nombre,
+                FechaAlbaran = albaran.Fecha.Value.ToString("d"),
+                FechaListado = DateTime.Today.ToString("d"),
+                NumeroAlbaran = albaran.NumeroAlbaran,
+                Total = albaran.Total.Value
+            };
+        }
     }
 }

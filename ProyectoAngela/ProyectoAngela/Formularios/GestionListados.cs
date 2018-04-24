@@ -108,6 +108,26 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     form.ExportarToPdf(facturas);
                 }
             }
+            //Albaranes
+            else
+            {
+                var from = Convert.ToDateTime(textBoxClienteInicial.Text);
+                var to = Convert.ToDateTime(textBoxFechaFinal.Text);
+
+                var albaranes = facturaProvider.GetAllAlbaranesFromDateRange(from, to);
+
+                foreach(var albaran in albaranes)
+                {
+                    albaran.DeFecha = textBoxClienteInicial.Text;
+                    albaran.DeFecha = textBoxClienteInicial.Text;
+                }
+
+                if (albaranes.Any())
+                {
+                    var form = new ReportViewerListadoAlbaran();
+                    form.ExportarToPdf(albaranes);
+                }
+            }
         }
     }
 }

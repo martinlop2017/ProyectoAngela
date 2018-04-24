@@ -36,5 +36,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         List<Factura> GetFacturasCaducadas();
         void SetFacturaCobrada(long codigoFactura);
         List<Factura> GetFacturasByDateRange(DateTime from, DateTime to);
+        List<Albaran> GetAlbaranesByDateRange(DateTime from, DateTime to);
     }
 }

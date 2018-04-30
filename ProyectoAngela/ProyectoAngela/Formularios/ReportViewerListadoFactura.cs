@@ -44,7 +44,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 byte[] bytes = reportViewerListadoFacturas.LocalReport.Render("PDF", null, out mimeType, out encoding,
                 out extension, out streamIds, out warnings);
 
-                var exportPath = string.Format(@"{0}\Listado Facturas.pdf", RutasSalida.RutaLiquidaciones);
+                var exportPath = string.Format(@"{0}\Listado Facturas.pdf", RutasSalida.RutaListados);
                 File.WriteAllBytes(exportPath, bytes);
 
                 form.Close();

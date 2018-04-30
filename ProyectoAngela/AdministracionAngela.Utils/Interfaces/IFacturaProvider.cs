@@ -47,6 +47,12 @@ namespace AdministracionAngela.Utils.Interfaces
         GestionAvisosViewModel GetGestionFacturasVencidas();
         //List<AltaAlbaranViewModel> GetAllAlbaranes();
         List<ListadoFactura> GetAllFacturasFromDateRange(DateTime from, DateTime to);
+        List<ListadoFactura> GetAllFacturasFromClienteRange(int fromCodigo, int toCodigo);
+        List<ListadoFactura> GetAllFacturasFromClienteAndDateRange(DateTime from, DateTime to, int fromCodigo, int toCodigo);
         List<ListadoAlbaran> GetAllAlbaranesFromDateRange(DateTime from, DateTime to);
+        List<ListadoAlbaran> GetAllAlbaranesFromClienteRange(int fromCodigo, int toCodigo);
+        List<ListadoAlbaran> GetAllAlbaranesFromClienteAndDateRange(DateTime from, DateTime to, int fromCodigo, int toCodigo);
+        List<ListadoFactura> GetAllListaFacturas();
+        List<ListadoAlbaran> GetAllListaAlbaranes();
     }
 }

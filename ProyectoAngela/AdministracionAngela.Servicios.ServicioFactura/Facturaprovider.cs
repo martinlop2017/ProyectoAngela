@@ -570,16 +570,58 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public List<ListadoFactura> GetAllFacturasFromDateRange(DateTime from, DateTime to)
         {
-            var facturas = repositorioFactura.GetFacturasByDateRange(from, to);
+            var facturas = repositorioFactura.GetFacturasByDateRange(from, to.AddDays(1).AddSeconds(-1));
 
             return MapToImpresion.MapListaFactura(facturas);
         }
 
-        public List<ListadoAlbaran> GetAllAlbaranesFromDateRange(DateTime from, DateTime to)
+        public List<ListadoFactura> GetAllFacturasFromClienteRange(int fromCodigo, int toCodigo)
         {
-            var albaranes = repositorioFactura.GetAlbaranesByDateRange(from, to);
+            var facturas = repositorioFactura.GetFacturasByClienteRange(fromCodigo, toCodigo);
+
+            return MapToImpresion.MapListaFactura(facturas);
+        }
+
+        public List<ListadoFactura> GetAllFacturasFromClienteAndDateRange(DateTime from, DateTime to, int fromCodigo, int toCodigo)
+        {
+            var facturasByDateAndCliente = repositorioFactura.GetFacturasByDateRange(from, to.AddDays(1).AddSeconds(-1)).Where(x => x.Cliente.CodigoCliente >= fromCodigo && x.Cliente.CodigoCliente <= toCodigo).ToList();
+
+            return MapToImpresion.MapListaFactura(facturasByDateAndCliente);
+        }
+
+        public List<ListadoFactura> GetAllListaFacturas()
+        {
+            var facturas = repositorioFactura.GetAllFacturas();
+
+            return MapToImpresion.MapListaFactura(facturas);
+        }
+
+        public List<ListadoAlbaran> GetAllListaAlbaranes()
+        {
+            var albaranes = repositorioFactura.GetAllAlbaranes();
 
             return MapToImpresion.MapListaAlbaran(albaranes);
+        }
+
+        public List<ListadoAlbaran> GetAllAlbaranesFromDateRange(DateTime from, DateTime to)
+        {
+            var albaranes = repositorioFactura.GetAlbaranesByDateRange(from, to.AddDays(1).AddSeconds(-1));
+
+            return MapToImpresion.MapListaAlbaran(albaranes);
+        }
+
+        public List<ListadoAlbaran> GetAllAlbaranesFromClienteRange(int fromCodigo, int toCodigo)
+        {
+            var albaranes = repositorioFactura.GetAlbaranesByClienteRange(fromCodigo, toCodigo);
+
+            return MapToImpresion.MapListaAlbaran(albaranes);
+        }
+
+        public List<ListadoAlbaran> GetAllAlbaranesFromClienteAndDateRange(DateTime from, DateTime to, int fromCodigo, int toCodigo)
+        {
+            var albaranesByDateAndCliente = repositorioFactura.GetAlbaranesByDateRange(from, to.AddDays(1).AddSeconds(-1)).Where(x => x.Cliente.CodigoCliente >= fromCodigo && x.Cliente.CodigoCliente <= toCodigo).ToList();
+
+            return MapToImpresion.MapListaAlbaran(albaranesByDateAndCliente);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
+using AdministracionAngela.Utils.Models.Impresion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -69,64 +70,131 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             }
         }
 
+        private bool FiltrandoPorCliente()
+        {
+            if (string.IsNullOrEmpty(textBoxClienteInicial.Text) || string.IsNullOrEmpty(textBoxClienteFinal.Text))
+                return false;
+
+            int n = 0;
+            var esNumero = int.TryParse(textBoxClienteInicial.Text, out n) && int.TryParse(textBoxClienteFinal.Text, out n);
+
+            return esNumero;
+        }
+
+        private bool FiltrandoPorFecha()
+        {
+            if (string.IsNullOrEmpty(textBoxFechaInicial.Text) || string.IsNullOrEmpty(textBoxFechaFinal.Text))
+                return false;
+
+            DateTime n;
+            var esFecha = DateTime.TryParse(textBoxFechaInicial.Text, out n) && DateTime.TryParse(textBoxFechaFinal.Text, out n);
+
+            return esFecha;
+        }
+
         private void buttonImprimir_Click(object sender, EventArgs e)
         {
             var nodoSeleccionado = treeView1.SelectedNode.Name;
-            if(nodoSeleccionado.Equals("Articulos"))
+
+            switch (nodoSeleccionado)
             {
-                var articulos = articuloProvider.GetAllArticulos();
-                if(articulos.Any())
-                {
-                    var form = new ReportViewerListadoArticulos();
-                    form.ExportarToPdf(articulos);
-                }
-            }
-            else if(nodoSeleccionado.Equals("Clientes"))
-            {
-                var clientes = clienteProvider.GetAllClientes();
-                if(clientes.Any())
-                {
-                    var form = new ReportViewerListadoClientes();
-                    form.ExportarToPdf(clientes);
-                }
-            }
-            else if(nodoSeleccionado.Equals("Facturas"))
-            {
-                var from = Convert.ToDateTime(textBoxClienteInicial.Text);
-                var to = Convert.ToDateTime(textBoxFechaFinal.Text);
-                var facturas = facturaProvider.GetAllFacturasFromDateRange(from, to);
+                case "Articulos":
+                    var articulos = articuloProvider.GetAllArticulos();
+                    if (articulos.Any())
+                    {
+                        var form = new ReportViewerListadoArticulos();
+                        form.ExportarToPdf(articulos);
+                    }
+                    break;
+                case "Clientes":
+                    var clientes = clienteProvider.GetAllClientes();
+                    if (clientes.Any())
+                    {
+                        var form = new ReportViewerListadoClientes();
+                        form.ExportarToPdf(clientes);
+                    }
+                    break;
+                case "Facturas":
 
-                foreach(var factura in facturas)
-                {
-                    factura.DeFecha = textBoxClienteInicial.Text;
-                    factura.DeFecha = textBoxClienteInicial.Text;
-                }
+                    List<ListadoFactura> facturas;
+                    if(FiltrandoPorCliente() && FiltrandoPorFecha())
+                    {
+                        DateTime from = Convert.ToDateTime(textBoxFechaInicial.Text);
+                        DateTime to = Convert.ToDateTime(textBoxFechaFinal.Text);
+                        int fromCodigoCliente = Convert.ToInt32(textBoxClienteInicial.Text);
+                        int toCodigoCliente = Convert.ToInt32(textBoxClienteFinal.Text);
 
-                if(facturas.Any())
-                {
-                    var form = new ReportViewerListadoFactura();
-                    form.ExportarToPdf(facturas);
-                }
-            }
-            //Albaranes
-            else
-            {
-                var from = Convert.ToDateTime(textBoxClienteInicial.Text);
-                var to = Convert.ToDateTime(textBoxFechaFinal.Text);
+                        facturas = facturaProvider.GetAllFacturasFromClienteAndDateRange(from, to, fromCodigoCliente, toCodigoCliente);
+                    }
+                    else if(FiltrandoPorFecha())
+                    {
+                        DateTime from = Convert.ToDateTime(textBoxFechaInicial.Text);
+                        DateTime to = Convert.ToDateTime(textBoxFechaFinal.Text);
+                        facturas = facturaProvider.GetAllFacturasFromDateRange(from, to);
+                    }
+                    else if(FiltrandoPorCliente())
+                    {
+                        int fromCodigoCliente = Convert.ToInt32(textBoxClienteInicial.Text);
+                        int toCodigoCliente = Convert.ToInt32(textBoxClienteFinal.Text);
+                        facturas = facturaProvider.GetAllFacturasFromClienteRange(fromCodigoCliente, toCodigoCliente);
+                    }
+                    else
+                    {
+                        facturas = facturaProvider.GetAllListaFacturas();
+                    }
 
-                var albaranes = facturaProvider.GetAllAlbaranesFromDateRange(from, to);
+                    foreach (var factura in facturas)
+                    {
+                        factura.DeFecha = textBoxFechaInicial.Text;
+                        factura.AFecha = textBoxFechaFinal.Text;
+                    }
 
-                foreach(var albaran in albaranes)
-                {
-                    albaran.DeFecha = textBoxClienteInicial.Text;
-                    albaran.DeFecha = textBoxClienteInicial.Text;
-                }
+                    if (facturas.Any())
+                    {
+                        var form = new ReportViewerListadoFactura();
+                        form.ExportarToPdf(facturas);
+                    }
+                    break;
+                case "Albaranes":
+                    List<ListadoAlbaran> albaranes;
+                    if (FiltrandoPorCliente() && FiltrandoPorFecha())
+                    {
+                        DateTime from = Convert.ToDateTime(textBoxFechaInicial.Text);
+                        DateTime to = Convert.ToDateTime(textBoxFechaFinal.Text);
+                        int fromCodigoCliente = Convert.ToInt32(textBoxClienteInicial.Text);
+                        int toCodigoCliente = Convert.ToInt32(textBoxClienteFinal.Text);
 
-                if (albaranes.Any())
-                {
-                    var form = new ReportViewerListadoAlbaran();
-                    form.ExportarToPdf(albaranes);
-                }
+                        albaranes = facturaProvider.GetAllAlbaranesFromClienteAndDateRange(from, to, fromCodigoCliente, toCodigoCliente);
+                    }
+                    else if (FiltrandoPorFecha())
+                    {
+                        DateTime from = Convert.ToDateTime(textBoxFechaInicial.Text);
+                        DateTime to = Convert.ToDateTime(textBoxFechaFinal.Text);
+                        albaranes = facturaProvider.GetAllAlbaranesFromDateRange(from, to);
+                    }
+                    else if (FiltrandoPorCliente())
+                    {
+                        int fromCodigoCliente = Convert.ToInt32(textBoxClienteInicial.Text);
+                        int toCodigoCliente = Convert.ToInt32(textBoxClienteFinal.Text);
+                        albaranes = facturaProvider.GetAllAlbaranesFromClienteRange(fromCodigoCliente, toCodigoCliente);
+                    }
+                    else
+                    {
+                        albaranes = facturaProvider.GetAllListaAlbaranes();
+                    }
+
+                    foreach (var albaran in albaranes)
+                    {
+                        albaran.DeFecha = textBoxFechaInicial.Text;
+                        albaran.AFecha = textBoxFechaFinal.Text;
+                    }
+
+                    if (albaranes.Any())
+                    {
+                        var form = new ReportViewerListadoAlbaran();
+                        form.ExportarToPdf(albaranes);
+                    }
+                    break;
             }
         }
     }

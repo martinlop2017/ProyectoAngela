@@ -99,7 +99,7 @@
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "bill.png");
-            this.imageList1.Images.SetKeyName(1, "documents.png");
+            this.imageList1.Images.SetKeyName(1, "carpetaamarilla.png");
             // 
             // label9
             // 
@@ -237,7 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(616, 501);
+            this.ClientSize = new System.Drawing.Size(616, 502);
             this.ControlBox = false;
             this.Controls.Add(this.buttonImprimir);
             this.Controls.Add(this.button8);

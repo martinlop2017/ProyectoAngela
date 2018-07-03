@@ -40,5 +40,6 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public string NombreCliente { get; set; }
         public string EtiquetaLote { get; set; }
         public string NumeroCuenta { get; set; }
+        public string FormaPago { get; set; }
     }
 }

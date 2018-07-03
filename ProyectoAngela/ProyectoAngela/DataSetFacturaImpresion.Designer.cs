@@ -345,6 +345,8 @@ namespace AdministracionAngela.ProyectoAngela {
             
             private global::System.Data.DataColumn columnNumeroCuenta;
             
+            private global::System.Data.DataColumn columnFormaDePago;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public FacturaClienteDataTable() {
@@ -644,6 +646,14 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FormaDePagoColumn {
+                get {
+                    return this.columnFormaDePago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -712,7 +722,8 @@ namespace AdministracionAngela.ProyectoAngela {
                         string NombreDocumento, 
                         string NombreDocumentoSmall, 
                         string EtiquetaLote, 
-                        string NumeroCuenta) {
+                        string NumeroCuenta, 
+                        string FormaDePago) {
                 FacturaClienteRow rowFacturaClienteRow = ((FacturaClienteRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NumeroFactura,
@@ -747,7 +758,8 @@ namespace AdministracionAngela.ProyectoAngela {
                         NombreDocumento,
                         NombreDocumentoSmall,
                         EtiquetaLote,
-                        NumeroCuenta};
+                        NumeroCuenta,
+                        FormaDePago};
                 rowFacturaClienteRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFacturaClienteRow);
                 return rowFacturaClienteRow;
@@ -803,6 +815,7 @@ namespace AdministracionAngela.ProyectoAngela {
                 this.columnNombreDocumentoSmall = base.Columns["NombreDocumentoSmall"];
                 this.columnEtiquetaLote = base.Columns["EtiquetaLote"];
                 this.columnNumeroCuenta = base.Columns["NumeroCuenta"];
+                this.columnFormaDePago = base.Columns["FormaDePago"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -874,6 +887,8 @@ namespace AdministracionAngela.ProyectoAngela {
                 base.Columns.Add(this.columnEtiquetaLote);
                 this.columnNumeroCuenta = new global::System.Data.DataColumn("NumeroCuenta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNumeroCuenta);
+                this.columnFormaDePago = new global::System.Data.DataColumn("FormaDePago", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFormaDePago);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1545,6 +1560,22 @@ namespace AdministracionAngela.ProyectoAngela {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FormaDePago {
+                get {
+                    try {
+                        return ((string)(this[this.tableFacturaCliente.FormaDePagoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FormaDePago\' in table \'FacturaCliente\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFacturaCliente.FormaDePagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsNumeroFacturaNull() {
                 return this.IsNull(this.tableFacturaCliente.NumeroFacturaColumn);
             }
@@ -1937,6 +1968,18 @@ namespace AdministracionAngela.ProyectoAngela {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNumeroCuentaNull() {
                 this[this.tableFacturaCliente.NumeroCuentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFormaDePagoNull() {
+                return this.IsNull(this.tableFacturaCliente.FormaDePagoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFormaDePagoNull() {
+                this[this.tableFacturaCliente.FormaDePagoColumn] = global::System.Convert.DBNull;
             }
         }
         

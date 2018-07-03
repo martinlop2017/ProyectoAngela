@@ -432,7 +432,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     NombreCientifico = linea.Producto.NombreCientifico,
                     Abreviacion = linea.Producto.Abreviacion,
                     NombreCliente = cliente.Nombre,
-                    EtiquetaLote = albaran.EtiquetaLote
+                    EtiquetaLote = albaran.EtiquetaLote,
+                    FormaPago = cliente.FormaPago.Concepto
                 };
 
                 albaranClientes.Add(albaranCliente);
@@ -483,6 +484,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                     Abreviacion = linea.Producto.Abreviacion,
                     NombreCliente = cliente.Nombre,
                     EtiquetaLote = factura.EtiquetaLote,
+                    FormaPago = cliente.FormaPago.Concepto,
                     NumeroCuenta = string.Format("{0} - {1} - {2} - {3} - {4} - {5}", perfil.Iban1.Trim(), perfil.Iban2.Trim(), perfil.Iban3.Trim(), perfil.Iban4.Trim(), perfil.Iban5.Trim(), perfil.Iban6.Trim())
                 };
 

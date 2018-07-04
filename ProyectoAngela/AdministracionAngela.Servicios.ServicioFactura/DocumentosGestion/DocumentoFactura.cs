@@ -184,7 +184,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
                 row[30] = "FACTURA";
                 row[31] = linea.EtiquetaLote;
                 row[32] = linea.NumeroCuenta;
-                row[32] = linea.FormaPago;
+                row[33] = linea.FormaPago;
                 table.Rows.Add(row);
             }
 

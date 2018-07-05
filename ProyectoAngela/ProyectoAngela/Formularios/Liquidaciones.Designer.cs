@@ -55,6 +55,7 @@
             this.labelTotalLiquidaciones = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLiquidaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,6 +125,7 @@
             this.dataGridViewLiquidaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewLiquidaciones.RowHeadersWidth = 20;
             this.dataGridViewLiquidaciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridViewLiquidaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(907, 199);
             this.dataGridViewLiquidaciones.TabIndex = 5;
             this.dataGridViewLiquidaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -204,7 +206,7 @@
             this.buttonEjecutar.FlatAppearance.BorderSize = 0;
             this.buttonEjecutar.Location = new System.Drawing.Point(519, 121);
             this.buttonEjecutar.Name = "buttonEjecutar";
-            this.buttonEjecutar.Size = new System.Drawing.Size(169, 47);
+            this.buttonEjecutar.Size = new System.Drawing.Size(124, 47);
             this.buttonEjecutar.TabIndex = 4;
             this.buttonEjecutar.UseVisualStyleBackColor = true;
             this.buttonEjecutar.Click += new System.EventHandler(this.buttonEjecutar_Click);
@@ -295,13 +297,24 @@
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonDelete.BackgroundImage")));
+            this.buttonDelete.Location = new System.Drawing.Point(662, 118);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(49, 56);
+            this.buttonDelete.TabIndex = 110;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // Liquidaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(988, 737);
+            this.ClientSize = new System.Drawing.Size(988, 736);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.labelTotalLiquidaciones);
@@ -314,7 +327,7 @@
             this.Controls.Add(this.dateTimePickerStart);
             this.Controls.Add(this.label1);
             this.MaximumSize = new System.Drawing.Size(1004, 775);
-            this.MinimumSize = new System.Drawing.Size(1004, 775);
+            this.MinimumSize = new System.Drawing.Size(1004, 758);
             this.Name = "Liquidaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Liquidaciones.";
@@ -344,5 +357,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnKilos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnPrecioMedio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnTotal;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

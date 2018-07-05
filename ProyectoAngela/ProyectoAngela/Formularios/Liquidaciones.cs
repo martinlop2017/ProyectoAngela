@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AdministracionAngela.Utils.Models.Liquidaciones;
+using AdministracionAngela.Utils.Extensions;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -136,6 +137,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             {
                 var form = new ReportViewerLiquidaciones();
                 form.ExportarToPdf(lista);
+            }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            var selectedRows = this.dataGridViewLiquidaciones.SelectedRows;
+            foreach(DataGridViewRow selectedRow in selectedRows)
+            {
+                this.dataGridViewLiquidaciones.Rows.Remove(selectedRow);
             }
         }
     }

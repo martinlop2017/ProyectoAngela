@@ -35,7 +35,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public List<Producto> GetAllArticulos()
         {
-            this.dbContext.ReloadEntities<Producto>();
+            //this.dbContext.ReloadEntities<Producto>();
             return this.dbContext.Productos.ToList<Producto>();
         }
 

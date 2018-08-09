@@ -68,7 +68,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public List<Cliente> GetAllClients()
         {
-            this.dbContext.ReloadEntities<Cliente>();
+            //this.dbContext.ReloadEntities<Cliente>();
             return this.dbContext.Clientes.ToList<Cliente>();
         }
 

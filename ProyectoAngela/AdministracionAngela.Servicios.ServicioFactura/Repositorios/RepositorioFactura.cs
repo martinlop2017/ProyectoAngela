@@ -26,7 +26,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
                 DeleteLineasFacturaByNumeroFactura(facturasToDelete);
                 this.dbContext.Facturas.RemoveRange(facturasToDelete);
                 this.dbContext.SaveChanges();
-                this.dbContext.ReloadEntities<Albaran>();
+                //this.dbContext.ReloadEntities<Albaran>();
 
             }
             catch (Exception exp)
@@ -96,43 +96,43 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
         public List<Factura> GetAllFacturas()
         {
-            this.dbContext.ReloadEntities<Factura>();
+            //this.dbContext.ReloadEntities<Factura>();
             return this.dbContext.Facturas.ToList();
         }
 
         public List<Factura> GetFacturasByDateRange(DateTime from, DateTime to)
         {
-            this.dbContext.ReloadEntities<Factura>();
+            //this.dbContext.ReloadEntities<Factura>();
             return this.dbContext.Facturas.Where(x => x.Fecha.Value >= from && x.Fecha.Value <= to).ToList();
         }
 
         public List<Factura> GetFacturasByClienteRange(int fromCodigo, int toCodigo)
         {
-            this.dbContext.ReloadEntities<Factura>();
+            //this.dbContext.ReloadEntities<Factura>();
             return this.dbContext.Facturas.Where(x => x.Cliente.CodigoCliente >= fromCodigo && x.Cliente.CodigoCliente<= toCodigo).ToList();
         }
 
         public List<Albaran> GetAlbaranesByDateRange(DateTime from, DateTime to)
         {
-            this.dbContext.ReloadEntities<Albaran>();
+            //this.dbContext.ReloadEntities<Albaran>();
             return this.dbContext.Albaranes.Where(x => x.Fecha.Value >= from && x.Fecha.Value <= to).ToList();
         }
 
         public List<Albaran> GetAlbaranesByClienteRange(int fromCodigo, int toCodigo)
         {
-            this.dbContext.ReloadEntities<Albaran>();
+            //this.dbContext.ReloadEntities<Albaran>();
             return this.dbContext.Albaranes.Where(x => x.Cliente.CodigoCliente >= fromCodigo && x.Cliente.CodigoCliente <= toCodigo).ToList();
         }
 
         public List<Factura> GetAllFacurasByClienteId(long clienteId)
         {
-            this.dbContext.ReloadEntities<Factura>();
+            //this.dbContext.ReloadEntities<Factura>();
             return this.dbContext.Facturas.Where(x => x.ClienteId == clienteId).ToList();
         }
 
         public List<Albaran> GetAllAlbaranes()
         {
-            this.dbContext.ReloadEntities<Albaran>();
+            //this.dbContext.ReloadEntities<Albaran>();
             return this.dbContext.Albaranes.ToList();
         }
 

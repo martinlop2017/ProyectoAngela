@@ -20,25 +20,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             InitializeComponent();
         }
 
-        private void panel1_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void panel1_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
-
-        private void textBoxBusqueda_MouseEnter(object sender, EventArgs e)
-        {
-            label4.Visible = true;
-        }
-
-        private void textBoxBusqueda_MouseLeave(object sender, EventArgs e)
-        {
-            label4.Visible = false;
-        }
+  
 
         private void button5_MouseEnter(object sender, EventArgs e)
         {
@@ -77,15 +59,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
         {
-            if (comboBoxBusqueda.Text.Equals("Codigo"))
-            {
-                dataGridViewAvisos.DataSource = avisos.Where(x => x.CodigoFactura.ToString().Contains(textBoxBusqueda.Text)).ToList();
-            }
 
-            if (comboBoxBusqueda.Text.Equals("Cliente"))
-            {
-                dataGridViewAvisos.DataSource = avisos.Where(x => x.Cliente.Contains(textBoxBusqueda.Text.ToUpper())).ToList();
-            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void botonfiltrar_Click(object sender, EventArgs e)
+        {
+            var viewModel = facturaProvider.GetGestionFacturasVencidas();
+
         }
     }
 }

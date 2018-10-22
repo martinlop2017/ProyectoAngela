@@ -72,5 +72,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var viewModel = facturaProvider.GetGestionFacturasVencidas();
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            VisorMororsos form = new VisorMororsos();
+            form.Show();
+
+
+        }
     }
 }

@@ -41,18 +41,24 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void buttonEjecutar_Click(object sender, EventArgs e)
         {
-            var startDate = this.dateTimePickerStart.Value.Date;
-            var endDate = this.dateTimePickerEnd.Value.Date;
+            VisorMororsos form = new VisorMororsos();
+            form.Show();
 
-            if(startDate > endDate)
-            {
-                MessageBox.Show("Las fechas introducidas son incorrectas.");
-            }
-            else
-            {
-                var viewModel = this.facturaProvider.GetLiquidacionesParaFechas(startDate, endDate);
-                this.FillForm(viewModel);
-            }
+
+            /*
+                        var startDate = this.dateTimePickerStart.Value.Date;
+                        var endDate = this.dateTimePickerEnd.Value.Date;
+
+                        if(startDate > endDate)
+                        {
+                            MessageBox.Show("Las fechas introducidas son incorrectas.");
+                        }
+                        else
+                        {
+                            var viewModel = this.facturaProvider.GetLiquidacionesParaFechas(startDate, endDate);
+                            this.FillForm(viewModel);
+                        }
+            */
         }
 
         private void FillForm(LiquidacionesViewModel viewModel)

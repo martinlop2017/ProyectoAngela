@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void RemoveUser(string userToRemove);
         UsuarioViewModel GetUser(string userName, string pass);
         List<string> GetAllUserNames();
+        bool IsExpired();
     }
 }

@@ -4,6 +4,7 @@ using AdministracionAngela.Utils.Models.Usuario;
 using AdministracionAngela.Utils.Mappers;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -61,6 +62,13 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 return users.Select(x => x.UserName).ToList();
             else
                 return new List<string>(); 
+        }
+
+        public bool IsExpired()
+        {
+            var expirationDate = new DateTime(2019, 1, 1);
+            var isExpired = DateTime.Today >= expirationDate;
+            return isExpired;
         }
     }
 }

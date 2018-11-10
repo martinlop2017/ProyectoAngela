@@ -113,6 +113,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void ControlUsusarios_Load(object sender, EventArgs e)
         {
+            var appExpired = seguridadProvider.IsExpired();
+            if (appExpired)
+                this.Close();
+
             RutasSalida.RutaFacturacion = Properties.Settings.Default.RutaFacturacion;
             RutasSalida.RutaAlbaranes = Properties.Settings.Default.RutaAlbaranes;
             RutasSalida.RutaAlbaranes2 = Properties.Settings.Default.RutaAlbaranes2;

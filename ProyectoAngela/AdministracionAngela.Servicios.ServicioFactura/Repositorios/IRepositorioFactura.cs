@@ -33,7 +33,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         bool ExisteFactura(int numeroDocumento);
         bool ExisteAlbaran(int numeroDocumento, bool isDocumento);
         void SetCobrado(int numeroDocumento, bool cobrado);
-        List<Factura> GetFacturasCaducadas();
+        List<Factura> GetFacturasCaducadas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura);
+        List<Factura> GetFacturasCobradas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura);
+        List<Factura> GetAllFacturasCaducadas();
         void SetFacturaCobrada(long codigoFactura);
         List<Factura> GetFacturasByDateRange(DateTime from, DateTime to);
         List<Factura> GetFacturasByClienteRange(int from, int to);

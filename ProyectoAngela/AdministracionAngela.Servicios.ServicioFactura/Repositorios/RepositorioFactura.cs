@@ -353,9 +353,35 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             }
         }
 
-        public List<Factura> GetFacturasCaducadas()
+        public List<Factura> GetFacturasCaducadas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
         {
-            return this.dbContext.Facturas.Where(x => x.FechaVencimiento.HasValue &&
+            var facturasCaducadas = this.dbContext.Facturas.Where(x =>
+            x.ClienteId >= fromClientCode
+            && x.ClienteId <= toClientCode
+            && x.Fecha.Value >= fromFehaFactura
+            && x.Fecha.Value <= toFechaFactura
+            && x.FechaVencimiento.HasValue
+            && DbFunctions.TruncateTime(x.FechaVencimiento.Value) < DateTime.Today.Date)
+            .ToList();
+            return facturasCaducadas;
+        }
+
+        public List<Factura> GetFacturasCobradas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
+        {
+            var facturasCaducadas = this.dbContext.Facturas.Where(x =>
+            x.ClienteId >= fromClientCode
+            && x.ClienteId <= toClientCode
+            && x.Fecha.Value >= fromFehaFactura
+            && x.Fecha.Value <= toFechaFactura
+            && !x.FechaVencimiento.HasValue)
+            .ToList();
+            return facturasCaducadas;
+        }
+
+        public List<Factura> GetAllFacturasCaducadas()
+        {
+            return this.dbContext.Facturas.Where(x =>
+            x.FechaVencimiento.HasValue &&
             DbFunctions.TruncateTime(x.FechaVencimiento.Value) < DateTime.Today.Date)
             .ToList();
         }

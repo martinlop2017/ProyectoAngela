@@ -50,7 +50,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
         public bool HayFacturasCaducadas()
         {
-            var facturasCaducadas = repositorioFactura.GetFacturasCaducadas();
+            var facturasCaducadas = repositorioFactura.GetAllFacturasCaducadas();
             return facturasCaducadas != null && facturasCaducadas.Count > 0;
         }
 

@@ -583,7 +583,7 @@ namespace AdministracionAngela.Utils.Mappers
                 CodigoFactura = f.NumeroFactura,
                 Cliente = f.Cliente.Nombre,
                 FechaFactura = f.Fecha.Value.ToString("dd/MM/yyyy"),
-                FechaVencimiento = f.FechaVencimiento.Value.ToString("dd/MM/yyyy"),
+                FechaVencimiento = f.FechaVencimiento.HasValue ? f.FechaVencimiento.Value.ToString("dd/MM/yyyy") : "",
                 Importe = f.Total.Value,
                 Cobrada = false
             };

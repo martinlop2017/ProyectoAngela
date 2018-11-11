@@ -39,9 +39,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionAvisos_Load(object sender, EventArgs e)
         {
-            var viewModel = facturaProvider.GetGestionFacturasVencidas();
-            this.dataGridViewAvisos.DataSource = viewModel.Avisos;
-            this.avisos = viewModel.Avisos;
+            //var viewModel = facturaProvider.GetGestionFacturasVencidas();
+            this.dataGridViewAvisos.DataSource = new BindingList<AvisoViewModel>();
+            this.avisos = new BindingList<AvisoViewModel>();
         }
 
         private void dataGridViewAvisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -69,8 +69,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void botonfiltrar_Click(object sender, EventArgs e)
         {
-            var viewModel = facturaProvider.GetGestionFacturasVencidas();
+            var fromCode = long.Parse(this.textBoxFromCodigo.Text);
+            var toCode = long.Parse(this.textBoxToCodigo.Text);
+            var fromDate = this.dateTimePickerFromFecha.Value.Date;
+            var toDate = this.dateTimePickerToFecha.Value.Date;
+            var checkForPendientes = this.checkBoxPendientes.Checked;
+            var checkForCobradas = this.checkBoxCobradas.Checked;
 
+            var viewModel = facturaProvider.GetGestionFacturasVencidas(fromCode, toCode, fromDate, toDate, checkForPendientes, checkForCobradas);
+            this.dataGridViewAvisos.DataSource = viewModel.Avisos;
         }
 
         private void button1_Click(object sender, EventArgs e)

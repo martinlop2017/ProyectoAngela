@@ -559,10 +559,21 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             }
         }
 
-        public GestionAvisosViewModel GetGestionFacturasVencidas()
+        public GestionAvisosViewModel GetGestionFacturasVencidas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura, bool checkForPendientes, bool checkForCobradas)
         {
-            var facturas = this.repositorioFactura.GetFacturasCaducadas();
-            return MapToViewModel.MapToGestionAvisos(facturas);
+            var facturas = new List<Factura>();
+            if (checkForPendientes)
+            {
+                var facturasPendientes = this.repositorioFactura.GetFacturasCaducadas(fromClientCode, toClientCode, fromFehaFactura, toFechaFactura);
+                facturas.AddRange(facturasPendientes);
+            }
+            if (checkForCobradas)
+            {
+                var facturasCobradas = this.repositorioFactura.GetFacturasCobradas(fromClientCode, toClientCode, fromFehaFactura, toFechaFactura);
+                facturas.AddRange(facturasCobradas);
+            }
+            var sortedFacturas = facturas.OrderBy(x => x.ClienteId).ToList();
+            return MapToViewModel.MapToGestionAvisos(sortedFacturas);
         }
 
         public void SetFacturaCobrada(long codigoFactura)

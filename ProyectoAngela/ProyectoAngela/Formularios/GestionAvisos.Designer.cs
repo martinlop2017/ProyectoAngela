@@ -32,16 +32,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerToFecha = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerFromFecha = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBoxPendientes = new System.Windows.Forms.CheckBox();
+            this.checkBoxCobradas = new System.Windows.Forms.CheckBox();
+            this.textBoxToCodigo = new System.Windows.Forms.TextBox();
+            this.textBoxFromCodigo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridViewAvisos = new System.Windows.Forms.DataGridView();
@@ -63,16 +63,16 @@
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.dateTimePickerFecha);
+            this.panel1.Controls.Add(this.dateTimePickerToFecha);
+            this.panel1.Controls.Add(this.dateTimePickerFromFecha);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.checkBox3);
-            this.panel1.Controls.Add(this.checkBox2);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.checkBoxPendientes);
+            this.panel1.Controls.Add(this.checkBoxCobradas);
+            this.panel1.Controls.Add(this.textBoxToCodigo);
+            this.panel1.Controls.Add(this.textBoxFromCodigo);
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(35, 102);
             this.panel1.Name = "panel1";
@@ -80,23 +80,25 @@
             this.panel1.TabIndex = 31;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // dateTimePicker1
+            // dateTimePickerToFecha
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(258, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.RightToLeftLayout = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePicker1.TabIndex = 36;
+            this.dateTimePickerToFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerToFecha.Location = new System.Drawing.Point(258, 35);
+            this.dateTimePickerToFecha.Name = "dateTimePickerToFecha";
+            this.dateTimePickerToFecha.RightToLeftLayout = true;
+            this.dateTimePickerToFecha.Size = new System.Drawing.Size(83, 20);
+            this.dateTimePickerToFecha.TabIndex = 36;
+            this.dateTimePickerToFecha.Value = new System.DateTime(2018, 11, 10, 11, 28, 48, 0);
             // 
-            // dateTimePickerFecha
+            // dateTimePickerFromFecha
             // 
-            this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFecha.Location = new System.Drawing.Point(169, 35);
-            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
-            this.dateTimePickerFecha.RightToLeftLayout = true;
-            this.dateTimePickerFecha.Size = new System.Drawing.Size(83, 20);
-            this.dateTimePickerFecha.TabIndex = 35;
+            this.dateTimePickerFromFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerFromFecha.Location = new System.Drawing.Point(169, 35);
+            this.dateTimePickerFromFecha.Name = "dateTimePickerFromFecha";
+            this.dateTimePickerFromFecha.RightToLeftLayout = true;
+            this.dateTimePickerFromFecha.Size = new System.Drawing.Size(83, 20);
+            this.dateTimePickerFromFecha.TabIndex = 35;
+            this.dateTimePickerFromFecha.Value = new System.DateTime(2018, 11, 10, 11, 28, 40, 0);
             // 
             // label6
             // 
@@ -134,43 +136,41 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Desde Cliente";
             // 
-            // checkBox3
+            // checkBoxPendientes
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(363, 38);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(79, 17);
-            this.checkBox3.TabIndex = 9;
-            this.checkBox3.Text = "Pendientes";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxPendientes.AutoSize = true;
+            this.checkBoxPendientes.Location = new System.Drawing.Point(363, 35);
+            this.checkBoxPendientes.Name = "checkBoxPendientes";
+            this.checkBoxPendientes.Size = new System.Drawing.Size(79, 17);
+            this.checkBoxPendientes.TabIndex = 9;
+            this.checkBoxPendientes.Text = "Pendientes";
+            this.checkBoxPendientes.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxCobradas
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(448, 35);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(71, 17);
-            this.checkBox2.TabIndex = 8;
-            this.checkBox2.Text = "Cobradas";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxCobradas.AutoSize = true;
+            this.checkBoxCobradas.Location = new System.Drawing.Point(448, 35);
+            this.checkBoxCobradas.Name = "checkBoxCobradas";
+            this.checkBoxCobradas.Size = new System.Drawing.Size(71, 17);
+            this.checkBoxCobradas.TabIndex = 8;
+            this.checkBoxCobradas.Text = "Cobradas";
+            this.checkBoxCobradas.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // textBoxToCodigo
             // 
-            this.textBox2.Location = new System.Drawing.Point(95, 35);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(64, 20);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "999999";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxToCodigo.Location = new System.Drawing.Point(95, 35);
+            this.textBoxToCodigo.Name = "textBoxToCodigo";
+            this.textBoxToCodigo.Size = new System.Drawing.Size(64, 20);
+            this.textBoxToCodigo.TabIndex = 1;
+            this.textBoxToCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox1
+            // textBoxFromCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(64, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "000000";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxFromCodigo.Location = new System.Drawing.Point(16, 35);
+            this.textBoxFromCodigo.Name = "textBoxFromCodigo";
+            this.textBoxFromCodigo.Size = new System.Drawing.Size(64, 20);
+            this.textBoxFromCodigo.TabIndex = 0;
+            this.textBoxFromCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -360,17 +360,17 @@
         private System.Windows.Forms.DataGridView dataGridViewAvisos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxToCodigo;
+        private System.Windows.Forms.TextBox textBoxFromCodigo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBoxPendientes;
+        private System.Windows.Forms.CheckBox checkBoxCobradas;
         private System.Windows.Forms.Button botonfiltrar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        private System.Windows.Forms.DateTimePicker dateTimePickerToFecha;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFromFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigoFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;

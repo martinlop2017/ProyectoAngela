@@ -44,7 +44,7 @@ namespace AdministracionAngela.Utils.Interfaces
         void SetFacturaCobrada(long codigoFactura);
         void LoadIVAAndREBy(AltaFacturaViewModel viewModel);
         void LoadIVAAndREBy(AltaAlbaranViewModel viewModel);
-        GestionAvisosViewModel GetGestionFacturasVencidas();
+        GestionAvisosViewModel GetGestionFacturasVencidas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura, bool checkForPendientes, bool checkForCobradas);
         //List<AltaAlbaranViewModel> GetAllAlbaranes();
         List<ListadoFactura> GetAllFacturasFromDateRange(DateTime from, DateTime to);
         List<ListadoFactura> GetAllFacturasFromClienteRange(int fromCodigo, int toCodigo);

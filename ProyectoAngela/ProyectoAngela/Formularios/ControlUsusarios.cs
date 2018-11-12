@@ -113,8 +113,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void ControlUsusarios_Load(object sender, EventArgs e)
         {
-            var appExpired = seguridadProvider.IsExpired();
-            if (appExpired)
+            var expiracion = Properties.Settings.Default.Expiracion;
+            var expirationDate = DateTime.Parse(expiracion);
+            if (DateTime.Today >= expirationDate)
                 this.Close();
 
             RutasSalida.RutaFacturacion = Properties.Settings.Default.RutaFacturacion;

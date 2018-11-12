@@ -63,12 +63,5 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             else
                 return new List<string>(); 
         }
-
-        public bool IsExpired()
-        {
-            var expirationDate = new DateTime(2019, 1, 1);
-            var isExpired = DateTime.Today >= expirationDate;
-            return isExpired;
-        }
     }
 }

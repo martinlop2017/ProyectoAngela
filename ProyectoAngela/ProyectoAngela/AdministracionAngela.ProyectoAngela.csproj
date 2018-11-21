@@ -81,11 +81,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetIvaFactura.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSetMorosos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetMorosos.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\Albaranes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,17 +441,6 @@
     </None>
     <None Include="DataSetIvaFactura.xss">
       <DependentUpon>DataSetIvaFactura.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetMorosos.xsc">
-      <DependentUpon>DataSetMorosos.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetMorosos.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetMorosos.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetMorosos.xss">
-      <DependentUpon>DataSetMorosos.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\AdministracionAngela.ProyectoAngela.Formularios.ClaseLiquidacion.datasource" />

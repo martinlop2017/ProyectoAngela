@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMorosos" targetNamespace="http://tempuri.org/DataSetMorosos.xsd" xmlns:mstns="http://tempuri.org/DataSetMorosos.xsd" xmlns="http://tempuri.org/DataSetMorosos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMorosos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMorosos" msprop:Generator_UserDSName="DataSetMorosos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Moroso" msprop:Generator_TableClassName="MorosoDataTable" msprop:Generator_TableVarName="tableMoroso" msprop:Generator_TablePropName="Moroso" msprop:Generator_RowDeletingName="MorosoRowDeleting" msprop:Generator_RowChangingName="MorosoRowChanging" msprop:Generator_RowEvHandlerName="MorosoRowChangeEventHandler" msprop:Generator_RowDeletedName="MorosoRowDeleted" msprop:Generator_UserTableName="Moroso" msprop:Generator_RowChangedName="MorosoRowChanged" msprop:Generator_RowEvArgName="MorosoRowChangeEvent" msprop:Generator_RowClassName="MorosoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CodigoFactura" msprop:Generator_ColumnVarNameInTable="columnCodigoFactura" msprop:Generator_ColumnPropNameInRow="CodigoFactura" msprop:Generator_ColumnPropNameInTable="CodigoFacturaColumn" msprop:Generator_UserColumnName="CodigoFactura" type="xs:string" minOccurs="0" />
+              <xs:element name="NombreCliente" msprop:Generator_ColumnVarNameInTable="columnNombreCliente" msprop:Generator_ColumnPropNameInRow="NombreCliente" msprop:Generator_ColumnPropNameInTable="NombreClienteColumn" msprop:Generator_UserColumnName="NombreCliente" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaFactura" msprop:Generator_ColumnVarNameInTable="columnFechaFactura" msprop:Generator_ColumnPropNameInRow="FechaFactura" msprop:Generator_ColumnPropNameInTable="FechaFacturaColumn" msprop:Generator_UserColumnName="FechaFactura" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaVencimiento" msprop:Generator_ColumnVarNameInTable="columnFechaVencimiento" msprop:Generator_ColumnPropNameInRow="FechaVencimiento" msprop:Generator_ColumnPropNameInTable="FechaVencimientoColumn" msprop:Generator_UserColumnName="FechaVencimiento" type="xs:string" minOccurs="0" />
+              <xs:element name="Importe" msprop:Generator_ColumnVarNameInTable="columnImporte" msprop:Generator_ColumnPropNameInRow="Importe" msprop:Generator_ColumnPropNameInTable="ImporteColumn" msprop:Generator_UserColumnName="Importe" type="xs:string" minOccurs="0" />
+              <xs:element name="FechaCobro" msprop:Generator_ColumnVarNameInTable="columnFechaCobro" msprop:Generator_ColumnPropNameInRow="FechaCobro" msprop:Generator_ColumnPropNameInTable="FechaCobroColumn" msprop:Generator_UserColumnName="FechaCobro" type="xs:string" minOccurs="0" />
+              <xs:element name="Cobrada" msprop:Generator_ColumnVarNameInTable="columnCobrada" msprop:Generator_ColumnPropNameInRow="Cobrada" msprop:Generator_ColumnPropNameInTable="CobradaColumn" msprop:Generator_UserColumnName="Cobrada" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

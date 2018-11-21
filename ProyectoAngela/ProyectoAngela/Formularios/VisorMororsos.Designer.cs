@@ -28,16 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.MorosoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.MorosoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            reportDataSource1.Name = "DataSetMorosos";
+            reportDataSource1.Value = this.MorosoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ListadoMorosos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-1, -1);
+            this.reportViewer1.Location = new System.Drawing.Point(160, 128);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(638, 436);
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // MorosoBindingSource
+            // 
+            this.MorosoBindingSource.DataSource = typeof(AdministracionAngela.Utils.Models.Impresion.Moroso);
             // 
             // VisorMororsos
             // 
@@ -48,6 +59,7 @@
             this.Name = "VisorMororsos";
             this.Text = "VisorMororsos";
             this.Load += new System.EventHandler(this.VisorMororsos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.MorosoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -55,5 +67,6 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource MorosoBindingSource;
     }
 }

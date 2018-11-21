@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AdministracionAngela.Utils</RootNamespace>
-    <AssemblyName>AdministracionAngela.Utils</AssemblyName>
+    <AssemblyName>c</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -88,6 +88,7 @@
     <Compile Include="Models\Impresion\FacturaIVA.cs" />
     <Compile Include="Models\Impresion\ListadoAlbaran.cs" />
     <Compile Include="Models\Impresion\ListadoFactura.cs" />
+    <Compile Include="Models\Impresion\Moroso.cs" />
     <Compile Include="Models\IVA\GestionIVAViewModel.cs" />
     <Compile Include="Models\IVA\IVAViewModel.cs" />
     <Compile Include="Models\Liquidaciones\LineaLiquidacionViewModel.cs" />

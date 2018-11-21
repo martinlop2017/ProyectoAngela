@@ -1,6 +1,8 @@
 ﻿using AdministracionAngela.Utils.Interfaces;
 using AdministracionAngela.Utils.Models.Avisos;
+using AdministracionAngela.Utils.Models.Impresion;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -82,10 +84,26 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            VisorMororsos form = new VisorMororsos();
-            form.Show();
+            var listaMorososParaImprimir = new List<Moroso>();
+            foreach (DataGridViewRow row in dataGridViewAvisos.Rows)
+            {
+                var moroso = new Moroso();
+                moroso.CodigoFactura = Convert.ToString(row.Cells["ColumnCodigoFactura"].Value);
+                moroso.FechaFactura = Convert.ToString(row.Cells["ColumnFecha"].Value);
+                moroso.FechaCobro = Convert.ToString(row.Cells["ColumnCobro"].Value);
+                moroso.FechaVencimiento = Convert.ToString(row.Cells["ColumnVencimiento"].Value);
+                moroso.Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value);
+                moroso.NombreCliente = Convert.ToString(row.Cells["ColumnCliente"].Value);
+                moroso.Cobrada = Convert.ToBoolean(row.Cells["ColumnCobrada"].Value);
 
+                listaMorososParaImprimir.Add(moroso);
+            }
 
+            if(listaMorososParaImprimir.Count > 0)
+            {
+                VisorMororsos form = new VisorMororsos();
+                form.ExportarToPdf(listaMorososParaImprimir);
+            }
         }
     }
 }

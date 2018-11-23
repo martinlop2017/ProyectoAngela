@@ -84,10 +84,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             var listaMorososParaImprimir = new List<Moroso>();
             foreach (DataGridViewRow row in dataGridViewAvisos.Rows)
             {
                 var moroso = new Moroso();
+                moroso.desdecliente = textBoxFromCodigo.Text;
+                moroso.hastacliente = textBoxToCodigo.Text;
                 moroso.CodigoFactura = Convert.ToString(row.Cells["ColumnCodigoFactura"].Value);
                 moroso.FechaFactura = Convert.ToString(row.Cells["ColumnFecha"].Value);
                 moroso.FechaCobro = Convert.ToString(row.Cells["ColumnCobro"].Value);

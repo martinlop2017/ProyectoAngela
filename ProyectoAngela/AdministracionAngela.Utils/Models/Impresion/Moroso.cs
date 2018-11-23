@@ -15,6 +15,9 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public decimal Importe { get; set; }
         public string FechaCobro { get; set; }
         public bool Cobrada { get; set; }
-       
+        public string desdecliente { get; set; }
+        public string hastacliente { get; set; }
+        public string desdefecha { get; set; }
+        public string hastafecha { get; set; }
     }
 }

@@ -57,5 +57,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             CheckForIllegalCrossThreadCalls = true;
 
         }
+
+        private void MorosoBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void morosoBindingSource_CurrentChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

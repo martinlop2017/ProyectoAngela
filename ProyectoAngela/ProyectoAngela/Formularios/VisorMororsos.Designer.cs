@@ -41,7 +41,7 @@
             reportDataSource1.Value = this.MorosoBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ListadoMorosos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(160, 128);
+            this.reportViewer1.Location = new System.Drawing.Point(160, 111);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.Size = new System.Drawing.Size(396, 246);
             this.reportViewer1.TabIndex = 0;
@@ -49,6 +49,7 @@
             // MorosoBindingSource
             // 
             this.MorosoBindingSource.DataSource = typeof(AdministracionAngela.Utils.Models.Impresion.Moroso);
+            this.MorosoBindingSource.CurrentChanged += new System.EventHandler(this.morosoBindingSource_CurrentChanged_1);
             // 
             // VisorMororsos
             // 

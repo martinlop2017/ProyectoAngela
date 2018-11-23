@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.7614cm</Width>
+              <Width>1.54135cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.83999cm</Width>
+              <Width>2.226cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>10.20306cm</Width>
+              <Width>10.14657cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.71544cm</Width>
+              <Width>2.67724cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.67849cm</Width>
+              <Width>2.64029cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -199,10 +199,9 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetMorosos</DataSetName>
-        <Top>0.03528cm</Top>
-        <Left>0.18093cm</Left>
+        <Left>0.14786cm</Left>
         <Height>0.49417cm</Height>
-        <Width>19.19838cm</Width>
+        <Width>19.23145cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -217,10 +216,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.71864in</Width>
+  <Width>7.77442in</Width>
   <Page>
     <PageHeader>
-      <Height>6.42966cm</Height>
+      <Height>6.29737cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -650,7 +649,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>0000001</Value>
+                      <Value>=First(Fields!desdecliente.Value, "DataSetMorosos")</Value>
                       <Style>
                         <FontWeight>Normal</FontWeight>
                       </Style>
@@ -712,7 +711,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>0000001</Value>
+                      <Value>=First(Fields!hastacliente.Value, "DataSetMorosos")</Value>
                       <Style>
                         <FontWeight>Normal</FontWeight>
                       </Style>
@@ -1022,6 +1021,14 @@
           <DataField>CodigoFactura</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="desdecliente">
+          <DataField>desdecliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="desdefecha">
+          <DataField>desdefecha</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="FechaCobro">
           <DataField>FechaCobro</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -1032,6 +1039,14 @@
         </Field>
         <Field Name="FechaVencimiento">
           <DataField>FechaVencimiento</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="hastacliente">
+          <DataField>hastacliente</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="hastafecha">
+          <DataField>hastafecha</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Importe">

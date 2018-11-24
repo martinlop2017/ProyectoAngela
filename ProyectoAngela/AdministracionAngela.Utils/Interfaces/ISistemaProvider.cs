@@ -11,5 +11,6 @@ namespace AdministracionAngela.Utils.Interfaces
         void SaveRutasSalida(RutasSalidaViewModel viewModel);
         bool HayFacturasCaducadas();
         bool BackUp();
+        bool IsNewYear();
     }
 }

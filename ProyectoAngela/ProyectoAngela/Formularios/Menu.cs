@@ -48,6 +48,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            
             if(NivelUsuario.Nivel.Equals("Usuario"))
             {
                 buttonSistema.Visible = false;
@@ -63,6 +64,19 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 buttonAlbaranes.Location = new Point(26, 43);
 
             }
+
+            if (sistemaProvider.IsNewYear())
+            {
+                using (ReiniciarBases formReinicio = new ReiniciarBases())
+                {
+                    var result = formReinicio.ShowDialog();
+                    if(result == DialogResult.Cancel)
+                    {
+                        Close();
+                    }
+                }
+            }
+
             var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
             buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;
 

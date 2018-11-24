@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using AdministracionAngela.Utils.Mappers;
 using AdministracionAngela.Utils.Models.FormaDePago;
 using AdministracionAngela.Utils.Models.RutasSalida;
+using System;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -57,6 +58,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public bool BackUp()
         {
             return this.repositorioSistema.BackUp();
+        }
+
+        public bool IsNewYear()
+        {
+            var lastFactura = repositorioFactura.GetLastFactura();
+            var facturaYear = lastFactura.Fecha.Value.Year;
+            var currentYear = DateTime.Today.Year;
+
+            return facturaYear < currentYear;
         }
     }
 }

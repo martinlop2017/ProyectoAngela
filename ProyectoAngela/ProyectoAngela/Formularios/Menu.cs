@@ -67,7 +67,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             if (sistemaProvider.IsNewYear())
             {
-                using (ReiniciarBases formReinicio = new ReiniciarBases())
+                using (ReiniciarBases formReinicio = new ReiniciarBases(this.sistemaProvider))
                 {
                     var result = formReinicio.ShowDialog();
                     if(result == DialogResult.Cancel)

@@ -51,6 +51,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
             }
         }
+        
+        public bool ReiniciarBaseDAtos()
+        {
+            return this.dbContext.ReiniciarBaseDatos();
+        }
+         
 
         public void DeleteLineasFacturaByNumeroFactura(List<Factura> repositoryFacturasToDelete)
         {

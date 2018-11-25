@@ -68,5 +68,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return facturaYear < currentYear;
         }
+
+        public void ReiniciarBaseDatos()
+        {
+            repositorioFactura.ReiniciarBaseDAtos();
+        }
     }
 }

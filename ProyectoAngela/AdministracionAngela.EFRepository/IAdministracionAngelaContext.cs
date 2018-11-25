@@ -25,5 +25,6 @@ namespace AdministracionAngela.EFRepository
         int SaveChanges();
         void ReloadEntities<T>() where T : class;
         bool BackUp(string path);
+        bool ReiniciarBaseDatos();
     }
 }

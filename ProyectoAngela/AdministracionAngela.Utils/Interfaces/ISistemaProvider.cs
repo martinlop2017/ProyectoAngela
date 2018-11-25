@@ -12,5 +12,6 @@ namespace AdministracionAngela.Utils.Interfaces
         bool HayFacturasCaducadas();
         bool BackUp();
         bool IsNewYear();
+        void ReiniciarBaseDatos();
     }
 }

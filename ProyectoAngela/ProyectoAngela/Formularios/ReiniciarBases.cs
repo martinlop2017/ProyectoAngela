@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdministracionAngela.Utils.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,11 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 {
     public partial class ReiniciarBases : Form
     {
-        public ReiniciarBases()
+        ISistemaProvider sistemaProvider;
+
+        public ReiniciarBases(ISistemaProvider sistemaProvider)
         {
+            this.sistemaProvider = sistemaProvider;
             InitializeComponent();
         }
 
@@ -21,6 +25,13 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             DialogResult = DialogResult.Cancel;
             Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.sistemaProvider.ReiniciarBaseDatos();
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }

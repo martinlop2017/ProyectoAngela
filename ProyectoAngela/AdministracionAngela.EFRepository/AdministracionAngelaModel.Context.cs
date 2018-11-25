@@ -80,5 +80,30 @@ namespace AdministracionAngela.EFRepository
 
             return Ok;
         }
+
+        public bool ReiniciarBaseDatos()
+        {
+            var ok = true;
+            try
+            {
+                string sqlCommand = "Delete LineaFactura";
+                Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
+
+                sqlCommand = "Delete LineaAlbaran";
+                Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
+
+                sqlCommand = "Delete Factura";
+                Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
+
+                sqlCommand = "Delete Albaran";
+                Database.ExecuteSqlCommand(TransactionalBehavior.DoNotEnsureTransaction, sqlCommand);
+            }
+            catch (Exception exp)
+            {
+                ok = false;
+            }
+
+            return ok;
+        }
     }
 }

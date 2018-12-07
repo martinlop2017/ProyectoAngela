@@ -66,6 +66,7 @@
             // 
             // buttonFacturas
             // 
+            this.buttonFacturas.Enabled = false;
             this.buttonFacturas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFacturas.Location = new System.Drawing.Point(531, 142);
             this.buttonFacturas.Name = "buttonFacturas";
@@ -77,6 +78,7 @@
             // 
             // buttonAlbaranes
             // 
+            this.buttonAlbaranes.Enabled = false;
             this.buttonAlbaranes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAlbaranes.Location = new System.Drawing.Point(529, 172);
             this.buttonAlbaranes.Name = "buttonAlbaranes";
@@ -114,13 +116,14 @@
             // 
             // textAlbaranes
             // 
-            this.textAlbaranes.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textAlbaranes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textAlbaranes.Location = new System.Drawing.Point(195, 172);
             this.textAlbaranes.Name = "textAlbaranes";
+            this.textAlbaranes.ReadOnly = true;
             this.textAlbaranes.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textAlbaranes.Size = new System.Drawing.Size(330, 23);
             this.textAlbaranes.TabIndex = 1;
+            this.textAlbaranes.Text = "C:\\ByMartin\\Factufish\\Albaranes";
             // 
             // label15
             // 
@@ -148,16 +151,18 @@
             // 
             // textFactura
             // 
-            this.textFactura.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textFactura.Location = new System.Drawing.Point(195, 143);
             this.textFactura.Name = "textFactura";
+            this.textFactura.ReadOnly = true;
             this.textFactura.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textFactura.Size = new System.Drawing.Size(330, 23);
             this.textFactura.TabIndex = 0;
+            this.textFactura.Text = "C:\\ByMartin\\Factufish\\Facturacion";
             // 
             // buttonListados
             // 
+            this.buttonListados.Enabled = false;
             this.buttonListados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonListados.Location = new System.Drawing.Point(529, 239);
             this.buttonListados.Name = "buttonListados";
@@ -169,8 +174,9 @@
             // 
             // buttonLiquidaciones
             // 
+            this.buttonLiquidaciones.Enabled = false;
             this.buttonLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLiquidaciones.Location = new System.Drawing.Point(529, 277);
+            this.buttonLiquidaciones.Location = new System.Drawing.Point(529, 280);
             this.buttonLiquidaciones.Name = "buttonLiquidaciones";
             this.buttonLiquidaciones.Size = new System.Drawing.Size(27, 23);
             this.buttonLiquidaciones.TabIndex = 152;
@@ -180,13 +186,14 @@
             // 
             // textLiquidaciones
             // 
-            this.textLiquidaciones.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLiquidaciones.Location = new System.Drawing.Point(195, 277);
+            this.textLiquidaciones.Location = new System.Drawing.Point(195, 280);
             this.textLiquidaciones.Name = "textLiquidaciones";
+            this.textLiquidaciones.ReadOnly = true;
             this.textLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textLiquidaciones.Size = new System.Drawing.Size(330, 23);
             this.textLiquidaciones.TabIndex = 3;
+            this.textLiquidaciones.Text = "C:\\ByMartin\\Factufish\\Liquidaciones";
             // 
             // label1
             // 
@@ -194,7 +201,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(56, 281);
+            this.label1.Location = new System.Drawing.Point(56, 284);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 150;
@@ -214,16 +221,18 @@
             // 
             // textListados
             // 
-            this.textListados.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textListados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textListados.Location = new System.Drawing.Point(195, 239);
             this.textListados.Name = "textListados";
+            this.textListados.ReadOnly = true;
             this.textListados.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textListados.Size = new System.Drawing.Size(330, 23);
             this.textListados.TabIndex = 2;
+            this.textListados.Text = "C:\\ByMartin\\Factufish\\Listados";
             // 
             // buttonSeguridad
             // 
+            this.buttonSeguridad.Enabled = false;
             this.buttonSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSeguridad.Location = new System.Drawing.Point(529, 201);
             this.buttonSeguridad.Name = "buttonSeguridad";
@@ -235,13 +244,14 @@
             // 
             // textAlbaranes2
             // 
-            this.textAlbaranes2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textAlbaranes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textAlbaranes2.Location = new System.Drawing.Point(195, 201);
             this.textAlbaranes2.Name = "textAlbaranes2";
+            this.textAlbaranes2.ReadOnly = true;
             this.textAlbaranes2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textAlbaranes2.Size = new System.Drawing.Size(330, 23);
             this.textAlbaranes2.TabIndex = 4;
+            this.textAlbaranes2.Text = "C:\\ByMartin\\Factufish\\Albaranes 2";
             // 
             // label3
             // 
@@ -257,6 +267,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(529, 318);
             this.button1.Name = "button1";
@@ -268,13 +279,14 @@
             // 
             // textBoxSeguridad
             // 
-            this.textBoxSeguridad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSeguridad.Location = new System.Drawing.Point(195, 318);
             this.textBoxSeguridad.Name = "textBoxSeguridad";
+            this.textBoxSeguridad.ReadOnly = true;
             this.textBoxSeguridad.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBoxSeguridad.Size = new System.Drawing.Size(330, 23);
             this.textBoxSeguridad.TabIndex = 157;
+            this.textBoxSeguridad.Text = "C:\\ByMartin\\Factufish\\Backup";
             // 
             // labelSeguridad
             // 
@@ -293,7 +305,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(620, 521);
+            this.ClientSize = new System.Drawing.Size(620, 522);
             this.ControlBox = false;
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxSeguridad);

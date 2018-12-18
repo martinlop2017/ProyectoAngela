@@ -158,7 +158,7 @@
             this.textFactura.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textFactura.Size = new System.Drawing.Size(330, 23);
             this.textFactura.TabIndex = 0;
-            this.textFactura.Text = "C:\\ByMartin\\Factufish\\Facturacion";
+            this.textFactura.Text = "C:\\\\ByMartin\\\\Factufish\\\\Facturacion";
             // 
             // buttonListados
             // 

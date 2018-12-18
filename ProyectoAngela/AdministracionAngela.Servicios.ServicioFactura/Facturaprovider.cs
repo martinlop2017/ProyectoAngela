@@ -207,6 +207,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             facturaToRepository.FechaVencimiento = facturaToRepository.Fecha.Value.AddDays(diasVencimiento.Value);
 
+            foreach (var lineaFactura in facturaToRepository.LineaFactura)
+            {
+                var producto = this.repositorioArticulo.GetArticuloById(lineaFactura.ProductoId);
+                lineaFactura.FAO = producto.FAO;
+                lineaFactura.ZonaCaptura = producto.ZonaCaptura;
+                lineaFactura.ArtePesca = producto.ArtePesca;
+                lineaFactura.NombreCientifico = producto.NombreCientifico;
+                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, facturaToRepository.Fecha.Value.ToString("ddMMyyy"));
+            }
+
             this.repositorioFactura.UpdateFactura(facturaToRepository);
         }
 

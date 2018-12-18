@@ -29,6 +29,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.sistemaProvider.BackUp();
             this.sistemaProvider.ReiniciarBaseDatos();
             DialogResult = DialogResult.OK;
             this.Close();

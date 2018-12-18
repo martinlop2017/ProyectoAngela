@@ -74,7 +74,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var fromCode = long.Parse(this.textBoxFromCodigo.Text);
             var toCode = long.Parse(this.textBoxToCodigo.Text);
             var fromDate = this.dateTimePickerFromFecha.Value.Date;
-            var toDate = this.dateTimePickerToFecha.Value.Date;
+            var toDate = this.dateTimePickerToFecha.Value.Date.AddDays(1).AddSeconds(-1);
             var checkForPendientes = this.checkBoxPendientes.Checked;
             var checkForCobradas = this.checkBoxCobradas.Checked;
 

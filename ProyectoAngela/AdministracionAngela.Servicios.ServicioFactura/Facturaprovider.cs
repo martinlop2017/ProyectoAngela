@@ -574,7 +574,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             var facturas = new List<Factura>();
             if (checkForPendientes)
             {
-                var facturasPendientes = this.repositorioFactura.GetFacturasCaducadas(fromClientCode, toClientCode, fromFehaFactura, toFechaFactura);
+                var facturasPendientes = this.repositorioFactura.GetFacturaPendientes(fromClientCode, toClientCode, fromFehaFactura, toFechaFactura);
                 facturas.AddRange(facturasPendientes);
             }
             if (checkForCobradas)

@@ -372,6 +372,18 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return facturasCaducadas;
         }
 
+        public List<Factura> GetFacturaPendientes(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
+        {
+            var facturasCaducadas = this.dbContext.Facturas.Where(x =>
+            x.ClienteId >= fromClientCode
+            && x.ClienteId <= toClientCode
+            && x.Fecha.Value >= fromFehaFactura
+            && x.Fecha.Value <= toFechaFactura
+            && x.FechaVencimiento.HasValue)
+            .ToList();
+            return facturasCaducadas;
+        }
+
         public List<Factura> GetFacturasCobradas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
         {
             var facturasCaducadas = this.dbContext.Facturas.Where(x =>

@@ -42,5 +42,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         List<Albaran> GetAlbaranesByDateRange(DateTime from, DateTime to);
         List<Albaran> GetAlbaranesByClienteRange(int from, int to);
         bool ReiniciarBaseDAtos();
+        List<Factura> GetFacturaPendientes(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura);
     }
 }

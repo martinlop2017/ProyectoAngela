@@ -44,7 +44,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 byte[] bytes = ReportViewerListadoAlbaranes.LocalReport.Render("PDF", null, out mimeType, out encoding,
                 out extension, out streamIds, out warnings);
 
-                var exportPath = string.Format(@"{0}c:\ByMartin\Factufish\Listados\Listado Articulos.pdf", RutasSalida.RutaListados);
+                var exportPath = string.Format(@"{0}\\Listado Articulos.pdf", RutasSalida.RutaListados);
                 File.WriteAllBytes(exportPath, bytes);
 
                 form.Close();

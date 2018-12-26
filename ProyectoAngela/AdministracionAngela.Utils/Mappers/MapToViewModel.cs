@@ -585,6 +585,7 @@ namespace AdministracionAngela.Utils.Mappers
                 FechaFactura = f.Fecha.Value.ToString("dd/MM/yyyy"),
                 FechaVencimiento = f.FechaVencimiento.HasValue ? f.FechaVencimiento.Value.ToString("dd/MM/yyyy") : "",
                 Importe = f.Total.Value,
+                FechaCobro = f.FechaCobro.HasValue ? f.FechaCobro.Value.ToString("dd/MM/yyyy") : "",
                 Cobrada = f.Cobrada.Value
             };
         }

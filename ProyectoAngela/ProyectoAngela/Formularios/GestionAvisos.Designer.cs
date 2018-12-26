@@ -45,6 +45,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridViewAvisos = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.botonfiltrar = new System.Windows.Forms.Button();
             this.ColumnCodigoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,9 +55,6 @@
             this.ColumnImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCobro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCobrada = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.botonfiltrar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAvisos)).BeginInit();
             this.SuspendLayout();
@@ -88,7 +88,7 @@
             this.dateTimePickerToFecha.RightToLeftLayout = true;
             this.dateTimePickerToFecha.Size = new System.Drawing.Size(83, 20);
             this.dateTimePickerToFecha.TabIndex = 36;
-            this.dateTimePickerToFecha.Value = new System.DateTime(2018, 11, 10, 11, 28, 48, 0);
+            this.dateTimePickerToFecha.Value = new System.DateTime(2018, 12, 26, 0, 0, 0, 0);
             // 
             // dateTimePickerFromFecha
             // 
@@ -237,6 +237,39 @@
             this.dataGridViewAvisos.TabIndex = 32;
             this.dataGridViewAvisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAvisos_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(705, 118);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 56);
+            this.button1.TabIndex = 33;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label7.Location = new System.Drawing.Point(178, 41);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(338, 42);
+            this.label7.TabIndex = 35;
+            this.label7.Text = "Gestión de Cobros";
+            // 
+            // botonfiltrar
+            // 
+            this.botonfiltrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonfiltrar.BackgroundImage")));
+            this.botonfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.botonfiltrar.Location = new System.Drawing.Point(579, 118);
+            this.botonfiltrar.Name = "botonfiltrar";
+            this.botonfiltrar.Size = new System.Drawing.Size(120, 56);
+            this.botonfiltrar.TabIndex = 36;
+            this.botonfiltrar.UseVisualStyleBackColor = true;
+            this.botonfiltrar.Click += new System.EventHandler(this.botonfiltrar_Click);
+            // 
             // ColumnCodigoFactura
             // 
             this.ColumnCodigoFactura.DataPropertyName = "CodigoFactura";
@@ -278,6 +311,7 @@
             // 
             // ColumnCobro
             // 
+            this.ColumnCobro.DataPropertyName = "FechaCobro";
             this.ColumnCobro.HeaderText = "F. Cobro";
             this.ColumnCobro.Name = "ColumnCobro";
             this.ColumnCobro.Width = 95;
@@ -290,39 +324,6 @@
             this.ColumnCobrada.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnCobrada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnCobrada.Width = 50;
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(705, 118);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 56);
-            this.button1.TabIndex = 33;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label7.Location = new System.Drawing.Point(178, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(338, 42);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Gestión de Cobros";
-            // 
-            // botonfiltrar
-            // 
-            this.botonfiltrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("botonfiltrar.BackgroundImage")));
-            this.botonfiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.botonfiltrar.Location = new System.Drawing.Point(579, 118);
-            this.botonfiltrar.Name = "botonfiltrar";
-            this.botonfiltrar.Size = new System.Drawing.Size(120, 56);
-            this.botonfiltrar.TabIndex = 36;
-            this.botonfiltrar.UseVisualStyleBackColor = true;
-            this.botonfiltrar.Click += new System.EventHandler(this.botonfiltrar_Click);
             // 
             // GestionAvisos
             // 

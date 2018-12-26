@@ -58,6 +58,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var codigoFactura = selectedRow.Cells["ColumnCodigoFactura"].Value;
 
                 this.facturaProvider.SetFacturaCobrada((long)codigoFactura, cobrada);
+
+                if(cobrada)
+                {
+                    selectedRow.Cells["ColumnCobro"].Value = DateTime.Now.ToString("dd/MM/yyyy");
+                }
+                else
+                {
+                    selectedRow.Cells["ColumnCobro"].Value = string.Empty;
+                }
             }
         }
 

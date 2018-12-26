@@ -57,7 +57,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var cobrada = (bool)(selectedRow.Cells["ColumnCobrada"] as DataGridViewCheckBoxCell).Value;
                 var codigoFactura = selectedRow.Cells["ColumnCodigoFactura"].Value;
 
-                this.facturaProvider.SetFacturaCobrada((long)codigoFactura);
+                this.facturaProvider.SetFacturaCobrada((long)codigoFactura, cobrada);
             }
         }
 

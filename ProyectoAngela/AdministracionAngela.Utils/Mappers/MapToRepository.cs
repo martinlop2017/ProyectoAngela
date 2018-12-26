@@ -230,7 +230,8 @@ namespace AdministracionAngela.Utils.Mappers
                 TotalIVA = altaFactura.FillIVA ? altaFactura.TotalIVA : 0,
                 Total = altaFactura.Total,
                 Impreso = false,
-                EtiquetaLote = altaFactura.Lote
+                EtiquetaLote = altaFactura.Lote,
+                Cobrada = false
             };
         }
 

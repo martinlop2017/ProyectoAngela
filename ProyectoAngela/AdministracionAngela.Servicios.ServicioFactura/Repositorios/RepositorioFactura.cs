@@ -379,7 +379,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             && x.ClienteId <= toClientCode
             && x.Fecha.Value >= fromFehaFactura
             && x.Fecha.Value <= toFechaFactura
-            && x.FechaVencimiento.HasValue)
+            && !x.Cobrada.Value)
             .ToList();
             return facturasCaducadas;
         }
@@ -391,7 +391,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             && x.ClienteId <= toClientCode
             && x.Fecha.Value >= fromFehaFactura
             && x.Fecha.Value <= toFechaFactura
-            && !x.FechaVencimiento.HasValue)
+            && x.Cobrada.Value)
             .ToList();
             return facturasCaducadas;
         }
@@ -399,15 +399,15 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         public List<Factura> GetAllFacturasCaducadas()
         {
             return this.dbContext.Facturas.Where(x =>
-            x.FechaVencimiento.HasValue &&
+            !x.Cobrada.Value &&
             DbFunctions.TruncateTime(x.FechaVencimiento.Value) < DateTime.Today.Date)
             .ToList();
         }
 
-        public void SetFacturaCobrada(long codigoFactura)
+        public void SetFacturaCobrada(long codigoFactura, bool cobrada)
         {
             var factura = this.dbContext.Facturas.FirstOrDefault(x => x.NumeroFactura == codigoFactura);
-            factura.FechaVencimiento = null;
+            factura.Cobrada = cobrada;
 
             this.dbContext.SaveChanges();
         }

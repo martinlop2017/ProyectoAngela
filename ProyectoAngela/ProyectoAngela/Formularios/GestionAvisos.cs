@@ -41,6 +41,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void GestionAvisos_Load(object sender, EventArgs e)
         {
+        // /   dateTimePickerFromFecha.Text = DateTime.Now.ToString("dd/mm/aaaa");
+        //    dateTimePickerToFecha.Text = DateTime.Now.ToString("dd/mm/aaaa");
             //var viewModel = facturaProvider.GetGestionFacturasVencidas();
             this.dataGridViewAvisos.DataSource = new BindingList<AvisoViewModel>();
             this.avisos = new BindingList<AvisoViewModel>();

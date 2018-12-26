@@ -70,6 +70,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label4 = new System.Windows.Forms.Label();
             this.labelTotalCajas = new System.Windows.Forms.Label();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
+            this.textBoxLote = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -174,7 +175,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.ColumnPrecio,
             this.ColumnImporte});
             this.dataGridViewLineasFactura.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewLineasFactura.Location = new System.Drawing.Point(28, 210);
+            this.dataGridViewLineasFactura.Location = new System.Drawing.Point(28, 205);
             this.dataGridViewLineasFactura.Name = "dataGridViewLineasFactura";
             this.dataGridViewLineasFactura.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewLineasFactura.Size = new System.Drawing.Size(785, 260);
@@ -464,6 +465,14 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelNumeroFactura.TabIndex = 56;
             this.labelNumeroFactura.Text = "label9";
             // 
+            // textBoxLote
+            // 
+            this.textBoxLote.Location = new System.Drawing.Point(257, 151);
+            this.textBoxLote.Name = "textBoxLote";
+            this.textBoxLote.Size = new System.Drawing.Size(272, 24);
+            this.textBoxLote.TabIndex = 57;
+            this.textBoxLote.Text = "borrame cuando arregles lo del lote";
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -473,6 +482,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 750);
+            this.Controls.Add(this.textBoxLote);
             this.Controls.Add(this.labelNumeroFactura);
             this.Controls.Add(this.labelTotalCajas);
             this.Controls.Add(this.label4);
@@ -556,5 +566,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private DataGridViewTextBoxColumn ColumnKgs;
         private DataGridViewTextBoxColumn ColumnPrecio;
         private DataGridViewTextBoxColumn ColumnImporte;
+        private TextBox textBoxLote;
     }
 }

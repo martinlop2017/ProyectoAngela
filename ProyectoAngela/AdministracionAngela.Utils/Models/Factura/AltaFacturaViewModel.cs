@@ -16,7 +16,6 @@ namespace AdministracionAngela.Utils.Models.Factura
         public long SelectedClientId => ClienteIdsAndDescripciones[SelectedClient];
         public string SelectedClient { get; set; }
         public string Fecha { get; set; }
-        public string Lote { get; set; }
         public List<LineaFacturaViewModel> LineasFactura { get; set; }
         public List<LineaIVAViewModel> LineasIVA { get; set; }
         public bool FillIVA { get; set; }

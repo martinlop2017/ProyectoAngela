@@ -81,6 +81,7 @@
           <Property Name="EtiquetaLote" Type="nvarchar" MaxLength="50" />
           <Property Name="FechaVencimiento" Type="datetime" />
           <Property Name="Cobrada" Type="bit" />
+          <Property Name="FechaCobro" Type="datetime" />
         </EntityType>
         <EntityType Name="FormaPago">
           <Key>
@@ -782,6 +783,7 @@
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
           <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
           <Property Name="Cobrada" Type="Boolean" />
+          <Property Name="FechaCobro" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK_Factura_Cliente">
           <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="1" />
@@ -999,6 +1001,7 @@
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="FechaCobro" ColumnName="FechaCobro" />
                 <ScalarProperty Name="Cobrada" ColumnName="Cobrada" />
                 <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
                 <ScalarProperty Name="EtiquetaLote" ColumnName="EtiquetaLote" />

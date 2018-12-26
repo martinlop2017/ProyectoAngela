@@ -32,6 +32,7 @@ namespace AdministracionAngela.EFRepository
         public string EtiquetaLote { get; set; }
         public Nullable<System.DateTime> FechaVencimiento { get; set; }
         public Nullable<bool> Cobrada { get; set; }
+        public Nullable<System.DateTime> FechaCobro { get; set; }
     
         public virtual Cliente Cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

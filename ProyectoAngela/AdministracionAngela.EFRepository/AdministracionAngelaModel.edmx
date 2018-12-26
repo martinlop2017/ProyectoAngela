@@ -80,6 +80,7 @@
           <Property Name="Impreso" Type="bit" />
           <Property Name="EtiquetaLote" Type="nvarchar" MaxLength="50" />
           <Property Name="FechaVencimiento" Type="datetime" />
+          <Property Name="Cobrada" Type="bit" />
         </EntityType>
         <EntityType Name="FormaPago">
           <Key>
@@ -189,7 +190,7 @@
           </Key>
           <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Nivel" Type="nchar" MaxLength="50" />
+          <Property Name="Nivel" Type="nvarchar" MaxLength="50" />
           <Property Name="Activo" Type="bit" />
         </EntityType>
         <Association Name="FK_Albaran_Cliente">
@@ -237,18 +238,6 @@
             </Principal>
             <Dependent Role="Cliente">
               <PropertyRef Name="FormaDePagoId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Factura_Cliente">
-          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
-          <End Role="Factura" Type="Self.Factura" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Cliente">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Factura">
-              <PropertyRef Name="ClienteId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -365,10 +354,6 @@
           <AssociationSet Name="FK_Cliente_FormaPago" Association="Self.FK_Cliente_FormaPago">
             <End Role="FormaPago" EntitySet="FormaPago" />
             <End Role="Cliente" EntitySet="Cliente" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Factura_Cliente" Association="Self.FK_Factura_Cliente">
-            <End Role="Cliente" EntitySet="Cliente" />
-            <End Role="Factura" EntitySet="Factura" />
           </AssociationSet>
           <AssociationSet Name="FK_LineaAlbaran_Albaran" Association="Self.FK_LineaAlbaran_Albaran">
             <End Role="Albaran" EntitySet="Albaran" />
@@ -776,7 +761,7 @@
           </Key>
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Nivel" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Nivel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Activo" Type="Boolean" />
         </EntityType>
         <EntityType Name="Factura">
@@ -796,6 +781,7 @@
           <Property Name="FechaVencimiento" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Cliente" Relationship="AdministracionAngelaModel.FK_Factura_Cliente" FromRole="Factura" ToRole="Cliente" />
           <NavigationProperty Name="LineaFactura" Relationship="AdministracionAngelaModel.FK_LineaFactura_Factura" FromRole="Factura" ToRole="LineaFactura" />
+          <Property Name="Cobrada" Type="Boolean" />
         </EntityType>
         <Association Name="FK_Factura_Cliente">
           <End Type="AdministracionAngelaModel.Cliente" Role="Cliente" Multiplicity="1" />
@@ -1013,6 +999,7 @@
           <EntitySetMapping Name="Factura">
             <EntityTypeMapping TypeName="AdministracionAngelaModel.Factura">
               <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="Cobrada" ColumnName="Cobrada" />
                 <ScalarProperty Name="FechaVencimiento" ColumnName="FechaVencimiento" />
                 <ScalarProperty Name="EtiquetaLote" ColumnName="EtiquetaLote" />
                 <ScalarProperty Name="Impreso" ColumnName="Impreso" />

@@ -102,6 +102,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     var articulos = articuloProvider.GetAllArticulos();
                     if (articulos.Any())
                     {
+                        
                         var form = new ReportViewerListadoArticulos();
                         form.ExportarToPdf(articulos);
                     }

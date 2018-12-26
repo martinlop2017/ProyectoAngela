@@ -55,8 +55,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxClientes = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxLote = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
@@ -230,17 +228,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             // dateTimePickerFecha
             // 
             this.dateTimePickerFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerFecha.Location = new System.Drawing.Point(542, 65);
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(677, 64);
             this.dateTimePickerFecha.Name = "dateTimePickerFecha";
             this.dateTimePickerFecha.RightToLeftLayout = true;
-            this.dateTimePickerFecha.Size = new System.Drawing.Size(135, 24);
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(129, 24);
             this.dateTimePickerFecha.TabIndex = 1;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(545, 40);
+            this.label10.Location = new System.Drawing.Point(674, 39);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(53, 18);
@@ -292,7 +290,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.comboBoxClientes.FormattingEnabled = true;
             this.comboBoxClientes.Location = new System.Drawing.Point(165, 62);
             this.comboBoxClientes.Name = "comboBoxClientes";
-            this.comboBoxClientes.Size = new System.Drawing.Size(344, 26);
+            this.comboBoxClientes.Size = new System.Drawing.Size(483, 26);
             this.comboBoxClientes.TabIndex = 0;
             this.comboBoxClientes.SelectionChangeCommitted += new System.EventHandler(this.comboBoxClientes_SelectionChangeCommitted);
             this.comboBoxClientes.TextUpdate += new System.EventHandler(this.comboBoxClientes_TextUpdate);
@@ -307,24 +305,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Cliente.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(706, 40);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 18);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "Lote.";
-            // 
-            // textBoxLote
-            // 
-            this.textBoxLote.Location = new System.Drawing.Point(703, 67);
-            this.textBoxLote.Name = "textBoxLote";
-            this.textBoxLote.Size = new System.Drawing.Size(105, 24);
-            this.textBoxLote.TabIndex = 2;
             // 
             // label42
             // 
@@ -497,9 +477,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.Controls.Add(this.labelTotalCajas);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label42);
-            this.Controls.Add(this.textBoxLote);
             this.Controls.Add(this.labelTotal);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label40);
             this.Controls.Add(this.dateTimePickerFecha);
             this.Controls.Add(this.labelTotalRE);
@@ -557,8 +535,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private Label label1;
         private ComboBox comboBoxClientes;
         private Label label2;
-        private Label label3;
-        private TextBox textBoxLote;
         private Label label42;
         private Label labelTotal;
         private Label label40;

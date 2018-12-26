@@ -50,15 +50,17 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBoxProducto
             // 
             this.comboBoxProducto.FormattingEnabled = true;
-            this.comboBoxProducto.Location = new System.Drawing.Point(139, 140);
+            this.comboBoxProducto.Location = new System.Drawing.Point(119, 140);
             this.comboBoxProducto.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxProducto.Name = "comboBoxProducto";
-            this.comboBoxProducto.Size = new System.Drawing.Size(363, 24);
+            this.comboBoxProducto.Size = new System.Drawing.Size(292, 24);
             this.comboBoxProducto.TabIndex = 0;
             this.comboBoxProducto.SelectedIndexChanged += new System.EventHandler(this.comboBoxProducto_SelectedIndexChanged);
             this.comboBoxProducto.TextUpdate += new System.EventHandler(this.comboBoxProducto_TextUpdate);
@@ -128,7 +130,7 @@
             this.textBoxCodigo.Location = new System.Drawing.Point(45, 140);
             this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCodigo.Name = "textBoxCodigo";
-            this.textBoxCodigo.Size = new System.Drawing.Size(85, 23);
+            this.textBoxCodigo.Size = new System.Drawing.Size(67, 23);
             this.textBoxCodigo.TabIndex = 16;
             // 
             // labelTotal
@@ -172,7 +174,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label10.Location = new System.Drawing.Point(54, 119);
+            this.label10.Location = new System.Drawing.Point(44, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 17);
             this.label10.TabIndex = 29;
@@ -184,7 +186,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(161, 119);
+            this.label2.Location = new System.Drawing.Point(132, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 17);
             this.label2.TabIndex = 30;
@@ -256,6 +258,29 @@
             this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBox1.Location = new System.Drawing.Point(419, 141);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(110, 23);
+            this.textBox1.TabIndex = 37;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label5.Location = new System.Drawing.Point(421, 119);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 17);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Lote";
+            // 
             // AltaLineaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,6 +290,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(572, 432);
             this.ControlBox = false;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -317,5 +344,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button8;
         private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
     }
 }

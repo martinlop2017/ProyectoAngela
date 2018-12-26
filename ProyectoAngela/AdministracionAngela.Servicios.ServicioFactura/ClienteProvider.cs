@@ -70,8 +70,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos
         public List<AltaClienteViewModel> GetAllClientes()
         {
             var clientes = repositorioCliente.GetAllClients();
+            var formasDePago = this.repositorioSistema.GetAllFormasDePago();
 
-            return clientes.Select(x => MapToViewModel.MapAltaClient(x, null)).ToList();
+            return clientes.Select(x => MapToViewModel.MapAltaClient(x, formasDePago)).ToList();
         }
     }
 }

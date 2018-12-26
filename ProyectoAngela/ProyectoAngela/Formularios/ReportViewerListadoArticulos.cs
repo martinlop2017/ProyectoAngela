@@ -29,7 +29,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         public void ExportarToPdf(List<AltaArticuloViewModel> articulos)
         {
-            this.AltaArticuloViewModelBindingSource.DataSource = articulos;
+            this.AltaArticuloViewModelBindingSource.DataSource = articulos.OrderBy(x => x.CodigoArticulo);
             //this.reportViewer1.RefreshReport();
             string mimeType = string.Empty;
             string encoding = string.Empty;

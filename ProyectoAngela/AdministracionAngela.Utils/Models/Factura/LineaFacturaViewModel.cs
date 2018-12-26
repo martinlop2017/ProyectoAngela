@@ -26,6 +26,7 @@ namespace AdministracionAngela.Utils.Models.Factura
         public decimal Kgs { get; set; }
         public decimal Precio { get; set; }
         public decimal Importe { get; set; }
+        public string Lote { get; set; }
 
         public LineaFacturaViewModel()
         {

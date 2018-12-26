@@ -115,7 +115,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 lineaFactura.ZonaCaptura = producto.ZonaCaptura;
                 lineaFactura.ArtePesca = producto.ArtePesca;
                 lineaFactura.NombreCientifico = producto.NombreCientifico;
-                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, facturaToRepository.Fecha.Value.ToString("ddMMyyy"));
+                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, lineaFactura.Lote);
             }
             this.repositorioFactura.SaveFactura(facturaToRepository);
         }
@@ -214,7 +214,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 lineaFactura.ZonaCaptura = producto.ZonaCaptura;
                 lineaFactura.ArtePesca = producto.ArtePesca;
                 lineaFactura.NombreCientifico = producto.NombreCientifico;
-                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, facturaToRepository.Fecha.Value.ToString("ddMMyyy"));
+                var loteOnlyWithNumbers = lineaFactura.Lote.Replace(string.Format("{0}/" ,producto.Abreviacion), "");
+                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, loteOnlyWithNumbers);
             }
 
             this.repositorioFactura.UpdateFactura(facturaToRepository);

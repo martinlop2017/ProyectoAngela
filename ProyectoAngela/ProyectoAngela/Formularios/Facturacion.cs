@@ -95,6 +95,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnKgs"].Value = lineaFactura.Kgs;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnPrecio"].Value = lineaFactura.Precio;
                         this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnImporte"].Value = lineaFactura.Importe;
+                        this.dataGridViewLineasFactura.Rows[indexOFLastRow].Cells["ColumnLote"].Value = lineaFactura.Lote;
                     }
 
                     this.facturaProvider.LoadIVAAndREBy(viewModel);
@@ -310,7 +311,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.viewModel.NumeroFactura = Convert.ToInt32(this.labelNumeroFactura.Text);
             this.viewModel.SelectedClient = this.comboBoxClientes.Text;
             this.viewModel.Fecha = this.dateTimePickerFecha.Value.ToString();
-            this.viewModel.Lote= this.textBoxLote.Text;
         }
 
         private void buttonEliminarLinea_Click(object sender, EventArgs e)
@@ -336,7 +336,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void AddLineaFActura(LineaFacturaViewModel lineaFactura)
         {
-            this.dataGridViewLineasFactura.Rows.Add(lineaFactura.SelectedProduct, lineaFactura.ProductoId, lineaFactura.Cajas, lineaFactura.Kgs, lineaFactura.Precio, lineaFactura.Importe);
+            this.dataGridViewLineasFactura.Rows.Add(lineaFactura.SelectedProduct, lineaFactura.ProductoId, lineaFactura.Cajas, lineaFactura.Kgs, lineaFactura.Precio, lineaFactura.Importe, lineaFactura.Lote);
             this.Recalculate();
         }
         private void AddNewLineaFactura()

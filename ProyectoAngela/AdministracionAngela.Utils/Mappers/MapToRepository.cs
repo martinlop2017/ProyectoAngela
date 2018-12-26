@@ -247,7 +247,8 @@ namespace AdministracionAngela.Utils.Mappers
                 Precio = linea.Precio,
                 Kgs = linea.Kgs,
                 Cajas = linea.Cajas,
-                Importe = linea.Importe
+                Importe = linea.Importe,
+                Lote = linea.Lote
             }).ToList();
         }
 

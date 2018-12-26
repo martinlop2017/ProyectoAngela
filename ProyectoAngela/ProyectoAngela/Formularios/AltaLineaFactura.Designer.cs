@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaLineaFactura));
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = ((AdministracionAngela.CustomControls.ValidationProvider.ValidationRule)(new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule()));
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = ((AdministracionAngela.CustomControls.ValidationProvider.ValidationRule)(new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule()));
             this.comboBoxProducto = new System.Windows.Forms.ComboBox();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.textBoxCajas = new System.Windows.Forms.TextBox();
@@ -50,7 +50,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.validationProvider1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationProvider(this.components);
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxLote = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -258,16 +258,16 @@
             this.validationProvider1.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.validationProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("validationProvider1.Icon")));
             // 
-            // textBox1
+            // textBoxLote
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.textBox1.Location = new System.Drawing.Point(419, 141);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(110, 23);
-            this.textBox1.TabIndex = 37;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxLote.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.textBoxLote.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.textBoxLote.Location = new System.Drawing.Point(419, 141);
+            this.textBoxLote.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxLote.Name = "textBoxLote";
+            this.textBoxLote.Size = new System.Drawing.Size(110, 23);
+            this.textBoxLote.TabIndex = 37;
+            this.textBoxLote.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
             // 
@@ -291,7 +291,7 @@
             this.ClientSize = new System.Drawing.Size(572, 432);
             this.ControlBox = false;
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxLote);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -344,7 +344,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button8;
         private CustomControls.ValidationProvider.ValidationProvider validationProvider1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxLote;
         private System.Windows.Forms.Label label5;
     }
 }

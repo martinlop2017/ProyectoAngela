@@ -306,7 +306,6 @@ namespace AdministracionAngela.Utils.Mappers
                 ClienteIdsAndDescripciones = clientes.ToDictionary(cliente => string.Format("{0} - {1}", cliente.Id, cliente.Nombre), c => c.Id),
                 ArticuloIdsAndDescripciones = articulos.ToDictionary(articulo => string.Format("{0} - {1}", articulo.CodigoProducto, articulo.Descripcion), a => a.Id),
                 Fecha = DateTime.Today.ToString("yyyy MM dd"),
-                Lote = DateTime.Today.ToString("ddMMyyyy"),
                 LineasIVA = MapListToLineaIVAViewModel(ivas)
             };
         }
@@ -321,8 +320,7 @@ namespace AdministracionAngela.Utils.Mappers
                 SelectedClient = string.Format("{0} - {1}", factura.Cliente.Id, factura.Cliente.Nombre),
                 Fecha = factura.Fecha.ToString(),
                 LineasFactura = MapListToLineaFacturaViewModel(factura.LineaFactura.ToList()),
-                LineasIVA = MapListToLineaIVAViewModel(ivas),
-                Lote = factura.EtiquetaLote
+                LineasIVA = MapListToLineaIVAViewModel(ivas)
             };
         }
 
@@ -342,7 +340,8 @@ namespace AdministracionAngela.Utils.Mappers
                 Kgs = lineaFactura.Kgs.Value,
                 Precio = lineaFactura.Precio.Value,
                 Importe = Decimal.Round(lineaFactura.Kgs.Value * lineaFactura.Precio.Value, 2),
-                Cajas = lineaFactura.Cajas.Value
+                Cajas = lineaFactura.Cajas.Value,
+                Lote = lineaFactura.Lote
             };
         }
 
@@ -370,7 +369,8 @@ namespace AdministracionAngela.Utils.Mappers
                         Cajas = Convert.ToInt32(row.Cells["ColumnCajas"].Value),
                         Kgs = Convert.ToDecimal(row.Cells["ColumnKgs"].Value),
                         Precio = Convert.ToDecimal(row.Cells["ColumnPrecio"].Value),
-                        Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value)
+                        Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value),
+                        Lote = row.Cells["ColumnLote"].Value.ToString()
                     });
                 }
             }

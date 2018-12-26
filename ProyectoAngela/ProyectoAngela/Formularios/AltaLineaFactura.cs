@@ -26,7 +26,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         }
 
         private void buttonGuardar_Click(object sender, EventArgs e)
-        { if (Validate())
+        {
+            if (Validate())
             {
                 var precio = decimal.Parse(this.textBoxPrecio.Text.Replace(".", ","));
                 var kgs = decimal.Parse(this.textBoxKgs.Text.Replace(".", ","));
@@ -36,7 +37,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                     Kgs = kgs,
                     Precio = precio,
                     SelectedProduct = comboBoxProducto.Text,
-                    Importe = Decimal.Round(kgs * precio, 2)
+                    Importe = Decimal.Round(kgs * precio, 2),
+                    Lote = this.textBoxLote.Text
                 };
 
                 this.DialogResult = DialogResult.OK;
@@ -53,6 +55,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             this.labelTitle.Text = title;
             this.comboBoxProducto.DataSource = this.Products;
+            this.textBoxLote.Text = DateTime.Today.ToString("ddMMyyyy");
         }
 
         private void comboBoxProducto_TextUpdate(object sender, EventArgs e)

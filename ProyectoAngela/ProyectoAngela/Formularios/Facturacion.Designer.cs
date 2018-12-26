@@ -71,6 +71,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.labelTotalCajas = new System.Windows.Forms.Label();
             this.labelNumeroFactura = new System.Windows.Forms.Label();
             this.textBoxLote = new System.Windows.Forms.TextBox();
+            this.ColumnLote = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewLineasFactura)).BeginInit();
             this.SuspendLayout();
             // 
@@ -173,7 +174,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.ColumnCajas,
             this.ColumnKgs,
             this.ColumnPrecio,
-            this.ColumnImporte});
+            this.ColumnImporte,
+            this.ColumnLote});
             this.dataGridViewLineasFactura.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridViewLineasFactura.Location = new System.Drawing.Point(28, 205);
             this.dataGridViewLineasFactura.Name = "dataGridViewLineasFactura";
@@ -473,6 +475,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             this.textBoxLote.TabIndex = 57;
             this.textBoxLote.Text = "borrame cuando arregles lo del lote";
             // 
+            // ColumnLote
+            // 
+            this.ColumnLote.HeaderText = "Lote";
+            this.ColumnLote.Name = "ColumnLote";
+            this.ColumnLote.Visible = false;
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -567,5 +575,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private DataGridViewTextBoxColumn ColumnPrecio;
         private DataGridViewTextBoxColumn ColumnImporte;
         private TextBox textBoxLote;
+        private DataGridViewTextBoxColumn ColumnLote;
     }
 }

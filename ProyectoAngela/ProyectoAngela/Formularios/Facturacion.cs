@@ -80,6 +80,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
                 if (this.isUpdate)
                 {
+                    this.dateTimePickerFecha.Value = DateTime.Parse(viewModel.Fecha);
                     this.comboBoxClientes.Text = viewModel.SelectedClient;
                     foreach (var lineaFactura in viewModel.LineasFactura)
                     {

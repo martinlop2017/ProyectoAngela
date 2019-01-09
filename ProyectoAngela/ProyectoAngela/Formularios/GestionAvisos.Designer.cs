@@ -273,7 +273,7 @@
             // ColumnCodigoFactura
             // 
             this.ColumnCodigoFactura.DataPropertyName = "CodigoFactura";
-            this.ColumnCodigoFactura.HeaderText = "Cod.";
+            this.ColumnCodigoFactura.HeaderText = "N. Fac ";
             this.ColumnCodigoFactura.Name = "ColumnCodigoFactura";
             this.ColumnCodigoFactura.ReadOnly = true;
             this.ColumnCodigoFactura.Width = 60;

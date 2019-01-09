@@ -362,8 +362,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         public List<Factura> GetFacturasCaducadas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
         {
             var facturasCaducadas = this.dbContext.Facturas.Where(x =>
-            x.ClienteId >= fromClientCode
-            && x.ClienteId <= toClientCode
+            x.Cliente.CodigoCliente >= fromClientCode
+            && x.Cliente.CodigoCliente <= toClientCode
             && x.Fecha.Value >= fromFehaFactura
             && x.Fecha.Value <= toFechaFactura
             && x.FechaVencimiento.HasValue
@@ -375,8 +375,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         public List<Factura> GetFacturaPendientes(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
         {
             var facturasCaducadas = this.dbContext.Facturas.Where(x =>
-            x.ClienteId >= fromClientCode
-            && x.ClienteId <= toClientCode
+            x.Cliente.CodigoCliente >= fromClientCode
+            && x.Cliente.CodigoCliente <= toClientCode
             && x.Fecha.Value >= fromFehaFactura
             && x.Fecha.Value <= toFechaFactura
             && !x.Cobrada.Value)
@@ -387,8 +387,8 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         public List<Factura> GetFacturasCobradas(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura)
         {
             var facturasCaducadas = this.dbContext.Facturas.Where(x =>
-            x.ClienteId >= fromClientCode
-            && x.ClienteId <= toClientCode
+            x.Cliente.CodigoCliente >= fromClientCode
+            && x.Cliente.CodigoCliente <= toClientCode
             && x.Fecha.Value >= fromFehaFactura
             && x.Fecha.Value <= toFechaFactura
             && x.Cobrada.Value)

@@ -583,7 +583,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 var facturasCobradas = this.repositorioFactura.GetFacturasCobradas(fromClientCode, toClientCode, fromFehaFactura, toFechaFactura);
                 facturas.AddRange(facturasCobradas);
             }
-            var sortedFacturas = facturas.OrderBy(x => x.ClienteId).ToList();
+            var sortedFacturas = facturas.OrderBy(x => x.ClienteId).ThenBy(x => x.NumeroFactura).ToList();
             return MapToViewModel.MapToGestionAvisos(sortedFacturas);
         }
 

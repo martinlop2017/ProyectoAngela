@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaLineaFactura));
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = ((AdministracionAngela.CustomControls.ValidationProvider.ValidationRule)(new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule()));
-            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = ((AdministracionAngela.CustomControls.ValidationProvider.ValidationRule)(new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule()));
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule1 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
+            AdministracionAngela.CustomControls.ValidationProvider.ValidationRule validationRule2 = new AdministracionAngela.CustomControls.ValidationProvider.ValidationRule();
             this.comboBoxProducto = new System.Windows.Forms.ComboBox();
             this.buttonGuardar = new System.Windows.Forms.Button();
             this.textBoxCajas = new System.Windows.Forms.TextBox();
@@ -86,7 +86,7 @@
             this.textBoxCajas.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCajas.Name = "textBoxCajas";
             this.textBoxCajas.Size = new System.Drawing.Size(85, 23);
-            this.textBoxCajas.TabIndex = 1;
+            this.textBoxCajas.TabIndex = 2;
             this.textBoxCajas.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxKgs
@@ -95,7 +95,7 @@
             this.textBoxKgs.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxKgs.Name = "textBoxKgs";
             this.textBoxKgs.Size = new System.Drawing.Size(98, 23);
-            this.textBoxKgs.TabIndex = 2;
+            this.textBoxKgs.TabIndex = 3;
             this.textBoxKgs.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             validationRule1.ErrorMessage = "no se admiten mas de dos decimales";
             validationRule1.RegExPattern = "^-?[0-9]*([\\.\\,][0-9]{1,2})?$";
@@ -108,7 +108,7 @@
             this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(117, 23);
-            this.textBoxPrecio.TabIndex = 3;
+            this.textBoxPrecio.TabIndex = 4;
             this.textBoxPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             validationRule2.ErrorMessage = "no se admiten mas de dos decimales";
             validationRule2.RegExPattern = "^-?[0-9]*([\\.\\,][0-9]{1,2})?$";
@@ -266,7 +266,7 @@
             this.textBoxLote.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLote.Name = "textBoxLote";
             this.textBoxLote.Size = new System.Drawing.Size(110, 23);
-            this.textBoxLote.TabIndex = 37;
+            this.textBoxLote.TabIndex = 1;
             this.textBoxLote.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5

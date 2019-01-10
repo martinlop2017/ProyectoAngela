@@ -52,7 +52,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 Email = textBoxMiMail.Text,
                 LogoPath = textBoxLogoPath.Text,
                 Iban1 = textBoxIBAN1.Text,
-                Iban2 = textBoxIBAN3.Text,
+                Iban2 = textBoxIBAN2.Text,
                 Iban3 = textBoxIBAN3.Text,
                 Iban4 = textBoxIBAN4.Text,
                 Iban5 = textBoxIBAN5.Text,

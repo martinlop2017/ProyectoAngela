@@ -46,6 +46,12 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             //var viewModel = facturaProvider.GetGestionFacturasVencidas();
             this.dataGridViewAvisos.DataSource = new BindingList<AvisoViewModel>();
             this.avisos = new BindingList<AvisoViewModel>();
+            // INICA A LA FECHA ACTUAL LOS SELECTORESS DE FECHAS
+            dateTimePickerFromFecha.Value = DateTime.Now;
+            dateTimePickerToFecha.Value = DateTime.Now;
+
+
+
         }
 
         private void dataGridViewAvisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -57,17 +63,46 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 var cobrada = (bool)(selectedRow.Cells["ColumnCobrada"] as DataGridViewCheckBoxCell).Value;
                 var codigoFactura = selectedRow.Cells["ColumnCodigoFactura"].Value;
 
-                this.facturaProvider.SetFacturaCobrada((long)codigoFactura, cobrada);
+                var fechaCobroSeleccionada = selectedRow.Cells["ColumnCobro"].Value.ToString();
+                DateTime fechaCobro = DateTime.Today;
+
+                if (ValidarFecha(fechaCobroSeleccionada))
+                {
+                    DateTime.TryParse(fechaCobroSeleccionada, out fechaCobro);
+                }
+
+                this.facturaProvider.SetFacturaCobrada((long)codigoFactura, cobrada, fechaCobro);
 
                 if(cobrada)
                 {
-                    selectedRow.Cells["ColumnCobro"].Value = DateTime.Now.ToString("dd/MM/yyyy");
+                    selectedRow.Cells["ColumnCobro"].Value = fechaCobro.ToString("dd/MM/yyyy");
                 }
                 else
                 {
                     selectedRow.Cells["ColumnCobro"].Value = string.Empty;
                 }
             }
+        }
+
+        private bool ValidarFecha(string fecha)
+        {
+            var valida = false;
+
+            try
+            {
+                DateTime.Parse(fecha);
+            }
+            catch(Exception exp)
+            {
+                return false;
+            }
+
+            if (!string.IsNullOrEmpty(fecha))
+            {
+                valida = true;
+            }
+
+            return valida;
         }
 
         private void textBoxBusqueda_TextChanged(object sender, EventArgs e)
@@ -95,9 +130,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
             var listaMorososParaImprimir = new List<Moroso>();
             foreach (DataGridViewRow row in dataGridViewAvisos.Rows)
             {

@@ -587,9 +587,9 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             return MapToViewModel.MapToGestionAvisos(sortedFacturas);
         }
 
-        public void SetFacturaCobrada(long codigoFactura, bool cobrada)
+        public void SetFacturaCobrada(long codigoFactura, bool cobrada, DateTime fechaCobro)
         {
-            this.repositorioFactura.SetFacturaCobrada(codigoFactura, cobrada);
+            this.repositorioFactura.SetFacturaCobrada(codigoFactura, cobrada, fechaCobro);
         }
 
         public List<ListadoFactura> GetAllFacturasFromDateRange(DateTime from, DateTime to)

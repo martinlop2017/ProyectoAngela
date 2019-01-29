@@ -30,26 +30,27 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.MorosoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.MorosoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DataSetMorosos";
-            reportDataSource1.Value = this.MorosoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ListadoMorosos.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(160, 111);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
-            this.reportViewer1.TabIndex = 0;
             // 
             // MorosoBindingSource
             // 
             this.MorosoBindingSource.DataSource = typeof(AdministracionAngela.Utils.Models.Impresion.Moroso);
             this.MorosoBindingSource.CurrentChanged += new System.EventHandler(this.morosoBindingSource_CurrentChanged_1);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DataSetMorosos";
+            reportDataSource1.Value = this.MorosoBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "AdministracionAngela.ProyectoAngela.Formularios.ListadoMorosos.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(735, 434);
+            this.reportViewer1.TabIndex = 0;
             // 
             // VisorMororsos
             // 

@@ -404,19 +404,20 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             .ToList();
         }
 
-        public void SetFacturaCobrada(long codigoFactura, bool cobrada)
+        public void SetFacturaCobrada(long codigoFactura, bool cobrada, DateTime fechaCobro)
         {
             var factura = this.dbContext.Facturas.FirstOrDefault(x => x.NumeroFactura == codigoFactura);
             factura.Cobrada = cobrada;
 
             if(cobrada)
             {
-                factura.FechaCobro = DateTime.Today;
+                factura.FechaCobro = fechaCobro;
             }
             else
             {
                 factura.FechaCobro = null;
             }
+            
 
             this.dbContext.SaveChanges();
         }

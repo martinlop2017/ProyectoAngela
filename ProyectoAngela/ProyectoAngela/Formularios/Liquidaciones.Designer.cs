@@ -126,7 +126,7 @@
             this.dataGridViewLiquidaciones.RowHeadersWidth = 20;
             this.dataGridViewLiquidaciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridViewLiquidaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(907, 199);
+            this.dataGridViewLiquidaciones.Size = new System.Drawing.Size(918, 398);
             this.dataGridViewLiquidaciones.TabIndex = 5;
             this.dataGridViewLiquidaciones.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridViewLiquidaciones.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewLiquidaciones_CellValueChanged);
@@ -312,7 +312,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(988, 736);
+            this.ClientSize = new System.Drawing.Size(988, 737);
             this.ControlBox = false;
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.button7);

@@ -496,7 +496,7 @@ namespace AdministracionAngela.Utils.Mappers
                 ZonaCaptura = x.ZonaCaptura
             }));
 
-            var groupedLineas = repositoryLineasFactura.GroupBy(lf => lf.ProductoId);
+            var groupedLineas = repositoryLineasFactura.GroupBy(lf => lf.ProductoId).OrderBy(x => x.Key);
 
             var lineasLiquidacionViewModel = new List<LineaLiquidacionViewModel>();
             foreach(var groupedLinea in groupedLineas)

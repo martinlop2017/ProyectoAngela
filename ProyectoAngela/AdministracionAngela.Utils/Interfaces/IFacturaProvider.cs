@@ -54,5 +54,6 @@ namespace AdministracionAngela.Utils.Interfaces
         List<ListadoAlbaran> GetAllAlbaranesFromClienteAndDateRange(DateTime from, DateTime to, int fromCodigo, int toCodigo);
         List<ListadoFactura> GetAllListaFacturas();
         List<ListadoAlbaran> GetAllListaAlbaranes();
+        void SetFechaCobro(long numeroFactura, DateTime fechaCobro);
     }
 }

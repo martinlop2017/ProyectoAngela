@@ -647,5 +647,10 @@ namespace AdministracionAngela.Servicios.ServicioDatos
 
             return MapToImpresion.MapListaAlbaran(albaranesByDateAndCliente);
         }
+
+        public void SetFechaCobro(long numeroFactura, DateTime fechaCobro)
+        {
+            repositorioFactura.SetFechaCobro(numeroFactura, fechaCobro);
+        }
     }
 }

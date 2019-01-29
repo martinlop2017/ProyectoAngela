@@ -153,5 +153,23 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 form.ExportarToPdf(listaMorososParaImprimir);
             }
         }
+
+        private void dataGridViewAvisos_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if(this.dataGridViewAvisos.Columns[e.ColumnIndex].Name == "ColumnCobro")
+            {
+                var selectedRow = this.dataGridViewAvisos.Rows[e.RowIndex];
+                var codigoFactura = (long)selectedRow.Cells["ColumnCodigoFactura"].Value;
+                var fechaCobroSeleccionada = selectedRow.Cells["ColumnCobro"].Value.ToString();
+                DateTime fechaCobro = DateTime.Today;
+
+                if (ValidarFecha(fechaCobroSeleccionada))
+                {
+                    DateTime.TryParse(fechaCobroSeleccionada, out fechaCobro);
+                }
+
+                this.facturaProvider.SetFechaCobro(codigoFactura, fechaCobro);
+            }
+        }
     }
 }

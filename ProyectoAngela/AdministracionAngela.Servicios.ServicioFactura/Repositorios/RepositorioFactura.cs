@@ -421,5 +421,16 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
 
             this.dbContext.SaveChanges();
         }
+
+        public void SetFechaCobro(long codigoFactura, DateTime fechaCobro)
+        {
+            var factura = this.dbContext.Facturas.FirstOrDefault(x => x.NumeroFactura == codigoFactura);
+            if(factura.Cobrada.Value)
+            {
+                factura.FechaCobro = fechaCobro;
+            }
+
+            this.dbContext.SaveChanges();
+        }
     }
 }

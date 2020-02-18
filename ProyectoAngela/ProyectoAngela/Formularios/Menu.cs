@@ -65,17 +65,17 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
             }
 
-            if (sistemaProvider.IsNewYear())
-            {
-                using (ReiniciarBases formReinicio = new ReiniciarBases(this.sistemaProvider))
-                {
-                    var result = formReinicio.ShowDialog();
-                    if(result == DialogResult.Cancel)
-                    {
-                        Close();
-                    }
-                }
-            }
+            //if (sistemaProvider.IsNewYear())
+            //{
+            //    using (ReiniciarBases formReinicio = new ReiniciarBases(this.sistemaProvider))
+            //    {
+            //        var result = formReinicio.ShowDialog();
+            //        if(result == DialogResult.Cancel)
+            //        {
+            //            Close();
+            //        }
+            //    }
+            //}
 
             var hayFacturasCaducadas = sistemaProvider.HayFacturasCaducadas();
             buttonAvisos.BackgroundImage = hayFacturasCaducadas ? Properties.Resources.Avisos_Rojos : Properties.Resources.Avisos;

@@ -347,7 +347,6 @@
             // 
             // textBoxMiCif
             // 
-            this.textBoxMiCif.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiCif.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiCif.Location = new System.Drawing.Point(494, 64);
             this.textBoxMiCif.Name = "textBoxMiCif";
@@ -356,7 +355,6 @@
             // 
             // textBoxMiNombre
             // 
-            this.textBoxMiNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiNombre.Location = new System.Drawing.Point(18, 64);
             this.textBoxMiNombre.Name = "textBoxMiNombre";
@@ -436,7 +434,6 @@
             // 
             // textBoxMiPersonaContacto
             // 
-            this.textBoxMiPersonaContacto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiPersonaContacto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiPersonaContacto.Location = new System.Drawing.Point(10, 100);
             this.textBoxMiPersonaContacto.Name = "textBoxMiPersonaContacto";
@@ -445,7 +442,6 @@
             // 
             // textBoxMiMail
             // 
-            this.textBoxMiMail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiMail.Location = new System.Drawing.Point(160, 100);
             this.textBoxMiMail.Name = "textBoxMiMail";
@@ -548,7 +544,6 @@
             // 
             // textBoxMiProvincia
             // 
-            this.textBoxMiProvincia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiProvincia.Location = new System.Drawing.Point(163, 100);
             this.textBoxMiProvincia.Name = "textBoxMiProvincia";
@@ -557,7 +552,6 @@
             // 
             // textBoxMiPoblacion
             // 
-            this.textBoxMiPoblacion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiPoblacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiPoblacion.Location = new System.Drawing.Point(12, 100);
             this.textBoxMiPoblacion.Name = "textBoxMiPoblacion";
@@ -566,7 +560,6 @@
             // 
             // textBoxMiDireccion
             // 
-            this.textBoxMiDireccion.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMiDireccion.Location = new System.Drawing.Point(15, 51);
             this.textBoxMiDireccion.Name = "textBoxMiDireccion";
@@ -625,7 +618,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(847, 651);
+            this.ClientSize = new System.Drawing.Size(847, 650);
             this.ControlBox = false;
             this.Controls.Add(this.formadepago);
             this.Controls.Add(this.customGroupBox1);

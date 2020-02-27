@@ -32,5 +32,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
            
 
         }
+
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

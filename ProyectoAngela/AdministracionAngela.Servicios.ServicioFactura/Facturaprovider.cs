@@ -115,7 +115,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos
                 lineaFactura.ZonaCaptura = producto.ZonaCaptura;
                 lineaFactura.ArtePesca = producto.ArtePesca;
                 lineaFactura.NombreCientifico = producto.NombreCientifico;
-                lineaFactura.Lote = string.Format("{0}/{1}", producto.Abreviacion, lineaFactura.Lote);
+                lineaFactura.Lote =  lineaFactura.Lote;
             }
             this.repositorioFactura.SaveFactura(facturaToRepository);
         }

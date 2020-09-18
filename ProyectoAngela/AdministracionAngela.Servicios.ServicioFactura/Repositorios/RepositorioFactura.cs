@@ -146,7 +146,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                return this.dbContext.Facturas.Single(f => f.NumeroFactura == numeroFActura);
+                return this.dbContext.Facturas.AsNoTracking().Single(f => f.NumeroFactura == numeroFActura);
             }
             catch(Exception exp)
             {
@@ -158,7 +158,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                return this.dbContext.Albaranes.First(a=> a.NumeroAlbaran == numeroAlbaran && a.IsAlbaran == isAlbaran);
+                return this.dbContext.Albaranes.AsNoTracking().First(a=> a.NumeroAlbaran == numeroAlbaran && a.IsAlbaran == isAlbaran);
             }
             catch (Exception exp)
             {

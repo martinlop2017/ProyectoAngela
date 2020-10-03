@@ -63,9 +63,11 @@
             this.buttonFacturar = new System.Windows.Forms.Button();
             this.labelFacturar = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxBusqueda = new System.Windows.Forms.TextBox();
             this.comboBoxBusqueda = new System.Windows.Forms.ComboBox();
+            this.buttonExportar = new System.Windows.Forms.Button();
+            this.labelExportar = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFacturas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -237,7 +239,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(318, 104);
+            this.label4.Location = new System.Drawing.Point(374, 104);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 23;
@@ -360,7 +362,7 @@
             // 
             this.buttonFacturar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonFacturar.BackgroundImage")));
             this.buttonFacturar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonFacturar.Location = new System.Drawing.Point(250, 120);
+            this.buttonFacturar.Location = new System.Drawing.Point(306, 120);
             this.buttonFacturar.Name = "buttonFacturar";
             this.buttonFacturar.Size = new System.Drawing.Size(52, 56);
             this.buttonFacturar.TabIndex = 31;
@@ -372,7 +374,7 @@
             // labelFacturar
             // 
             this.labelFacturar.AutoSize = true;
-            this.labelFacturar.Location = new System.Drawing.Point(253, 104);
+            this.labelFacturar.Location = new System.Drawing.Point(307, 104);
             this.labelFacturar.Name = "labelFacturar";
             this.labelFacturar.Size = new System.Drawing.Size(46, 13);
             this.labelFacturar.TabIndex = 32;
@@ -388,20 +390,6 @@
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.textBoxBusqueda);
-            this.panel1.Controls.Add(this.comboBoxBusqueda);
-            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(308, 120);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(474, 56);
-            this.panel1.TabIndex = 34;
-            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
-            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
             // textBoxBusqueda
             // 
@@ -421,11 +409,48 @@
             "Cliente"});
             this.comboBoxBusqueda.Location = new System.Drawing.Point(325, 19);
             this.comboBoxBusqueda.Name = "comboBoxBusqueda";
-            this.comboBoxBusqueda.Size = new System.Drawing.Size(125, 21);
+            this.comboBoxBusqueda.Size = new System.Drawing.Size(56, 21);
             this.comboBoxBusqueda.TabIndex = 28;
             this.comboBoxBusqueda.Text = "Numero";
             this.comboBoxBusqueda.MouseEnter += new System.EventHandler(this.comboBoxClientes_MouseEnter);
             this.comboBoxBusqueda.MouseLeave += new System.EventHandler(this.comboBoxClientes_MouseLeave);
+            // 
+            // buttonExportar
+            // 
+            this.buttonExportar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonExportar.BackgroundImage")));
+            this.buttonExportar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonExportar.Location = new System.Drawing.Point(250, 120);
+            this.buttonExportar.Name = "buttonExportar";
+            this.buttonExportar.Size = new System.Drawing.Size(52, 56);
+            this.buttonExportar.TabIndex = 35;
+            this.buttonExportar.UseVisualStyleBackColor = true;
+            this.buttonExportar.Click += new System.EventHandler(this.button1_Click_1);
+            this.buttonExportar.MouseEnter += new System.EventHandler(this.buttonExportar_MouseEnter);
+            this.buttonExportar.MouseLeave += new System.EventHandler(this.buttonExportar_MouseLeave);
+            // 
+            // labelExportar
+            // 
+            this.labelExportar.AutoSize = true;
+            this.labelExportar.Location = new System.Drawing.Point(255, 104);
+            this.labelExportar.Name = "labelExportar";
+            this.labelExportar.Size = new System.Drawing.Size(46, 13);
+            this.labelExportar.TabIndex = 36;
+            this.labelExportar.Text = "Exportar";
+            this.labelExportar.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.textBoxBusqueda);
+            this.panel1.Controls.Add(this.comboBoxBusqueda);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panel1.Location = new System.Drawing.Point(377, 120);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(405, 56);
+            this.panel1.TabIndex = 34;
+            this.panel1.MouseEnter += new System.EventHandler(this.panel1_MouseEnter);
+            this.panel1.MouseLeave += new System.EventHandler(this.panel1_MouseLeave);
             // 
             // GestionFacturas
             // 
@@ -436,6 +461,8 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(860, 688);
             this.ControlBox = false;
+            this.Controls.Add(this.labelExportar);
+            this.Controls.Add(this.buttonExportar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.labelFacturar);
@@ -495,8 +522,10 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnFacturado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCobrado;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBoxBusqueda;
         private System.Windows.Forms.TextBox textBoxBusqueda;
+        private System.Windows.Forms.Button buttonExportar;
+        private System.Windows.Forms.Label labelExportar;
+        private System.Windows.Forms.Panel panel1;
     }
 }

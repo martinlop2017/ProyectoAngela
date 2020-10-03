@@ -60,6 +60,7 @@
     <Compile Include="Models\Albaran\LineaAlbaranViewModel.cs" />
     <Compile Include="Models\Avisos\AvisoViewModel.cs" />
     <Compile Include="Models\Avisos\GestionAvisosViewModel.cs" />
+    <Compile Include="Models\Exports\FacturaExport.cs" />
     <Compile Include="Models\FormaDePago\FormaDePagoViewModel.cs" />
     <Compile Include="Interfaces\IArticuloProvider.cs" />
     <Compile Include="Interfaces\IClienteProvider.cs" />

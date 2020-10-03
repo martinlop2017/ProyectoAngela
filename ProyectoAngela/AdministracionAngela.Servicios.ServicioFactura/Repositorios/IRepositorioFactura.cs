@@ -44,5 +44,6 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         bool ReiniciarBaseDAtos();
         List<Factura> GetFacturaPendientes(long fromClientCode, long toClientCode, DateTime fromFehaFactura, DateTime toFechaFactura);
         void SetFechaCobro(long codigoFactura, DateTime fechaCobro);
+        List<Factura> GetFacturas(List<long> numerosFactura);
     }
 }

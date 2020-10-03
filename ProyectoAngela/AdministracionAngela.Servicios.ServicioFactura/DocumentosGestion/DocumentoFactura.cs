@@ -11,6 +11,7 @@ using CrystalDecisions.Shared;
 using AdministracionAngela.Utils.Genericos;
 using AdministracionAngela.Utils.Enumerados;
 using System.Data;
+using AdministracionAngela.Utils.Models.Exports;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 {
@@ -198,6 +199,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 
         public void SetCobrado(int numeroDocumento, bool cobrado)
         {
+        }
+
+        public List<FacturaExport> GetFacturasToExport(List<long> numerosFacturas)
+        {
+            return this.facturaProvider.GetFacturasToExport(numerosFacturas);
         }
     }
 }

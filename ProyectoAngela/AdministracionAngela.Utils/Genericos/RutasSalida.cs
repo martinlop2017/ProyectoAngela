@@ -54,5 +54,13 @@ namespace AdministracionAngela.Utils.Genericos
             }
             set { }
         }
+        public static string RutaExcel
+        {
+            get
+            {
+                return "C:\\ByMartin\\Factufish\\Excel";
+            }
+            set { }
+        }
     }
 }

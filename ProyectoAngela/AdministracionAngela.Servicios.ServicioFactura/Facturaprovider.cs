@@ -10,6 +10,7 @@ using AdministracionAngela.EFRepository;
 using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Impresion;
 using AdministracionAngela.Utils.Models.Avisos;
+using AdministracionAngela.Utils.Models.Exports;
 
 namespace AdministracionAngela.Servicios.ServicioDatos
 {
@@ -451,6 +452,12 @@ namespace AdministracionAngela.Servicios.ServicioDatos
             }
 
             return albaranClientes;
+        }
+
+        public List<FacturaExport> GetFacturasToExport(List<long> numerosFactura)
+        {
+            var facturas = this.repositorioFactura.GetFacturas(numerosFactura);
+            return MapToViewModel.MapToFacturaExport(facturas);
         }
 
         public List<FacturaCliente> GetFacturaCliente(int numeroFactura)

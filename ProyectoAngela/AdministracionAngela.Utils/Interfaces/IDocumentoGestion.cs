@@ -1,4 +1,5 @@
 ﻿using AdministracionAngela.Utils.Enumerados;
+using AdministracionAngela.Utils.Models.Exports;
 using AdministracionAngela.Utils.Models.Factura;
 using System;
 using System.Collections.Generic;
@@ -26,5 +27,6 @@ namespace AdministracionAngela.Utils.Interfaces
         DataTable GatDatosIva(int numeroDocumento, bool isDocumento = true);
         bool DocumentoExiste(int numeroDocumento, bool isDocumento = true);
         void SetCobrado(int numeroDocumento, bool cobrado);
+        List<FacturaExport> GetFacturasToExport(List<long> numeroFacturas);
     }
 }

@@ -482,7 +482,7 @@
             this.Controls.Add(this.buttonAñadir);
             this.DoubleBuffered = true;
             this.MaximumSize = new System.Drawing.Size(876, 727);
-            this.MinimumSize = new System.Drawing.Size(876, 727);
+            this.MinimumSize = new System.Drawing.Size(876, 726);
             this.Name = "GestionFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestion Facturas";

@@ -17,5 +17,6 @@ namespace AdministracionAngela.Utils.Models.Factura
         public bool Impreso { get; set; }
         public bool Facturado { get; set; }
         public bool Cobrado { get; set; }
+        public DateTime FechaFactura { get; set; }
     }
 }

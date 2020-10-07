@@ -106,9 +106,9 @@
             this.label9.ForeColor = System.Drawing.Color.SteelBlue;
             this.label9.Location = new System.Drawing.Point(59, 29);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(405, 42);
+            this.label9.Size = new System.Drawing.Size(401, 42);
             this.label9.TabIndex = 43;
-            this.label9.Text = "Imprimir Documentos";
+            this.label9.Text = "Exportar Documentos";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // printDialog1

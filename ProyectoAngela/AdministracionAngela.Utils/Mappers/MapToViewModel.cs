@@ -399,7 +399,8 @@ namespace AdministracionAngela.Utils.Mappers
                 IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
                 RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,
                 Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
-                Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
+                Impreso = f.Impreso.HasValue ? f.Impreso.Value : false,
+                FechaFactura = f.Fecha.HasValue ? f.Fecha.Value : DateTime.Today
             }).ToList();
         }
 
@@ -407,10 +408,14 @@ namespace AdministracionAngela.Utils.Mappers
         {
             return facturas.Select(f => new FacturaExport()
             {
-                Cliente = f.Cliente.Nombre,
+                NumeroFactura = f.NumeroFactura,
+                FechaFactura = f.Fecha.Value,                
+                Nombre = f.Cliente.Nombre,
+                CIF = f.Cliente.CIF,
                 Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
                 IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
                 Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
+                RecargoEquivalencia = f.TotalRecargoEquivalencia.Value,
                 CodigoPostal = f.Cliente.Direccion.CodigoPostal
             }).ToList();
         }

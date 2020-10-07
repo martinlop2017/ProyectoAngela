@@ -12,6 +12,7 @@ using AdministracionAngela.Utils.Genericos;
 using System.Collections.Generic;
 using System.Reflection;
 using AdministracionAngela.Utils.Models.Exports;
+using System.Globalization;
 
 namespace AdministracionAngela.ProyectoAngela.Formularios
 {
@@ -160,6 +161,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 this.dataGridViewFacturas.Columns["ColumnCobrado"].Visible = false;
             }
             this.dataGridViewFacturas.Columns["ColumnCobrado"].Visible = !IsDocumento;
+            this.dataGridViewFacturas.Columns["ColumnFecha"].Visible = false;
         }
 
         private void buttonModificar_Click(object sender, EventArgs e)
@@ -326,7 +328,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 }
             }
 
-            var fullPath = $"{path}\\FacturasExportadas";
+            var today = DateTime.Now.Date.ToString("dd-MM-yyyy", CultureInfo.InvariantCulture);
+            var fullPath = $"{path}\\FacturasExportadas_{today}";
             excelWorkBook.SaveAs(fullPath); // -> this will do the custom  
             excelWorkBook.Close();
             excelApp.Quit();
@@ -366,11 +369,6 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //foreach(DataGridViewRow row in dataGridViewFacturas.Rows)
-            //{
-            //    var testValue = row.Cells["ClumnCodigo"].Value.ToString();
-            //    var longvalue = Convert.ToInt64(testValue);
-            //}
             var codigosFactura = this.dataGridViewFacturas.Rows.OfType<DataGridViewRow>().Select(r => Convert.ToInt64(r.Cells["ClumnCodigo"].Value.ToString())).ToList();
             var documentosToExport = this.documentoGestion.GetFacturasToExport(codigosFactura);
 
@@ -387,6 +385,32 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void buttonExportar_MouseLeave(object sender, EventArgs e)
         {
             labelExportar.Visible = false;
+        }
+
+        private void comboBoxBusqueda_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(comboBoxBusqueda.Text.Equals("Fecha"))
+            {
+                textBoxBusqueda.Visible = false;
+                dateTimePickerFrom.Visible = true;
+                dateTimePickerTo.Visible = true;
+            }
+            else
+            {
+                dateTimePickerFrom.Visible = false;
+                dateTimePickerTo.Visible = false;
+                textBoxBusqueda.Visible = true;
+            }
+        }
+
+        private void dateTimePickerFrom_ValueChanged(object sender, EventArgs e)
+        {
+                dataGridViewFacturas.DataSource = documentos.Where(x => x.FechaFactura >= dateTimePickerFrom.Value && x.FechaFactura <= dateTimePickerTo.Value).ToList();
+        }
+
+        private void dateTimePickerTo_ValueChanged(object sender, EventArgs e)
+        {
+                dataGridViewFacturas.DataSource = documentos.Where(x => x.FechaFactura >= dateTimePickerFrom.Value && x.FechaFactura <= dateTimePickerTo.Value).ToList();
         }
     }
 }

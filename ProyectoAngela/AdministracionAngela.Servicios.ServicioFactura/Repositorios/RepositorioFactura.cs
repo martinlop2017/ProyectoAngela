@@ -106,6 +106,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
             return this.dbContext.Facturas.ToList();
         }
 
+        public List<Factura> GetFacturas(List<long> numerosFactura)
+        {
+            return dbContext.Facturas.Where(x => numerosFactura.Contains(x.NumeroFactura)).ToList();
+        }
+
         public List<Factura> GetFacturasByDateRange(DateTime from, DateTime to)
         {
             //this.dbContext.ReloadEntities<Factura>();
@@ -146,7 +151,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                return this.dbContext.Facturas.Single(f => f.NumeroFactura == numeroFActura);
+                return this.dbContext.Facturas.AsNoTracking().Single(f => f.NumeroFactura == numeroFActura);
             }
             catch(Exception exp)
             {
@@ -158,7 +163,7 @@ namespace AdministracionAngela.Servicios.ServicioDatos.Repositorios
         {
             try
             {
-                return this.dbContext.Albaranes.First(a=> a.NumeroAlbaran == numeroAlbaran && a.IsAlbaran == isAlbaran);
+                return this.dbContext.Albaranes.AsNoTracking().First(a=> a.NumeroAlbaran == numeroAlbaran && a.IsAlbaran == isAlbaran);
             }
             catch (Exception exp)
             {

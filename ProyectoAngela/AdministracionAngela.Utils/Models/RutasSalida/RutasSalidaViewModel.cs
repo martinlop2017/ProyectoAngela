@@ -14,6 +14,7 @@ namespace AdministracionAngela.Utils.Models.RutasSalida
         public string PathListados { get; set; }
         public string PathLiquidaciones { get; set; }
         public string PathSeguridad { get; set; }
+        public string PathExcel { get; set; }
 
         public RutasSalidaViewModel()
         {

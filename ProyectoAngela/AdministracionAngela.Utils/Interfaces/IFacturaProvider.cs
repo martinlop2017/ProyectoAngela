@@ -8,6 +8,7 @@ using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Impresion;
 using AdministracionAngela.Utils.Models.Avisos;
+using AdministracionAngela.Utils.Models.Exports;
 
 namespace AdministracionAngela.Utils.Interfaces
 {
@@ -55,5 +56,6 @@ namespace AdministracionAngela.Utils.Interfaces
         List<ListadoFactura> GetAllListaFacturas();
         List<ListadoAlbaran> GetAllListaAlbaranes();
         void SetFechaCobro(long numeroFactura, DateTime fechaCobro);
+        List<FacturaExport> GetFacturasToExport(List<long> numerosFactura);
     }
 }

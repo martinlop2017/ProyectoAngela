@@ -18,6 +18,7 @@ using AdministracionAngela.Utils.Models.FormaDePago;
 using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Avisos;
+using AdministracionAngela.Utils.Models.Exports;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -399,6 +400,18 @@ namespace AdministracionAngela.Utils.Mappers
                 RecargoEquivalencia = f.TotalRecargoEquivalencia.HasValue ? Decimal.Round(f.TotalRecargoEquivalencia.Value, 2) : 0,
                 Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
                 Impreso = f.Impreso.HasValue ? f.Impreso.Value : false
+            }).ToList();
+        }
+
+        public static List<FacturaExport> MapToFacturaExport(List<Factura> facturas)
+        {
+            return facturas.Select(f => new FacturaExport()
+            {
+                Cliente = f.Cliente.Nombre,
+                Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
+                IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
+                Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
+                CodigoPostal = f.Cliente.Direccion.CodigoPostal
             }).ToList();
         }
 

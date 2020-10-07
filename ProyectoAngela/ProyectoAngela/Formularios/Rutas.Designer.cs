@@ -50,6 +50,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxSeguridad = new System.Windows.Forms.TextBox();
             this.labelSeguridad = new System.Windows.Forms.Label();
+            this.buttonExcel = new System.Windows.Forms.Button();
+            this.textBoxExcel = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label13
@@ -164,7 +167,7 @@
             // 
             this.buttonListados.Enabled = false;
             this.buttonListados.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonListados.Location = new System.Drawing.Point(529, 239);
+            this.buttonListados.Location = new System.Drawing.Point(529, 230);
             this.buttonListados.Name = "buttonListados";
             this.buttonListados.Size = new System.Drawing.Size(27, 23);
             this.buttonListados.TabIndex = 153;
@@ -176,7 +179,7 @@
             // 
             this.buttonLiquidaciones.Enabled = false;
             this.buttonLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLiquidaciones.Location = new System.Drawing.Point(529, 280);
+            this.buttonLiquidaciones.Location = new System.Drawing.Point(529, 259);
             this.buttonLiquidaciones.Name = "buttonLiquidaciones";
             this.buttonLiquidaciones.Size = new System.Drawing.Size(27, 23);
             this.buttonLiquidaciones.TabIndex = 152;
@@ -187,7 +190,7 @@
             // textLiquidaciones
             // 
             this.textLiquidaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textLiquidaciones.Location = new System.Drawing.Point(195, 280);
+            this.textLiquidaciones.Location = new System.Drawing.Point(195, 259);
             this.textLiquidaciones.Name = "textLiquidaciones";
             this.textLiquidaciones.ReadOnly = true;
             this.textLiquidaciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -201,7 +204,7 @@
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label1.Location = new System.Drawing.Point(56, 284);
+            this.label1.Location = new System.Drawing.Point(56, 263);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 15);
             this.label1.TabIndex = 150;
@@ -213,7 +216,7 @@
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.SteelBlue;
-            this.label2.Location = new System.Drawing.Point(56, 243);
+            this.label2.Location = new System.Drawing.Point(56, 234);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 15);
             this.label2.TabIndex = 149;
@@ -222,7 +225,7 @@
             // textListados
             // 
             this.textListados.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textListados.Location = new System.Drawing.Point(195, 239);
+            this.textListados.Location = new System.Drawing.Point(195, 230);
             this.textListados.Name = "textListados";
             this.textListados.ReadOnly = true;
             this.textListados.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -269,7 +272,7 @@
             // 
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(529, 318);
+            this.button1.Location = new System.Drawing.Point(529, 288);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(27, 23);
             this.button1.TabIndex = 159;
@@ -280,7 +283,7 @@
             // textBoxSeguridad
             // 
             this.textBoxSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSeguridad.Location = new System.Drawing.Point(195, 318);
+            this.textBoxSeguridad.Location = new System.Drawing.Point(195, 288);
             this.textBoxSeguridad.Name = "textBoxSeguridad";
             this.textBoxSeguridad.ReadOnly = true;
             this.textBoxSeguridad.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -294,19 +297,57 @@
             this.labelSeguridad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.labelSeguridad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSeguridad.ForeColor = System.Drawing.Color.SteelBlue;
-            this.labelSeguridad.Location = new System.Drawing.Point(56, 322);
+            this.labelSeguridad.Location = new System.Drawing.Point(56, 292);
             this.labelSeguridad.Name = "labelSeguridad";
             this.labelSeguridad.Size = new System.Drawing.Size(107, 15);
             this.labelSeguridad.TabIndex = 158;
             this.labelSeguridad.Text = "Ruta Seguridad";
+            // 
+            // buttonExcel
+            // 
+            this.buttonExcel.Enabled = false;
+            this.buttonExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonExcel.Location = new System.Drawing.Point(529, 317);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(27, 23);
+            this.buttonExcel.TabIndex = 162;
+            this.buttonExcel.Text = "...";
+            this.buttonExcel.UseVisualStyleBackColor = true;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
+            // 
+            // textBoxExcel
+            // 
+            this.textBoxExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxExcel.Location = new System.Drawing.Point(195, 317);
+            this.textBoxExcel.Name = "textBoxExcel";
+            this.textBoxExcel.ReadOnly = true;
+            this.textBoxExcel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBoxExcel.Size = new System.Drawing.Size(330, 23);
+            this.textBoxExcel.TabIndex = 160;
+            this.textBoxExcel.Text = "C:\\ByMartin\\Factufish\\Excel";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
+            this.label4.Location = new System.Drawing.Point(56, 321);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(76, 15);
+            this.label4.TabIndex = 161;
+            this.label4.Text = "Ruta Excel";
             // 
             // Rutas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(620, 522);
+            this.ClientSize = new System.Drawing.Size(620, 521);
             this.ControlBox = false;
+            this.Controls.Add(this.buttonExcel);
+            this.Controls.Add(this.textBoxExcel);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBoxSeguridad);
             this.Controls.Add(this.labelSeguridad);
@@ -366,5 +407,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxSeguridad;
         private System.Windows.Forms.Label labelSeguridad;
+        private System.Windows.Forms.Button buttonExcel;
+        private System.Windows.Forms.TextBox textBoxExcel;
+        private System.Windows.Forms.Label label4;
     }
 }

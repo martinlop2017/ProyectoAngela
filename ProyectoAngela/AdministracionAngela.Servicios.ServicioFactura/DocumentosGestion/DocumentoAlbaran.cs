@@ -8,6 +8,7 @@ using AdministracionAngela.Utils.Models.Factura;
 using AdministracionAngela.Utils.Enumerados;
 using AdministracionAngela.Utils.Genericos;
 using System.Data;
+using AdministracionAngela.Utils.Models.Exports;
 
 namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
 {
@@ -190,6 +191,11 @@ namespace AdministracionAngela.Servicios.ServicioDatos.DocumentosGestion
         public void SetCobrado(int numeroDocumento, bool cobrado)
         {
             this.facturaProvider.SetCobrado(numeroDocumento, cobrado);
+        }
+
+        public List<FacturaExport> GetFacturasToExport(List<long> numeroFacturas)
+        {
+            throw new NotImplementedException();
         }
     }
 }

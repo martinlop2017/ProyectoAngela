@@ -127,5 +127,15 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 textBoxSeguridad.Text = buscar.SelectedPath;
             }
         }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog buscar = new FolderBrowserDialog();
+
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                textBoxExcel.Text = buscar.SelectedPath;
+            }
+        }
     }
 }

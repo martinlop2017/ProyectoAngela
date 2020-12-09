@@ -369,7 +369,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            var codigosFactura = this.dataGridViewFacturas.Rows.OfType<DataGridViewRow>().Select(r => Convert.ToInt64(r.Cells["ClumnCodigo"].Value.ToString())).ToList();
+            var codigosFactura = this.dataGridViewFacturas.Rows.OfType<DataGridViewRow>().Where(x => x.Cells["ClumnCodigo"].Value != null).Select(r => Convert.ToInt64(r.Cells["ClumnCodigo"].Value.ToString())).ToList();
             var documentosToExport = this.documentoGestion.GetFacturasToExport(codigosFactura);
 
 

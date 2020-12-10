@@ -19,6 +19,7 @@ using AdministracionAngela.Utils.Models.Liquidaciones;
 using AdministracionAngela.Utils.Models.Albaran;
 using AdministracionAngela.Utils.Models.Avisos;
 using AdministracionAngela.Utils.Models.Exports;
+using System.Globalization;
 
 namespace AdministracionAngela.Utils.Mappers
 {
@@ -409,7 +410,7 @@ namespace AdministracionAngela.Utils.Mappers
             return facturas.Select(f => new FacturaExport()
             {
                 NumeroFactura = f.NumeroFactura,
-                FechaFactura = f.Fecha.Value,                
+                FechaFactura = f.Fecha.Value.ToString("MM-dd-yyyy", CultureInfo.InvariantCulture),                
                 Nombre = f.Cliente.Nombre,
                 CIF = f.Cliente.CIF,
                 Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,

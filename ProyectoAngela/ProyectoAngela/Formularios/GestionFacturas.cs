@@ -153,9 +153,18 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         private void FillControls()
         {
             var viewModel = this.documentoGestion.GetDocumentos(IsDocumento);
-            this.dataGridViewFacturas.DataSource = viewModel.Facturas;
-            this.documentos = viewModel.Facturas;
-            if(!this.documentoGestion.PuedeFacturar())
+            if(dateTimePickerFrom.Visible && dateTimePickerTo.Visible)
+            {
+                var documentosFiltradosPorFecha = viewModel.Facturas.Where(x => x.FechaFactura >= dateTimePickerFrom.Value && x.FechaFactura <= dateTimePickerTo.Value).ToList();
+                this.documentos = new BindingList<FacturaViewModel>(documentosFiltradosPorFecha);
+                dataGridViewFacturas.DataSource = this.documentos;
+            }
+            else
+            {
+                this.dataGridViewFacturas.DataSource = viewModel.Facturas;
+                this.documentos = viewModel.Facturas;
+            }
+            if (!this.documentoGestion.PuedeFacturar())
             {
                 this.dataGridViewFacturas.Columns["ColumnFacturado"].Visible = false;
                 this.dataGridViewFacturas.Columns["ColumnCobrado"].Visible = false;

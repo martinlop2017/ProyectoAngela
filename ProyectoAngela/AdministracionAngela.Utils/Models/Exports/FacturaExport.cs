@@ -8,7 +8,7 @@ namespace AdministracionAngela.Utils.Models.Exports
 {
     public class FacturaExport
     {
-        public DateTime FechaFactura { get; set; }
+        public string FechaFactura { get; set; }
         public long NumeroFactura { get; set; }
         public string Nombre { get; set; }
         public string CIF { get; set; }

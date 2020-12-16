@@ -22,5 +22,9 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public decimal Base { get; set; }
         public decimal Iva { get; set; }
         public decimal RE { get; set; }
+        public decimal ImporteTotal { get; set; }
+        public decimal BaseTotal { get; set; }
+        public decimal IvaTotal { get; set; }
+        public decimal ReTotal { get; set; }
     }
 }

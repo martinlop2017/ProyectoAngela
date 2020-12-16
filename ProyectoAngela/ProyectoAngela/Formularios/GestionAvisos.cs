@@ -150,7 +150,20 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 listaMorososParaImprimir.Add(moroso);
             }
 
-            if(listaMorososParaImprimir.Count > 0)
+            var importeTotal = listaMorososParaImprimir.Sum(x => x.Importe);
+            var baseTotal = listaMorososParaImprimir.Sum(x => x.Base);
+            var ivaTotal = listaMorososParaImprimir.Sum(x => x.Iva);
+            var reTotal = listaMorososParaImprimir.Sum(x => x.RE);
+
+            listaMorososParaImprimir.ForEach(x =>
+            {
+                x.ImporteTotal = importeTotal;
+                x.BaseTotal = baseTotal;
+                x.IvaTotal = ivaTotal;
+                x.ReTotal = reTotal;
+            });
+
+            if (listaMorososParaImprimir.Count > 0)
             {
                 VisorMororsos form = new VisorMororsos();
                 form.ExportarToPdf(listaMorososParaImprimir);

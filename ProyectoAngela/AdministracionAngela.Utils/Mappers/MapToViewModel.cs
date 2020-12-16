@@ -412,7 +412,7 @@ namespace AdministracionAngela.Utils.Mappers
                 NumeroFactura = f.NumeroFactura,
                 FechaFactura = f.Fecha.Value.ToString("MM-dd-yyyy", CultureInfo.InvariantCulture),                
                 Nombre = f.Cliente.Nombre,
-                CIF = f.Cliente.CIF,
+                CIF =string.IsNullOrEmpty(f.Cliente.CIF) ? f.Cliente.NIF : f.Cliente.CIF,
                 Base = f.TotalBase.HasValue ? Decimal.Round(f.TotalBase.Value, 2) : 0,
                 IVA = f.TotalIVA.HasValue ? Decimal.Round(f.TotalIVA.Value, 2) : 0,
                 Total = f.Total.HasValue ? Decimal.Round(f.Total.Value, 2) : 0,
@@ -605,7 +605,10 @@ namespace AdministracionAngela.Utils.Mappers
                 FechaVencimiento = f.FechaVencimiento.HasValue ? f.FechaVencimiento.Value.ToString("dd/MM/yyyy") : "",
                 Importe = f.Total.Value,
                 FechaCobro = f.FechaCobro.HasValue ? f.FechaCobro.Value.ToString("dd/MM/yyyy") : "",
-                Cobrada = f.Cobrada.Value
+                Cobrada = f.Cobrada.Value,
+                Base = f.TotalBase.Value,
+                Iva = f.TotalIVA.Value,
+                RE = f.TotalRecargoEquivalencia.Value
             };
         }
 

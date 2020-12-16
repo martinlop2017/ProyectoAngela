@@ -19,5 +19,8 @@ namespace AdministracionAngela.Utils.Models.Impresion
         public string hastacliente { get; set; }
         public string desdefecha { get; set; }
         public string hastafecha { get; set; }
+        public decimal Base { get; set; }
+        public decimal Iva { get; set; }
+        public decimal RE { get; set; }
     }
 }

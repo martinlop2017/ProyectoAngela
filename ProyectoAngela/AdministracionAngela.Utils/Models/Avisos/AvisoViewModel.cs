@@ -11,5 +11,8 @@ namespace AdministracionAngela.Utils.Models.Avisos
         public decimal Importe { get; set; }
         public string FechaCobro { get; set; }
         public bool Cobrada { get; set; }
+        public decimal Base { get; set; }
+        public decimal Iva { get; set; }
+        public decimal RE { get; set; }
     }
 }

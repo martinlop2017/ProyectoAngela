@@ -143,6 +143,9 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 moroso.Importe = Convert.ToDecimal(row.Cells["ColumnImporte"].Value);
                 moroso.NombreCliente = Convert.ToString(row.Cells["ColumnCliente"].Value);
                 moroso.Cobrada = Convert.ToBoolean(row.Cells["ColumnCobrada"].Value);
+                moroso.Base = Convert.ToDecimal(row.Cells["ColumnBase"].Value);
+                moroso.Iva = Convert.ToDecimal(row.Cells["ColumnIva"].Value);
+                moroso.RE = Convert.ToDecimal(row.Cells["ColumnRE"].Value);
 
                 listaMorososParaImprimir.Add(moroso);
             }

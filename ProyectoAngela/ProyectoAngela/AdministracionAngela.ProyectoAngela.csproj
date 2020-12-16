@@ -398,6 +398,7 @@
     <EmbeddedResource Include="Formularios\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Nuevoreport.rdlc" />
     <EmbeddedResource Include="Formularios\ReiniciarBases.resx">
       <DependentUpon>ReiniciarBases.cs</DependentUpon>
     </EmbeddedResource>

@@ -68,5 +68,10 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
 
         }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

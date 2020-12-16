@@ -154,6 +154,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
             var baseTotal = listaMorososParaImprimir.Sum(x => x.Base);
             var ivaTotal = listaMorososParaImprimir.Sum(x => x.Iva);
             var reTotal = listaMorososParaImprimir.Sum(x => x.RE);
+            var total = importeTotal + baseTotal + ivaTotal + reTotal;
 
             listaMorososParaImprimir.ForEach(x =>
             {
@@ -161,6 +162,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 x.BaseTotal = baseTotal;
                 x.IvaTotal = ivaTotal;
                 x.ReTotal = reTotal;
+                x.Total = total;
             });
 
             if (listaMorososParaImprimir.Count > 0)

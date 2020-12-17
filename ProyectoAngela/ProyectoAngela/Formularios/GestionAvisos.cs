@@ -132,7 +132,7 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
         {
             var listaMorososParaImprimir = new List<Moroso>();
             foreach (DataGridViewRow row in dataGridViewAvisos.Rows)
-            {
+            {                
                 var moroso = new Moroso();
                 moroso.desdecliente = textBoxFromCodigo.Text;
                 moroso.hastacliente = textBoxToCodigo.Text;
@@ -147,6 +147,8 @@ namespace AdministracionAngela.ProyectoAngela.Formularios
                 moroso.Iva = Convert.ToDecimal(row.Cells["ColumnIva"].Value);
                 moroso.RE = Convert.ToDecimal(row.Cells["ColumnRE"].Value);
 
+                if (string.IsNullOrEmpty(moroso.NombreCliente))
+                    continue;
                 listaMorososParaImprimir.Add(moroso);
             }
 
